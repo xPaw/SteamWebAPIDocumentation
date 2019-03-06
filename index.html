@@ -57,12 +57,12 @@
 		transition: none;
 	}
 
-	.form-control {
+	.attribute .form-control {
 		height: auto;
 		line-height: 1;
 	}
 
-	.form-control:focus {
+	.attribute .form-control:focus {
 		outline: rgb(0, 123, 255) solid 2px;
 		box-shadow: none;
 	}
@@ -115,36 +115,37 @@
 				</div>
 				<div class="col-lg-9">
 					<div class="interface" v-if="currentInterface === ''">
-						<div class="row">
-							<div class="col-md-6">
-								<div id="api-key-form" class="form-group has-feedback">
-									<label class="control-label" for="api-key">Your WebAPI Key</label>
-									<input type="text" class="form-control" id="api-key" placeholder="Your key is stored in your browser only" v-model="userData.webapi_key">
-									<span class="glyphicon glyphicon-remove form-control-feedback"></span>
-									<span class="glyphicon glyphicon-ok form-control-feedback"></span>
+						<div class="card">
+							<div class="card-header">Settings</div>
+							<div class="card-body row">
+								<div class="form-group col-md-6">
+									<a href="https://steamcommunity.com/dev/apikey" target="_blank" rel="noopener" class="float-right">Get your key here</a>
+									<label for="form-api-key">Your WebAPI Key</label>
+									<input type="text" :class="[
+										'form-control',
+										isFieldValid( 'webapi_key' ) ? 'is-valid' : 'is-invalid'
+									]" id="form-api-key" placeholder="Your key (stored in your browser only)" v-model="userData.webapi_key">
 								</div>
-							</div>
-							<div class="col-md-6">
-								<div class="form-group">
-									<label class="control-label" for="output-format">Preferred Output Format</label>
-									<select class="form-control" id="output-format" v-model="userData.format">
+								<div class="form-group col-md-6">
+									<label for="form-format">Preferred Output Format</label>
+									<select class="custom-select" id="form-format" v-model="userData.format">
 										<option value="json">JSON</option>
 										<option value="vdf">VDF</option>
 										<option value="xml">XML (not recommended)</option>
 									</select>
 								</div>
-							</div>
-							<div class="col-md-6">
-								<div id="steamid-form" class="form-group has-feedback">
-									<label class="control-label" for="steamid">Pre-fill SteamID <a href="https://steamdb.info/calculator/" target="_blank" class="text-muted">(use SteamDB to convert)</a></label>
-									<input type="text" class="form-control" id="steamid" placeholder="Your SteamID (in a format like 76561197972494985)" v-model="userData.steamid">
-									<span class="glyphicon glyphicon-remove form-control-feedback"></span>
-									<span class="glyphicon glyphicon-ok form-control-feedback"></span>
+								<div class="form-group col-md-6">
+									<a href="https://steamdb.info/calculator/" target="_blank" rel="noopener" class="float-right">Get your id here</a>
+									<label class="control-label" for="form-steamid">Pre-fill SteamID</label>
+									<input type="text" :class="[
+										'form-control',
+										isFieldValid( 'steamid' ) ? 'is-valid' : 'is-invalid'
+									]" id="form-steamid" placeholder="Your SteamID, for example: 76561197960287930" v-model="userData.steamid">
 								</div>
 							</div>
 						</div>
-						
-						<div class="card">
+
+						<div class="card mt-3">
 							<div class="card-header">What is this?</div>
 							<div class="card-body">
 								<p>This is a static page that is automatically generated from various API sources.</p>
@@ -293,6 +294,6 @@
 	<script src="https://cdnjs.cloudflare.com/ajax/libs/fuse.js/3.4.2/fuse.js" integrity="sha256-hdm0/qRTSg4lkYiFf+yRm1xkLMDSpLfbgc3t/FX/yZc=" crossorigin="anonymous"></script>
 	<!--script src="https://cdnjs.cloudflare.com/ajax/libs/vue/2.6.8/vue.min.js" integrity="sha256-GN7NvWruk083BKn+djXpMOuWnd9Rz70hQgF868IIyTU=" crossorigin="anonymous"></script-->
 	<script src="https://cdnjs.cloudflare.com/ajax/libs/vue/2.6.8/vue.js" integrity="sha256-GT4AUs9RYD3WEeAsoJlvGbT9fxp3TR1iOFZrvBuS8Mo=" crossorigin="anonymous"></script>
-	<script src="documentation.js?v=9"></script>
+	<script src="documentation.js"></script>
 </body>
 </html>

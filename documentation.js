@@ -48,9 +48,9 @@
 		{
 			userData:
 			{
-				webapi_key: '',
-				steamid: '',
-				format: 'json',
+				webapi_key: localStorage.getItem( 'webapi_key' ) || '',
+				steamid: localStorage.getItem( 'steamid' ) || '',
+				format: localStorage.getItem( 'format' ) || 'json',
 			},
 			currentFilter: '',
 			currentInterface: null,
@@ -58,6 +58,32 @@
 		},
 		watch:
 		{
+			"userData.format"( value )
+			{
+				localStorage.setItem( 'format', value );
+			},
+			"userData.webapi_key"( value )
+			{
+				if( this.isFieldValid( 'webapi_key' ) )
+				{
+					localStorage.setItem( 'webapi_key', value );
+				}
+				else
+				{
+					localStorage.removeItem( 'webapi_key' );
+				}
+			},
+			"userData.steamid"( value )
+			{
+				if( this.isFieldValid( 'steamid' ) )
+				{
+					localStorage.setItem( 'steamid', value );
+				}
+				else
+				{
+					localStorage.removeItem( 'steamid' );
+				}
+			},
 			currentInterface( newInterface )
 			{
 				history.replaceState( '', '', '#' + newInterface );
@@ -110,6 +136,14 @@
 		},
 		methods:
 		{
+			isFieldValid( field )
+			{
+				switch( field )
+				{
+					case 'webapi_key': return /^[0-9a-f]{32}$/i.test( this.userData[ field ] );
+					case 'steamid': return /^[0-9]{17}$/.test( this.userData[ field ] );
+				}
+			},
 			renderParameters( method )
 			{
 				const parameters = new URLSearchParams();
