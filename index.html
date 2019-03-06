@@ -181,12 +181,12 @@
 								<p>You should not connect to the Web API servers by IP; use the DNS name.</p>
 							</div>
 						</div>
-						
+
 						<div class="card mt-3">
 							<div class="card-header">Requests and responses</div>
 							<div class="card-body">
 								<p>Similiar to the Steamworks C++ API, the Web API has been divided into multiple interfaces that contain related methods. The URI format of each API request is: <code>https://api.steampowered.com/&lt;interface&gt;/&lt;method&gt;/&lt;method_version&gt;/</code></p>
-								
+
 								<p>Steam supports returning Web API responses in multiple formats. By default, all responses are returned JSON encoded. However, each request can optionally contain a <code>format</code> parameter to specify the desired response format. The following values can be passed for this parameter: <code>xml</code>, <code>json</code>, and <code>vdf</code>.</p>
 								<p>A flexible solution should be used to parse Web API results as each method may return results in an arbitrary order.</p>
 							</div>
@@ -233,7 +233,7 @@
 										target="_blank"
 										rel="noopener"
 									>Open in new tab</a>
-									
+
 									<a class="badge badge-light" href="https://github.com/SteamDatabase/UndocumentedAPI" target="_blank" rel="noopener" v-if="method._type === 'undocumented'">UNDOCUMENTED</a>
 									<span :class="method.httpmethod === 'GET' ? 'badge badge-success' : 'badge badge-danger'">{{ method.httpmethod }}</span>
 									<a class="badge badge-warning" v-if="method._type === 'publisher_only'" :href="`https://partner.steamgames.com/doc/webapi/${currentInterface}#${methodName}`" target="_blank" rel="noopener">PUBLISHER</a>
@@ -242,7 +242,7 @@
 								</div>
 								<div class="card-body">
 									<p v-if="method.description">{{ method.description }}</p>
-									
+
 									<div class="input-group mb-3">
 										<div class="input-group-prepend">
 											<button class="btn btn-outline-primary pt-0" type="button" @click.prevent="copyUrl($event)">
@@ -252,7 +252,7 @@
 										<textarea class="form-control border-primary text-monospace bg-light" readonly :value="`https://api.steampowered.com/${currentInterface}/${methodName}/v${method.version}/${renderParameters( method )}`"></textarea>
 									</div>
 								</div>
-								<div class="table-responsive" v-if="method.parameters && method.parameters.length > 0">	
+								<div class="table-responsive" v-if="method.parameters && method.parameters.length > 0">
 									<table class="table table-sm table-bordered">
 										<thead>
 											<tr>
