@@ -11,6 +11,12 @@ self.addEventListener( 'fetch', ( event ) =>
 	event.respondWith( networkOrCache( event ) );
 } );
 
+async function putInCache( event, response )
+{
+	const cache = await caches.open( 'steamwebapi-cache' );
+	await cache.put( event.request, response );
+}
+
 async function networkOrCache( event )
 {
 	try
@@ -19,21 +25,18 @@ async function networkOrCache( event )
 
 		if( response.ok )
 		{
-			event.waitUntil( async () =>
-			{
-				const cache = await caches.open( 'steamwebapi-cache' );
-				cache.put( event.request, response.clone() );
-			} );
+			event.waitUntil( putInCache( event, response ) );
 
-			return response;
+			return response.clone();
 		}
 
-		return Promise.reject( 'request-failed' );
+		throw new Error( `Request failed with HTTP ${response.status}` );
 	}
 	catch( e )
 	{
 		const cache = await caches.open( 'steamwebapi-cache' );
-		const matching = await cache.match( uri );
+		const matching = await cache.match( event.request );
+
 		return matching || Promise.reject( 'request-not-in-cache' );
 	}
 }
