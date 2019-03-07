@@ -6,6 +6,14 @@
         }
     },
     "IBroadcastService": {
+        "GetBroadcastUploadStats": {
+            "version": 1,
+            "_type": "undocumented"
+        },
+        "GetBroadcastViewerStats": {
+            "version": 1,
+            "_type": "undocumented"
+        },
         "GetRTMPInfo": {
             "version": 1,
             "_type": "undocumented"
@@ -88,6 +96,10 @@
             "_type": "undocumented"
         },
         "SetRTMPInfo": {
+            "version": 1,
+            "_type": "undocumented"
+        },
+        "UpdateChatMessageFlair": {
             "version": 1,
             "_type": "undocumented"
         }
@@ -5055,7 +5067,15 @@
         }
     },
     "IRemoteClientService": {
+        "NotifyRegisterStatusUpdate": {
+            "version": 1,
+            "_type": "undocumented"
+        },
         "NotifyRemotePacket": {
+            "version": 1,
+            "_type": "undocumented"
+        },
+        "NotifyUnregisterStatusUpdate": {
             "version": 1,
             "_type": "undocumented"
         }
@@ -7392,6 +7412,10 @@
             "_type": "undocumented"
         },
         "GetGames": {
+            "version": 1,
+            "_type": "undocumented"
+        },
+        "GetMyBroadcastChannels": {
             "version": 1,
             "_type": "undocumented"
         },
