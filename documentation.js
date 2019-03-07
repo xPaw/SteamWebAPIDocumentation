@@ -238,6 +238,11 @@
 	setInterface();
 	window.addEventListener( 'hashchange', setInterface, false );
 
+	if( 'serviceWorker' in navigator )
+	{
+		navigator.serviceWorker.register( 'serviceworker.js', { scope: './' } );
+	}
+
 	function setInterface()
 	{
 		let currentInterface = location.hash;
