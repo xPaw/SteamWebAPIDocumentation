@@ -70,11 +70,15 @@
 	[v-cloak] {
 		display: none;
 	}
+
+	.no-select {
+		user-select: none;
+	}
 	</style>
 </head>
 <body>
 	<div id="app" v-cloak>
-		<div class="bg-light py-2 mb-4">
+		<div class="bg-light py-2 mb-4 no-select">
 			<div class="container">
 				<div class="row">
 					<div class="col-lg-3">
@@ -109,7 +113,7 @@
 								:href="'#' + interface.name"
 								:class="interface.name === currentInterface ? 'font-weight-bold' : 'text-dark'"
 								@click.prevent="currentInterface = interface.name; scrollIntoView()"
-							><span class="badge badge-light float-right">{{ interface.size }}</span> {{ interface.name }}</a>
+							><span class="badge badge-light float-right no-select">{{ interface.size }}</span> {{ interface.name }}</a>
 						</li>
 					</ul>
 				</div>
@@ -235,9 +239,9 @@
 										class="btn btn-sm btn-primary use-method float-right"
 									>Execute</button>
 
-									<a class="badge badge-light" href="https://github.com/SteamDatabase/UndocumentedAPI" target="_blank" rel="noopener" v-if="method._type === 'undocumented'">UNDOCUMENTED</a>
+									<a class="badge badge-light no-select" href="https://github.com/SteamDatabase/UndocumentedAPI" target="_blank" rel="noopener" v-if="method._type === 'undocumented'">UNDOCUMENTED</a>
 									<span :class="method.httpmethod === 'GET' ? 'badge badge-success' : 'badge badge-danger'">{{ method.httpmethod }}</span>
-									<a class="badge badge-warning" v-if="method._type === 'publisher_only'" :href="`https://partner.steamgames.com/doc/webapi/${currentInterface}#${methodName}`" target="_blank" rel="noopener">PUBLISHER</a>
+									<a class="badge badge-warning no-select" v-if="method._type === 'publisher_only'" :href="`https://partner.steamgames.com/doc/webapi/${currentInterface}#${methodName}`" target="_blank" rel="noopener">PUBLISHER</a>
 									<span @click="updateUrl(methodName)">{{ methodName }}</span>
 									<span class="badge badge-primary" v-if="method.version > 1">v{{ method.version }}</span>
 								</div>
