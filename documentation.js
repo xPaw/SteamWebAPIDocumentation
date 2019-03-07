@@ -78,6 +78,8 @@
 				if( this.isFieldValid( 'steamid' ) )
 				{
 					localStorage.setItem( 'steamid', value );
+
+					fillSteamidParameter();
 				}
 				else
 				{
@@ -228,6 +230,7 @@
 		},
 	});
 
+	fillSteamidParameter();
 	setInterface();
 	window.addEventListener( 'hashchange', setInterface, false );
 
@@ -246,5 +249,25 @@
 		}
 
 		app.currentInterface = currentInterface;
+	}
+
+	function fillSteamidParameter()
+	{
+		for( const interfaceName in interfaces )
+		{
+			for( const methodName in interfaces[ interfaceName ] )
+			{
+				if( interfaces[ interfaceName ][ methodName ].parameters )
+				{
+					for( const parameter of interfaces[ interfaceName ][ methodName ].parameters )
+					{
+						if( !parameter._value && parameter.name.includes( 'steamid' ) )
+						{
+							parameter._value = app.userData.steamid;
+						}
+					}
+				}
+			}
+		}
 	}
 })();

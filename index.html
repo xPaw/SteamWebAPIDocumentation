@@ -19,6 +19,7 @@
 	}
 
 	.card .table {
+		font-size: 14px;
 		margin-bottom: 0;
 	}
 
@@ -261,7 +262,8 @@
 									<table class="table table-sm table-bordered">
 										<thead>
 											<tr>
-												<th style="width:13rem">Name</th>
+												<th>Name</th>
+												<th style="width:7rem">Value</th>
 												<th>Type</th>
 												<th>Required</th>
 												<th>Description</th>
@@ -269,11 +271,14 @@
 										</thead>
 										<tbody>
 											<tr class="attribute" v-for="parameter in method.parameters" :key="parameter.name">
+												<td class="text-monospace">
+													<label class="custom-control-label" :for="`param_${methodName}_${parameter.name}`">{{ parameter.name }}</label>
+												</td>
 												<td class="text-monospace p-0">
 													<div v-if="parameter.name === 'key'" class="text-monospace font-italic" style="padding:.219rem .75rem">
 														<span @click="currentInterface = ''">key</span>
 													</div>
-													<div class="custom-control custom-checkbox m-2" v-else-if="parameter.type === 'bool'">
+													<div class="custom-control custom-switch m-2" v-else-if="parameter.type === 'bool'">
 														<input
 															type="checkbox"
 															class="custom-control-input"
@@ -282,13 +287,13 @@
 															:id="`check_${methodName}_${parameter.name}`"
 															v-model="parameter._value"
 														>
-														<label class="custom-control-label" :for="`check_${methodName}_${parameter.name}`">{{ parameter.name }}</label>
+														<label class="custom-control-label" :for="`check_${methodName}_${parameter.name}`"></label>
 													</div>
 													<input
 														v-else
 														class="form-control border-0 rounded-0"
 														:name="parameter.name"
-														:placeholder="parameter.name"
+														:id="`param_${methodName}_${parameter.name}`"
 														v-model="parameter._value"
 													>
 												</td>
