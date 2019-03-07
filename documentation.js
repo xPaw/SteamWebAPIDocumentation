@@ -91,6 +91,10 @@
 				history.replaceState( '', '', '#' + newInterface );
 			},
 		},
+		mounted()
+		{
+			document.getElementById( 'loading' ).remove();
+		},
 		computed:
 		{
 			filteredInterfaces()
