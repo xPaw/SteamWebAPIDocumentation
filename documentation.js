@@ -147,7 +147,11 @@
 			renderParameters( method )
 			{
 				const parameters = new URLSearchParams();
-				parameters.set( 'key', this.userData.webapi_key );
+
+				if( this.userData.webapi_key )
+				{
+					parameters.set( 'key', this.userData.webapi_key );
+				}
 
 				if( this.userData.format !== 'json' )
 				{
@@ -169,11 +173,15 @@
 
 				return '?' + parameters.toString();
 			},
-			useThisMethod( method )
+			useThisMethod( event, method )
 			{
-				if( method.httpmethod !== 'GET' )
+				if( method.httpmethod === 'POST' && !confirm(
+					'Executing POST requests could be potentially disastrous.\n\n'
+					+ 'Author is not responsible for any damage done.\n\n'
+					+ 'Are you sure you want to continue?'
+				) )
 				{
-					return alert( 'Only GET for now' );
+					event.preventDefault();
 				}
 			},
 			copyUrl( event )

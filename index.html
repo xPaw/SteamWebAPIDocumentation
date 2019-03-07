@@ -214,26 +214,26 @@
 							Use arrows keys in search field to navigate.
 						</div>
 						<template v-for="(method, methodName) in interface">
-							<div :class="[
-								'card mb-4',
-								{ 'border-warning': method._type === 'undocumented' }
-							]">
+							<form
+								target="_blank"
+								:method="method.httpmethod || 'GET'"
+								:action="`https://api.steampowered.com/${currentInterface}/${methodName}/v${method.version}/`"
+								:class="[
+									'card mb-4',
+									{ 'border-warning': method._type === 'undocumented' }
+								]"
+								@submit="useThisMethod($event, method)"
+							>
+								<input type="hidden" name="key" v-model="userData.webapi_key">
+								<input type="hidden" name="format" v-model="userData.format" v-if="userData.format !== 'json'">
 								<div :class="[
 									'card-header',
 									{ 'bg-warning border-warning': method._type === 'undocumented' }
 								]">
 									<button
-										v-if="method.parameters && method.parameters.length > 0"
+										type="submit"
 										class="btn btn-sm btn-primary use-method float-right"
-										@click.prevent="useThisMethod(method)"
 									>Execute</button>
-									<a
-										v-else
-										class="btn btn-sm btn-outline-primary use-method float-right"
-										:href="`https://api.steampowered.com/${currentInterface}/${methodName}/v${method.version}/`"
-										target="_blank"
-										rel="noopener"
-									>Open in new tab</a>
 
 									<a class="badge badge-light" href="https://github.com/SteamDatabase/UndocumentedAPI" target="_blank" rel="noopener" v-if="method._type === 'undocumented'">UNDOCUMENTED</a>
 									<span :class="method.httpmethod === 'GET' ? 'badge badge-success' : 'badge badge-danger'">{{ method.httpmethod }}</span>
@@ -268,10 +268,23 @@
 												<td class="text-monospace p-0">
 													<div v-if="parameter.name === 'key'" class="text-monospace font-italic" style="padding:.219rem .75rem">key</div>
 													<div class="custom-control custom-checkbox m-2" v-else-if="parameter.type === 'bool'">
-														<input type="checkbox" class="custom-control-input" :id="`check_${methodName}_${parameter.name}`" v-model="parameter._value">
+														<input
+															type="checkbox"
+															class="custom-control-input"
+															value="1"
+															:name="parameter.name"
+															:id="`check_${methodName}_${parameter.name}`"
+															v-model="parameter._value"
+														>
 														<label class="custom-control-label" :for="`check_${methodName}_${parameter.name}`">{{ parameter.name }}</label>
 													</div>
-													<input class="form-control border-0 rounded-0" :placeholder="parameter.name" v-model="parameter._value" v-else>
+													<input
+														v-else
+														class="form-control border-0 rounded-0"
+														:name="parameter.name"
+														:placeholder="parameter.name"
+														v-model="parameter._value"
+													>
 												</td>
 												<td>{{ parameter.type }}</td>
 												<td v-if="parameter.optional">No</td>
@@ -284,7 +297,7 @@
 										</tbody>
 									</table>
 								</div>
-							</div>
+							</form>
 						</template>
 					</div>
 				</div>
