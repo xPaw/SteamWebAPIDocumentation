@@ -186,7 +186,12 @@
 			},
 			copyUrl( event )
 			{
-				event.target.closest( '.input-group' ).querySelector( 'input' ).select();
+				const element = event.target.closest( '.input-group' ).querySelector( '.form-control' );
+				const selection = window.getSelection();
+				const range = document.createRange();
+				range.selectNodeContents( element );
+				selection.removeAllRanges();
+				selection.addRange( range );
 				document.execCommand( 'copy' );
 			},
 			updateUrl( method )
