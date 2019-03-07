@@ -270,7 +270,9 @@
 										<tbody>
 											<tr class="attribute" v-for="parameter in method.parameters" :key="parameter.name">
 												<td class="text-monospace p-0">
-													<div v-if="parameter.name === 'key'" class="text-monospace font-italic" style="padding:.219rem .75rem">key</div>
+													<div v-if="parameter.name === 'key'" class="text-monospace font-italic" style="padding:.219rem .75rem">
+														<span @click="currentInterface = ''">key</span>
+													</div>
 													<div class="custom-control custom-checkbox m-2" v-else-if="parameter.type === 'bool'">
 														<input
 															type="checkbox"
