@@ -11,6 +11,14 @@
 		{
 			"src": "favicon.ico",
 			"sizes": "16x16 32x32 64x64"
+		},
+		{
+			"src": "192.png",
+			"sizes": "192x192"
+		},
+		{
+			"src": "512.png",
+			"sizes": "512x512"
 		}
 	]
 }
