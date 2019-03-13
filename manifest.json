@@ -1,0 +1,16 @@
+{
+	"name": "Steam Web API Documentation",
+	"short_name": "Steam Web API",
+	"description": "An automatically generated list of Steam Web API interfaces, methods and parameters. Allows you to craft requests in the browser.",
+	"start_url": "/",
+	"display": "standalone",
+	"theme_color": "#0d0d0d",
+	"background_color": "#0d0d0d",
+	"icons":
+	[
+		{
+			"src": "favicon.ico",
+			"sizes": "16x16 32x32 64x64"
+		}
+	]
+}
