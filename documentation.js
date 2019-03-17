@@ -213,24 +213,6 @@
 
 				this.currentInterface = keys[ ( ( index % size ) + size ) % size ];
 			},
-			scrollIntoView()
-			{
-				if( window.innerWidth > 991 )
-				{
-					return;
-				}
-
-				this.$nextTick( () =>
-				{
-					if( this.$refs.interfaceView )
-					{
-						this.$refs.interfaceView.scrollIntoView( {
-							behavior: "smooth",
-							block: "start",
-						} );
-					}
-				} );
-			}
 		},
 	});
 

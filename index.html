@@ -14,11 +14,6 @@
 	<link rel="preload" href="documentation.js" as="script">
 	<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/twitter-bootstrap/4.3.1/css/bootstrap.min.css" integrity="sha256-YLGeXaapI0/5IgZopewRJcFXomhRMlYYjugPLSyNjTY=" crossorigin="anonymous">
 	<style>
-	html {
-		overflow-y: scroll;
-		scrollbar-width: thin;
-	}
-
 	.card-body {
 		padding-bottom: 0
 	}
@@ -80,11 +75,59 @@
 	.no-select {
 		user-select: none;
 	}
+
+	@media (max-width: 991px) {
+		.sidebar {
+			height: 200px;
+			margin-top: 1.5rem;
+			padding-top: 0 !important;
+			padding-bottom: 0 !important;
+			overflow-y: scroll;
+			overscroll-behavior: contain;
+			-webkit-overflow-scrolling: touch;
+		}
+	}
+
+	@media (min-width: 992px) {
+		.header {
+			height: 54px;
+		}
+
+		.row-contain {
+			height: calc(100vh - 54px);
+		}
+
+		.content,
+		.sidebar {
+			height: 100%;
+			overflow-y: scroll;
+			scrollbar-width: thin;
+			overscroll-behavior: contain;
+			-webkit-overflow-scrolling: touch;
+		}
+	}
+
+	::-webkit-scrollbar {
+		width: 6px;
+		background-color: rgba(0, 0, 0, 0);
+	}
+
+	::-webkit-scrollbar:hover {
+		background-color: rgba(0, 0, 0, 0.09);
+	}
+
+	::-webkit-scrollbar-thumb:vertical {
+		background: rgba(0, 123, 255, 0.4);
+	}
+
+	::-webkit-scrollbar-thumb:vertical:active {
+		background: rgba(0, 123, 255, 1);
+	}
 	</style>
 </head>
 <body>
 	<div id="loading">
-		<div class="bg-light py-2 mb-4 no-select">
+		<div class="bg-light py-2 no-select header">
 			<div class="container">
 				<div class="row">
 					<div class="col-lg-3">
@@ -106,7 +149,7 @@
 	</div>
 
 	<div id="app" v-cloak>
-		<div class="bg-light py-2 mb-4 no-select">
+		<div class="bg-light py-2 no-select header">
 			<div class="container">
 				<div class="row">
 					<div class="col-lg-3">
@@ -131,9 +174,9 @@
 		</div>
 
 		<div class="container">
-			<div class="row">
-				<div class="col-lg-3">
-					<ul class="interface-list mb-3">
+			<div class="row row-contain">
+				<div class="col-lg-3 sidebar py-4">
+					<ul class="interface-list m-0">
 						<li
 							v-for="interface in sidebarInterfaces"
 							:key="interface.name"
@@ -141,12 +184,12 @@
 							<a
 								:href="'#' + interface.name"
 								:class="interface.name === currentInterface ? 'font-weight-bold' : 'text-dark'"
-								@click.prevent="currentInterface = interface.name; scrollIntoView()"
+								@click.prevent="currentInterface = interface.name"
 							><span class="badge badge-light float-right no-select">{{ interface.size }}</span> {{ interface.name }}</a>
 						</li>
 					</ul>
 				</div>
-				<div class="col-lg-9">
+				<div class="col-lg-9 content py-4">
 					<div class="interface" v-if="currentInterface === ''">
 						<div class="card">
 							<div class="card-header">Settings</div>
