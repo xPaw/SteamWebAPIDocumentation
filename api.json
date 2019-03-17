@@ -386,6 +386,12 @@
             ]
         }
     },
+    "IChat": {
+        "GetChannelMembers": {
+            "version": 1,
+            "_type": "dota2"
+        }
+    },
     "IChatRoomService": {
         "AppAddUsersToGroup": {
             "version": 1,
@@ -1165,6 +1171,104 @@
             "_type": "undocumented"
         }
     },
+    "ICustomGames": {
+        "GetGamePlayerCounts": {
+            "version": 1,
+            "_type": "dota2"
+        },
+        "GetPopularGames": {
+            "version": 1,
+            "_type": "dota2"
+        },
+        "GetSuggestedGames": {
+            "version": 1,
+            "_type": "dota2"
+        },
+        "GetWorkshopVoteQueue": {
+            "version": 1,
+            "_type": "dota2"
+        }
+    },
+    "IDOTA2AutomatedTourney": {
+        "GetParticipationDetails": {
+            "version": 1,
+            "_type": "dota2"
+        },
+        "GetPlayerHistory": {
+            "version": 1,
+            "_type": "dota2"
+        },
+        "GetTournamentDetails": {
+            "version": 1,
+            "_type": "dota2"
+        }
+    },
+    "IDOTA2DPC": {
+        "GetLeagueInfoList": {
+            "version": 1,
+            "_type": "dota2"
+        },
+        "GetLeagueMatchMinimal": {
+            "version": 1,
+            "_type": "dota2"
+        },
+        "GetLeagueNodeData": {
+            "version": 1,
+            "_type": "dota2"
+        },
+        "GetPlayerInfo": {
+            "version": 1,
+            "_type": "dota2"
+        },
+        "GetRealtimeMatchStats": {
+            "version": 1,
+            "_type": "dota2"
+        },
+        "GetRecentAndUpcomingMatches": {
+            "version": 1,
+            "_type": "dota2"
+        },
+        "GetSingleTeamInfo": {
+            "version": 1,
+            "_type": "dota2"
+        }
+    },
+    "IDOTA2Events": {
+        "GetArcanaVotes": {
+            "version": 1,
+            "_type": "dota2"
+        },
+        "GetCurrentTriviaQuestions": {
+            "version": 1,
+            "_type": "dota2"
+        },
+        "GetMutations": {
+            "version": 1,
+            "_type": "dota2"
+        },
+        "GetTriviaQuestionAnswersSummary": {
+            "version": 1,
+            "_type": "dota2"
+        }
+    },
+    "IDOTA2Fantasy": {
+        "GetFantasyPlayerRawStats": {
+            "version": 1,
+            "_type": "dota2"
+        },
+        "GetLeaderboards": {
+            "version": 1,
+            "_type": "dota2"
+        },
+        "GetPlayerInfo": {
+            "version": 1,
+            "_type": "dota2"
+        },
+        "GetProPlayerInfo": {
+            "version": 1,
+            "_type": "dota2"
+        }
+    },
     "IDOTA2Fantasy_205790": {
         "GetFantasyPlayerStats": {
             "version": 1,
@@ -1224,6 +1328,60 @@
             "version": 1,
             "httpmethod": "GET",
             "parameters": []
+        }
+    },
+    "IDOTA2League": {
+        "GetLeagueData": {
+            "version": 1,
+            "_type": "dota2"
+        },
+        "GetLeagueInfoList": {
+            "version": 1,
+            "_type": "dota2"
+        },
+        "GetLeagueNodeResults": {
+            "version": 1,
+            "_type": "dota2"
+        },
+        "GetLiveGames": {
+            "version": 1,
+            "_type": "dota2"
+        },
+        "GetPredictionResults": {
+            "version": 1,
+            "_type": "dota2"
+        },
+        "GetPredictions": {
+            "version": 1,
+            "_type": "dota2"
+        },
+        "GetPrizePool": {
+            "version": 1,
+            "_type": "dota2"
+        }
+    },
+    "IDOTA2Match": {
+        "GetMatchMVPVotes": {
+            "version": 1,
+            "_type": "dota2"
+        },
+        "GetTopLiveEventGame": {
+            "version": 1,
+            "_type": "dota2"
+        },
+        "GetTopLiveGame": {
+            "version": 1,
+            "_type": "dota2"
+        },
+        "GetTopWeekendTourneyGames": {
+            "version": 1,
+            "_type": "dota2"
+        }
+    },
+    "IDOTA2MatchStats": {
+        "GetRealtimeStats": {
+            "version": 1,
+            "_type": "dota2"
         }
     },
     "IDOTA2MatchStats_205790": {
@@ -1671,6 +1829,24 @@
             ]
         }
     },
+    "IDOTA2Operations": {
+        "GetBannedWordList": {
+            "version": 2,
+            "_type": "dota2"
+        }
+    },
+    "IDOTA2Plus": {
+        "GetPlusStatsData": {
+            "version": 1,
+            "_type": "dota2"
+        }
+    },
+    "IDOTA2StreamSystem": {
+        "GetBroadcasterInfo": {
+            "version": 1,
+            "_type": "dota2"
+        }
+    },
     "IDOTA2StreamSystem_205790": {
         "GetBroadcasterInfo": {
             "version": 1,
@@ -1709,6 +1885,12 @@
                     "description": "LeagueID to use if we aren't in a lobby"
                 }
             ]
+        }
+    },
+    "IDOTA2Teams": {
+        "GetSingleTeamInfo": {
+            "version": 1,
+            "_type": "dota2"
         }
     },
     "IDOTA2Ticket_205790": {
@@ -2308,8 +2490,7 @@
                     "optional": false,
                     "description": "The Steam ID to fetch items for"
                 }
-            ],
-            "_type": "publisher_only"
+            ]
         },
         "GetSchema": {
             "version": 1,
@@ -2321,8 +2502,7 @@
                     "optional": true,
                     "description": "The language to return the names in. Defaults to returning string keys."
                 }
-            ],
-            "_type": "publisher_only"
+            ]
         }
     },
     "IEconItems_730": {
@@ -2868,6 +3048,12 @@
         "MarkOfflineMessagesRead": {
             "version": 1,
             "_type": "undocumented"
+        }
+    },
+    "IFrontpage": {
+        "cell_data": {
+            "version": 1,
+            "_type": "dota2"
         }
     },
     "IGCVersion_205790": {
@@ -4061,6 +4247,18 @@
             ]
         }
     },
+    "ILeague": {
+        "GetLeagueInfo": {
+            "version": 2,
+            "_type": "dota2"
+        }
+    },
+    "ILobbies": {
+        "GetJoinableCustomLobbies": {
+            "version": 1,
+            "_type": "dota2"
+        }
+    },
     "IMobileAuthService": {
         "GetWGToken": {
             "version": 1,
@@ -4278,8 +4476,7 @@
                     "optional": false,
                     "description": "The leaderboard name to fetch data for."
                 }
-            ],
-            "_type": "publisher_only"
+            ]
         }
     },
     "IProductInfoService": {
@@ -8161,6 +8358,12 @@
             "_type": "publisher_only"
         }
     },
+    "IStore": {
+        "GetClientStoreData": {
+            "version": 1,
+            "_type": "dota2"
+        }
+    },
     "IStoreService": {
         "GetAppList": {
             "version": 1,
@@ -8368,8 +8571,7 @@
                     "optional": false,
                     "description": "The promo ID to grant an item for"
                 }
-            ],
-            "_type": "publisher_only"
+            ]
         },
         "GrantItem": {
             "version": 1,
@@ -8387,8 +8589,7 @@
                     "optional": false,
                     "description": "The promo ID to grant an item for"
                 }
-            ],
-            "_type": "publisher_only"
+            ]
         }
     },
     "ITFSystem_440": {
@@ -8429,6 +8630,32 @@
                 }
             ],
             "_type": "publisher_only"
+        }
+    },
+    "ITournaments": {
+        "GetGroupStandings": {
+            "version": 1,
+            "_type": "dota2"
+        },
+        "GetLiveLeagueGames": {
+            "version": 1,
+            "_type": "dota2"
+        },
+        "GetTournamentBrackets": {
+            "version": 1,
+            "_type": "dota2"
+        },
+        "GetTournamentInfo": {
+            "version": 1,
+            "_type": "dota2"
+        },
+        "GetTournamentPlayers": {
+            "version": 1,
+            "_type": "dota2"
+        },
+        "GetTournamentSeriesDetails": {
+            "version": 1,
+            "_type": "dota2"
         }
     },
     "ITwoFactorService": {
@@ -8497,6 +8724,12 @@
         "SetVideoBookmark": {
             "version": 1,
             "_type": "undocumented"
+        }
+    },
+    "IWorkshop": {
+        "GetChangeLog": {
+            "version": 1,
+            "_type": "dota2"
         }
     },
     "IWorkshopService": {

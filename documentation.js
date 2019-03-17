@@ -150,11 +150,30 @@
 					case 'steamid': return /^[0-9]{17}$/.test( this.userData[ field ] );
 				}
 			},
+			renderUri( methodName, method )
+			{
+				let host = 'https://api.steampowered.com/';
+				let version = method.version;
+
+				if( method._type === 'dota2' )
+				{
+					host = 'https://www.dota2.com/webapi/';
+
+					// For some reason dota apis specifically want zero padded versions
+					version = version.toString().padStart( 4, '0' );
+				}
+				else if( method._type === 'publisher_only' )
+				{
+					host = 'https://partner.steam-api.com/';
+				}
+
+				return `${host}${this.currentInterface}/${methodName}/v${version}/`;
+			},
 			renderParameters( method )
 			{
 				const parameters = new URLSearchParams();
 
-				if( this.userData.webapi_key )
+				if( this.userData.webapi_key && method._type !== 'dota2' )
 				{
 					parameters.set( 'key', this.userData.webapi_key );
 				}

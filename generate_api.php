@@ -19,6 +19,9 @@ $YesPublisher = curl_exec( $c );
 curl_setopt( $c, CURLOPT_URL, 'https://raw.githubusercontent.com/SteamDatabase/UndocumentedAPI/master/api.json' );
 $Undocumented = curl_exec( $c );
 
+curl_setopt( $c, CURLOPT_URL, 'https://raw.githubusercontent.com/SteamDatabase/UndocumentedAPI/master/dota2.json' );
+$Dota2 = curl_exec( $c );
+
 curl_close( $c );
 
 $YesPublisher = json_decode( $YesPublisher, true );
@@ -30,11 +33,15 @@ $NonPublisher = $NonPublisher[ 'apilist' ][ 'interfaces' ] ?? [];
 $Undocumented = json_decode( $Undocumented, true );
 $Undocumented = $Undocumented[ 'apilist' ][ 'interfaces' ] ?? [];
 
+$Dota2 = json_decode( $Dota2, true );
+$Dota2 = $Dota2[ 'apilist' ][ 'interfaces' ] ?? [];
+
 $FinalList = [];
 
 MergeLists( $FinalList, $NonPublisher );
 MergeLists( $FinalList, $YesPublisher, 'publisher_only' );
 MergeLists( $FinalList, $Undocumented, 'undocumented' );
+MergeLists( $FinalList, $Dota2, 'dota2' );
 
 function MergeLists( array &$FinalList, array $Interfaces, ?string $Type = null ) : void
 {
