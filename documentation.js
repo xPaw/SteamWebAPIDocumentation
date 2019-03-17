@@ -208,6 +208,16 @@
 				{
 					event.preventDefault();
 				}
+
+				for( const field of event.target.elements )
+				{
+					if( !field.value && !field.disabled && field.tagName === "INPUT" )
+					{
+						field.disabled = true;
+
+						setTimeout( () => field.disabled = false, 0 );
+					}
+				}
 			},
 			copyUrl( event )
 			{
