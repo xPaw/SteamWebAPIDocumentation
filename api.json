@@ -2490,8 +2490,7 @@
                     "optional": false,
                     "description": "The Steam ID to fetch items for"
                 }
-            ],
-            "_type": "publisher_only"
+            ]
         },
         "GetSchema": {
             "version": 1,
@@ -2503,8 +2502,7 @@
                     "optional": true,
                     "description": "The language to return the names in. Defaults to returning string keys."
                 }
-            ],
-            "_type": "publisher_only"
+            ]
         }
     },
     "IEconItems_730": {
@@ -4478,8 +4476,7 @@
                     "optional": false,
                     "description": "The leaderboard name to fetch data for."
                 }
-            ],
-            "_type": "publisher_only"
+            ]
         }
     },
     "IProductInfoService": {
@@ -5401,6 +5398,24 @@
                 }
             ],
             "_type": "publisher_only"
+        },
+        "GetSDRConfig": {
+            "version": 1,
+            "httpmethod": "GET",
+            "parameters": [
+                {
+                    "name": "appid",
+                    "type": "uint32",
+                    "optional": false,
+                    "description": "AppID of game"
+                },
+                {
+                    "name": "partner",
+                    "type": "string",
+                    "optional": true,
+                    "description": "Partner type"
+                }
+            ]
         },
         "GetServerList": {
             "version": 1,
@@ -8574,8 +8589,7 @@
                     "optional": false,
                     "description": "The promo ID to grant an item for"
                 }
-            ],
-            "_type": "publisher_only"
+            ]
         },
         "GrantItem": {
             "version": 1,
@@ -8593,8 +8607,7 @@
                     "optional": false,
                     "description": "The promo ID to grant an item for"
                 }
-            ],
-            "_type": "publisher_only"
+            ]
         }
     },
     "ITFSystem_440": {
