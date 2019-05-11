@@ -54,6 +54,7 @@
 			},
 			currentFilter: '',
 			currentInterface: null,
+			skipInterfaceSet: false,
 			interfaces: interfaces,
 		},
 		watch:
@@ -88,6 +89,13 @@
 			},
 			currentInterface( newInterface )
 			{
+				if( this.skipInterfaceSet )
+				{
+					this.skipInterfaceSet = false;
+
+					return;
+				}
+
 				history.replaceState( '', '', '#' + newInterface );
 			},
 		},
@@ -257,18 +265,44 @@
 	function setInterface()
 	{
 		let currentInterface = location.hash;
+		let currentMethod = '';
 
 		if( currentInterface[ 0 ] === '#' )
 		{
-			currentInterface = currentInterface.substring( 1 ).split( '/', 1 )[ 0 ];
+			const split = currentInterface.substring( 1 ).split( '/', 2 );
+			currentInterface = split[ 0 ];
+
+			if( split[ 1 ] )
+			{
+				currentMethod = split[ 1 ];
+			}
 		}
 
 		if( !interfaces.hasOwnProperty( currentInterface ) )
 		{
 			currentInterface = '';
+
+			if( !interfaces[ currentInterface ].hasOwnProperty( currentMethod ) )
+			{
+				currentMethod = '';
+			}
 		}
 
+		app.skipInterfaceSet = true;
 		app.currentInterface = currentInterface;
+
+		if( currentMethod )
+		{
+			app.$nextTick( () =>
+			{
+				const element = document.getElementById( currentMethod );
+
+				if( element )
+				{
+					element.scrollIntoView();
+				}
+			} );
+		}
 	}
 
 	function fillSteamidParameter()

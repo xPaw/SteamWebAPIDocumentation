@@ -292,6 +292,7 @@
 						<template v-for="(method, methodName) in interface">
 							<form
 								target="_blank"
+								:id="methodName"
 								:method="method.httpmethod || 'GET'"
 								:action="renderUri( methodName, method )"
 								:class="[
