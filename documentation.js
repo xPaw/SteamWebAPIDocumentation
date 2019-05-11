@@ -133,20 +133,6 @@
 			{
 				return this.filteredInterfaces[ this.currentInterface ];
 			},
-			sidebarInterfaces()
-			{
-				const sidebar = [];
-
-				for( const interfaceName in this.filteredInterfaces )
-				{
-					sidebar.push( {
-						name: interfaceName,
-						size: Object.keys( this.filteredInterfaces[ interfaceName ] ).length,
-					} );
-				}
-
-				return sidebar;
-			},
 		},
 		methods:
 		{

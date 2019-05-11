@@ -48,6 +48,12 @@
 		list-style: none;
 	}
 
+	.method-list {
+		padding: 0;
+		list-style: none;
+		font-size: 80%;
+	}
+
 	.title {
 		display: inline;
 		font-size: 1.4rem;
@@ -178,14 +184,26 @@
 				<div class="col-lg-3 sidebar py-4">
 					<ul class="interface-list m-0">
 						<li
-							v-for="interface in sidebarInterfaces"
-							:key="interface.name"
+							v-for="(interface, interfaceName) in filteredInterfaces"
+							:key="interfaceName"
+							:class="[
+								{ 'bg-light mb-2 p-2': currentFilter !== '' }
+							]"
 						>
 							<a
-								:href="'#' + interface.name"
-								:class="interface.name === currentInterface ? 'font-weight-bold' : 'text-dark'"
-								@click.prevent="currentInterface = interface.name"
-							><span class="badge badge-light float-right no-select">{{ interface.size }}</span> {{ interface.name }}</a>
+								:href="'#' + interfaceName"
+								:class="interfaceName === currentInterface ? 'font-weight-bold' : 'text-dark'"
+								@click.prevent="currentInterface = interfaceName"
+							><span class="badge badge-light float-right no-select">{{ Object.keys( interface ).length }}</span> {{ interfaceName }}</a>
+
+							<ul class="method-list" v-if="currentFilter">
+								<li
+									v-for="(method, methodName) in interface"
+									:key="methodName"
+									class="text-muted"
+								>{{methodName}}
+								</li>
+							</ul>
 						</li>
 					</ul>
 				</div>
