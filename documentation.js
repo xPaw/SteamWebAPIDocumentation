@@ -32,7 +32,7 @@
 
 	const fuzzy = new Fuse( flattenedMethods, {
 		shouldSort: true,
-		threshold: 0.5,
+		threshold: 0.3,
 		keys: [ {
 			name: 'interface',
 			weight: 0.3
