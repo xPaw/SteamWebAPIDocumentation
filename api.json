@@ -14,6 +14,14 @@
             "version": 1,
             "_type": "undocumented"
         },
+        "GetBuildClipStatus": {
+            "version": 1,
+            "_type": "undocumented"
+        },
+        "GetClipDetails": {
+            "version": 1,
+            "_type": "undocumented"
+        },
         "GetRTMPInfo": {
             "version": 1,
             "_type": "undocumented"
@@ -96,6 +104,10 @@
             "_type": "undocumented"
         },
         "SetRTMPInfo": {
+            "version": 1,
+            "_type": "undocumented"
+        },
+        "StartBuildClip": {
             "version": 1,
             "_type": "undocumented"
         },
@@ -980,6 +992,10 @@
     },
     "ICommunityService": {
         "GetApps": {
+            "version": 1,
+            "_type": "undocumented"
+        },
+        "GetUserPartnerEventNews": {
             "version": 1,
             "_type": "undocumented"
         }
@@ -7612,6 +7628,10 @@
             "version": 1,
             "_type": "undocumented"
         },
+        "GetBroadcastChannelClips": {
+            "version": 1,
+            "_type": "undocumented"
+        },
         "GetBroadcastChannelID": {
             "version": 1,
             "_type": "undocumented"
@@ -7636,6 +7656,10 @@
             "version": 1,
             "_type": "undocumented"
         },
+        "GetChannels": {
+            "version": 1,
+            "_type": "undocumented"
+        },
         "GetChatBans": {
             "version": 1,
             "_type": "undocumented"
@@ -7653,6 +7677,10 @@
             "_type": "undocumented"
         },
         "GetGames": {
+            "version": 1,
+            "_type": "undocumented"
+        },
+        "GetHomePageContents": {
             "version": 1,
             "_type": "undocumented"
         },
