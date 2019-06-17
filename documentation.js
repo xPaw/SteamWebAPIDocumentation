@@ -267,11 +267,11 @@
 		if( !interfaces.hasOwnProperty( currentInterface ) )
 		{
 			currentInterface = '';
-
-			if( !interfaces[ currentInterface ].hasOwnProperty( currentMethod ) )
-			{
-				currentMethod = '';
-			}
+			currentMethod = '';
+		}
+		else if( !interfaces[ currentInterface ].hasOwnProperty( currentMethod ) )
+		{
+			currentMethod = '';
 		}
 
 		app.skipInterfaceSet = true;
