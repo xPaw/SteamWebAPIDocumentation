@@ -3191,6 +3191,16 @@
             "parameters": []
         }
     },
+    "IGameCoordinator": {
+        "GetMessages": {
+            "version": 1,
+            "_type": "undocumented"
+        },
+        "PostMessages": {
+            "version": 1,
+            "_type": "undocumented"
+        }
+    },
     "IGameInventory": {
         "GetHistoryCommandDetails": {
             "version": 1,
@@ -4455,6 +4465,10 @@
         }
     },
     "IMobileNotificationService": {
+        "GetUserNotificationCounts": {
+            "version": 1,
+            "_type": "undocumented"
+        },
         "SwitchSessionToPush": {
             "version": 1,
             "_type": "undocumented"
@@ -5692,6 +5706,18 @@
             ]
         }
     },
+    "ISteamBitPay": {
+        "BitPayPaymentNotification": {
+            "version": 1,
+            "_type": "undocumented"
+        }
+    },
+    "ISteamBoaCompra": {
+        "BoaCompraCheckTransactionStatus": {
+            "version": 1,
+            "_type": "undocumented"
+        }
+    },
     "ISteamCDN": {
         "SetClientFilters": {
             "version": 1,
@@ -6123,6 +6149,10 @@
     },
     "ISteamGameOAuth": {
         "GetAppInfo": {
+            "version": 1,
+            "_type": "undocumented"
+        },
+        "GetPackageInfo": {
             "version": 1,
             "_type": "undocumented"
         }
@@ -7177,6 +7207,18 @@
                 }
             ],
             "_type": "publisher_only"
+        }
+    },
+    "ISteamNodwin": {
+        "NodwinPaymentNotification": {
+            "version": 1,
+            "_type": "undocumented"
+        }
+    },
+    "ISteamPayPalPaymentsHub": {
+        "PayPalPaymentsHubPaymentNotification": {
+            "version": 1,
+            "_type": "undocumented"
         }
     },
     "ISteamPublishedItemSearch": {
