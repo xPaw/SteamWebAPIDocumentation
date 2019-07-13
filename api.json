@@ -964,6 +964,13 @@
             "_type": "publisher_only"
         }
     },
+    "IClientStats_1046930": {
+        "ReportEvent": {
+            "version": 1,
+            "httpmethod": "POST",
+            "parameters": []
+        }
+    },
     "ICloudService": {
         "BeginHTTPUpload": {
             "version": 1,
