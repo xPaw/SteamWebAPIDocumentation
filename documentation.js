@@ -89,6 +89,15 @@
 			},
 			currentInterface( newInterface )
 			{
+				if( newInterface )
+				{
+					document.title = `${newInterface} – Steam Web API Documentation`;
+				}
+				else
+				{
+					document.title = `Steam Web API Documentation`;
+				}
+
 				if( this.skipInterfaceSet )
 				{
 					this.skipInterfaceSet = false;

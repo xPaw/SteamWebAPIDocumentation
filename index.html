@@ -173,7 +173,9 @@
 						<a href="#" :class="[
 							'title',
 							{ 'text-dark': currentInterface !== '' }
-						]" @click.prevent="currentInterface = ''">Steam Web API Documentation</a> with &hearts; by <a href="https://xpaw.me">xPaw</a>
+						]" @click.prevent="currentInterface = ''">Steam Web API Documentation</a>
+						<span class="title" v-if="currentInterface !== ''">– {{ currentInterface }}</span>
+						<span v-else>with &hearts; by <a href="https://xpaw.me">xPaw</a></span>
 					</div>
 				</div>
 			</div>
