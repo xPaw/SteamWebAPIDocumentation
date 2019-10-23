@@ -1032,6 +1032,10 @@
             "version": 1,
             "_type": "undocumented"
         },
+        "GetBestEventsForUser": {
+            "version": 1,
+            "_type": "undocumented"
+        },
         "GetUserPartnerEventNews": {
             "version": 1,
             "_type": "undocumented"
@@ -5492,6 +5496,10 @@
         }
     },
     "IQuestService": {
+        "GetCommunityItemDefinitions": {
+            "version": 1,
+            "_type": "undocumented"
+        },
         "PublisherAddCommunityItemsToPlayer": {
             "version": 1,
             "httpmethod": "POST",
