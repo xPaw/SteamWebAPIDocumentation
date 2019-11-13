@@ -2300,7 +2300,7 @@
             ]
         },
         "GetTournamentPlayerStats": {
-            "version": 1,
+            "version": 2,
             "httpmethod": "GET",
             "parameters": [
                 {
@@ -2512,7 +2512,7 @@
             ]
         },
         "GetTournamentPlayerStats": {
-            "version": 1,
+            "version": 2,
             "httpmethod": "GET",
             "parameters": [
                 {
@@ -2542,6 +2542,12 @@
                 {
                     "name": "match_id",
                     "type": "uint64",
+                    "optional": true,
+                    "description": ""
+                },
+                {
+                    "name": "phase_id",
+                    "type": "uint32",
                     "optional": true,
                     "description": ""
                 }
@@ -6736,7 +6742,7 @@
             "_type": "publisher_only"
         },
         "GetAppList": {
-            "version": 1,
+            "version": 2,
             "httpmethod": "GET",
             "parameters": []
         },
@@ -7444,7 +7450,7 @@
             "_type": "publisher_only"
         },
         "FindOrCreateLeaderboard": {
-            "version": 1,
+            "version": 2,
             "httpmethod": "POST",
             "parameters": [
                 {
@@ -7542,7 +7548,7 @@
             "_type": "publisher_only"
         },
         "GetLeaderboardsForGame": {
-            "version": 1,
+            "version": 2,
             "httpmethod": "GET",
             "parameters": [
                 {
@@ -7681,7 +7687,7 @@
             "_type": "publisher_only"
         },
         "FinalizeTxn": {
-            "version": 1,
+            "version": 2,
             "httpmethod": "POST",
             "parameters": [
                 {
@@ -7700,7 +7706,7 @@
             "_type": "publisher_only"
         },
         "GetReport": {
-            "version": 1,
+            "version": 4,
             "httpmethod": "GET",
             "parameters": [
                 {
@@ -7750,7 +7756,7 @@
             "_type": "publisher_only"
         },
         "GetUserInfo": {
-            "version": 1,
+            "version": 2,
             "httpmethod": "GET",
             "parameters": [
                 {
@@ -7769,7 +7775,7 @@
             "_type": "publisher_only"
         },
         "InitTxn": {
-            "version": 1,
+            "version": 3,
             "httpmethod": "POST",
             "parameters": [
                 {
@@ -7969,7 +7975,7 @@
             "_type": "publisher_only"
         },
         "QueryTxn": {
-            "version": 1,
+            "version": 2,
             "httpmethod": "GET",
             "parameters": [
                 {
@@ -7994,7 +8000,7 @@
             "_type": "publisher_only"
         },
         "RefundTxn": {
-            "version": 1,
+            "version": 2,
             "httpmethod": "POST",
             "parameters": [
                 {
@@ -8071,7 +8077,7 @@
             "_type": "publisher_only"
         },
         "FinalizeTxn": {
-            "version": 1,
+            "version": 2,
             "httpmethod": "POST",
             "parameters": [
                 {
@@ -8090,7 +8096,7 @@
             "_type": "publisher_only"
         },
         "GetReport": {
-            "version": 1,
+            "version": 4,
             "httpmethod": "GET",
             "parameters": [
                 {
@@ -8140,7 +8146,7 @@
             "_type": "publisher_only"
         },
         "GetUserInfo": {
-            "version": 1,
+            "version": 2,
             "httpmethod": "GET",
             "parameters": [
                 {
@@ -8159,7 +8165,7 @@
             "_type": "publisher_only"
         },
         "InitTxn": {
-            "version": 1,
+            "version": 3,
             "httpmethod": "POST",
             "parameters": [
                 {
@@ -8244,7 +8250,7 @@
                     "name": "enddate[0]",
                     "type": "string",
                     "optional": true,
-                    "description": "Optional start date for recurring billing"
+                    "description": "Optional end date for recurring billing"
                 },
                 {
                     "name": "period[0]",
@@ -8305,7 +8311,7 @@
             "_type": "publisher_only"
         },
         "QueryTxn": {
-            "version": 1,
+            "version": 2,
             "httpmethod": "GET",
             "parameters": [
                 {
@@ -8330,7 +8336,7 @@
             "_type": "publisher_only"
         },
         "RefundTxn": {
-            "version": 1,
+            "version": 2,
             "httpmethod": "POST",
             "parameters": [
                 {
@@ -8351,7 +8357,7 @@
     },
     "ISteamNews": {
         "GetNewsForApp": {
-            "version": 1,
+            "version": 2,
             "httpmethod": "GET",
             "parameters": [
                 {
@@ -8379,6 +8385,12 @@
                     "description": "# of posts to retrieve (default 20)"
                 },
                 {
+                    "name": "feeds",
+                    "type": "string",
+                    "optional": true,
+                    "description": "Comma-separated list of feed names to return news for"
+                },
+                {
                     "name": "tags",
                     "type": "string",
                     "optional": true,
@@ -8387,7 +8399,7 @@
             ]
         },
         "GetNewsForAppAuthed": {
-            "version": 1,
+            "version": 2,
             "httpmethod": "GET",
             "parameters": [
                 {
@@ -8419,6 +8431,12 @@
                     "type": "uint32",
                     "optional": true,
                     "description": "# of posts to retrieve (default 20)"
+                },
+                {
+                    "name": "feeds",
+                    "type": "string",
+                    "optional": true,
+                    "description": "Comma-seperated list of feed names to return news for"
                 },
                 {
                     "name": "tags",
@@ -9467,7 +9485,7 @@
     },
     "ISteamUser": {
         "CheckAppOwnership": {
-            "version": 1,
+            "version": 2,
             "httpmethod": "GET",
             "parameters": [
                 {
@@ -9559,7 +9577,7 @@
             ]
         },
         "GetPlayerSummaries": {
-            "version": 1,
+            "version": 2,
             "httpmethod": "GET",
             "parameters": [
                 {
@@ -9572,12 +9590,12 @@
                     "name": "steamids",
                     "type": "string",
                     "optional": false,
-                    "description": "Comma-delimited list of SteamIDs"
+                    "description": "Comma-delimited list of SteamIDs (max: 100)"
                 }
             ]
         },
         "GetPublisherAppOwnership": {
-            "version": 1,
+            "version": 3,
             "httpmethod": "GET",
             "parameters": [
                 {
@@ -9792,7 +9810,7 @@
     },
     "ISteamUserStats": {
         "GetGlobalAchievementPercentagesForApp": {
-            "version": 1,
+            "version": 2,
             "httpmethod": "GET",
             "parameters": [
                 {
@@ -9882,7 +9900,7 @@
             ]
         },
         "GetSchemaForGame": {
-            "version": 1,
+            "version": 2,
             "httpmethod": "GET",
             "parameters": [
                 {
@@ -9901,12 +9919,12 @@
                     "name": "l",
                     "type": "string",
                     "optional": true,
-                    "description": "localized langauge to return (english, french, etc.)"
+                    "description": "localized language to return (english, french, etc.)"
                 }
             ]
         },
         "GetUserStatsForGame": {
-            "version": 1,
+            "version": 2,
             "httpmethod": "GET",
             "parameters": [
                 {
@@ -10230,7 +10248,7 @@
     },
     "ITFItems_440": {
         "GetGoldenWrenches": {
-            "version": 1,
+            "version": 2,
             "httpmethod": "GET",
             "parameters": []
         }
