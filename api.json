@@ -2,36 +2,226 @@
     "IAccountLinkingService": {
         "GetLinkedAccountInfo": {
             "version": 1,
+            "parameters": [
+                {
+                    "name": "key",
+                    "type": "string",
+                    "optional": false,
+                    "description": "Access key"
+                },
+                {
+                    "name": "account_type",
+                    "type": "{message}",
+                    "optional": true,
+                    "description": ""
+                },
+                {
+                    "name": "account_id",
+                    "type": "uint64",
+                    "optional": true,
+                    "description": "Internal account ID"
+                },
+                {
+                    "name": "filter",
+                    "type": "{message}",
+                    "optional": true,
+                    "description": "if specified then only return this external account type"
+                },
+                {
+                    "name": "return_access_token",
+                    "type": "bool",
+                    "optional": true,
+                    "description": "if provided and true, then returns valid access token if available. It may refresh the token. "
+                }
+            ],
             "_type": "undocumented"
         }
     },
     "IBroadcastService": {
         "GetBroadcastUploadStats": {
             "version": 1,
+            "parameters": [
+                {
+                    "name": "key",
+                    "type": "string",
+                    "optional": false,
+                    "description": "Access key"
+                },
+                {
+                    "name": "row_limit",
+                    "type": "uint32",
+                    "optional": true,
+                    "description": "How many at maximum to return."
+                },
+                {
+                    "name": "start_time",
+                    "type": "uint32",
+                    "optional": true,
+                    "description": "Start time"
+                },
+                {
+                    "name": "upload_id",
+                    "type": "uint64",
+                    "optional": true,
+                    "description": "Optional relay upload ID - not compatible with session_id"
+                },
+                {
+                    "name": "steamid",
+                    "type": "fixed64",
+                    "optional": true,
+                    "description": "Optional the steamid whose stats you want, otherwise the user logged in - admin only"
+                },
+                {
+                    "name": "session_id",
+                    "type": "uint64",
+                    "optional": true,
+                    "description": "Optional broadcast session ID - not compatiable with upload_id"
+                }
+            ],
             "_type": "undocumented"
         },
         "GetBroadcastViewerStats": {
             "version": 1,
+            "parameters": [
+                {
+                    "name": "key",
+                    "type": "string",
+                    "optional": false,
+                    "description": "Access key"
+                },
+                {
+                    "name": "upload_id",
+                    "type": "uint64",
+                    "optional": true,
+                    "description": "Get stats for this stream"
+                },
+                {
+                    "name": "steamid",
+                    "type": "fixed64",
+                    "optional": true,
+                    "description": "Optional: The steamid of the broadcast whose details you are requesting."
+                }
+            ],
             "_type": "undocumented"
         },
         "GetBuildClipStatus": {
             "version": 1,
+            "parameters": [
+                {
+                    "name": "key",
+                    "type": "string",
+                    "optional": false,
+                    "description": "Access key"
+                },
+                {
+                    "name": "broadcast_clip_id",
+                    "type": "fixed64",
+                    "optional": true,
+                    "description": ""
+                }
+            ],
             "_type": "undocumented"
         },
         "GetClipDetails": {
             "version": 1,
+            "parameters": [
+                {
+                    "name": "key",
+                    "type": "string",
+                    "optional": false,
+                    "description": "Access key"
+                },
+                {
+                    "name": "broadcast_clip_id",
+                    "type": "uint64",
+                    "optional": true,
+                    "description": "List of clip IDs we want details for"
+                }
+            ],
             "_type": "undocumented"
         },
         "GetRTMPInfo": {
             "version": 1,
+            "parameters": [
+                {
+                    "name": "key",
+                    "type": "string",
+                    "optional": false,
+                    "description": "Access key"
+                },
+                {
+                    "name": "ip",
+                    "type": "uint32",
+                    "optional": true,
+                    "description": ""
+                },
+                {
+                    "name": "steamid",
+                    "type": "fixed64",
+                    "optional": true,
+                    "description": "broadcaster steamID if not logged-in user"
+                }
+            ],
             "_type": "undocumented"
         },
         "MuteBroadcastChatUser": {
             "version": 1,
+            "parameters": [
+                {
+                    "name": "key",
+                    "type": "string",
+                    "optional": false,
+                    "description": "Access key"
+                },
+                {
+                    "name": "chat_id",
+                    "type": "fixed64",
+                    "optional": true,
+                    "description": ""
+                },
+                {
+                    "name": "user_steamid",
+                    "type": "fixed64",
+                    "optional": true,
+                    "description": ""
+                },
+                {
+                    "name": "muted",
+                    "type": "bool",
+                    "optional": true,
+                    "description": ""
+                }
+            ],
             "_type": "undocumented"
         },
         "PostChatMessage": {
             "version": 1,
+            "parameters": [
+                {
+                    "name": "key",
+                    "type": "string",
+                    "optional": false,
+                    "description": "Access key"
+                },
+                {
+                    "name": "chat_id",
+                    "type": "fixed64",
+                    "optional": true,
+                    "description": ""
+                },
+                {
+                    "name": "message",
+                    "type": "string",
+                    "optional": true,
+                    "description": ""
+                },
+                {
+                    "name": "instance_id",
+                    "type": "uint32",
+                    "optional": true,
+                    "description": ""
+                }
+            ],
             "_type": "undocumented"
         },
         "PostGameDataFrame": {
@@ -101,18 +291,200 @@
         },
         "RemoveUserChatText": {
             "version": 1,
+            "parameters": [
+                {
+                    "name": "key",
+                    "type": "string",
+                    "optional": false,
+                    "description": "Access key"
+                },
+                {
+                    "name": "chat_id",
+                    "type": "fixed64",
+                    "optional": true,
+                    "description": ""
+                },
+                {
+                    "name": "user_steamid",
+                    "type": "fixed64",
+                    "optional": true,
+                    "description": ""
+                }
+            ],
+            "_type": "undocumented"
+        },
+        "SetClipDetails": {
+            "version": 1,
+            "parameters": [
+                {
+                    "name": "key",
+                    "type": "string",
+                    "optional": false,
+                    "description": "Access key"
+                },
+                {
+                    "name": "broadcast_clip_id",
+                    "type": "uint64",
+                    "optional": true,
+                    "description": "Clip ID"
+                },
+                {
+                    "name": "start_time",
+                    "type": "uint32",
+                    "optional": true,
+                    "description": "start time of the clip"
+                },
+                {
+                    "name": "end_time",
+                    "type": "uint32",
+                    "optional": true,
+                    "description": "end time of the clip"
+                },
+                {
+                    "name": "video_description",
+                    "type": "string",
+                    "optional": true,
+                    "description": ""
+                }
+            ],
             "_type": "undocumented"
         },
         "SetRTMPInfo": {
             "version": 1,
+            "parameters": [
+                {
+                    "name": "key",
+                    "type": "string",
+                    "optional": false,
+                    "description": "Access key"
+                },
+                {
+                    "name": "broadcast_permission",
+                    "type": "int32",
+                    "optional": true,
+                    "description": ""
+                },
+                {
+                    "name": "update_token",
+                    "type": "bool",
+                    "optional": true,
+                    "description": ""
+                },
+                {
+                    "name": "broadcast_delay",
+                    "type": "int32",
+                    "optional": true,
+                    "description": ""
+                },
+                {
+                    "name": "app_id",
+                    "type": "uint32",
+                    "optional": true,
+                    "description": ""
+                },
+                {
+                    "name": "required_app_id",
+                    "type": "uint32",
+                    "optional": true,
+                    "description": ""
+                },
+                {
+                    "name": "broadcast_chat_permission",
+                    "type": "{message}",
+                    "optional": true,
+                    "description": "Who is permitted to send a chat message during broadcast"
+                },
+                {
+                    "name": "broadcast_buffer",
+                    "type": "int32",
+                    "optional": true,
+                    "description": "Previous seconds we keep of the stream available"
+                },
+                {
+                    "name": "steamid",
+                    "type": "fixed64",
+                    "optional": true,
+                    "description": "broadcaster steamID if not logged-in user"
+                },
+                {
+                    "name": "chat_rate_limit",
+                    "type": "uint32",
+                    "optional": true,
+                    "description": "Seconds required between chat messages"
+                },
+                {
+                    "name": "enable_replay",
+                    "type": "bool",
+                    "optional": true,
+                    "description": "Enable replay of last upload"
+                }
+            ],
             "_type": "undocumented"
         },
         "StartBuildClip": {
             "version": 1,
+            "parameters": [
+                {
+                    "name": "key",
+                    "type": "string",
+                    "optional": false,
+                    "description": "Access key"
+                },
+                {
+                    "name": "steamid",
+                    "type": "fixed64",
+                    "optional": true,
+                    "description": ""
+                },
+                {
+                    "name": "broadcast_session_id",
+                    "type": "fixed64",
+                    "optional": true,
+                    "description": ""
+                },
+                {
+                    "name": "first_segment",
+                    "type": "int32",
+                    "optional": true,
+                    "description": ""
+                },
+                {
+                    "name": "num_segments",
+                    "type": "int32",
+                    "optional": true,
+                    "description": ""
+                },
+                {
+                    "name": "clip_description",
+                    "type": "string",
+                    "optional": true,
+                    "description": ""
+                }
+            ],
             "_type": "undocumented"
         },
         "UpdateChatMessageFlair": {
             "version": 1,
+            "parameters": [
+                {
+                    "name": "key",
+                    "type": "string",
+                    "optional": false,
+                    "description": "Access key"
+                },
+                {
+                    "name": "chat_id",
+                    "type": "fixed64",
+                    "optional": true,
+                    "description": ""
+                },
+                {
+                    "name": "flair",
+                    "type": "string",
+                    "optional": true,
+                    "description": ""
+                }
+            ],
             "_type": "undocumented"
         }
     },
@@ -1004,40 +1376,250 @@
     "ICloudService": {
         "BeginHTTPUpload": {
             "version": 1,
+            "parameters": [
+                {
+                    "name": "key",
+                    "type": "string",
+                    "optional": false,
+                    "description": "Access key"
+                },
+                {
+                    "name": "appid",
+                    "type": "uint32",
+                    "optional": true,
+                    "description": "App ID for which the file is being uploaded."
+                },
+                {
+                    "name": "file_size",
+                    "type": "uint32",
+                    "optional": true,
+                    "description": "Original file size in bytes."
+                },
+                {
+                    "name": "filename",
+                    "type": "string",
+                    "optional": true,
+                    "description": "Name of the file to store in the cloud."
+                },
+                {
+                    "name": "file_sha",
+                    "type": "string",
+                    "optional": true,
+                    "description": "Hex string (40 digits) representing the SHA1 digest of the file."
+                },
+                {
+                    "name": "is_public",
+                    "type": "bool",
+                    "optional": true,
+                    "description": "True if the file should be marked public on the UFS, false otherwise."
+                },
+                {
+                    "name": "platforms_to_sync",
+                    "type": "string",
+                    "optional": true,
+                    "description": "Array of string specifying which platforms to sync; value values: all, Windows, MacOS, linux, Switch, iPhoneOS, Android."
+                },
+                {
+                    "name": "request_headers_names",
+                    "type": "string",
+                    "optional": true,
+                    "description": "Names for headers you'll want to set on your upload request. May be left blank."
+                },
+                {
+                    "name": "request_headers_values",
+                    "type": "string",
+                    "optional": true,
+                    "description": "Values for headers you'll want to set on your upload request. The number of names must equal the number of values."
+                }
+            ],
             "_type": "undocumented"
         },
         "CommitHTTPUpload": {
             "version": 1,
+            "parameters": [
+                {
+                    "name": "key",
+                    "type": "string",
+                    "optional": false,
+                    "description": "Access key"
+                },
+                {
+                    "name": "transfer_succeeded",
+                    "type": "bool",
+                    "optional": true,
+                    "description": "True if the HTTP PUT to the upload URL succeeded (URL provided in response to Cloud.BeginHTTPUpload), false if a failure occurred."
+                },
+                {
+                    "name": "appid",
+                    "type": "uint32",
+                    "optional": true,
+                    "description": "App ID for which the file is being uploaded. Must match the app ID provided to Cloud.BeginHTTPUpload."
+                },
+                {
+                    "name": "file_sha",
+                    "type": "string",
+                    "optional": true,
+                    "description": "Hex string (40 digits) representing the SHA1 digest of the file. Must match the SHA1 digest provided to Cloud.BeginHTTPUpload."
+                },
+                {
+                    "name": "filename",
+                    "type": "string",
+                    "optional": true,
+                    "description": "Filename as specified in the Cloud.BeginHTTPUpload request."
+                }
+            ],
             "_type": "undocumented"
         },
         "Delete": {
             "version": 1,
+            "parameters": [
+                {
+                    "name": "key",
+                    "type": "string",
+                    "optional": false,
+                    "description": "Access key"
+                },
+                {
+                    "name": "filename",
+                    "type": "string",
+                    "optional": true,
+                    "description": ""
+                },
+                {
+                    "name": "appid",
+                    "type": "uint32",
+                    "optional": true,
+                    "description": "App ID the file belongs to."
+                }
+            ],
             "_type": "undocumented"
         },
         "EnumerateUserFiles": {
             "version": 1,
+            "parameters": [
+                {
+                    "name": "key",
+                    "type": "string",
+                    "optional": false,
+                    "description": "Access key"
+                },
+                {
+                    "name": "appid",
+                    "type": "uint32",
+                    "optional": true,
+                    "description": "App ID to enumerate the files of."
+                },
+                {
+                    "name": "extended_details",
+                    "type": "bool",
+                    "optional": true,
+                    "description": "(Optional) Get extended details back on the files found. Defaults to only returned the app Id and UGC Id of the files found."
+                },
+                {
+                    "name": "count",
+                    "type": "uint32",
+                    "optional": true,
+                    "description": "(Optional) Maximum number of results to return on this call. Defaults to a maximum of 500 files returned."
+                },
+                {
+                    "name": "start_index",
+                    "type": "uint32",
+                    "optional": true,
+                    "description": "(Optional) Starting index to begin enumeration at. Defaults to the beginning of the list."
+                }
+            ],
             "_type": "undocumented"
         },
         "GetFileDetails": {
             "version": 1,
+            "parameters": [
+                {
+                    "name": "key",
+                    "type": "string",
+                    "optional": false,
+                    "description": "Access key"
+                },
+                {
+                    "name": "ugcid",
+                    "type": "uint64",
+                    "optional": true,
+                    "description": "ID of the Cloud file to get details for."
+                },
+                {
+                    "name": "appid",
+                    "type": "uint32",
+                    "optional": true,
+                    "description": "App ID the file belongs to."
+                }
+            ],
             "_type": "undocumented"
         },
         "GetUploadServerInfo": {
             "version": 1,
+            "parameters": [
+                {
+                    "name": "key",
+                    "type": "string",
+                    "optional": false,
+                    "description": "Access key"
+                },
+                {
+                    "name": "appid",
+                    "type": "uint32",
+                    "optional": true,
+                    "description": "App ID to which a file will be uploaded to."
+                }
+            ],
             "_type": "undocumented"
         }
     },
     "ICommunityService": {
         "GetApps": {
             "version": 1,
+            "parameters": [
+                {
+                    "name": "key",
+                    "type": "string",
+                    "optional": false,
+                    "description": "Access key"
+                },
+                {
+                    "name": "appids",
+                    "type": "int32",
+                    "optional": true,
+                    "description": ""
+                },
+                {
+                    "name": "language",
+                    "type": "uint32",
+                    "optional": true,
+                    "description": ""
+                }
+            ],
             "_type": "undocumented"
         },
         "GetBestEventsForUser": {
             "version": 1,
+            "parameters": [
+                {
+                    "name": "key",
+                    "type": "string",
+                    "optional": false,
+                    "description": "Access key"
+                }
+            ],
             "_type": "undocumented"
         },
         "GetUserPartnerEventNews": {
             "version": 1,
+            "parameters": [
+                {
+                    "name": "key",
+                    "type": "string",
+                    "optional": false,
+                    "description": "Access key"
+                }
+            ],
             "_type": "undocumented"
         }
     },
@@ -1267,10 +1849,44 @@
     "ICredentialsService": {
         "SteamGuardPhishingReport": {
             "version": 1,
+            "parameters": [
+                {
+                    "name": "key",
+                    "type": "string",
+                    "optional": false,
+                    "description": "Access key"
+                },
+                {
+                    "name": "param_string",
+                    "type": "string",
+                    "optional": true,
+                    "description": ""
+                },
+                {
+                    "name": "ipaddress_actual",
+                    "type": "uint32",
+                    "optional": true,
+                    "description": ""
+                }
+            ],
             "_type": "undocumented"
         },
         "ValidateEmailAddress": {
             "version": 1,
+            "parameters": [
+                {
+                    "name": "key",
+                    "type": "string",
+                    "optional": false,
+                    "description": "Access key"
+                },
+                {
+                    "name": "stoken",
+                    "type": "string",
+                    "optional": true,
+                    "description": ""
+                }
+            ],
             "_type": "undocumented"
         }
     },
@@ -3154,10 +3770,92 @@
     "IFriendMessagesService": {
         "GetActiveMessageSessions": {
             "version": 1,
+            "parameters": [
+                {
+                    "name": "key",
+                    "type": "string",
+                    "optional": false,
+                    "description": "Access key"
+                },
+                {
+                    "name": "lastmessage_since",
+                    "type": "uint32",
+                    "optional": true,
+                    "description": "return only session information where a chat message has been sent since this time (for polling)"
+                },
+                {
+                    "name": "only_sessions_with_messages",
+                    "type": "bool",
+                    "optional": true,
+                    "description": "If non-zero, return only message sessions that have messages since our message cutoff. If zero, we return all active sessions."
+                }
+            ],
             "_type": "undocumented"
         },
         "GetRecentMessages": {
             "version": 1,
+            "parameters": [
+                {
+                    "name": "key",
+                    "type": "string",
+                    "optional": false,
+                    "description": "Access key"
+                },
+                {
+                    "name": "steamid1",
+                    "type": "fixed64",
+                    "optional": true,
+                    "description": ""
+                },
+                {
+                    "name": "steamid2",
+                    "type": "fixed64",
+                    "optional": true,
+                    "description": ""
+                },
+                {
+                    "name": "count",
+                    "type": "uint32",
+                    "optional": true,
+                    "description": "If non-zero, cap the number of recent messages to return."
+                },
+                {
+                    "name": "most_recent_conversation",
+                    "type": "bool",
+                    "optional": true,
+                    "description": "Grab the block of chat from the most recent conversation (a ~5 minute period)"
+                },
+                {
+                    "name": "rtime32_start_time",
+                    "type": "fixed32",
+                    "optional": true,
+                    "description": "If non-zero, return only messages with timestamps greater or equal to this. If zero, we only return messages from a recent time cutoff."
+                },
+                {
+                    "name": "bbcode_format",
+                    "type": "bool",
+                    "optional": true,
+                    "description": "Return the results with bbcode formatting."
+                },
+                {
+                    "name": "start_ordinal",
+                    "type": "uint32",
+                    "optional": true,
+                    "description": "Combined with start time, only messages after this ordinal are returned (dedupes messages in same second)"
+                },
+                {
+                    "name": "time_last",
+                    "type": "uint32",
+                    "optional": true,
+                    "description": "if present/non-zero, return only messages before this."
+                },
+                {
+                    "name": "ordinal_last",
+                    "type": "uint32",
+                    "optional": true,
+                    "description": ""
+                }
+            ],
             "_type": "undocumented"
         },
         "MarkOfflineMessagesRead": {
@@ -3829,6 +4527,26 @@
         },
         "GetServerList": {
             "version": 1,
+            "parameters": [
+                {
+                    "name": "key",
+                    "type": "string",
+                    "optional": false,
+                    "description": "Access key"
+                },
+                {
+                    "name": "filter",
+                    "type": "string",
+                    "optional": true,
+                    "description": "Query filter string."
+                },
+                {
+                    "name": "limit",
+                    "type": "uint32",
+                    "optional": true,
+                    "description": "The maximum number of servers to return in the response"
+                }
+            ],
             "_type": "undocumented"
         },
         "GetServerSteamIDsByIP": {
@@ -4160,6 +4878,50 @@
         },
         "ConsumeItem": {
             "version": 1,
+            "parameters": [
+                {
+                    "name": "key",
+                    "type": "string",
+                    "optional": false,
+                    "description": "Access key"
+                },
+                {
+                    "name": "appid",
+                    "type": "uint32",
+                    "optional": true,
+                    "description": ""
+                },
+                {
+                    "name": "itemid",
+                    "type": "uint64",
+                    "optional": true,
+                    "description": ""
+                },
+                {
+                    "name": "quantity",
+                    "type": "uint32",
+                    "optional": true,
+                    "description": ""
+                },
+                {
+                    "name": "timestamp",
+                    "type": "string",
+                    "optional": true,
+                    "description": ""
+                },
+                {
+                    "name": "steamid",
+                    "type": "uint64",
+                    "optional": true,
+                    "description": ""
+                },
+                {
+                    "name": "requestid",
+                    "type": "uint64",
+                    "optional": true,
+                    "description": ""
+                }
+            ],
             "_type": "undocumented"
         },
         "ExchangeItem": {
@@ -4261,6 +5023,20 @@
         },
         "GetItemDefMeta": {
             "version": 1,
+            "parameters": [
+                {
+                    "name": "key",
+                    "type": "string",
+                    "optional": false,
+                    "description": "Access key"
+                },
+                {
+                    "name": "appid",
+                    "type": "uint32",
+                    "optional": true,
+                    "description": ""
+                }
+            ],
             "_type": "undocumented"
         },
         "GetItemDefs": {
@@ -4524,6 +5300,20 @@
     "IPlayerService": {
         "AddFriend": {
             "version": 1,
+            "parameters": [
+                {
+                    "name": "key",
+                    "type": "string",
+                    "optional": false,
+                    "description": "Access key"
+                },
+                {
+                    "name": "steamid",
+                    "type": "fixed64",
+                    "optional": true,
+                    "description": "Steam ID of user to whom to send a friend invite."
+                }
+            ],
             "_type": "undocumented"
         },
         "GetBadges": {
@@ -4572,6 +5362,14 @@
         },
         "GetNicknameList": {
             "version": 1,
+            "parameters": [
+                {
+                    "name": "key",
+                    "type": "string",
+                    "optional": false,
+                    "description": "Access key"
+                }
+            ],
             "_type": "undocumented"
         },
         "GetOwnedGames": {
@@ -4661,6 +5459,26 @@
         },
         "IgnoreFriend": {
             "version": 1,
+            "parameters": [
+                {
+                    "name": "key",
+                    "type": "string",
+                    "optional": false,
+                    "description": "Access key"
+                },
+                {
+                    "name": "steamid",
+                    "type": "fixed64",
+                    "optional": true,
+                    "description": ""
+                },
+                {
+                    "name": "unignore",
+                    "type": "bool",
+                    "optional": true,
+                    "description": "If set, remove from ignore/block list instead of adding "
+                }
+            ],
             "_type": "undocumented"
         },
         "IsPlayingSharedGame": {
@@ -4712,6 +5530,20 @@
         },
         "RemoveFriend": {
             "version": 1,
+            "parameters": [
+                {
+                    "name": "key",
+                    "type": "string",
+                    "optional": false,
+                    "description": "Access key"
+                },
+                {
+                    "name": "steamid",
+                    "type": "fixed64",
+                    "optional": true,
+                    "description": "Steam ID of friend to remove."
+                }
+            ],
             "_type": "undocumented"
         }
     },
@@ -4763,6 +5595,20 @@
     "IPublishedFileService": {
         "CanSubscribe": {
             "version": 1,
+            "parameters": [
+                {
+                    "name": "key",
+                    "type": "string",
+                    "optional": false,
+                    "description": "Access key"
+                },
+                {
+                    "name": "publishedfileid",
+                    "type": "uint64",
+                    "optional": true,
+                    "description": ""
+                }
+            ],
             "_type": "undocumented"
         },
         "GetDetails": {
@@ -5044,6 +5890,110 @@
         },
         "Publish": {
             "version": 1,
+            "parameters": [
+                {
+                    "name": "key",
+                    "type": "string",
+                    "optional": false,
+                    "description": "Access key"
+                },
+                {
+                    "name": "appid",
+                    "type": "uint32",
+                    "optional": true,
+                    "description": "App Id this file is being published FROM."
+                },
+                {
+                    "name": "consumer_appid",
+                    "type": "uint32",
+                    "optional": true,
+                    "description": "App Id this file is being published TO."
+                },
+                {
+                    "name": "cloudfilename",
+                    "type": "string",
+                    "optional": true,
+                    "description": "Name of the file to publish in the user's cloud."
+                },
+                {
+                    "name": "preview_cloudfilename",
+                    "type": "string",
+                    "optional": true,
+                    "description": "Name of the file to use as the published file's preview."
+                },
+                {
+                    "name": "title",
+                    "type": "string",
+                    "optional": true,
+                    "description": "Text title for the published file."
+                },
+                {
+                    "name": "file_description",
+                    "type": "string",
+                    "optional": true,
+                    "description": "Text description for the published file."
+                },
+                {
+                    "name": "file_type",
+                    "type": "uint32",
+                    "optional": true,
+                    "description": "(EWorkshopFileType) Type of Workshop file to publish."
+                },
+                {
+                    "name": "consumer_shortcut_name",
+                    "type": "string",
+                    "optional": true,
+                    "description": "Shortcut name for the published file."
+                },
+                {
+                    "name": "youtube_username",
+                    "type": "string",
+                    "optional": true,
+                    "description": "(Optional) User's YouTube account username."
+                },
+                {
+                    "name": "youtube_videoid",
+                    "type": "string",
+                    "optional": true,
+                    "description": "(Optional) Video Id of a YouTube video for this published file."
+                },
+                {
+                    "name": "visibility",
+                    "type": "uint32",
+                    "optional": true,
+                    "description": "(ERemoteStoragePublishedFileVisibility) Visibility of the published file (private, friends, public, etc.)"
+                },
+                {
+                    "name": "redirect_uri",
+                    "type": "string",
+                    "optional": true,
+                    "description": "(Optional) If supplied, the resulting published file's Id is appended to the URI."
+                },
+                {
+                    "name": "tags",
+                    "type": "string",
+                    "optional": true,
+                    "description": "Array of text tags to apply to the published file."
+                },
+                {
+                    "name": "collection_type",
+                    "type": "string",
+                    "optional": true,
+                    "description": "(Optional) Type of collection the published file represents."
+                },
+                {
+                    "name": "game_type",
+                    "type": "string",
+                    "optional": true,
+                    "description": "(Optional) Type of game the published file represents."
+                },
+                {
+                    "name": "url",
+                    "type": "string",
+                    "optional": true,
+                    "description": "(Optional) If this represents a game, this is the URL to that game's page."
+                }
+            ],
             "_type": "undocumented"
         },
         "QueryFiles": {
@@ -5343,14 +6293,134 @@
         },
         "Subscribe": {
             "version": 1,
+            "parameters": [
+                {
+                    "name": "key",
+                    "type": "string",
+                    "optional": false,
+                    "description": "Access key"
+                },
+                {
+                    "name": "publishedfileid",
+                    "type": "uint64",
+                    "optional": true,
+                    "description": ""
+                },
+                {
+                    "name": "list_type",
+                    "type": "uint32",
+                    "optional": true,
+                    "description": ""
+                },
+                {
+                    "name": "appid",
+                    "type": "int32",
+                    "optional": true,
+                    "description": ""
+                },
+                {
+                    "name": "notify_client",
+                    "type": "bool",
+                    "optional": true,
+                    "description": ""
+                }
+            ],
             "_type": "undocumented"
         },
         "Unsubscribe": {
             "version": 1,
+            "parameters": [
+                {
+                    "name": "key",
+                    "type": "string",
+                    "optional": false,
+                    "description": "Access key"
+                },
+                {
+                    "name": "publishedfileid",
+                    "type": "uint64",
+                    "optional": true,
+                    "description": ""
+                },
+                {
+                    "name": "list_type",
+                    "type": "uint32",
+                    "optional": true,
+                    "description": ""
+                },
+                {
+                    "name": "appid",
+                    "type": "int32",
+                    "optional": true,
+                    "description": ""
+                },
+                {
+                    "name": "notify_client",
+                    "type": "bool",
+                    "optional": true,
+                    "description": ""
+                }
+            ],
             "_type": "undocumented"
         },
         "Update": {
             "version": 1,
+            "parameters": [
+                {
+                    "name": "key",
+                    "type": "string",
+                    "optional": false,
+                    "description": "Access key"
+                },
+                {
+                    "name": "appid",
+                    "type": "uint32",
+                    "optional": true,
+                    "description": "App Id this published file belongs to."
+                },
+                {
+                    "name": "publishedfileid",
+                    "type": "fixed64",
+                    "optional": true,
+                    "description": "Published file id of the file we'd like update."
+                },
+                {
+                    "name": "title",
+                    "type": "string",
+                    "optional": true,
+                    "description": "(Optional) Title of the published file."
+                },
+                {
+                    "name": "file_description",
+                    "type": "string",
+                    "optional": true,
+                    "description": "(Optional) Description of the published file."
+                },
+                {
+                    "name": "visibility",
+                    "type": "uint32",
+                    "optional": true,
+                    "description": "(Optional) Visibility of the published file."
+                },
+                {
+                    "name": "tags",
+                    "type": "string",
+                    "optional": true,
+                    "description": "(Optional) Set of tags for the published file."
+                },
+                {
+                    "name": "filename",
+                    "type": "string",
+                    "optional": true,
+                    "description": "(Optional) Filename for the published file."
+                },
+                {
+                    "name": "preview_filename",
+                    "type": "string",
+                    "optional": true,
+                    "description": "(Optional) Preview filename for the published file."
+                }
+            ],
             "_type": "undocumented"
         },
         "UpdateBanStatus": {
@@ -5498,6 +6568,50 @@
     "IQuestService": {
         "GetCommunityItemDefinitions": {
             "version": 1,
+            "parameters": [
+                {
+                    "name": "key",
+                    "type": "string",
+                    "optional": false,
+                    "description": "Access key"
+                },
+                {
+                    "name": "appid",
+                    "type": "uint32",
+                    "optional": true,
+                    "description": ""
+                },
+                {
+                    "name": "work_in_progress",
+                    "type": "bool",
+                    "optional": true,
+                    "description": ""
+                },
+                {
+                    "name": "item_type",
+                    "type": "uint32",
+                    "optional": true,
+                    "description": ""
+                },
+                {
+                    "name": "language",
+                    "type": "string",
+                    "optional": true,
+                    "description": ""
+                },
+                {
+                    "name": "broadcast_channel_id",
+                    "type": "uint64",
+                    "optional": true,
+                    "description": ""
+                },
+                {
+                    "name": "keyvalues_as_json",
+                    "type": "bool",
+                    "optional": true,
+                    "description": ""
+                }
+            ],
             "_type": "undocumented"
         },
         "PublisherAddCommunityItemsToPlayer": {
@@ -7916,66 +9030,248 @@
     "ISteamTVService": {
         "AddChatBan": {
             "version": 1,
+            "parameters": [
+                {
+                    "name": "key",
+                    "type": "string",
+                    "optional": false,
+                    "description": "Access key"
+                },
+                {
+                    "name": "broadcast_channel_id",
+                    "type": "fixed64",
+                    "optional": true,
+                    "description": ""
+                },
+                {
+                    "name": "chatter_steamid",
+                    "type": "fixed64",
+                    "optional": true,
+                    "description": ""
+                },
+                {
+                    "name": "duration",
+                    "type": "uint32",
+                    "optional": true,
+                    "description": ""
+                },
+                {
+                    "name": "permanent",
+                    "type": "bool",
+                    "optional": true,
+                    "description": ""
+                },
+                {
+                    "name": "undo",
+                    "type": "bool",
+                    "optional": true,
+                    "description": ""
+                }
+            ],
             "_type": "undocumented"
         },
         "AddChatModerator": {
             "version": 1,
+            "parameters": [
+                {
+                    "name": "key",
+                    "type": "string",
+                    "optional": false,
+                    "description": "Access key"
+                },
+                {
+                    "name": "broadcast_channel_id",
+                    "type": "fixed64",
+                    "optional": true,
+                    "description": ""
+                },
+                {
+                    "name": "moderator_steamid",
+                    "type": "fixed64",
+                    "optional": true,
+                    "description": ""
+                },
+                {
+                    "name": "undo",
+                    "type": "bool",
+                    "optional": true,
+                    "description": ""
+                }
+            ],
             "_type": "undocumented"
         },
         "AddWordBan": {
             "version": 1,
+            "parameters": [
+                {
+                    "name": "key",
+                    "type": "string",
+                    "optional": false,
+                    "description": "Access key"
+                }
+            ],
             "_type": "undocumented"
         },
         "CreateBroadcastChannel": {
             "version": 1,
+            "parameters": [
+                {
+                    "name": "key",
+                    "type": "string",
+                    "optional": false,
+                    "description": "Access key"
+                }
+            ],
             "_type": "undocumented"
         },
         "FollowBroadcastChannel": {
             "version": 1,
+            "parameters": [
+                {
+                    "name": "key",
+                    "type": "string",
+                    "optional": false,
+                    "description": "Access key"
+                }
+            ],
             "_type": "undocumented"
         },
         "GetBroadcastChannelBroadcasters": {
             "version": 1,
+            "parameters": [
+                {
+                    "name": "key",
+                    "type": "string",
+                    "optional": false,
+                    "description": "Access key"
+                }
+            ],
             "_type": "undocumented"
         },
         "GetBroadcastChannelClips": {
             "version": 1,
+            "parameters": [
+                {
+                    "name": "key",
+                    "type": "string",
+                    "optional": false,
+                    "description": "Access key"
+                }
+            ],
             "_type": "undocumented"
         },
         "GetBroadcastChannelID": {
             "version": 1,
+            "parameters": [
+                {
+                    "name": "key",
+                    "type": "string",
+                    "optional": false,
+                    "description": "Access key"
+                }
+            ],
             "_type": "undocumented"
         },
         "GetBroadcastChannelImages": {
             "version": 1,
+            "parameters": [
+                {
+                    "name": "key",
+                    "type": "string",
+                    "optional": false,
+                    "description": "Access key"
+                }
+            ],
             "_type": "undocumented"
         },
         "GetBroadcastChannelInteraction": {
             "version": 1,
+            "parameters": [
+                {
+                    "name": "key",
+                    "type": "string",
+                    "optional": false,
+                    "description": "Access key"
+                }
+            ],
             "_type": "undocumented"
         },
         "GetBroadcastChannelLinks": {
             "version": 1,
+            "parameters": [
+                {
+                    "name": "key",
+                    "type": "string",
+                    "optional": false,
+                    "description": "Access key"
+                }
+            ],
             "_type": "undocumented"
         },
         "GetBroadcastChannelProfile": {
             "version": 1,
+            "parameters": [
+                {
+                    "name": "key",
+                    "type": "string",
+                    "optional": false,
+                    "description": "Access key"
+                }
+            ],
             "_type": "undocumented"
         },
         "GetBroadcastChannelStatus": {
             "version": 1,
+            "parameters": [
+                {
+                    "name": "key",
+                    "type": "string",
+                    "optional": false,
+                    "description": "Access key"
+                }
+            ],
             "_type": "undocumented"
         },
         "GetChannels": {
             "version": 1,
+            "parameters": [
+                {
+                    "name": "key",
+                    "type": "string",
+                    "optional": false,
+                    "description": "Access key"
+                }
+            ],
             "_type": "undocumented"
         },
         "GetChatBans": {
             "version": 1,
+            "parameters": [
+                {
+                    "name": "key",
+                    "type": "string",
+                    "optional": false,
+                    "description": "Access key"
+                }
+            ],
             "_type": "undocumented"
         },
         "GetChatModerators": {
             "version": 1,
+            "parameters": [
+                {
+                    "name": "key",
+                    "type": "string",
+                    "optional": false,
+                    "description": "Access key"
+                },
+                {
+                    "name": "broadcast_channel_id",
+                    "type": "fixed64",
+                    "optional": true,
+                    "description": ""
+                }
+            ],
             "_type": "undocumented"
         },
         "GetFeatured": {
@@ -7984,62 +9280,188 @@
         },
         "GetFollowedChannels": {
             "version": 1,
+            "parameters": [
+                {
+                    "name": "key",
+                    "type": "string",
+                    "optional": false,
+                    "description": "Access key"
+                }
+            ],
             "_type": "undocumented"
         },
         "GetGames": {
             "version": 1,
+            "parameters": [
+                {
+                    "name": "key",
+                    "type": "string",
+                    "optional": false,
+                    "description": "Access key"
+                }
+            ],
             "_type": "undocumented"
         },
         "GetHomePageContents": {
             "version": 1,
+            "parameters": [
+                {
+                    "name": "key",
+                    "type": "string",
+                    "optional": false,
+                    "description": "Access key"
+                }
+            ],
             "_type": "undocumented"
         },
         "GetMyBroadcastChannels": {
             "version": 1,
+            "parameters": [
+                {
+                    "name": "key",
+                    "type": "string",
+                    "optional": false,
+                    "description": "Access key"
+                }
+            ],
             "_type": "undocumented"
         },
         "GetSteamTVUserSettings": {
             "version": 1,
+            "parameters": [
+                {
+                    "name": "key",
+                    "type": "string",
+                    "optional": false,
+                    "description": "Access key"
+                }
+            ],
             "_type": "undocumented"
         },
         "GetSubscribedChannels": {
             "version": 1,
+            "parameters": [
+                {
+                    "name": "key",
+                    "type": "string",
+                    "optional": false,
+                    "description": "Access key"
+                }
+            ],
             "_type": "undocumented"
         },
         "GetWordBans": {
             "version": 1,
+            "parameters": [
+                {
+                    "name": "key",
+                    "type": "string",
+                    "optional": false,
+                    "description": "Access key"
+                }
+            ],
             "_type": "undocumented"
         },
         "JoinChat": {
             "version": 1,
+            "parameters": [
+                {
+                    "name": "key",
+                    "type": "string",
+                    "optional": false,
+                    "description": "Access key"
+                },
+                {
+                    "name": "broadcast_channel_id",
+                    "type": "fixed64",
+                    "optional": true,
+                    "description": ""
+                }
+            ],
             "_type": "undocumented"
         },
         "ReportBroadcastChannel": {
             "version": 1,
+            "parameters": [
+                {
+                    "name": "key",
+                    "type": "string",
+                    "optional": false,
+                    "description": "Access key"
+                }
+            ],
             "_type": "undocumented"
         },
         "Search": {
             "version": 1,
+            "parameters": [
+                {
+                    "name": "key",
+                    "type": "string",
+                    "optional": false,
+                    "description": "Access key"
+                }
+            ],
             "_type": "undocumented"
         },
         "SetBroadcastChannelImage": {
             "version": 1,
+            "parameters": [
+                {
+                    "name": "key",
+                    "type": "string",
+                    "optional": false,
+                    "description": "Access key"
+                }
+            ],
             "_type": "undocumented"
         },
         "SetBroadcastChannelLinkRegions": {
             "version": 1,
+            "parameters": [
+                {
+                    "name": "key",
+                    "type": "string",
+                    "optional": false,
+                    "description": "Access key"
+                }
+            ],
             "_type": "undocumented"
         },
         "SetBroadcastChannelProfile": {
             "version": 1,
+            "parameters": [
+                {
+                    "name": "key",
+                    "type": "string",
+                    "optional": false,
+                    "description": "Access key"
+                }
+            ],
             "_type": "undocumented"
         },
         "SetSteamTVUserSettings": {
             "version": 1,
+            "parameters": [
+                {
+                    "name": "key",
+                    "type": "string",
+                    "optional": false,
+                    "description": "Access key"
+                }
+            ],
             "_type": "undocumented"
         },
         "SubscribeBroadcastChannel": {
             "version": 1,
+            "parameters": [
+                {
+                    "name": "key",
+                    "type": "string",
+                    "optional": false,
+                    "description": "Access key"
+                }
+            ],
             "_type": "undocumented"
         }
     },
@@ -9034,18 +10456,134 @@
     "ITwoFactorService": {
         "AddAuthenticator": {
             "version": 1,
+            "parameters": [
+                {
+                    "name": "key",
+                    "type": "string",
+                    "optional": false,
+                    "description": "Access key"
+                },
+                {
+                    "name": "steamid",
+                    "type": "fixed64",
+                    "optional": true,
+                    "description": "steamid to use"
+                },
+                {
+                    "name": "authenticator_time",
+                    "type": "uint64",
+                    "optional": true,
+                    "description": "Current authenticator time"
+                },
+                {
+                    "name": "serial_number",
+                    "type": "fixed64",
+                    "optional": true,
+                    "description": "locally computed serial (deprecated)"
+                },
+                {
+                    "name": "authenticator_type",
+                    "type": "uint32",
+                    "optional": true,
+                    "description": "Authenticator type"
+                },
+                {
+                    "name": "device_identifier",
+                    "type": "string",
+                    "optional": true,
+                    "description": "Authenticator identifier"
+                },
+                {
+                    "name": "sms_phone_id",
+                    "type": "string",
+                    "optional": true,
+                    "description": "ID of phone to use for SMS verification"
+                },
+                {
+                    "name": "http_headers",
+                    "type": "string",
+                    "optional": true,
+                    "description": "HTTP headers alternating by K/V"
+                }
+            ],
             "_type": "undocumented"
         },
         "CreateEmergencyCodes": {
             "version": 1,
+            "parameters": [
+                {
+                    "name": "key",
+                    "type": "string",
+                    "optional": false,
+                    "description": "Access key"
+                },
+                {
+                    "name": "code",
+                    "type": "string",
+                    "optional": true,
+                    "description": ""
+                }
+            ],
             "_type": "undocumented"
         },
         "DestroyEmergencyCodes": {
             "version": 1,
+            "parameters": [
+                {
+                    "name": "key",
+                    "type": "string",
+                    "optional": false,
+                    "description": "Access key"
+                },
+                {
+                    "name": "steamid",
+                    "type": "fixed64",
+                    "optional": true,
+                    "description": "steamid to use"
+                }
+            ],
             "_type": "undocumented"
         },
         "FinalizeAddAuthenticator": {
             "version": 1,
+            "parameters": [
+                {
+                    "name": "key",
+                    "type": "string",
+                    "optional": false,
+                    "description": "Access key"
+                },
+                {
+                    "name": "steamid",
+                    "type": "fixed64",
+                    "optional": true,
+                    "description": "steamid to use"
+                },
+                {
+                    "name": "authenticator_code",
+                    "type": "string",
+                    "optional": true,
+                    "description": "Current auth code"
+                },
+                {
+                    "name": "authenticator_time",
+                    "type": "uint64",
+                    "optional": true,
+                    "description": "Current authenticator time"
+                },
+                {
+                    "name": "activation_code",
+                    "type": "string",
+                    "optional": true,
+                    "description": "Activation code from out-of-band message"
+                },
+                {
+                    "name": "http_headers",
+                    "type": "string",
+                    "optional": true,
+                    "description": "HTTP headers alternating by K/V"
+                }
+            ],
             "_type": "undocumented"
         },
         "QuerySecrets": {
@@ -9054,6 +10592,20 @@
         },
         "QueryStatus": {
             "version": 1,
+            "parameters": [
+                {
+                    "name": "key",
+                    "type": "string",
+                    "optional": false,
+                    "description": "Access key"
+                },
+                {
+                    "name": "steamid",
+                    "type": "fixed64",
+                    "optional": true,
+                    "description": "steamid to use"
+                }
+            ],
             "_type": "undocumented"
         },
         "QueryTime": {
@@ -9070,6 +10622,38 @@
         },
         "RemoveAuthenticator": {
             "version": 1,
+            "parameters": [
+                {
+                    "name": "key",
+                    "type": "string",
+                    "optional": false,
+                    "description": "Access key"
+                },
+                {
+                    "name": "revocation_code",
+                    "type": "string",
+                    "optional": true,
+                    "description": "Password needed to remove token"
+                },
+                {
+                    "name": "revocation_reason",
+                    "type": "uint32",
+                    "optional": true,
+                    "description": "Reason the authenticator is being removed"
+                },
+                {
+                    "name": "steamguard_scheme",
+                    "type": "uint32",
+                    "optional": true,
+                    "description": "Type of Steam Guard to use once token is removed"
+                },
+                {
+                    "name": "remove_all_steamguard_cookies",
+                    "type": "bool",
+                    "optional": true,
+                    "description": "Remove all steamguard cookies"
+                }
+            ],
             "_type": "undocumented"
         },
         "RemoveAuthenticatorViaChallengeContinue": {
@@ -9082,20 +10666,94 @@
         },
         "SendEmail": {
             "version": 1,
+            "parameters": [
+                {
+                    "name": "key",
+                    "type": "string",
+                    "optional": false,
+                    "description": "Access key"
+                },
+                {
+                    "name": "steamid",
+                    "type": "fixed64",
+                    "optional": true,
+                    "description": "Steamid to use"
+                },
+                {
+                    "name": "email_type",
+                    "type": "uint32",
+                    "optional": true,
+                    "description": "Type of email to send (ETwoFactorEmailType::*)"
+                },
+                {
+                    "name": "include_activation_code",
+                    "type": "bool",
+                    "optional": true,
+                    "description": "Include activation code in email parameters"
+                }
+            ],
             "_type": "undocumented"
         },
         "ValidateToken": {
             "version": 1,
+            "parameters": [
+                {
+                    "name": "key",
+                    "type": "string",
+                    "optional": false,
+                    "description": "Access key"
+                },
+                {
+                    "name": "code",
+                    "type": "string",
+                    "optional": true,
+                    "description": "code to validate"
+                }
+            ],
             "_type": "undocumented"
         }
     },
     "IVideoService": {
         "GetVideoBookmarks": {
             "version": 1,
+            "parameters": [
+                {
+                    "name": "key",
+                    "type": "string",
+                    "optional": false,
+                    "description": "Access key"
+                },
+                {
+                    "name": "appids",
+                    "type": "uint32",
+                    "optional": true,
+                    "description": "List of App IDs to grab bookmarks for. Can be empty if using updated_since."
+                },
+                {
+                    "name": "updated_since",
+                    "type": "uint32",
+                    "optional": true,
+                    "description": "Only return results after time. Min value is 1. (seconds since epoch January 1st, 1970 Unix Time)"
+                }
+            ],
             "_type": "undocumented"
         },
         "SetVideoBookmark": {
             "version": 1,
+            "parameters": [
+                {
+                    "name": "key",
+                    "type": "string",
+                    "optional": false,
+                    "description": "Access key"
+                },
+                {
+                    "name": "bookmarks",
+                    "type": "{message}",
+                    "optional": true,
+                    "description": "list of bookmarks we want to store."
+                }
+            ],
             "_type": "undocumented"
         }
     },
