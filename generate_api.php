@@ -33,6 +33,15 @@ $NonPublisher = $NonPublisher[ 'apilist' ][ 'interfaces' ] ?? [];
 $Undocumented = json_decode( $Undocumented, true );
 $Undocumented = $Undocumented[ 'apilist' ][ 'interfaces' ] ?? [];
 
+if( file_exists( __DIR__ . '/api_from_protos.json' ) )
+{
+	$UndocumentedFromServices = json_decode( file_get_contents( __DIR__ . '/api_from_protos.json' ), true );
+}
+else
+{
+	$UndocumentedFromServices = [];
+}
+
 $Dota2 = json_decode( $Dota2, true );
 $Dota2 = $Dota2[ 'apilist' ][ 'interfaces' ] ?? [];
 
@@ -40,6 +49,7 @@ $FinalList = [];
 
 MergeLists( $FinalList, $NonPublisher );
 MergeLists( $FinalList, $YesPublisher, 'publisher_only' );
+MergeLists( $FinalList, $UndocumentedFromServices, 'undocumented' );
 MergeLists( $FinalList, $Undocumented, 'undocumented' );
 MergeLists( $FinalList, $Dota2, 'dota2' );
 

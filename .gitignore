@@ -1,1 +1,3 @@
 config.php
+generate_api_from_protos.php
+api_from_protos.json
