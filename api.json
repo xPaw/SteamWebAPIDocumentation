@@ -2,6 +2,7 @@
     "IAccountLinkingService": {
         "GetLinkedAccountInfo": {
             "version": 1,
+            "description": "List all my active linked external accounts; may be requested to return the access token",
             "parameters": [
                 {
                     "name": "key",
@@ -40,6 +41,7 @@
     "IBroadcastService": {
         "GetBroadcastUploadStats": {
             "version": 1,
+            "description": "Gets broadcast upload stats for user",
             "parameters": [
                 {
                     "name": "key",
@@ -82,6 +84,7 @@
         },
         "GetBroadcastViewerStats": {
             "version": 1,
+            "description": "Gets viewer stats for given broadcast",
             "parameters": [
                 {
                     "name": "key",
@@ -106,6 +109,7 @@
         },
         "GetBuildClipStatus": {
             "version": 1,
+            "description": "Start building a broadcast clip",
             "parameters": [
                 {
                     "name": "key",
@@ -124,6 +128,7 @@
         },
         "GetClipDetails": {
             "version": 1,
+            "description": "Get details for Broadcast Clips",
             "parameters": [
                 {
                     "name": "key",
@@ -142,6 +147,7 @@
         },
         "GetRTMPInfo": {
             "version": 1,
+            "description": "Gets RTMP broadcast info",
             "parameters": [
                 {
                     "name": "key",
@@ -166,6 +172,7 @@
         },
         "MuteBroadcastChatUser": {
             "version": 1,
+            "description": "Mute a user in your broadcast chat",
             "parameters": [
                 {
                     "name": "key",
@@ -196,6 +203,7 @@
         },
         "PostChatMessage": {
             "version": 1,
+            "description": "Post chat message to specified chat room",
             "parameters": [
                 {
                     "name": "key",
@@ -291,6 +299,7 @@
         },
         "RemoveUserChatText": {
             "version": 1,
+            "description": "Tell all viewers to remove user chat text",
             "parameters": [
                 {
                     "name": "key",
@@ -315,6 +324,7 @@
         },
         "SetClipDetails": {
             "version": 1,
+            "description": "Updates a broadcast clip",
             "parameters": [
                 {
                     "name": "key",
@@ -351,6 +361,7 @@
         },
         "SetRTMPInfo": {
             "version": 1,
+            "description": "Sets RTMP broadcast info",
             "parameters": [
                 {
                     "name": "key",
@@ -423,6 +434,7 @@
         },
         "StartBuildClip": {
             "version": 1,
+            "description": "Start building a broadcast clip",
             "parameters": [
                 {
                     "name": "key",
@@ -465,6 +477,7 @@
         },
         "UpdateChatMessageFlair": {
             "version": 1,
+            "description": "Update chat message flair in the specified chat room",
             "parameters": [
                 {
                     "name": "key",
@@ -1376,6 +1389,7 @@
     "ICloudService": {
         "BeginHTTPUpload": {
             "version": 1,
+            "description": "Begins the process of uploading a file to Steam external storage services. File should be uploaded via HTTP PUT to the returned URL, after which the upload must be finalized by a call to CommitHTTPUpload.",
             "parameters": [
                 {
                     "name": "key",
@@ -1436,6 +1450,7 @@
         },
         "CommitHTTPUpload": {
             "version": 1,
+            "description": "Commits a file upload initiated by BeginHTTPUpload and transferred via HTTP PUT.",
             "parameters": [
                 {
                     "name": "key",
@@ -1472,6 +1487,7 @@
         },
         "Delete": {
             "version": 1,
+            "description": "Deletes a file from the user's cloud.",
             "parameters": [
                 {
                     "name": "key",
@@ -1496,6 +1512,7 @@
         },
         "EnumerateUserFiles": {
             "version": 1,
+            "description": "Enumerates Cloud files for a user of a given app ID. Returns up to 500 files at a time.",
             "parameters": [
                 {
                     "name": "key",
@@ -1532,6 +1549,7 @@
         },
         "GetFileDetails": {
             "version": 1,
+            "description": "Returns details on a Cloud file.",
             "parameters": [
                 {
                     "name": "key",
@@ -1556,6 +1574,7 @@
         },
         "GetUploadServerInfo": {
             "version": 1,
+            "description": "Returns the URL of the proper cloud server for a user.",
             "parameters": [
                 {
                     "name": "key",
@@ -1849,6 +1868,7 @@
     "ICredentialsService": {
         "SteamGuardPhishingReport": {
             "version": 1,
+            "description": "SteamGuardPhishingReport",
             "parameters": [
                 {
                     "name": "key",
@@ -1873,6 +1893,7 @@
         },
         "ValidateEmailAddress": {
             "version": 1,
+            "description": "Validate an email address given a token",
             "parameters": [
                 {
                     "name": "key",
@@ -3776,6 +3797,7 @@
     "IFriendMessagesService": {
         "GetActiveMessageSessions": {
             "version": 1,
+            "description": "Get information about recent offline messages and chats",
             "parameters": [
                 {
                     "name": "key",
@@ -3800,6 +3822,7 @@
         },
         "GetRecentMessages": {
             "version": 1,
+            "description": "Get a log of recent chat messages between two users",
             "parameters": [
                 {
                     "name": "key",
@@ -4533,6 +4556,7 @@
         },
         "GetServerList": {
             "version": 1,
+            "description": "Gets a list of servers given a filter string",
             "parameters": [
                 {
                     "name": "key",
@@ -4884,6 +4908,7 @@
         },
         "ConsumeItem": {
             "version": 1,
+            "description": "Consume an item",
             "parameters": [
                 {
                     "name": "key",
@@ -5029,6 +5054,7 @@
         },
         "GetItemDefMeta": {
             "version": 1,
+            "description": "Get metadata about the current item definition for this game.",
             "parameters": [
                 {
                     "name": "key",
@@ -5601,6 +5627,7 @@
     "IPublishedFileService": {
         "CanSubscribe": {
             "version": 1,
+            "description": "Check if the user can subscribe to the published file",
             "parameters": [
                 {
                     "name": "key",
@@ -5896,6 +5923,7 @@
         },
         "Publish": {
             "version": 1,
+            "description": "Publishes a clouded user file to the Workshop.",
             "parameters": [
                 {
                     "name": "key",
@@ -6299,6 +6327,7 @@
         },
         "Subscribe": {
             "version": 1,
+            "description": "Subscribes the user to the published file",
             "parameters": [
                 {
                     "name": "key",
@@ -6335,6 +6364,7 @@
         },
         "Unsubscribe": {
             "version": 1,
+            "description": "Unsubscribes the user from the published file",
             "parameters": [
                 {
                     "name": "key",
@@ -10474,6 +10504,7 @@
     "ITwoFactorService": {
         "AddAuthenticator": {
             "version": 1,
+            "description": "Add two-factor authenticator to the logged-in account",
             "parameters": [
                 {
                     "name": "key",
@@ -10528,6 +10559,7 @@
         },
         "CreateEmergencyCodes": {
             "version": 1,
+            "description": "Generate emergency authenticator codes",
             "parameters": [
                 {
                     "name": "key",
@@ -10546,6 +10578,7 @@
         },
         "DestroyEmergencyCodes": {
             "version": 1,
+            "description": "Destroy emergency authenticator codes for the account",
             "parameters": [
                 {
                     "name": "key",
@@ -10564,6 +10597,7 @@
         },
         "FinalizeAddAuthenticator": {
             "version": 1,
+            "description": "Finalize two-factor authentication addition to the logged-in account",
             "parameters": [
                 {
                     "name": "key",
@@ -10610,6 +10644,7 @@
         },
         "QueryStatus": {
             "version": 1,
+            "description": "Get two-factor authentication settings for the logged-in account",
             "parameters": [
                 {
                     "name": "key",
@@ -10640,6 +10675,7 @@
         },
         "RemoveAuthenticator": {
             "version": 1,
+            "description": "Remove two-factor authentication addition from the logged-in account",
             "parameters": [
                 {
                     "name": "key",
@@ -10684,6 +10720,7 @@
         },
         "SendEmail": {
             "version": 1,
+            "description": "Send email to the account",
             "parameters": [
                 {
                     "name": "key",
@@ -10714,6 +10751,7 @@
         },
         "ValidateToken": {
             "version": 1,
+            "description": "Check if the given parental unlock token is correct for the logged in account",
             "parameters": [
                 {
                     "name": "key",
@@ -10734,6 +10772,7 @@
     "IVideoService": {
         "GetVideoBookmarks": {
             "version": 1,
+            "description": "Returns the video bookmarks locations for the specific videos. Includes playback settings per video",
             "parameters": [
                 {
                     "name": "key",
@@ -10758,6 +10797,7 @@
         },
         "SetVideoBookmark": {
             "version": 1,
+            "description": "Bookmarks the locations in the video the user has reached. As as record playback settings per video. Fire and forget.",
             "parameters": [
                 {
                     "name": "key",
