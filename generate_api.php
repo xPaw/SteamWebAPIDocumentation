@@ -45,8 +45,9 @@ else
 $Dota2 = json_decode( $Dota2, true );
 $Dota2 = $Dota2[ 'apilist' ][ 'interfaces' ] ?? [];
 
-$FinalList = [];
+$FinalList = file_exists( __DIR__ . '/api.json' ) ? json_decode( file_get_contents( __DIR__ . '/api.json' ), true ) : [];
 
+MarkAsRemoved( $FinalList );
 MergeLists( $FinalList, $NonPublisher );
 MergeLists( $FinalList, $YesPublisher, 'publisher_only' );
 MergeLists( $FinalList, $UndocumentedFromServices, 'undocumented' );
@@ -64,7 +65,10 @@ function MergeLists( array &$FinalList, array $Interfaces, ?string $Type = null 
 
 		foreach( $Interface[ 'methods' ] as $Method )
 		{
-			if( $FinalList[ $Interface[ 'name' ] ][ $Method[ 'name' ] ][ 'version' ] ?? 0 >= $Method[ 'version' ] )
+			$CurrentVersion = $FinalList[ $Interface[ 'name' ] ][ $Method[ 'name' ] ][ 'version' ] ?? 0;
+			$CurrentType = $FinalList[ $Interface[ 'name' ] ][ $Method[ 'name' ] ][ '_type' ] ?? null;
+
+			if( $CurrentVersion >= $Method[ 'version' ] && $CurrentType !== 'removed' )
 			{
 				continue;
 			}
@@ -77,6 +81,17 @@ function MergeLists( array &$FinalList, array $Interfaces, ?string $Type = null 
 			$FinalList[ $Interface[ 'name' ] ][ $Method[ 'name' ] ] = $Method;
 
 			unset( $FinalList[ $Interface[ 'name' ] ][ $Method[ 'name' ] ][ 'name' ] );
+		}
+	}
+}
+
+function MarkAsRemoved( array &$FinalList )
+{
+	foreach( $FinalList as &$Interface )
+	{
+		foreach( $Interface as &$Method )
+		{
+			$Method[ '_type' ] = 'removed';
 		}
 	}
 }
