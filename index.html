@@ -303,6 +303,19 @@
 								</p>
 							</div>
 						</div>
+
+						<div class="card border-primary mt-3">
+							<div class="card-header bg-primary text-white">Sitemap</div>
+							<div class="card-body">
+								<ul>
+									<template v-for="(interface, interfaceName) in interfaces" :key="interfaceName">
+										<li v-for="(method, methodName) in interface" :key="methodName">
+											<a :href="'#' + interfaceName + '/' + methodName">{{ interfaceName }}/{{methodName}}</a>
+										</li>
+									</template>
+								</ul>
+							</div>
+						</div>
 					</div>
 					<div class="interface" ref="interfaceView" v-else>
 						<div class="alert alert-success" v-if="currentFilter">
