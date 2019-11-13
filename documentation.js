@@ -9,15 +9,17 @@
 	{
 		for( const methodName in interfaces[ interfaceName ] )
 		{
-			if( interfaces[ interfaceName ][ methodName ]._type === 'undocumented' )
+			const method = interfaces[ interfaceName ][ methodName ];
+
+			if( !method.description && method._type === 'undocumented' )
 			{
-				interfaces[ interfaceName ][ methodName ].description =
+				method.description =
 					'This method is undocumented and most likely is not supported by Valve, use at your own risk.';
 			}
 
-			if( interfaces[ interfaceName ][ methodName ].parameters )
+			if( method.parameters )
 			{
-				for( const parameter of interfaces[ interfaceName ][ methodName ].parameters )
+				for( const parameter of method.parameters )
 				{
 					parameter._value = '';
 				}
