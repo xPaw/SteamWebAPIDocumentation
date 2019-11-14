@@ -349,7 +349,7 @@
 
 									<a class="badge badge-light no-select" href="https://github.com/SteamDatabase/UndocumentedAPI" target="_blank" rel="noopener" v-if="method._type === 'undocumented'">UNDOCUMENTED</a>
 									<a class="badge badge-light no-select" href="https://github.com/SteamDatabase/UndocumentedAPI" target="_blank" rel="noopener" v-if="method._type === 'dota2'">DOTA 2</a>
-									<a class="badge badge-light no-select" href="https://github.com/SteamDatabase/Protobufs" target="_blank" rel="noopener" v-if="method._type === 'protobufs'">PROTOBUFS</a>
+									<a class="badge badge-primary no-select" href="https://github.com/SteamDatabase/Protobufs" target="_blank" rel="noopener" v-if="method._type === 'protobufs'">PROTOBUF</a>
 									<span :class="method.httpmethod === 'GET' ? 'badge badge-success' : 'badge badge-danger'">{{ method.httpmethod }}</span>
 									<a class="badge badge-warning no-select" v-if="method._type === 'publisher_only'" :href="`https://partner.steamgames.com/doc/webapi/${currentInterface}#${methodName}`" target="_blank" rel="noopener">PUBLISHER</a>
 									<span @click="updateUrl(methodName)">{{ methodName }}</span>
