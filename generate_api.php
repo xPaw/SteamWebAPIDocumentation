@@ -50,7 +50,7 @@ $FinalList = file_exists( __DIR__ . '/api.json' ) ? json_decode( file_get_conten
 MarkAsRemoved( $FinalList );
 MergeLists( $FinalList, $NonPublisher );
 MergeLists( $FinalList, $YesPublisher, 'publisher_only' );
-MergeLists( $FinalList, $UndocumentedFromServices, 'undocumented' );
+MergeLists( $FinalList, $UndocumentedFromServices, 'protobufs' );
 MergeLists( $FinalList, $Undocumented, 'undocumented' );
 MergeLists( $FinalList, $Dota2, 'dota2' );
 

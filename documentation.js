@@ -11,10 +11,9 @@
 		{
 			const method = interfaces[ interfaceName ][ methodName ];
 
-			if( !method.description && method._type === 'undocumented' )
+			if( method._type === 'removed' )
 			{
-				method.description =
-					'This method is undocumented and most likely is not supported by Valve, use at your own risk.';
+				method._type = 'undocumented';
 			}
 
 			if( method.parameters )
