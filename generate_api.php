@@ -104,11 +104,11 @@ function MarkAsRemoved( array &$FinalList ) : void
 	}
 }
 
-ksort( $FinalList );
+ksort( $FinalList, SORT_NATURAL );
 
 foreach( $FinalList as &$Interfaces )
 {
-	ksort( $Interfaces );
+	ksort( $Interfaces, SORT_NATURAL );
 }
 
 file_put_contents(
