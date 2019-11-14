@@ -5487,6 +5487,20 @@
         },
         "GetSteamLevelDistribution": {
             "version": 1,
+            "description": "Returns how a given Steam Level compares the user base at large",
+            "parameters": [
+                {
+                    "name": "key",
+                    "type": "string",
+                    "optional": false,
+                    "description": "Access key"
+                },
+                {
+                    "name": "player_level",
+                    "type": "uint32",
+                    "optional": false
+                }
+            ],
             "_type": "undocumented"
         },
         "IgnoreFriend": {
@@ -6708,15 +6722,90 @@
     "IRemoteClientService": {
         "NotifyRegisterStatusUpdate": {
             "version": 1,
-            "_type": "undocumented"
+            "description": "Register for status updates with a Steam client",
+            "parameters": [
+                {
+                    "name": "key",
+                    "type": "string",
+                    "optional": false,
+                    "description": "Access key"
+                },
+                {
+                    "name": "session_id",
+                    "type": "fixed64",
+                    "optional": true,
+                    "description": ""
+                },
+                {
+                    "name": "steamid",
+                    "type": "fixed64",
+                    "optional": true,
+                    "description": ""
+                },
+                {
+                    "name": "device_id",
+                    "type": "fixed64",
+                    "optional": true,
+                    "description": ""
+                }
+            ],
+            "_type": "protobufs"
         },
         "NotifyRemotePacket": {
             "version": 1,
-            "_type": "undocumented"
+            "description": "Send a packet to a Steam client",
+            "parameters": [
+                {
+                    "name": "key",
+                    "type": "string",
+                    "optional": false,
+                    "description": "Access key"
+                },
+                {
+                    "name": "session_id",
+                    "type": "fixed64",
+                    "optional": true,
+                    "description": ""
+                },
+                {
+                    "name": "steamid",
+                    "type": "fixed64",
+                    "optional": true,
+                    "description": ""
+                },
+                {
+                    "name": "payload",
+                    "type": "bytes",
+                    "optional": true,
+                    "description": ""
+                }
+            ],
+            "_type": "protobufs"
         },
         "NotifyUnregisterStatusUpdate": {
             "version": 1,
-            "_type": "undocumented"
+            "description": "Unregister for status updates with a Steam client",
+            "parameters": [
+                {
+                    "name": "key",
+                    "type": "string",
+                    "optional": false,
+                    "description": "Access key"
+                },
+                {
+                    "name": "session_id",
+                    "type": "fixed64",
+                    "optional": true,
+                    "description": ""
+                },
+                {
+                    "name": "steamid",
+                    "type": "fixed64",
+                    "optional": true,
+                    "description": ""
+                }
+            ],
+            "_type": "protobufs"
         }
     },
     "ISteamApps": {
