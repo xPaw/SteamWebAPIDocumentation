@@ -7023,12 +7023,16 @@
     "ISteamBitPay": {
         "BitPayPaymentNotification": {
             "version": 1,
+            "httpmethod": "POST",
+            "parameters": [],
             "_type": "undocumented"
         }
     },
     "ISteamBoaCompra": {
         "BoaCompraCheckTransactionStatus": {
             "version": 1,
+            "httpmethod": "POST",
+            "parameters": [],
             "_type": "undocumented"
         }
     },
@@ -8570,12 +8574,16 @@
     "ISteamNodwin": {
         "NodwinPaymentNotification": {
             "version": 1,
+            "httpmethod": "POST",
+            "parameters": [],
             "_type": "undocumented"
         }
     },
     "ISteamPayPalPaymentsHub": {
         "PayPalPaymentsHubPaymentNotification": {
             "version": 1,
+            "httpmethod": "POST",
+            "parameters": [],
             "_type": "undocumented"
         }
     },
