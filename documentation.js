@@ -11,11 +11,6 @@
 		{
 			const method = interfaces[ interfaceName ][ methodName ];
 
-			if( method._type === 'removed' )
-			{
-				method._type = 'undocumented';
-			}
-
 			if( method.parameters )
 			{
 				for( const parameter of method.parameters )

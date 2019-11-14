@@ -58,40 +58,48 @@ function MergeLists( array &$FinalList, array $Interfaces, ?string $Type = null 
 {
 	foreach( $Interfaces as $Interface )
 	{
-		if( !isset( $FinalList[ $Interface[ 'name' ] ] ) )
+		$InterfaceName = $Interface[ 'name' ];
+
+		if( !isset( $FinalList[ $InterfaceName ] ) )
 		{
-			$FinalList[ $Interface[ 'name' ] ] = [];
+			$FinalList[ $InterfaceName ] = [];
 		}
 
 		foreach( $Interface[ 'methods' ] as $Method )
 		{
-			$CurrentVersion = $FinalList[ $Interface[ 'name' ] ][ $Method[ 'name' ] ][ 'version' ] ?? 0;
-			$CurrentType = $FinalList[ $Interface[ 'name' ] ][ $Method[ 'name' ] ][ '_type' ] ?? null;
+			$MethodName = $Method[ 'name' ];
+			$CurrentVersion = $FinalList[ $InterfaceName ][ $MethodName ][ 'version' ] ?? 0;
+			$CurrentType = $FinalList[ $InterfaceName ][ $MethodName ][ '_type' ] ?? null;
 
-			if( $CurrentVersion >= $Method[ 'version' ] && $CurrentType !== 'removed' )
+			if( $CurrentVersion >= $Method[ 'version' ] && $CurrentType !== 'undocumented' )
 			{
 				continue;
 			}
+
+			if( $CurrentType === 'undocumented' && $CurrentType === $Type )
+			{
+				continue;
+			}
+
+			unset( $Method[ 'name' ] );
 
 			if( $Type !== null )
 			{
 				$Method[ '_type' ] = $Type;
 			}
 
-			$FinalList[ $Interface[ 'name' ] ][ $Method[ 'name' ] ] = $Method;
-
-			unset( $FinalList[ $Interface[ 'name' ] ][ $Method[ 'name' ] ][ 'name' ] );
+			$FinalList[ $InterfaceName ][ $MethodName ] = $Method;
 		}
 	}
 }
 
-function MarkAsRemoved( array &$FinalList )
+function MarkAsRemoved( array &$FinalList ) : void
 {
 	foreach( $FinalList as &$Interface )
 	{
 		foreach( $Interface as &$Method )
 		{
-			$Method[ '_type' ] = 'removed';
+			$Method[ '_type' ] = 'undocumented';
 		}
 	}
 }
