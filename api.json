@@ -35,7 +35,7 @@
                     "description": "if provided and true, then returns valid access token if available. It may refresh the token. "
                 }
             ],
-            "_type": "undocumented"
+            "_type": "protobufs"
         }
     },
     "IBroadcastService": {
@@ -80,7 +80,7 @@
                     "description": "Optional broadcast session ID - not compatiable with upload_id"
                 }
             ],
-            "_type": "undocumented"
+            "_type": "protobufs"
         },
         "GetBroadcastViewerStats": {
             "version": 1,
@@ -105,7 +105,7 @@
                     "description": "Optional: The steamid of the broadcast whose details you are requesting."
                 }
             ],
-            "_type": "undocumented"
+            "_type": "protobufs"
         },
         "GetBuildClipStatus": {
             "version": 1,
@@ -124,7 +124,7 @@
                     "description": ""
                 }
             ],
-            "_type": "undocumented"
+            "_type": "protobufs"
         },
         "GetClipDetails": {
             "version": 1,
@@ -143,7 +143,7 @@
                     "description": "List of clip IDs we want details for"
                 }
             ],
-            "_type": "undocumented"
+            "_type": "protobufs"
         },
         "GetRTMPInfo": {
             "version": 1,
@@ -168,7 +168,7 @@
                     "description": "broadcaster steamID if not logged-in user"
                 }
             ],
-            "_type": "undocumented"
+            "_type": "protobufs"
         },
         "MuteBroadcastChatUser": {
             "version": 1,
@@ -199,7 +199,7 @@
                     "description": ""
                 }
             ],
-            "_type": "undocumented"
+            "_type": "protobufs"
         },
         "PostChatMessage": {
             "version": 1,
@@ -230,7 +230,7 @@
                     "description": ""
                 }
             ],
-            "_type": "undocumented"
+            "_type": "protobufs"
         },
         "PostGameDataFrame": {
             "version": 1,
@@ -320,7 +320,7 @@
                     "description": ""
                 }
             ],
-            "_type": "undocumented"
+            "_type": "protobufs"
         },
         "SetClipDetails": {
             "version": 1,
@@ -357,7 +357,7 @@
                     "description": ""
                 }
             ],
-            "_type": "undocumented"
+            "_type": "protobufs"
         },
         "SetRTMPInfo": {
             "version": 1,
@@ -430,7 +430,7 @@
                     "description": "Enable replay of last upload"
                 }
             ],
-            "_type": "undocumented"
+            "_type": "protobufs"
         },
         "StartBuildClip": {
             "version": 1,
@@ -473,7 +473,7 @@
                     "description": ""
                 }
             ],
-            "_type": "undocumented"
+            "_type": "protobufs"
         },
         "UpdateChatMessageFlair": {
             "version": 1,
@@ -498,7 +498,7 @@
                     "description": ""
                 }
             ],
-            "_type": "undocumented"
+            "_type": "protobufs"
         }
     },
     "ICSGOPlayers_730": {
@@ -1446,7 +1446,7 @@
                     "description": "Values for headers you'll want to set on your upload request. The number of names must equal the number of values."
                 }
             ],
-            "_type": "undocumented"
+            "_type": "protobufs"
         },
         "CommitHTTPUpload": {
             "version": 1,
@@ -1483,7 +1483,7 @@
                     "description": "Filename as specified in the Cloud.BeginHTTPUpload request."
                 }
             ],
-            "_type": "undocumented"
+            "_type": "protobufs"
         },
         "Delete": {
             "version": 1,
@@ -1508,7 +1508,7 @@
                     "description": "App ID the file belongs to."
                 }
             ],
-            "_type": "undocumented"
+            "_type": "protobufs"
         },
         "EnumerateUserFiles": {
             "version": 1,
@@ -1545,7 +1545,7 @@
                     "description": "(Optional) Starting index to begin enumeration at. Defaults to the beginning of the list."
                 }
             ],
-            "_type": "undocumented"
+            "_type": "protobufs"
         },
         "GetFileDetails": {
             "version": 1,
@@ -1570,7 +1570,7 @@
                     "description": "App ID the file belongs to."
                 }
             ],
-            "_type": "undocumented"
+            "_type": "protobufs"
         },
         "GetUploadServerInfo": {
             "version": 1,
@@ -1589,7 +1589,7 @@
                     "description": "App ID to which a file will be uploaded to."
                 }
             ],
-            "_type": "undocumented"
+            "_type": "protobufs"
         }
     },
     "ICommunityService": {
@@ -1615,7 +1615,7 @@
                     "description": ""
                 }
             ],
-            "_type": "undocumented"
+            "_type": "protobufs"
         },
         "GetBestEventsForUser": {
             "version": 1,
@@ -1627,7 +1627,7 @@
                     "description": "Access key"
                 }
             ],
-            "_type": "undocumented"
+            "_type": "protobufs"
         },
         "GetUserPartnerEventNews": {
             "version": 1,
@@ -1639,7 +1639,7 @@
                     "description": "Access key"
                 }
             ],
-            "_type": "undocumented"
+            "_type": "protobufs"
         }
     },
     "IContentFilteringService": {
@@ -1889,7 +1889,7 @@
                     "description": ""
                 }
             ],
-            "_type": "undocumented"
+            "_type": "protobufs"
         },
         "ValidateEmailAddress": {
             "version": 1,
@@ -1908,7 +1908,7 @@
                     "description": ""
                 }
             ],
-            "_type": "undocumented"
+            "_type": "protobufs"
         }
     },
     "ICustomGames": {
@@ -3818,7 +3818,7 @@
                     "description": "If non-zero, return only message sessions that have messages since our message cutoff. If zero, we return all active sessions."
                 }
             ],
-            "_type": "undocumented"
+            "_type": "protobufs"
         },
         "GetRecentMessages": {
             "version": 1,
@@ -3885,7 +3885,7 @@
                     "description": ""
                 }
             ],
-            "_type": "undocumented"
+            "_type": "protobufs"
         },
         "MarkOfflineMessagesRead": {
             "version": 1,
@@ -4577,7 +4577,7 @@
                     "description": "The maximum number of servers to return in the response"
                 }
             ],
-            "_type": "undocumented"
+            "_type": "protobufs"
         },
         "GetServerSteamIDsByIP": {
             "version": 1,
@@ -4953,7 +4953,7 @@
                     "description": ""
                 }
             ],
-            "_type": "undocumented"
+            "_type": "protobufs"
         },
         "ExchangeItem": {
             "version": 1,
@@ -5069,7 +5069,7 @@
                     "description": ""
                 }
             ],
-            "_type": "undocumented"
+            "_type": "protobufs"
         },
         "GetItemDefs": {
             "version": 1,
@@ -5346,7 +5346,7 @@
                     "description": "Steam ID of user to whom to send a friend invite."
                 }
             ],
-            "_type": "undocumented"
+            "_type": "protobufs"
         },
         "GetBadges": {
             "version": 1,
@@ -5402,7 +5402,7 @@
                     "description": "Access key"
                 }
             ],
-            "_type": "undocumented"
+            "_type": "protobufs"
         },
         "GetOwnedGames": {
             "version": 1,
@@ -5511,7 +5511,7 @@
                     "description": "If set, remove from ignore/block list instead of adding "
                 }
             ],
-            "_type": "undocumented"
+            "_type": "protobufs"
         },
         "IsPlayingSharedGame": {
             "version": 1,
@@ -5576,7 +5576,7 @@
                     "description": "Steam ID of friend to remove."
                 }
             ],
-            "_type": "undocumented"
+            "_type": "protobufs"
         }
     },
     "IPortal2Leaderboards_620": {
@@ -5642,7 +5642,7 @@
                     "description": ""
                 }
             ],
-            "_type": "undocumented"
+            "_type": "protobufs"
         },
         "GetDetails": {
             "version": 1,
@@ -6028,7 +6028,7 @@
                     "description": "(Optional) If this represents a game, this is the URL to that game's page."
                 }
             ],
-            "_type": "undocumented"
+            "_type": "protobufs"
         },
         "QueryFiles": {
             "version": 1,
@@ -6360,7 +6360,7 @@
                     "description": ""
                 }
             ],
-            "_type": "undocumented"
+            "_type": "protobufs"
         },
         "Unsubscribe": {
             "version": 1,
@@ -6397,7 +6397,7 @@
                     "description": ""
                 }
             ],
-            "_type": "undocumented"
+            "_type": "protobufs"
         },
         "Update": {
             "version": 1,
@@ -6457,7 +6457,7 @@
                     "description": "(Optional) Preview filename for the published file."
                 }
             ],
-            "_type": "undocumented"
+            "_type": "protobufs"
         },
         "UpdateBanStatus": {
             "version": 1,
@@ -6648,7 +6648,7 @@
                     "description": ""
                 }
             ],
-            "_type": "undocumented"
+            "_type": "protobufs"
         },
         "PublisherAddCommunityItemsToPlayer": {
             "version": 1,
@@ -9116,7 +9116,7 @@
                     "description": ""
                 }
             ],
-            "_type": "undocumented"
+            "_type": "protobufs"
         },
         "AddChatModerator": {
             "version": 1,
@@ -9146,7 +9146,7 @@
                     "description": ""
                 }
             ],
-            "_type": "undocumented"
+            "_type": "protobufs"
         },
         "AddWordBan": {
             "version": 1,
@@ -9158,7 +9158,7 @@
                     "description": "Access key"
                 }
             ],
-            "_type": "undocumented"
+            "_type": "protobufs"
         },
         "CreateBroadcastChannel": {
             "version": 1,
@@ -9170,7 +9170,7 @@
                     "description": "Access key"
                 }
             ],
-            "_type": "undocumented"
+            "_type": "protobufs"
         },
         "FollowBroadcastChannel": {
             "version": 1,
@@ -9182,7 +9182,7 @@
                     "description": "Access key"
                 }
             ],
-            "_type": "undocumented"
+            "_type": "protobufs"
         },
         "GetBroadcastChannelBroadcasters": {
             "version": 1,
@@ -9194,7 +9194,7 @@
                     "description": "Access key"
                 }
             ],
-            "_type": "undocumented"
+            "_type": "protobufs"
         },
         "GetBroadcastChannelClips": {
             "version": 1,
@@ -9206,7 +9206,7 @@
                     "description": "Access key"
                 }
             ],
-            "_type": "undocumented"
+            "_type": "protobufs"
         },
         "GetBroadcastChannelID": {
             "version": 1,
@@ -9218,7 +9218,7 @@
                     "description": "Access key"
                 }
             ],
-            "_type": "undocumented"
+            "_type": "protobufs"
         },
         "GetBroadcastChannelImages": {
             "version": 1,
@@ -9230,7 +9230,7 @@
                     "description": "Access key"
                 }
             ],
-            "_type": "undocumented"
+            "_type": "protobufs"
         },
         "GetBroadcastChannelInteraction": {
             "version": 1,
@@ -9242,7 +9242,7 @@
                     "description": "Access key"
                 }
             ],
-            "_type": "undocumented"
+            "_type": "protobufs"
         },
         "GetBroadcastChannelLinks": {
             "version": 1,
@@ -9254,7 +9254,7 @@
                     "description": "Access key"
                 }
             ],
-            "_type": "undocumented"
+            "_type": "protobufs"
         },
         "GetBroadcastChannelProfile": {
             "version": 1,
@@ -9266,7 +9266,7 @@
                     "description": "Access key"
                 }
             ],
-            "_type": "undocumented"
+            "_type": "protobufs"
         },
         "GetBroadcastChannelStatus": {
             "version": 1,
@@ -9278,7 +9278,7 @@
                     "description": "Access key"
                 }
             ],
-            "_type": "undocumented"
+            "_type": "protobufs"
         },
         "GetChannels": {
             "version": 1,
@@ -9290,7 +9290,7 @@
                     "description": "Access key"
                 }
             ],
-            "_type": "undocumented"
+            "_type": "protobufs"
         },
         "GetChatBans": {
             "version": 1,
@@ -9302,7 +9302,7 @@
                     "description": "Access key"
                 }
             ],
-            "_type": "undocumented"
+            "_type": "protobufs"
         },
         "GetChatModerators": {
             "version": 1,
@@ -9320,7 +9320,7 @@
                     "description": ""
                 }
             ],
-            "_type": "undocumented"
+            "_type": "protobufs"
         },
         "GetFeatured": {
             "version": 1,
@@ -9336,7 +9336,7 @@
                     "description": "Access key"
                 }
             ],
-            "_type": "undocumented"
+            "_type": "protobufs"
         },
         "GetGames": {
             "version": 1,
@@ -9348,7 +9348,7 @@
                     "description": "Access key"
                 }
             ],
-            "_type": "undocumented"
+            "_type": "protobufs"
         },
         "GetHomePageContents": {
             "version": 1,
@@ -9360,7 +9360,7 @@
                     "description": "Access key"
                 }
             ],
-            "_type": "undocumented"
+            "_type": "protobufs"
         },
         "GetMyBroadcastChannels": {
             "version": 1,
@@ -9372,7 +9372,7 @@
                     "description": "Access key"
                 }
             ],
-            "_type": "undocumented"
+            "_type": "protobufs"
         },
         "GetSteamTVUserSettings": {
             "version": 1,
@@ -9384,7 +9384,7 @@
                     "description": "Access key"
                 }
             ],
-            "_type": "undocumented"
+            "_type": "protobufs"
         },
         "GetSubscribedChannels": {
             "version": 1,
@@ -9396,7 +9396,7 @@
                     "description": "Access key"
                 }
             ],
-            "_type": "undocumented"
+            "_type": "protobufs"
         },
         "GetWordBans": {
             "version": 1,
@@ -9408,7 +9408,7 @@
                     "description": "Access key"
                 }
             ],
-            "_type": "undocumented"
+            "_type": "protobufs"
         },
         "JoinChat": {
             "version": 1,
@@ -9426,7 +9426,7 @@
                     "description": ""
                 }
             ],
-            "_type": "undocumented"
+            "_type": "protobufs"
         },
         "ReportBroadcastChannel": {
             "version": 1,
@@ -9438,7 +9438,7 @@
                     "description": "Access key"
                 }
             ],
-            "_type": "undocumented"
+            "_type": "protobufs"
         },
         "Search": {
             "version": 1,
@@ -9450,7 +9450,7 @@
                     "description": "Access key"
                 }
             ],
-            "_type": "undocumented"
+            "_type": "protobufs"
         },
         "SetBroadcastChannelImage": {
             "version": 1,
@@ -9462,7 +9462,7 @@
                     "description": "Access key"
                 }
             ],
-            "_type": "undocumented"
+            "_type": "protobufs"
         },
         "SetBroadcastChannelLinkRegions": {
             "version": 1,
@@ -9474,7 +9474,7 @@
                     "description": "Access key"
                 }
             ],
-            "_type": "undocumented"
+            "_type": "protobufs"
         },
         "SetBroadcastChannelProfile": {
             "version": 1,
@@ -9486,7 +9486,7 @@
                     "description": "Access key"
                 }
             ],
-            "_type": "undocumented"
+            "_type": "protobufs"
         },
         "SetSteamTVUserSettings": {
             "version": 1,
@@ -9498,7 +9498,7 @@
                     "description": "Access key"
                 }
             ],
-            "_type": "undocumented"
+            "_type": "protobufs"
         },
         "SubscribeBroadcastChannel": {
             "version": 1,
@@ -9510,7 +9510,7 @@
                     "description": "Access key"
                 }
             ],
-            "_type": "undocumented"
+            "_type": "protobufs"
         }
     },
     "ISteamUser": {
@@ -10555,7 +10555,7 @@
                     "description": "HTTP headers alternating by K/V"
                 }
             ],
-            "_type": "undocumented"
+            "_type": "protobufs"
         },
         "CreateEmergencyCodes": {
             "version": 1,
@@ -10574,7 +10574,7 @@
                     "description": ""
                 }
             ],
-            "_type": "undocumented"
+            "_type": "protobufs"
         },
         "DestroyEmergencyCodes": {
             "version": 1,
@@ -10593,7 +10593,7 @@
                     "description": "steamid to use"
                 }
             ],
-            "_type": "undocumented"
+            "_type": "protobufs"
         },
         "FinalizeAddAuthenticator": {
             "version": 1,
@@ -10636,7 +10636,7 @@
                     "description": "HTTP headers alternating by K/V"
                 }
             ],
-            "_type": "undocumented"
+            "_type": "protobufs"
         },
         "QuerySecrets": {
             "version": 1,
@@ -10674,7 +10674,7 @@
                     "description": "steamid to use"
                 }
             ],
-            "_type": "undocumented"
+            "_type": "protobufs"
         },
         "QueryTime": {
             "version": 1,
@@ -10738,7 +10738,7 @@
                     "description": "Remove all steamguard cookies"
                 }
             ],
-            "_type": "undocumented"
+            "_type": "protobufs"
         },
         "RemoveAuthenticatorViaChallengeContinue": {
             "version": 1,
@@ -10837,7 +10837,7 @@
                     "description": "Include activation code in email parameters"
                 }
             ],
-            "_type": "undocumented"
+            "_type": "protobufs"
         },
         "ValidateToken": {
             "version": 1,
@@ -10856,7 +10856,7 @@
                     "description": "code to validate"
                 }
             ],
-            "_type": "undocumented"
+            "_type": "protobufs"
         }
     },
     "IVideoService": {
@@ -10883,7 +10883,7 @@
                     "description": "Only return results after time. Min value is 1. (seconds since epoch January 1st, 1970 Unix Time)"
                 }
             ],
-            "_type": "undocumented"
+            "_type": "protobufs"
         },
         "SetVideoBookmark": {
             "version": 1,
@@ -10902,7 +10902,7 @@
                     "description": "list of bookmarks we want to store."
                 }
             ],
-            "_type": "undocumented"
+            "_type": "protobufs"
         }
     },
     "IWorkshop": {
