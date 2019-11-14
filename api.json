@@ -10640,6 +10640,21 @@
         },
         "QuerySecrets": {
             "version": 1,
+            "description": "Get two-factor secrets for the logged-in account",
+            "parameters": [
+                {
+                    "name": "key",
+                    "type": "string",
+                    "optional": false,
+                    "description": "Access key"
+                },
+                {
+                    "name": "steamid",
+                    "type": "fixed64",
+                    "optional": true,
+                    "description": "steamid to use"
+                }
+            ],
             "_type": "undocumented"
         },
         "QueryStatus": {
@@ -10663,6 +10678,21 @@
         },
         "QueryTime": {
             "version": 1,
+            "description": "Get server's idea of the current time",
+            "parameters": [
+                {
+                    "name": "key",
+                    "type": "string",
+                    "optional": false,
+                    "description": "Access key"
+                },
+                {
+                    "name": "sender_time",
+                    "type": "uint64",
+                    "optional": true,
+                    "description": "Current time on the sender (for stats, don't trust this)"
+                }
+            ],
             "_type": "undocumented"
         },
         "RecoverAuthenticatorCommit": {
@@ -10712,10 +10742,70 @@
         },
         "RemoveAuthenticatorViaChallengeContinue": {
             "version": 1,
+            "description": "Continue challenge-based authenticator removal",
+            "parameters": [
+                {
+                    "name": "key",
+                    "type": "string",
+                    "optional": false,
+                    "description": "Access key"
+                },
+                {
+                    "name": "steamid",
+                    "type": "fixed64",
+                    "optional": true,
+                    "description": "steamid to use"
+                },
+                {
+                    "name": "encrypted_password",
+                    "type": "string",
+                    "optional": true,
+                    "description": "RSA-encrypted password"
+                },
+                {
+                    "name": "password_timestamp",
+                    "type": "uint32",
+                    "optional": true,
+                    "description": "RSA timestamp for password"
+                },
+                {
+                    "name": "sms_code",
+                    "type": "string",
+                    "optional": true,
+                    "description": "Code from SMS"
+                }
+            ],
             "_type": "undocumented"
         },
         "RemoveAuthenticatorViaChallengeStart": {
             "version": 1,
+            "description": "Start challenge-based authenticator removal",
+            "parameters": [
+                {
+                    "name": "key",
+                    "type": "string",
+                    "optional": false,
+                    "description": "Access key"
+                },
+                {
+                    "name": "steamid",
+                    "type": "fixed64",
+                    "optional": true,
+                    "description": "steamid to use"
+                },
+                {
+                    "name": "encrypted_password",
+                    "type": "string",
+                    "optional": true,
+                    "description": "RSA-encrypted password"
+                },
+                {
+                    "name": "password_timestamp",
+                    "type": "uint32",
+                    "optional": true,
+                    "description": "RSA timestamp for password"
+                }
+            ],
             "_type": "undocumented"
         },
         "SendEmail": {
