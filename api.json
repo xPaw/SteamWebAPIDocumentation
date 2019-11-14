@@ -6415,6 +6415,7 @@
         },
         "Update": {
             "version": 1,
+            "description": "Updates information about a published file.",
             "parameters": [
                 {
                     "name": "key",
@@ -10938,7 +10939,7 @@
         },
         "ValidateToken": {
             "version": 1,
-            "description": "Check if the given parental unlock token is correct for the logged in account",
+            "description": "Validate (and consume) a token",
             "parameters": [
                 {
                     "name": "key",
