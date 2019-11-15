@@ -172,6 +172,7 @@
         },
         "MuteBroadcastChatUser": {
             "version": 1,
+            "httpmethod": "POST",
             "description": "Mute a user in your broadcast chat",
             "parameters": [
                 {
@@ -203,6 +204,7 @@
         },
         "PostChatMessage": {
             "version": 1,
+            "httpmethod": "POST",
             "description": "Post chat message to specified chat room",
             "parameters": [
                 {
@@ -299,6 +301,7 @@
         },
         "RemoveUserChatText": {
             "version": 1,
+            "httpmethod": "POST",
             "description": "Tell all viewers to remove user chat text",
             "parameters": [
                 {
@@ -324,6 +327,7 @@
         },
         "SetClipDetails": {
             "version": 1,
+            "httpmethod": "POST",
             "description": "Updates a broadcast clip",
             "parameters": [
                 {
@@ -361,6 +365,7 @@
         },
         "SetRTMPInfo": {
             "version": 1,
+            "httpmethod": "POST",
             "description": "Sets RTMP broadcast info",
             "parameters": [
                 {
@@ -434,6 +439,7 @@
         },
         "StartBuildClip": {
             "version": 1,
+            "httpmethod": "POST",
             "description": "Start building a broadcast clip",
             "parameters": [
                 {
@@ -477,6 +483,7 @@
         },
         "UpdateChatMessageFlair": {
             "version": 1,
+            "httpmethod": "POST",
             "description": "Update chat message flair in the specified chat room",
             "parameters": [
                 {
@@ -1389,6 +1396,7 @@
     "ICloudService": {
         "BeginHTTPUpload": {
             "version": 1,
+            "httpmethod": "POST",
             "description": "Begins the process of uploading a file to Steam external storage services. File should be uploaded via HTTP PUT to the returned URL, after which the upload must be finalized by a call to CommitHTTPUpload.",
             "parameters": [
                 {
@@ -1450,6 +1458,7 @@
         },
         "CommitHTTPUpload": {
             "version": 1,
+            "httpmethod": "POST",
             "description": "Commits a file upload initiated by BeginHTTPUpload and transferred via HTTP PUT.",
             "parameters": [
                 {
@@ -1487,6 +1496,7 @@
         },
         "Delete": {
             "version": 1,
+            "httpmethod": "POST",
             "description": "Deletes a file from the user's cloud.",
             "parameters": [
                 {
@@ -1868,6 +1878,7 @@
     "ICredentialsService": {
         "SteamGuardPhishingReport": {
             "version": 1,
+            "httpmethod": "POST",
             "description": "SteamGuardPhishingReport",
             "parameters": [
                 {
@@ -1893,6 +1904,7 @@
         },
         "ValidateEmailAddress": {
             "version": 1,
+            "httpmethod": "POST",
             "description": "Validate an email address given a token",
             "parameters": [
                 {
@@ -4908,6 +4920,7 @@
         },
         "ConsumeItem": {
             "version": 1,
+            "httpmethod": "POST",
             "description": "Consume an item",
             "parameters": [
                 {
@@ -5332,6 +5345,7 @@
     "IPlayerService": {
         "AddFriend": {
             "version": 1,
+            "httpmethod": "POST",
             "parameters": [
                 {
                     "name": "key",
@@ -5505,6 +5519,7 @@
         },
         "IgnoreFriend": {
             "version": 1,
+            "httpmethod": "POST",
             "parameters": [
                 {
                     "name": "key",
@@ -5576,6 +5591,7 @@
         },
         "RemoveFriend": {
             "version": 1,
+            "httpmethod": "POST",
             "parameters": [
                 {
                     "name": "key",
@@ -5937,6 +5953,7 @@
         },
         "Publish": {
             "version": 1,
+            "httpmethod": "POST",
             "description": "Publishes a clouded user file to the Workshop.",
             "parameters": [
                 {
@@ -6341,6 +6358,7 @@
         },
         "Subscribe": {
             "version": 1,
+            "httpmethod": "POST",
             "description": "Subscribes the user to the published file",
             "parameters": [
                 {
@@ -6378,6 +6396,7 @@
         },
         "Unsubscribe": {
             "version": 1,
+            "httpmethod": "POST",
             "description": "Unsubscribes the user from the published file",
             "parameters": [
                 {
@@ -6415,6 +6434,7 @@
         },
         "Update": {
             "version": 1,
+            "httpmethod": "POST",
             "description": "Updates information about a published file.",
             "parameters": [
                 {
@@ -6723,6 +6743,7 @@
     "IRemoteClientService": {
         "NotifyRegisterStatusUpdate": {
             "version": 1,
+            "httpmethod": "POST",
             "description": "Register for status updates with a Steam client",
             "parameters": [
                 {
@@ -6754,6 +6775,7 @@
         },
         "NotifyRemotePacket": {
             "version": 1,
+            "httpmethod": "POST",
             "description": "Send a packet to a Steam client",
             "parameters": [
                 {
@@ -6785,6 +6807,7 @@
         },
         "NotifyUnregisterStatusUpdate": {
             "version": 1,
+            "httpmethod": "POST",
             "description": "Unregister for status updates with a Steam client",
             "parameters": [
                 {
@@ -9176,6 +9199,7 @@
     "ISteamTVService": {
         "AddChatBan": {
             "version": 1,
+            "httpmethod": "POST",
             "parameters": [
                 {
                     "name": "key",
@@ -9218,6 +9242,7 @@
         },
         "AddChatModerator": {
             "version": 1,
+            "httpmethod": "POST",
             "parameters": [
                 {
                     "name": "key",
@@ -9248,6 +9273,7 @@
         },
         "AddWordBan": {
             "version": 1,
+            "httpmethod": "POST",
             "parameters": [
                 {
                     "name": "key",
@@ -9260,6 +9286,7 @@
         },
         "CreateBroadcastChannel": {
             "version": 1,
+            "httpmethod": "POST",
             "parameters": [
                 {
                     "name": "key",
@@ -9272,6 +9299,7 @@
         },
         "FollowBroadcastChannel": {
             "version": 1,
+            "httpmethod": "POST",
             "parameters": [
                 {
                     "name": "key",
@@ -9510,6 +9538,7 @@
         },
         "JoinChat": {
             "version": 1,
+            "httpmethod": "POST",
             "parameters": [
                 {
                     "name": "key",
@@ -9528,6 +9557,7 @@
         },
         "ReportBroadcastChannel": {
             "version": 1,
+            "httpmethod": "POST",
             "parameters": [
                 {
                     "name": "key",
@@ -9552,6 +9582,7 @@
         },
         "SetBroadcastChannelImage": {
             "version": 1,
+            "httpmethod": "POST",
             "parameters": [
                 {
                     "name": "key",
@@ -9564,6 +9595,7 @@
         },
         "SetBroadcastChannelLinkRegions": {
             "version": 1,
+            "httpmethod": "POST",
             "parameters": [
                 {
                     "name": "key",
@@ -9576,6 +9608,7 @@
         },
         "SetBroadcastChannelProfile": {
             "version": 1,
+            "httpmethod": "POST",
             "parameters": [
                 {
                     "name": "key",
@@ -9588,6 +9621,7 @@
         },
         "SetSteamTVUserSettings": {
             "version": 1,
+            "httpmethod": "POST",
             "parameters": [
                 {
                     "name": "key",
@@ -9600,6 +9634,7 @@
         },
         "SubscribeBroadcastChannel": {
             "version": 1,
+            "httpmethod": "POST",
             "parameters": [
                 {
                     "name": "key",
@@ -10602,6 +10637,7 @@
     "ITwoFactorService": {
         "AddAuthenticator": {
             "version": 1,
+            "httpmethod": "POST",
             "description": "Add two-factor authenticator to the logged-in account",
             "parameters": [
                 {
@@ -10657,6 +10693,7 @@
         },
         "CreateEmergencyCodes": {
             "version": 1,
+            "httpmethod": "POST",
             "description": "Generate emergency authenticator codes",
             "parameters": [
                 {
@@ -10676,6 +10713,7 @@
         },
         "DestroyEmergencyCodes": {
             "version": 1,
+            "httpmethod": "POST",
             "description": "Destroy emergency authenticator codes for the account",
             "parameters": [
                 {
@@ -10695,6 +10733,7 @@
         },
         "FinalizeAddAuthenticator": {
             "version": 1,
+            "httpmethod": "POST",
             "description": "Finalize two-factor authentication addition to the logged-in account",
             "parameters": [
                 {
@@ -10757,6 +10796,7 @@
         },
         "QueryStatus": {
             "version": 1,
+            "httpmethod": "POST",
             "description": "Get two-factor authentication settings for the logged-in account",
             "parameters": [
                 {
@@ -10803,6 +10843,7 @@
         },
         "RemoveAuthenticator": {
             "version": 1,
+            "httpmethod": "POST",
             "description": "Remove two-factor authentication addition from the logged-in account",
             "parameters": [
                 {
@@ -10908,6 +10949,7 @@
         },
         "SendEmail": {
             "version": 1,
+            "httpmethod": "POST",
             "description": "Send email to the account",
             "parameters": [
                 {
@@ -10939,6 +10981,7 @@
         },
         "ValidateToken": {
             "version": 1,
+            "httpmethod": "POST",
             "description": "Validate (and consume) a token",
             "parameters": [
                 {
@@ -10960,6 +11003,7 @@
     "IVideoService": {
         "GetVideoBookmarks": {
             "version": 1,
+            "httpmethod": "POST",
             "description": "Returns the video bookmarks locations for the specific videos. Includes playback settings per video",
             "parameters": [
                 {
@@ -10985,6 +11029,7 @@
         },
         "SetVideoBookmark": {
             "version": 1,
+            "httpmethod": "POST",
             "description": "Bookmarks the locations in the video the user has reached. As as record playback settings per video. Fire and forget.",
             "parameters": [
                 {
