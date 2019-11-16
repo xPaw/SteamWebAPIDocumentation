@@ -17,10 +17,6 @@
 	border-right: 0;
 }
 
-.card .table tr:last-child td {
-	border-bottom: 0;
-}
-
 .card .btn-sm {
 	padding-top: 0;
 	padding-bottom: 0;
@@ -98,18 +94,109 @@
 }
 
 ::-webkit-scrollbar {
-	width: 6px;
-	background-color: rgba(0, 0, 0, 0);
+	height: 12px;
+	width: 14px;
+	background: transparent;
 }
 
-::-webkit-scrollbar:hover {
-	background-color: rgba(0, 0, 0, 0.09);
+::-webkit-scrollbar-thumb {
+	width: 10px;
+	background-color: #434953;
+	border-radius: 10px;
+	z-index: 12;
+	border: 4px solid rgba(0, 0, 0, 0);
+	background-clip: padding-box;
+	min-height: 32px;
+	min-width: 32px;
 }
 
-::-webkit-scrollbar-thumb:vertical {
-	background: rgba(0, 123, 255, 0.4);
+::-webkit-scrollbar-thumb:hover {
+	background: #4E5157;
 }
 
-::-webkit-scrollbar-thumb:vertical:active {
-	background: rgba(0, 123, 255, 1);
+body {
+	background-color: #161920;
+	color: #acacac;
+}
+
+.header {
+	background-color: #096295;
+	border-bottom: 2px solid #67c1f5;
+	color: #fff;
+}
+
+.header .form-control:focus,
+.header .form-control {
+	border: 1px solid rgba(103, 193, 245, 0.7);
+	background-color: #171b22;
+	color: #fff;
+}
+
+.header .form-control:focus {
+	box-shadow: 0 0 20px rgba(147, 211, 245, 0.50);
+}
+
+.header a {
+	color: inherit;
+}
+
+.card {
+	background: #22252b;
+	color: #e5e5e5;
+	border: 0;
+	border-radius: 0;
+}
+
+.card-header {
+	background: #4e5155;
+	border: 0;
+}
+
+.card .table {
+	color: #acacac;
+	border-color: #161920;
+}
+
+.card .table .custom-control-label {
+	color: #ddd;
+}
+
+.card .table th,
+.card .table td {
+	border-color: inherit;
+}
+
+.card .table tr:nth-child(odd) td {
+	background: #1d2027;
+}
+
+.attribute:hover td {
+	border-bottom-color: rgba(255, 255, 255, 0.4);
+}
+
+.card .custom-select,
+.card .btn-outline-primary,
+.card .form-control {
+	background-color: #232323;
+	border: 1px solid #535354;
+	color: #cda869;
+	fill: currentColor;
+	word-break: break-all;
+}
+
+.card .table .form-control {
+	background-color: transparent;
+}
+
+.interface-filtered {
+	background-color: #2b3647;
+	color: #acacac;
+}
+
+.interface-list a {
+	color: #acacac;
+}
+
+.custom-control-label::before {
+	background-color: transparent;
 }
