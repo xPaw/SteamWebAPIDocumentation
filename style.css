@@ -152,6 +152,10 @@ body {
 	border: 0;
 }
 
+.card hr {
+	border-top: 1px solid #4e5155;
+}
+
 .card .table {
 	color: #acacac;
 	border-color: #161920;
