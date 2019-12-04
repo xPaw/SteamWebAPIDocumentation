@@ -5878,6 +5878,12 @@
                     "description": "Specifies the localized text to return. Defaults to English."
                 },
                 {
+                    "name": "taggroups",
+                    "type": "{message}",
+                    "optional": false,
+                    "description": "(Optional) At least one of the tags must be present on a published file to satisfy the query."
+                },
+                {
                     "name": "totalonly",
                     "type": "bool",
                     "optional": false,
@@ -6191,6 +6197,12 @@
                     "type": "{message}",
                     "optional": false,
                     "description": "Required key-value tags to match on."
+                },
+                {
+                    "name": "taggroups",
+                    "type": "{message}",
+                    "optional": false,
+                    "description": "(Optional) At least one of the tags must be present on a published file to satisfy the query."
                 },
                 {
                     "name": "totalonly",
@@ -7176,6 +7188,27 @@
                     "description": "Percent cache hits"
                 }
             ]
+        }
+    },
+    "ISteamCloudGaming": {
+        "GetSupportedApps": {
+            "version": 1,
+            "httpmethod": "GET",
+            "parameters": [
+                {
+                    "name": "platform",
+                    "type": "string",
+                    "optional": false,
+                    "description": "Cloud gaming platform name"
+                },
+                {
+                    "name": "detailed",
+                    "type": "bool",
+                    "optional": true,
+                    "description": "Request extra details if supported"
+                }
+            ],
+            "_type": "publisher_only"
         }
     },
     "ISteamCommunity": {
