@@ -7557,7 +7557,8 @@
         "PaymentOutReversalNotification": {
             "version": 1,
             "httpmethod": "POST",
-            "parameters": []
+            "parameters": [],
+            "_type": "undocumented"
         }
     },
     "ISteamGameOAuth": {
