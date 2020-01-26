@@ -6815,24 +6815,6 @@
                     "type": "string",
                     "optional": false,
                     "description": "Access key"
-                },
-                {
-                    "name": "session_id",
-                    "type": "fixed64",
-                    "optional": true,
-                    "description": ""
-                },
-                {
-                    "name": "steamid",
-                    "type": "fixed64",
-                    "optional": true,
-                    "description": ""
-                },
-                {
-                    "name": "device_id",
-                    "type": "fixed64",
-                    "optional": true,
-                    "description": ""
                 }
             ],
             "_type": "protobufs"
@@ -6847,24 +6829,6 @@
                     "type": "string",
                     "optional": false,
                     "description": "Access key"
-                },
-                {
-                    "name": "session_id",
-                    "type": "fixed64",
-                    "optional": true,
-                    "description": ""
-                },
-                {
-                    "name": "steamid",
-                    "type": "fixed64",
-                    "optional": true,
-                    "description": ""
-                },
-                {
-                    "name": "payload",
-                    "type": "bytes",
-                    "optional": true,
-                    "description": ""
                 }
             ],
             "_type": "protobufs"
@@ -6879,18 +6843,6 @@
                     "type": "string",
                     "optional": false,
                     "description": "Access key"
-                },
-                {
-                    "name": "session_id",
-                    "type": "fixed64",
-                    "optional": true,
-                    "description": ""
-                },
-                {
-                    "name": "steamid",
-                    "type": "fixed64",
-                    "optional": true,
-                    "description": ""
                 }
             ],
             "_type": "protobufs"
