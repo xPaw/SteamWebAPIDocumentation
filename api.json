@@ -2,7 +2,6 @@
     "IAccountLinkingService": {
         "GetLinkedAccountInfo": {
             "version": 1,
-            "description": "List all my active linked external accounts; may be requested to return the access token",
             "parameters": [
                 {
                     "name": "key",
@@ -230,6 +229,18 @@
                     "type": "uint32",
                     "optional": true,
                     "description": ""
+                },
+                {
+                    "name": "language",
+                    "type": "uint32",
+                    "optional": true,
+                    "description": "ELanguage of the user posting the message, default is english"
+                },
+                {
+                    "name": "country_code",
+                    "type": "string",
+                    "optional": true,
+                    "description": "The two letter country code"
                 }
             ],
             "_type": "protobufs"
@@ -6715,6 +6726,18 @@
         }
     },
     "IQuestService": {
+        "GetCommunityInventory": {
+            "version": 1,
+            "parameters": [
+                {
+                    "name": "key",
+                    "type": "string",
+                    "optional": false,
+                    "description": "Access key"
+                }
+            ],
+            "_type": "protobufs"
+        },
         "GetCommunityItemDefinitions": {
             "version": 1,
             "parameters": [
@@ -11047,6 +11070,27 @@
                     "type": "string",
                     "optional": true,
                     "description": "code to validate"
+                }
+            ],
+            "_type": "protobufs"
+        }
+    },
+    "IUserAccountService": {
+        "GetAvailableValveDiscountPromotions": {
+            "version": 1,
+            "httpmethod": "POST",
+            "parameters": [
+                {
+                    "name": "key",
+                    "type": "string",
+                    "optional": false,
+                    "description": "Access key"
+                },
+                {
+                    "name": "country_code",
+                    "type": "string",
+                    "optional": true,
+                    "description": ""
                 }
             ],
             "_type": "protobufs"
