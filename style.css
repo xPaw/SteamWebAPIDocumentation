@@ -156,6 +156,10 @@ body {
 	border: 0;
 }
 
+.card-inner-header {
+	padding: .75rem 1.25rem;
+}
+
 .card hr {
 	border-top: 1px solid #4e5155;
 }
