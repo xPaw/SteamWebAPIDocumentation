@@ -120,8 +120,10 @@
 				const matches = fuzzy.search( this.currentFilter );
 				const matchedInterfaces = {};
 
-				for( const match of matches )
+				for( const searchResult of matches )
 				{
+					const match = searchResult.item;
+
 					if( !matchedInterfaces[ match.interface ] )
 					{
 						matchedInterfaces[ match.interface ] = {};
