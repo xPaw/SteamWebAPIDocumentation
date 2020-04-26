@@ -44,6 +44,10 @@
 	transition: none;
 }
 
+a.badge {
+	text-decoration: underline;
+}
+
 .attribute .form-control {
 	height: auto;
 	line-height: 1;
