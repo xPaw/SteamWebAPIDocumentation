@@ -64,7 +64,7 @@
 
 		<div class="container">
 			<div class="row row-contain">
-				<div class="col-lg-3 sidebar py-4">
+				<div class="col-lg-3 sidebar py-3">
 					<ul class="interface-list m-0">
 						<li
 							v-for="(interface, interfaceName) in filteredInterfaces"
@@ -88,7 +88,7 @@
 						</li>
 					</ul>
 				</div>
-				<div class="col-lg-9 content py-4">
+				<div class="col-lg-9 content py-3">
 					<div class="interface" v-if="currentInterface === ''">
 						<div class="card">
 							<div class="card-header">Settings</div>
@@ -127,7 +127,7 @@
 								<p>If you specify the web api key above, it will be stored in your browser, and will only be sent to Valve's API servers if you chose to do so.</p>
 								<p>Type a value in the value field and click the execute button to perform an API request in your browser.</p>
 								<hr>
-								<p>This website is created and maintained by <a href="https://xpaw.me/">xPaw</a>. Use any APIs listed here at your own risk.</p>
+								<p>This website is created and maintained by <a href="https://xpaw.me/">xPaw</a>. Use any APIs listed here at your own risk.<br>I do not know how all of them work, this page is simply a reference.</p>
 								<p>If you know of an API that is not listed here, <a href="https://github.com/SteamDatabase/UndocumentedAPI">make a pull request to the repository of undocumented APIs</a>.</p>
 								<p>Source code for this page <a href="https://github.com/xPaw/SteamWebAPIDocumentation">is also available on GitHub</a>.</p>
 							</div>
@@ -199,6 +199,9 @@
 						</div>
 					</div>
 					<div class="interface" ref="interfaceView" v-else>
+						<div class="alert no-email">
+							This page is just a reference of all the known Steam APIs, I do not know how they work. Please do not email me with questions.
+						</div>
 						<div class="alert alert-success" v-if="currentFilter">
 							<a href="#" @click.prevent="currentFilter = ''">Click here to reset filtered results.</a>
 							Use arrows keys in search field to navigate.

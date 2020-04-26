@@ -204,3 +204,11 @@ body {
 .custom-control-label::before {
 	background-color: transparent;
 }
+
+.no-email {
+	color: hsl(45, 94%, 40%);
+	background-color: hsl(46, 100%, 10%);
+	border: 0;
+	font-size: 13px;
+	padding: 5px 10px;
+}
