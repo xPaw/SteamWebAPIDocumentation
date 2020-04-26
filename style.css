@@ -1,3 +1,15 @@
+a {
+	color: #1f8bff;
+}
+
+a:hover {
+	color: #99caff;
+}
+
+code {
+	color: #ec5fa1;
+}
+
 .card-body {
 	padding-bottom: 0
 }
