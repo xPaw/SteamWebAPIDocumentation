@@ -2,6 +2,7 @@
     "IAccountLinkingService": {
         "GetLinkedAccountInfo": {
             "version": 1,
+            "description": "List all my active linked external accounts; may be requested to return the access token",
             "parameters": [
                 {
                     "name": "key",
@@ -5445,6 +5446,24 @@
                     "type": "fixed64",
                     "optional": true,
                     "description": "Steam ID of user to whom to send a friend invite."
+                }
+            ],
+            "_type": "protobufs"
+        },
+        "ClientGetLastPlayedTimes": {
+            "version": 1,
+            "parameters": [
+                {
+                    "name": "key",
+                    "type": "string",
+                    "optional": false,
+                    "description": "Access key"
+                },
+                {
+                    "name": "min_last_played",
+                    "type": "uint32",
+                    "optional": true,
+                    "description": "The most recent last-played time the client already knows about"
                 }
             ],
             "_type": "protobufs"
@@ -11113,7 +11132,6 @@
     "IUserAccountService": {
         "GetAvailableValveDiscountPromotions": {
             "version": 1,
-            "httpmethod": "POST",
             "parameters": [
                 {
                     "name": "key",
