@@ -5468,6 +5468,30 @@
             ],
             "_type": "protobufs"
         },
+        "GetAnimatedAvatar": {
+            "version": 1,
+            "parameters": [
+                {
+                    "name": "key",
+                    "type": "string",
+                    "optional": false,
+                    "description": "Access key"
+                }
+            ],
+            "_type": "protobufs"
+        },
+        "GetAvatarFrame": {
+            "version": 1,
+            "parameters": [
+                {
+                    "name": "key",
+                    "type": "string",
+                    "optional": false,
+                    "description": "Access key"
+                }
+            ],
+            "_type": "protobufs"
+        },
         "GetBadges": {
             "version": 1,
             "httpmethod": "GET",
@@ -5511,6 +5535,18 @@
                     "description": "The badge we're asking about"
                 }
             ]
+        },
+        "GetMiniProfileBackground": {
+            "version": 1,
+            "parameters": [
+                {
+                    "name": "key",
+                    "type": "string",
+                    "optional": false,
+                    "description": "Access key"
+                }
+            ],
+            "_type": "protobufs"
         },
         "GetNicknameList": {
             "version": 1,
@@ -5566,6 +5602,42 @@
                     "description": "Some games are in the free sub, which are excluded by default."
                 }
             ]
+        },
+        "GetProfileBackground": {
+            "version": 1,
+            "parameters": [
+                {
+                    "name": "key",
+                    "type": "string",
+                    "optional": false,
+                    "description": "Access key"
+                }
+            ],
+            "_type": "protobufs"
+        },
+        "GetProfileItemsEquipped": {
+            "version": 1,
+            "parameters": [
+                {
+                    "name": "key",
+                    "type": "string",
+                    "optional": false,
+                    "description": "Access key"
+                }
+            ],
+            "_type": "protobufs"
+        },
+        "GetProfileItemsOwned": {
+            "version": 1,
+            "parameters": [
+                {
+                    "name": "key",
+                    "type": "string",
+                    "optional": false,
+                    "description": "Access key"
+                }
+            ],
+            "_type": "protobufs"
         },
         "GetRecentlyPlayedGames": {
             "version": 1,
@@ -5716,6 +5788,58 @@
                     "type": "fixed64",
                     "optional": true,
                     "description": "Steam ID of friend to remove."
+                }
+            ],
+            "_type": "protobufs"
+        },
+        "SetAnimatedAvatar": {
+            "version": 1,
+            "httpmethod": "POST",
+            "parameters": [
+                {
+                    "name": "key",
+                    "type": "string",
+                    "optional": false,
+                    "description": "Access key"
+                }
+            ],
+            "_type": "protobufs"
+        },
+        "SetAvatarFrame": {
+            "version": 1,
+            "httpmethod": "POST",
+            "parameters": [
+                {
+                    "name": "key",
+                    "type": "string",
+                    "optional": false,
+                    "description": "Access key"
+                }
+            ],
+            "_type": "protobufs"
+        },
+        "SetMiniProfileBackground": {
+            "version": 1,
+            "httpmethod": "POST",
+            "parameters": [
+                {
+                    "name": "key",
+                    "type": "string",
+                    "optional": false,
+                    "description": "Access key"
+                }
+            ],
+            "_type": "protobufs"
+        },
+        "SetProfileBackground": {
+            "version": 1,
+            "httpmethod": "POST",
+            "parameters": [
+                {
+                    "name": "key",
+                    "type": "string",
+                    "optional": false,
+                    "description": "Access key"
                 }
             ],
             "_type": "protobufs"
