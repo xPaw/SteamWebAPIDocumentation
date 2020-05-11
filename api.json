@@ -5570,6 +5570,111 @@
             "_type": "undocumented"
         }
     },
+    "INewsService": {
+        "ConvertHTMLToBBCode": {
+            "version": 1,
+            "parameters": [
+                {
+                    "name": "key",
+                    "type": "string",
+                    "optional": false,
+                    "description": "Access key"
+                }
+            ],
+            "_type": "protobufs"
+        },
+        "GetBatchPublishedPartnerEvent": {
+            "version": 1,
+            "parameters": [
+                {
+                    "name": "key",
+                    "type": "string",
+                    "optional": false,
+                    "description": "Access key"
+                },
+                {
+                    "name": "news_feed_gid",
+                    "type": "fixed64",
+                    "optional": true,
+                    "description": ""
+                },
+                {
+                    "name": "start_index",
+                    "type": "uint32",
+                    "optional": true,
+                    "description": ""
+                },
+                {
+                    "name": "amount",
+                    "type": "uint32",
+                    "optional": true,
+                    "description": ""
+                }
+            ],
+            "_type": "protobufs"
+        },
+        "GetNewsFeedByRepublishClan": {
+            "version": 1,
+            "parameters": [
+                {
+                    "name": "key",
+                    "type": "string",
+                    "optional": false,
+                    "description": "Access key"
+                }
+            ],
+            "_type": "protobufs"
+        },
+        "PreviewPartnerEvents": {
+            "version": 1,
+            "parameters": [
+                {
+                    "name": "key",
+                    "type": "string",
+                    "optional": false,
+                    "description": "Access key"
+                },
+                {
+                    "name": "rss_url",
+                    "type": "string",
+                    "optional": true,
+                    "description": ""
+                },
+                {
+                    "name": "lang",
+                    "type": "uint32",
+                    "optional": true,
+                    "description": ""
+                }
+            ],
+            "_type": "protobufs"
+        },
+        "PublishPartnerEvent": {
+            "version": 1,
+            "httpmethod": "POST",
+            "parameters": [
+                {
+                    "name": "key",
+                    "type": "string",
+                    "optional": false,
+                    "description": "Access key"
+                },
+                {
+                    "name": "post",
+                    "type": "{message}",
+                    "optional": true,
+                    "description": ""
+                },
+                {
+                    "name": "draft",
+                    "type": "bool",
+                    "optional": true,
+                    "description": ""
+                }
+            ],
+            "_type": "protobufs"
+        }
+    },
     "IOnlinePlayService": {
         "GetCoPlayStatus": {
             "version": 1,
