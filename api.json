@@ -8321,6 +8321,10 @@
         }
     },
     "ISteamMicroTxn": {
+        "AddToCart": {
+            "version": 1,
+            "_type": "undocumented"
+        },
         "AdjustAgreement": {
             "version": 1,
             "httpmethod": "POST",
@@ -8377,6 +8381,10 @@
             ],
             "_type": "publisher_only"
         },
+        "CreateCart": {
+            "version": 1,
+            "_type": "undocumented"
+        },
         "FinalizeTxn": {
             "version": 2,
             "httpmethod": "POST",
@@ -8395,6 +8403,10 @@
                 }
             ],
             "_type": "publisher_only"
+        },
+        "GetCartContents": {
+            "version": 1,
+            "_type": "undocumented"
         },
         "GetReport": {
             "version": 4,
@@ -8621,6 +8633,10 @@
                 }
             ],
             "_type": "publisher_only"
+        },
+        "IsValidCart": {
+            "version": 1,
+            "_type": "undocumented"
         },
         "ProcessAgreement": {
             "version": 1,
@@ -11176,6 +11192,12 @@
         "GetTournamentSeriesDetails": {
             "version": 1,
             "_type": "dota2"
+        }
+    },
+    "ITrustService": {
+        "FullAccountUpdate": {
+            "version": 1,
+            "_type": "undocumented"
         }
     },
     "ITwoFactorService": {
