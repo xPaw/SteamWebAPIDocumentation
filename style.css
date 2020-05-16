@@ -46,6 +46,12 @@ code {
 	font-size: 80%;
 }
 
+.method-list li {
+	text-overflow: ellipsis;
+	overflow: hidden;
+	white-space: nowrap;
+}
+
 .title {
 	display: inline;
 	font-size: 1.4rem;

@@ -83,7 +83,11 @@
 								<li
 									v-for="(method, methodName) in interface"
 									:key="methodName"
-								>{{methodName}}</li>
+								>
+									<a
+										:href="'#' + interfaceName + '/' + methodName"
+										@click.prevent="setMethod( interfaceName, methodName ); updateUrl( methodName );"
+									>{{ methodName }}</a>
 							</ul>
 						</li>
 					</ul>
@@ -232,7 +236,7 @@
 										<a class="badge badge-primary no-select" href="https://github.com/SteamDatabase/Protobufs" target="_blank" rel="noopener" v-if="method._type === 'protobufs'">PROTOBUF</a>
 										<span :class="method.httpmethod === 'GET' ? 'badge badge-success' : 'badge badge-danger'">{{ method.httpmethod }}</span>
 										<a class="badge badge-warning no-select" v-if="method._type === 'publisher_only'" :href="`https://partner.steamgames.com/doc/webapi/${currentInterface}#${methodName}`" target="_blank" rel="noopener">PUBLISHER</a>
-										<span @click="updateUrl(methodName)">{{ methodName }}</span>
+										<a :href="'#' + currentInterface + '/' + methodName" @click="updateUrl(methodName)" style="color:inherit">{{ methodName }}</a>
 										<span class="badge badge-primary" v-if="method.version > 1">v{{ method.version }}</span>
 									</div>
 									<button type="submit" class="btn btn-primary use-method rounded-0">

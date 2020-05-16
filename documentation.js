@@ -220,6 +220,24 @@
 					}
 				}
 			},
+			setMethod( interfaceName, methodName )
+			{
+				this.skipInterfaceSet = true;
+				this.currentInterface = interfaceName;
+
+				if( methodName )
+				{
+					this.$nextTick( () =>
+					{
+						const element = document.getElementById( methodName );
+
+						if( element )
+						{
+							element.scrollIntoView();
+						}
+					} );
+				}
+			},
 			copyUrl( event )
 			{
 				const element = event.target.closest( '.input-group' ).querySelector( '.form-control' );
@@ -281,21 +299,7 @@
 			currentMethod = '';
 		}
 
-		app.skipInterfaceSet = true;
-		app.currentInterface = currentInterface;
-
-		if( currentMethod )
-		{
-			app.$nextTick( () =>
-			{
-				const element = document.getElementById( currentMethod );
-
-				if( element )
-				{
-					element.scrollIntoView();
-				}
-			} );
-		}
+		app.setMethod( currentInterface, currentMethod );
 	}
 
 	function fillSteamidParameter()
