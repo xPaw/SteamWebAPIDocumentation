@@ -49,8 +49,8 @@
 							placeholder="Search methods…"
 							aria-label="Search interfaces and methods"
 							v-model="currentFilter"
-							@keydown.up="navigateSidebar(-1)"
-							@keydown.down="navigateSidebar(1)"
+							@keydown.up.prevent="navigateSidebar(-1)"
+							@keydown.down.prevent="navigateSidebar(1)"
 						>
 					</div>
 					<div class="col-lg-9">

@@ -132,7 +132,7 @@
 					matchedInterfaces[ match.interface ][ match.method ] = this.interfaces[ match.interface ][ match.method ];
 				}
 
-				this.currentInterface = matches.length > 0 ? matches[ 0 ].interface : '';
+				this.currentInterface = matches.length > 0 ? matches[ 0 ].item.interface : '';
 
 				return matchedInterfaces;
 			},
