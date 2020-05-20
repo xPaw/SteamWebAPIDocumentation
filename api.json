@@ -1684,6 +1684,19 @@
             ],
             "_type": "protobufs"
         },
+        "GetAvatarHistory": {
+            "version": 1,
+            "httpmethod": "POST",
+            "parameters": [
+                {
+                    "name": "key",
+                    "type": "string",
+                    "optional": false,
+                    "description": "Access key"
+                }
+            ],
+            "_type": "protobufs"
+        },
         "GetBestEventsForUser": {
             "version": 1,
             "parameters": [
@@ -5431,7 +5444,7 @@
                     "description": ""
                 }
             ],
-            "_type": "protobufs"
+            "_type": "undocumented"
         },
         "BatchedQueryRewardItems": {
             "version": 1,
@@ -5443,7 +5456,7 @@
                     "description": "Access key"
                 }
             ],
-            "_type": "protobufs"
+            "_type": "undocumented"
         },
         "GetActivePurchaseBonuses": {
             "version": 1,
@@ -5455,7 +5468,7 @@
                     "description": "Access key"
                 }
             ],
-            "_type": "protobufs"
+            "_type": "undocumented"
         },
         "GetEligibleApps": {
             "version": 1,
@@ -5467,7 +5480,7 @@
                     "description": "Access key"
                 }
             ],
-            "_type": "protobufs"
+            "_type": "undocumented"
         },
         "GetSummary": {
             "version": 1,
@@ -5479,7 +5492,7 @@
                     "description": "Access key"
                 }
             ],
-            "_type": "protobufs"
+            "_type": "undocumented"
         },
         "QueryRewardItems": {
             "version": 1,
@@ -5551,7 +5564,7 @@
                     "description": ""
                 }
             ],
-            "_type": "protobufs"
+            "_type": "undocumented"
         },
         "RedeemPoints": {
             "version": 1,
@@ -5564,7 +5577,7 @@
                     "description": "Access key"
                 }
             ],
-            "_type": "protobufs"
+            "_type": "undocumented"
         },
         "RedeemPointsForBadgeLevel": {
             "version": 1,
@@ -5577,7 +5590,7 @@
                     "description": "Access key"
                 }
             ],
-            "_type": "protobufs"
+            "_type": "undocumented"
         },
         "RedeemPointsToUpgradeItem": {
             "version": 1,
@@ -5590,7 +5603,7 @@
                     "description": "Access key"
                 }
             ],
-            "_type": "protobufs"
+            "_type": "undocumented"
         }
     },
     "IMobileAuthService": {
