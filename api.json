@@ -1709,6 +1709,10 @@
             ],
             "_type": "protobufs"
         },
+        "GetClanAnnouncements": {
+            "version": 1,
+            "_type": "undocumented"
+        },
         "GetUserPartnerEventNews": {
             "version": 1,
             "parameters": [
