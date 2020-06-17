@@ -3249,7 +3249,8 @@
                     "optional": false,
                     "description": "The Steam ID to fetch items for"
                 }
-            ]
+            ],
+            "_type": "undocumented"
         },
         "GetSchema": {
             "version": 1,
@@ -3261,7 +3262,8 @@
                     "optional": true,
                     "description": "The language to return the names in. Defaults to returning string keys."
                 }
-            ]
+            ],
+            "_type": "undocumented"
         }
     },
     "IEconItems_730": {
@@ -6330,7 +6332,8 @@
                     "optional": false,
                     "description": "The leaderboard name to fetch data for."
                 }
-            ]
+            ],
+            "_type": "undocumented"
         }
     },
     "IProductInfoService": {
@@ -8635,7 +8638,7 @@
             "_type": "undocumented"
         },
         "GetReport": {
-            "version": 4,
+            "version": 5,
             "httpmethod": "GET",
             "parameters": [
                 {
@@ -8908,7 +8911,7 @@
             "_type": "publisher_only"
         },
         "QueryTxn": {
-            "version": 2,
+            "version": 3,
             "httpmethod": "GET",
             "parameters": [
                 {
@@ -11295,7 +11298,8 @@
                     "optional": false,
                     "description": "The promo ID to grant an item for"
                 }
-            ]
+            ],
+            "_type": "undocumented"
         },
         "GrantItem": {
             "version": 1,
@@ -11313,7 +11317,8 @@
                     "optional": false,
                     "description": "The promo ID to grant an item for"
                 }
-            ]
+            ],
+            "_type": "undocumented"
         }
     },
     "ITFPromos_205790": {
