@@ -41,6 +41,7 @@
     "IBroadcastService": {
         "GetBroadcastUploadStats": {
             "version": 1,
+            "description": "Gets broadcast upload stats for user",
             "parameters": [
                 {
                     "name": "key",
@@ -83,6 +84,7 @@
         },
         "GetBroadcastViewerStats": {
             "version": 1,
+            "description": "Gets viewer stats for given broadcast",
             "parameters": [
                 {
                     "name": "key",
@@ -107,6 +109,7 @@
         },
         "GetBuildClipStatus": {
             "version": 1,
+            "description": "Start building a broadcast clip",
             "parameters": [
                 {
                     "name": "key",
@@ -125,6 +128,7 @@
         },
         "GetClipDetails": {
             "version": 1,
+            "description": "Get details for Broadcast Clips",
             "parameters": [
                 {
                     "name": "key",
@@ -143,6 +147,7 @@
         },
         "GetRTMPInfo": {
             "version": 1,
+            "description": "Gets RTMP broadcast info",
             "parameters": [
                 {
                     "name": "key",
@@ -335,6 +340,7 @@
         "SetClipDetails": {
             "version": 1,
             "httpmethod": "POST",
+            "description": "Updates a broadcast clip",
             "parameters": [
                 {
                     "name": "key",
@@ -372,6 +378,7 @@
         "SetRTMPInfo": {
             "version": 1,
             "httpmethod": "POST",
+            "description": "Sets RTMP broadcast info",
             "parameters": [
                 {
                     "name": "key",
@@ -445,6 +452,7 @@
         "StartBuildClip": {
             "version": 1,
             "httpmethod": "POST",
+            "description": "Start building a broadcast clip",
             "parameters": [
                 {
                     "name": "key",
@@ -488,6 +496,7 @@
         "UpdateChatMessageFlair": {
             "version": 1,
             "httpmethod": "POST",
+            "description": "Update chat message flair in the specified chat room",
             "parameters": [
                 {
                     "name": "key",
@@ -5786,6 +5795,7 @@
         "AddFriend": {
             "version": 1,
             "httpmethod": "POST",
+            "description": "Invites another Steam user to be a friend",
             "parameters": [
                 {
                     "name": "key",
@@ -5804,6 +5814,7 @@
         },
         "ClientGetLastPlayedTimes": {
             "version": 1,
+            "description": "Gets the last-played times for the account",
             "parameters": [
                 {
                     "name": "key",
@@ -5822,6 +5833,7 @@
         },
         "GetAnimatedAvatar": {
             "version": 1,
+            "description": "Gets which animated avatar is active for a specific user",
             "parameters": [
                 {
                     "name": "key",
@@ -5846,6 +5858,7 @@
         },
         "GetAvatarFrame": {
             "version": 1,
+            "description": "Gets which avatar frame is active for a specific user",
             "parameters": [
                 {
                     "name": "key",
@@ -5926,6 +5939,7 @@
         },
         "GetMiniProfileBackground": {
             "version": 1,
+            "description": "Gets which mini profile background is active for a specific user",
             "parameters": [
                 {
                     "name": "key",
@@ -5950,6 +5964,7 @@
         },
         "GetNicknameList": {
             "version": 1,
+            "description": "Gets the list of nicknames this user has for other users",
             "parameters": [
                 {
                     "name": "key",
@@ -6005,6 +6020,7 @@
         },
         "GetProfileBackground": {
             "version": 1,
+            "description": "Gets which profile background is active for a specific user",
             "parameters": [
                 {
                     "name": "key",
@@ -6041,6 +6057,7 @@
         },
         "GetProfileItemsEquipped": {
             "version": 1,
+            "description": "Returns the items the user has equipped on their profile",
             "parameters": [
                 {
                     "name": "key",
@@ -6065,6 +6082,7 @@
         },
         "GetProfileItemsOwned": {
             "version": 1,
+            "description": "Returns the items the user can equip on their profile",
             "parameters": [
                 {
                     "name": "key",
@@ -6158,6 +6176,7 @@
         "IgnoreFriend": {
             "version": 1,
             "httpmethod": "POST",
+            "description": "Blocks or unblocks communication with the user.  Despite name, can be a non-friend.",
             "parameters": [
                 {
                     "name": "key",
@@ -6230,6 +6249,7 @@
         "RemoveFriend": {
             "version": 1,
             "httpmethod": "POST",
+            "description": "Removes a friend or ignores a friend suggestion",
             "parameters": [
                 {
                     "name": "key",
@@ -6249,6 +6269,7 @@
         "SetAnimatedAvatar": {
             "version": 1,
             "httpmethod": "POST",
+            "description": "Sets the user's animated avatar for their profile",
             "parameters": [
                 {
                     "name": "key",
@@ -6268,6 +6289,7 @@
         "SetAvatarFrame": {
             "version": 1,
             "httpmethod": "POST",
+            "description": "Sets the user's avatar frame for their profile",
             "parameters": [
                 {
                     "name": "key",
@@ -6287,6 +6309,7 @@
         "SetEquippedProfileItemFlags": {
             "version": 1,
             "httpmethod": "POST",
+            "description": "Sets special flags on the equipped item",
             "parameters": [
                 {
                     "name": "key",
@@ -6325,6 +6348,7 @@
         "SetMiniProfileBackground": {
             "version": 1,
             "httpmethod": "POST",
+            "description": "Sets the user's mini profile background",
             "parameters": [
                 {
                     "name": "key",
@@ -6344,6 +6368,7 @@
         "SetProfileBackground": {
             "version": 1,
             "httpmethod": "POST",
+            "description": "Sets the user's profile background",
             "parameters": [
                 {
                     "name": "key",
@@ -11853,6 +11878,7 @@
     "IUserAccountService": {
         "GetAvailableValveDiscountPromotions": {
             "version": 1,
+            "description": "Gets the available promotional discounts available to the user",
             "parameters": [
                 {
                     "name": "key",
