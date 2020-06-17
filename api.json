@@ -7586,7 +7586,7 @@
                     "description": "Access key"
                 }
             ],
-            "_type": "undocumented"
+            "_type": "protobufs"
         },
         "NotifyRemotePacket": {
             "version": 1,
@@ -7600,7 +7600,7 @@
                     "description": "Access key"
                 }
             ],
-            "_type": "undocumented"
+            "_type": "protobufs"
         },
         "NotifyUnregisterStatusUpdate": {
             "version": 1,
@@ -7614,7 +7614,7 @@
                     "description": "Access key"
                 }
             ],
-            "_type": "undocumented"
+            "_type": "protobufs"
         }
     },
     "ISteamApps": {
