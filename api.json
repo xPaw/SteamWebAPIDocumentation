@@ -5437,6 +5437,37 @@
         }
     },
     "ILoyaltyRewardsService": {
+        "AddReaction": {
+            "version": 1,
+            "httpmethod": "POST",
+            "parameters": [
+                {
+                    "name": "key",
+                    "type": "string",
+                    "optional": false,
+                    "description": "Access key"
+                },
+                {
+                    "name": "target_type",
+                    "type": "int32",
+                    "optional": true,
+                    "description": "enum"
+                },
+                {
+                    "name": "targetid",
+                    "type": "uint64",
+                    "optional": true,
+                    "description": ""
+                },
+                {
+                    "name": "reactionid",
+                    "type": "uint32",
+                    "optional": true,
+                    "description": ""
+                }
+            ],
+            "_type": "protobufs"
+        },
         "AddReactionToUserReview": {
             "version": 1,
             "httpmethod": "POST",
@@ -5470,9 +5501,15 @@
                     "type": "string",
                     "optional": false,
                     "description": "Access key"
+                },
+                {
+                    "name": "requests",
+                    "type": "{message}",
+                    "optional": true,
+                    "description": ""
                 }
             ],
-            "_type": "undocumented"
+            "_type": "protobufs"
         },
         "GetActivePurchaseBonuses": {
             "version": 1,
@@ -5484,7 +5521,7 @@
                     "description": "Access key"
                 }
             ],
-            "_type": "undocumented"
+            "_type": "protobufs"
         },
         "GetEligibleApps": {
             "version": 1,
@@ -5494,11 +5531,17 @@
                     "type": "string",
                     "optional": false,
                     "description": "Access key"
+                },
+                {
+                    "name": "include_event_apps",
+                    "type": "bool",
+                    "optional": true,
+                    "description": ""
                 }
             ],
-            "_type": "undocumented"
+            "_type": "protobufs"
         },
-        "GetSummary": {
+        "GetPointsForSpend": {
             "version": 1,
             "parameters": [
                 {
@@ -5508,7 +5551,61 @@
                     "description": "Access key"
                 }
             ],
-            "_type": "undocumented"
+            "_type": "protobufs"
+        },
+        "GetReactionConfig": {
+            "version": 1,
+            "parameters": [
+                {
+                    "name": "key",
+                    "type": "string",
+                    "optional": false,
+                    "description": "Access key"
+                }
+            ],
+            "_type": "protobufs"
+        },
+        "GetReactions": {
+            "version": 1,
+            "parameters": [
+                {
+                    "name": "key",
+                    "type": "string",
+                    "optional": false,
+                    "description": "Access key"
+                },
+                {
+                    "name": "target_type",
+                    "type": "int32",
+                    "optional": true,
+                    "description": "enum"
+                },
+                {
+                    "name": "targetid",
+                    "type": "uint64",
+                    "optional": true,
+                    "description": ""
+                }
+            ],
+            "_type": "protobufs"
+        },
+        "GetSummary": {
+            "version": 1,
+            "parameters": [
+                {
+                    "name": "key",
+                    "type": "string",
+                    "optional": false,
+                    "description": "Access key"
+                },
+                {
+                    "name": "steamid",
+                    "type": "fixed64",
+                    "optional": true,
+                    "description": ""
+                }
+            ],
+            "_type": "protobufs"
         },
         "QueryRewardItems": {
             "version": 1,
@@ -5578,9 +5675,21 @@
                     "type": "int32",
                     "optional": true,
                     "description": ""
+                },
+                {
+                    "name": "definitionids",
+                    "type": "uint32",
+                    "optional": true,
+                    "description": ""
+                },
+                {
+                    "name": "filters",
+                    "type": "int32",
+                    "optional": true,
+                    "description": "enum"
                 }
             ],
-            "_type": "undocumented"
+            "_type": "protobufs"
         },
         "RedeemPoints": {
             "version": 1,
@@ -5591,9 +5700,15 @@
                     "type": "string",
                     "optional": false,
                     "description": "Access key"
+                },
+                {
+                    "name": "defid",
+                    "type": "uint32",
+                    "optional": true,
+                    "description": ""
                 }
             ],
-            "_type": "undocumented"
+            "_type": "protobufs"
         },
         "RedeemPointsForBadgeLevel": {
             "version": 1,
@@ -5604,9 +5719,15 @@
                     "type": "string",
                     "optional": false,
                     "description": "Access key"
+                },
+                {
+                    "name": "defid",
+                    "type": "uint32",
+                    "optional": true,
+                    "description": ""
                 }
             ],
-            "_type": "undocumented"
+            "_type": "protobufs"
         },
         "RedeemPointsToUpgradeItem": {
             "version": 1,
@@ -5617,9 +5738,15 @@
                     "type": "string",
                     "optional": false,
                     "description": "Access key"
+                },
+                {
+                    "name": "defid",
+                    "type": "uint32",
+                    "optional": true,
+                    "description": ""
                 }
             ],
-            "_type": "undocumented"
+            "_type": "protobufs"
         }
     },
     "IMobileAuthService": {
@@ -11271,6 +11398,33 @@
                     "description": "Number of results to return at a time.  Default 10k, max 50k."
                 }
             ]
+        }
+    },
+    "ISummerSale2020Service": {
+        "CanClaimItem": {
+            "version": 1,
+            "parameters": [
+                {
+                    "name": "key",
+                    "type": "string",
+                    "optional": false,
+                    "description": "Access key"
+                }
+            ],
+            "_type": "protobufs"
+        },
+        "ClaimItem": {
+            "version": 1,
+            "httpmethod": "POST",
+            "parameters": [
+                {
+                    "name": "key",
+                    "type": "string",
+                    "optional": false,
+                    "description": "Access key"
+                }
+            ],
+            "_type": "protobufs"
         }
     },
     "ITFItems_440": {
