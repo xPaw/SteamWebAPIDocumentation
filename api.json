@@ -5725,6 +5725,12 @@
                     "type": "uint32",
                     "optional": true,
                     "description": ""
+                },
+                {
+                    "name": "num_levels",
+                    "type": "int32",
+                    "optional": true,
+                    "description": ""
                 }
             ],
             "_type": "protobufs"
