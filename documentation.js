@@ -45,9 +45,12 @@
 			userData:
 			{
 				webapi_key: localStorage.getItem( 'webapi_key' ) || '',
+				access_token: localStorage.getItem( 'access_token' ) || '',
 				steamid: localStorage.getItem( 'steamid' ) || '',
 				format: localStorage.getItem( 'format' ) || 'json',
 			},
+			hasValidWebApiKey: false,
+			hasValidAccessToken: false,
 			currentFilter: '',
 			currentInterface: null,
 			skipInterfaceSet: false,
@@ -68,6 +71,17 @@
 				else
 				{
 					localStorage.removeItem( 'webapi_key' );
+				}
+			},
+			"userData.access_token"( value )
+			{
+				if( this.isFieldValid( 'access_token' ) )
+				{
+					localStorage.setItem( 'access_token', value );
+				}
+				else
+				{
+					localStorage.removeItem( 'access_token' );
 				}
 			},
 			"userData.steamid"( value )
@@ -147,8 +161,16 @@
 			{
 				switch( field )
 				{
-					case 'webapi_key': return /^[0-9a-f]{32}$/i.test( this.userData[ field ] );
-					case 'steamid': return /^[0-9]{17}$/.test( this.userData[ field ] );
+					case 'access_token':
+						this.hasValidAccessToken = /^[0-9a-f]{32}$/i.test( this.userData[ field ] );
+						return this.hasValidAccessToken;
+
+					case 'webapi_key':
+						this.hasValidWebApiKey = /^[0-9a-f]{32}$/i.test( this.userData[ field ] );
+						return this.hasValidWebApiKey;
+
+					case 'steamid':
+						return /^[0-9]{17}$/.test( this.userData[ field ] );
 				}
 			},
 			renderUri( methodName, method )
@@ -174,9 +196,16 @@
 			{
 				const parameters = new URLSearchParams();
 
-				if( this.userData.webapi_key && method._type !== 'dota2' )
+				if( method._type !== 'dota2' )
 				{
-					parameters.set( 'key', this.userData.webapi_key );
+					if( this.hasValidAccessToken )
+					{
+						parameters.set( 'access_token', this.userData.access_token );
+					}
+					else if( this.hasValidWebApiKey )
+					{
+						parameters.set( 'key', this.userData.webapi_key );
+					}
 				}
 
 				if( this.userData.format !== 'json' )

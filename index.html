@@ -99,14 +99,22 @@
 							<div class="card-body row">
 								<div class="form-group col-md-6">
 									<a href="https://steamcommunity.com/dev/apikey" target="_blank" rel="noopener" class="float-right">Get your key here</a>
-									<label for="form-api-key">Your WebAPI Key</label>
+									<label for="form-api-key">WebAPI key</label>
 									<input type="text" :class="[
 										'form-control',
 										isFieldValid( 'webapi_key' ) ? 'is-valid' : 'is-invalid'
 									]" id="form-api-key" placeholder="Your key (stored in your browser only)" v-model="userData.webapi_key">
 								</div>
 								<div class="form-group col-md-6">
-									<label for="form-format">Preferred Output Format</label>
+									<span class="float-right" title="Some APIs work with OAuth access token, if you have one you can provide it here and it will be preferred over the webapi key.">(?)</span>
+									<label for="form-api-key">Access token</label>
+									<input type="text" :class="[
+										'form-control',
+										{ 'is-valid': isFieldValid( 'access_token' ) }
+									]" id="form-api-key" placeholder="Your key (stored in your browser only)" v-model="userData.access_token">
+								</div>
+								<div class="form-group col-md-6">
+									<label for="form-format">Preferred output format</label>
 									<select class="custom-select" id="form-format" v-model="userData.format">
 										<option value="json">JSON</option>
 										<option value="vdf">VDF</option>
@@ -223,7 +231,8 @@
 								]"
 								@submit="useThisMethod($event, method)"
 							>
-								<input type="hidden" name="key" v-model="userData.webapi_key" v-if="method._type !== 'dota2'">
+								<input type="hidden" name="access_token" v-model="userData.access_token" v-if="method._type !== 'dota2' && hasValidAccessToken">
+								<input type="hidden" name="key" v-model="userData.webapi_key" v-if="method._type !== 'dota2' && !hasValidAccessToken && hasValidWebApiKey">
 								<input type="hidden" name="format" v-model="userData.format" v-if="method._type !== 'dota2' && userData.format !== 'json'">
 								<div :class="[
 									'card-header p-0 d-flex justify-content-between',
