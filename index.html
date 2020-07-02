@@ -227,21 +227,18 @@
 								:class="[
 									'card mb-4',
 									{ 'border-warning': method._type === 'undocumented' },
-									{ 'border-danger': method._type === 'dota2' },
 								]"
 								@submit="useThisMethod($event, method)"
 							>
-								<input type="hidden" name="access_token" v-model="userData.access_token" v-if="method._type !== 'dota2' && hasValidAccessToken">
-								<input type="hidden" name="key" v-model="userData.webapi_key" v-if="method._type !== 'dota2' && !hasValidAccessToken && hasValidWebApiKey">
-								<input type="hidden" name="format" v-model="userData.format" v-if="method._type !== 'dota2' && userData.format !== 'json'">
+								<input type="hidden" name="access_token" v-model="userData.access_token" v-if="hasValidAccessToken">
+								<input type="hidden" name="key" v-model="userData.webapi_key" v-if="!hasValidAccessToken && hasValidWebApiKey">
+								<input type="hidden" name="format" v-model="userData.format" v-if="userData.format !== 'json'">
 								<div :class="[
 									'card-header p-0 d-flex justify-content-between',
 									{ 'bg-warning border-warning': method._type === 'undocumented' },
-									{ 'bg-danger border-danger text-white': method._type === 'dota2' },
 								]">
 									<div class="card-inner-header">
 										<a class="badge badge-light no-select" href="https://github.com/SteamDatabase/UndocumentedAPI" target="_blank" rel="noopener" v-if="method._type === 'undocumented'">UNDOCUMENTED</a>
-										<a class="badge badge-light no-select" href="https://github.com/SteamDatabase/UndocumentedAPI" target="_blank" rel="noopener" v-if="method._type === 'dota2'">DOTA 2</a>
 										<a class="badge badge-primary no-select" href="https://github.com/SteamDatabase/Protobufs" target="_blank" rel="noopener" v-if="method._type === 'protobufs'">PROTOBUF</a>
 										<span :class="method.httpmethod === 'GET' ? 'badge badge-success' : 'badge badge-danger'">{{ method.httpmethod }}</span>
 										<a class="badge badge-warning no-select" v-if="method._type === 'publisher_only'" :href="`https://partner.steamgames.com/doc/webapi/${currentInterface}#${methodName}`" target="_blank" rel="noopener">PUBLISHER</a>

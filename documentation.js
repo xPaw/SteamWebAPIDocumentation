@@ -183,14 +183,7 @@
 				let host = 'https://api.steampowered.com/';
 				let version = method.version;
 
-				if( method._type === 'dota2' )
-				{
-					host = 'https://www.dota2.com/webapi/';
-
-					// For some reason dota apis specifically want zero padded versions
-					version = version.toString().padStart( 4, '0' );
-				}
-				else if( method._type === 'publisher_only' )
+				if( method._type === 'publisher_only' )
 				{
 					host = 'https://partner.steam-api.com/';
 				}
@@ -199,11 +192,6 @@
 			},
 			renderApiKey( method )
 			{
-				if( method._type === 'dota2' )
-				{
-					return '';
-				}
-
 				const parameters = new URLSearchParams();
 
 				if( this.hasValidAccessToken )
