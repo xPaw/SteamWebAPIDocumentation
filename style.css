@@ -238,3 +238,13 @@ body {
 	font-size: 13px;
 	padding: 5px 10px;
 }
+
+.hidden-key {
+	font-size: 0;
+}
+
+.hidden-key:not(:empty):before {
+	content: "key=is_here_but_hidden";
+	font-size: 1rem;
+	color: #997433;
+}

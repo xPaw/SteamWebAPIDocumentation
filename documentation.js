@@ -195,23 +195,31 @@
 					host = 'https://partner.steam-api.com/';
 				}
 
-				return `${host}${this.currentInterface}/${methodName}/v${version}/`;
+				return `${host}${this.currentInterface}/${methodName}/v${version}/?`;
+			},
+			renderApiKey( method )
+			{
+				if( method._type === 'dota2' )
+				{
+					return '';
+				}
+
+				const parameters = new URLSearchParams();
+
+				if( this.hasValidAccessToken )
+				{
+					parameters.set( 'access_token', this.userData.access_token );
+				}
+				else if( this.hasValidWebApiKey )
+				{
+					parameters.set( 'key', this.userData.webapi_key );
+				}
+
+				return parameters.toString();
 			},
 			renderParameters( method )
 			{
 				const parameters = new URLSearchParams();
-
-				if( method._type !== 'dota2' )
-				{
-					if( this.hasValidAccessToken )
-					{
-						parameters.set( 'access_token', this.userData.access_token );
-					}
-					else if( this.hasValidWebApiKey )
-					{
-						parameters.set( 'key', this.userData.webapi_key );
-					}
-				}
 
 				if( this.userData.format !== 'json' )
 				{
@@ -231,7 +239,9 @@
 					}
 				}
 
-				return '?' + parameters.toString();
+				const str = parameters.toString();
+
+				return str.length > 0 ? `&${str}` : '';
 			},
 			useThisMethod( event, method )
 			{
