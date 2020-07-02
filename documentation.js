@@ -44,10 +44,10 @@
 		{
 			userData:
 			{
-				webapi_key: localStorage.getItem( 'webapi_key' ) || '',
-				access_token: localStorage.getItem( 'access_token' ) || '',
-				steamid: localStorage.getItem( 'steamid' ) || '',
-				format: localStorage.getItem( 'format' ) || 'json',
+				webapi_key: '',
+				access_token: '',
+				steamid: '',
+				format: 'json',
 			},
 			hasValidWebApiKey: false,
 			hasValidAccessToken: false,
@@ -120,6 +120,11 @@
 		},
 		mounted()
 		{
+			this.userData.webapi_key = localStorage.getItem( 'webapi_key' ) || '';
+			this.userData.access_token = localStorage.getItem( 'access_token' ) || '';
+			this.userData.steamid = localStorage.getItem( 'steamid' ) || '';
+			this.userData.format = localStorage.getItem( 'format' ) || 'json';
+
 			document.getElementById( 'loading' ).remove();
 		},
 		computed:
