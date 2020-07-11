@@ -2108,7 +2108,8 @@
                     "optional": true,
                     "description": "An optional filter for a specific player"
                 }
-            ]
+            ],
+            "_type": "undocumented"
         },
         "GetPlayerOfficialInfo": {
             "version": 1,
@@ -2120,12 +2121,14 @@
                     "optional": false,
                     "description": "The account ID to look up"
                 }
-            ]
+            ],
+            "_type": "undocumented"
         },
         "GetProPlayerList": {
             "version": 1,
             "httpmethod": "GET",
-            "parameters": []
+            "parameters": [],
+            "_type": "undocumented"
         }
     },
     "IDOTA2Guild_570": {
@@ -2201,7 +2204,8 @@
                     "optional": false,
                     "description": ""
                 }
-            ]
+            ],
+            "_type": "undocumented"
         }
     },
     "IDOTA2Match_570": {
@@ -2424,7 +2428,8 @@
         "GetLeagueListing": {
             "version": 1,
             "httpmethod": "GET",
-            "parameters": []
+            "parameters": [],
+            "_type": "undocumented"
         },
         "GetLiveLeagueGames": {
             "version": 1,
@@ -2442,7 +2447,8 @@
                     "optional": true,
                     "description": "Only show matches of the specified match id"
                 }
-            ]
+            ],
+            "_type": "undocumented"
         },
         "GetMatchDetails": {
             "version": 1,
@@ -2454,7 +2460,8 @@
                     "optional": false,
                     "description": "Match id"
                 }
-            ]
+            ],
+            "_type": "undocumented"
         },
         "GetMatchHistory": {
             "version": 1,
@@ -2508,7 +2515,8 @@
                     "optional": true,
                     "description": "The number of requested matches to return"
                 }
-            ]
+            ],
+            "_type": "undocumented"
         },
         "GetMatchHistoryBySequenceNum": {
             "version": 1,
@@ -2526,7 +2534,8 @@
                     "optional": true,
                     "description": ""
                 }
-            ]
+            ],
+            "_type": "undocumented"
         },
         "GetTeamInfoByTeamID": {
             "version": 1,
@@ -2544,7 +2553,8 @@
                     "optional": true,
                     "description": ""
                 }
-            ]
+            ],
+            "_type": "undocumented"
         },
         "GetTopLiveEventGame": {
             "version": 1,
@@ -2556,7 +2566,8 @@
                     "optional": false,
                     "description": "Which partner's games to use."
                 }
-            ]
+            ],
+            "_type": "undocumented"
         },
         "GetTopLiveGame": {
             "version": 1,
@@ -2568,7 +2579,8 @@
                     "optional": false,
                     "description": "Which partner's games to use."
                 }
-            ]
+            ],
+            "_type": "undocumented"
         },
         "GetTopWeekendTourneyGames": {
             "version": 1,
@@ -2586,7 +2598,8 @@
                     "optional": true,
                     "description": "Prefer matches from this division."
                 }
-            ]
+            ],
+            "_type": "undocumented"
         },
         "GetTournamentPlayerStats": {
             "version": 2,
@@ -2628,7 +2641,8 @@
                     "optional": true,
                     "description": ""
                 }
-            ]
+            ],
+            "_type": "undocumented"
         }
     },
     "IDOTA2Operations_570": {
@@ -2688,7 +2702,8 @@
                     "optional": true,
                     "description": "LeagueID to use if we aren't in a lobby"
                 }
-            ]
+            ],
+            "_type": "undocumented"
         }
     },
     "IDOTA2Teams_570": {
@@ -2822,7 +2837,8 @@
                     "optional": false,
                     "description": "Valid Badge Type 3"
                 }
-            ]
+            ],
+            "_type": "undocumented"
         },
         "GetSteamIDForBadgeID": {
             "version": 1,
@@ -2834,7 +2850,8 @@
                     "optional": false,
                     "description": "The badge ID"
                 }
-            ]
+            ],
+            "_type": "undocumented"
         },
         "SetSteamAccountPurchased": {
             "version": 1,
@@ -2852,7 +2869,8 @@
                     "optional": false,
                     "description": "Badge Type"
                 }
-            ]
+            ],
+            "_type": "undocumented"
         },
         "SteamAccountValidForBadgeType": {
             "version": 1,
@@ -2882,7 +2900,8 @@
                     "optional": false,
                     "description": "Valid Badge Type 3"
                 }
-            ]
+            ],
+            "_type": "undocumented"
         }
     },
     "IDOTAChat_570": {
@@ -3018,7 +3037,8 @@
                     "optional": true,
                     "description": "The language to provide hero names in."
                 }
-            ]
+            ],
+            "_type": "undocumented"
         },
         "GetGameItems": {
             "version": 1,
@@ -3030,7 +3050,8 @@
                     "optional": true,
                     "description": "The language to provide item names in."
                 }
-            ]
+            ],
+            "_type": "undocumented"
         },
         "GetHeroes": {
             "version": 1,
@@ -3048,7 +3069,8 @@
                     "optional": true,
                     "description": "Return a list of itemized heroes only."
                 }
-            ]
+            ],
+            "_type": "undocumented"
         },
         "GetItemIconPath": {
             "version": 1,
@@ -3066,7 +3088,8 @@
                     "optional": true,
                     "description": "The type of image you want. 0 = normal, 1 = large, 2 = ingame"
                 }
-            ]
+            ],
+            "_type": "undocumented"
         },
         "GetRarities": {
             "version": 1,
@@ -3078,7 +3101,8 @@
                     "optional": true,
                     "description": "The language to provide rarity names in."
                 }
-            ]
+            ],
+            "_type": "undocumented"
         },
         "GetTournamentPrizePool": {
             "version": 1,
@@ -3090,7 +3114,8 @@
                     "optional": true,
                     "description": "The ID of the league to get the prize pool of"
                 }
-            ]
+            ],
+            "_type": "undocumented"
         }
     },
     "IEconItems_440": {
@@ -3231,7 +3256,8 @@
                     "optional": false,
                     "description": "The Steam ID to fetch items for"
                 }
-            ]
+            ],
+            "_type": "undocumented"
         },
         "GetSchema": {
             "version": 1,
@@ -3243,7 +3269,8 @@
                     "optional": true,
                     "description": "The language to return the names in. Defaults to returning string keys."
                 }
-            ]
+            ],
+            "_type": "undocumented"
         }
     },
     "IEconItems_730": {
@@ -3306,7 +3333,8 @@
                     "optional": false,
                     "description": "Return items equipped for this class id"
                 }
-            ]
+            ],
+            "_type": "undocumented"
         },
         "GetPlayerItems": {
             "version": 1,
@@ -3318,12 +3346,14 @@
                     "optional": false,
                     "description": "The Steam ID to fetch items for"
                 }
-            ]
+            ],
+            "_type": "undocumented"
         },
         "GetSchemaURL": {
             "version": 1,
             "httpmethod": "GET",
-            "parameters": []
+            "parameters": [],
+            "_type": "undocumented"
         },
         "GetStoreMetaData": {
             "version": 1,
@@ -3335,7 +3365,8 @@
                     "optional": true,
                     "description": "The language to results in."
                 }
-            ]
+            ],
+            "_type": "undocumented"
         }
     },
     "IEconItems_221540": {
@@ -3349,7 +3380,8 @@
                     "optional": false,
                     "description": "The Steam ID to fetch items for"
                 }
-            ]
+            ],
+            "_type": "undocumented"
         }
     },
     "IEconItems_238460": {
@@ -3383,7 +3415,8 @@
                     "optional": false,
                     "description": "Return items equipped for this class id"
                 }
-            ]
+            ],
+            "_type": "undocumented"
         }
     },
     "IEconItems_1046930": {
@@ -4021,24 +4054,28 @@
         "GetClientVersion": {
             "version": 1,
             "httpmethod": "GET",
-            "parameters": []
+            "parameters": [],
+            "_type": "undocumented"
         },
         "GetServerVersion": {
             "version": 1,
             "httpmethod": "GET",
-            "parameters": []
+            "parameters": [],
+            "_type": "undocumented"
         }
     },
     "IGCVersion_583950": {
         "GetClientVersion": {
             "version": 1,
             "httpmethod": "GET",
-            "parameters": []
+            "parameters": [],
+            "_type": "undocumented"
         },
         "GetServerVersion": {
             "version": 1,
             "httpmethod": "GET",
-            "parameters": []
+            "parameters": [],
+            "_type": "undocumented"
         }
     },
     "IGCVersion_1046930": {
@@ -6505,7 +6542,8 @@
                     "optional": false,
                     "description": "The leaderboard name to fetch data for."
                 }
-            ]
+            ],
+            "_type": "undocumented"
         }
     },
     "IProductInfoService": {
@@ -11491,7 +11529,8 @@
                     "optional": false,
                     "description": "The promo ID to grant an item for"
                 }
-            ]
+            ],
+            "_type": "undocumented"
         },
         "GrantItem": {
             "version": 1,
@@ -11509,7 +11548,8 @@
                     "optional": false,
                     "description": "The promo ID to grant an item for"
                 }
-            ]
+            ],
+            "_type": "undocumented"
         }
     },
     "ITFPromos_205790": {
@@ -11529,7 +11569,8 @@
                     "optional": false,
                     "description": "The promo ID to grant an item for"
                 }
-            ]
+            ],
+            "_type": "undocumented"
         },
         "GrantItem": {
             "version": 1,
@@ -11547,7 +11588,8 @@
                     "optional": false,
                     "description": "The promo ID to grant an item for"
                 }
-            ]
+            ],
+            "_type": "undocumented"
         }
     },
     "ITFSystem_440": {
