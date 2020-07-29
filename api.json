@@ -10787,7 +10787,7 @@
             ]
         },
         "GrantPackage": {
-            "version": 1,
+            "version": 2,
             "httpmethod": "POST",
             "parameters": [
                 {
@@ -10852,6 +10852,37 @@
                     "description": "The type of vanity URL. 1 (default): Individual profile, 2: Group, 3: Official game group"
                 }
             ]
+        },
+        "RevokePackage": {
+            "version": 1,
+            "httpmethod": "POST",
+            "parameters": [
+                {
+                    "name": "key",
+                    "type": "string",
+                    "optional": false,
+                    "description": "access key"
+                },
+                {
+                    "name": "steamid",
+                    "type": "uint64",
+                    "optional": false,
+                    "description": "SteamID of user"
+                },
+                {
+                    "name": "packageid",
+                    "type": "uint32",
+                    "optional": false,
+                    "description": "PackageID to grant"
+                },
+                {
+                    "name": "revokereason",
+                    "type": "string",
+                    "optional": false,
+                    "description": "Reason for why to revoke"
+                }
+            ],
+            "_type": "publisher_only"
         }
     },
     "ISteamUserAuth": {
