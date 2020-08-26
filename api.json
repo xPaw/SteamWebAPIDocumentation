@@ -1956,6 +1956,12 @@
                     "type": "int32",
                     "optional": true,
                     "description": "launcher type"
+                },
+                {
+                    "name": "ipv6_public",
+                    "type": "string",
+                    "optional": true,
+                    "description": "client public ipv6 address if it knows it"
                 }
             ]
         }
@@ -11642,6 +11648,30 @@
         "FullAccountUpdate": {
             "version": 1,
             "_type": "undocumented"
+        },
+        "GetTrustScore": {
+            "version": 1,
+            "httpmethod": "GET",
+            "description": "Returns the Trust Score for the provided account in the specified appid.",
+            "parameters": [
+                {
+                    "name": "key",
+                    "type": "string",
+                    "optional": false,
+                    "description": "Access key"
+                },
+                {
+                    "name": "steamid",
+                    "type": "uint64",
+                    "optional": false
+                },
+                {
+                    "name": "appid",
+                    "type": "uint32",
+                    "optional": false
+                }
+            ],
+            "_type": "publisher_only"
         }
     },
     "ITwoFactorService": {
