@@ -38,6 +38,82 @@
             "_type": "protobufs"
         }
     },
+    "IAuctionService": {
+        "CancelBid": {
+            "version": 1,
+            "httpmethod": "POST",
+            "parameters": [
+                {
+                    "name": "key",
+                    "type": "string",
+                    "optional": false,
+                    "description": "Access key"
+                }
+            ],
+            "_type": "protobufs"
+        },
+        "GetBidsForItem": {
+            "version": 1,
+            "parameters": [
+                {
+                    "name": "key",
+                    "type": "string",
+                    "optional": false,
+                    "description": "Access key"
+                }
+            ],
+            "_type": "protobufs"
+        },
+        "GetBidsForUser": {
+            "version": 1,
+            "parameters": [
+                {
+                    "name": "key",
+                    "type": "string",
+                    "optional": false,
+                    "description": "Access key"
+                }
+            ],
+            "_type": "protobufs"
+        },
+        "GetItemDetails": {
+            "version": 1,
+            "parameters": [
+                {
+                    "name": "key",
+                    "type": "string",
+                    "optional": false,
+                    "description": "Access key"
+                }
+            ],
+            "_type": "protobufs"
+        },
+        "GetUserBidForItem": {
+            "version": 1,
+            "parameters": [
+                {
+                    "name": "key",
+                    "type": "string",
+                    "optional": false,
+                    "description": "Access key"
+                }
+            ],
+            "_type": "protobufs"
+        },
+        "PlaceBid": {
+            "version": 1,
+            "httpmethod": "POST",
+            "parameters": [
+                {
+                    "name": "key",
+                    "type": "string",
+                    "optional": false,
+                    "description": "Access key"
+                }
+            ],
+            "_type": "protobufs"
+        }
+    },
     "IBroadcastService": {
         "GetBroadcastUploadStats": {
             "version": 1,
@@ -1435,6 +1511,39 @@
                 }
             ],
             "_type": "publisher_only"
+        }
+    },
+    "IClientMetricsService": {
+        "ReportClientError": {
+            "version": 1,
+            "httpmethod": "POST",
+            "parameters": [
+                {
+                    "name": "key",
+                    "type": "string",
+                    "optional": false,
+                    "description": "Access key"
+                },
+                {
+                    "name": "product",
+                    "type": "string",
+                    "optional": true,
+                    "description": ""
+                },
+                {
+                    "name": "version",
+                    "type": "string",
+                    "optional": true,
+                    "description": ""
+                },
+                {
+                    "name": "errors",
+                    "type": "{message}",
+                    "optional": true,
+                    "description": ""
+                }
+            ],
+            "_type": "protobufs"
         }
     },
     "IClientStats_1046930": {
@@ -5488,12 +5597,6 @@
                     "type": "string",
                     "optional": false,
                     "description": "Access key"
-                },
-                {
-                    "name": "requests",
-                    "type": "{message}",
-                    "optional": true,
-                    "description": ""
                 }
             ],
             "_type": "protobufs"
@@ -5518,12 +5621,6 @@
                     "type": "string",
                     "optional": false,
                     "description": "Access key"
-                },
-                {
-                    "name": "include_event_apps",
-                    "type": "bool",
-                    "optional": true,
-                    "description": ""
                 }
             ],
             "_type": "protobufs"
@@ -5687,12 +5784,6 @@
                     "type": "string",
                     "optional": false,
                     "description": "Access key"
-                },
-                {
-                    "name": "defid",
-                    "type": "uint32",
-                    "optional": true,
-                    "description": ""
                 }
             ],
             "_type": "protobufs"
@@ -5706,18 +5797,6 @@
                     "type": "string",
                     "optional": false,
                     "description": "Access key"
-                },
-                {
-                    "name": "defid",
-                    "type": "uint32",
-                    "optional": true,
-                    "description": ""
-                },
-                {
-                    "name": "num_levels",
-                    "type": "int32",
-                    "optional": true,
-                    "description": ""
                 }
             ],
             "_type": "protobufs"
@@ -5731,12 +5810,6 @@
                     "type": "string",
                     "optional": false,
                     "description": "Access key"
-                },
-                {
-                    "name": "defid",
-                    "type": "uint32",
-                    "optional": true,
-                    "description": ""
                 }
             ],
             "_type": "protobufs"
@@ -6045,12 +6118,19 @@
         },
         "GetFavoriteBadge": {
             "version": 1,
+            "description": "Gets the badge the user has set as their favorite",
             "parameters": [
                 {
                     "name": "key",
                     "type": "string",
                     "optional": false,
                     "description": "Access key"
+                },
+                {
+                    "name": "steamid",
+                    "type": "uint64",
+                    "optional": true,
+                    "description": ""
                 }
             ],
             "_type": "protobufs"
@@ -6163,12 +6243,25 @@
         },
         "GetProfileCustomization": {
             "version": 1,
+            "description": "Returns the customizations (if any) for a profile",
             "parameters": [
                 {
                     "name": "key",
                     "type": "string",
                     "optional": false,
                     "description": "Access key"
+                },
+                {
+                    "name": "steamid",
+                    "type": "fixed64",
+                    "optional": true,
+                    "description": ""
+                },
+                {
+                    "name": "include_inactive_customizations",
+                    "type": "bool",
+                    "optional": true,
+                    "description": ""
                 }
             ],
             "_type": "protobufs"
@@ -6219,6 +6312,7 @@
         },
         "GetProfileThemesAvailable": {
             "version": 1,
+            "description": "Gets themes available for the user.",
             "parameters": [
                 {
                     "name": "key",
@@ -6453,12 +6547,25 @@
         "SetFavoriteBadge": {
             "version": 1,
             "httpmethod": "POST",
+            "description": "Sets the badge  as the users favorite",
             "parameters": [
                 {
                     "name": "key",
                     "type": "string",
                     "optional": false,
                     "description": "Access key"
+                },
+                {
+                    "name": "communityitemid",
+                    "type": "uint64",
+                    "optional": true,
+                    "description": ""
+                },
+                {
+                    "name": "badgeid",
+                    "type": "uint32",
+                    "optional": true,
+                    "description": ""
                 }
             ],
             "_type": "protobufs"
@@ -6506,12 +6613,19 @@
         "SetProfileTheme": {
             "version": 1,
             "httpmethod": "POST",
+            "description": "Selects a theme for the profile",
             "parameters": [
                 {
                     "name": "key",
                     "type": "string",
                     "optional": false,
                     "description": "Access key"
+                },
+                {
+                    "name": "theme_id",
+                    "type": "string",
+                    "optional": true,
+                    "description": ""
                 }
             ],
             "_type": "protobufs"
@@ -11416,6 +11530,25 @@
                     "description": "Number of results to return at a time.  Default 10k, max 50k."
                 }
             ]
+        },
+        "GetMostPopularTags": {
+            "version": 1,
+            "description": "Get all whitelisted tags, with localized names.",
+            "parameters": [
+                {
+                    "name": "key",
+                    "type": "string",
+                    "optional": false,
+                    "description": "Access key"
+                },
+                {
+                    "name": "language",
+                    "type": "string",
+                    "optional": true,
+                    "description": ""
+                }
+            ],
+            "_type": "protobufs"
         }
     },
     "ISummerSale2020Service": {
