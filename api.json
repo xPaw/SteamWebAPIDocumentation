@@ -1796,6 +1796,18 @@
                     "type": "string",
                     "optional": false,
                     "description": "Access key"
+                },
+                {
+                    "name": "steamid",
+                    "type": "fixed64",
+                    "optional": true,
+                    "description": ""
+                },
+                {
+                    "name": "filter_user_uploaded_only",
+                    "type": "bool",
+                    "optional": true,
+                    "description": ""
                 }
             ],
             "_type": "protobufs"
@@ -2095,7 +2107,7 @@
                 },
                 {
                     "name": "ipaddress_actual",
-                    "type": "uint32",
+                    "type": "string",
                     "optional": true,
                     "description": ""
                 }
@@ -7710,6 +7722,24 @@
                     "type": "string",
                     "optional": false,
                     "description": "Access key"
+                },
+                {
+                    "name": "appid",
+                    "type": "uint32",
+                    "optional": true,
+                    "description": ""
+                },
+                {
+                    "name": "communityitemid",
+                    "type": "uint64",
+                    "optional": true,
+                    "description": ""
+                },
+                {
+                    "name": "activate",
+                    "type": "bool",
+                    "optional": true,
+                    "description": ""
                 }
             ],
             "_type": "protobufs"
@@ -7722,6 +7752,12 @@
                     "type": "string",
                     "optional": false,
                     "description": "Access key"
+                },
+                {
+                    "name": "filter_appids",
+                    "type": "uint32",
+                    "optional": true,
+                    "description": ""
                 }
             ],
             "_type": "protobufs"
@@ -7734,42 +7770,6 @@
                     "type": "string",
                     "optional": false,
                     "description": "Access key"
-                },
-                {
-                    "name": "appid",
-                    "type": "uint32",
-                    "optional": true,
-                    "description": ""
-                },
-                {
-                    "name": "work_in_progress",
-                    "type": "bool",
-                    "optional": true,
-                    "description": ""
-                },
-                {
-                    "name": "item_type",
-                    "type": "uint32",
-                    "optional": true,
-                    "description": ""
-                },
-                {
-                    "name": "language",
-                    "type": "string",
-                    "optional": true,
-                    "description": ""
-                },
-                {
-                    "name": "broadcast_channel_id",
-                    "type": "uint64",
-                    "optional": true,
-                    "description": ""
-                },
-                {
-                    "name": "keyvalues_as_json",
-                    "type": "bool",
-                    "optional": true,
-                    "description": ""
                 }
             ],
             "_type": "protobufs"
@@ -11461,6 +11461,50 @@
                 }
             ],
             "_type": "publisher_only"
+        }
+    },
+    "IStoreBrowseService": {
+        "GetItems": {
+            "version": 1,
+            "parameters": [
+                {
+                    "name": "key",
+                    "type": "string",
+                    "optional": false,
+                    "description": "Access key"
+                },
+                {
+                    "name": "ids",
+                    "type": "{message}",
+                    "optional": true,
+                    "description": ""
+                },
+                {
+                    "name": "context",
+                    "type": "{message}",
+                    "optional": true,
+                    "description": ""
+                },
+                {
+                    "name": "data_request",
+                    "type": "{message}",
+                    "optional": true,
+                    "description": ""
+                }
+            ],
+            "_type": "protobufs"
+        },
+        "GetStoreCategories": {
+            "version": 1,
+            "parameters": [
+                {
+                    "name": "key",
+                    "type": "string",
+                    "optional": false,
+                    "description": "Access key"
+                }
+            ],
+            "_type": "protobufs"
         }
     },
     "IStoreService": {
