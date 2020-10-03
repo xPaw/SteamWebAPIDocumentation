@@ -354,7 +354,7 @@
                     "optional": false
                 }
             ],
-            "_type": "undocumented"
+            "_type": "publisher_only"
         },
         "PostGameDataFrameRTMP": {
             "version": 1,
@@ -638,7 +638,7 @@
                     "description": "The coin"
                 }
             ],
-            "_type": "undocumented"
+            "_type": "publisher_only"
         }
     },
     "ICSGOServers_730": {
@@ -935,7 +935,7 @@
                     "optional": false
                 }
             ],
-            "_type": "undocumented"
+            "_type": "publisher_only"
         },
         "AppPostSystemMessageToGroup": {
             "version": 1,
@@ -974,7 +974,7 @@
                     "optional": false
                 }
             ],
-            "_type": "undocumented"
+            "_type": "publisher_only"
         },
         "AppRemoveUsersFromGroup": {
             "version": 1,
@@ -1018,7 +1018,7 @@
                     "optional": false
                 }
             ],
-            "_type": "undocumented"
+            "_type": "publisher_only"
         },
         "CreateAppChatRoomGroup": {
             "version": 1,
@@ -1052,7 +1052,7 @@
                     "optional": false
                 }
             ],
-            "_type": "undocumented"
+            "_type": "publisher_only"
         },
         "SetAppChatRoomConfig": {
             "version": 1,
@@ -1091,7 +1091,7 @@
                     "optional": false
                 }
             ],
-            "_type": "undocumented"
+            "_type": "publisher_only"
         }
     },
     "ICheatReportingService": {
@@ -1125,7 +1125,7 @@
                     "description": "session id"
                 }
             ],
-            "_type": "undocumented"
+            "_type": "publisher_only"
         },
         "GetCheatingReports": {
             "version": 1,
@@ -1181,7 +1181,7 @@
                     "description": "(Optional) Query just for this steamid."
                 }
             ],
-            "_type": "undocumented"
+            "_type": "publisher_only"
         },
         "RemovePlayerGameBan": {
             "version": 1,
@@ -1207,7 +1207,7 @@
                     "description": "The appid."
                 }
             ],
-            "_type": "undocumented"
+            "_type": "publisher_only"
         },
         "ReportCheatData": {
             "version": 1,
@@ -1390,7 +1390,7 @@
                     "description": "(Optional) app specific data about the type of cheating"
                 }
             ],
-            "_type": "undocumented"
+            "_type": "publisher_only"
         },
         "RequestPlayerGameBan": {
             "version": 1,
@@ -1452,7 +1452,7 @@
                     "description": "The ban will be recorded but not be visible or deny access to secure servers."
                 }
             ],
-            "_type": "undocumented"
+            "_type": "publisher_only"
         },
         "RequestVacStatusForUser": {
             "version": 1,
@@ -1484,7 +1484,7 @@
                     "description": "session id"
                 }
             ],
-            "_type": "undocumented"
+            "_type": "publisher_only"
         },
         "StartSecureMultiplayerSession": {
             "version": 1,
@@ -1510,7 +1510,7 @@
                     "description": "The appid the user is playing."
                 }
             ],
-            "_type": "undocumented"
+            "_type": "publisher_only"
         }
     },
     "IClientMetricsService": {
@@ -1884,7 +1884,7 @@
                     "description": "True if the strings are names instead of chat text"
                 }
             ],
-            "_type": "undocumented"
+            "_type": "publisher_only"
         }
     },
     "IContentServerConfigService": {
@@ -3581,7 +3581,7 @@
                     "description": "This was in response to a VAC ban?"
                 }
             ],
-            "_type": "undocumented"
+            "_type": "publisher_only"
         },
         "GetAssetID": {
             "version": 1,
@@ -3607,7 +3607,7 @@
                     "description": "The identifier of the listing to get information for"
                 }
             ],
-            "_type": "undocumented"
+            "_type": "publisher_only"
         },
         "GetMarketEligibility": {
             "version": 1,
@@ -3627,7 +3627,7 @@
                     "description": "The SteamID of the user to check"
                 }
             ],
-            "_type": "undocumented"
+            "_type": "publisher_only"
         },
         "GetPopular": {
             "version": 1,
@@ -3671,7 +3671,7 @@
                     "description": "If present, prices returned will be represented in this currency"
                 }
             ],
-            "_type": "undocumented"
+            "_type": "publisher_only"
         },
         "LearnItem": {
             "version": 1,
@@ -3703,7 +3703,7 @@
                     "description": "Asset class property value"
                 }
             ],
-            "_type": "undocumented"
+            "_type": "publisher_only"
         }
     },
     "IEconService": {
@@ -3760,7 +3760,7 @@
                     "optional": false
                 }
             ],
-            "_type": "undocumented"
+            "_type": "publisher_only"
         },
         "FlushContextCache": {
             "version": 1,
@@ -3779,7 +3779,7 @@
                     "optional": false
                 }
             ],
-            "_type": "undocumented"
+            "_type": "publisher_only"
         },
         "FlushInventoryCache": {
             "version": 1,
@@ -3811,7 +3811,7 @@
                     "description": "Context to clear cache for."
                 }
             ],
-            "_type": "undocumented"
+            "_type": "publisher_only"
         },
         "GetTradeHistory": {
             "version": 1,
@@ -4243,7 +4243,7 @@
                     "description": "The arguments that were provided with the command in the first place"
                 }
             ],
-            "_type": "undocumented"
+            "_type": "publisher_only"
         },
         "GetItemDefArchive": {
             "version": 1,
@@ -4284,7 +4284,7 @@
                     "description": "End time of the history range to collect"
                 }
             ],
-            "_type": "undocumented"
+            "_type": "publisher_only"
         },
         "HistoryExecuteCommands": {
             "version": 1,
@@ -4315,7 +4315,7 @@
                     "description": "A unique 32 bit ID for the support person executing the command"
                 }
             ],
-            "_type": "undocumented"
+            "_type": "publisher_only"
         },
         "SupportGetAssetHistory": {
             "version": 1,
@@ -4340,7 +4340,7 @@
                     "description": "The context to fetch history for"
                 }
             ],
-            "_type": "undocumented"
+            "_type": "publisher_only"
         }
     },
     "IGameNotificationsService": {
@@ -4386,7 +4386,7 @@
                     "description": "(Optional) steamid to make the request on behalf of -- if specified, the user must be in the session and all users being added to the session must be friends with the user."
                 }
             ],
-            "_type": "undocumented"
+            "_type": "publisher_only"
         },
         "DeleteSession": {
             "version": 1,
@@ -4418,7 +4418,7 @@
                     "description": "(Optional) steamid to make the request on behalf of -- if specified, the user must be in the session."
                 }
             ],
-            "_type": "undocumented"
+            "_type": "publisher_only"
         },
         "DeleteSessionBatch": {
             "version": 1,
@@ -4444,7 +4444,7 @@
                     "description": "The appid of the session to delete."
                 }
             ],
-            "_type": "undocumented"
+            "_type": "publisher_only"
         },
         "EnumerateSessionsForApp": {
             "version": 1,
@@ -4488,7 +4488,7 @@
                     "description": "(Optional) Language to localize the text in."
                 }
             ],
-            "_type": "undocumented"
+            "_type": "publisher_only"
         },
         "GetSessionDetailsForApp": {
             "version": 1,
@@ -4519,7 +4519,7 @@
                     "description": "Language to localize the text in."
                 }
             ],
-            "_type": "undocumented"
+            "_type": "publisher_only"
         },
         "RequestNotifications": {
             "version": 1,
@@ -4545,7 +4545,7 @@
                     "description": "The appid to request notifications for."
                 }
             ],
-            "_type": "undocumented"
+            "_type": "publisher_only"
         },
         "UpdateSession": {
             "version": 1,
@@ -4589,7 +4589,7 @@
                     "description": "(Optional) steamid to make the request on behalf of -- if specified, the user must be in the session and all users being added to the session must be friends with the user."
                 }
             ],
-            "_type": "undocumented"
+            "_type": "publisher_only"
         },
         "UserCreateSession": {
             "version": 1,
@@ -4899,7 +4899,7 @@
                     "optional": false
                 }
             ],
-            "_type": "undocumented"
+            "_type": "publisher_only"
         },
         "SetMemo": {
             "version": 1,
@@ -4983,7 +4983,7 @@
                     "description": "If set, treat requestid as a txnid and create this item as a result of user microtransaction purchase."
                 }
             ],
-            "_type": "undocumented"
+            "_type": "publisher_only"
         },
         "AddPromoItem": {
             "version": 1,
@@ -5040,7 +5040,7 @@
                     "description": "If set, treat requestid as a txnid and create this item as a result of user microtransaction purchase."
                 }
             ],
-            "_type": "undocumented"
+            "_type": "publisher_only"
         },
         "CombineItemStacks": {
             "version": 1,
@@ -5112,7 +5112,7 @@
                     "optional": true
                 }
             ],
-            "_type": "undocumented"
+            "_type": "publisher_only"
         },
         "ConsolidateAll": {
             "version": 1,
@@ -5141,7 +5141,7 @@
                     "optional": false
                 }
             ],
-            "_type": "undocumented"
+            "_type": "publisher_only"
         },
         "ConsumeItem": {
             "version": 1,
@@ -5230,7 +5230,7 @@
                     "optional": false
                 }
             ],
-            "_type": "undocumented"
+            "_type": "publisher_only"
         },
         "GetAddItemHistory": {
             "version": 1,
@@ -5264,7 +5264,7 @@
                     "optional": false
                 }
             ],
-            "_type": "undocumented"
+            "_type": "publisher_only"
         },
         "GetInventory": {
             "version": 1,
@@ -5288,7 +5288,7 @@
                     "optional": false
                 }
             ],
-            "_type": "undocumented"
+            "_type": "publisher_only"
         },
         "GetItemDefMeta": {
             "version": 1,
@@ -5347,7 +5347,7 @@
                     "description": "Allow stale data to be returned for the specified number of seconds."
                 }
             ],
-            "_type": "undocumented"
+            "_type": "publisher_only"
         },
         "GetPriceSheet": {
             "version": 1,
@@ -5399,7 +5399,7 @@
                     "optional": true
                 }
             ],
-            "_type": "undocumented"
+            "_type": "publisher_only"
         },
         "ModifyItems": {
             "version": 1,
@@ -5433,7 +5433,7 @@
                     "optional": false
                 }
             ],
-            "_type": "undocumented"
+            "_type": "publisher_only"
         },
         "SplitItemStack": {
             "version": 1,
@@ -5512,7 +5512,7 @@
                     "optional": false
                 }
             ],
-            "_type": "undocumented"
+            "_type": "publisher_only"
         },
         "GetLobbyData": {
             "version": 1,
@@ -5536,7 +5536,7 @@
                     "optional": false
                 }
             ],
-            "_type": "undocumented"
+            "_type": "publisher_only"
         },
         "RemoveUserFromLobby": {
             "version": 1,
@@ -5565,7 +5565,7 @@
                     "optional": false
                 }
             ],
-            "_type": "undocumented"
+            "_type": "publisher_only"
         }
     },
     "ILoyaltyRewardsService": {
@@ -6015,7 +6015,7 @@
                     "description": "unix time range end to check"
                 }
             ],
-            "_type": "undocumented"
+            "_type": "publisher_only"
         }
     },
     "IPlayerService": {
@@ -6709,7 +6709,7 @@
                     "optional": false
                 }
             ],
-            "_type": "undocumented"
+            "_type": "publisher_only"
         }
     },
     "IPublishedFileService": {
@@ -7425,7 +7425,7 @@
                     "description": "Filter to items that have data for the specified revision."
                 }
             ],
-            "_type": "undocumented"
+            "_type": "publisher_only"
         },
         "SetDeveloperMetadata": {
             "version": 1,
@@ -7454,7 +7454,7 @@
                     "optional": false
                 }
             ],
-            "_type": "undocumented"
+            "_type": "publisher_only"
         },
         "Subscribe": {
             "version": 1,
@@ -7626,7 +7626,7 @@
                     "optional": false
                 }
             ],
-            "_type": "undocumented"
+            "_type": "publisher_only"
         },
         "UpdateIncompatibleStatus": {
             "version": 1,
@@ -7655,7 +7655,7 @@
                     "optional": false
                 }
             ],
-            "_type": "undocumented"
+            "_type": "publisher_only"
         },
         "UpdateKeyValueTags": {
             "version": 1,
@@ -7699,7 +7699,7 @@
                     "optional": false
                 }
             ],
-            "_type": "undocumented"
+            "_type": "publisher_only"
         },
         "UpdateTags": {
             "version": 1,
@@ -7733,7 +7733,7 @@
                     "optional": false
                 }
             ],
-            "_type": "undocumented"
+            "_type": "publisher_only"
         }
     },
     "IQuestService": {
@@ -7850,7 +7850,7 @@
                     "optional": false
                 }
             ],
-            "_type": "undocumented"
+            "_type": "publisher_only"
         }
     },
     "IRemoteClientService": {
@@ -7909,7 +7909,7 @@
                     "description": "AppID of game"
                 }
             ],
-            "_type": "undocumented"
+            "_type": "publisher_only"
         },
         "GetAppBuilds": {
             "version": 1,
@@ -7934,7 +7934,7 @@
                     "description": "True if we want the info on the depots in each build.  False if we don't need that info.  Defaults to true."
                 }
             ],
-            "_type": "undocumented"
+            "_type": "publisher_only"
         },
         "GetAppDepotVersions": {
             "version": 1,
@@ -7947,7 +7947,7 @@
                     "description": "AppID of depot"
                 }
             ],
-            "_type": "undocumented"
+            "_type": "publisher_only"
         },
         "GetAppList": {
             "version": 2,
@@ -7995,7 +7995,7 @@
                     "description": "minimum report id"
                 }
             ],
-            "_type": "undocumented"
+            "_type": "publisher_only"
         },
         "GetPartnerAppListForWebAPIKey": {
             "version": 1,
@@ -8014,7 +8014,7 @@
                     "description": "Filter app results by type. Can be comman separated, eg: games,dlc"
                 }
             ],
-            "_type": "undocumented"
+            "_type": "publisher_only"
         },
         "GetPlayersBanned": {
             "version": 1,
@@ -8027,7 +8027,7 @@
                     "description": "AppID of game"
                 }
             ],
-            "_type": "undocumented"
+            "_type": "publisher_only"
         },
         "GetSDRConfig": {
             "version": 1,
@@ -8064,7 +8064,7 @@
                     "description": "Limit number of servers in the response"
                 }
             ],
-            "_type": "undocumented"
+            "_type": "publisher_only"
         },
         "GetServersAtAddress": {
             "version": 1,
@@ -8107,7 +8107,7 @@
                     "description": "optional description for this build"
                 }
             ],
-            "_type": "undocumented"
+            "_type": "publisher_only"
         },
         "UpToDateCheck": {
             "version": 1,
@@ -8331,7 +8331,7 @@
                     "description": "GID of related record (depends on content type)"
                 }
             ],
-            "_type": "undocumented"
+            "_type": "publisher_only"
         }
     },
     "ISteamDirectory": {
@@ -8401,7 +8401,7 @@
                     "description": "SteamID of user that is the target of the trade invitation"
                 }
             ],
-            "_type": "undocumented"
+            "_type": "publisher_only"
         },
         "FinalizeAssetTransaction": {
             "version": 1,
@@ -8432,7 +8432,7 @@
                     "description": "The local language for the user"
                 }
             ],
-            "_type": "undocumented"
+            "_type": "publisher_only"
         },
         "GetAssetClassInfo": {
             "version": 1,
@@ -8517,7 +8517,7 @@
                     "description": "The context in the app to get exported items from."
                 }
             ],
-            "_type": "undocumented"
+            "_type": "publisher_only"
         },
         "GetMarketPrices": {
             "version": 1,
@@ -8530,7 +8530,7 @@
                     "description": "Must be a steam economy app."
                 }
             ],
-            "_type": "undocumented"
+            "_type": "publisher_only"
         },
         "StartAssetTransaction": {
             "version": 1,
@@ -8591,7 +8591,7 @@
                     "description": "If true (default is false), the authorization will appear in the user's steam client overlay, rather than as a web page - useful for stores that are embedded in products."
                 }
             ],
-            "_type": "undocumented"
+            "_type": "publisher_only"
         },
         "StartTrade": {
             "version": 1,
@@ -8616,7 +8616,7 @@
                     "description": "SteamID of second user in the trade"
                 }
             ],
-            "_type": "undocumented"
+            "_type": "publisher_only"
         }
     },
     "ISteamEnvoy": {
@@ -8679,7 +8679,7 @@
                     "description": "Max number of results to return (up to 1000)"
                 }
             ],
-            "_type": "undocumented"
+            "_type": "publisher_only"
         }
     },
     "ISteamLeaderboards": {
@@ -8700,7 +8700,7 @@
                     "description": "name of the leaderboard to delete"
                 }
             ],
-            "_type": "undocumented"
+            "_type": "publisher_only"
         },
         "FindOrCreateLeaderboard": {
             "version": 2,
@@ -8749,7 +8749,7 @@
                     "description": "if this is true the leaderboard scores can only be read for friends by clients, scores can always be read by publisher. Defaults to false."
                 }
             ],
-            "_type": "undocumented"
+            "_type": "publisher_only"
         },
         "GetLeaderboardEntries": {
             "version": 1,
@@ -8798,7 +8798,7 @@
                     "description": "type of request: RequestGlobal, RequestAroundUser, RequestFriends"
                 }
             ],
-            "_type": "undocumented"
+            "_type": "publisher_only"
         },
         "GetLeaderboardsForGame": {
             "version": 2,
@@ -8817,7 +8817,7 @@
                     "description": "appid of game"
                 }
             ],
-            "_type": "undocumented"
+            "_type": "publisher_only"
         },
         "ResetLeaderboard": {
             "version": 1,
@@ -8836,7 +8836,7 @@
                     "description": "numeric ID of the target leaderboard. Can be retrieved from GetLeaderboardsForGame"
                 }
             ],
-            "_type": "undocumented"
+            "_type": "publisher_only"
         },
         "SetLeaderboardScore": {
             "version": 1,
@@ -8879,7 +8879,7 @@
                     "description": "game-specific details for how the score was earned. Up to 256 bytes."
                 }
             ],
-            "_type": "undocumented"
+            "_type": "publisher_only"
         }
     },
     "ISteamMicroTxn": {
@@ -8916,7 +8916,7 @@
                     "description": "Date for next process"
                 }
             ],
-            "_type": "undocumented"
+            "_type": "publisher_only"
         },
         "CancelAgreement": {
             "version": 1,
@@ -8941,7 +8941,7 @@
                     "description": "AppID of game"
                 }
             ],
-            "_type": "undocumented"
+            "_type": "publisher_only"
         },
         "CreateCart": {
             "version": 1,
@@ -8964,7 +8964,7 @@
                     "description": "AppID of game this transaction is for"
                 }
             ],
-            "_type": "undocumented"
+            "_type": "publisher_only"
         },
         "GetCartContents": {
             "version": 1,
@@ -8999,7 +8999,7 @@
                     "description": "Max number of results to return (up to 1000)"
                 }
             ],
-            "_type": "undocumented"
+            "_type": "publisher_only"
         },
         "GetUserAgreementInfo": {
             "version": 1,
@@ -9018,7 +9018,7 @@
                     "description": "AppID of game"
                 }
             ],
-            "_type": "undocumented"
+            "_type": "publisher_only"
         },
         "GetUserInfo": {
             "version": 2,
@@ -9037,7 +9037,7 @@
                     "description": "ip address of user in string format (xxx.xxx.xxx.xxx). Only required if usersession=web"
                 }
             ],
-            "_type": "undocumented"
+            "_type": "publisher_only"
         },
         "InitTxn": {
             "version": 3,
@@ -9194,7 +9194,7 @@
                     "description": "Optional category grouping for bundle"
                 }
             ],
-            "_type": "undocumented"
+            "_type": "publisher_only"
         },
         "IsValidCart": {
             "version": 1,
@@ -9241,7 +9241,7 @@
                     "description": "ISO 4217 currency code"
                 }
             ],
-            "_type": "undocumented"
+            "_type": "publisher_only"
         },
         "QueryTxn": {
             "version": 3,
@@ -9266,7 +9266,7 @@
                     "description": "Steam transaction ID"
                 }
             ],
-            "_type": "undocumented"
+            "_type": "publisher_only"
         },
         "RefundTxn": {
             "version": 2,
@@ -9285,7 +9285,7 @@
                     "description": "AppID of game this transaction is for"
                 }
             ],
-            "_type": "undocumented"
+            "_type": "publisher_only"
         }
     },
     "ISteamMicroTxnSandbox": {
@@ -9318,7 +9318,7 @@
                     "description": "Date for next process"
                 }
             ],
-            "_type": "undocumented"
+            "_type": "publisher_only"
         },
         "CancelAgreement": {
             "version": 1,
@@ -9343,7 +9343,7 @@
                     "description": "AppID of game"
                 }
             ],
-            "_type": "undocumented"
+            "_type": "publisher_only"
         },
         "FinalizeTxn": {
             "version": 2,
@@ -9362,7 +9362,7 @@
                     "description": "AppID of game this transaction is for"
                 }
             ],
-            "_type": "undocumented"
+            "_type": "publisher_only"
         },
         "GetReport": {
             "version": 4,
@@ -9393,7 +9393,7 @@
                     "description": "Max number of results to return (up to 1000)"
                 }
             ],
-            "_type": "undocumented"
+            "_type": "publisher_only"
         },
         "GetUserAgreementInfo": {
             "version": 1,
@@ -9412,7 +9412,7 @@
                     "description": "AppID of game"
                 }
             ],
-            "_type": "undocumented"
+            "_type": "publisher_only"
         },
         "GetUserInfo": {
             "version": 2,
@@ -9431,7 +9431,7 @@
                     "description": "ip address of user in string format (xxx.xxx.xxx.xxx). Only required if usersession=web"
                 }
             ],
-            "_type": "undocumented"
+            "_type": "publisher_only"
         },
         "InitTxn": {
             "version": 3,
@@ -9540,7 +9540,7 @@
                     "description": "Optional recurring billing amount"
                 }
             ],
-            "_type": "undocumented"
+            "_type": "publisher_only"
         },
         "ProcessAgreement": {
             "version": 1,
@@ -9577,7 +9577,7 @@
                     "description": "ISO 4217 currency code"
                 }
             ],
-            "_type": "undocumented"
+            "_type": "publisher_only"
         },
         "QueryTxn": {
             "version": 2,
@@ -9602,7 +9602,7 @@
                     "description": "Steam transaction ID"
                 }
             ],
-            "_type": "undocumented"
+            "_type": "publisher_only"
         },
         "RefundTxn": {
             "version": 2,
@@ -9621,7 +9621,7 @@
                     "description": "AppID of game this transaction is for"
                 }
             ],
-            "_type": "undocumented"
+            "_type": "publisher_only"
         }
     },
     "ISteamNews": {
@@ -9714,7 +9714,7 @@
                     "description": "Comma-separated list of tags to filter by (e.g. 'patchnodes')"
                 }
             ],
-            "_type": "undocumented"
+            "_type": "publisher_only"
         }
     },
     "ISteamNodwin": {
@@ -9799,7 +9799,7 @@
                     "description": "A user specific tag"
                 }
             ],
-            "_type": "undocumented"
+            "_type": "publisher_only"
         },
         "RankedByTrend": {
             "version": 1,
@@ -9872,7 +9872,7 @@
                     "description": "A user specific tag"
                 }
             ],
-            "_type": "undocumented"
+            "_type": "publisher_only"
         },
         "RankedByVote": {
             "version": 1,
@@ -9939,7 +9939,7 @@
                     "description": "A user specific tag"
                 }
             ],
-            "_type": "undocumented"
+            "_type": "publisher_only"
         },
         "ResultSetSummary": {
             "version": 1,
@@ -9994,7 +9994,7 @@
                     "description": "A user specific tag"
                 }
             ],
-            "_type": "undocumented"
+            "_type": "publisher_only"
         }
     },
     "ISteamPublishedItemVoting": {
@@ -10027,7 +10027,7 @@
                     "description": "The Published File ID who's vote details are required"
                 }
             ],
-            "_type": "undocumented"
+            "_type": "publisher_only"
         },
         "UserVoteSummary": {
             "version": 1,
@@ -10052,7 +10052,7 @@
                     "description": "A Specific Published Item"
                 }
             ],
-            "_type": "undocumented"
+            "_type": "publisher_only"
         }
     },
     "ISteamRemoteStorage": {
@@ -10073,7 +10073,7 @@
                     "description": "appID of product"
                 }
             ],
-            "_type": "undocumented"
+            "_type": "publisher_only"
         },
         "EnumerateUserSubscribedFiles": {
             "version": 1,
@@ -10098,7 +10098,7 @@
                     "description": "EUCMListType"
                 }
             ],
-            "_type": "undocumented"
+            "_type": "publisher_only"
         },
         "GetCollectionDetails": {
             "version": 1,
@@ -10189,7 +10189,7 @@
                     "description": "New state of flag"
                 }
             ],
-            "_type": "undocumented"
+            "_type": "publisher_only"
         },
         "SubscribePublishedFile": {
             "version": 1,
@@ -10214,7 +10214,7 @@
                     "description": "published file id to subscribe to"
                 }
             ],
-            "_type": "undocumented"
+            "_type": "publisher_only"
         },
         "UnsubscribePublishedFile": {
             "version": 1,
@@ -10239,7 +10239,7 @@
                     "description": "published file id to unsubscribe from"
                 }
             ],
-            "_type": "undocumented"
+            "_type": "publisher_only"
         }
     },
     "ISteamSpecialSurvey": {
@@ -10278,7 +10278,7 @@
                     "description": "Survey identity verification token for the user"
                 }
             ],
-            "_type": "undocumented"
+            "_type": "publisher_only"
         },
         "SetUserFinished": {
             "version": 1,
@@ -10315,7 +10315,7 @@
                     "description": "Survey identity verification token for the user"
                 }
             ],
-            "_type": "undocumented"
+            "_type": "publisher_only"
         }
     },
     "ISteamTVService": {
@@ -10792,7 +10792,7 @@
                     "description": "AppID to check for ownership"
                 }
             ],
-            "_type": "undocumented"
+            "_type": "publisher_only"
         },
         "GetAppPriceInfo": {
             "version": 1,
@@ -10817,7 +10817,7 @@
                     "description": "Comma-delimited list of appids (max: 100)"
                 }
             ],
-            "_type": "undocumented"
+            "_type": "publisher_only"
         },
         "GetFriendList": {
             "version": 1,
@@ -10896,7 +10896,7 @@
                     "description": "SteamID of user"
                 }
             ],
-            "_type": "undocumented"
+            "_type": "publisher_only"
         },
         "GetPublisherAppOwnershipChanges": {
             "version": 1,
@@ -10921,7 +10921,7 @@
                     "description": "The unsigned 64-bit row version to read CD Key changes from. The row version of data read up to will be returned for use in future calls."
                 }
             ],
-            "_type": "undocumented"
+            "_type": "publisher_only"
         },
         "GetUserGroupList": {
             "version": 1,
@@ -10982,7 +10982,7 @@
                     "description": "Has to be set if 'thirdpartykey' is set. The appid associated with the 'thirdpartykey'."
                 }
             ],
-            "_type": "undocumented"
+            "_type": "publisher_only"
         },
         "ResolveVanityURL": {
             "version": 1,
@@ -11037,7 +11037,7 @@
                     "description": "Reason for why to revoke"
                 }
             ],
-            "_type": "undocumented"
+            "_type": "publisher_only"
         }
     },
     "ISteamUserAuth": {
@@ -11304,7 +11304,7 @@
                     "description": "Value to set"
                 }
             ],
-            "_type": "undocumented"
+            "_type": "publisher_only"
         }
     },
     "ISteamVideo": {
@@ -11337,7 +11337,7 @@
                     "description": "Account name of the video's owner on the provider's site"
                 }
             ],
-            "_type": "undocumented"
+            "_type": "publisher_only"
         }
     },
     "ISteamWebAPIUtil": {
@@ -11471,7 +11471,7 @@
                     "description": "Game's description of the game item"
                 }
             ],
-            "_type": "undocumented"
+            "_type": "publisher_only"
         },
         "GetContributors": {
             "version": 1,
@@ -11484,7 +11484,7 @@
                     "description": "AppID of game this transaction is for"
                 }
             ],
-            "_type": "undocumented"
+            "_type": "publisher_only"
         }
     },
     "IStoreBrowseService": {
@@ -11824,7 +11824,7 @@
                     "description": "Access key"
                 }
             ],
-            "_type": "undocumented"
+            "_type": "publisher_only"
         },
         "CallPublisherKeyOwnsApp": {
             "version": 1,
@@ -11842,7 +11842,7 @@
                     "optional": false
                 }
             ],
-            "_type": "undocumented"
+            "_type": "publisher_only"
         }
     },
     "ITrustService": {
@@ -11872,7 +11872,7 @@
                     "optional": false
                 }
             ],
-            "_type": "undocumented"
+            "_type": "publisher_only"
         }
     },
     "ITwoFactorService": {
@@ -12353,7 +12353,7 @@
                     "description": "ROW Payment portion in USD Cents"
                 }
             ],
-            "_type": "undocumented"
+            "_type": "publisher_only"
         },
         "GetFinalizedContributors": {
             "version": 1,
@@ -12377,7 +12377,7 @@
                     "optional": false
                 }
             ],
-            "_type": "undocumented"
+            "_type": "publisher_only"
         },
         "GetItemDailyRevenue": {
             "version": 1,
@@ -12411,7 +12411,7 @@
                     "optional": false
                 }
             ],
-            "_type": "undocumented"
+            "_type": "publisher_only"
         },
         "PopulateItemDescriptions": {
             "version": 1,
@@ -12435,7 +12435,7 @@
                     "optional": false
                 }
             ],
-            "_type": "undocumented"
+            "_type": "publisher_only"
         },
         "SetItemPaymentRules": {
             "version": 1,
@@ -12485,7 +12485,7 @@
                     "optional": false
                 }
             ],
-            "_type": "undocumented"
+            "_type": "publisher_only"
         }
     }
 }
