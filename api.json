@@ -9299,7 +9299,7 @@
             "_type": "publisher_only"
         },
         "GetReport": {
-            "version": 4,
+            "version": 5,
             "httpmethod": "GET",
             "parameters": [
                 {
