@@ -6942,6 +6942,12 @@
                     "description": "If true, then reactions to items will be returned."
                 },
                 {
+                    "name": "startindex_override",
+                    "type": "uint32",
+                    "optional": false,
+                    "description": "Backwards compatible for the client."
+                },
+                {
                     "name": "desired_revision",
                     "type": "{enum}",
                     "optional": true,
@@ -10007,7 +10013,7 @@
                     "description": "appID of product"
                 }
             ],
-            "_type": "publisher_only"
+            "_type": "undocumented"
         },
         "EnumerateUserSubscribedFiles": {
             "version": 1,
