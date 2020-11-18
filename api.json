@@ -5667,6 +5667,18 @@
             ],
             "_type": "protobufs"
         },
+        "GetProfileCustomizationsConfig": {
+            "version": 1,
+            "parameters": [
+                {
+                    "name": "key",
+                    "type": "string",
+                    "optional": false,
+                    "description": "Access key"
+                }
+            ],
+            "_type": "protobufs"
+        },
         "GetReactionConfig": {
             "version": 1,
             "parameters": [
@@ -5699,6 +5711,18 @@
                     "type": "uint64",
                     "optional": true,
                     "description": ""
+                }
+            ],
+            "_type": "protobufs"
+        },
+        "GetReactionsSummaryForUser": {
+            "version": 1,
+            "parameters": [
+                {
+                    "name": "key",
+                    "type": "string",
+                    "optional": false,
+                    "description": "Access key"
                 }
             ],
             "_type": "protobufs"
@@ -5759,6 +5783,32 @@
             ],
             "_type": "protobufs"
         },
+        "RedeemPointsForProfileCustomization": {
+            "version": 1,
+            "httpmethod": "POST",
+            "parameters": [
+                {
+                    "name": "key",
+                    "type": "string",
+                    "optional": false,
+                    "description": "Access key"
+                }
+            ],
+            "_type": "protobufs"
+        },
+        "RedeemPointsForProfileCustomizationUpgrade": {
+            "version": 1,
+            "httpmethod": "POST",
+            "parameters": [
+                {
+                    "name": "key",
+                    "type": "string",
+                    "optional": false,
+                    "description": "Access key"
+                }
+            ],
+            "_type": "protobufs"
+        },
         "RedeemPointsToUpgradeItem": {
             "version": 1,
             "httpmethod": "POST",
@@ -5800,7 +5850,7 @@
                     "description": "Access key"
                 }
             ],
-            "_type": "protobufs"
+            "_type": "undocumented"
         },
         "GetBatchPublishedPartnerEvent": {
             "version": 1,
@@ -5830,7 +5880,7 @@
                     "description": ""
                 }
             ],
-            "_type": "protobufs"
+            "_type": "undocumented"
         },
         "GetNewsFeedByRepublishClan": {
             "version": 1,
@@ -5842,7 +5892,7 @@
                     "description": "Access key"
                 }
             ],
-            "_type": "protobufs"
+            "_type": "undocumented"
         },
         "PreviewPartnerEvents": {
             "version": 1,
@@ -5866,7 +5916,7 @@
                     "description": ""
                 }
             ],
-            "_type": "protobufs"
+            "_type": "undocumented"
         },
         "PublishPartnerEvent": {
             "version": 1,
@@ -5891,7 +5941,7 @@
                     "description": ""
                 }
             ],
-            "_type": "protobufs"
+            "_type": "undocumented"
         }
     },
     "IOnlinePlayService": {
@@ -6171,6 +6221,12 @@
                     "type": "bool",
                     "optional": false,
                     "description": "Some games are in the free sub, which are excluded by default."
+                },
+                {
+                    "name": "skip_unvetted_apps",
+                    "type": "bool",
+                    "optional": true,
+                    "description": "if set, skip unvetted store apps"
                 }
             ]
         },
@@ -6271,6 +6327,18 @@
         "GetProfileThemesAvailable": {
             "version": 1,
             "description": "Gets themes available for the user.",
+            "parameters": [
+                {
+                    "name": "key",
+                    "type": "string",
+                    "optional": false,
+                    "description": "Access key"
+                }
+            ],
+            "_type": "protobufs"
+        },
+        "GetPurchasedProfileCustomizations": {
+            "version": 1,
             "parameters": [
                 {
                     "name": "key",
@@ -7702,12 +7770,6 @@
                 {
                     "name": "appid",
                     "type": "uint32",
-                    "optional": true,
-                    "description": ""
-                },
-                {
-                    "name": "work_in_progress",
-                    "type": "bool",
                     "optional": true,
                     "description": ""
                 },
