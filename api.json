@@ -5990,6 +5990,12 @@
                     "type": "string",
                     "optional": false,
                     "description": "Access key"
+                },
+                {
+                    "name": "customization_type",
+                    "type": "int32",
+                    "optional": true,
+                    "description": "enum"
                 }
             ],
             "_type": "protobufs"
@@ -6003,6 +6009,18 @@
                     "type": "string",
                     "optional": false,
                     "description": "Access key"
+                },
+                {
+                    "name": "customization_type",
+                    "type": "int32",
+                    "optional": true,
+                    "description": "enum"
+                },
+                {
+                    "name": "new_level",
+                    "type": "uint32",
+                    "optional": true,
+                    "description": ""
                 }
             ],
             "_type": "protobufs"
@@ -6537,6 +6555,24 @@
                     "type": "string",
                     "optional": false,
                     "description": "Access key"
+                }
+            ],
+            "_type": "protobufs"
+        },
+        "GetPurchasedAndUpgradedProfileCustomizations": {
+            "version": 1,
+            "parameters": [
+                {
+                    "name": "key",
+                    "type": "string",
+                    "optional": false,
+                    "description": "Access key"
+                },
+                {
+                    "name": "steamid",
+                    "type": "fixed64",
+                    "optional": true,
+                    "description": ""
                 }
             ],
             "_type": "protobufs"
