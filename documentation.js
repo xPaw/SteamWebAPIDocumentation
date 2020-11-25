@@ -51,6 +51,7 @@
 			},
 			hasValidWebApiKey: false,
 			hasValidAccessToken: false,
+			accessTokenVisible: false,
 			currentFilter: '',
 			currentInterface: null,
 			skipInterfaceSet: false,

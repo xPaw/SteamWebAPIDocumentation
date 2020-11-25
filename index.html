@@ -106,7 +106,7 @@
 									]" id="form-api-key" placeholder="Your key (stored in your browser only)" v-model="userData.webapi_key">
 								</div>
 								<div class="form-group col-md-6">
-									<span class="float-right" title="Some APIs work with OAuth access token, if you have one you can provide it here and it will be preferred over the webapi key.">(?)</span>
+									<a href="#" class="float-right" @click="accessTokenVisible = !accessTokenVisible">What is this?</a>
 									<label for="form-access-token">Access token</label>
 									<input type="text" :class="[
 										'form-control',
@@ -128,6 +128,26 @@
 										'form-control',
 										isFieldValid( 'steamid' ) ? 'is-valid' : 'is-invalid'
 									]" id="form-steamid" placeholder="Your SteamID, for example: 76561197960287930" v-model="userData.steamid">
+								</div>
+							</div>
+						</div>
+
+						<div class="card mt-3" v-if="accessTokenVisible">
+							<div class="card-header bg-info">What is an access token?</div>
+							<div class="card-body">
+								<p>Some APIs work with OAuth access token, if you have one you can provide it here and it will be preferred over the webapi key.</p>
+								<p>Here's how to get one:</p>
+								<ul>
+									<li>Open <a href="https://store.steampowered.com/points/shop/" target="_blank" rel="noopener">https://store.steampowered.com/points/shop/</a></li>
+									<li>Run the following script:</li>
+								</ul>
+								<div class="input-group mb-3">
+									<div class="input-group-prepend">
+										<button class="btn btn-outline-primary pt-0" type="button" @click.prevent="copyUrl($event)">
+											<svg viewBox="0 0 14 16" version="1.1" width="14" height="16" aria-label="Copy"><path fill-rule="evenodd" d="M2 13h4v1H2v-1zm5-6H2v1h5V7zm2 3V8l-3 3 3 3v-2h5v-2H9zM4.5 9H2v1h2.5V9zM2 12h2.5v-1H2v1zm9 1h1v2c-.02.28-.11.52-.3.7-.19.18-.42.28-.7.3H1c-.55 0-1-.45-1-1V4c0-.55.45-1 1-1h3c0-1.11.89-2 2-2 1.11 0 2 .89 2 2h3c.55 0 1 .45 1 1v5h-1V6H1v9h10v-2zM2 5h8c0-.55-.45-1-1-1H8c-.55 0-1-.45-1-1s-.45-1-1-1-1 .45-1 1-.45 1-1 1H3c-.55 0-1 .45-1 1z"></path></svg>
+										</button>
+									</div>
+									<div class="form-control text-monospace h-auto">javascript:JSON.parse(application_config.dataset.loyaltystore).webapi_token</div>
 								</div>
 							</div>
 						</div>
@@ -322,7 +342,7 @@
 	</div>
 
 	<script src="https://cdnjs.cloudflare.com/ajax/libs/fuse.js/6.0.0/fuse.min.js" integrity="sha256-wvDwaRXtGl2Wy4BidfDDQ6zif+jF5/eePviHz8GCpII=" crossorigin="anonymous"></script>
-	<script src="https://cdnjs.cloudflare.com/ajax/libs/vue/2.6.11/vue.min.js" integrity="sha256-ngFW3UnAN0Tnm76mDuu7uUtYEcG3G5H1+zioJw3t+68=" crossorigin="anonymous"></script>
+	<script src="https://cdnjs.cloudflare.com/ajax/libs/vue/2.6.12/vue.min.js" integrity="sha512-BKbSR+cfyxLdMAsE0naLReFSLg8/pjbgfxHh/k/kUC82Hy7r6HtR5hLhobaln2gcTvzkyyehrdREdjpsQwy2Jw==" crossorigin="anonymous"></script>
 	<script src="documentation.js"></script>
 </body>
 </html>
