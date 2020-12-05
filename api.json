@@ -32,7 +32,7 @@
                     "name": "return_access_token",
                     "type": "bool",
                     "optional": true,
-                    "description": "if provided and true, then returns valid access token if available. It may refresh the token. "
+                    "description": "if provided and true, then returns valid access token if available. It may refresh the token."
                 }
             ],
             "_type": "protobufs"
@@ -6072,7 +6072,7 @@
                     "description": "Access key"
                 }
             ],
-            "_type": "undocumented"
+            "_type": "protobufs"
         },
         "GetBatchPublishedPartnerEvent": {
             "version": 1,
@@ -6102,7 +6102,7 @@
                     "description": ""
                 }
             ],
-            "_type": "undocumented"
+            "_type": "protobufs"
         },
         "GetNewsFeedByRepublishClan": {
             "version": 1,
@@ -6114,7 +6114,7 @@
                     "description": "Access key"
                 }
             ],
-            "_type": "undocumented"
+            "_type": "protobufs"
         },
         "PreviewPartnerEvents": {
             "version": 1,
@@ -6138,7 +6138,7 @@
                     "description": ""
                 }
             ],
-            "_type": "undocumented"
+            "_type": "protobufs"
         },
         "PublishPartnerEvent": {
             "version": 1,
@@ -6163,7 +6163,7 @@
                     "description": ""
                 }
             ],
-            "_type": "undocumented"
+            "_type": "protobufs"
         }
     },
     "IOnlinePlayService": {
@@ -6672,7 +6672,7 @@
                     "name": "unignore",
                     "type": "bool",
                     "optional": true,
-                    "description": "If set, remove from ignore/block list instead of adding "
+                    "description": "If set, remove from ignore/block list instead of adding"
                 }
             ],
             "_type": "protobufs"
@@ -12582,7 +12582,7 @@
                     "name": "bookmarks",
                     "type": "{message}",
                     "optional": true,
-                    "description": ""
+                    "description": "list of bookmarks we want to store."
                 }
             ],
             "_type": "protobufs"
