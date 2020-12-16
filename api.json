@@ -6498,6 +6498,12 @@
                     "type": "bool",
                     "optional": true,
                     "description": ""
+                },
+                {
+                    "name": "include_purchased_customizations",
+                    "type": "bool",
+                    "optional": true,
+                    "description": ""
                 }
             ],
             "_type": "protobufs"
@@ -6561,6 +6567,7 @@
         },
         "GetPurchasedAndUpgradedProfileCustomizations": {
             "version": 1,
+            "description": "Returns the purchased and upgraded profile customizations",
             "parameters": [
                 {
                     "name": "key",
@@ -6579,12 +6586,19 @@
         },
         "GetPurchasedProfileCustomizations": {
             "version": 1,
+            "description": "Returns the purchased profile customizations",
             "parameters": [
                 {
                     "name": "key",
                     "type": "string",
                     "optional": false,
                     "description": "Access key"
+                },
+                {
+                    "name": "steamid",
+                    "type": "fixed64",
+                    "optional": true,
+                    "description": ""
                 }
             ],
             "_type": "protobufs"
@@ -8169,6 +8183,33 @@
             "version": 1,
             "httpmethod": "POST",
             "description": "Unregister for status updates with a Steam client",
+            "parameters": [
+                {
+                    "name": "key",
+                    "type": "string",
+                    "optional": false,
+                    "description": "Access key"
+                }
+            ],
+            "_type": "protobufs"
+        }
+    },
+    "ISaleItemRewardsService": {
+        "CanClaimItem": {
+            "version": 1,
+            "parameters": [
+                {
+                    "name": "key",
+                    "type": "string",
+                    "optional": false,
+                    "description": "Access key"
+                }
+            ],
+            "_type": "protobufs"
+        },
+        "ClaimItem": {
+            "version": 1,
+            "httpmethod": "POST",
             "parameters": [
                 {
                     "name": "key",
@@ -11913,7 +11954,7 @@
                     "description": "Access key"
                 }
             ],
-            "_type": "protobufs"
+            "_type": "undocumented"
         },
         "ClaimItem": {
             "version": 1,
@@ -11926,7 +11967,7 @@
                     "description": "Access key"
                 }
             ],
-            "_type": "protobufs"
+            "_type": "undocumented"
         }
     },
     "ITFItems_440": {
