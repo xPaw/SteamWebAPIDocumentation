@@ -221,10 +221,11 @@
 						<div class="card border-primary mt-3">
 							<div class="card-header bg-primary text-white">Sitemap</div>
 							<div class="card-body">
-								<ul>
+								<ul class="list-group">
 									<template v-for="(interface, interfaceName) in interfaces" :key="interfaceName">
-										<li v-for="(method, methodName) in interface" :key="methodName">
+										<li class="list-group-item px-0" v-for="(method, methodName) in interface" :key="methodName">
 											<a :href="'#' + interfaceName + '/' + methodName">{{ interfaceName }}/{{methodName}}</a>
+											<div class="text-muted mt-1" v-if="method.parameters">{{ method.parameters.map( m => m.name ).join( ', ' ) }}</div>
 										</li>
 									</template>
 								</ul>
@@ -262,7 +263,7 @@
 										<a class="badge bg-light text-dark no-select" href="https://github.com/SteamDatabase/UndocumentedAPI" target="_blank" rel="noopener" v-if="method._type === 'undocumented'">UNDOCUMENTED</a>
 										<a class="badge bg-primary no-select" href="https://github.com/SteamDatabase/Protobufs" target="_blank" rel="noopener" v-if="method._type === 'protobufs'">PROTOBUF</a>
 										<span :class="method.httpmethod === 'GET' ? 'badge bg-success' : 'badge bg-danger'">{{ method.httpmethod }}</span>
-										<a class="badge bg-warning no-select" v-if="method._type === 'publisher_only'" :href="`https://partner.steamgames.com/doc/webapi/${currentInterface}#${methodName}`" target="_blank" rel="noopener">PUBLISHER</a>
+										<a class="badge bg-warning text-dark no-select" v-if="method._type === 'publisher_only'" :href="`https://partner.steamgames.com/doc/webapi/${currentInterface}#${methodName}`" target="_blank" rel="noopener">PUBLISHER</a>
 										<a :href="'#' + currentInterface + '/' + methodName" @click="updateUrl(methodName)" style="color:inherit">{{ methodName }}</a>
 										<span class="badge bg-primary" v-if="method.version > 1">v{{ method.version }}</span>
 									</div>
