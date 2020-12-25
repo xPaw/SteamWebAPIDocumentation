@@ -1,9 +1,11 @@
 a {
 	color: #1f8bff;
+	text-decoration: none;
 }
 
 a:hover {
 	color: #99caff;
+	text-decoration: underline;
 }
 
 code {
@@ -66,16 +68,6 @@ code {
 
 a.badge {
 	text-decoration: underline;
-}
-
-.attribute .form-control {
-	height: auto;
-	line-height: 1;
-}
-
-.attribute .form-control:focus {
-	outline: rgb(0, 123, 255) solid 2px;
-	box-shadow: none;
 }
 
 [v-cloak] {
@@ -153,18 +145,22 @@ body {
 	background: #1d2027;
 }
 
-.attribute:hover td {
+.attribute:hover {
 	border-bottom-color: rgba(255, 255, 255, 0.4);
 }
 
-.card .custom-select,
 .card .btn-outline-primary,
+.card .form-select,
 .card .form-control {
 	background-color: #232323;
 	border: 1px solid #535354;
 	color: #cda869;
 	fill: currentColor;
 	word-break: break-all;
+}
+
+.card .form-check-input:not(:checked) {
+	background-color: #acacac;
 }
 
 .card .table .form-control {
@@ -178,6 +174,10 @@ body {
 
 .interface-list a {
 	color: #acacac;
+}
+
+.interface-list a:hover {
+	color: #ddd;
 }
 
 .custom-control-label::before {
