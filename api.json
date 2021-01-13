@@ -4428,6 +4428,27 @@
         },
         "UpdateItemDefs": {
             "version": 1,
+            "httpmethod": "POST",
+            "parameters": [
+                {
+                    "name": "key",
+                    "type": "string",
+                    "optional": false,
+                    "description": "Steamworks Web API publisher authentication key."
+                },
+                {
+                    "name": "appid",
+                    "type": "uint32",
+                    "optional": false,
+                    "description": "appid of game"
+                },
+                {
+                    "name": "itemdefs",
+                    "type": "JSON array",
+                    "optional": false,
+                    "description": "One or more Item Definitions, presented as a JSON array, to be updated or created."
+                }
+            ],
             "_type": "undocumented"
         }
     },
@@ -8259,10 +8280,52 @@
     "ISiteLicenseService": {
         "GetCurrentClientConnections": {
             "version": 1,
+            "httpmethod": "GET",
+            "parameters": [
+                {
+                    "name": "key",
+                    "type": "string",
+                    "optional": false,
+                    "description": "Steamworks Web API publisher authentication key"
+                },
+                {
+                    "name": "siteid",
+                    "type": "uint64",
+                    "optional": true,
+                    "description": "Site ID to see; zero for all sites"
+                }
+            ],
             "_type": "undocumented"
         },
         "GetTotalPlaytime": {
             "version": 1,
+            "httpmethod": "GET",
+            "parameters": [
+                {
+                    "name": "key",
+                    "type": "string",
+                    "optional": false,
+                    "description": "Steamworks Web API publisher authentication key"
+                },
+                {
+                    "name": "start_time",
+                    "type": "string",
+                    "optional": false,
+                    "description": "Report activity starting on or after this time. RFC 3339 UTC format."
+                },
+                {
+                    "name": "end_time",
+                    "type": "string",
+                    "optional": false,
+                    "description": "Report activity starting before this time. RFC 3339 UTC format."
+                },
+                {
+                    "name": "siteid",
+                    "type": "uint64",
+                    "optional": true,
+                    "description": "Site ID to see; zero for all sites"
+                }
+            ],
             "_type": "undocumented"
         }
     },
@@ -11190,6 +11253,21 @@
         },
         "GetDeletedSteamIDs": {
             "version": 1,
+            "httpmethod": "GET",
+            "parameters": [
+                {
+                    "name": "key",
+                    "type": "string",
+                    "optional": false,
+                    "description": "Steamworks Web API publisher authentication key."
+                },
+                {
+                    "name": "rowversion",
+                    "type": "uint64",
+                    "optional": false,
+                    "description": "An unsigned 64-bit value used to page through deleted accounts. Pass 0 when calling this\r\n            API for the first time, then pass the value returned from the previous call for each\r\n            additional request. This value will need to be stored on your server for future calls."
+                }
+            ],
             "_type": "undocumented"
         },
         "GetFriendList": {
