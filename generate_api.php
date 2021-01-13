@@ -39,12 +39,22 @@ else
 	$UndocumentedFromServices = [];
 }
 
+if( file_exists( __DIR__ . '/api_from_docs.json' ) )
+{
+	$UndocumentedFromPartnerDocs = json_decode( file_get_contents( __DIR__ . '/api_from_docs.json' ), true );
+}
+else
+{
+	$UndocumentedFromPartnerDocs = [];
+}
+
 $FinalList = file_exists( __DIR__ . '/api.json' ) ? json_decode( file_get_contents( __DIR__ . '/api.json' ), true ) : [];
 
 MarkAsRemoved( $FinalList );
 MergeLists( $FinalList, $NonPublisher );
 MergeLists( $FinalList, $YesPublisher, 'publisher_only' );
 MergeLists( $FinalList, $UndocumentedFromServices, 'protobufs' );
+MergeLists( $FinalList, $UndocumentedFromPartnerDocs, 'undocumented' );
 MergeLists( $FinalList, $Undocumented, 'undocumented' );
 
 function MergeLists( array &$FinalList, array $Interfaces, ?string $Type = null ) : void
