@@ -6900,6 +6900,19 @@
             ],
             "_type": "protobufs"
         },
+        "SetProfilePreferences": {
+            "version": 1,
+            "httpmethod": "POST",
+            "parameters": [
+                {
+                    "name": "key",
+                    "type": "string",
+                    "optional": false,
+                    "description": "Access key"
+                }
+            ],
+            "_type": "protobufs"
+        },
         "SetProfileTheme": {
             "version": 1,
             "httpmethod": "POST",
