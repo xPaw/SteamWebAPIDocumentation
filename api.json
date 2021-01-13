@@ -8256,6 +8256,16 @@
             "_type": "protobufs"
         }
     },
+    "ISiteLicenseService": {
+        "GetCurrentClientConnections": {
+            "version": 1,
+            "_type": "undocumented"
+        },
+        "GetTotalPlaytime": {
+            "version": 1,
+            "_type": "undocumented"
+        }
+    },
     "ISteamApps": {
         "GetAppBetas": {
             "version": 1,
@@ -11177,6 +11187,10 @@
                 }
             ],
             "_type": "publisher_only"
+        },
+        "GetDeletedSteamIDs": {
+            "version": 1,
+            "_type": "undocumented"
         },
         "GetFriendList": {
             "version": 1,
