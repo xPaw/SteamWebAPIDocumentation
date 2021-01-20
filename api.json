@@ -2381,6 +2381,10 @@
             "version": 1,
             "_type": "undocumented"
         },
+        "GetLeaguesData": {
+            "version": 1,
+            "_type": "undocumented"
+        },
         "GetLiveGames": {
             "version": 1,
             "_type": "undocumented"
@@ -2925,6 +2929,10 @@
             "_type": "undocumented"
         },
         "GetSingleTeamInfo": {
+            "version": 1,
+            "_type": "undocumented"
+        },
+        "GetTeamInfos": {
             "version": 1,
             "_type": "undocumented"
         }
