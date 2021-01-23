@@ -2284,6 +2284,10 @@
             "version": 1,
             "_type": "undocumented"
         },
+        "GetPlayerInfos": {
+            "version": 1,
+            "_type": "undocumented"
+        },
         "GetProPlayerInfo": {
             "version": 1,
             "_type": "undocumented"
