@@ -294,6 +294,20 @@
 
 				this.currentInterface = keys[ ( ( index % size ) + size ) % size ];
 			},
+			focusApikey()
+			{
+				this.currentInterface = '';
+
+				this.$nextTick( () =>
+				{
+					const element = document.getElementById( this.hasValidAccessToken ? 'form-access-token' : 'form-api-key' );
+
+					if( element )
+					{
+						element.focus();
+					}
+				} );
+			}
 		},
 	});
 

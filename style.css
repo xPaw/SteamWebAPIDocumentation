@@ -167,6 +167,17 @@ body {
 	background-color: transparent;
 }
 
+.prefilled-key {
+	padding: .375rem .75rem;
+	cursor: pointer;
+	color: #acacac;
+	font-style: italic;
+}
+
+.prefilled-key:hover {
+	text-decoration: underline;
+}
+
 .interface-filtered {
 	background-color: #2b3647;
 	color: #acacac;
@@ -199,12 +210,19 @@ body {
 	padding: 5px 10px;
 }
 
+.hidden-token,
 .hidden-key {
 	font-size: 0;
 }
 
 .hidden-key:not(:empty):before {
 	content: "key=is_here_but_hidden";
+	font-size: 1rem;
+	color: #997433;
+}
+
+.hidden-token:not(:empty):before {
+	content: "access_token=is_here_but_hidden";
 	font-size: 1rem;
 	color: #997433;
 }
