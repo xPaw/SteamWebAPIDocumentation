@@ -49,6 +49,7 @@
 				steamid: '',
 				format: 'json',
 			},
+			keyInputType: 'password',
 			hasValidWebApiKey: false,
 			hasValidAccessToken: false,
 			accessTokenVisible: false,

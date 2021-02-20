@@ -103,18 +103,34 @@
 								<div class="mb-3 col-md-6">
 									<a href="https://steamcommunity.com/dev/apikey" target="_blank" rel="noopener" class="float-end">Get your key here</a>
 									<label class="form-label" for="form-api-key">WebAPI key</label>
-									<input type="text" :class="[
-										'form-control',
-										isFieldValid( 'webapi_key' ) ? 'is-valid' : 'is-invalid'
-									]" id="form-api-key" placeholder="Your key (stored in your browser only)" v-model="userData.webapi_key">
+									<input
+										:type="keyInputType"
+										:class="[
+											'form-control',
+											isFieldValid( 'webapi_key' ) ? 'is-valid' : 'is-invalid'
+										]"
+										id="form-api-key"
+										placeholder="Your key (stored in your browser only)"
+										autocomplete="off"
+										v-model="userData.webapi_key"
+										@focus="keyInputType = 'text'"
+										@blur="keyInputType = 'password'">
 								</div>
 								<div class="mb-3 col-md-6">
 									<a href="#" class="float-end" @click="accessTokenVisible = !accessTokenVisible">What is this?</a>
 									<label class="form-label" for="form-access-token">Access token</label>
-									<input type="text" :class="[
-										'form-control',
-										{ 'is-valid': isFieldValid( 'access_token' ) }
-									]" id="form-access-token" placeholder="Your key (stored in your browser only)" v-model="userData.access_token">
+									<input
+										:type="keyInputType"
+										:class="[
+											'form-control',
+											{ 'is-valid': isFieldValid( 'access_token' ) }
+										]"
+										id="form-access-token"
+										placeholder="Your key (stored in your browser only)"
+										autocomplete="off"
+										v-model="userData.access_token"
+										@focus="keyInputType = 'text'"
+										@blur="keyInputType = 'password'">
 								</div>
 								<div class="mb-3 col-md-6">
 									<label class="form-label" for="form-format">Preferred output format</label>
