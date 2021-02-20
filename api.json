@@ -5976,6 +5976,12 @@
                     "type": "string",
                     "optional": true,
                     "description": ""
+                },
+                {
+                    "name": "contains_definitionids",
+                    "type": "uint32",
+                    "optional": true,
+                    "description": ""
                 }
             ],
             "_type": "protobufs"
@@ -5993,6 +5999,12 @@
                 {
                     "name": "defid",
                     "type": "uint32",
+                    "optional": true,
+                    "description": ""
+                },
+                {
+                    "name": "expected_points_cost",
+                    "type": "int64",
                     "optional": true,
                     "description": ""
                 }
@@ -6081,6 +6093,12 @@
                 {
                     "name": "defid",
                     "type": "uint32",
+                    "optional": true,
+                    "description": ""
+                },
+                {
+                    "name": "expected_points_cost",
+                    "type": "int64",
                     "optional": true,
                     "description": ""
                 }
