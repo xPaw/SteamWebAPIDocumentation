@@ -119,7 +119,7 @@
 
 				history.replaceState( '', '', '#' + newInterface );
 			},
-			currentFilter( newFilter )
+			currentFilter( newFilter, oldFilter )
 			{
 				if( !newFilter )
 				{
@@ -128,6 +128,11 @@
 				else
 				{
 					this.currentInterface = '';
+
+					if( !oldFilter )
+					{
+						document.querySelector( '.sidebar' ).scrollTop = 0;
+					}
 				}
 			}
 		},
