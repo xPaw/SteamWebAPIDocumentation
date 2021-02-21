@@ -46,6 +46,8 @@ code {
 	padding: 0;
 	list-style: none;
 	font-size: 80%;
+	background-color: #2b3647;
+	color: #acacac;
 }
 
 .method-list li {
@@ -176,11 +178,6 @@ body {
 
 .prefilled-key:hover {
 	text-decoration: underline;
-}
-
-.interface-filtered {
-	background-color: #2b3647;
-	color: #acacac;
 }
 
 .interface-list a {

@@ -72,9 +72,6 @@
 						<li
 							v-for="(interface, interfaceName) in filteredInterfaces"
 							:key="interfaceName"
-							:class="[
-								{ 'interface-filtered rounded mb-2 p-2': currentFilter !== '' }
-							]"
 						>
 							<a
 								:href="'#' + interfaceName"
@@ -82,7 +79,7 @@
 								@click.prevent="currentInterface = interfaceName"
 							>{{ interfaceName }}</a>
 
-							<ul class="method-list" v-if="currentFilter">
+							<ul class="method-list rounded mb-2 p-2" v-if="currentFilter || interfaceName === currentInterface">
 								<li
 									v-for="(method, methodName) in interface"
 									:key="methodName"
