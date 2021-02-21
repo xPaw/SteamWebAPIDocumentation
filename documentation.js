@@ -125,6 +125,10 @@
 				{
 					this.$nextTick( this.scrollInterfaceIntoView );
 				}
+				else
+				{
+					this.currentInterface = '';
+				}
 			}
 		},
 		mounted()
@@ -159,8 +163,6 @@
 
 					matchedInterfaces[ match.interface ][ match.method ] = this.interfaces[ match.interface ][ match.method ];
 				}
-
-				this.currentInterface = matches.length > 0 ? matches[ 0 ].item.interface : '';
 
 				return matchedInterfaces;
 			},
@@ -310,6 +312,7 @@
 				index = keys.indexOf( this.currentInterface ) + direction;
 
 				this.currentInterface = keys[ ( ( index % size ) + size ) % size ];
+				this.scrollInterfaceIntoView();
 			},
 			focusApikey()
 			{
