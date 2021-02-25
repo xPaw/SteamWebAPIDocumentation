@@ -6954,12 +6954,19 @@
         "SetProfilePreferences": {
             "version": 1,
             "httpmethod": "POST",
+            "description": "Sets profile preferences",
             "parameters": [
                 {
                     "name": "key",
                     "type": "string",
                     "optional": false,
                     "description": "Access key"
+                },
+                {
+                    "name": "profile_preferences",
+                    "type": "{message}",
+                    "optional": true,
+                    "description": ""
                 }
             ],
             "_type": "protobufs"
@@ -8259,6 +8266,18 @@
         }
     },
     "IRemoteClientService": {
+        "CancelPairing": {
+            "version": 1,
+            "_type": "undocumented"
+        },
+        "CreateSession": {
+            "version": 1,
+            "_type": "undocumented"
+        },
+        "GetReplies": {
+            "version": 1,
+            "_type": "undocumented"
+        },
         "NotifyRegisterStatusUpdate": {
             "version": 1,
             "httpmethod": "POST",
@@ -8300,6 +8319,14 @@
                 }
             ],
             "_type": "protobufs"
+        },
+        "SetPairingInfo": {
+            "version": 1,
+            "_type": "undocumented"
+        },
+        "StartPairing": {
+            "version": 1,
+            "_type": "undocumented"
         }
     },
     "ISaleItemRewardsService": {
