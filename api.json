@@ -3640,6 +3640,26 @@
             ]
         }
     },
+    "IEconItems_1269260": {
+        "GetEquippedPlayerItems": {
+            "version": 1,
+            "httpmethod": "GET",
+            "parameters": [
+                {
+                    "name": "steamid",
+                    "type": "uint64",
+                    "optional": false,
+                    "description": "The Steam ID to fetch items for"
+                },
+                {
+                    "name": "class_id",
+                    "type": "uint32",
+                    "optional": false,
+                    "description": "Return items equipped for this class id"
+                }
+            ]
+        }
+    },
     "IEconMarketService": {
         "CancelAppListingsForUser": {
             "version": 1,
@@ -4282,6 +4302,18 @@
         }
     },
     "IGCVersion_1046930": {
+        "GetClientVersion": {
+            "version": 1,
+            "httpmethod": "GET",
+            "parameters": []
+        },
+        "GetServerVersion": {
+            "version": 1,
+            "httpmethod": "GET",
+            "parameters": []
+        }
+    },
+    "IGCVersion_1269260": {
         "GetClientVersion": {
             "version": 1,
             "httpmethod": "GET",
