@@ -1513,6 +1513,12 @@
             "_type": "publisher_only"
         }
     },
+    "IClanService": {
+        "GetAdjacentPartnerEvents": {
+            "version": 1,
+            "_type": "undocumented"
+        }
+    },
     "IClientMetricsService": {
         "ReportClientError": {
             "version": 1,
@@ -4146,6 +4152,12 @@
                     "description": "The language to use when loading item display data"
                 }
             ]
+        }
+    },
+    "IEmbeddedClientService": {
+        "AuthorizeDevice": {
+            "version": 1,
+            "_type": "undocumented"
         }
     },
     "IFriendMessagesService": {
