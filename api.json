@@ -673,6 +673,10 @@
         }
     },
     "ICSGOTournaments_730": {
+        "ClaimBadgeReward": {
+            "version": 1,
+            "_type": "undocumented"
+        },
         "GetTournamentFantasyLineup": {
             "version": 1,
             "httpmethod": "GET",
@@ -2300,6 +2304,10 @@
         }
     },
     "IDOTA2Fantasy_205790": {
+        "GetFantasyPlayerRawStats": {
+            "version": 1,
+            "_type": "undocumented"
+        },
         "GetFantasyPlayerStats": {
             "version": 1,
             "httpmethod": "GET",
@@ -2396,6 +2404,10 @@
             "_type": "undocumented"
         },
         "GetLiveGames": {
+            "version": 1,
+            "_type": "undocumented"
+        },
+        "GetMessages": {
             "version": 1,
             "_type": "undocumented"
         },
@@ -2770,6 +2782,10 @@
                 }
             ]
         },
+        "GetMatchMVPVotes": {
+            "version": 1,
+            "_type": "undocumented"
+        },
         "GetTeamInfoByTeamID": {
             "version": 1,
             "httpmethod": "GET",
@@ -2935,6 +2951,10 @@
     },
     "IDOTA2Teams_570": {
         "GetFanContentStatus": {
+            "version": 1,
+            "_type": "undocumented"
+        },
+        "GetPlayerInfo": {
             "version": 1,
             "_type": "undocumented"
         },
@@ -4348,6 +4368,14 @@
         }
     },
     "IGameInventory": {
+        "GetAssetClassInfo": {
+            "version": 1,
+            "_type": "undocumented"
+        },
+        "GetAssetPrices": {
+            "version": 1,
+            "_type": "undocumented"
+        },
         "GetHistoryCommandDetails": {
             "version": 1,
             "httpmethod": "GET",
@@ -12118,6 +12146,10 @@
         }
     },
     "IStoreService": {
+        "GetAppInfo": {
+            "version": 1,
+            "_type": "undocumented"
+        },
         "GetAppList": {
             "version": 1,
             "httpmethod": "GET",
