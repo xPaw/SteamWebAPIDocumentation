@@ -309,7 +309,7 @@
                 },
                 {
                     "name": "language",
-                    "type": "uint32",
+                    "type": "ELanguage",
                     "optional": true,
                     "description": "ELanguage of the user posting the message, default is english"
                 },
@@ -1701,7 +1701,7 @@
                 },
                 {
                     "name": "language",
-                    "type": "uint32",
+                    "type": "ELanguage",
                     "optional": true,
                     "description": ""
                 }
@@ -1769,7 +1769,7 @@
                 },
                 {
                     "name": "language",
-                    "type": "uint32",
+                    "type": "ELanguage",
                     "optional": true,
                     "description": ""
                 },
@@ -2201,7 +2201,7 @@
                 },
                 {
                     "name": "language",
-                    "type": "uint32",
+                    "type": "ELanguage",
                     "optional": true,
                     "description": ""
                 }
@@ -7667,7 +7667,7 @@
                 },
                 {
                     "name": "language",
-                    "type": "int32",
+                    "type": "ELanguage",
                     "optional": true,
                     "description": "Specifies the localized text to return. Defaults to English."
                 },
@@ -7799,7 +7799,7 @@
                 },
                 {
                     "name": "language",
-                    "type": "int32",
+                    "type": "ELanguage",
                     "optional": true,
                     "description": "Specifies the localized text to return. Defaults to English."
                 },
@@ -8138,7 +8138,7 @@
                 },
                 {
                     "name": "language",
-                    "type": "int32",
+                    "type": "ELanguage",
                     "optional": true,
                     "description": "Language to search in and also what gets returned. Defaults to English."
                 },
@@ -8654,7 +8654,7 @@
                 },
                 {
                     "name": "language",
-                    "type": "int32",
+                    "type": "ELanguage",
                     "optional": false
                 }
             ],

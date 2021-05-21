@@ -1,16 +1,24 @@
 {
+	"IBroadcastService/PostChatMessage/language": "ELanguage",
+	"IClanFAQSService/PublishDraft/language": "ELanguage",
+	"IClanFAQSService/UpdateDraft/language": "ELanguage",
 	"ICommunityService/GetApps/appids": "int32[]",
+	"ICommunityService/GetApps/language": "ELanguage",
 	"IInventoryService/GetQuantity/itemdefid": "uint64[]",
 	"ILoyaltyRewardsService/QueryRewardItems/appids": "uint32[]",
 	"ILoyaltyRewardsService/QueryRewardItems/contains_definitionids": "uint32[]",
 	"ILoyaltyRewardsService/QueryRewardItems/definitionids": "uint32[]",
 	"IPublishedFileService/GetDetails/desired_revision": "EPublishedFileRevision",
+	"IPublishedFileService/GetDetails/language": "ELanguage",
 	"IPublishedFileService/GetDetails/publishedfileids": "uint64[]",
 	"IPublishedFileService/GetUserFiles/desired_revision": "EPublishedFileRevision",
+	"IPublishedFileService/GetUserFiles/language": "ELanguage",
 	"IPublishedFileService/GetUserVoteSummary/publishedfileids": "uint64[]",
 	"IPublishedFileService/QueryFiles/desired_revision": "EPublishedFileRevision",
+	"IPublishedFileService/QueryFiles/language": "ELanguage",
 	"IPublishedFileService/QueryFiles/query_type": "EPublishedFileQueryType",
 	"IPublishedFileService/RefreshVotingQueue/desired_revision": "EPublishedFileRevision",
+	"IPublishedFileService/UpdateTags/language": "ELanguage",
 
 	"comma": null
 }
