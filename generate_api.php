@@ -106,6 +106,12 @@ if( file_exists( __DIR__ . '/api_type_overrides.json' ) )
 				{
 					$Parameter[ 'type' ] = $ParameterTypeOverrides[ $Key ];
 				}
+
+				if( isset( $Parameter[ 'description' ] ) && stripos( $Parameter[ 'description' ], '(Optional) ' ) === 0 )
+				{
+					$Parameter[ 'optional' ] = true;
+					$Parameter[ 'description' ] = substr( $Parameter[ 'description' ], 11 );
+				}
 			}
 
 			unset( $Parameter );

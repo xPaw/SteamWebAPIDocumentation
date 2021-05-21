@@ -1170,20 +1170,20 @@
                 {
                     "name": "includereports",
                     "type": "bool",
-                    "optional": false,
-                    "description": "(Optional) Include reports."
+                    "optional": true,
+                    "description": "Include reports."
                 },
                 {
                     "name": "includebans",
                     "type": "bool",
-                    "optional": false,
-                    "description": "(Optional) Include ban requests."
+                    "optional": true,
+                    "description": "Include ban requests."
                 },
                 {
                     "name": "steamid",
                     "type": "uint64",
-                    "optional": false,
-                    "description": "(Optional) Query just for this steamid."
+                    "optional": true,
+                    "description": "Query just for this steamid."
                 }
             ],
             "_type": "publisher_only"
@@ -1331,68 +1331,68 @@
                 {
                     "name": "steamidreporter",
                     "type": "uint64",
-                    "optional": false,
-                    "description": "(Optional) steamid of the user or game server who is reporting the cheating."
+                    "optional": true,
+                    "description": "steamid of the user or game server who is reporting the cheating."
                 },
                 {
                     "name": "appdata",
                     "type": "uint64",
-                    "optional": false,
-                    "description": "(Optional) App specific data about the cheating."
+                    "optional": true,
+                    "description": "App specific data about the cheating."
                 },
                 {
                     "name": "heuristic",
                     "type": "bool",
-                    "optional": false,
-                    "description": "(Optional) extra information about the source of the cheating - was it a heuristic."
+                    "optional": true,
+                    "description": "extra information about the source of the cheating - was it a heuristic."
                 },
                 {
                     "name": "detection",
                     "type": "bool",
-                    "optional": false,
-                    "description": "(Optional) extra information about the source of the cheating - was it a detection."
+                    "optional": true,
+                    "description": "extra information about the source of the cheating - was it a detection."
                 },
                 {
                     "name": "playerreport",
                     "type": "bool",
-                    "optional": false,
-                    "description": "(Optional) extra information about the source of the cheating - was it a player report."
+                    "optional": true,
+                    "description": "extra information about the source of the cheating - was it a player report."
                 },
                 {
                     "name": "noreportid",
                     "type": "bool",
-                    "optional": false,
-                    "description": "(Optional) dont return report id"
+                    "optional": true,
+                    "description": "dont return report id"
                 },
                 {
                     "name": "gamemode",
                     "type": "uint32",
-                    "optional": false,
-                    "description": "(Optional) extra information about state of game - was it a specific type of game play (0 = generic)"
+                    "optional": true,
+                    "description": "extra information about state of game - was it a specific type of game play (0 = generic)"
                 },
                 {
                     "name": "suspicionstarttime",
                     "type": "uint32",
-                    "optional": false,
-                    "description": "(Optional) extra information indicating how far back the game thinks is interesting for this user"
+                    "optional": true,
+                    "description": "extra information indicating how far back the game thinks is interesting for this user"
                 },
                 {
                     "name": "severity",
                     "type": "uint32",
-                    "optional": false,
-                    "description": "(Optional) level of severity of bad action being reported"
+                    "optional": true,
+                    "description": "level of severity of bad action being reported"
                 },
                 {
                     "name": "matchid",
                     "type": "uint64",
-                    "optional": false,
-                    "description": "(Optional) matchid to identify the game instance"
+                    "optional": true,
+                    "description": "matchid to identify the game instance"
                 },
                 {
                     "name": "cheating_type",
                     "type": "uint64",
-                    "optional": false,
-                    "description": "(Optional) app specific data about the type of cheating"
+                    "optional": true,
+                    "description": "app specific data about the type of cheating"
                 }
             ],
             "_type": "publisher_only"
@@ -2121,19 +2121,19 @@
                     "name": "extended_details",
                     "type": "bool",
                     "optional": true,
-                    "description": "(Optional) Get extended details back on the files found. Defaults to only returned the app Id and UGC Id of the files found."
+                    "description": "Get extended details back on the files found. Defaults to only returned the app Id and UGC Id of the files found."
                 },
                 {
                     "name": "count",
                     "type": "uint32",
                     "optional": true,
-                    "description": "(Optional) Maximum number of results to return on this call. Defaults to a maximum of 500 files returned."
+                    "description": "Maximum number of results to return on this call. Defaults to a maximum of 500 files returned."
                 },
                 {
                     "name": "start_index",
                     "type": "uint32",
                     "optional": true,
-                    "description": "(Optional) Starting index to begin enumeration at. Defaults to the beginning of the list."
+                    "description": "Starting index to begin enumeration at. Defaults to the beginning of the list."
                 }
             ],
             "_type": "protobufs"
@@ -5043,8 +5043,8 @@
                 {
                     "name": "steamid",
                     "type": "uint64",
-                    "optional": false,
-                    "description": "(Optional) steamid to make the request on behalf of -- if specified, the user must be in the session and all users being added to the session must be friends with the user."
+                    "optional": true,
+                    "description": "steamid to make the request on behalf of -- if specified, the user must be in the session and all users being added to the session must be friends with the user."
                 }
             ],
             "_type": "publisher_only"
@@ -5075,8 +5075,8 @@
                 {
                     "name": "steamid",
                     "type": "uint64",
-                    "optional": false,
-                    "description": "(Optional) steamid to make the request on behalf of -- if specified, the user must be in the session."
+                    "optional": true,
+                    "description": "steamid to make the request on behalf of -- if specified, the user must be in the session."
                 }
             ],
             "_type": "publisher_only"
@@ -5133,20 +5133,20 @@
                 {
                     "name": "include_all_user_messages",
                     "type": "bool",
-                    "optional": false,
-                    "description": "(Optional) Boolean determining whether the message for all users should be included. Defaults to false."
+                    "optional": true,
+                    "description": "Boolean determining whether the message for all users should be included. Defaults to false."
                 },
                 {
                     "name": "include_auth_user_message",
                     "type": "bool",
-                    "optional": false,
-                    "description": "(Optional) Boolean determining whether the message for the authenticated user should be included. Defaults to false."
+                    "optional": true,
+                    "description": "Boolean determining whether the message for the authenticated user should be included. Defaults to false."
                 },
                 {
                     "name": "language",
                     "type": "string",
-                    "optional": false,
-                    "description": "(Optional) Language to localize the text in."
+                    "optional": true,
+                    "description": "Language to localize the text in."
                 }
             ],
             "_type": "publisher_only"
@@ -5234,20 +5234,20 @@
                 {
                     "name": "title",
                     "type": "{message}",
-                    "optional": false,
-                    "description": "(Optional) The new title of the session.  If not specified, the title will not be changed."
+                    "optional": true,
+                    "description": "The new title of the session.  If not specified, the title will not be changed."
                 },
                 {
                     "name": "users",
                     "type": "{message}",
-                    "optional": false,
-                    "description": "(Optional) A list of users whose state will be updated to reflect the given state. If the users are not already in the session, they will be added to it."
+                    "optional": true,
+                    "description": "A list of users whose state will be updated to reflect the given state. If the users are not already in the session, they will be added to it."
                 },
                 {
                     "name": "steamid",
                     "type": "uint64",
-                    "optional": false,
-                    "description": "(Optional) steamid to make the request on behalf of -- if specified, the user must be in the session and all users being added to the session must be friends with the user."
+                    "optional": true,
+                    "description": "steamid to make the request on behalf of -- if specified, the user must be in the session and all users being added to the session must be friends with the user."
                 }
             ],
             "_type": "publisher_only"
@@ -5284,8 +5284,8 @@
                 {
                     "name": "steamid",
                     "type": "uint64",
-                    "optional": false,
-                    "description": "(Optional) steamid to make the request on behalf of -- if specified, the user must be in the session and all users being added to the session must be friends with the user."
+                    "optional": true,
+                    "description": "steamid to make the request on behalf of -- if specified, the user must be in the session and all users being added to the session must be friends with the user."
                 }
             ]
         },
@@ -5309,8 +5309,8 @@
                 {
                     "name": "steamid",
                     "type": "uint64",
-                    "optional": false,
-                    "description": "(Optional) steamid to make the request on behalf of -- if specified, the user must be in the session."
+                    "optional": true,
+                    "description": "steamid to make the request on behalf of -- if specified, the user must be in the session."
                 }
             ]
         },
@@ -5334,20 +5334,20 @@
                 {
                     "name": "title",
                     "type": "{message}",
-                    "optional": false,
-                    "description": "(Optional) The new title of the session.  If not specified, the title will not be changed."
+                    "optional": true,
+                    "description": "The new title of the session.  If not specified, the title will not be changed."
                 },
                 {
                     "name": "users",
                     "type": "{message}",
-                    "optional": false,
-                    "description": "(Optional) A list of users whose state will be updated to reflect the given state. If the users are not already in the session, they will be added to it."
+                    "optional": true,
+                    "description": "A list of users whose state will be updated to reflect the given state. If the users are not already in the session, they will be added to it."
                 },
                 {
                     "name": "steamid",
                     "type": "uint64",
-                    "optional": false,
-                    "description": "(Optional) steamid to make the request on behalf of -- if specified, the user must be in the session and all users being added to the session must be friends with the user."
+                    "optional": true,
+                    "description": "steamid to make the request on behalf of -- if specified, the user must be in the session and all users being added to the session must be friends with the user."
                 }
             ]
         }
@@ -7729,43 +7729,43 @@
                     "name": "page",
                     "type": "uint32",
                     "optional": true,
-                    "description": "(Optional) Starting page for results."
+                    "description": "Starting page for results."
                 },
                 {
                     "name": "numperpage",
                     "type": "uint32",
                     "optional": true,
-                    "description": "(Optional) The number of results, per page to return."
+                    "description": "The number of results, per page to return."
                 },
                 {
                     "name": "type",
                     "type": "string",
                     "optional": true,
-                    "description": "(Optional) Type of files to be returned."
+                    "description": "Type of files to be returned."
                 },
                 {
                     "name": "sortmethod",
                     "type": "string",
                     "optional": true,
-                    "description": "(Optional) Sorting method to use on returned values."
+                    "description": "Sorting method to use on returned values."
                 },
                 {
                     "name": "privacy",
                     "type": "uint32",
-                    "optional": false,
-                    "description": "(optional) Filter by privacy settings."
+                    "optional": true,
+                    "description": "Filter by privacy settings."
                 },
                 {
                     "name": "requiredtags",
                     "type": "string",
-                    "optional": false,
-                    "description": "(Optional) Tags that must be present on a published file to satisfy the query."
+                    "optional": true,
+                    "description": "Tags that must be present on a published file to satisfy the query."
                 },
                 {
                     "name": "excludedtags",
                     "type": "string",
-                    "optional": false,
-                    "description": "(Optional) Tags that must NOT be present on a published file to satisfy the query."
+                    "optional": true,
+                    "description": "Tags that must NOT be present on a published file to satisfy the query."
                 },
                 {
                     "name": "required_kv_tags",
@@ -7776,8 +7776,8 @@
                 {
                     "name": "filetype",
                     "type": "uint32",
-                    "optional": false,
-                    "description": "(Optional) File type to match files to."
+                    "optional": true,
+                    "description": "File type to match files to."
                 },
                 {
                     "name": "creator_appid",
@@ -7806,20 +7806,20 @@
                 {
                     "name": "taggroups",
                     "type": "{message}",
-                    "optional": false,
-                    "description": "(Optional) At least one of the tags must be present on a published file to satisfy the query."
+                    "optional": true,
+                    "description": "At least one of the tags must be present on a published file to satisfy the query."
                 },
                 {
                     "name": "totalonly",
                     "type": "bool",
-                    "optional": false,
-                    "description": "(Optional) If true, only return the total number of files that satisfy this query."
+                    "optional": true,
+                    "description": "If true, only return the total number of files that satisfy this query."
                 },
                 {
                     "name": "ids_only",
                     "type": "bool",
-                    "optional": false,
-                    "description": "(Optional) If true, only return the published file ids of files that satisfy this query."
+                    "optional": true,
+                    "description": "If true, only return the published file ids of files that satisfy this query."
                 },
                 {
                     "name": "return_vote_data",
@@ -7976,13 +7976,13 @@
                     "name": "youtube_username",
                     "type": "string",
                     "optional": true,
-                    "description": "(Optional) User's YouTube account username."
+                    "description": "User's YouTube account username."
                 },
                 {
                     "name": "youtube_videoid",
                     "type": "string",
                     "optional": true,
-                    "description": "(Optional) Video Id of a YouTube video for this published file."
+                    "description": "Video Id of a YouTube video for this published file."
                 },
                 {
                     "name": "visibility",
@@ -7994,7 +7994,7 @@
                     "name": "redirect_uri",
                     "type": "string",
                     "optional": true,
-                    "description": "(Optional) If supplied, the resulting published file's Id is appended to the URI."
+                    "description": "If supplied, the resulting published file's Id is appended to the URI."
                 },
                 {
                     "name": "tags",
@@ -8006,19 +8006,19 @@
                     "name": "collection_type",
                     "type": "string",
                     "optional": true,
-                    "description": "(Optional) Type of collection the published file represents."
+                    "description": "Type of collection the published file represents."
                 },
                 {
                     "name": "game_type",
                     "type": "string",
                     "optional": true,
-                    "description": "(Optional) Type of game the published file represents."
+                    "description": "Type of game the published file represents."
                 },
                 {
                     "name": "url",
                     "type": "string",
                     "optional": true,
-                    "description": "(Optional) If this represents a game, this is the URL to that game's page."
+                    "description": "If this represents a game, this is the URL to that game's page."
                 }
             ],
             "_type": "protobufs"
@@ -8036,7 +8036,7 @@
                 },
                 {
                     "name": "query_type",
-                    "type": "uint32",
+                    "type": "EPublishedFileQueryType",
                     "optional": false,
                     "description": "enumeration EPublishedFileQueryType in clientenums.h"
                 },
@@ -8056,7 +8056,7 @@
                     "name": "numperpage",
                     "type": "uint32",
                     "optional": true,
-                    "description": "(Optional) The number of results, per page to return."
+                    "description": "The number of results, per page to return."
                 },
                 {
                     "name": "creator_appid",
@@ -8079,8 +8079,8 @@
                 {
                     "name": "excludedtags",
                     "type": "string",
-                    "optional": false,
-                    "description": "(Optional) Tags that must NOT be present on a published file to satisfy the query."
+                    "optional": true,
+                    "description": "Tags that must NOT be present on a published file to satisfy the query."
                 },
                 {
                     "name": "match_all_tags",
@@ -8151,20 +8151,20 @@
                 {
                     "name": "taggroups",
                     "type": "{message}",
-                    "optional": false,
-                    "description": "(Optional) At least one of the tags must be present on a published file to satisfy the query."
+                    "optional": true,
+                    "description": "At least one of the tags must be present on a published file to satisfy the query."
                 },
                 {
                     "name": "totalonly",
                     "type": "bool",
-                    "optional": false,
-                    "description": "(Optional) If true, only return the total number of files that satisfy this query."
+                    "optional": true,
+                    "description": "If true, only return the total number of files that satisfy this query."
                 },
                 {
                     "name": "ids_only",
                     "type": "bool",
-                    "optional": false,
-                    "description": "(Optional) If true, only return the published file ids of files that satisfy this query."
+                    "optional": true,
+                    "description": "If true, only return the published file ids of files that satisfy this query."
                 },
                 {
                     "name": "return_vote_data",
@@ -8433,49 +8433,49 @@
                     "name": "title",
                     "type": "string",
                     "optional": true,
-                    "description": "(Optional) Title of the published file."
+                    "description": "Title of the published file."
                 },
                 {
                     "name": "file_description",
                     "type": "string",
                     "optional": true,
-                    "description": "(Optional) Description of the published file."
+                    "description": "Description of the published file."
                 },
                 {
                     "name": "visibility",
                     "type": "uint32",
                     "optional": true,
-                    "description": "(Optional) Visibility of the published file."
+                    "description": "Visibility of the published file."
                 },
                 {
                     "name": "tags",
                     "type": "string",
                     "optional": true,
-                    "description": "(Optional) Set of tags for the published file."
+                    "description": "Set of tags for the published file."
                 },
                 {
                     "name": "filename",
                     "type": "string",
                     "optional": true,
-                    "description": "(Optional) Filename for the published file."
+                    "description": "Filename for the published file."
                 },
                 {
                     "name": "preview_filename",
                     "type": "string",
                     "optional": true,
-                    "description": "(Optional) Preview filename for the published file."
+                    "description": "Preview filename for the published file."
                 },
                 {
                     "name": "image_width",
                     "type": "uint32",
                     "optional": true,
-                    "description": "(Optional) If this is an image file, you can specify the image width."
+                    "description": "If this is an image file, you can specify the image width."
                 },
                 {
                     "name": "image_height",
                     "type": "uint32",
                     "optional": true,
-                    "description": "(Optional) If this is an image file, you can specify the image height."
+                    "description": "If this is an image file, you can specify the image height."
                 }
             ],
             "_type": "protobufs"
