@@ -11,12 +11,9 @@
 		{
 			const method = interfaces[ interfaceName ][ methodName ];
 
-			if( method.parameters )
+			for( const parameter of method.parameters )
 			{
-				for( const parameter of method.parameters )
-				{
-					parameter._value = '';
-				}
+				parameter._value = '';
 			}
 
 			flattenedMethods.push( {
@@ -230,17 +227,14 @@
 					parameters.set( 'format', this.userData.format );
 				}
 
-				if( method.parameters )
+				for( const parameter of method.parameters )
 				{
-					for( const parameter of method.parameters )
+					if( !parameter._value )
 					{
-						if( !parameter._value )
-						{
-							continue;
-						}
-
-						parameters.set( parameter.name, parameter.type === 'bool' ? 1 : parameter._value );
+						continue;
 					}
+
+					parameters.set( parameter.name, parameter.type === 'bool' ? 1 : parameter._value );
 				}
 
 				const str = parameters.toString();
@@ -381,14 +375,11 @@
 		{
 			for( const methodName in interfaces[ interfaceName ] )
 			{
-				if( interfaces[ interfaceName ][ methodName ].parameters )
+				for( const parameter of interfaces[ interfaceName ][ methodName ].parameters )
 				{
-					for( const parameter of interfaces[ interfaceName ][ methodName ].parameters )
+					if( !parameter._value && parameter.name.includes( 'steamid' ) )
 					{
-						if( !parameter._value && parameter.name.includes( 'steamid' ) )
-						{
-							parameter._value = app.userData.steamid;
-						}
+						parameter._value = app.userData.steamid;
 					}
 				}
 			}

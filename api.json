@@ -675,6 +675,7 @@
     "ICSGOTournaments_730": {
         "ClaimBadgeReward": {
             "version": 1,
+            "parameters": [],
             "_type": "undocumented"
         },
         "GetTournamentFantasyLineup": {
@@ -1853,6 +1854,7 @@
     "IClanService": {
         "GetAdjacentPartnerEvents": {
             "version": 1,
+            "parameters": [],
             "_type": "undocumented"
         }
     },
@@ -2257,6 +2259,7 @@
         },
         "GetClanAnnouncements": {
             "version": 1,
+            "parameters": [],
             "_type": "undocumented"
         },
         "GetUserPartnerEventNews": {
@@ -2635,86 +2638,105 @@
     "IDOTA2AutomatedTourney_570": {
         "GetParticipationDetails": {
             "version": 1,
+            "parameters": [],
             "_type": "undocumented"
         },
         "GetPlayerHistory": {
             "version": 1,
+            "parameters": [],
             "_type": "undocumented"
         },
         "GetTournamentDetails": {
             "version": 1,
+            "parameters": [],
             "_type": "undocumented"
         }
     },
     "IDOTA2CustomGames_570": {
         "GetGamePlayerCounts": {
             "version": 1,
+            "parameters": [],
             "_type": "undocumented"
         },
         "GetPopularGames": {
             "version": 1,
+            "parameters": [],
             "_type": "undocumented"
         },
         "GetSuggestedGames": {
             "version": 1,
+            "parameters": [],
             "_type": "undocumented"
         },
         "GetWhitelist": {
             "version": 1,
+            "parameters": [],
             "_type": "undocumented"
         },
         "GetWorkshopVoteQueue": {
             "version": 1,
+            "parameters": [],
             "_type": "undocumented"
         }
     },
     "IDOTA2Events_570": {
         "GetArcanaVotes": {
             "version": 1,
+            "parameters": [],
             "_type": "undocumented"
         },
         "GetCurrentTriviaQuestions": {
             "version": 1,
+            "parameters": [],
             "_type": "undocumented"
         },
         "GetDraftTriviaMatchInfo": {
             "version": 1,
+            "parameters": [],
             "_type": "undocumented"
         },
         "GetDraftTriviaVoteCount": {
             "version": 1,
+            "parameters": [],
             "_type": "undocumented"
         },
         "GetMutations": {
             "version": 1,
+            "parameters": [],
             "_type": "undocumented"
         },
         "GetTriviaQuestionAnswersSummary": {
             "version": 1,
+            "parameters": [],
             "_type": "undocumented"
         }
     },
     "IDOTA2Fantasy_570": {
         "GetFantasyPlayerRawStats": {
             "version": 1,
+            "parameters": [],
             "_type": "undocumented"
         },
         "GetPlayerInfo": {
             "version": 1,
+            "parameters": [],
             "_type": "undocumented"
         },
         "GetPlayerInfos": {
             "version": 1,
+            "parameters": [],
             "_type": "undocumented"
         },
         "GetProPlayerInfo": {
             "version": 1,
+            "parameters": [],
             "_type": "undocumented"
         }
     },
     "IDOTA2Fantasy_205790": {
         "GetFantasyPlayerRawStats": {
             "version": 1,
+            "parameters": [],
             "_type": "undocumented"
         },
         "GetFantasyPlayerStats": {
@@ -2780,56 +2802,69 @@
     "IDOTA2Guild_570": {
         "FindGuildByTag": {
             "version": 1,
+            "parameters": [],
             "_type": "undocumented"
         },
         "GetGuildPersonaInfo": {
             "version": 1,
+            "parameters": [],
             "_type": "undocumented"
         },
         "GetGuildSummary": {
             "version": 1,
+            "parameters": [],
             "_type": "undocumented"
         },
         "SearchForOpenGuilds": {
             "version": 1,
+            "parameters": [],
             "_type": "undocumented"
         }
     },
     "IDOTA2League_570": {
         "GetLeagueData": {
             "version": 1,
+            "parameters": [],
             "_type": "undocumented"
         },
         "GetLeagueInfoList": {
             "version": 1,
+            "parameters": [],
             "_type": "undocumented"
         },
         "GetLeagueNodeResults": {
             "version": 1,
+            "parameters": [],
             "_type": "undocumented"
         },
         "GetLeaguesData": {
             "version": 1,
+            "parameters": [],
             "_type": "undocumented"
         },
         "GetLiveGames": {
             "version": 1,
+            "parameters": [],
             "_type": "undocumented"
         },
         "GetMessages": {
             "version": 1,
+            "parameters": [],
             "_type": "undocumented"
         },
         "GetPredictionResults": {
             "version": 1,
+            "parameters": [],
             "_type": "undocumented"
         },
         "GetPredictions": {
             "version": 1,
+            "parameters": [],
             "_type": "undocumented"
         },
         "GetPrizePool": {
             "version": 1,
+            "parameters": [],
             "_type": "undocumented"
         }
     },
@@ -2978,6 +3013,7 @@
         },
         "GetMatchMVPVotes": {
             "version": 1,
+            "parameters": [],
             "_type": "undocumented"
         },
         "GetTeamInfoByTeamID": {
@@ -3193,6 +3229,7 @@
         },
         "GetMatchMVPVotes": {
             "version": 1,
+            "parameters": [],
             "_type": "undocumented"
         },
         "GetTeamInfoByTeamID": {
@@ -3301,20 +3338,24 @@
     "IDOTA2Operations_570": {
         "GetBannedWordList": {
             "version": 2,
+            "parameters": [],
             "_type": "undocumented"
         }
     },
     "IDOTA2Plus_570": {
         "GetPlusHeroAllyAndEnemyData": {
             "version": 1,
+            "parameters": [],
             "_type": "undocumented"
         },
         "GetPlusHeroTimedStats": {
             "version": 1,
+            "parameters": [],
             "_type": "undocumented"
         },
         "GetPlusStatsData": {
             "version": 1,
+            "parameters": [],
             "_type": "undocumented"
         }
     },
@@ -3361,18 +3402,22 @@
     "IDOTA2Teams_570": {
         "GetFanContentStatus": {
             "version": 1,
+            "parameters": [],
             "_type": "undocumented"
         },
         "GetPlayerInfo": {
             "version": 1,
+            "parameters": [],
             "_type": "undocumented"
         },
         "GetSingleTeamInfo": {
             "version": 1,
+            "parameters": [],
             "_type": "undocumented"
         },
         "GetTeamInfos": {
             "version": 1,
+            "parameters": [],
             "_type": "undocumented"
         }
     },
@@ -3563,6 +3608,7 @@
     "IDOTAChat_570": {
         "GetChannelMembers": {
             "version": 1,
+            "parameters": [],
             "_type": "undocumented"
         }
     },
@@ -4592,6 +4638,7 @@
     "IEmbeddedClientService": {
         "AuthorizeDevice": {
             "version": 1,
+            "parameters": [],
             "_type": "undocumented"
         }
     },
@@ -4690,6 +4737,7 @@
         },
         "MarkOfflineMessagesRead": {
             "version": 1,
+            "parameters": [],
             "_type": "undocumented"
         }
     },
@@ -4775,20 +4823,24 @@
     "IGameCoordinator": {
         "GetMessages": {
             "version": 1,
+            "parameters": [],
             "_type": "undocumented"
         },
         "PostMessages": {
             "version": 1,
+            "parameters": [],
             "_type": "undocumented"
         }
     },
     "IGameInventory": {
         "GetAssetClassInfo": {
             "version": 1,
+            "parameters": [],
             "_type": "undocumented"
         },
         "GetAssetPrices": {
             "version": 1,
+            "parameters": [],
             "_type": "undocumented"
         },
         "GetHistoryCommandDetails": {
@@ -4830,6 +4882,7 @@
         },
         "GetItemDefArchive": {
             "version": 1,
+            "parameters": [],
             "_type": "undocumented"
         },
         "GetUserHistory": {
@@ -6596,16 +6649,19 @@
     "IMobileAuthService": {
         "GetWGToken": {
             "version": 1,
+            "parameters": [],
             "_type": "undocumented"
         }
     },
     "IMobileNotificationService": {
         "GetUserNotificationCounts": {
             "version": 1,
+            "parameters": [],
             "_type": "undocumented"
         },
         "SwitchSessionToPush": {
             "version": 1,
+            "parameters": [],
             "_type": "undocumented"
         }
     },
@@ -8755,14 +8811,17 @@
     "IRemoteClientService": {
         "CancelPairing": {
             "version": 1,
+            "parameters": [],
             "_type": "undocumented"
         },
         "CreateSession": {
             "version": 1,
+            "parameters": [],
             "_type": "undocumented"
         },
         "GetReplies": {
             "version": 1,
+            "parameters": [],
             "_type": "undocumented"
         },
         "NotifyRegisterStatusUpdate": {
@@ -8809,10 +8868,12 @@
         },
         "SetPairingInfo": {
             "version": 1,
+            "parameters": [],
             "_type": "undocumented"
         },
         "StartPairing": {
             "version": 1,
+            "parameters": [],
             "_type": "undocumented"
         }
     },
@@ -9634,10 +9695,12 @@
     "ISteamGameOAuth": {
         "GetAppInfo": {
             "version": 1,
+            "parameters": [],
             "_type": "undocumented"
         },
         "GetPackageInfo": {
             "version": 1,
+            "parameters": [],
             "_type": "undocumented"
         }
     },
@@ -9889,6 +9952,7 @@
     "ISteamMicroTxn": {
         "AddToCart": {
             "version": 1,
+            "parameters": [],
             "_type": "undocumented"
         },
         "AdjustAgreement": {
@@ -9949,6 +10013,7 @@
         },
         "CreateCart": {
             "version": 1,
+            "parameters": [],
             "_type": "undocumented"
         },
         "FinalizeTxn": {
@@ -9972,6 +10037,7 @@
         },
         "GetCartContents": {
             "version": 1,
+            "parameters": [],
             "_type": "undocumented"
         },
         "GetReport": {
@@ -10202,6 +10268,7 @@
         },
         "IsValidCart": {
             "version": 1,
+            "parameters": [],
             "_type": "undocumented"
         },
         "ProcessAgreement": {
@@ -11576,6 +11643,7 @@
         },
         "GetFeatured": {
             "version": 1,
+            "parameters": [],
             "_type": "undocumented"
         },
         "GetFollowedChannels": {
@@ -12116,14 +12184,17 @@
     "ISteamUserOAuth": {
         "GetFriendList": {
             "version": 1,
+            "parameters": [],
             "_type": "undocumented"
         },
         "GetGroupList": {
             "version": 1,
+            "parameters": [],
             "_type": "undocumented"
         },
         "GetGroupSummaries": {
             "version": 1,
+            "parameters": [],
             "_type": "undocumented"
         },
         "GetTokenDetails": {
@@ -12140,10 +12211,12 @@
         },
         "GetUserSummaries": {
             "version": 1,
+            "parameters": [],
             "_type": "undocumented"
         },
         "Search": {
             "version": 1,
+            "parameters": [],
             "_type": "undocumented"
         }
     },
@@ -12385,22 +12458,27 @@
     "ISteamWebUserPresenceOAuth": {
         "DeviceInfo": {
             "version": 1,
+            "parameters": [],
             "_type": "undocumented"
         },
         "Logoff": {
             "version": 1,
+            "parameters": [],
             "_type": "undocumented"
         },
         "Logon": {
             "version": 1,
+            "parameters": [],
             "_type": "undocumented"
         },
         "Message": {
             "version": 1,
+            "parameters": [],
             "_type": "undocumented"
         },
         "Poll": {
             "version": 1,
+            "parameters": [],
             "_type": "undocumented"
         },
         "PollStatus": {
@@ -12557,6 +12635,7 @@
     "IStoreService": {
         "GetAppInfo": {
             "version": 1,
+            "parameters": [],
             "_type": "undocumented"
         },
         "GetAppList": {
@@ -12875,6 +12954,7 @@
     "ITrustService": {
         "FullAccountUpdate": {
             "version": 1,
+            "parameters": [],
             "_type": "undocumented"
         },
         "GetTrustScore": {
@@ -13103,10 +13183,12 @@
         },
         "RecoverAuthenticatorCommit": {
             "version": 1,
+            "parameters": [],
             "_type": "undocumented"
         },
         "RecoverAuthenticatorContinue": {
             "version": 1,
+            "parameters": [],
             "_type": "undocumented"
         },
         "RemoveAuthenticator": {

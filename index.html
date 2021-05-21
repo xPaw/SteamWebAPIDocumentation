@@ -238,7 +238,7 @@
 									<template v-for="(interface, interfaceName) in interfaces" :key="interfaceName">
 										<li class="list-group-item px-0" v-for="(method, methodName) in interface" :key="methodName">
 											<a :href="'#' + interfaceName + '/' + methodName">{{ interfaceName }}/{{methodName}}</a>
-											<div class="text-muted mt-1" v-if="method.parameters">{{ method.parameters.map( m => m.name ).join( ', ' ) }}</div>
+											<div class="text-muted mt-1" v-if="method.parameters.length > 0">{{ method.parameters.map( m => m.name ).join( ', ' ) }}</div>
 										</li>
 									</template>
 								</ul>
@@ -295,7 +295,7 @@
 										<div class="form-control font-monospace h-auto">{{ renderUri( methodName, method ) }}<span :class="hasValidAccessToken ? 'hidden-token' : 'hidden-key'">{{ renderApiKey() }}</span>{{ renderParameters( method ) }}</div>
 									</div>
 								</div>
-								<div class="table-responsive" v-if="method.parameters && method.parameters.length > 0">
+								<div class="table-responsive" v-if="method.parameters.length > 0">
 									<table class="table table-sm table-bordered">
 										<thead>
 											<tr>

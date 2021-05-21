@@ -57,6 +57,45 @@ MergeLists( $FinalList, $UndocumentedFromServices, 'protobufs' );
 MergeLists( $FinalList, $UndocumentedFromPartnerDocs, 'undocumented' );
 MergeLists( $FinalList, $Undocumented, 'undocumented' );
 
+$MethodKeysOrder =
+[
+	'version' => 1,
+	'httpmethod' => 2,
+	'description' => 3,
+	'parameters' => 4,
+	'_type' => 9,
+];
+
+foreach( $FinalList as $InterfaceName => $Interface )
+{
+	foreach( $Interface as $MethodName => $Method )
+	{
+		if( !isset( $Method[ 'parameters' ] ) )
+		{
+			$FinalList[ $InterfaceName ][ $MethodName ][ 'parameters' ] = [];
+		}
+
+		uksort( $FinalList[ $InterfaceName ][ $MethodName ], function( string $a, string $b ) use( $MethodKeysOrder ) : int
+		{
+			return $MethodKeysOrder[ $a ] - $MethodKeysOrder[ $b ];
+		} );
+	}
+}
+
+ksort( $FinalList, SORT_NATURAL );
+
+foreach( $FinalList as &$Interfaces )
+{
+	ksort( $Interfaces, SORT_NATURAL );
+}
+
+unset( $Interfaces );
+
+file_put_contents(
+	__DIR__ . DIRECTORY_SEPARATOR . 'api.json',
+	json_encode( $FinalList, JSON_PRETTY_PRINT | JSON_UNESCAPED_SLASHES ) . PHP_EOL
+);
+
 function MergeLists( array &$FinalList, array $Interfaces, ?string $Type = null ) : void
 {
 	foreach( $Interfaces as $Interface )
@@ -106,15 +145,3 @@ function MarkAsRemoved( array &$FinalList ) : void
 		}
 	}
 }
-
-ksort( $FinalList, SORT_NATURAL );
-
-foreach( $FinalList as &$Interfaces )
-{
-	ksort( $Interfaces, SORT_NATURAL );
-}
-
-file_put_contents(
-	__DIR__ . DIRECTORY_SEPARATOR . 'api.json',
-	json_encode( $FinalList, JSON_PRETTY_PRINT | JSON_UNESCAPED_SLASHES ) . PHP_EOL
-);
