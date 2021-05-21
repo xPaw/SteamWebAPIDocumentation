@@ -2,6 +2,8 @@
 
 require __DIR__ . '/config.php';
 
+echo 'Downloading list...' . PHP_EOL;
+
 $c = curl_init( );
 
 curl_setopt_array( $c,
@@ -13,13 +15,19 @@ curl_setopt_array( $c,
 ] );
 $NonPublisher = curl_exec( $c );
 
+echo 'Downloading partner list...' . PHP_EOL;
+
 curl_setopt( $c, CURLOPT_URL, 'https://partner.steam-api.com/ISteamWebAPIUtil/GetSupportedAPIList/v1/?format=json&key=' . $PublisherApiKey );
 $YesPublisher = curl_exec( $c );
+
+echo 'Downloading undocumented list...' . PHP_EOL;
 
 curl_setopt( $c, CURLOPT_URL, 'https://raw.githubusercontent.com/SteamDatabase/UndocumentedAPI/master/api.json' );
 $Undocumented = curl_exec( $c );
 
 curl_close( $c );
+
+echo 'Generating...' . PHP_EOL;
 
 $YesPublisher = json_decode( $YesPublisher, true );
 $YesPublisher = $YesPublisher[ 'apilist' ][ 'interfaces' ] ?? [];
@@ -82,19 +90,48 @@ foreach( $FinalList as $InterfaceName => $Interface )
 	}
 }
 
-ksort( $FinalList, SORT_NATURAL );
-
-foreach( $FinalList as &$Interfaces )
+if( file_exists( __DIR__ . '/api_type_overrides.json' ) )
 {
-	ksort( $Interfaces, SORT_NATURAL );
+	$ParameterTypeOverrides = json_decode( file_get_contents( __DIR__ . '/api_type_overrides.json' ), true );
+
+	foreach( $FinalList as $InterfaceName => &$Interface )
+	{
+		foreach( $Interface as $MethodName => &$Method )
+		{
+			foreach( $Method[ 'parameters' ] as &$Parameter )
+			{
+				$Key = "{$InterfaceName}/{$MethodName}/{$Parameter[ 'name' ]}";
+
+				if( isset( $ParameterTypeOverrides[ $Key ] ) )
+				{
+					$Parameter[ 'type' ] = $ParameterTypeOverrides[ $Key ];
+				}
+			}
+
+			unset( $Parameter );
+		}
+
+		unset( $Method );
+	}
+
+	unset( $Interface );
 }
 
-unset( $Interfaces );
+ksort( $FinalList, SORT_NATURAL );
+
+foreach( $FinalList as &$Interface )
+{
+	ksort( $Interface, SORT_NATURAL );
+}
+
+unset( $Interface );
 
 file_put_contents(
 	__DIR__ . DIRECTORY_SEPARATOR . 'api.json',
 	json_encode( $FinalList, JSON_PRETTY_PRINT | JSON_UNESCAPED_SLASHES ) . PHP_EOL
 );
+
+echo 'Done' . PHP_EOL;
 
 function MergeLists( array &$FinalList, array $Interfaces, ?string $Type = null ) : void
 {

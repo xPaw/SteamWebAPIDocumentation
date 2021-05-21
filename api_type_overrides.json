@@ -1,0 +1,16 @@
+{
+	"ICommunityService/GetApps/appids": "int32[]",
+	"IInventoryService/GetQuantity/itemdefid": "uint64[]",
+	"ILoyaltyRewardsService/QueryRewardItems/appids": "uint32[]",
+	"ILoyaltyRewardsService/QueryRewardItems/contains_definitionids": "uint32[]",
+	"ILoyaltyRewardsService/QueryRewardItems/definitionids": "uint32[]",
+	"IPublishedFileService/GetDetails/desired_revision": "EPublishedFileRevision",
+	"IPublishedFileService/GetDetails/publishedfileids": "uint64[]",
+	"IPublishedFileService/GetUserFiles/desired_revision": "EPublishedFileRevision",
+	"IPublishedFileService/GetUserVoteSummary/publishedfileids": "uint64[]",
+	"IPublishedFileService/QueryFiles/desired_revision": "EPublishedFileRevision",
+	"IPublishedFileService/QueryFiles/query_type": "EPublishedFileQueryType",
+	"IPublishedFileService/RefreshVotingQueue/desired_revision": "EPublishedFileRevision",
+
+	"comma": null
+}

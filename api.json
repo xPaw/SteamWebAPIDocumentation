@@ -2195,7 +2195,7 @@
                 },
                 {
                     "name": "appids",
-                    "type": "int32",
+                    "type": "int32[]",
                     "optional": true,
                     "description": ""
                 },
@@ -6051,7 +6051,7 @@
                 },
                 {
                     "name": "itemdefid",
-                    "type": "uint64",
+                    "type": "uint64[]",
                     "optional": false
                 },
                 {
@@ -6435,7 +6435,7 @@
                 },
                 {
                     "name": "appids",
-                    "type": "uint32",
+                    "type": "uint32[]",
                     "optional": true,
                     "description": ""
                 },
@@ -6495,7 +6495,7 @@
                 },
                 {
                     "name": "definitionids",
-                    "type": "uint32",
+                    "type": "uint32[]",
                     "optional": true,
                     "description": ""
                 },
@@ -6519,7 +6519,7 @@
                 },
                 {
                     "name": "contains_definitionids",
-                    "type": "uint32",
+                    "type": "uint32[]",
                     "optional": true,
                     "description": ""
                 }
@@ -7613,7 +7613,7 @@
                 },
                 {
                     "name": "publishedfileids",
-                    "type": "uint64",
+                    "type": "uint64[]",
                     "optional": false,
                     "description": "Set of published file Ids to retrieve details for."
                 },
@@ -7690,7 +7690,7 @@
                 },
                 {
                     "name": "desired_revision",
-                    "type": "{enum}",
+                    "type": "EPublishedFileRevision",
                     "optional": true,
                     "description": "Return the data for the specified revision."
                 },
@@ -7895,7 +7895,7 @@
                 },
                 {
                     "name": "desired_revision",
-                    "type": "{enum}",
+                    "type": "EPublishedFileRevision",
                     "optional": true,
                     "description": "Return the data for the specified revision."
                 }
@@ -7908,7 +7908,7 @@
             "parameters": [
                 {
                     "name": "publishedfileids",
-                    "type": "uint64",
+                    "type": "uint64[]",
                     "optional": false
                 }
             ]
@@ -8234,7 +8234,7 @@
                 },
                 {
                     "name": "desired_revision",
-                    "type": "{enum}",
+                    "type": "EPublishedFileRevision",
                     "optional": true,
                     "description": "Return the data for the specified revision."
                 },
@@ -8294,7 +8294,7 @@
                 },
                 {
                     "name": "desired_revision",
-                    "type": "{enum}",
+                    "type": "EPublishedFileRevision",
                     "optional": true,
                     "description": "Filter to items that have data for the specified revision."
                 }
