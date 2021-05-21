@@ -1518,6 +1518,19 @@
         }
     },
     "IClanFAQSService": {
+        "CheckFAQPermissions": {
+            "version": 1,
+            "httpmethod": "POST",
+            "parameters": [
+                {
+                    "name": "key",
+                    "type": "string",
+                    "optional": false,
+                    "description": "Access key"
+                }
+            ],
+            "_type": "protobufs"
+        },
         "Create": {
             "version": 1,
             "httpmethod": "POST",
@@ -1536,6 +1549,12 @@
                 },
                 {
                     "name": "internal_name",
+                    "type": "string",
+                    "optional": true,
+                    "description": ""
+                },
+                {
+                    "name": "json_data",
                     "type": "string",
                     "optional": true,
                     "description": ""
@@ -1606,8 +1625,34 @@
             ],
             "_type": "protobufs"
         },
+        "GetAllLatestVersionPublishedFAQS": {
+            "version": 1,
+            "httpmethod": "POST",
+            "parameters": [
+                {
+                    "name": "key",
+                    "type": "string",
+                    "optional": false,
+                    "description": "Access key"
+                }
+            ],
+            "_type": "protobufs"
+        },
         "GetFAQ": {
             "version": 1,
+            "parameters": [
+                {
+                    "name": "key",
+                    "type": "string",
+                    "optional": false,
+                    "description": "Access key"
+                }
+            ],
+            "_type": "protobufs"
+        },
+        "GetFAQVersion": {
+            "version": 1,
+            "httpmethod": "POST",
             "parameters": [
                 {
                     "name": "key",
@@ -1640,6 +1685,24 @@
                     "type": "string",
                     "optional": false,
                     "description": "Access key"
+                },
+                {
+                    "name": "steamid",
+                    "type": "uint64",
+                    "optional": true,
+                    "description": ""
+                },
+                {
+                    "name": "faq_id",
+                    "type": "uint64",
+                    "optional": true,
+                    "description": ""
+                },
+                {
+                    "name": "language",
+                    "type": "uint32",
+                    "optional": true,
+                    "description": ""
                 }
             ],
             "_type": "protobufs"
@@ -1653,6 +1716,30 @@
                     "type": "string",
                     "optional": false,
                     "description": "Access key"
+                },
+                {
+                    "name": "steamid",
+                    "type": "uint64",
+                    "optional": true,
+                    "description": ""
+                },
+                {
+                    "name": "faq_id",
+                    "type": "uint64",
+                    "optional": true,
+                    "description": ""
+                },
+                {
+                    "name": "visible_in_global_realm",
+                    "type": "bool",
+                    "optional": true,
+                    "description": ""
+                },
+                {
+                    "name": "visible_in_china_realm",
+                    "type": "bool",
+                    "optional": true,
+                    "description": ""
                 }
             ],
             "_type": "protobufs"
@@ -1693,6 +1780,68 @@
                 },
                 {
                     "name": "title",
+                    "type": "string",
+                    "optional": true,
+                    "description": ""
+                }
+            ],
+            "_type": "protobufs"
+        },
+        "UpdateInternalName": {
+            "version": 1,
+            "httpmethod": "POST",
+            "parameters": [
+                {
+                    "name": "key",
+                    "type": "string",
+                    "optional": false,
+                    "description": "Access key"
+                },
+                {
+                    "name": "steamid",
+                    "type": "uint64",
+                    "optional": true,
+                    "description": ""
+                },
+                {
+                    "name": "faq_id",
+                    "type": "uint64",
+                    "optional": true,
+                    "description": ""
+                },
+                {
+                    "name": "internal_name",
+                    "type": "string",
+                    "optional": true,
+                    "description": ""
+                }
+            ],
+            "_type": "protobufs"
+        },
+        "UpdateJsonData": {
+            "version": 1,
+            "httpmethod": "POST",
+            "parameters": [
+                {
+                    "name": "key",
+                    "type": "string",
+                    "optional": false,
+                    "description": "Access key"
+                },
+                {
+                    "name": "steamid",
+                    "type": "uint64",
+                    "optional": true,
+                    "description": ""
+                },
+                {
+                    "name": "faq_id",
+                    "type": "uint64",
+                    "optional": true,
+                    "description": ""
+                },
+                {
+                    "name": "json_data",
                     "type": "string",
                     "optional": true,
                     "description": ""
@@ -1810,6 +1959,50 @@
             ],
             "_type": "protobufs"
         },
+        "BeginUGCUpload": {
+            "version": 1,
+            "httpmethod": "POST",
+            "description": "Begins the process of uploading a file to Steam external storage services. File should be uploaded via HTTP PUT to the returned URL, after which the upload must be finalized by a call to CommitHTTPUpload.",
+            "parameters": [
+                {
+                    "name": "key",
+                    "type": "string",
+                    "optional": false,
+                    "description": "Access key"
+                },
+                {
+                    "name": "appid",
+                    "type": "uint32",
+                    "optional": true,
+                    "description": "App ID this UGC belongs to."
+                },
+                {
+                    "name": "file_size",
+                    "type": "uint32",
+                    "optional": true,
+                    "description": "File size in bytes."
+                },
+                {
+                    "name": "filename",
+                    "type": "string",
+                    "optional": true,
+                    "description": "Name of the file."
+                },
+                {
+                    "name": "file_sha",
+                    "type": "string",
+                    "optional": true,
+                    "description": "Hex string (40 digits) representing the SHA1 digest of the file."
+                },
+                {
+                    "name": "content_type",
+                    "type": "string",
+                    "optional": true,
+                    "description": "MIME content type of the file"
+                }
+            ],
+            "_type": "protobufs"
+        },
         "CommitHTTPUpload": {
             "version": 1,
             "httpmethod": "POST",
@@ -1844,6 +2037,38 @@
                     "type": "string",
                     "optional": true,
                     "description": "Filename as specified in the Cloud.BeginHTTPUpload request."
+                }
+            ],
+            "_type": "protobufs"
+        },
+        "CommitUGCUpload": {
+            "version": 1,
+            "httpmethod": "POST",
+            "description": "Commits a file upload initiated by BeginUGCUpload and transferred via HTTP PUT.",
+            "parameters": [
+                {
+                    "name": "key",
+                    "type": "string",
+                    "optional": false,
+                    "description": "Access key"
+                },
+                {
+                    "name": "transfer_succeeded",
+                    "type": "bool",
+                    "optional": true,
+                    "description": "True if the HTTP PUT to the upload URL succeeded (URL provided in response to Cloud.BeginUGCUpload), false if a failure occurred."
+                },
+                {
+                    "name": "appid",
+                    "type": "uint32",
+                    "optional": true,
+                    "description": "App ID for which the file is being uploaded. Must match the app ID provided to Cloud.BeginUGCUpload."
+                },
+                {
+                    "name": "ugcid",
+                    "type": "fixed64",
+                    "optional": true,
+                    "description": "UGC ID of the uploaded file."
                 }
             ],
             "_type": "protobufs"
