@@ -2194,7 +2194,7 @@
                     "description": "Access key"
                 },
                 {
-                    "name": "appids",
+                    "name": "appids[0]",
                     "type": "int32[]",
                     "optional": true,
                     "description": ""
@@ -6050,7 +6050,7 @@
                     "optional": false
                 },
                 {
-                    "name": "itemdefid",
+                    "name": "itemdefid[0]",
                     "type": "uint64[]",
                     "optional": false
                 },
@@ -6434,7 +6434,7 @@
                     "description": "Access key"
                 },
                 {
-                    "name": "appids",
+                    "name": "appids[0]",
                     "type": "uint32[]",
                     "optional": true,
                     "description": ""
@@ -6494,7 +6494,7 @@
                     "description": ""
                 },
                 {
-                    "name": "definitionids",
+                    "name": "definitionids[0]",
                     "type": "uint32[]",
                     "optional": true,
                     "description": ""
@@ -6518,7 +6518,7 @@
                     "description": ""
                 },
                 {
-                    "name": "contains_definitionids",
+                    "name": "contains_definitionids[0]",
                     "type": "uint32[]",
                     "optional": true,
                     "description": ""
@@ -7612,7 +7612,7 @@
                     "description": "Access key"
                 },
                 {
-                    "name": "publishedfileids",
+                    "name": "publishedfileids[0]",
                     "type": "uint64[]",
                     "optional": false,
                     "description": "Set of published file Ids to retrieve details for."
@@ -7907,7 +7907,7 @@
             "description": "Get user vote summary",
             "parameters": [
                 {
-                    "name": "publishedfileids",
+                    "name": "publishedfileids[0]",
                     "type": "uint64[]",
                     "optional": false
                 }
@@ -10163,73 +10163,73 @@
                 },
                 {
                     "name": "itemid[0]",
-                    "type": "uint32",
+                    "type": "uint32[]",
                     "optional": false,
                     "description": "3rd party ID for item"
                 },
                 {
                     "name": "qty[0]",
-                    "type": "uint32",
+                    "type": "uint32[]",
                     "optional": false,
                     "description": "Quantity of this item"
                 },
                 {
                     "name": "amount[0]",
-                    "type": "int32",
+                    "type": "int32[]",
                     "optional": false,
                     "description": "Total cost (in cents) of item(s)"
                 },
                 {
                     "name": "description[0]",
-                    "type": "string",
+                    "type": "string[]",
                     "optional": false,
                     "description": "Description of item"
                 },
                 {
                     "name": "category[0]",
-                    "type": "string",
+                    "type": "string[]",
                     "optional": true,
                     "description": "Optional category grouping for item"
                 },
                 {
                     "name": "associated_bundle[0]",
-                    "type": "uint32",
+                    "type": "uint32[]",
                     "optional": true,
                     "description": "Optional bundleid of associated bundle"
                 },
                 {
                     "name": "billingtype[0]",
-                    "type": "string",
+                    "type": "string[]",
                     "optional": true,
                     "description": "Optional recurring billing type"
                 },
                 {
                     "name": "startdate[0]",
-                    "type": "string",
+                    "type": "string[]",
                     "optional": true,
                     "description": "Optional start date for recurring billing"
                 },
                 {
                     "name": "enddate[0]",
-                    "type": "string",
+                    "type": "string[]",
                     "optional": true,
                     "description": "Optional end date for recurring billing"
                 },
                 {
                     "name": "period[0]",
-                    "type": "string",
+                    "type": "string[]",
                     "optional": true,
                     "description": "Optional period for recurring billing"
                 },
                 {
                     "name": "frequency[0]",
-                    "type": "uint32",
+                    "type": "uint32[]",
                     "optional": true,
                     "description": "Optional frequency for recurring billing"
                 },
                 {
                     "name": "recurringamt[0]",
-                    "type": "string",
+                    "type": "string[]",
                     "optional": true,
                     "description": "Optional recurring billing amount"
                 },
@@ -10241,25 +10241,25 @@
                 },
                 {
                     "name": "bundleid[0]",
-                    "type": "uint32",
+                    "type": "uint32[]",
                     "optional": true,
                     "description": "3rd party ID of the bundle. This shares the same ID space as 3rd party items."
                 },
                 {
                     "name": "bundle_qty[0]",
-                    "type": "uint32",
+                    "type": "uint32[]",
                     "optional": true,
                     "description": "Quantity of this bundle"
                 },
                 {
                     "name": "bundle_desc[0]",
-                    "type": "string",
+                    "type": "string[]",
                     "optional": true,
                     "description": "Description of bundle"
                 },
                 {
                     "name": "bundle_category[0]",
-                    "type": "string",
+                    "type": "string[]",
                     "optional": true,
                     "description": "Optional category grouping for bundle"
                 }
@@ -10546,67 +10546,67 @@
                 },
                 {
                     "name": "itemid[0]",
-                    "type": "uint32",
+                    "type": "uint32[]",
                     "optional": false,
                     "description": "3rd party ID for item"
                 },
                 {
                     "name": "qty[0]",
-                    "type": "uint32",
+                    "type": "uint32[]",
                     "optional": false,
                     "description": "Quantity of this item"
                 },
                 {
                     "name": "amount[0]",
-                    "type": "int32",
+                    "type": "int32[]",
                     "optional": false,
                     "description": "Total cost (in cents) of item(s)"
                 },
                 {
                     "name": "description[0]",
-                    "type": "string",
+                    "type": "string[]",
                     "optional": false,
                     "description": "Description of item"
                 },
                 {
                     "name": "category[0]",
-                    "type": "string",
+                    "type": "string[]",
                     "optional": true,
                     "description": "Optional category grouping for item"
                 },
                 {
                     "name": "billingtype[0]",
-                    "type": "string",
+                    "type": "string[]",
                     "optional": true,
                     "description": "Optional recurring billing type"
                 },
                 {
                     "name": "startdate[0]",
-                    "type": "string",
+                    "type": "string[]",
                     "optional": true,
                     "description": "Optional start date for recurring billing"
                 },
                 {
                     "name": "enddate[0]",
-                    "type": "string",
+                    "type": "string[]",
                     "optional": true,
                     "description": "Optional end date for recurring billing"
                 },
                 {
                     "name": "period[0]",
-                    "type": "string",
+                    "type": "string[]",
                     "optional": true,
                     "description": "Optional period for recurring billing"
                 },
                 {
                     "name": "frequency[0]",
-                    "type": "uint32",
+                    "type": "uint32[]",
                     "optional": true,
                     "description": "Optional frequency for recurring billing"
                 },
                 {
                     "name": "recurringamt[0]",
-                    "type": "string",
+                    "type": "string[]",
                     "optional": true,
                     "description": "Optional recurring billing amount"
                 }
@@ -10859,13 +10859,13 @@
                 },
                 {
                     "name": "tag[0]",
-                    "type": "string",
+                    "type": "string[]",
                     "optional": true,
                     "description": "Tag to filter result set"
                 },
                 {
                     "name": "usertag[0]",
-                    "type": "string",
+                    "type": "string[]",
                     "optional": true,
                     "description": "A user specific tag"
                 }
@@ -10932,13 +10932,13 @@
                 },
                 {
                     "name": "tag[0]",
-                    "type": "string",
+                    "type": "string[]",
                     "optional": true,
                     "description": "Tag to filter result set"
                 },
                 {
                     "name": "usertag[0]",
-                    "type": "string",
+                    "type": "string[]",
                     "optional": true,
                     "description": "A user specific tag"
                 }
@@ -10999,13 +10999,13 @@
                 },
                 {
                     "name": "tag[0]",
-                    "type": "string",
+                    "type": "string[]",
                     "optional": true,
                     "description": "Tag to filter result set"
                 },
                 {
                     "name": "usertag[0]",
-                    "type": "string",
+                    "type": "string[]",
                     "optional": true,
                     "description": "A user specific tag"
                 }
@@ -11054,13 +11054,13 @@
                 },
                 {
                     "name": "tag[0]",
-                    "type": "string",
+                    "type": "string[]",
                     "optional": true,
                     "description": "Tag to filter result set"
                 },
                 {
                     "name": "usertag[0]",
-                    "type": "string",
+                    "type": "string[]",
                     "optional": true,
                     "description": "A user specific tag"
                 }
@@ -11093,7 +11093,7 @@
                 },
                 {
                     "name": "publishedfileid[0]",
-                    "type": "uint64",
+                    "type": "uint64[]",
                     "optional": true,
                     "description": "The Published File ID who's vote details are required"
                 }
@@ -11118,7 +11118,7 @@
                 },
                 {
                     "name": "publishedfileid[0]",
-                    "type": "uint64",
+                    "type": "uint64[]",
                     "optional": true,
                     "description": "A Specific Published Item"
                 }
@@ -11183,7 +11183,7 @@
                 },
                 {
                     "name": "publishedfileids[0]",
-                    "type": "uint64",
+                    "type": "uint64[]",
                     "optional": false,
                     "description": "collection ids to get the details for"
                 }
@@ -11201,7 +11201,7 @@
                 },
                 {
                     "name": "publishedfileids[0]",
-                    "type": "uint64",
+                    "type": "uint64[]",
                     "optional": false,
                     "description": "published file id to look up"
                 }
@@ -12251,7 +12251,7 @@
                 },
                 {
                     "name": "name[0]",
-                    "type": "string",
+                    "type": "string[]",
                     "optional": false,
                     "description": "Names of stat to get data for"
                 },
@@ -12389,13 +12389,13 @@
                 },
                 {
                     "name": "name[0]",
-                    "type": "string",
+                    "type": "string[]",
                     "optional": false,
                     "description": "Name of stat or achievement to set"
                 },
                 {
                     "name": "value[0]",
-                    "type": "uint32",
+                    "type": "uint32[]",
                     "optional": false,
                     "description": "Value to set"
                 }
@@ -12549,25 +12549,25 @@
                 },
                 {
                     "name": "publishedfileid[0]",
-                    "type": "uint64",
+                    "type": "uint64[]",
                     "optional": true,
                     "description": "the workshop published file id"
                 },
                 {
                     "name": "gameitemid[0]",
-                    "type": "uint32",
+                    "type": "uint32[]",
                     "optional": true,
                     "description": "3rd party ID for item"
                 },
                 {
                     "name": "revenuepercentage[0]",
-                    "type": "float",
+                    "type": "float[]",
                     "optional": true,
                     "description": "Percentage of revenue the owners of the workshop item will get from the sale of the item [0.0, 100.0].  For bundle-like items, send over an entry for each item in the bundle (gameitemid = bundle id) with different publishedfileids and with the revenue percentage pre-split amongst the items in the bundle (i.e. 30% / 10 items in the bundle)"
                 },
                 {
                     "name": "gameitemdescription[0]",
-                    "type": "string",
+                    "type": "string[]",
                     "optional": true,
                     "description": "Game's description of the game item"
                 }

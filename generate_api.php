@@ -105,6 +105,15 @@ if( file_exists( __DIR__ . '/api_type_overrides.json' ) )
 				if( isset( $ParameterTypeOverrides[ $Key ] ) )
 				{
 					$Parameter[ 'type' ] = $ParameterTypeOverrides[ $Key ];
+
+					if( str_ends_with( $Parameter[ 'type' ], '[]' ) )
+					{
+						$Parameter[ 'name' ] .= '[0]';
+					}
+				}
+				else if( str_ends_with( $Parameter[ 'name' ], '[0]' ) && !str_ends_with( $Parameter[ 'type' ], '[]' ) )
+				{
+					$Parameter[ 'type' ] .= '[]';
 				}
 
 				if( isset( $Parameter[ 'description' ] ) && stripos( $Parameter[ 'description' ], '(Optional) ' ) === 0 )
