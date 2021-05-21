@@ -280,6 +280,26 @@
 					} );
 				}
 			},
+			addParamArray( method, parameter )
+			{
+				if( !parameter._counter )
+				{
+					parameter._counter = 1;
+				}
+				else
+				{
+					parameter._counter++;
+				}
+
+				const newParameter =
+				{
+					name: `${parameter.name.substring( 0, parameter.name.length - 3 )}[${parameter._counter}]`,
+					optional: true,
+				};
+
+				const parameterIndex = method.parameters.findIndex( param => param.name === parameter.name );
+				method.parameters.splice( parameterIndex + parameter._counter, 0, newParameter );
+			},
 			scrollInterfaceIntoView()
 			{
 				const element = document.querySelector( `.interface-list a[href="#${this.currentInterface}"]` );

@@ -310,6 +310,7 @@
 											<tr class="attribute" v-for="parameter in method.parameters" :key="parameter.name">
 												<td class="font-monospace">
 													<label class="form-control-label" :for="`param_${methodName}_${parameter.name}`">{{ parameter.name }}</label>
+													<button type="button" class="btn btn-secondary add-param-array" v-if="parameter.name.endsWith( '[0]' )" @click="addParamArray(method, parameter)">+</button>
 												</td>
 												<td class="font-monospace p-0">
 													<div v-if="parameter.name === 'key'" class="prefilled-key" @click="focusApikey">
