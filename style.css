@@ -169,6 +169,11 @@ body {
 	background-color: transparent;
 }
 
+.card .table .form-control:focus {
+	background-color: rgba(13, 110, 253, 0.25);
+	box-shadow: none;
+}
+
 .prefilled-key {
 	padding: .375rem .75rem;
 	cursor: pointer;
