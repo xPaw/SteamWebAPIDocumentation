@@ -1700,8 +1700,8 @@
                     "description": ""
                 },
                 {
-                    "name": "language",
-                    "type": "ELanguage",
+                    "name": "language[0]",
+                    "type": "ELanguage[]",
                     "optional": true,
                     "description": ""
                 }
@@ -1941,20 +1941,20 @@
                     "description": "True if the file should be marked public on the UFS, false otherwise."
                 },
                 {
-                    "name": "platforms_to_sync",
-                    "type": "string",
+                    "name": "platforms_to_sync[0]",
+                    "type": "string[]",
                     "optional": true,
                     "description": "Array of string specifying which platforms to sync; value values: all, Windows, MacOS, linux, Switch, iPhoneOS, Android."
                 },
                 {
-                    "name": "request_headers_names",
-                    "type": "string",
+                    "name": "request_headers_names[0]",
+                    "type": "string[]",
                     "optional": true,
                     "description": "Names for headers you'll want to set on your upload request. May be left blank."
                 },
                 {
-                    "name": "request_headers_values",
-                    "type": "string",
+                    "name": "request_headers_values[0]",
+                    "type": "string[]",
                     "optional": true,
                     "description": "Values for headers you'll want to set on your upload request. The number of names must equal the number of values."
                 }
@@ -2296,14 +2296,14 @@
                     "description": ""
                 },
                 {
-                    "name": "language_preference",
-                    "type": "uint32",
+                    "name": "language_preference[0]",
+                    "type": "uint32[]",
                     "optional": true,
                     "description": ""
                 },
                 {
-                    "name": "filter_event_type",
-                    "type": "int32",
+                    "name": "filter_event_type[0]",
+                    "type": "int32[]",
                     "optional": true,
                     "description": "enum; suggested type: ECommunityWordFilterType"
                 },
@@ -6446,8 +6446,8 @@
                     "description": ""
                 },
                 {
-                    "name": "community_item_classes",
-                    "type": "int32",
+                    "name": "community_item_classes[0]",
+                    "type": "int32[]",
                     "optional": true,
                     "description": ""
                 },
@@ -6482,14 +6482,14 @@
                     "description": ""
                 },
                 {
-                    "name": "reward_types",
-                    "type": "int32",
+                    "name": "reward_types[0]",
+                    "type": "int32[]",
                     "optional": true,
                     "description": "enum"
                 },
                 {
-                    "name": "excluded_community_item_classes",
-                    "type": "int32",
+                    "name": "excluded_community_item_classes[0]",
+                    "type": "int32[]",
                     "optional": true,
                     "description": ""
                 },
@@ -6500,20 +6500,20 @@
                     "description": ""
                 },
                 {
-                    "name": "filters",
-                    "type": "int32",
+                    "name": "filters[0]",
+                    "type": "int32[]",
                     "optional": true,
                     "description": "enum"
                 },
                 {
-                    "name": "filter_match_all_category_tags",
-                    "type": "string",
+                    "name": "filter_match_all_category_tags[0]",
+                    "type": "string[]",
                     "optional": true,
                     "description": ""
                 },
                 {
-                    "name": "filter_match_any_category_tags",
-                    "type": "string",
+                    "name": "filter_match_any_category_tags[0]",
+                    "type": "string[]",
                     "optional": true,
                     "description": ""
                 },
@@ -7997,8 +7997,8 @@
                     "description": "If supplied, the resulting published file's Id is appended to the URI."
                 },
                 {
-                    "name": "tags",
-                    "type": "string",
+                    "name": "tags[0]",
+                    "type": "string[]",
                     "optional": true,
                     "description": "Array of text tags to apply to the published file."
                 },
@@ -8448,8 +8448,8 @@
                     "description": "Visibility of the published file."
                 },
                 {
-                    "name": "tags",
-                    "type": "string",
+                    "name": "tags[0]",
+                    "type": "string[]",
                     "optional": true,
                     "description": "Set of tags for the published file."
                 },
@@ -8703,8 +8703,8 @@
                     "description": "Access key"
                 },
                 {
-                    "name": "filter_appids",
-                    "type": "uint32",
+                    "name": "filter_appids[0]",
+                    "type": "uint32[]",
                     "optional": true,
                     "description": ""
                 }
@@ -13031,8 +13031,8 @@
                     "description": "ID of phone to use for SMS verification"
                 },
                 {
-                    "name": "http_headers",
-                    "type": "string",
+                    "name": "http_headers[0]",
+                    "type": "string[]",
                     "optional": true,
                     "description": "HTTP headers alternating by K/V"
                 }
@@ -13115,8 +13115,8 @@
                     "description": "Activation code from out-of-band message"
                 },
                 {
-                    "name": "http_headers",
-                    "type": "string",
+                    "name": "http_headers[0]",
+                    "type": "string[]",
                     "optional": true,
                     "description": "HTTP headers alternating by K/V"
                 }
@@ -13384,8 +13384,8 @@
                     "description": "Access key"
                 },
                 {
-                    "name": "appids",
-                    "type": "uint32",
+                    "name": "appids[0]",
+                    "type": "uint32[]",
                     "optional": true,
                     "description": "List of App IDs to grab bookmarks for. Can be empty if using updated_since."
                 },

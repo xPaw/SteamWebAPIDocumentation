@@ -1,6 +1,6 @@
 {
 	"IBroadcastService/PostChatMessage/language": "ELanguage",
-	"IClanFAQSService/PublishDraft/language": "ELanguage",
+	"IClanFAQSService/PublishDraft/language[0]": "ELanguage[]",
 	"IClanFAQSService/UpdateDraft/language": "ELanguage",
 	"ICommunityService/GetApps/appids": "int32[]",
 	"ICommunityService/GetApps/language": "ELanguage",

@@ -106,7 +106,7 @@ if( file_exists( __DIR__ . '/api_type_overrides.json' ) )
 				{
 					$Parameter[ 'type' ] = $ParameterTypeOverrides[ $Key ];
 
-					if( str_ends_with( $Parameter[ 'type' ], '[]' ) )
+					if( str_ends_with( $Parameter[ 'type' ], '[]' ) && !str_ends_with( $Parameter[ 'name' ], '[0]' ) )
 					{
 						$Parameter[ 'name' ] .= '[0]';
 					}
