@@ -8719,36 +8719,6 @@
                     "type": "string",
                     "optional": false,
                     "description": "Access key"
-                },
-                {
-                    "name": "appid",
-                    "type": "uint32",
-                    "optional": true,
-                    "description": ""
-                },
-                {
-                    "name": "item_type",
-                    "type": "uint32",
-                    "optional": true,
-                    "description": ""
-                },
-                {
-                    "name": "language",
-                    "type": "string",
-                    "optional": true,
-                    "description": ""
-                },
-                {
-                    "name": "broadcast_channel_id",
-                    "type": "uint64",
-                    "optional": true,
-                    "description": ""
-                },
-                {
-                    "name": "keyvalues_as_json",
-                    "type": "bool",
-                    "optional": true,
-                    "description": ""
                 }
             ],
             "_type": "protobufs"
