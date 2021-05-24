@@ -125,6 +125,11 @@ body {
 	padding: .75rem 1.25rem;
 }
 
+.card-method-name {
+	color: inherit;
+	word-break: break-all;
+}
+
 .card hr {
 	border-top: 1px solid #4e5155;
 }

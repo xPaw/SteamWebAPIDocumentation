@@ -277,7 +277,7 @@
 										<a class="badge bg-primary no-select" href="https://github.com/SteamDatabase/Protobufs" target="_blank" rel="noopener" v-if="method._type === 'protobufs'">PROTOBUF</a>
 										<span :class="method.httpmethod === 'GET' ? 'badge bg-success' : 'badge bg-danger'">{{ method.httpmethod }}</span>
 										<a class="badge bg-warning text-dark no-select" v-if="method._type === 'publisher_only'" :href="`https://partner.steamgames.com/doc/webapi/${currentInterface}#${methodName}`" target="_blank" rel="noopener">PUBLISHER</a>
-										<a :href="'#' + currentInterface + '/' + methodName" @click="updateUrl(methodName)" style="color:inherit">{{ methodName }}</a>
+										<a class="card-method-name" :href="'#' + currentInterface + '/' + methodName" @click="updateUrl(methodName)">{{ methodName }}</a>
 										<span class="badge bg-primary" v-if="method.version > 1">v{{ method.version }}</span>
 									</div>
 									<button type="submit" class="btn btn-primary use-method rounded-0">
