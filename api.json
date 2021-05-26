@@ -1708,6 +1708,18 @@
             ],
             "_type": "protobufs"
         },
+        "SearchFAQs": {
+            "version": 1,
+            "parameters": [
+                {
+                    "name": "key",
+                    "type": "string",
+                    "optional": false,
+                    "description": "Access key"
+                }
+            ],
+            "_type": "protobufs"
+        },
         "SetVisibility": {
             "version": 1,
             "httpmethod": "POST",
