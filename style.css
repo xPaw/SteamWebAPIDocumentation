@@ -275,6 +275,28 @@ body {
 		overscroll-behavior: contain;
 		-webkit-overflow-scrolling: touch;
 	}
+
+	.interface-list a {
+		display: block;
+		padding: 5px 0;
+	}
+
+	.header div[role=search] {
+		order: 2;
+	}
+}
+
+@media (max-width: 575px) {
+	.header .separator {
+		display: none;
+	}
+
+	.header h1,
+	.header h2 {
+		display: block;
+		font-size: 16px;
+		line-height: 16px;
+	}
 }
 
 @media (min-width: 992px) {
