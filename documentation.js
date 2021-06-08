@@ -25,6 +25,7 @@
 
 	const fuzzy = new Fuse( flattenedMethods, {
 		shouldSort: true,
+		useExtendedSearch: true,
 		threshold: 0.3,
 		keys: [ {
 			name: 'interface',
@@ -151,7 +152,7 @@
 					return interfaces;
 				}
 
-				const matches = fuzzy.search( this.currentFilter );
+				const matches = fuzzy.search( this.currentFilter.replace( '/', '|' ) );
 				const matchedInterfaces = {};
 
 				for( const searchResult of matches )
