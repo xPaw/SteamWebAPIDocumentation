@@ -1923,6 +1923,44 @@
         }
     },
     "ICloudService": {
+        "BeginAppUploadBatch": {
+            "version": 1,
+            "httpmethod": "POST",
+            "description": "Indicate a batch of files that will be uploaded / deleted for an app.",
+            "parameters": [
+                {
+                    "name": "key",
+                    "type": "string",
+                    "optional": false,
+                    "description": "Access key"
+                },
+                {
+                    "name": "appid",
+                    "type": "uint32",
+                    "optional": true,
+                    "description": "App ID for this batch is for."
+                },
+                {
+                    "name": "machine_name",
+                    "type": "string",
+                    "optional": true,
+                    "description": "Client machine name (may be user's alias)."
+                },
+                {
+                    "name": "files_to_upload[0]",
+                    "type": "string[]",
+                    "optional": true,
+                    "description": "Filenames of files to upload in this batch"
+                },
+                {
+                    "name": "files_to_delete[0]",
+                    "type": "string[]",
+                    "optional": true,
+                    "description": "Filenames of files to delete in this batch"
+                }
+            ],
+            "_type": "protobufs"
+        },
         "BeginHTTPUpload": {
             "version": 1,
             "httpmethod": "POST",
@@ -2095,6 +2133,38 @@
                     "type": "fixed64",
                     "optional": true,
                     "description": "UGC ID of the uploaded file."
+                }
+            ],
+            "_type": "protobufs"
+        },
+        "CompleteAppUploadBatch": {
+            "version": 1,
+            "httpmethod": "POST",
+            "description": "Indicate that the batch is complete or being stopped for some other reason.",
+            "parameters": [
+                {
+                    "name": "key",
+                    "type": "string",
+                    "optional": false,
+                    "description": "Access key"
+                },
+                {
+                    "name": "appid",
+                    "type": "uint32",
+                    "optional": true,
+                    "description": "App ID for this batch is for."
+                },
+                {
+                    "name": "batch_id",
+                    "type": "uint64",
+                    "optional": true,
+                    "description": "ID of this batch."
+                },
+                {
+                    "name": "batch_eresult",
+                    "type": "uint32",
+                    "optional": true,
+                    "description": "result of this batch."
                 }
             ],
             "_type": "protobufs"
@@ -6544,6 +6614,12 @@
                 {
                     "name": "contains_definitionids[0]",
                     "type": "uint32[]",
+                    "optional": true,
+                    "description": ""
+                },
+                {
+                    "name": "include_direct_purchase_disabled",
+                    "type": "bool",
                     "optional": true,
                     "description": ""
                 }
