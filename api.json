@@ -6622,6 +6622,18 @@
                     "type": "bool",
                     "optional": true,
                     "description": ""
+                },
+                {
+                    "name": "excluded_content_descriptors[0]",
+                    "type": "uint32[]",
+                    "optional": true,
+                    "description": ""
+                },
+                {
+                    "name": "excluded_appids[0]",
+                    "type": "uint32[]",
+                    "optional": true,
+                    "description": ""
                 }
             ],
             "_type": "protobufs"
