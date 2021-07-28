@@ -1957,6 +1957,12 @@
                     "type": "string[]",
                     "optional": true,
                     "description": "Filenames of files to delete in this batch"
+                },
+                {
+                    "name": "client_id",
+                    "type": "uint64",
+                    "optional": true,
+                    "description": "Client ID"
                 }
             ],
             "_type": "protobufs"
@@ -12708,6 +12714,32 @@
             "_type": "protobufs"
         },
         "GetStoreCategories": {
+            "version": 1,
+            "parameters": [
+                {
+                    "name": "key",
+                    "type": "string",
+                    "optional": false,
+                    "description": "Access key"
+                }
+            ],
+            "_type": "protobufs"
+        }
+    },
+    "IStoreQueryService": {
+        "Query": {
+            "version": 1,
+            "parameters": [
+                {
+                    "name": "key",
+                    "type": "string",
+                    "optional": false,
+                    "description": "Access key"
+                }
+            ],
+            "_type": "protobufs"
+        },
+        "SearchSuggestions": {
             "version": 1,
             "parameters": [
                 {
