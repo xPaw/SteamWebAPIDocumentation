@@ -114,6 +114,200 @@
             "_type": "protobufs"
         }
     },
+    "IAuthenticationService": {
+        "BeginAuthSessionViaCredentials": {
+            "version": 1,
+            "httpmethod": "POST",
+            "description": "start authentication process",
+            "parameters": [
+                {
+                    "name": "key",
+                    "type": "string",
+                    "optional": false,
+                    "description": "Access key"
+                },
+                {
+                    "name": "device_friendly_name",
+                    "type": "string",
+                    "optional": true,
+                    "description": ""
+                },
+                {
+                    "name": "account_name",
+                    "type": "string",
+                    "optional": true,
+                    "description": ""
+                },
+                {
+                    "name": "encrypted_password",
+                    "type": "string",
+                    "optional": true,
+                    "description": "password, RSA encrypted client side"
+                },
+                {
+                    "name": "encryption_timestamp",
+                    "type": "uint64",
+                    "optional": true,
+                    "description": "timestamp to map to a key - STime"
+                },
+                {
+                    "name": "remember_login",
+                    "type": "bool",
+                    "optional": true,
+                    "description": ""
+                }
+            ],
+            "_type": "protobufs"
+        },
+        "BeginAuthSessionViaQR": {
+            "version": 1,
+            "httpmethod": "POST",
+            "description": "start authentication process",
+            "parameters": [
+                {
+                    "name": "key",
+                    "type": "string",
+                    "optional": false,
+                    "description": "Access key"
+                },
+                {
+                    "name": "device_friendly_name",
+                    "type": "string",
+                    "optional": true,
+                    "description": ""
+                }
+            ],
+            "_type": "protobufs"
+        },
+        "GetAuthSessionInfo": {
+            "version": 1,
+            "httpmethod": "POST",
+            "description": "get metadata of specific auth session",
+            "parameters": [
+                {
+                    "name": "key",
+                    "type": "string",
+                    "optional": false,
+                    "description": "Access key"
+                },
+                {
+                    "name": "client_id",
+                    "type": "uint64",
+                    "optional": true,
+                    "description": "client ID from scanned QR Code, used for routing"
+                }
+            ],
+            "_type": "protobufs"
+        },
+        "PollAuthSessionStatus": {
+            "version": 1,
+            "httpmethod": "POST",
+            "description": "poll during authentication process",
+            "parameters": [
+                {
+                    "name": "key",
+                    "type": "string",
+                    "optional": false,
+                    "description": "Access key"
+                },
+                {
+                    "name": "client_id",
+                    "type": "uint64",
+                    "optional": true,
+                    "description": ""
+                },
+                {
+                    "name": "request_id",
+                    "type": "bytes",
+                    "optional": true,
+                    "description": ""
+                }
+            ],
+            "_type": "protobufs"
+        },
+        "UpdateAuthSessionWithMobileConfirmation": {
+            "version": 1,
+            "httpmethod": "POST",
+            "description": "approve an authentication session via mobile 2fa",
+            "parameters": [
+                {
+                    "name": "key",
+                    "type": "string",
+                    "optional": false,
+                    "description": "Access key"
+                },
+                {
+                    "name": "version",
+                    "type": "int32",
+                    "optional": true,
+                    "description": "version field"
+                },
+                {
+                    "name": "client_id",
+                    "type": "uint64",
+                    "optional": true,
+                    "description": "pending client ID, from scanned QR Code"
+                },
+                {
+                    "name": "steamid",
+                    "type": "fixed64",
+                    "optional": true,
+                    "description": "user who wants to login"
+                },
+                {
+                    "name": "signature",
+                    "type": "bytes",
+                    "optional": true,
+                    "description": "HMAC digest over {version,client_id,steamid} via user's private key"
+                },
+                {
+                    "name": "confirm",
+                    "type": "bool",
+                    "optional": true,
+                    "description": "Whether to confirm the login (true) or deny the login (false)"
+                }
+            ],
+            "_type": "protobufs"
+        },
+        "UpdateAuthSessionWithSteamGuardCode": {
+            "version": 1,
+            "httpmethod": "POST",
+            "description": "approve an authentication session via steam guard code",
+            "parameters": [
+                {
+                    "name": "key",
+                    "type": "string",
+                    "optional": false,
+                    "description": "Access key"
+                },
+                {
+                    "name": "client_id",
+                    "type": "uint64",
+                    "optional": true,
+                    "description": "pending client ID, from initialized session"
+                },
+                {
+                    "name": "steamid",
+                    "type": "fixed64",
+                    "optional": true,
+                    "description": "user who wants to login"
+                },
+                {
+                    "name": "code",
+                    "type": "string",
+                    "optional": true,
+                    "description": "confirmation code"
+                },
+                {
+                    "name": "code_type",
+                    "type": "{message}",
+                    "optional": true,
+                    "description": "type of confirmation code"
+                }
+            ],
+            "_type": "protobufs"
+        }
+    },
     "IBroadcastService": {
         "GetBroadcastUploadStats": {
             "version": 1,
@@ -1962,7 +2156,7 @@
                     "name": "client_id",
                     "type": "uint64",
                     "optional": true,
-                    "description": "Client ID"
+                    "description": "Client ID number"
                 }
             ],
             "_type": "protobufs"
@@ -2025,6 +2219,12 @@
                     "type": "string[]",
                     "optional": true,
                     "description": "Values for headers you'll want to set on your upload request. The number of names must equal the number of values."
+                },
+                {
+                    "name": "upload_batch_id",
+                    "type": "uint64",
+                    "optional": true,
+                    "description": "ID of this batch returned by prior BeginAppUploadBatch call."
                 }
             ],
             "_type": "protobufs"
@@ -2197,6 +2397,12 @@
                     "type": "uint32",
                     "optional": true,
                     "description": "App ID the file belongs to."
+                },
+                {
+                    "name": "upload_batch_id",
+                    "type": "uint64",
+                    "optional": true,
+                    "description": "ID of this batch returned by prior BeginAppUploadBatch call."
                 }
             ],
             "_type": "protobufs"
