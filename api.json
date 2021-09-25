@@ -155,6 +155,12 @@
                     "type": "bool",
                     "optional": true,
                     "description": ""
+                },
+                {
+                    "name": "platform_type",
+                    "type": "{message}",
+                    "optional": true,
+                    "description": ""
                 }
             ],
             "_type": "protobufs"
@@ -173,6 +179,12 @@
                 {
                     "name": "device_friendly_name",
                     "type": "string",
+                    "optional": true,
+                    "description": ""
+                },
+                {
+                    "name": "platform_type",
+                    "type": "{message}",
                     "optional": true,
                     "description": ""
                 }
@@ -195,6 +207,25 @@
                     "type": "uint64",
                     "optional": true,
                     "description": "client ID from scanned QR Code, used for routing"
+                }
+            ],
+            "_type": "protobufs"
+        },
+        "GetPasswordRSAPublicKey": {
+            "version": 1,
+            "description": "Fetches RSA public key to use to encrypt passwords for a given account name",
+            "parameters": [
+                {
+                    "name": "key",
+                    "type": "string",
+                    "optional": false,
+                    "description": "Access key"
+                },
+                {
+                    "name": "account_name",
+                    "type": "string",
+                    "optional": true,
+                    "description": "user-provided account name to get an RSA key for"
                 }
             ],
             "_type": "protobufs"
@@ -1854,6 +1885,30 @@
                     "type": "string",
                     "optional": false,
                     "description": "Access key"
+                },
+                {
+                    "name": "steamid",
+                    "type": "uint64",
+                    "optional": true,
+                    "description": ""
+                },
+                {
+                    "name": "faq_id",
+                    "type": "uint64",
+                    "optional": true,
+                    "description": ""
+                },
+                {
+                    "name": "language",
+                    "type": "uint32",
+                    "optional": true,
+                    "description": ""
+                },
+                {
+                    "name": "version",
+                    "type": "uint64",
+                    "optional": true,
+                    "description": ""
                 }
             ],
             "_type": "protobufs"
@@ -2344,6 +2399,38 @@
             "_type": "protobufs"
         },
         "CompleteAppUploadBatch": {
+            "version": 1,
+            "httpmethod": "POST",
+            "description": "Indicate that the batch is complete or being stopped for some other reason.",
+            "parameters": [
+                {
+                    "name": "key",
+                    "type": "string",
+                    "optional": false,
+                    "description": "Access key"
+                },
+                {
+                    "name": "appid",
+                    "type": "uint32",
+                    "optional": true,
+                    "description": "App ID for this batch is for."
+                },
+                {
+                    "name": "batch_id",
+                    "type": "uint64",
+                    "optional": true,
+                    "description": "ID of this batch."
+                },
+                {
+                    "name": "batch_eresult",
+                    "type": "uint32",
+                    "optional": true,
+                    "description": "result of this batch."
+                }
+            ],
+            "_type": "protobufs"
+        },
+        "CompleteAppUploadBatchBlocking": {
             "version": 1,
             "httpmethod": "POST",
             "description": "Indicate that the batch is complete or being stopped for some other reason.",
@@ -6636,12 +6723,6 @@
                     "type": "string",
                     "optional": false,
                     "description": "Access key"
-                },
-                {
-                    "name": "include_event_apps",
-                    "type": "bool",
-                    "optional": true,
-                    "description": ""
                 }
             ],
             "_type": "protobufs"
@@ -6981,6 +7062,69 @@
             "version": 1,
             "parameters": [],
             "_type": "undocumented"
+        }
+    },
+    "IMobileDeviceService": {
+        "RegisterMobileDevice": {
+            "version": 1,
+            "httpmethod": "POST",
+            "parameters": [
+                {
+                    "name": "key",
+                    "type": "string",
+                    "optional": false,
+                    "description": "Access key"
+                },
+                {
+                    "name": "deviceid",
+                    "type": "string",
+                    "optional": true,
+                    "description": ""
+                },
+                {
+                    "name": "language",
+                    "type": "string",
+                    "optional": true,
+                    "description": ""
+                },
+                {
+                    "name": "push_enabled",
+                    "type": "bool",
+                    "optional": true,
+                    "description": ""
+                },
+                {
+                    "name": "app_version",
+                    "type": "string",
+                    "optional": true,
+                    "description": ""
+                },
+                {
+                    "name": "os_version",
+                    "type": "string",
+                    "optional": true,
+                    "description": ""
+                },
+                {
+                    "name": "device_model",
+                    "type": "string",
+                    "optional": true,
+                    "description": ""
+                },
+                {
+                    "name": "twofactor_device_identifier",
+                    "type": "string",
+                    "optional": true,
+                    "description": ""
+                },
+                {
+                    "name": "mobile_app",
+                    "type": "int32",
+                    "optional": true,
+                    "description": "enum; suggested type: EMobileApp"
+                }
+            ],
+            "_type": "protobufs"
         }
     },
     "IMobileNotificationService": {
@@ -9043,12 +9187,6 @@
                     "type": "string",
                     "optional": false,
                     "description": "Access key"
-                },
-                {
-                    "name": "filter_appids[0]",
-                    "type": "uint32[]",
-                    "optional": true,
-                    "description": ""
                 }
             ],
             "_type": "protobufs"
