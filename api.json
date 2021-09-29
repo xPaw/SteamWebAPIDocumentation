@@ -11843,6 +11843,7 @@
         "AddChatBan": {
             "version": 1,
             "httpmethod": "POST",
+            "description": "Set the ban for a specific broadcaster. The issuer is the logged in steam account",
             "parameters": [
                 {
                     "name": "key",
@@ -11886,6 +11887,7 @@
         "AddChatModerator": {
             "version": 1,
             "httpmethod": "POST",
+            "description": "Add or remove a moderator for this broadcast channel",
             "parameters": [
                 {
                     "name": "key",
@@ -11917,12 +11919,63 @@
         "AddWordBan": {
             "version": 1,
             "httpmethod": "POST",
+            "description": "Add or remove a banned keyword in this broadcast channel chat",
             "parameters": [
                 {
                     "name": "key",
                     "type": "string",
                     "optional": false,
                     "description": "Access key"
+                },
+                {
+                    "name": "broadcast_channel_id",
+                    "type": "fixed64",
+                    "optional": true,
+                    "description": ""
+                },
+                {
+                    "name": "word",
+                    "type": "string",
+                    "optional": true,
+                    "description": ""
+                },
+                {
+                    "name": "undo",
+                    "type": "bool",
+                    "optional": true,
+                    "description": ""
+                }
+            ],
+            "_type": "protobufs"
+        },
+        "AppCheer": {
+            "version": 1,
+            "httpmethod": "POST",
+            "description": "The user is cheering for a specific broadcast for a specific app.",
+            "parameters": [
+                {
+                    "name": "key",
+                    "type": "string",
+                    "optional": false,
+                    "description": "Access key"
+                },
+                {
+                    "name": "app_id",
+                    "type": "uint32",
+                    "optional": true,
+                    "description": "App ID this cheer is for."
+                },
+                {
+                    "name": "cheer_target_id",
+                    "type": "fixed64",
+                    "optional": true,
+                    "description": "The thing being cheered on. ID is app dependent (could be steam id, match id, lobby id, server id, etc)."
+                },
+                {
+                    "name": "cheers",
+                    "type": "{message}",
+                    "optional": true,
+                    "description": "The set of cheers this request represents (could be multiple of different types)."
                 }
             ],
             "_type": "protobufs"
@@ -11930,12 +11983,19 @@
         "CreateBroadcastChannel": {
             "version": 1,
             "httpmethod": "POST",
+            "description": "Create a channel on SteamTV",
             "parameters": [
                 {
                     "name": "key",
                     "type": "string",
                     "optional": false,
                     "description": "Access key"
+                },
+                {
+                    "name": "unique_name",
+                    "type": "string",
+                    "optional": true,
+                    "description": "Unique short broadcast channel name, part of Steam.TV URL"
                 }
             ],
             "_type": "protobufs"
@@ -11943,138 +12003,240 @@
         "FollowBroadcastChannel": {
             "version": 1,
             "httpmethod": "POST",
+            "description": "Follow a broadcast channel",
             "parameters": [
                 {
                     "name": "key",
                     "type": "string",
                     "optional": false,
                     "description": "Access key"
+                },
+                {
+                    "name": "broadcast_channel_id",
+                    "type": "fixed64",
+                    "optional": true,
+                    "description": "Broadcast channel ID"
+                },
+                {
+                    "name": "undo",
+                    "type": "bool",
+                    "optional": true,
+                    "description": "Indicates this is an unfollow request"
                 }
             ],
             "_type": "protobufs"
         },
         "GetBroadcastChannelBroadcasters": {
             "version": 1,
+            "description": "Get list of broadcaster info for this channel",
             "parameters": [
                 {
                     "name": "key",
                     "type": "string",
                     "optional": false,
                     "description": "Access key"
+                },
+                {
+                    "name": "broadcast_channel_id",
+                    "type": "fixed64",
+                    "optional": true,
+                    "description": "Broadcast channel ID"
                 }
             ],
             "_type": "protobufs"
         },
         "GetBroadcastChannelClips": {
             "version": 1,
+            "description": "Get broadcast channel clips",
             "parameters": [
                 {
                     "name": "key",
                     "type": "string",
                     "optional": false,
                     "description": "Access key"
+                },
+                {
+                    "name": "broadcast_channel_id",
+                    "type": "fixed64",
+                    "optional": true,
+                    "description": ""
                 }
             ],
             "_type": "protobufs"
         },
         "GetBroadcastChannelID": {
             "version": 1,
+            "description": "Get a broadcast channel ID for a channel by name or owner SteamID",
             "parameters": [
                 {
                     "name": "key",
                     "type": "string",
                     "optional": false,
                     "description": "Access key"
+                },
+                {
+                    "name": "unique_name",
+                    "type": "string",
+                    "optional": true,
+                    "description": "Channel short name)"
                 }
             ],
             "_type": "protobufs"
         },
         "GetBroadcastChannelImages": {
             "version": 1,
+            "description": "Get broadcast channel images",
             "parameters": [
                 {
                     "name": "key",
                     "type": "string",
                     "optional": false,
                     "description": "Access key"
+                },
+                {
+                    "name": "broadcast_channel_id",
+                    "type": "fixed64",
+                    "optional": true,
+                    "description": "Broadcast channel ID"
+                },
+                {
+                    "name": "image_types",
+                    "type": "{message}",
+                    "optional": true,
+                    "description": "list of EBroadcastImage"
                 }
             ],
             "_type": "protobufs"
         },
         "GetBroadcastChannelInteraction": {
             "version": 1,
+            "description": "Get user's interaction status with a broadcast channel",
             "parameters": [
                 {
                     "name": "key",
                     "type": "string",
                     "optional": false,
                     "description": "Access key"
+                },
+                {
+                    "name": "broadcast_channel_id",
+                    "type": "fixed64",
+                    "optional": true,
+                    "description": "Broadcast channel ID"
                 }
             ],
             "_type": "protobufs"
         },
         "GetBroadcastChannelLinks": {
             "version": 1,
+            "description": "Get broadcast channel link regions",
             "parameters": [
                 {
                     "name": "key",
                     "type": "string",
                     "optional": false,
                     "description": "Access key"
+                },
+                {
+                    "name": "broadcast_channel_id",
+                    "type": "fixed64",
+                    "optional": true,
+                    "description": "Broadcast channel ID"
                 }
             ],
             "_type": "protobufs"
         },
         "GetBroadcastChannelProfile": {
             "version": 1,
+            "description": "Get broadcast channel profile data",
             "parameters": [
                 {
                     "name": "key",
                     "type": "string",
                     "optional": false,
                     "description": "Access key"
+                },
+                {
+                    "name": "broadcast_channel_id",
+                    "type": "fixed64",
+                    "optional": true,
+                    "description": "Broadcast channel ID"
                 }
             ],
             "_type": "protobufs"
         },
         "GetBroadcastChannelStatus": {
             "version": 1,
+            "description": "Get broadcast channel live status",
             "parameters": [
                 {
                     "name": "key",
                     "type": "string",
                     "optional": false,
                     "description": "Access key"
+                },
+                {
+                    "name": "broadcast_channel_id",
+                    "type": "fixed64",
+                    "optional": true,
+                    "description": "Broadcast channel ID"
                 }
             ],
             "_type": "protobufs"
         },
         "GetChannels": {
             "version": 1,
+            "description": "Get the list of featured broadcast channels",
             "parameters": [
                 {
                     "name": "key",
                     "type": "string",
                     "optional": false,
                     "description": "Access key"
+                },
+                {
+                    "name": "algorithm",
+                    "type": "{message}",
+                    "optional": true,
+                    "description": "The algorithm to use when picking channels to return"
+                },
+                {
+                    "name": "count",
+                    "type": "uint32",
+                    "optional": true,
+                    "description": "The maximum number of results to return"
+                },
+                {
+                    "name": "appid",
+                    "type": "uint32",
+                    "optional": true,
+                    "description": "Filter results to only this appid"
                 }
             ],
             "_type": "protobufs"
         },
         "GetChatBans": {
             "version": 1,
+            "description": "Get list of bans for a specific broadcaster.",
             "parameters": [
                 {
                     "name": "key",
                     "type": "string",
                     "optional": false,
                     "description": "Access key"
+                },
+                {
+                    "name": "broadcast_channel_id",
+                    "type": "fixed64",
+                    "optional": true,
+                    "description": ""
                 }
             ],
             "_type": "protobufs"
         },
         "GetChatModerators": {
             "version": 1,
+            "description": "Returns the list of moderators for this broadcast channel",
             "parameters": [
                 {
                     "name": "key",
@@ -12098,6 +12260,7 @@
         },
         "GetFollowedChannels": {
             "version": 1,
+            "description": "Get list of followed channels by a viewer",
             "parameters": [
                 {
                     "name": "key",
@@ -12110,18 +12273,38 @@
         },
         "GetGames": {
             "version": 1,
+            "description": "Get list of games with active broadcasters",
             "parameters": [
                 {
                     "name": "key",
                     "type": "string",
                     "optional": false,
                     "description": "Access key"
+                },
+                {
+                    "name": "appid",
+                    "type": "uint32",
+                    "optional": true,
+                    "description": "The ID for the game"
+                },
+                {
+                    "name": "algorithm",
+                    "type": "{message}",
+                    "optional": true,
+                    "description": "The algorithm to use when picking games to return"
+                },
+                {
+                    "name": "count",
+                    "type": "uint32",
+                    "optional": true,
+                    "description": "The maximum number of results to return"
                 }
             ],
             "_type": "protobufs"
         },
         "GetHomePageContents": {
             "version": 1,
+            "description": "Returns homepage contents for user",
             "parameters": [
                 {
                     "name": "key",
@@ -12134,6 +12317,7 @@
         },
         "GetMyBroadcastChannels": {
             "version": 1,
+            "description": "Gets the broadcast channels that the current user owns",
             "parameters": [
                 {
                     "name": "key",
@@ -12146,6 +12330,7 @@
         },
         "GetSteamTVUserSettings": {
             "version": 1,
+            "description": "Returns a user's SteamTV settings",
             "parameters": [
                 {
                     "name": "key",
@@ -12158,6 +12343,7 @@
         },
         "GetSubscribedChannels": {
             "version": 1,
+            "description": "Get list of channels a user is subscribed to",
             "parameters": [
                 {
                     "name": "key",
@@ -12170,12 +12356,19 @@
         },
         "GetWordBans": {
             "version": 1,
+            "description": "Returns the list of banned keywords for this broadcast channel",
             "parameters": [
                 {
                     "name": "key",
                     "type": "string",
                     "optional": false,
                     "description": "Access key"
+                },
+                {
+                    "name": "broadcast_channel_id",
+                    "type": "fixed64",
+                    "optional": true,
+                    "description": ""
                 }
             ],
             "_type": "protobufs"
@@ -12183,6 +12376,7 @@
         "JoinChat": {
             "version": 1,
             "httpmethod": "POST",
+            "description": "Joins the chat channel for a broadcast",
             "parameters": [
                 {
                     "name": "key",
@@ -12202,24 +12396,44 @@
         "ReportBroadcastChannel": {
             "version": 1,
             "httpmethod": "POST",
+            "description": "Report a broadcast channel",
             "parameters": [
                 {
                     "name": "key",
                     "type": "string",
                     "optional": false,
                     "description": "Access key"
+                },
+                {
+                    "name": "broadcast_channel_id",
+                    "type": "fixed64",
+                    "optional": true,
+                    "description": "Broadcast channel ID"
+                },
+                {
+                    "name": "reason",
+                    "type": "string",
+                    "optional": true,
+                    "description": "The reason for the report"
                 }
             ],
             "_type": "protobufs"
         },
         "Search": {
             "version": 1,
+            "description": "Searches for broadcast channels based on input keywords",
             "parameters": [
                 {
                     "name": "key",
                     "type": "string",
                     "optional": false,
                     "description": "Access key"
+                },
+                {
+                    "name": "term",
+                    "type": "string",
+                    "optional": true,
+                    "description": ""
                 }
             ],
             "_type": "protobufs"
@@ -12227,12 +12441,67 @@
         "SetBroadcastChannelImage": {
             "version": 1,
             "httpmethod": "POST",
+            "description": "Set broadcast channel image hash",
             "parameters": [
                 {
                     "name": "key",
                     "type": "string",
                     "optional": false,
                     "description": "Access key"
+                },
+                {
+                    "name": "broadcast_channel_id",
+                    "type": "fixed64",
+                    "optional": true,
+                    "description": "Broadcast channel ID"
+                },
+                {
+                    "name": "image_type",
+                    "type": "{message}",
+                    "optional": true,
+                    "description": "EBroadcastImage"
+                },
+                {
+                    "name": "image_index",
+                    "type": "uint32",
+                    "optional": true,
+                    "description": "Index of the image (for supporting multiple uploads of the same type"
+                },
+                {
+                    "name": "image_width",
+                    "type": "uint32",
+                    "optional": true,
+                    "description": "width in pixels"
+                },
+                {
+                    "name": "image_height",
+                    "type": "uint32",
+                    "optional": true,
+                    "description": "height in pixels"
+                },
+                {
+                    "name": "file_size",
+                    "type": "uint32",
+                    "optional": true,
+                    "description": "in bytes"
+                },
+                {
+                    "name": "file_extension",
+                    "type": "string",
+                    "optional": true,
+                    "description": "eg .jpg"
+                },
+                {
+                    "name": "file_hash",
+                    "type": "string",
+                    "optional": true,
+                    "description": "image SHA"
+                },
+                {
+                    "name": "undo",
+                    "type": "bool",
+                    "optional": true,
+                    "description": "indicates this is a delete request"
                 }
             ],
             "_type": "protobufs"
@@ -12240,12 +12509,25 @@
         "SetBroadcastChannelLinkRegions": {
             "version": 1,
             "httpmethod": "POST",
+            "description": "Set broadcast channel link regions",
             "parameters": [
                 {
                     "name": "key",
                     "type": "string",
                     "optional": false,
                     "description": "Access key"
+                },
+                {
+                    "name": "broadcast_channel_id",
+                    "type": "fixed64",
+                    "optional": true,
+                    "description": "Broadcast channel ID"
+                },
+                {
+                    "name": "links",
+                    "type": "{message}",
+                    "optional": true,
+                    "description": ""
                 }
             ],
             "_type": "protobufs"
@@ -12253,12 +12535,67 @@
         "SetBroadcastChannelProfile": {
             "version": 1,
             "httpmethod": "POST",
+            "description": "Set broadcast channel profile data",
             "parameters": [
                 {
                     "name": "key",
                     "type": "string",
                     "optional": false,
                     "description": "Access key"
+                },
+                {
+                    "name": "broadcast_channel_id",
+                    "type": "fixed64",
+                    "optional": true,
+                    "description": "Broadcast channel ID"
+                },
+                {
+                    "name": "name",
+                    "type": "string",
+                    "optional": true,
+                    "description": "long channel name"
+                },
+                {
+                    "name": "language",
+                    "type": "string",
+                    "optional": true,
+                    "description": "primary channel language (Steam shortname)"
+                },
+                {
+                    "name": "headline",
+                    "type": "string",
+                    "optional": true,
+                    "description": "short channel desciption"
+                },
+                {
+                    "name": "summary",
+                    "type": "string",
+                    "optional": true,
+                    "description": "long channel desciption"
+                },
+                {
+                    "name": "avatar_hash",
+                    "type": "string",
+                    "optional": true,
+                    "description": "community avatar hash"
+                },
+                {
+                    "name": "schedule",
+                    "type": "string",
+                    "optional": true,
+                    "description": "broadcast channel schedule"
+                },
+                {
+                    "name": "rules",
+                    "type": "string",
+                    "optional": true,
+                    "description": "broadcast channel rules"
+                },
+                {
+                    "name": "panels",
+                    "type": "string",
+                    "optional": true,
+                    "description": "JSON data representing the channel panel layout"
                 }
             ],
             "_type": "protobufs"
@@ -12266,12 +12603,25 @@
         "SetSteamTVUserSettings": {
             "version": 1,
             "httpmethod": "POST",
+            "description": "Sets a user's SteamTV settings",
             "parameters": [
                 {
                     "name": "key",
                     "type": "string",
                     "optional": false,
                     "description": "Access key"
+                },
+                {
+                    "name": "stream_live_email",
+                    "type": "bool",
+                    "optional": true,
+                    "description": "Send email when followed stream starts"
+                },
+                {
+                    "name": "stream_live_notification",
+                    "type": "bool",
+                    "optional": true,
+                    "description": "Send Steam notification when followed stream starts"
                 }
             ],
             "_type": "protobufs"
@@ -12279,12 +12629,19 @@
         "SubscribeBroadcastChannel": {
             "version": 1,
             "httpmethod": "POST",
+            "description": "Subscribe to a broadcast channel",
             "parameters": [
                 {
                     "name": "key",
                     "type": "string",
                     "optional": false,
                     "description": "Access key"
+                },
+                {
+                    "name": "broadcast_channel_id",
+                    "type": "fixed64",
+                    "optional": true,
+                    "description": "Broadcast channel ID"
                 }
             ],
             "_type": "protobufs"
