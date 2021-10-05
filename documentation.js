@@ -14,6 +14,11 @@
 			for( const parameter of method.parameters )
 			{
 				parameter._value = '';
+
+				if( parameter.type === 'bool' )
+				{
+					parameter.manuallyToggled = false;
+				}
 			}
 
 			flattenedMethods.push( {
@@ -230,12 +235,12 @@
 
 				for( const parameter of method.parameters )
 				{
-					if( !parameter._value )
+					if( !parameter._value && !parameter.manuallyToggled )
 					{
 						continue;
 					}
 
-					parameters.set( parameter.name, parameter.type === 'bool' ? 1 : parameter._value );
+					parameters.set( parameter.name, parameter._value );
 				}
 
 				const str = parameters.toString();
