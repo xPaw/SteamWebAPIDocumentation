@@ -846,6 +846,11 @@
                 }
             ]
         },
+        "GetPlayerProfile": {
+            "version": 1,
+            "parameters": [],
+            "_type": "undocumented"
+        },
         "GetPlayerProfileCoin": {
             "version": 1,
             "httpmethod": "GET",
@@ -895,6 +900,18 @@
             "version": 1,
             "httpmethod": "GET",
             "parameters": []
+        }
+    },
+    "ICSGOStreamSystem_730": {
+        "GetMatchScoreboard": {
+            "version": 1,
+            "parameters": [],
+            "_type": "undocumented"
+        },
+        "ListOfUsersSpectating": {
+            "version": 1,
+            "parameters": [],
+            "_type": "undocumented"
         }
     },
     "ICSGOTournaments_730": {
@@ -1618,6 +1635,12 @@
                     "type": "uint64",
                     "optional": true,
                     "description": "app specific data about the type of cheating"
+                },
+                {
+                    "name": "appdata2",
+                    "type": "uint64",
+                    "optional": true,
+                    "description": "App specific data about the cheating."
                 }
             ],
             "_type": "publisher_only"
@@ -3770,6 +3793,11 @@
                     "description": "LeagueID to use if we aren't in a lobby"
                 }
             ]
+        },
+        "ListOfUsersSpectating": {
+            "version": 1,
+            "parameters": [],
+            "_type": "undocumented"
         }
     },
     "IDOTA2StreamSystem_205790": {
@@ -9868,6 +9896,36 @@
                 }
             ]
         },
+        "GetCMListForConnect": {
+            "version": 1,
+            "httpmethod": "GET",
+            "parameters": [
+                {
+                    "name": "cellid",
+                    "type": "uint32",
+                    "optional": true,
+                    "description": "Client's Steam cell ID, uses IP location if blank"
+                },
+                {
+                    "name": "cmtype",
+                    "type": "string",
+                    "optional": true,
+                    "description": "Optional CM type filter"
+                },
+                {
+                    "name": "realm",
+                    "type": "string",
+                    "optional": true,
+                    "description": "Optional Steam Realm filter"
+                },
+                {
+                    "name": "maxcount",
+                    "type": "uint32",
+                    "optional": true,
+                    "description": "Max number of servers to return"
+                }
+            ]
+        },
         "GetCSList": {
             "version": 1,
             "httpmethod": "GET",
@@ -9884,7 +9942,8 @@
                     "optional": true,
                     "description": "Max number of servers to return"
                 }
-            ]
+            ],
+            "_type": "undocumented"
         },
         "GetSteamPipeDomains": {
             "version": 1,
