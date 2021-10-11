@@ -3871,7 +3871,8 @@
                     "optional": false,
                     "description": "Valid Badge Type 3"
                 }
-            ]
+            ],
+            "_type": "undocumented"
         },
         "GetSteamIDForBadgeID": {
             "version": 1,
@@ -3883,7 +3884,8 @@
                     "optional": false,
                     "description": "The badge ID"
                 }
-            ]
+            ],
+            "_type": "undocumented"
         },
         "SetSteamAccountPurchased": {
             "version": 1,
