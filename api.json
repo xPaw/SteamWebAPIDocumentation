@@ -3843,50 +3843,6 @@
         }
     },
     "IDOTA2Ticket_570": {
-        "ClaimBadgeReward": {
-            "version": 1,
-            "httpmethod": "GET",
-            "parameters": [
-                {
-                    "name": "BadgeID",
-                    "type": "string",
-                    "optional": false,
-                    "description": "The Badge ID"
-                },
-                {
-                    "name": "ValidBadgeType1",
-                    "type": "uint32",
-                    "optional": false,
-                    "description": "Valid Badge Type 1"
-                },
-                {
-                    "name": "ValidBadgeType2",
-                    "type": "uint32",
-                    "optional": false,
-                    "description": "Valid Badge Type 2"
-                },
-                {
-                    "name": "ValidBadgeType3",
-                    "type": "uint32",
-                    "optional": false,
-                    "description": "Valid Badge Type 3"
-                }
-            ],
-            "_type": "undocumented"
-        },
-        "GetSteamIDForBadgeID": {
-            "version": 1,
-            "httpmethod": "GET",
-            "parameters": [
-                {
-                    "name": "BadgeID",
-                    "type": "string",
-                    "optional": false,
-                    "description": "The badge ID"
-                }
-            ],
-            "_type": "undocumented"
-        },
         "SetSteamAccountPurchased": {
             "version": 1,
             "httpmethod": "POST",
@@ -9903,25 +9859,6 @@
                 }
             ]
         },
-        "GetCSList": {
-            "version": 1,
-            "httpmethod": "GET",
-            "parameters": [
-                {
-                    "name": "cellid",
-                    "type": "uint32",
-                    "optional": false,
-                    "description": "Client's Steam cell ID"
-                },
-                {
-                    "name": "maxcount",
-                    "type": "uint32",
-                    "optional": true,
-                    "description": "Max number of servers to return"
-                }
-            ],
-            "_type": "undocumented"
-        },
         "GetSteamPipeDomains": {
             "version": 1,
             "httpmethod": "GET",
@@ -11613,25 +11550,6 @@
         }
     },
     "ISteamRemoteStorage": {
-        "EnumerateUserPublishedFiles": {
-            "version": 1,
-            "httpmethod": "POST",
-            "parameters": [
-                {
-                    "name": "steamid",
-                    "type": "uint64",
-                    "optional": false,
-                    "description": "SteamID of user"
-                },
-                {
-                    "name": "appid",
-                    "type": "uint32",
-                    "optional": false,
-                    "description": "appID of product"
-                }
-            ],
-            "_type": "undocumented"
-        },
         "EnumerateUserSubscribedFiles": {
             "version": 1,
             "httpmethod": "POST",
