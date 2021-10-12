@@ -6690,31 +6690,6 @@
             ],
             "_type": "protobufs"
         },
-        "AddReactionToUserReview": {
-            "version": 1,
-            "httpmethod": "POST",
-            "parameters": [
-                {
-                    "name": "key",
-                    "type": "string",
-                    "optional": false,
-                    "description": "Access key"
-                },
-                {
-                    "name": "recommendationid",
-                    "type": "uint64",
-                    "optional": true,
-                    "description": ""
-                },
-                {
-                    "name": "reactionid",
-                    "type": "int32",
-                    "optional": true,
-                    "description": ""
-                }
-            ],
-            "_type": "undocumented"
-        },
         "BatchedQueryRewardItems": {
             "version": 1,
             "parameters": [
@@ -12314,11 +12289,6 @@
             ],
             "_type": "protobufs"
         },
-        "GetFeatured": {
-            "version": 1,
-            "parameters": [],
-            "_type": "undocumented"
-        },
         "GetFollowedChannels": {
             "version": 1,
             "description": "Get list of followed channels by a viewer",
@@ -13619,33 +13589,6 @@
             "_type": "protobufs"
         }
     },
-    "ISummerSale2020Service": {
-        "CanClaimItem": {
-            "version": 1,
-            "parameters": [
-                {
-                    "name": "key",
-                    "type": "string",
-                    "optional": false,
-                    "description": "Access key"
-                }
-            ],
-            "_type": "undocumented"
-        },
-        "ClaimItem": {
-            "version": 1,
-            "httpmethod": "POST",
-            "parameters": [
-                {
-                    "name": "key",
-                    "type": "string",
-                    "optional": false,
-                    "description": "Access key"
-                }
-            ],
-            "_type": "undocumented"
-        }
-    },
     "ITFItems_440": {
         "GetGoldenWrenches": {
             "version": 2,
@@ -13846,11 +13789,6 @@
         }
     },
     "ITrustService": {
-        "FullAccountUpdate": {
-            "version": 1,
-            "parameters": [],
-            "_type": "undocumented"
-        },
         "GetTrustScore": {
             "version": 1,
             "httpmethod": "GET",
@@ -14017,25 +13955,6 @@
             ],
             "_type": "protobufs"
         },
-        "QuerySecrets": {
-            "version": 1,
-            "description": "Get two-factor secrets for the logged-in account",
-            "parameters": [
-                {
-                    "name": "key",
-                    "type": "string",
-                    "optional": false,
-                    "description": "Access key"
-                },
-                {
-                    "name": "steamid",
-                    "type": "fixed64",
-                    "optional": true,
-                    "description": "steamid to use"
-                }
-            ],
-            "_type": "undocumented"
-        },
         "QueryStatus": {
             "version": 1,
             "httpmethod": "POST",
@@ -14075,16 +13994,6 @@
             ],
             "_type": "undocumented"
         },
-        "RecoverAuthenticatorCommit": {
-            "version": 1,
-            "parameters": [],
-            "_type": "undocumented"
-        },
-        "RecoverAuthenticatorContinue": {
-            "version": 1,
-            "parameters": [],
-            "_type": "undocumented"
-        },
         "RemoveAuthenticator": {
             "version": 1,
             "httpmethod": "POST",
@@ -14122,74 +14031,6 @@
                 }
             ],
             "_type": "protobufs"
-        },
-        "RemoveAuthenticatorViaChallengeContinue": {
-            "version": 1,
-            "description": "Continue challenge-based authenticator removal",
-            "parameters": [
-                {
-                    "name": "key",
-                    "type": "string",
-                    "optional": false,
-                    "description": "Access key"
-                },
-                {
-                    "name": "steamid",
-                    "type": "fixed64",
-                    "optional": true,
-                    "description": "steamid to use"
-                },
-                {
-                    "name": "encrypted_password",
-                    "type": "string",
-                    "optional": true,
-                    "description": "RSA-encrypted password"
-                },
-                {
-                    "name": "password_timestamp",
-                    "type": "uint32",
-                    "optional": true,
-                    "description": "RSA timestamp for password"
-                },
-                {
-                    "name": "sms_code",
-                    "type": "string",
-                    "optional": true,
-                    "description": "Code from SMS"
-                }
-            ],
-            "_type": "undocumented"
-        },
-        "RemoveAuthenticatorViaChallengeStart": {
-            "version": 1,
-            "description": "Start challenge-based authenticator removal",
-            "parameters": [
-                {
-                    "name": "key",
-                    "type": "string",
-                    "optional": false,
-                    "description": "Access key"
-                },
-                {
-                    "name": "steamid",
-                    "type": "fixed64",
-                    "optional": true,
-                    "description": "steamid to use"
-                },
-                {
-                    "name": "encrypted_password",
-                    "type": "string",
-                    "optional": true,
-                    "description": "RSA-encrypted password"
-                },
-                {
-                    "name": "password_timestamp",
-                    "type": "uint32",
-                    "optional": true,
-                    "description": "RSA timestamp for password"
-                }
-            ],
-            "_type": "undocumented"
         },
         "SendEmail": {
             "version": 1,
