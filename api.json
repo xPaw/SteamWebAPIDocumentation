@@ -12,7 +12,7 @@
                 },
                 {
                     "name": "account_type",
-                    "type": "{message}",
+                    "type": "EInternalAccountType",
                     "optional": true,
                     "description": ""
                 },
@@ -24,7 +24,7 @@
                 },
                 {
                     "name": "filter",
-                    "type": "{message}",
+                    "type": "EExternalAccountType",
                     "optional": true,
                     "description": "if specified then only return this external account type"
                 },
@@ -158,7 +158,7 @@
                 },
                 {
                     "name": "platform_type",
-                    "type": "{message}",
+                    "type": "EAuthTokenPlatformType",
                     "optional": true,
                     "description": ""
                 }
@@ -184,7 +184,7 @@
                 },
                 {
                     "name": "platform_type",
-                    "type": "{message}",
+                    "type": "EAuthTokenPlatformType",
                     "optional": true,
                     "description": ""
                 }
@@ -331,7 +331,7 @@
                 },
                 {
                     "name": "code_type",
-                    "type": "{message}",
+                    "type": "EAuthSessionGuardType",
                     "optional": true,
                     "description": "type of confirmation code"
                 }
@@ -719,7 +719,7 @@
                 },
                 {
                     "name": "broadcast_chat_permission",
-                    "type": "{message}",
+                    "type": "EBroadcastChatPermission",
                     "optional": true,
                     "description": "Who is permitted to send a chat message during broadcast"
                 },
@@ -2179,7 +2179,7 @@
                 },
                 {
                     "name": "errors",
-                    "type": "{message}",
+                    "type": "CClientMetrics_ReportClientError_Notification.Error",
                     "optional": true,
                     "description": ""
                 }
@@ -2731,7 +2731,7 @@
                 },
                 {
                     "name": "app_list",
-                    "type": "{message}",
+                    "type": "CAppPriority",
                     "optional": true,
                     "description": ""
                 },
@@ -6726,7 +6726,7 @@
                 },
                 {
                     "name": "requests",
-                    "type": "{message}",
+                    "type": "CLoyaltyRewards_QueryRewardItems_Request",
                     "optional": true,
                     "description": ""
                 }
@@ -7260,7 +7260,7 @@
                 },
                 {
                     "name": "post",
-                    "type": "{message}",
+                    "type": "CNewsFeedPostDef",
                     "optional": true,
                     "description": ""
                 },
@@ -8011,7 +8011,7 @@
                 },
                 {
                     "name": "profile_preferences",
-                    "type": "{message}",
+                    "type": "ProfilePreferences",
                     "optional": true,
                     "description": ""
                 }
@@ -12034,7 +12034,7 @@
                 },
                 {
                     "name": "cheers",
-                    "type": "{message}",
+                    "type": "CSteamTV_AppCheer_SingleCheerType",
                     "optional": true,
                     "description": "The set of cheers this request represents (could be multiple of different types)."
                 }
@@ -12162,7 +12162,7 @@
                 },
                 {
                     "name": "image_types",
-                    "type": "{message}",
+                    "type": "EBroadcastImageType",
                     "optional": true,
                     "description": "list of EBroadcastImage"
                 }
@@ -12257,7 +12257,7 @@
                 },
                 {
                     "name": "algorithm",
-                    "type": "{message}",
+                    "type": "EGetChannelsAlgorithm",
                     "optional": true,
                     "description": "The algorithm to use when picking channels to return"
                 },
@@ -12350,7 +12350,7 @@
                 },
                 {
                     "name": "algorithm",
-                    "type": "{message}",
+                    "type": "EGetGamesAlgorithm",
                     "optional": true,
                     "description": "The algorithm to use when picking games to return"
                 },
@@ -12518,7 +12518,7 @@
                 },
                 {
                     "name": "image_type",
-                    "type": "{message}",
+                    "type": "EBroadcastImageType",
                     "optional": true,
                     "description": "EBroadcastImage"
                 },
@@ -12586,7 +12586,7 @@
                 },
                 {
                     "name": "links",
-                    "type": "{message}",
+                    "type": "CSteamTV_SetBroadcastChannelLinkRegions_Request.Links",
                     "optional": true,
                     "description": ""
                 }
@@ -13468,19 +13468,19 @@
                 },
                 {
                     "name": "ids",
-                    "type": "{message}",
+                    "type": "StoreItemID",
                     "optional": true,
                     "description": ""
                 },
                 {
                     "name": "context",
-                    "type": "{message}",
+                    "type": "StoreBrowseContext",
                     "optional": true,
                     "description": ""
                 },
                 {
                     "name": "data_request",
-                    "type": "{message}",
+                    "type": "StoreBrowseItemDataRequest",
                     "optional": true,
                     "description": ""
                 }
@@ -14305,7 +14305,7 @@
                 },
                 {
                     "name": "bookmarks",
-                    "type": "{message}",
+                    "type": "VideoBookmark",
                     "optional": true,
                     "description": "list of bookmarks we want to store."
                 }
