@@ -211,6 +211,19 @@
             ],
             "_type": "protobufs"
         },
+        "GetAuthSessionsForAccount": {
+            "version": 1,
+            "description": "Gets all active auth sessions for an account for reference by the mobile app",
+            "parameters": [
+                {
+                    "name": "key",
+                    "type": "string",
+                    "optional": false,
+                    "description": "Access key"
+                }
+            ],
+            "_type": "protobufs"
+        },
         "GetPasswordRSAPublicKey": {
             "version": 1,
             "description": "Fetches RSA public key to use to encrypt passwords for a given account name",
