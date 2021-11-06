@@ -3440,11 +3440,6 @@
                 }
             ]
         },
-        "GetMatchMVPVotes": {
-            "version": 1,
-            "parameters": [],
-            "_type": "undocumented"
-        },
         "GetTeamInfoByTeamID": {
             "version": 1,
             "httpmethod": "GET",
@@ -10165,18 +10160,6 @@
             "_type": "undocumented"
         }
     },
-    "ISteamGameOAuth": {
-        "GetAppInfo": {
-            "version": 1,
-            "parameters": [],
-            "_type": "undocumented"
-        },
-        "GetPackageInfo": {
-            "version": 1,
-            "parameters": [],
-            "_type": "undocumented"
-        }
-    },
     "ISteamGameServerStats": {
         "GetGameServerPlayerStatsForGame": {
             "version": 1,
@@ -12998,11 +12981,6 @@
             "parameters": [],
             "_type": "undocumented"
         },
-        "GetGroupSummaries": {
-            "version": 1,
-            "parameters": [],
-            "_type": "undocumented"
-        },
         "GetTokenDetails": {
             "version": 1,
             "httpmethod": "GET",
@@ -13207,39 +13185,6 @@
                 }
             ],
             "_type": "publisher_only"
-        }
-    },
-    "ISteamVideo": {
-        "AddVideo": {
-            "version": 1,
-            "httpmethod": "POST",
-            "parameters": [
-                {
-                    "name": "steamid",
-                    "type": "uint64",
-                    "optional": false,
-                    "description": "SteamID of user"
-                },
-                {
-                    "name": "appid",
-                    "type": "uint32",
-                    "optional": false,
-                    "description": "appID of the video"
-                },
-                {
-                    "name": "videoid",
-                    "type": "string",
-                    "optional": false,
-                    "description": "ID of the video on the provider's site"
-                },
-                {
-                    "name": "accountname",
-                    "type": "string",
-                    "optional": false,
-                    "description": "Account name of the video's owner on the provider's site"
-                }
-            ],
-            "_type": "undocumented"
         }
     },
     "ISteamWebAPIUtil": {
