@@ -3856,7 +3856,7 @@
             "httpmethod": "POST",
             "parameters": [
                 {
-                    "name": "steamid",
+                    "name": "SteamID",
                     "type": "uint64",
                     "optional": false,
                     "description": "The 64-bit Steam ID"
@@ -3874,7 +3874,7 @@
             "httpmethod": "GET",
             "parameters": [
                 {
-                    "name": "steamid",
+                    "name": "SteamID",
                     "type": "uint64",
                     "optional": false,
                     "description": "The 64-bit Steam ID"
@@ -4285,7 +4285,7 @@
             "httpmethod": "GET",
             "parameters": [
                 {
-                    "name": "steamid",
+                    "name": "SteamID",
                     "type": "uint64",
                     "optional": false,
                     "description": "The Steam ID to fetch items for"
@@ -4303,7 +4303,7 @@
             "httpmethod": "GET",
             "parameters": [
                 {
-                    "name": "steamid",
+                    "name": "SteamID",
                     "type": "uint64",
                     "optional": false,
                     "description": "The Steam ID to fetch items for"
@@ -13553,7 +13553,7 @@
             "httpmethod": "GET",
             "parameters": [
                 {
-                    "name": "steamid",
+                    "name": "SteamID",
                     "type": "uint64",
                     "optional": false,
                     "description": "The Steam ID to fetch items for"
@@ -13571,7 +13571,7 @@
             "httpmethod": "POST",
             "parameters": [
                 {
-                    "name": "steamid",
+                    "name": "SteamID",
                     "type": "uint64",
                     "optional": false,
                     "description": "The Steam ID to fetch items for"
