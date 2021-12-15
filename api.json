@@ -4313,7 +4313,8 @@
         "GetSchemaURL": {
             "version": 1,
             "httpmethod": "GET",
-            "parameters": []
+            "parameters": [],
+            "_type": "undocumented"
         },
         "GetStoreMetaData": {
             "version": 1,
@@ -13564,7 +13565,8 @@
                     "optional": false,
                     "description": "The promo ID to grant an item for"
                 }
-            ]
+            ],
+            "_type": "undocumented"
         },
         "GrantItem": {
             "version": 1,
@@ -13582,7 +13584,8 @@
                     "optional": false,
                     "description": "The promo ID to grant an item for"
                 }
-            ]
+            ],
+            "_type": "undocumented"
         }
     },
     "ITFPromos_620": {
