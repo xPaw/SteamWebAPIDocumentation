@@ -2204,8 +2204,7 @@
         "ReportEvent": {
             "version": 1,
             "httpmethod": "POST",
-            "parameters": [],
-            "_type": "publisher_only"
+            "parameters": []
         }
     },
     "ICloudService": {
@@ -4473,8 +4472,7 @@
                     "optional": false,
                     "description": "The Steam ID to fetch items for"
                 }
-            ],
-            "_type": "publisher_only"
+            ]
         }
     },
     "IEconItems_583950": {
@@ -4494,8 +4492,7 @@
                     "optional": false,
                     "description": "Return items equipped for this class id"
                 }
-            ],
-            "_type": "publisher_only"
+            ]
         }
     },
     "IEconItems_1046930": {
@@ -4509,8 +4506,7 @@
                     "optional": false,
                     "description": "The Steam ID to fetch items for"
                 }
-            ],
-            "_type": "publisher_only"
+            ]
         }
     },
     "IEconItems_1269260": {
@@ -4530,8 +4526,7 @@
                     "optional": false,
                     "description": "Return items equipped for this class id"
                 }
-            ],
-            "_type": "publisher_only"
+            ]
         }
     },
     "IEconMarketService": {
@@ -5181,42 +5176,36 @@
         "GetClientVersion": {
             "version": 1,
             "httpmethod": "GET",
-            "parameters": [],
-            "_type": "publisher_only"
+            "parameters": []
         },
         "GetServerVersion": {
             "version": 1,
             "httpmethod": "GET",
-            "parameters": [],
-            "_type": "publisher_only"
+            "parameters": []
         }
     },
     "IGCVersion_1046930": {
         "GetClientVersion": {
             "version": 1,
             "httpmethod": "GET",
-            "parameters": [],
-            "_type": "publisher_only"
+            "parameters": []
         },
         "GetServerVersion": {
             "version": 1,
             "httpmethod": "GET",
-            "parameters": [],
-            "_type": "publisher_only"
+            "parameters": []
         }
     },
     "IGCVersion_1269260": {
         "GetClientVersion": {
             "version": 1,
             "httpmethod": "GET",
-            "parameters": [],
-            "_type": "publisher_only"
+            "parameters": []
         },
         "GetServerVersion": {
             "version": 1,
             "httpmethod": "GET",
-            "parameters": [],
-            "_type": "publisher_only"
+            "parameters": []
         }
     },
     "IGameCoordinator": {
