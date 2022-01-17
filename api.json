@@ -3208,7 +3208,8 @@
                     "optional": true,
                     "description": "An optional filter for a specific player"
                 }
-            ]
+            ],
+            "_type": "publisher_only"
         },
         "GetPlayerOfficialInfo": {
             "version": 1,
@@ -3220,12 +3221,14 @@
                     "optional": false,
                     "description": "The account ID to look up"
                 }
-            ]
+            ],
+            "_type": "publisher_only"
         },
         "GetProPlayerList": {
             "version": 1,
             "httpmethod": "GET",
-            "parameters": []
+            "parameters": [],
+            "_type": "publisher_only"
         }
     },
     "IDOTA2Guild_570": {
@@ -3322,7 +3325,8 @@
                     "optional": false,
                     "description": ""
                 }
-            ]
+            ],
+            "_type": "publisher_only"
         }
     },
     "IDOTA2Match_570": {
@@ -3547,7 +3551,8 @@
         "GetLeagueListing": {
             "version": 1,
             "httpmethod": "GET",
-            "parameters": []
+            "parameters": [],
+            "_type": "publisher_only"
         },
         "GetLiveLeagueGames": {
             "version": 1,
@@ -3565,7 +3570,8 @@
                     "optional": true,
                     "description": "Only show matches of the specified match id"
                 }
-            ]
+            ],
+            "_type": "publisher_only"
         },
         "GetMatchDetails": {
             "version": 1,
@@ -3577,7 +3583,8 @@
                     "optional": false,
                     "description": "Match id"
                 }
-            ]
+            ],
+            "_type": "publisher_only"
         },
         "GetMatchHistory": {
             "version": 1,
@@ -3631,7 +3638,8 @@
                     "optional": true,
                     "description": "The number of requested matches to return"
                 }
-            ]
+            ],
+            "_type": "publisher_only"
         },
         "GetMatchHistoryBySequenceNum": {
             "version": 1,
@@ -3649,7 +3657,8 @@
                     "optional": true,
                     "description": ""
                 }
-            ]
+            ],
+            "_type": "publisher_only"
         },
         "GetMatchMVPVotes": {
             "version": 1,
@@ -3672,7 +3681,8 @@
                     "optional": true,
                     "description": ""
                 }
-            ]
+            ],
+            "_type": "publisher_only"
         },
         "GetTopLiveEventGame": {
             "version": 1,
@@ -3684,7 +3694,8 @@
                     "optional": false,
                     "description": "Which partner's games to use."
                 }
-            ]
+            ],
+            "_type": "publisher_only"
         },
         "GetTopLiveGame": {
             "version": 1,
@@ -3696,7 +3707,8 @@
                     "optional": false,
                     "description": "Which partner's games to use."
                 }
-            ]
+            ],
+            "_type": "publisher_only"
         },
         "GetTopWeekendTourneyGames": {
             "version": 1,
@@ -3714,7 +3726,8 @@
                     "optional": true,
                     "description": "Prefer matches from this division."
                 }
-            ]
+            ],
+            "_type": "publisher_only"
         },
         "GetTournamentPlayerStats": {
             "version": 2,
@@ -3756,7 +3769,8 @@
                     "optional": true,
                     "description": ""
                 }
-            ]
+            ],
+            "_type": "publisher_only"
         }
     },
     "IDOTA2Operations_570": {
@@ -3825,7 +3839,8 @@
                     "optional": true,
                     "description": "LeagueID to use if we aren't in a lobby"
                 }
-            ]
+            ],
+            "_type": "publisher_only"
         }
     },
     "IDOTA2Teams_570": {
@@ -3929,7 +3944,8 @@
                     "optional": false,
                     "description": "Valid Badge Type 3"
                 }
-            ]
+            ],
+            "_type": "publisher_only"
         },
         "GetSteamIDForBadgeID": {
             "version": 1,
@@ -3941,7 +3957,8 @@
                     "optional": false,
                     "description": "The badge ID"
                 }
-            ]
+            ],
+            "_type": "publisher_only"
         },
         "SetSteamAccountPurchased": {
             "version": 1,
@@ -3959,7 +3976,8 @@
                     "optional": false,
                     "description": "Badge Type"
                 }
-            ]
+            ],
+            "_type": "publisher_only"
         },
         "SteamAccountValidForBadgeType": {
             "version": 1,
@@ -3989,7 +4007,8 @@
                     "optional": false,
                     "description": "Valid Badge Type 3"
                 }
-            ]
+            ],
+            "_type": "publisher_only"
         }
     },
     "IDOTAChat_570": {
@@ -4126,7 +4145,8 @@
                     "optional": true,
                     "description": "The language to provide hero names in."
                 }
-            ]
+            ],
+            "_type": "publisher_only"
         },
         "GetGameItems": {
             "version": 1,
@@ -4138,7 +4158,8 @@
                     "optional": true,
                     "description": "The language to provide item names in."
                 }
-            ]
+            ],
+            "_type": "publisher_only"
         },
         "GetHeroes": {
             "version": 1,
@@ -4156,7 +4177,8 @@
                     "optional": true,
                     "description": "Return a list of itemized heroes only."
                 }
-            ]
+            ],
+            "_type": "publisher_only"
         },
         "GetItemIconPath": {
             "version": 1,
@@ -4174,7 +4196,8 @@
                     "optional": true,
                     "description": "The type of image you want. 0 = normal, 1 = large, 2 = ingame"
                 }
-            ]
+            ],
+            "_type": "publisher_only"
         },
         "GetRarities": {
             "version": 1,
@@ -4186,7 +4209,8 @@
                     "optional": true,
                     "description": "The language to provide rarity names in."
                 }
-            ]
+            ],
+            "_type": "publisher_only"
         },
         "GetTournamentPrizePool": {
             "version": 1,
@@ -4198,7 +4222,8 @@
                     "optional": true,
                     "description": "The ID of the league to get the prize pool of"
                 }
-            ]
+            ],
+            "_type": "publisher_only"
         }
     },
     "IEconItems_440": {
@@ -4415,7 +4440,8 @@
                     "optional": false,
                     "description": "Return items equipped for this class id"
                 }
-            ]
+            ],
+            "_type": "publisher_only"
         },
         "GetPlayerItems": {
             "version": 1,
@@ -4427,12 +4453,14 @@
                     "optional": false,
                     "description": "The Steam ID to fetch items for"
                 }
-            ]
+            ],
+            "_type": "publisher_only"
         },
         "GetSchemaURL": {
             "version": 1,
             "httpmethod": "GET",
-            "parameters": []
+            "parameters": [],
+            "_type": "publisher_only"
         },
         "GetStoreMetaData": {
             "version": 1,
@@ -4444,7 +4472,8 @@
                     "optional": true,
                     "description": "The language to results in."
                 }
-            ]
+            ],
+            "_type": "publisher_only"
         }
     },
     "IEconItems_221540": {
@@ -4492,7 +4521,8 @@
                     "optional": false,
                     "description": "Return items equipped for this class id"
                 }
-            ]
+            ],
+            "_type": "publisher_only"
         }
     },
     "IEconItems_1046930": {
@@ -4526,7 +4556,8 @@
                     "optional": false,
                     "description": "Return items equipped for this class id"
                 }
-            ]
+            ],
+            "_type": "publisher_only"
         }
     },
     "IEconMarketService": {
@@ -5164,24 +5195,28 @@
         "GetClientVersion": {
             "version": 1,
             "httpmethod": "GET",
-            "parameters": []
+            "parameters": [],
+            "_type": "publisher_only"
         },
         "GetServerVersion": {
             "version": 1,
             "httpmethod": "GET",
-            "parameters": []
+            "parameters": [],
+            "_type": "publisher_only"
         }
     },
     "IGCVersion_583950": {
         "GetClientVersion": {
             "version": 1,
             "httpmethod": "GET",
-            "parameters": []
+            "parameters": [],
+            "_type": "publisher_only"
         },
         "GetServerVersion": {
             "version": 1,
             "httpmethod": "GET",
-            "parameters": []
+            "parameters": [],
+            "_type": "publisher_only"
         }
     },
     "IGCVersion_1046930": {
@@ -5200,12 +5235,14 @@
         "GetClientVersion": {
             "version": 1,
             "httpmethod": "GET",
-            "parameters": []
+            "parameters": [],
+            "_type": "publisher_only"
         },
         "GetServerVersion": {
             "version": 1,
             "httpmethod": "GET",
-            "parameters": []
+            "parameters": [],
+            "_type": "publisher_only"
         }
     },
     "IGameCoordinator": {
@@ -13643,7 +13680,8 @@
                     "optional": false,
                     "description": "The promo ID to grant an item for"
                 }
-            ]
+            ],
+            "_type": "publisher_only"
         },
         "GrantItem": {
             "version": 1,
@@ -13661,7 +13699,8 @@
                     "optional": false,
                     "description": "The promo ID to grant an item for"
                 }
-            ]
+            ],
+            "_type": "publisher_only"
         }
     },
     "ITFSystem_440": {
