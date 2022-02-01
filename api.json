@@ -759,6 +759,12 @@
                     "type": "bool",
                     "optional": true,
                     "description": "Enable replay of last upload"
+                },
+                {
+                    "name": "is_partner_chat_only",
+                    "type": "bool",
+                    "optional": true,
+                    "description": "When true, then only steamwork partner can create chat messages."
                 }
             ],
             "_type": "protobufs"
@@ -2248,6 +2254,12 @@
                     "type": "uint64",
                     "optional": true,
                     "description": "Client ID number"
+                },
+                {
+                    "name": "app_build_id",
+                    "type": "uint64",
+                    "optional": true,
+                    "description": "Current local build of the app which made these changes"
                 }
             ],
             "_type": "protobufs"
@@ -8081,6 +8093,26 @@
             ],
             "_type": "protobufs"
         },
+        "Delete": {
+            "version": 1,
+            "httpmethod": "POST",
+            "description": "Deletes a published file.",
+            "parameters": [
+                {
+                    "name": "key",
+                    "type": "string",
+                    "optional": false,
+                    "description": "Access key"
+                },
+                {
+                    "name": "publishedfileid",
+                    "type": "fixed64",
+                    "optional": true,
+                    "description": "Published file id of the file we'd like to delete."
+                }
+            ],
+            "_type": "protobufs"
+        },
         "GetDetails": {
             "version": 1,
             "httpmethod": "GET",
@@ -8957,6 +8989,12 @@
                     "type": "string",
                     "optional": true,
                     "description": "Preview filename for the published file."
+                },
+                {
+                    "name": "spoiler_tag",
+                    "type": "bool",
+                    "optional": true,
+                    "description": "Whether this published file should have a spoiler tag attached to it."
                 },
                 {
                     "name": "image_width",
@@ -13976,6 +14014,26 @@
                     "type": "bool",
                     "optional": true,
                     "description": "Include activation code in email parameters"
+                }
+            ],
+            "_type": "protobufs"
+        },
+        "UpdateTokenVersion": {
+            "version": 1,
+            "httpmethod": "POST",
+            "description": "Update the version for my token",
+            "parameters": [
+                {
+                    "name": "key",
+                    "type": "string",
+                    "optional": false,
+                    "description": "Access key"
+                },
+                {
+                    "name": "version",
+                    "type": "uint32",
+                    "optional": true,
+                    "description": "What the version of our token should be"
                 }
             ],
             "_type": "protobufs"
