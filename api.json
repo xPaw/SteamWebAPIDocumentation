@@ -2211,7 +2211,7 @@
             "version": 1,
             "httpmethod": "POST",
             "parameters": [],
-            "_type": "publisher_only"
+            "_type": "undocumented"
         }
     },
     "ICloudService": {
@@ -3222,7 +3222,7 @@
                     "description": "An optional filter for a specific player"
                 }
             ],
-            "_type": "publisher_only"
+            "_type": "undocumented"
         },
         "GetPlayerOfficialInfo": {
             "version": 1,
@@ -3235,13 +3235,13 @@
                     "description": "The account ID to look up"
                 }
             ],
-            "_type": "publisher_only"
+            "_type": "undocumented"
         },
         "GetProPlayerList": {
             "version": 1,
             "httpmethod": "GET",
             "parameters": [],
-            "_type": "publisher_only"
+            "_type": "undocumented"
         }
     },
     "IDOTA2Guild_570": {
@@ -3339,7 +3339,7 @@
                     "description": ""
                 }
             ],
-            "_type": "publisher_only"
+            "_type": "undocumented"
         }
     },
     "IDOTA2Match_570": {
@@ -3565,7 +3565,7 @@
             "version": 1,
             "httpmethod": "GET",
             "parameters": [],
-            "_type": "publisher_only"
+            "_type": "undocumented"
         },
         "GetLiveLeagueGames": {
             "version": 1,
@@ -3584,7 +3584,7 @@
                     "description": "Only show matches of the specified match id"
                 }
             ],
-            "_type": "publisher_only"
+            "_type": "undocumented"
         },
         "GetMatchDetails": {
             "version": 1,
@@ -3597,7 +3597,7 @@
                     "description": "Match id"
                 }
             ],
-            "_type": "publisher_only"
+            "_type": "undocumented"
         },
         "GetMatchHistory": {
             "version": 1,
@@ -3652,7 +3652,7 @@
                     "description": "The number of requested matches to return"
                 }
             ],
-            "_type": "publisher_only"
+            "_type": "undocumented"
         },
         "GetMatchHistoryBySequenceNum": {
             "version": 1,
@@ -3671,7 +3671,7 @@
                     "description": ""
                 }
             ],
-            "_type": "publisher_only"
+            "_type": "undocumented"
         },
         "GetMatchMVPVotes": {
             "version": 1,
@@ -3695,7 +3695,7 @@
                     "description": ""
                 }
             ],
-            "_type": "publisher_only"
+            "_type": "undocumented"
         },
         "GetTopLiveEventGame": {
             "version": 1,
@@ -3708,7 +3708,7 @@
                     "description": "Which partner's games to use."
                 }
             ],
-            "_type": "publisher_only"
+            "_type": "undocumented"
         },
         "GetTopLiveGame": {
             "version": 1,
@@ -3721,7 +3721,7 @@
                     "description": "Which partner's games to use."
                 }
             ],
-            "_type": "publisher_only"
+            "_type": "undocumented"
         },
         "GetTopWeekendTourneyGames": {
             "version": 1,
@@ -3740,7 +3740,7 @@
                     "description": "Prefer matches from this division."
                 }
             ],
-            "_type": "publisher_only"
+            "_type": "undocumented"
         },
         "GetTournamentPlayerStats": {
             "version": 2,
@@ -3783,7 +3783,7 @@
                     "description": ""
                 }
             ],
-            "_type": "publisher_only"
+            "_type": "undocumented"
         }
     },
     "IDOTA2Operations_570": {
@@ -3853,7 +3853,7 @@
                     "description": "LeagueID to use if we aren't in a lobby"
                 }
             ],
-            "_type": "publisher_only"
+            "_type": "undocumented"
         }
     },
     "IDOTA2Teams_570": {
@@ -3958,7 +3958,7 @@
                     "description": "Valid Badge Type 3"
                 }
             ],
-            "_type": "publisher_only"
+            "_type": "undocumented"
         },
         "GetSteamIDForBadgeID": {
             "version": 1,
@@ -3971,7 +3971,7 @@
                     "description": "The badge ID"
                 }
             ],
-            "_type": "publisher_only"
+            "_type": "undocumented"
         },
         "SetSteamAccountPurchased": {
             "version": 1,
@@ -3990,7 +3990,7 @@
                     "description": "Badge Type"
                 }
             ],
-            "_type": "publisher_only"
+            "_type": "undocumented"
         },
         "SteamAccountValidForBadgeType": {
             "version": 1,
@@ -4021,7 +4021,7 @@
                     "description": "Valid Badge Type 3"
                 }
             ],
-            "_type": "publisher_only"
+            "_type": "undocumented"
         }
     },
     "IDOTAChat_570": {
@@ -4159,7 +4159,7 @@
                     "description": "The language to provide hero names in."
                 }
             ],
-            "_type": "publisher_only"
+            "_type": "undocumented"
         },
         "GetGameItems": {
             "version": 1,
@@ -4172,7 +4172,7 @@
                     "description": "The language to provide item names in."
                 }
             ],
-            "_type": "publisher_only"
+            "_type": "undocumented"
         },
         "GetHeroes": {
             "version": 1,
@@ -4191,7 +4191,7 @@
                     "description": "Return a list of itemized heroes only."
                 }
             ],
-            "_type": "publisher_only"
+            "_type": "undocumented"
         },
         "GetItemIconPath": {
             "version": 1,
@@ -4210,7 +4210,7 @@
                     "description": "The type of image you want. 0 = normal, 1 = large, 2 = ingame"
                 }
             ],
-            "_type": "publisher_only"
+            "_type": "undocumented"
         },
         "GetRarities": {
             "version": 1,
@@ -4223,7 +4223,7 @@
                     "description": "The language to provide rarity names in."
                 }
             ],
-            "_type": "publisher_only"
+            "_type": "undocumented"
         },
         "GetTournamentPrizePool": {
             "version": 1,
@@ -4236,7 +4236,7 @@
                     "description": "The ID of the league to get the prize pool of"
                 }
             ],
-            "_type": "publisher_only"
+            "_type": "undocumented"
         }
     },
     "IEconItems_440": {
@@ -4251,7 +4251,7 @@
                     "description": "The Steam ID to fetch items for"
                 }
             ],
-            "_type": "publisher_only"
+            "_type": "undocumented"
         },
         "GetSchema": {
             "version": 1,
@@ -4264,7 +4264,7 @@
                     "description": "The language to return the names in. Defaults to returning string keys."
                 }
             ],
-            "_type": "publisher_only"
+            "_type": "undocumented"
         },
         "GetSchemaItems": {
             "version": 1,
@@ -4283,7 +4283,7 @@
                     "description": "The first item id to return. Defaults to 0. Response will indicate next value to query if applicable."
                 }
             ],
-            "_type": "publisher_only"
+            "_type": "undocumented"
         },
         "GetSchemaOverview": {
             "version": 1,
@@ -4296,13 +4296,13 @@
                     "description": "The language to return the names in. Defaults to returning string keys."
                 }
             ],
-            "_type": "publisher_only"
+            "_type": "undocumented"
         },
         "GetSchemaURL": {
             "version": 1,
             "httpmethod": "GET",
             "parameters": [],
-            "_type": "publisher_only"
+            "_type": "undocumented"
         },
         "GetStoreMetaData": {
             "version": 1,
@@ -4315,13 +4315,13 @@
                     "description": "The language to results in."
                 }
             ],
-            "_type": "publisher_only"
+            "_type": "undocumented"
         },
         "GetStoreStatus": {
             "version": 1,
             "httpmethod": "GET",
             "parameters": [],
-            "_type": "publisher_only"
+            "_type": "undocumented"
         }
     },
     "IEconItems_570": {
@@ -4461,7 +4461,7 @@
                     "description": "Return items equipped for this class id"
                 }
             ],
-            "_type": "publisher_only"
+            "_type": "undocumented"
         },
         "GetPlayerItems": {
             "version": 1,
@@ -4474,13 +4474,13 @@
                     "description": "The Steam ID to fetch items for"
                 }
             ],
-            "_type": "publisher_only"
+            "_type": "undocumented"
         },
         "GetSchemaURL": {
             "version": 1,
             "httpmethod": "GET",
             "parameters": [],
-            "_type": "publisher_only"
+            "_type": "undocumented"
         },
         "GetStoreMetaData": {
             "version": 1,
@@ -4493,7 +4493,7 @@
                     "description": "The language to results in."
                 }
             ],
-            "_type": "publisher_only"
+            "_type": "undocumented"
         }
     },
     "IEconItems_221540": {
@@ -4508,7 +4508,7 @@
                     "description": "The Steam ID to fetch items for"
                 }
             ],
-            "_type": "publisher_only"
+            "_type": "undocumented"
         }
     },
     "IEconItems_238460": {
@@ -4557,7 +4557,7 @@
                     "description": "The Steam ID to fetch items for"
                 }
             ],
-            "_type": "publisher_only"
+            "_type": "undocumented"
         }
     },
     "IEconItems_1269260": {
@@ -5185,13 +5185,13 @@
             "version": 1,
             "httpmethod": "GET",
             "parameters": [],
-            "_type": "publisher_only"
+            "_type": "undocumented"
         },
         "GetServerVersion": {
             "version": 1,
             "httpmethod": "GET",
             "parameters": [],
-            "_type": "publisher_only"
+            "_type": "undocumented"
         }
     },
     "IGCVersion_570": {
@@ -5218,13 +5218,13 @@
             "version": 1,
             "httpmethod": "GET",
             "parameters": [],
-            "_type": "publisher_only"
+            "_type": "undocumented"
         },
         "GetServerVersion": {
             "version": 1,
             "httpmethod": "GET",
             "parameters": [],
-            "_type": "publisher_only"
+            "_type": "undocumented"
         }
     },
     "IGCVersion_583950": {
@@ -5244,13 +5244,13 @@
             "version": 1,
             "httpmethod": "GET",
             "parameters": [],
-            "_type": "publisher_only"
+            "_type": "undocumented"
         },
         "GetServerVersion": {
             "version": 1,
             "httpmethod": "GET",
             "parameters": [],
-            "_type": "publisher_only"
+            "_type": "undocumented"
         }
     },
     "IGCVersion_1269260": {
@@ -9282,6 +9282,12 @@
                     "type": "string",
                     "optional": false,
                     "description": "Access key"
+                },
+                {
+                    "name": "filter_appids[0]",
+                    "type": "uint32[]",
+                    "optional": true,
+                    "description": ""
                 }
             ],
             "_type": "protobufs"
@@ -13571,6 +13577,31 @@
                 }
             ]
         },
+        "GetLocalizedNameForTags": {
+            "version": 1,
+            "description": "Gets tag names in a different language",
+            "parameters": [
+                {
+                    "name": "key",
+                    "type": "string",
+                    "optional": false,
+                    "description": "Access key"
+                },
+                {
+                    "name": "language",
+                    "type": "string",
+                    "optional": true,
+                    "description": ""
+                },
+                {
+                    "name": "tagids[0]",
+                    "type": "uint32[]",
+                    "optional": true,
+                    "description": ""
+                }
+            ],
+            "_type": "protobufs"
+        },
         "GetMostPopularTags": {
             "version": 1,
             "description": "Get all whitelisted tags, with localized names.",
@@ -13596,7 +13627,7 @@
             "version": 2,
             "httpmethod": "GET",
             "parameters": [],
-            "_type": "publisher_only"
+            "_type": "undocumented"
         }
     },
     "ITFPromos_440": {
@@ -13617,7 +13648,7 @@
                     "description": "The promo ID to grant an item for"
                 }
             ],
-            "_type": "publisher_only"
+            "_type": "undocumented"
         },
         "GrantItem": {
             "version": 1,
@@ -13636,7 +13667,7 @@
                     "description": "The promo ID to grant an item for"
                 }
             ],
-            "_type": "publisher_only"
+            "_type": "undocumented"
         }
     },
     "ITFPromos_570": {
@@ -13735,7 +13766,7 @@
                     "description": "The promo ID to grant an item for"
                 }
             ],
-            "_type": "publisher_only"
+            "_type": "undocumented"
         },
         "GrantItem": {
             "version": 1,
@@ -13754,7 +13785,7 @@
                     "description": "The promo ID to grant an item for"
                 }
             ],
-            "_type": "publisher_only"
+            "_type": "undocumented"
         }
     },
     "ITFSystem_440": {
@@ -13762,7 +13793,7 @@
             "version": 1,
             "httpmethod": "GET",
             "parameters": [],
-            "_type": "publisher_only"
+            "_type": "undocumented"
         }
     },
     "ITestExternalPrivilegeService": {
