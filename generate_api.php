@@ -67,11 +67,11 @@ MergeLists( $FinalList, $Undocumented, 'undocumented' );
 
 $MethodKeysOrder =
 [
+	'_type' => 0,
 	'version' => 1,
 	'httpmethod' => 2,
 	'description' => 3,
 	'parameters' => 4,
-	'_type' => 9,
 ];
 
 foreach( $FinalList as $InterfaceName => $Interface )

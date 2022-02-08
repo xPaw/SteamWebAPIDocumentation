@@ -1,6 +1,7 @@
 {
     "IAccountLinkingService": {
         "GetLinkedAccountInfo": {
+            "_type": "protobufs",
             "version": 1,
             "description": "List all my active linked external accounts; may be requested to return the access token",
             "parameters": [
@@ -34,12 +35,12 @@
                     "optional": true,
                     "description": "if provided and true, then returns valid access token if available. It may refresh the token."
                 }
-            ],
-            "_type": "protobufs"
+            ]
         }
     },
     "IAuctionService": {
         "CancelBid": {
+            "_type": "protobufs",
             "version": 1,
             "httpmethod": "POST",
             "parameters": [
@@ -49,10 +50,10 @@
                     "optional": false,
                     "description": "Access key"
                 }
-            ],
-            "_type": "protobufs"
+            ]
         },
         "GetBidsForItem": {
+            "_type": "protobufs",
             "version": 1,
             "parameters": [
                 {
@@ -61,10 +62,10 @@
                     "optional": false,
                     "description": "Access key"
                 }
-            ],
-            "_type": "protobufs"
+            ]
         },
         "GetBidsForUser": {
+            "_type": "protobufs",
             "version": 1,
             "parameters": [
                 {
@@ -73,10 +74,10 @@
                     "optional": false,
                     "description": "Access key"
                 }
-            ],
-            "_type": "protobufs"
+            ]
         },
         "GetItemDetails": {
+            "_type": "protobufs",
             "version": 1,
             "parameters": [
                 {
@@ -85,10 +86,10 @@
                     "optional": false,
                     "description": "Access key"
                 }
-            ],
-            "_type": "protobufs"
+            ]
         },
         "GetUserBidForItem": {
+            "_type": "protobufs",
             "version": 1,
             "parameters": [
                 {
@@ -97,10 +98,10 @@
                     "optional": false,
                     "description": "Access key"
                 }
-            ],
-            "_type": "protobufs"
+            ]
         },
         "PlaceBid": {
+            "_type": "protobufs",
             "version": 1,
             "httpmethod": "POST",
             "parameters": [
@@ -110,12 +111,12 @@
                     "optional": false,
                     "description": "Access key"
                 }
-            ],
-            "_type": "protobufs"
+            ]
         }
     },
     "IAuthenticationService": {
         "BeginAuthSessionViaCredentials": {
+            "_type": "protobufs",
             "version": 1,
             "httpmethod": "POST",
             "description": "start authentication process",
@@ -162,10 +163,10 @@
                     "optional": true,
                     "description": ""
                 }
-            ],
-            "_type": "protobufs"
+            ]
         },
         "BeginAuthSessionViaQR": {
+            "_type": "protobufs",
             "version": 1,
             "httpmethod": "POST",
             "description": "start authentication process",
@@ -188,10 +189,10 @@
                     "optional": true,
                     "description": ""
                 }
-            ],
-            "_type": "protobufs"
+            ]
         },
         "GetAuthSessionInfo": {
+            "_type": "protobufs",
             "version": 1,
             "httpmethod": "POST",
             "description": "get metadata of specific auth session",
@@ -208,10 +209,10 @@
                     "optional": true,
                     "description": "client ID from scanned QR Code, used for routing"
                 }
-            ],
-            "_type": "protobufs"
+            ]
         },
         "GetAuthSessionsForAccount": {
+            "_type": "protobufs",
             "version": 1,
             "description": "Gets all active auth sessions for an account for reference by the mobile app",
             "parameters": [
@@ -221,10 +222,10 @@
                     "optional": false,
                     "description": "Access key"
                 }
-            ],
-            "_type": "protobufs"
+            ]
         },
         "GetPasswordRSAPublicKey": {
+            "_type": "protobufs",
             "version": 1,
             "description": "Fetches RSA public key to use to encrypt passwords for a given account name",
             "parameters": [
@@ -240,10 +241,10 @@
                     "optional": true,
                     "description": "user-provided account name to get an RSA key for"
                 }
-            ],
-            "_type": "protobufs"
+            ]
         },
         "PollAuthSessionStatus": {
+            "_type": "protobufs",
             "version": 1,
             "httpmethod": "POST",
             "description": "poll during authentication process",
@@ -266,10 +267,10 @@
                     "optional": true,
                     "description": ""
                 }
-            ],
-            "_type": "protobufs"
+            ]
         },
         "UpdateAuthSessionWithMobileConfirmation": {
+            "_type": "protobufs",
             "version": 1,
             "httpmethod": "POST",
             "description": "approve an authentication session via mobile 2fa",
@@ -310,10 +311,10 @@
                     "optional": true,
                     "description": "Whether to confirm the login (true) or deny the login (false)"
                 }
-            ],
-            "_type": "protobufs"
+            ]
         },
         "UpdateAuthSessionWithSteamGuardCode": {
+            "_type": "protobufs",
             "version": 1,
             "httpmethod": "POST",
             "description": "approve an authentication session via steam guard code",
@@ -348,12 +349,12 @@
                     "optional": true,
                     "description": "type of confirmation code"
                 }
-            ],
-            "_type": "protobufs"
+            ]
         }
     },
     "IBroadcastService": {
         "GetBroadcastUploadStats": {
+            "_type": "protobufs",
             "version": 1,
             "description": "Gets broadcast upload stats for user",
             "parameters": [
@@ -393,10 +394,10 @@
                     "optional": true,
                     "description": "Optional broadcast session ID - not compatiable with upload_id"
                 }
-            ],
-            "_type": "protobufs"
+            ]
         },
         "GetBroadcastViewerStats": {
+            "_type": "protobufs",
             "version": 1,
             "description": "Gets viewer stats for given broadcast",
             "parameters": [
@@ -418,10 +419,10 @@
                     "optional": true,
                     "description": "Optional: The steamid of the broadcast whose details you are requesting."
                 }
-            ],
-            "_type": "protobufs"
+            ]
         },
         "GetBuildClipStatus": {
+            "_type": "protobufs",
             "version": 1,
             "description": "Start building a broadcast clip",
             "parameters": [
@@ -437,10 +438,10 @@
                     "optional": true,
                     "description": ""
                 }
-            ],
-            "_type": "protobufs"
+            ]
         },
         "GetClipDetails": {
+            "_type": "protobufs",
             "version": 1,
             "description": "Get details for Broadcast Clips",
             "parameters": [
@@ -456,10 +457,10 @@
                     "optional": true,
                     "description": "List of clip IDs we want details for"
                 }
-            ],
-            "_type": "protobufs"
+            ]
         },
         "GetRTMPInfo": {
+            "_type": "protobufs",
             "version": 1,
             "description": "Gets RTMP broadcast info",
             "parameters": [
@@ -481,10 +482,10 @@
                     "optional": true,
                     "description": "broadcaster steamID if not logged-in user"
                 }
-            ],
-            "_type": "protobufs"
+            ]
         },
         "MuteBroadcastChatUser": {
+            "_type": "protobufs",
             "version": 1,
             "httpmethod": "POST",
             "description": "Mute a user in your broadcast chat",
@@ -513,10 +514,10 @@
                     "optional": true,
                     "description": ""
                 }
-            ],
-            "_type": "protobufs"
+            ]
         },
         "PostChatMessage": {
+            "_type": "protobufs",
             "version": 1,
             "httpmethod": "POST",
             "description": "Post chat message to specified chat room",
@@ -557,10 +558,10 @@
                     "optional": true,
                     "description": "The two letter country code"
                 }
-            ],
-            "_type": "protobufs"
+            ]
         },
         "PostGameDataFrame": {
+            "_type": "publisher_only",
             "version": 1,
             "httpmethod": "POST",
             "description": "Add a game meta data frame to broadcast",
@@ -591,8 +592,7 @@
                     "type": "string",
                     "optional": false
                 }
-            ],
-            "_type": "publisher_only"
+            ]
         },
         "PostGameDataFrameRTMP": {
             "version": 1,
@@ -626,6 +626,7 @@
             ]
         },
         "RemoveUserChatText": {
+            "_type": "protobufs",
             "version": 1,
             "httpmethod": "POST",
             "description": "Tell all viewers to remove user chat text",
@@ -648,10 +649,10 @@
                     "optional": true,
                     "description": ""
                 }
-            ],
-            "_type": "protobufs"
+            ]
         },
         "SetClipDetails": {
+            "_type": "protobufs",
             "version": 1,
             "httpmethod": "POST",
             "description": "Updates a broadcast clip",
@@ -686,10 +687,10 @@
                     "optional": true,
                     "description": ""
                 }
-            ],
-            "_type": "protobufs"
+            ]
         },
         "SetRTMPInfo": {
+            "_type": "protobufs",
             "version": 1,
             "httpmethod": "POST",
             "description": "Sets RTMP broadcast info",
@@ -766,10 +767,10 @@
                     "optional": true,
                     "description": "When true, then only steamwork partner can create chat messages."
                 }
-            ],
-            "_type": "protobufs"
+            ]
         },
         "StartBuildClip": {
+            "_type": "protobufs",
             "version": 1,
             "httpmethod": "POST",
             "description": "Start building a broadcast clip",
@@ -810,10 +811,10 @@
                     "optional": true,
                     "description": ""
                 }
-            ],
-            "_type": "protobufs"
+            ]
         },
         "UpdateChatMessageFlair": {
+            "_type": "protobufs",
             "version": 1,
             "httpmethod": "POST",
             "description": "Update chat message flair in the specified chat room",
@@ -836,8 +837,7 @@
                     "optional": true,
                     "description": ""
                 }
-            ],
-            "_type": "protobufs"
+            ]
         }
     },
     "ICSGOPlayers_730": {
@@ -866,11 +866,12 @@
             ]
         },
         "GetPlayerProfile": {
+            "_type": "undocumented",
             "version": 1,
-            "parameters": [],
-            "_type": "undocumented"
+            "parameters": []
         },
         "GetPlayerProfileCoin": {
+            "_type": "publisher_only",
             "version": 1,
             "httpmethod": "GET",
             "parameters": [
@@ -886,8 +887,7 @@
                     "optional": false,
                     "description": "The coin"
                 }
-            ],
-            "_type": "publisher_only"
+            ]
         }
     },
     "ICSGOServers_730": {
@@ -923,21 +923,21 @@
     },
     "ICSGOStreamSystem_730": {
         "GetMatchScoreboard": {
+            "_type": "undocumented",
             "version": 1,
-            "parameters": [],
-            "_type": "undocumented"
+            "parameters": []
         },
         "ListOfUsersSpectating": {
+            "_type": "undocumented",
             "version": 1,
-            "parameters": [],
-            "_type": "undocumented"
+            "parameters": []
         }
     },
     "ICSGOTournaments_730": {
         "ClaimBadgeReward": {
+            "_type": "undocumented",
             "version": 1,
-            "parameters": [],
-            "_type": "undocumented"
+            "parameters": []
         },
         "GetTournamentFantasyLineup": {
             "version": 1,
@@ -1170,6 +1170,7 @@
     },
     "IChatRoomService": {
         "AppAddUsersToGroup": {
+            "_type": "publisher_only",
             "version": 1,
             "httpmethod": "POST",
             "description": "App invite player(s) to a chat room that it controls, or just extend invite(s)",
@@ -1200,10 +1201,10 @@
                     "type": "bool",
                     "optional": false
                 }
-            ],
-            "_type": "publisher_only"
+            ]
         },
         "AppPostSystemMessageToGroup": {
+            "_type": "publisher_only",
             "version": 1,
             "httpmethod": "POST",
             "description": "App invite a player to a chat room that it controls, or just extend an invite",
@@ -1239,10 +1240,10 @@
                     "type": "{message}",
                     "optional": false
                 }
-            ],
-            "_type": "publisher_only"
+            ]
         },
         "AppRemoveUsersFromGroup": {
+            "_type": "publisher_only",
             "version": 1,
             "httpmethod": "POST",
             "description": "App remove player(s) from a chat room that it controls",
@@ -1283,10 +1284,10 @@
                     "type": "bool",
                     "optional": false
                 }
-            ],
-            "_type": "publisher_only"
+            ]
         },
         "CreateAppChatRoomGroup": {
+            "_type": "publisher_only",
             "version": 1,
             "httpmethod": "POST",
             "description": "App creating a chat room and inviting players to it",
@@ -1317,10 +1318,10 @@
                     "type": "uint32",
                     "optional": false
                 }
-            ],
-            "_type": "publisher_only"
+            ]
         },
         "SetAppChatRoomConfig": {
+            "_type": "publisher_only",
             "version": 1,
             "httpmethod": "POST",
             "description": "Update the display and rules properties for an app-created chat room",
@@ -1356,12 +1357,12 @@
                     "type": "bool",
                     "optional": false
                 }
-            ],
-            "_type": "publisher_only"
+            ]
         }
     },
     "ICheatReportingService": {
         "EndSecureMultiplayerSession": {
+            "_type": "publisher_only",
             "version": 1,
             "httpmethod": "POST",
             "description": "Tell the VAC servers that a secure multiplayer session has ended.",
@@ -1390,10 +1391,10 @@
                     "optional": false,
                     "description": "session id"
                 }
-            ],
-            "_type": "publisher_only"
+            ]
         },
         "GetCheatingReports": {
+            "_type": "publisher_only",
             "version": 1,
             "httpmethod": "GET",
             "description": "Get a list of cheating reports submitted for this app",
@@ -1446,10 +1447,10 @@
                     "optional": true,
                     "description": "Query just for this steamid."
                 }
-            ],
-            "_type": "publisher_only"
+            ]
         },
         "RemovePlayerGameBan": {
+            "_type": "publisher_only",
             "version": 1,
             "httpmethod": "POST",
             "description": "Remove a ban on a player",
@@ -1472,8 +1473,7 @@
                     "optional": false,
                     "description": "The appid."
                 }
-            ],
-            "_type": "publisher_only"
+            ]
         },
         "ReportCheatData": {
             "version": 1,
@@ -1567,6 +1567,7 @@
             ]
         },
         "ReportPlayerCheating": {
+            "_type": "publisher_only",
             "version": 1,
             "httpmethod": "POST",
             "description": "Reports a player cheating",
@@ -1661,10 +1662,10 @@
                     "optional": true,
                     "description": "App specific data about the cheating."
                 }
-            ],
-            "_type": "publisher_only"
+            ]
         },
         "RequestPlayerGameBan": {
+            "_type": "publisher_only",
             "version": 1,
             "httpmethod": "POST",
             "description": "Requests a ban on a player",
@@ -1723,10 +1724,10 @@
                     "optional": false,
                     "description": "The ban will be recorded but not be visible or deny access to secure servers."
                 }
-            ],
-            "_type": "publisher_only"
+            ]
         },
         "RequestVacStatusForUser": {
+            "_type": "publisher_only",
             "version": 1,
             "httpmethod": "POST",
             "description": "Checks a user's VAC session status. If verification fails, then do not let the user matchmake into a secure game.",
@@ -1755,10 +1756,10 @@
                     "optional": false,
                     "description": "session id"
                 }
-            ],
-            "_type": "publisher_only"
+            ]
         },
         "StartSecureMultiplayerSession": {
+            "_type": "publisher_only",
             "version": 1,
             "httpmethod": "POST",
             "description": "Tell the VAC servers that a secure multiplayer session has started",
@@ -1781,12 +1782,12 @@
                     "optional": false,
                     "description": "The appid the user is playing."
                 }
-            ],
-            "_type": "publisher_only"
+            ]
         }
     },
     "IClanFAQSService": {
         "CheckFAQPermissions": {
+            "_type": "protobufs",
             "version": 1,
             "httpmethod": "POST",
             "parameters": [
@@ -1796,10 +1797,10 @@
                     "optional": false,
                     "description": "Access key"
                 }
-            ],
-            "_type": "protobufs"
+            ]
         },
         "Create": {
+            "_type": "protobufs",
             "version": 1,
             "httpmethod": "POST",
             "parameters": [
@@ -1827,10 +1828,10 @@
                     "optional": true,
                     "description": ""
                 }
-            ],
-            "_type": "protobufs"
+            ]
         },
         "Delete": {
+            "_type": "protobufs",
             "version": 1,
             "httpmethod": "POST",
             "parameters": [
@@ -1852,10 +1853,10 @@
                     "optional": true,
                     "description": ""
                 }
-            ],
-            "_type": "protobufs"
+            ]
         },
         "GetAllDrafts": {
+            "_type": "protobufs",
             "version": 1,
             "httpmethod": "POST",
             "parameters": [
@@ -1877,10 +1878,10 @@
                     "optional": true,
                     "description": ""
                 }
-            ],
-            "_type": "protobufs"
+            ]
         },
         "GetAllFAQsForClan": {
+            "_type": "protobufs",
             "version": 1,
             "httpmethod": "POST",
             "parameters": [
@@ -1890,10 +1891,10 @@
                     "optional": false,
                     "description": "Access key"
                 }
-            ],
-            "_type": "protobufs"
+            ]
         },
         "GetAllLatestVersionPublishedFAQS": {
+            "_type": "protobufs",
             "version": 1,
             "httpmethod": "POST",
             "parameters": [
@@ -1903,10 +1904,10 @@
                     "optional": false,
                     "description": "Access key"
                 }
-            ],
-            "_type": "protobufs"
+            ]
         },
         "GetFAQ": {
+            "_type": "protobufs",
             "version": 1,
             "parameters": [
                 {
@@ -1915,10 +1916,10 @@
                     "optional": false,
                     "description": "Access key"
                 }
-            ],
-            "_type": "protobufs"
+            ]
         },
         "GetFAQVersion": {
+            "_type": "protobufs",
             "version": 1,
             "httpmethod": "POST",
             "parameters": [
@@ -1952,10 +1953,10 @@
                     "optional": true,
                     "description": ""
                 }
-            ],
-            "_type": "protobufs"
+            ]
         },
         "PreviewDraft": {
+            "_type": "protobufs",
             "version": 1,
             "httpmethod": "POST",
             "parameters": [
@@ -1965,10 +1966,10 @@
                     "optional": false,
                     "description": "Access key"
                 }
-            ],
-            "_type": "protobufs"
+            ]
         },
         "PublishDraft": {
+            "_type": "protobufs",
             "version": 1,
             "httpmethod": "POST",
             "parameters": [
@@ -1996,10 +1997,10 @@
                     "optional": true,
                     "description": ""
                 }
-            ],
-            "_type": "protobufs"
+            ]
         },
         "SearchFAQs": {
+            "_type": "protobufs",
             "version": 1,
             "parameters": [
                 {
@@ -2008,10 +2009,10 @@
                     "optional": false,
                     "description": "Access key"
                 }
-            ],
-            "_type": "protobufs"
+            ]
         },
         "SetVisibility": {
+            "_type": "protobufs",
             "version": 1,
             "httpmethod": "POST",
             "parameters": [
@@ -2045,10 +2046,10 @@
                     "optional": true,
                     "description": ""
                 }
-            ],
-            "_type": "protobufs"
+            ]
         },
         "UpdateDraft": {
+            "_type": "protobufs",
             "version": 1,
             "httpmethod": "POST",
             "parameters": [
@@ -2088,10 +2089,10 @@
                     "optional": true,
                     "description": ""
                 }
-            ],
-            "_type": "protobufs"
+            ]
         },
         "UpdateInternalName": {
+            "_type": "protobufs",
             "version": 1,
             "httpmethod": "POST",
             "parameters": [
@@ -2119,10 +2120,10 @@
                     "optional": true,
                     "description": ""
                 }
-            ],
-            "_type": "protobufs"
+            ]
         },
         "UpdateJsonData": {
+            "_type": "protobufs",
             "version": 1,
             "httpmethod": "POST",
             "parameters": [
@@ -2150,17 +2151,17 @@
                     "optional": true,
                     "description": ""
                 }
-            ],
-            "_type": "protobufs"
+            ]
         }
     },
     "IClanService": {
         "GetAdjacentPartnerEvents": {
+            "_type": "undocumented",
             "version": 1,
-            "parameters": [],
-            "_type": "undocumented"
+            "parameters": []
         },
         "GetPartnerEventsByBuildIDRange": {
+            "_type": "protobufs",
             "version": 1,
             "parameters": [
                 {
@@ -2169,12 +2170,12 @@
                     "optional": false,
                     "description": "Access key"
                 }
-            ],
-            "_type": "protobufs"
+            ]
         }
     },
     "IClientMetricsService": {
         "ReportClientError": {
+            "_type": "protobufs",
             "version": 1,
             "httpmethod": "POST",
             "parameters": [
@@ -2202,12 +2203,12 @@
                     "optional": true,
                     "description": ""
                 }
-            ],
-            "_type": "protobufs"
+            ]
         }
     },
     "IClientStats_1046930": {
         "ReportEvent": {
+            "_type": "undocumented",
             "version": 1,
             "httpmethod": "POST",
             "parameters": []
@@ -2215,6 +2216,7 @@
     },
     "ICloudService": {
         "BeginAppUploadBatch": {
+            "_type": "protobufs",
             "version": 1,
             "httpmethod": "POST",
             "description": "Indicate a batch of files that will be uploaded / deleted for an app.",
@@ -2261,10 +2263,10 @@
                     "optional": true,
                     "description": "Current local build of the app which made these changes"
                 }
-            ],
-            "_type": "protobufs"
+            ]
         },
         "BeginHTTPUpload": {
+            "_type": "protobufs",
             "version": 1,
             "httpmethod": "POST",
             "description": "Begins the process of uploading a file to Steam external storage services. File should be uploaded via HTTP PUT to the returned URL, after which the upload must be finalized by a call to CommitHTTPUpload.",
@@ -2329,10 +2331,10 @@
                     "optional": true,
                     "description": "ID of this batch returned by prior BeginAppUploadBatch call."
                 }
-            ],
-            "_type": "protobufs"
+            ]
         },
         "BeginUGCUpload": {
+            "_type": "protobufs",
             "version": 1,
             "httpmethod": "POST",
             "description": "Begins the process of uploading a file to Steam external storage services. File should be uploaded via HTTP PUT to the returned URL, after which the upload must be finalized by a call to CommitHTTPUpload.",
@@ -2373,10 +2375,10 @@
                     "optional": true,
                     "description": "MIME content type of the file"
                 }
-            ],
-            "_type": "protobufs"
+            ]
         },
         "CommitHTTPUpload": {
+            "_type": "protobufs",
             "version": 1,
             "httpmethod": "POST",
             "description": "Commits a file upload initiated by BeginHTTPUpload and transferred via HTTP PUT.",
@@ -2411,10 +2413,10 @@
                     "optional": true,
                     "description": "Filename as specified in the Cloud.BeginHTTPUpload request."
                 }
-            ],
-            "_type": "protobufs"
+            ]
         },
         "CommitUGCUpload": {
+            "_type": "protobufs",
             "version": 1,
             "httpmethod": "POST",
             "description": "Commits a file upload initiated by BeginUGCUpload and transferred via HTTP PUT.",
@@ -2443,10 +2445,10 @@
                     "optional": true,
                     "description": "UGC ID of the uploaded file."
                 }
-            ],
-            "_type": "protobufs"
+            ]
         },
         "CompleteAppUploadBatch": {
+            "_type": "protobufs",
             "version": 1,
             "httpmethod": "POST",
             "description": "Indicate that the batch is complete or being stopped for some other reason.",
@@ -2475,10 +2477,10 @@
                     "optional": true,
                     "description": "result of this batch."
                 }
-            ],
-            "_type": "protobufs"
+            ]
         },
         "CompleteAppUploadBatchBlocking": {
+            "_type": "protobufs",
             "version": 1,
             "httpmethod": "POST",
             "description": "Indicate that the batch is complete or being stopped for some other reason.",
@@ -2507,10 +2509,10 @@
                     "optional": true,
                     "description": "result of this batch."
                 }
-            ],
-            "_type": "protobufs"
+            ]
         },
         "Delete": {
+            "_type": "protobufs",
             "version": 1,
             "httpmethod": "POST",
             "description": "Deletes a file from the user's cloud.",
@@ -2539,10 +2541,10 @@
                     "optional": true,
                     "description": "ID of this batch returned by prior BeginAppUploadBatch call."
                 }
-            ],
-            "_type": "protobufs"
+            ]
         },
         "EnumerateUserFiles": {
+            "_type": "protobufs",
             "version": 1,
             "description": "Enumerates Cloud files for a user of a given app ID. Returns up to 500 files at a time.",
             "parameters": [
@@ -2576,10 +2578,10 @@
                     "optional": true,
                     "description": "Starting index to begin enumeration at. Defaults to the beginning of the list."
                 }
-            ],
-            "_type": "protobufs"
+            ]
         },
         "GetFileDetails": {
+            "_type": "protobufs",
             "version": 1,
             "description": "Returns details on a Cloud file.",
             "parameters": [
@@ -2601,10 +2603,10 @@
                     "optional": true,
                     "description": "App ID the file belongs to."
                 }
-            ],
-            "_type": "protobufs"
+            ]
         },
         "GetUploadServerInfo": {
+            "_type": "protobufs",
             "version": 1,
             "description": "Returns the URL of the proper cloud server for a user.",
             "parameters": [
@@ -2620,12 +2622,12 @@
                     "optional": true,
                     "description": "App ID to which a file will be uploaded to."
                 }
-            ],
-            "_type": "protobufs"
+            ]
         }
     },
     "ICommunityService": {
         "GetApps": {
+            "_type": "protobufs",
             "version": 1,
             "parameters": [
                 {
@@ -2646,10 +2648,10 @@
                     "optional": true,
                     "description": ""
                 }
-            ],
-            "_type": "protobufs"
+            ]
         },
         "GetAvatarHistory": {
+            "_type": "protobufs",
             "version": 1,
             "httpmethod": "POST",
             "parameters": [
@@ -2671,10 +2673,10 @@
                     "optional": true,
                     "description": ""
                 }
-            ],
-            "_type": "protobufs"
+            ]
         },
         "GetBestEventsForUser": {
+            "_type": "protobufs",
             "version": 1,
             "parameters": [
                 {
@@ -2695,15 +2697,15 @@
                     "optional": true,
                     "description": ""
                 }
-            ],
-            "_type": "protobufs"
+            ]
         },
         "GetClanAnnouncements": {
+            "_type": "undocumented",
             "version": 1,
-            "parameters": [],
-            "_type": "undocumented"
+            "parameters": []
         },
         "GetUserPartnerEventNews": {
+            "_type": "protobufs",
             "version": 1,
             "parameters": [
                 {
@@ -2772,12 +2774,12 @@
                     "optional": true,
                     "description": ""
                 }
-            ],
-            "_type": "protobufs"
+            ]
         }
     },
     "IContentFilteringService": {
         "FilterStrings": {
+            "_type": "publisher_only",
             "version": 1,
             "httpmethod": "GET",
             "description": "Filter a list of strings in the requested language with rules that match the client.",
@@ -2824,8 +2826,7 @@
                     "optional": false,
                     "description": "The SteamID of the person viewing the text"
                 }
-            ],
-            "_type": "publisher_only"
+            ]
         }
     },
     "IContentServerConfigService": {
@@ -3030,6 +3031,7 @@
     },
     "ICredentialsService": {
         "SteamGuardPhishingReport": {
+            "_type": "protobufs",
             "version": 1,
             "httpmethod": "POST",
             "description": "SteamGuardPhishingReport",
@@ -3052,10 +3054,10 @@
                     "optional": true,
                     "description": ""
                 }
-            ],
-            "_type": "protobufs"
+            ]
         },
         "ValidateEmailAddress": {
+            "_type": "protobufs",
             "version": 1,
             "httpmethod": "POST",
             "description": "Validate an email address given a token",
@@ -3072,115 +3074,115 @@
                     "optional": true,
                     "description": ""
                 }
-            ],
-            "_type": "protobufs"
+            ]
         }
     },
     "IDOTA2AutomatedTourney_570": {
         "GetParticipationDetails": {
+            "_type": "undocumented",
             "version": 1,
-            "parameters": [],
-            "_type": "undocumented"
+            "parameters": []
         },
         "GetPlayerHistory": {
+            "_type": "undocumented",
             "version": 1,
-            "parameters": [],
-            "_type": "undocumented"
+            "parameters": []
         },
         "GetTournamentDetails": {
+            "_type": "undocumented",
             "version": 1,
-            "parameters": [],
-            "_type": "undocumented"
+            "parameters": []
         }
     },
     "IDOTA2CustomGames_570": {
         "GetGamePlayerCounts": {
+            "_type": "undocumented",
             "version": 1,
-            "parameters": [],
-            "_type": "undocumented"
+            "parameters": []
         },
         "GetPopularGames": {
+            "_type": "undocumented",
             "version": 1,
-            "parameters": [],
-            "_type": "undocumented"
+            "parameters": []
         },
         "GetSuggestedGames": {
+            "_type": "undocumented",
             "version": 1,
-            "parameters": [],
-            "_type": "undocumented"
+            "parameters": []
         },
         "GetWhitelist": {
+            "_type": "undocumented",
             "version": 1,
-            "parameters": [],
-            "_type": "undocumented"
+            "parameters": []
         },
         "GetWorkshopVoteQueue": {
+            "_type": "undocumented",
             "version": 1,
-            "parameters": [],
-            "_type": "undocumented"
+            "parameters": []
         }
     },
     "IDOTA2Events_570": {
         "GetArcanaVotes": {
+            "_type": "undocumented",
             "version": 1,
-            "parameters": [],
-            "_type": "undocumented"
+            "parameters": []
         },
         "GetCurrentTriviaQuestions": {
+            "_type": "undocumented",
             "version": 1,
-            "parameters": [],
-            "_type": "undocumented"
+            "parameters": []
         },
         "GetDraftTriviaMatchInfo": {
+            "_type": "undocumented",
             "version": 1,
-            "parameters": [],
-            "_type": "undocumented"
+            "parameters": []
         },
         "GetDraftTriviaVoteCount": {
+            "_type": "undocumented",
             "version": 1,
-            "parameters": [],
-            "_type": "undocumented"
+            "parameters": []
         },
         "GetMutations": {
+            "_type": "undocumented",
             "version": 1,
-            "parameters": [],
-            "_type": "undocumented"
+            "parameters": []
         },
         "GetTriviaQuestionAnswersSummary": {
+            "_type": "undocumented",
             "version": 1,
-            "parameters": [],
-            "_type": "undocumented"
+            "parameters": []
         }
     },
     "IDOTA2Fantasy_570": {
         "GetFantasyPlayerRawStats": {
+            "_type": "undocumented",
             "version": 1,
-            "parameters": [],
-            "_type": "undocumented"
+            "parameters": []
         },
         "GetPlayerInfo": {
+            "_type": "undocumented",
             "version": 1,
-            "parameters": [],
-            "_type": "undocumented"
+            "parameters": []
         },
         "GetPlayerInfos": {
+            "_type": "undocumented",
             "version": 1,
-            "parameters": [],
-            "_type": "undocumented"
+            "parameters": []
         },
         "GetProPlayerInfo": {
+            "_type": "undocumented",
             "version": 1,
-            "parameters": [],
-            "_type": "undocumented"
+            "parameters": []
         }
     },
     "IDOTA2Fantasy_205790": {
         "GetFantasyPlayerRawStats": {
+            "_type": "undocumented",
             "version": 1,
-            "parameters": [],
-            "_type": "undocumented"
+            "parameters": []
         },
         "GetFantasyPlayerStats": {
+            "_type": "undocumented",
             "version": 1,
             "httpmethod": "GET",
             "parameters": [
@@ -3223,6 +3225,7 @@
             ]
         },
         "GetPlayerOfficialInfo": {
+            "_type": "undocumented",
             "version": 1,
             "httpmethod": "GET",
             "parameters": [
@@ -3235,6 +3238,7 @@
             ]
         },
         "GetProPlayerList": {
+            "_type": "undocumented",
             "version": 1,
             "httpmethod": "GET",
             "parameters": []
@@ -3242,71 +3246,71 @@
     },
     "IDOTA2Guild_570": {
         "FindGuildByTag": {
+            "_type": "undocumented",
             "version": 1,
-            "parameters": [],
-            "_type": "undocumented"
+            "parameters": []
         },
         "GetGuildPersonaInfo": {
+            "_type": "undocumented",
             "version": 1,
-            "parameters": [],
-            "_type": "undocumented"
+            "parameters": []
         },
         "GetGuildSummary": {
+            "_type": "undocumented",
             "version": 1,
-            "parameters": [],
-            "_type": "undocumented"
+            "parameters": []
         },
         "SearchForOpenGuilds": {
+            "_type": "undocumented",
             "version": 1,
-            "parameters": [],
-            "_type": "undocumented"
+            "parameters": []
         }
     },
     "IDOTA2League_570": {
         "GetLeagueData": {
+            "_type": "undocumented",
             "version": 1,
-            "parameters": [],
-            "_type": "undocumented"
+            "parameters": []
         },
         "GetLeagueInfoList": {
+            "_type": "undocumented",
             "version": 1,
-            "parameters": [],
-            "_type": "undocumented"
+            "parameters": []
         },
         "GetLeagueNodeResults": {
+            "_type": "undocumented",
             "version": 1,
-            "parameters": [],
-            "_type": "undocumented"
+            "parameters": []
         },
         "GetLeaguesData": {
+            "_type": "undocumented",
             "version": 1,
-            "parameters": [],
-            "_type": "undocumented"
+            "parameters": []
         },
         "GetLiveGames": {
+            "_type": "undocumented",
             "version": 1,
-            "parameters": [],
-            "_type": "undocumented"
+            "parameters": []
         },
         "GetMessages": {
+            "_type": "undocumented",
             "version": 1,
-            "parameters": [],
-            "_type": "undocumented"
+            "parameters": []
         },
         "GetPredictionResults": {
+            "_type": "undocumented",
             "version": 1,
-            "parameters": [],
-            "_type": "undocumented"
+            "parameters": []
         },
         "GetPredictions": {
+            "_type": "undocumented",
             "version": 1,
-            "parameters": [],
-            "_type": "undocumented"
+            "parameters": []
         },
         "GetPrizePool": {
+            "_type": "undocumented",
             "version": 1,
-            "parameters": [],
-            "_type": "undocumented"
+            "parameters": []
         }
     },
     "IDOTA2MatchStats_570": {
@@ -3325,6 +3329,7 @@
     },
     "IDOTA2MatchStats_205790": {
         "GetRealtimeStats": {
+            "_type": "undocumented",
             "version": 1,
             "httpmethod": "GET",
             "parameters": [
@@ -3557,11 +3562,13 @@
     },
     "IDOTA2Match_205790": {
         "GetLeagueListing": {
+            "_type": "undocumented",
             "version": 1,
             "httpmethod": "GET",
             "parameters": []
         },
         "GetLiveLeagueGames": {
+            "_type": "undocumented",
             "version": 1,
             "httpmethod": "GET",
             "parameters": [
@@ -3580,6 +3587,7 @@
             ]
         },
         "GetMatchDetails": {
+            "_type": "undocumented",
             "version": 1,
             "httpmethod": "GET",
             "parameters": [
@@ -3592,6 +3600,7 @@
             ]
         },
         "GetMatchHistory": {
+            "_type": "undocumented",
             "version": 1,
             "httpmethod": "GET",
             "parameters": [
@@ -3646,6 +3655,7 @@
             ]
         },
         "GetMatchHistoryBySequenceNum": {
+            "_type": "undocumented",
             "version": 1,
             "httpmethod": "GET",
             "parameters": [
@@ -3664,11 +3674,12 @@
             ]
         },
         "GetMatchMVPVotes": {
+            "_type": "undocumented",
             "version": 1,
-            "parameters": [],
-            "_type": "undocumented"
+            "parameters": []
         },
         "GetTeamInfoByTeamID": {
+            "_type": "undocumented",
             "version": 1,
             "httpmethod": "GET",
             "parameters": [
@@ -3687,6 +3698,7 @@
             ]
         },
         "GetTopLiveEventGame": {
+            "_type": "undocumented",
             "version": 1,
             "httpmethod": "GET",
             "parameters": [
@@ -3699,6 +3711,7 @@
             ]
         },
         "GetTopLiveGame": {
+            "_type": "undocumented",
             "version": 1,
             "httpmethod": "GET",
             "parameters": [
@@ -3711,6 +3724,7 @@
             ]
         },
         "GetTopWeekendTourneyGames": {
+            "_type": "undocumented",
             "version": 1,
             "httpmethod": "GET",
             "parameters": [
@@ -3729,6 +3743,7 @@
             ]
         },
         "GetTournamentPlayerStats": {
+            "_type": "undocumented",
             "version": 2,
             "httpmethod": "GET",
             "parameters": [
@@ -3773,26 +3788,26 @@
     },
     "IDOTA2Operations_570": {
         "GetBannedWordList": {
+            "_type": "undocumented",
             "version": 2,
-            "parameters": [],
-            "_type": "undocumented"
+            "parameters": []
         }
     },
     "IDOTA2Plus_570": {
         "GetPlusHeroAllyAndEnemyData": {
+            "_type": "undocumented",
             "version": 1,
-            "parameters": [],
-            "_type": "undocumented"
+            "parameters": []
         },
         "GetPlusHeroTimedStats": {
+            "_type": "undocumented",
             "version": 1,
-            "parameters": [],
-            "_type": "undocumented"
+            "parameters": []
         },
         "GetPlusStatsData": {
+            "_type": "undocumented",
             "version": 1,
-            "parameters": [],
-            "_type": "undocumented"
+            "parameters": []
         }
     },
     "IDOTA2StreamSystem_570": {
@@ -3815,13 +3830,14 @@
             ]
         },
         "ListOfUsersSpectating": {
+            "_type": "undocumented",
             "version": 1,
-            "parameters": [],
-            "_type": "undocumented"
+            "parameters": []
         }
     },
     "IDOTA2StreamSystem_205790": {
         "GetBroadcasterInfo": {
+            "_type": "undocumented",
             "version": 1,
             "httpmethod": "GET",
             "parameters": [
@@ -3842,24 +3858,24 @@
     },
     "IDOTA2Teams_570": {
         "GetFanContentStatus": {
+            "_type": "undocumented",
             "version": 1,
-            "parameters": [],
-            "_type": "undocumented"
+            "parameters": []
         },
         "GetPlayerInfo": {
+            "_type": "undocumented",
             "version": 1,
-            "parameters": [],
-            "_type": "undocumented"
+            "parameters": []
         },
         "GetSingleTeamInfo": {
+            "_type": "undocumented",
             "version": 1,
-            "parameters": [],
-            "_type": "undocumented"
+            "parameters": []
         },
         "GetTeamInfos": {
+            "_type": "undocumented",
             "version": 1,
-            "parameters": [],
-            "_type": "undocumented"
+            "parameters": []
         }
     },
     "IDOTA2Ticket_570": {
@@ -3914,6 +3930,7 @@
     },
     "IDOTA2Ticket_205790": {
         "ClaimBadgeReward": {
+            "_type": "undocumented",
             "version": 1,
             "httpmethod": "GET",
             "parameters": [
@@ -3944,6 +3961,7 @@
             ]
         },
         "GetSteamIDForBadgeID": {
+            "_type": "undocumented",
             "version": 1,
             "httpmethod": "GET",
             "parameters": [
@@ -3956,6 +3974,7 @@
             ]
         },
         "SetSteamAccountPurchased": {
+            "_type": "undocumented",
             "version": 1,
             "httpmethod": "POST",
             "parameters": [
@@ -3974,6 +3993,7 @@
             ]
         },
         "SteamAccountValidForBadgeType": {
+            "_type": "undocumented",
             "version": 1,
             "httpmethod": "GET",
             "parameters": [
@@ -4006,9 +4026,9 @@
     },
     "IDOTAChat_570": {
         "GetChannelMembers": {
+            "_type": "undocumented",
             "version": 1,
-            "parameters": [],
-            "_type": "undocumented"
+            "parameters": []
         }
     },
     "IEconDOTA2_570": {
@@ -4117,6 +4137,7 @@
     },
     "IEconDOTA2_205790": {
         "GetEventStatsForAccount": {
+            "_type": "undocumented",
             "version": 1,
             "httpmethod": "GET",
             "parameters": [
@@ -4141,6 +4162,7 @@
             ]
         },
         "GetGameItems": {
+            "_type": "undocumented",
             "version": 1,
             "httpmethod": "GET",
             "parameters": [
@@ -4153,6 +4175,7 @@
             ]
         },
         "GetHeroes": {
+            "_type": "undocumented",
             "version": 1,
             "httpmethod": "GET",
             "parameters": [
@@ -4171,6 +4194,7 @@
             ]
         },
         "GetItemIconPath": {
+            "_type": "undocumented",
             "version": 1,
             "httpmethod": "GET",
             "parameters": [
@@ -4189,6 +4213,7 @@
             ]
         },
         "GetRarities": {
+            "_type": "undocumented",
             "version": 1,
             "httpmethod": "GET",
             "parameters": [
@@ -4201,6 +4226,7 @@
             ]
         },
         "GetTournamentPrizePool": {
+            "_type": "undocumented",
             "version": 1,
             "httpmethod": "GET",
             "parameters": [
@@ -4215,6 +4241,7 @@
     },
     "IEconItems_440": {
         "GetPlayerItems": {
+            "_type": "undocumented",
             "version": 1,
             "httpmethod": "GET",
             "parameters": [
@@ -4227,6 +4254,7 @@
             ]
         },
         "GetSchema": {
+            "_type": "undocumented",
             "version": 1,
             "httpmethod": "GET",
             "parameters": [
@@ -4239,6 +4267,7 @@
             ]
         },
         "GetSchemaItems": {
+            "_type": "undocumented",
             "version": 1,
             "httpmethod": "GET",
             "parameters": [
@@ -4257,6 +4286,7 @@
             ]
         },
         "GetSchemaOverview": {
+            "_type": "undocumented",
             "version": 1,
             "httpmethod": "GET",
             "parameters": [
@@ -4269,11 +4299,13 @@
             ]
         },
         "GetSchemaURL": {
+            "_type": "undocumented",
             "version": 1,
             "httpmethod": "GET",
             "parameters": []
         },
         "GetStoreMetaData": {
+            "_type": "undocumented",
             "version": 1,
             "httpmethod": "GET",
             "parameters": [
@@ -4286,6 +4318,7 @@
             ]
         },
         "GetStoreStatus": {
+            "_type": "undocumented",
             "version": 1,
             "httpmethod": "GET",
             "parameters": []
@@ -4323,10 +4356,10 @@
             ]
         },
         "GetSchemaURL": {
+            "_type": "undocumented",
             "version": 1,
             "httpmethod": "GET",
-            "parameters": [],
-            "_type": "undocumented"
+            "parameters": []
         },
         "GetStoreMetaData": {
             "version": 1,
@@ -4412,6 +4445,7 @@
     },
     "IEconItems_205790": {
         "GetEquippedPlayerItems": {
+            "_type": "undocumented",
             "version": 1,
             "httpmethod": "GET",
             "parameters": [
@@ -4430,6 +4464,7 @@
             ]
         },
         "GetPlayerItems": {
+            "_type": "undocumented",
             "version": 1,
             "httpmethod": "GET",
             "parameters": [
@@ -4442,11 +4477,13 @@
             ]
         },
         "GetSchemaURL": {
+            "_type": "undocumented",
             "version": 1,
             "httpmethod": "GET",
             "parameters": []
         },
         "GetStoreMetaData": {
+            "_type": "undocumented",
             "version": 1,
             "httpmethod": "GET",
             "parameters": [
@@ -4461,6 +4498,7 @@
     },
     "IEconItems_221540": {
         "GetPlayerItems": {
+            "_type": "undocumented",
             "version": 1,
             "httpmethod": "GET",
             "parameters": [
@@ -4509,6 +4547,7 @@
     },
     "IEconItems_1046930": {
         "GetPlayerItems": {
+            "_type": "undocumented",
             "version": 1,
             "httpmethod": "GET",
             "parameters": [
@@ -4543,6 +4582,7 @@
     },
     "IEconMarketService": {
         "CancelAppListingsForUser": {
+            "_type": "publisher_only",
             "version": 1,
             "httpmethod": "POST",
             "description": "Cancels all of a user's listings for a specific app ID.",
@@ -4577,10 +4617,10 @@
                     "optional": false,
                     "description": "This was in response to a VAC ban?"
                 }
-            ],
-            "_type": "publisher_only"
+            ]
         },
         "GetAssetID": {
+            "_type": "publisher_only",
             "version": 1,
             "httpmethod": "GET",
             "description": "Returns the asset ID of the item sold in a listing",
@@ -4603,10 +4643,10 @@
                     "optional": false,
                     "description": "The identifier of the listing to get information for"
                 }
-            ],
-            "_type": "publisher_only"
+            ]
         },
         "GetMarketEligibility": {
+            "_type": "publisher_only",
             "version": 1,
             "httpmethod": "GET",
             "description": "Checks whether or not an account is allowed to use the market",
@@ -4623,10 +4663,10 @@
                     "optional": false,
                     "description": "The SteamID of the user to check"
                 }
-            ],
-            "_type": "publisher_only"
+            ]
         },
         "GetPopular": {
+            "_type": "publisher_only",
             "version": 1,
             "httpmethod": "GET",
             "description": "Gets the most popular items",
@@ -4667,10 +4707,10 @@
                     "optional": false,
                     "description": "If present, prices returned will be represented in this currency"
                 }
-            ],
-            "_type": "publisher_only"
+            ]
         },
         "LearnItem": {
+            "_type": "publisher_only",
             "version": 1,
             "httpmethod": "POST",
             "description": "Teaches the market about a kind of item that may be listed on the market in the future.",
@@ -4699,8 +4739,7 @@
                     "optional": false,
                     "description": "Asset class property value"
                 }
-            ],
-            "_type": "publisher_only"
+            ]
         }
     },
     "IEconService": {
@@ -4741,6 +4780,7 @@
             ]
         },
         "FlushAssetAppearanceCache": {
+            "_type": "publisher_only",
             "version": 1,
             "httpmethod": "POST",
             "description": "Flushes the display cache for assets.  This will result in calls to GetAssetClassInfo for each asset class the next time it is displayed.",
@@ -4756,10 +4796,10 @@
                     "type": "uint32",
                     "optional": false
                 }
-            ],
-            "_type": "publisher_only"
+            ]
         },
         "FlushContextCache": {
+            "_type": "publisher_only",
             "version": 1,
             "httpmethod": "POST",
             "description": "Flushes the cache of inventory contents. This will result in calls to GetContexts and GetContextContents to get fresh data for each user next time Steam needs their inventory.",
@@ -4775,10 +4815,10 @@
                     "type": "uint32",
                     "optional": false
                 }
-            ],
-            "_type": "publisher_only"
+            ]
         },
         "FlushInventoryCache": {
+            "_type": "publisher_only",
             "version": 1,
             "httpmethod": "POST",
             "description": "Flushes the cache for a user's inventory in a specific app context",
@@ -4807,8 +4847,7 @@
                     "optional": false,
                     "description": "Context to clear cache for."
                 }
-            ],
-            "_type": "publisher_only"
+            ]
         },
         "GetTradeHistory": {
             "version": 1,
@@ -5037,13 +5076,14 @@
     },
     "IEmbeddedClientService": {
         "AuthorizeDevice": {
+            "_type": "undocumented",
             "version": 1,
-            "parameters": [],
-            "_type": "undocumented"
+            "parameters": []
         }
     },
     "IFriendMessagesService": {
         "GetActiveMessageSessions": {
+            "_type": "protobufs",
             "version": 1,
             "description": "Get information about recent offline messages and chats",
             "parameters": [
@@ -5065,10 +5105,10 @@
                     "optional": true,
                     "description": "If non-zero, return only message sessions that have messages since our message cutoff. If zero, we return all active sessions."
                 }
-            ],
-            "_type": "protobufs"
+            ]
         },
         "GetRecentMessages": {
+            "_type": "protobufs",
             "version": 1,
             "description": "Get a log of recent chat messages between two users",
             "parameters": [
@@ -5132,22 +5172,23 @@
                     "optional": true,
                     "description": ""
                 }
-            ],
-            "_type": "protobufs"
+            ]
         },
         "MarkOfflineMessagesRead": {
+            "_type": "undocumented",
             "version": 1,
-            "parameters": [],
-            "_type": "undocumented"
+            "parameters": []
         }
     },
     "IGCVersion_440": {
         "GetClientVersion": {
+            "_type": "undocumented",
             "version": 1,
             "httpmethod": "GET",
             "parameters": []
         },
         "GetServerVersion": {
+            "_type": "undocumented",
             "version": 1,
             "httpmethod": "GET",
             "parameters": []
@@ -5174,11 +5215,13 @@
     },
     "IGCVersion_205790": {
         "GetClientVersion": {
+            "_type": "undocumented",
             "version": 1,
             "httpmethod": "GET",
             "parameters": []
         },
         "GetServerVersion": {
+            "_type": "undocumented",
             "version": 1,
             "httpmethod": "GET",
             "parameters": []
@@ -5198,11 +5241,13 @@
     },
     "IGCVersion_1046930": {
         "GetClientVersion": {
+            "_type": "undocumented",
             "version": 1,
             "httpmethod": "GET",
             "parameters": []
         },
         "GetServerVersion": {
+            "_type": "undocumented",
             "version": 1,
             "httpmethod": "GET",
             "parameters": []
@@ -5222,33 +5267,34 @@
     },
     "IGameCoordinator": {
         "GetMessages": {
+            "_type": "undocumented",
             "version": 1,
-            "parameters": [],
-            "_type": "undocumented"
+            "parameters": []
         },
         "PostMessages": {
+            "_type": "undocumented",
             "version": 1,
-            "parameters": [],
-            "_type": "undocumented"
+            "parameters": []
         }
     },
     "IGameInventory": {
         "GetAssetClassInfo": {
+            "_type": "undocumented",
             "version": 1,
-            "parameters": [],
-            "_type": "undocumented"
+            "parameters": []
         },
         "GetAssetPrices": {
+            "_type": "undocumented",
             "version": 1,
-            "parameters": [],
-            "_type": "undocumented"
+            "parameters": []
         },
         "GetContexts": {
+            "_type": "undocumented",
             "version": 1,
-            "parameters": [],
-            "_type": "undocumented"
+            "parameters": []
         },
         "GetHistoryCommandDetails": {
+            "_type": "publisher_only",
             "version": 1,
             "httpmethod": "GET",
             "parameters": [
@@ -5282,15 +5328,15 @@
                     "optional": false,
                     "description": "The arguments that were provided with the command in the first place"
                 }
-            ],
-            "_type": "publisher_only"
+            ]
         },
         "GetItemDefArchive": {
+            "_type": "undocumented",
             "version": 1,
-            "parameters": [],
-            "_type": "undocumented"
+            "parameters": []
         },
         "GetUserHistory": {
+            "_type": "publisher_only",
             "version": 1,
             "httpmethod": "GET",
             "parameters": [
@@ -5324,10 +5370,10 @@
                     "optional": false,
                     "description": "End time of the history range to collect"
                 }
-            ],
-            "_type": "publisher_only"
+            ]
         },
         "HistoryExecuteCommands": {
+            "_type": "publisher_only",
             "version": 1,
             "httpmethod": "POST",
             "parameters": [
@@ -5355,10 +5401,10 @@
                     "optional": false,
                     "description": "A unique 32 bit ID for the support person executing the command"
                 }
-            ],
-            "_type": "publisher_only"
+            ]
         },
         "SupportGetAssetHistory": {
+            "_type": "publisher_only",
             "version": 1,
             "httpmethod": "GET",
             "parameters": [
@@ -5380,10 +5426,10 @@
                     "optional": false,
                     "description": "The context to fetch history for"
                 }
-            ],
-            "_type": "publisher_only"
+            ]
         },
         "UpdateItemDefs": {
+            "_type": "undocumented",
             "version": 1,
             "httpmethod": "POST",
             "parameters": [
@@ -5405,12 +5451,12 @@
                     "optional": false,
                     "description": "One or more Item Definitions, presented as a JSON array, to be updated or created."
                 }
-            ],
-            "_type": "undocumented"
+            ]
         }
     },
     "IGameNotificationsService": {
         "CreateSession": {
+            "_type": "publisher_only",
             "version": 1,
             "httpmethod": "POST",
             "description": "Creates an async game session",
@@ -5451,10 +5497,10 @@
                     "optional": true,
                     "description": "steamid to make the request on behalf of -- if specified, the user must be in the session and all users being added to the session must be friends with the user."
                 }
-            ],
-            "_type": "publisher_only"
+            ]
         },
         "DeleteSession": {
+            "_type": "publisher_only",
             "version": 1,
             "httpmethod": "POST",
             "description": "Deletes an async game session",
@@ -5483,10 +5529,10 @@
                     "optional": true,
                     "description": "steamid to make the request on behalf of -- if specified, the user must be in the session."
                 }
-            ],
-            "_type": "publisher_only"
+            ]
         },
         "DeleteSessionBatch": {
+            "_type": "publisher_only",
             "version": 1,
             "httpmethod": "POST",
             "description": "Deletes a batch of async game sessions",
@@ -5509,10 +5555,10 @@
                     "optional": false,
                     "description": "The appid of the session to delete."
                 }
-            ],
-            "_type": "publisher_only"
+            ]
         },
         "EnumerateSessionsForApp": {
+            "_type": "publisher_only",
             "version": 1,
             "httpmethod": "GET",
             "description": "Enumerates a user's sessions",
@@ -5553,10 +5599,10 @@
                     "optional": true,
                     "description": "Language to localize the text in."
                 }
-            ],
-            "_type": "publisher_only"
+            ]
         },
         "GetSessionDetailsForApp": {
+            "_type": "publisher_only",
             "version": 1,
             "httpmethod": "GET",
             "description": "Get the details for a specific session",
@@ -5584,10 +5630,10 @@
                     "optional": false,
                     "description": "Language to localize the text in."
                 }
-            ],
-            "_type": "publisher_only"
+            ]
         },
         "RequestNotifications": {
+            "_type": "publisher_only",
             "version": 1,
             "httpmethod": "POST",
             "description": "Requests that a user receive game notifications for an app",
@@ -5610,10 +5656,10 @@
                     "optional": false,
                     "description": "The appid to request notifications for."
                 }
-            ],
-            "_type": "publisher_only"
+            ]
         },
         "UpdateSession": {
+            "_type": "publisher_only",
             "version": 1,
             "httpmethod": "POST",
             "description": "Updates a game session",
@@ -5654,8 +5700,7 @@
                     "optional": true,
                     "description": "steamid to make the request on behalf of -- if specified, the user must be in the session and all users being added to the session must be friends with the user."
                 }
-            ],
-            "_type": "publisher_only"
+            ]
         },
         "UserCreateSession": {
             "version": 1,
@@ -5853,6 +5898,7 @@
             ]
         },
         "GetServerList": {
+            "_type": "protobufs",
             "version": 1,
             "description": "Gets a list of servers given a filter string",
             "parameters": [
@@ -5874,8 +5920,7 @@
                     "optional": true,
                     "description": "The maximum number of servers to return in the response"
                 }
-            ],
-            "_type": "protobufs"
+            ]
         },
         "GetServerSteamIDsByIP": {
             "version": 1,
@@ -5971,6 +6016,7 @@
             ]
         },
         "SetBanStatus": {
+            "_type": "publisher_only",
             "version": 1,
             "httpmethod": "POST",
             "description": "performs a GSLT ban/unban of GSLT associated with a GS. If banning, also bans associated users' GSLTs.",
@@ -6001,8 +6047,7 @@
                     "type": "uint32",
                     "optional": false
                 }
-            ],
-            "_type": "publisher_only"
+            ]
         },
         "SetMemo": {
             "version": 1,
@@ -6032,6 +6077,7 @@
     },
     "IInventoryService": {
         "AddItem": {
+            "_type": "publisher_only",
             "version": 1,
             "httpmethod": "POST",
             "description": "Adds an item to a user's inventory",
@@ -6085,10 +6131,10 @@
                     "optional": true,
                     "description": "If set, treat requestid as a txnid and create this item as a result of user microtransaction purchase."
                 }
-            ],
-            "_type": "publisher_only"
+            ]
         },
         "AddPromoItem": {
+            "_type": "publisher_only",
             "version": 1,
             "httpmethod": "POST",
             "description": "Adds a promo item to a user's inventory",
@@ -6142,8 +6188,7 @@
                     "optional": true,
                     "description": "If set, treat requestid as a txnid and create this item as a result of user microtransaction purchase."
                 }
-            ],
-            "_type": "publisher_only"
+            ]
         },
         "CombineItemStacks": {
             "version": 1,
@@ -6184,6 +6229,7 @@
             ]
         },
         "Consolidate": {
+            "_type": "publisher_only",
             "version": 1,
             "httpmethod": "POST",
             "description": "Consolidate items of the given type within an user's inventory",
@@ -6214,10 +6260,10 @@
                     "type": "bool",
                     "optional": true
                 }
-            ],
-            "_type": "publisher_only"
+            ]
         },
         "ConsolidateAll": {
+            "_type": "publisher_only",
             "version": 1,
             "httpmethod": "POST",
             "description": "Consolidate all items within an user's inventory",
@@ -6243,10 +6289,10 @@
                     "type": "bool",
                     "optional": false
                 }
-            ],
-            "_type": "publisher_only"
+            ]
         },
         "ConsumeItem": {
+            "_type": "protobufs",
             "version": 1,
             "httpmethod": "POST",
             "description": "Consume an item",
@@ -6293,10 +6339,10 @@
                     "optional": true,
                     "description": ""
                 }
-            ],
-            "_type": "protobufs"
+            ]
         },
         "ExchangeItem": {
+            "_type": "publisher_only",
             "version": 1,
             "httpmethod": "POST",
             "description": "Craft an item in a user's inventory",
@@ -6332,10 +6378,10 @@
                     "type": "uint64",
                     "optional": false
                 }
-            ],
-            "_type": "publisher_only"
+            ]
         },
         "GetAddItemHistory": {
+            "_type": "publisher_only",
             "version": 1,
             "httpmethod": "GET",
             "description": "Gets a list of items that have been added to accounts",
@@ -6366,10 +6412,10 @@
                     "type": "uint32",
                     "optional": false
                 }
-            ],
-            "_type": "publisher_only"
+            ]
         },
         "GetInventory": {
+            "_type": "publisher_only",
             "version": 1,
             "httpmethod": "GET",
             "description": "Retrieves a users inventory as a big JSON blob",
@@ -6390,10 +6436,10 @@
                     "type": "uint64",
                     "optional": false
                 }
-            ],
-            "_type": "publisher_only"
+            ]
         },
         "GetItemDefMeta": {
+            "_type": "protobufs",
             "version": 1,
             "description": "Get metadata about the current item definition for this game.",
             "parameters": [
@@ -6409,10 +6455,10 @@
                     "optional": true,
                     "description": ""
                 }
-            ],
-            "_type": "protobufs"
+            ]
         },
         "GetItemDefs": {
+            "_type": "publisher_only",
             "version": 1,
             "httpmethod": "GET",
             "description": "Get item definitions",
@@ -6449,8 +6495,7 @@
                     "optional": true,
                     "description": "Allow stale data to be returned for the specified number of seconds."
                 }
-            ],
-            "_type": "publisher_only"
+            ]
         },
         "GetPriceSheet": {
             "version": 1,
@@ -6477,6 +6522,7 @@
             ]
         },
         "GetQuantity": {
+            "_type": "publisher_only",
             "version": 1,
             "httpmethod": "GET",
             "description": "Get the total number of available items of the given type",
@@ -6507,10 +6553,10 @@
                     "type": "bool",
                     "optional": true
                 }
-            ],
-            "_type": "publisher_only"
+            ]
         },
         "ModifyItems": {
+            "_type": "publisher_only",
             "version": 1,
             "httpmethod": "POST",
             "description": "Modify an item in a user's inventory",
@@ -6541,8 +6587,7 @@
                     "type": "uint32",
                     "optional": false
                 }
-            ],
-            "_type": "publisher_only"
+            ]
         },
         "SplitItemStack": {
             "version": 1,
@@ -6580,6 +6625,7 @@
     },
     "ILobbyMatchmakingService": {
         "CreateLobby": {
+            "_type": "publisher_only",
             "version": 1,
             "httpmethod": "POST",
             "description": "Creates a lobby and sets its related lobby data",
@@ -6620,10 +6666,10 @@
                     "type": "{message}",
                     "optional": false
                 }
-            ],
-            "_type": "publisher_only"
+            ]
         },
         "GetLobbyData": {
+            "_type": "publisher_only",
             "version": 1,
             "httpmethod": "GET",
             "description": "Returns lobby data and member list",
@@ -6644,10 +6690,10 @@
                     "type": "uint64",
                     "optional": false
                 }
-            ],
-            "_type": "publisher_only"
+            ]
         },
         "RemoveUserFromLobby": {
+            "_type": "publisher_only",
             "version": 1,
             "httpmethod": "POST",
             "description": "Removes a user from a lobby",
@@ -6673,12 +6719,12 @@
                     "type": "uint64",
                     "optional": false
                 }
-            ],
-            "_type": "publisher_only"
+            ]
         }
     },
     "ILoyaltyRewardsService": {
         "AddReaction": {
+            "_type": "protobufs",
             "version": 1,
             "httpmethod": "POST",
             "parameters": [
@@ -6706,10 +6752,10 @@
                     "optional": true,
                     "description": ""
                 }
-            ],
-            "_type": "protobufs"
+            ]
         },
         "BatchedQueryRewardItems": {
+            "_type": "protobufs",
             "version": 1,
             "parameters": [
                 {
@@ -6724,10 +6770,10 @@
                     "optional": true,
                     "description": ""
                 }
-            ],
-            "_type": "protobufs"
+            ]
         },
         "GetActivePurchaseBonuses": {
+            "_type": "protobufs",
             "version": 1,
             "parameters": [
                 {
@@ -6736,10 +6782,10 @@
                     "optional": false,
                     "description": "Access key"
                 }
-            ],
-            "_type": "protobufs"
+            ]
         },
         "GetEligibleApps": {
+            "_type": "protobufs",
             "version": 1,
             "parameters": [
                 {
@@ -6748,10 +6794,10 @@
                     "optional": false,
                     "description": "Access key"
                 }
-            ],
-            "_type": "protobufs"
+            ]
         },
         "GetPointsForSpend": {
+            "_type": "protobufs",
             "version": 1,
             "parameters": [
                 {
@@ -6760,10 +6806,10 @@
                     "optional": false,
                     "description": "Access key"
                 }
-            ],
-            "_type": "protobufs"
+            ]
         },
         "GetProfileCustomizationsConfig": {
+            "_type": "protobufs",
             "version": 1,
             "parameters": [
                 {
@@ -6772,10 +6818,10 @@
                     "optional": false,
                     "description": "Access key"
                 }
-            ],
-            "_type": "protobufs"
+            ]
         },
         "GetReactionConfig": {
+            "_type": "protobufs",
             "version": 1,
             "parameters": [
                 {
@@ -6784,10 +6830,10 @@
                     "optional": false,
                     "description": "Access key"
                 }
-            ],
-            "_type": "protobufs"
+            ]
         },
         "GetReactions": {
+            "_type": "protobufs",
             "version": 1,
             "parameters": [
                 {
@@ -6808,10 +6854,10 @@
                     "optional": true,
                     "description": ""
                 }
-            ],
-            "_type": "protobufs"
+            ]
         },
         "GetReactionsSummaryForUser": {
+            "_type": "protobufs",
             "version": 1,
             "parameters": [
                 {
@@ -6820,10 +6866,10 @@
                     "optional": false,
                     "description": "Access key"
                 }
-            ],
-            "_type": "protobufs"
+            ]
         },
         "GetSummary": {
+            "_type": "protobufs",
             "version": 1,
             "parameters": [
                 {
@@ -6838,10 +6884,10 @@
                     "optional": true,
                     "description": ""
                 }
-            ],
-            "_type": "protobufs"
+            ]
         },
         "QueryRewardItems": {
+            "_type": "protobufs",
             "version": 1,
             "parameters": [
                 {
@@ -6958,10 +7004,10 @@
                     "optional": true,
                     "description": ""
                 }
-            ],
-            "_type": "protobufs"
+            ]
         },
         "RedeemPoints": {
+            "_type": "protobufs",
             "version": 1,
             "httpmethod": "POST",
             "parameters": [
@@ -6983,10 +7029,10 @@
                     "optional": true,
                     "description": ""
                 }
-            ],
-            "_type": "protobufs"
+            ]
         },
         "RedeemPointsForBadgeLevel": {
+            "_type": "protobufs",
             "version": 1,
             "httpmethod": "POST",
             "parameters": [
@@ -7008,10 +7054,10 @@
                     "optional": true,
                     "description": ""
                 }
-            ],
-            "_type": "protobufs"
+            ]
         },
         "RedeemPointsForProfileCustomization": {
+            "_type": "protobufs",
             "version": 1,
             "httpmethod": "POST",
             "parameters": [
@@ -7027,10 +7073,10 @@
                     "optional": true,
                     "description": "enum"
                 }
-            ],
-            "_type": "protobufs"
+            ]
         },
         "RedeemPointsForProfileCustomizationUpgrade": {
+            "_type": "protobufs",
             "version": 1,
             "httpmethod": "POST",
             "parameters": [
@@ -7052,10 +7098,10 @@
                     "optional": true,
                     "description": ""
                 }
-            ],
-            "_type": "protobufs"
+            ]
         },
         "RedeemPointsToUpgradeItem": {
+            "_type": "protobufs",
             "version": 1,
             "httpmethod": "POST",
             "parameters": [
@@ -7077,19 +7123,19 @@
                     "optional": true,
                     "description": ""
                 }
-            ],
-            "_type": "protobufs"
+            ]
         }
     },
     "IMobileAuthService": {
         "GetWGToken": {
+            "_type": "undocumented",
             "version": 1,
-            "parameters": [],
-            "_type": "undocumented"
+            "parameters": []
         }
     },
     "IMobileDeviceService": {
         "RegisterMobileDevice": {
+            "_type": "protobufs",
             "version": 1,
             "httpmethod": "POST",
             "parameters": [
@@ -7147,24 +7193,24 @@
                     "optional": true,
                     "description": "enum; suggested type: EMobileApp"
                 }
-            ],
-            "_type": "protobufs"
+            ]
         }
     },
     "IMobileNotificationService": {
         "GetUserNotificationCounts": {
+            "_type": "undocumented",
             "version": 1,
-            "parameters": [],
-            "_type": "undocumented"
+            "parameters": []
         },
         "SwitchSessionToPush": {
+            "_type": "undocumented",
             "version": 1,
-            "parameters": [],
-            "_type": "undocumented"
+            "parameters": []
         }
     },
     "INewsService": {
         "ConvertHTMLToBBCode": {
+            "_type": "protobufs",
             "version": 1,
             "parameters": [
                 {
@@ -7173,10 +7219,10 @@
                     "optional": false,
                     "description": "Access key"
                 }
-            ],
-            "_type": "protobufs"
+            ]
         },
         "GetBatchPublishedPartnerEvent": {
+            "_type": "protobufs",
             "version": 1,
             "parameters": [
                 {
@@ -7203,10 +7249,10 @@
                     "optional": true,
                     "description": ""
                 }
-            ],
-            "_type": "protobufs"
+            ]
         },
         "GetNewsFeedByRepublishClan": {
+            "_type": "protobufs",
             "version": 1,
             "parameters": [
                 {
@@ -7215,10 +7261,10 @@
                     "optional": false,
                     "description": "Access key"
                 }
-            ],
-            "_type": "protobufs"
+            ]
         },
         "PreviewPartnerEvents": {
+            "_type": "protobufs",
             "version": 1,
             "parameters": [
                 {
@@ -7239,10 +7285,10 @@
                     "optional": true,
                     "description": ""
                 }
-            ],
-            "_type": "protobufs"
+            ]
         },
         "PublishPartnerEvent": {
+            "_type": "protobufs",
             "version": 1,
             "httpmethod": "POST",
             "parameters": [
@@ -7264,12 +7310,12 @@
                     "optional": true,
                     "description": ""
                 }
-            ],
-            "_type": "protobufs"
+            ]
         }
     },
     "IOnlinePlayService": {
         "GetCoPlayStatus": {
+            "_type": "publisher_only",
             "version": 1,
             "httpmethod": "POST",
             "description": "Get coplay status for two accounts",
@@ -7310,12 +7356,12 @@
                     "optional": false,
                     "description": "unix time range end to check"
                 }
-            ],
-            "_type": "publisher_only"
+            ]
         }
     },
     "IPlayerService": {
         "AddFriend": {
+            "_type": "protobufs",
             "version": 1,
             "httpmethod": "POST",
             "description": "Invites another Steam user to be a friend",
@@ -7332,10 +7378,10 @@
                     "optional": true,
                     "description": "Steam ID of user to whom to send a friend invite."
                 }
-            ],
-            "_type": "protobufs"
+            ]
         },
         "ClientGetLastPlayedTimes": {
+            "_type": "protobufs",
             "version": 1,
             "description": "Gets the last-played times for the account",
             "parameters": [
@@ -7351,10 +7397,10 @@
                     "optional": true,
                     "description": "The most recent last-played time the client already knows about"
                 }
-            ],
-            "_type": "protobufs"
+            ]
         },
         "GetAnimatedAvatar": {
+            "_type": "protobufs",
             "version": 1,
             "description": "Gets which animated avatar is active for a specific user",
             "parameters": [
@@ -7376,10 +7422,10 @@
                     "optional": true,
                     "description": ""
                 }
-            ],
-            "_type": "protobufs"
+            ]
         },
         "GetAvatarFrame": {
+            "_type": "protobufs",
             "version": 1,
             "description": "Gets which avatar frame is active for a specific user",
             "parameters": [
@@ -7401,8 +7447,7 @@
                     "optional": true,
                     "description": ""
                 }
-            ],
-            "_type": "protobufs"
+            ]
         },
         "GetBadges": {
             "version": 1,
@@ -7449,6 +7494,7 @@
             ]
         },
         "GetFavoriteBadge": {
+            "_type": "protobufs",
             "version": 1,
             "description": "Gets the badge the user has set as their favorite",
             "parameters": [
@@ -7464,10 +7510,10 @@
                     "optional": true,
                     "description": ""
                 }
-            ],
-            "_type": "protobufs"
+            ]
         },
         "GetMiniProfileBackground": {
+            "_type": "protobufs",
             "version": 1,
             "description": "Gets which mini profile background is active for a specific user",
             "parameters": [
@@ -7489,10 +7535,10 @@
                     "optional": true,
                     "description": ""
                 }
-            ],
-            "_type": "protobufs"
+            ]
         },
         "GetNicknameList": {
+            "_type": "protobufs",
             "version": 1,
             "description": "Gets the list of nicknames this user has for other users",
             "parameters": [
@@ -7502,8 +7548,7 @@
                     "optional": false,
                     "description": "Access key"
                 }
-            ],
-            "_type": "protobufs"
+            ]
         },
         "GetOwnedGames": {
             "version": 1,
@@ -7555,6 +7600,7 @@
             ]
         },
         "GetProfileBackground": {
+            "_type": "protobufs",
             "version": 1,
             "description": "Gets which profile background is active for a specific user",
             "parameters": [
@@ -7576,10 +7622,10 @@
                     "optional": true,
                     "description": ""
                 }
-            ],
-            "_type": "protobufs"
+            ]
         },
         "GetProfileCustomization": {
+            "_type": "protobufs",
             "version": 1,
             "description": "Returns the customizations (if any) for a profile",
             "parameters": [
@@ -7607,10 +7653,10 @@
                     "optional": true,
                     "description": ""
                 }
-            ],
-            "_type": "protobufs"
+            ]
         },
         "GetProfileItemsEquipped": {
+            "_type": "protobufs",
             "version": 1,
             "description": "Returns the items the user has equipped on their profile",
             "parameters": [
@@ -7632,10 +7678,10 @@
                     "optional": true,
                     "description": ""
                 }
-            ],
-            "_type": "protobufs"
+            ]
         },
         "GetProfileItemsOwned": {
+            "_type": "protobufs",
             "version": 1,
             "description": "Returns the items the user can equip on their profile",
             "parameters": [
@@ -7651,10 +7697,10 @@
                     "optional": true,
                     "description": ""
                 }
-            ],
-            "_type": "protobufs"
+            ]
         },
         "GetProfileThemesAvailable": {
+            "_type": "protobufs",
             "version": 1,
             "description": "Gets themes available for the user.",
             "parameters": [
@@ -7664,10 +7710,10 @@
                     "optional": false,
                     "description": "Access key"
                 }
-            ],
-            "_type": "protobufs"
+            ]
         },
         "GetPurchasedAndUpgradedProfileCustomizations": {
+            "_type": "protobufs",
             "version": 1,
             "description": "Returns the purchased and upgraded profile customizations",
             "parameters": [
@@ -7683,10 +7729,10 @@
                     "optional": true,
                     "description": ""
                 }
-            ],
-            "_type": "protobufs"
+            ]
         },
         "GetPurchasedProfileCustomizations": {
+            "_type": "protobufs",
             "version": 1,
             "description": "Returns the purchased profile customizations",
             "parameters": [
@@ -7702,8 +7748,7 @@
                     "optional": true,
                     "description": ""
                 }
-            ],
-            "_type": "protobufs"
+            ]
         },
         "GetRecentlyPlayedGames": {
             "version": 1,
@@ -7750,6 +7795,7 @@
             ]
         },
         "GetSteamLevelDistribution": {
+            "_type": "undocumented",
             "version": 1,
             "description": "Returns how a given Steam Level compares the user base at large",
             "parameters": [
@@ -7764,10 +7810,10 @@
                     "type": "uint32",
                     "optional": false
                 }
-            ],
-            "_type": "undocumented"
+            ]
         },
         "IgnoreFriend": {
+            "_type": "protobufs",
             "version": 1,
             "httpmethod": "POST",
             "description": "Blocks or unblocks communication with the user.  Despite name, can be a non-friend.",
@@ -7790,8 +7836,7 @@
                     "optional": true,
                     "description": "If set, remove from ignore/block list instead of adding"
                 }
-            ],
-            "_type": "protobufs"
+            ]
         },
         "IsPlayingSharedGame": {
             "version": 1,
@@ -7841,6 +7886,7 @@
             ]
         },
         "RemoveFriend": {
+            "_type": "protobufs",
             "version": 1,
             "httpmethod": "POST",
             "description": "Removes a friend or ignores a friend suggestion",
@@ -7857,10 +7903,10 @@
                     "optional": true,
                     "description": "Steam ID of friend to remove."
                 }
-            ],
-            "_type": "protobufs"
+            ]
         },
         "SetAnimatedAvatar": {
+            "_type": "protobufs",
             "version": 1,
             "httpmethod": "POST",
             "description": "Sets the user's animated avatar for their profile",
@@ -7877,10 +7923,10 @@
                     "optional": true,
                     "description": ""
                 }
-            ],
-            "_type": "protobufs"
+            ]
         },
         "SetAvatarFrame": {
+            "_type": "protobufs",
             "version": 1,
             "httpmethod": "POST",
             "description": "Sets the user's avatar frame for their profile",
@@ -7897,10 +7943,10 @@
                     "optional": true,
                     "description": ""
                 }
-            ],
-            "_type": "protobufs"
+            ]
         },
         "SetEquippedProfileItemFlags": {
+            "_type": "protobufs",
             "version": 1,
             "httpmethod": "POST",
             "description": "Sets special flags on the equipped item",
@@ -7923,10 +7969,10 @@
                     "optional": true,
                     "description": "Set of EProfileItemEquippedFlag"
                 }
-            ],
-            "_type": "protobufs"
+            ]
         },
         "SetFavoriteBadge": {
+            "_type": "protobufs",
             "version": 1,
             "httpmethod": "POST",
             "description": "Sets the badge  as the users favorite",
@@ -7949,10 +7995,10 @@
                     "optional": true,
                     "description": ""
                 }
-            ],
-            "_type": "protobufs"
+            ]
         },
         "SetMiniProfileBackground": {
+            "_type": "protobufs",
             "version": 1,
             "httpmethod": "POST",
             "description": "Sets the user's mini profile background",
@@ -7969,10 +8015,10 @@
                     "optional": true,
                     "description": ""
                 }
-            ],
-            "_type": "protobufs"
+            ]
         },
         "SetProfileBackground": {
+            "_type": "protobufs",
             "version": 1,
             "httpmethod": "POST",
             "description": "Sets the user's profile background",
@@ -7989,10 +8035,10 @@
                     "optional": true,
                     "description": ""
                 }
-            ],
-            "_type": "protobufs"
+            ]
         },
         "SetProfilePreferences": {
+            "_type": "protobufs",
             "version": 1,
             "httpmethod": "POST",
             "description": "Sets profile preferences",
@@ -8009,10 +8055,10 @@
                     "optional": true,
                     "description": ""
                 }
-            ],
-            "_type": "protobufs"
+            ]
         },
         "SetProfileTheme": {
+            "_type": "protobufs",
             "version": 1,
             "httpmethod": "POST",
             "description": "Selects a theme for the profile",
@@ -8029,8 +8075,7 @@
                     "optional": true,
                     "description": ""
                 }
-            ],
-            "_type": "protobufs"
+            ]
         }
     },
     "IPortal2Leaderboards_620": {
@@ -8049,6 +8094,7 @@
     },
     "IProductInfoService": {
         "SetRichPresenceLocalization": {
+            "_type": "publisher_only",
             "version": 1,
             "httpmethod": "POST",
             "description": "Save and commit rich presence localization for the given app",
@@ -8074,12 +8120,12 @@
                     "type": "uint64",
                     "optional": false
                 }
-            ],
-            "_type": "publisher_only"
+            ]
         }
     },
     "IPublishedFileService": {
         "CanSubscribe": {
+            "_type": "protobufs",
             "version": 1,
             "description": "Check if the user can subscribe to the published file",
             "parameters": [
@@ -8095,10 +8141,10 @@
                     "optional": true,
                     "description": ""
                 }
-            ],
-            "_type": "protobufs"
+            ]
         },
         "Delete": {
+            "_type": "protobufs",
             "version": 1,
             "httpmethod": "POST",
             "description": "Deletes a published file.",
@@ -8115,8 +8161,7 @@
                     "optional": true,
                     "description": "Published file id of the file we'd like to delete."
                 }
-            ],
-            "_type": "protobufs"
+            ]
         },
         "GetDetails": {
             "version": 1,
@@ -8432,6 +8477,7 @@
             ]
         },
         "Publish": {
+            "_type": "protobufs",
             "version": 1,
             "httpmethod": "POST",
             "description": "Publishes a clouded user file to the Workshop.",
@@ -8538,8 +8584,7 @@
                     "optional": true,
                     "description": "If this represents a game, this is the URL to that game's page."
                 }
-            ],
-            "_type": "protobufs"
+            ]
         },
         "QueryFiles": {
             "version": 1,
@@ -8777,6 +8822,7 @@
             ]
         },
         "RefreshVotingQueue": {
+            "_type": "publisher_only",
             "version": 1,
             "httpmethod": "POST",
             "description": "Refresh the voting queue for the user",
@@ -8828,10 +8874,10 @@
                     "optional": true,
                     "description": "Filter to items that have data for the specified revision."
                 }
-            ],
-            "_type": "publisher_only"
+            ]
         },
         "SetDeveloperMetadata": {
+            "_type": "publisher_only",
             "version": 1,
             "httpmethod": "POST",
             "description": "Sets the metadata for a developer on the published file",
@@ -8857,10 +8903,10 @@
                     "type": "string",
                     "optional": false
                 }
-            ],
-            "_type": "publisher_only"
+            ]
         },
         "Subscribe": {
+            "_type": "protobufs",
             "version": 1,
             "httpmethod": "POST",
             "description": "Subscribes the user to the published file",
@@ -8895,10 +8941,10 @@
                     "optional": true,
                     "description": ""
                 }
-            ],
-            "_type": "protobufs"
+            ]
         },
         "Unsubscribe": {
+            "_type": "protobufs",
             "version": 1,
             "httpmethod": "POST",
             "description": "Unsubscribes the user from the published file",
@@ -8933,10 +8979,10 @@
                     "optional": true,
                     "description": ""
                 }
-            ],
-            "_type": "protobufs"
+            ]
         },
         "Update": {
+            "_type": "protobufs",
             "version": 1,
             "httpmethod": "POST",
             "description": "Updates information about a published file.",
@@ -9013,10 +9059,10 @@
                     "optional": true,
                     "description": "If this is an image file, you can specify the image height."
                 }
-            ],
-            "_type": "protobufs"
+            ]
         },
         "UpdateAppUGCBan": {
+            "_type": "publisher_only",
             "version": 1,
             "httpmethod": "POST",
             "description": "Adds/updates/removes a UGC ban in the app",
@@ -9047,10 +9093,10 @@
                     "type": "string",
                     "optional": false
                 }
-            ],
-            "_type": "publisher_only"
+            ]
         },
         "UpdateBanStatus": {
+            "_type": "publisher_only",
             "version": 1,
             "httpmethod": "POST",
             "description": "Updates the ban status on the item",
@@ -9081,10 +9127,10 @@
                     "type": "string",
                     "optional": false
                 }
-            ],
-            "_type": "publisher_only"
+            ]
         },
         "UpdateIncompatibleStatus": {
+            "_type": "publisher_only",
             "version": 1,
             "httpmethod": "POST",
             "description": "Update the incompatible status on the item",
@@ -9110,10 +9156,10 @@
                     "type": "bool",
                     "optional": false
                 }
-            ],
-            "_type": "publisher_only"
+            ]
         },
         "UpdateKeyValueTags": {
+            "_type": "publisher_only",
             "version": 1,
             "httpmethod": "POST",
             "description": "Updates key/value tags for a published file",
@@ -9154,10 +9200,10 @@
                     "type": "uint32",
                     "optional": false
                 }
-            ],
-            "_type": "publisher_only"
+            ]
         },
         "UpdateTags": {
+            "_type": "publisher_only",
             "version": 1,
             "httpmethod": "POST",
             "description": "Updates tags on the published file",
@@ -9193,12 +9239,12 @@
                     "type": "ELanguage",
                     "optional": false
                 }
-            ],
-            "_type": "publisher_only"
+            ]
         }
     },
     "IQuestService": {
         "ActivateProfileModifierItem": {
+            "_type": "protobufs",
             "version": 1,
             "httpmethod": "POST",
             "parameters": [
@@ -9226,10 +9272,10 @@
                     "optional": true,
                     "description": ""
                 }
-            ],
-            "_type": "protobufs"
+            ]
         },
         "GetCommunityInventory": {
+            "_type": "protobufs",
             "version": 1,
             "parameters": [
                 {
@@ -9244,10 +9290,10 @@
                     "optional": true,
                     "description": ""
                 }
-            ],
-            "_type": "protobufs"
+            ]
         },
         "GetCommunityItemDefinitions": {
+            "_type": "protobufs",
             "version": 1,
             "parameters": [
                 {
@@ -9256,10 +9302,10 @@
                     "optional": false,
                     "description": "Access key"
                 }
-            ],
-            "_type": "protobufs"
+            ]
         },
         "PublisherAddCommunityItemsToPlayer": {
+            "_type": "publisher_only",
             "version": 1,
             "httpmethod": "POST",
             "description": "Add game items to a user",
@@ -9310,27 +9356,27 @@
                     "type": "uint64",
                     "optional": false
                 }
-            ],
-            "_type": "publisher_only"
+            ]
         }
     },
     "IRemoteClientService": {
         "CancelPairing": {
+            "_type": "undocumented",
             "version": 1,
-            "parameters": [],
-            "_type": "undocumented"
+            "parameters": []
         },
         "CreateSession": {
+            "_type": "undocumented",
             "version": 1,
-            "parameters": [],
-            "_type": "undocumented"
+            "parameters": []
         },
         "GetReplies": {
+            "_type": "undocumented",
             "version": 1,
-            "parameters": [],
-            "_type": "undocumented"
+            "parameters": []
         },
         "NotifyRegisterStatusUpdate": {
+            "_type": "protobufs",
             "version": 1,
             "httpmethod": "POST",
             "description": "Register for status updates with a Steam client",
@@ -9341,10 +9387,10 @@
                     "optional": false,
                     "description": "Access key"
                 }
-            ],
-            "_type": "protobufs"
+            ]
         },
         "NotifyRemotePacket": {
+            "_type": "protobufs",
             "version": 1,
             "httpmethod": "POST",
             "description": "Send a packet to a Steam client",
@@ -9355,10 +9401,10 @@
                     "optional": false,
                     "description": "Access key"
                 }
-            ],
-            "_type": "protobufs"
+            ]
         },
         "NotifyUnregisterStatusUpdate": {
+            "_type": "protobufs",
             "version": 1,
             "httpmethod": "POST",
             "description": "Unregister for status updates with a Steam client",
@@ -9369,22 +9415,22 @@
                     "optional": false,
                     "description": "Access key"
                 }
-            ],
-            "_type": "protobufs"
+            ]
         },
         "SetPairingInfo": {
+            "_type": "undocumented",
             "version": 1,
-            "parameters": [],
-            "_type": "undocumented"
+            "parameters": []
         },
         "StartPairing": {
+            "_type": "undocumented",
             "version": 1,
-            "parameters": [],
-            "_type": "undocumented"
+            "parameters": []
         }
     },
     "ISaleItemRewardsService": {
         "CanClaimItem": {
+            "_type": "protobufs",
             "version": 1,
             "parameters": [
                 {
@@ -9399,10 +9445,10 @@
                     "optional": true,
                     "description": ""
                 }
-            ],
-            "_type": "protobufs"
+            ]
         },
         "ClaimItem": {
+            "_type": "protobufs",
             "version": 1,
             "httpmethod": "POST",
             "parameters": [
@@ -9418,12 +9464,12 @@
                     "optional": true,
                     "description": ""
                 }
-            ],
-            "_type": "protobufs"
+            ]
         }
     },
     "ISiteLicenseService": {
         "GetCurrentClientConnections": {
+            "_type": "undocumented",
             "version": 1,
             "httpmethod": "GET",
             "parameters": [
@@ -9439,10 +9485,10 @@
                     "optional": true,
                     "description": "Site ID to see; zero for all sites"
                 }
-            ],
-            "_type": "undocumented"
+            ]
         },
         "GetTotalPlaytime": {
+            "_type": "undocumented",
             "version": 1,
             "httpmethod": "GET",
             "parameters": [
@@ -9470,12 +9516,12 @@
                     "optional": true,
                     "description": "Site ID to see; zero for all sites"
                 }
-            ],
-            "_type": "undocumented"
+            ]
         }
     },
     "ISteamApps": {
         "GetAppBetas": {
+            "_type": "publisher_only",
             "version": 1,
             "httpmethod": "GET",
             "parameters": [
@@ -9485,10 +9531,10 @@
                     "optional": false,
                     "description": "AppID of game"
                 }
-            ],
-            "_type": "publisher_only"
+            ]
         },
         "GetAppBuilds": {
+            "_type": "publisher_only",
             "version": 1,
             "httpmethod": "GET",
             "parameters": [
@@ -9510,10 +9556,10 @@
                     "optional": true,
                     "description": "True if we want the info on the depots in each build.  False if we don't need that info.  Defaults to true."
                 }
-            ],
-            "_type": "publisher_only"
+            ]
         },
         "GetAppDepotVersions": {
+            "_type": "publisher_only",
             "version": 1,
             "httpmethod": "GET",
             "parameters": [
@@ -9523,8 +9569,7 @@
                     "optional": false,
                     "description": "AppID of depot"
                 }
-            ],
-            "_type": "publisher_only"
+            ]
         },
         "GetAppList": {
             "version": 2,
@@ -9532,6 +9577,7 @@
             "parameters": []
         },
         "GetCheatingReports": {
+            "_type": "publisher_only",
             "version": 1,
             "httpmethod": "GET",
             "parameters": [
@@ -9571,10 +9617,10 @@
                     "optional": true,
                     "description": "minimum report id"
                 }
-            ],
-            "_type": "publisher_only"
+            ]
         },
         "GetPartnerAppListForWebAPIKey": {
+            "_type": "publisher_only",
             "version": 1,
             "httpmethod": "GET",
             "parameters": [
@@ -9590,10 +9636,10 @@
                     "optional": true,
                     "description": "Filter app results by type. Can be comman separated, eg: games,dlc"
                 }
-            ],
-            "_type": "publisher_only"
+            ]
         },
         "GetPlayersBanned": {
+            "_type": "publisher_only",
             "version": 1,
             "httpmethod": "GET",
             "parameters": [
@@ -9603,8 +9649,7 @@
                     "optional": false,
                     "description": "AppID of game"
                 }
-            ],
-            "_type": "publisher_only"
+            ]
         },
         "GetSDRConfig": {
             "version": 1,
@@ -9619,6 +9664,7 @@
             ]
         },
         "GetServerList": {
+            "_type": "publisher_only",
             "version": 1,
             "httpmethod": "GET",
             "parameters": [
@@ -9634,8 +9680,7 @@
                     "optional": true,
                     "description": "Limit number of servers in the response"
                 }
-            ],
-            "_type": "publisher_only"
+            ]
         },
         "GetServersAtAddress": {
             "version": 1,
@@ -9650,6 +9695,7 @@
             ]
         },
         "SetAppBuildLive": {
+            "_type": "publisher_only",
             "version": 1,
             "httpmethod": "POST",
             "parameters": [
@@ -9677,8 +9723,7 @@
                     "optional": true,
                     "description": "optional description for this build"
                 }
-            ],
-            "_type": "publisher_only"
+            ]
         },
         "UpToDateCheck": {
             "version": 1,
@@ -9701,18 +9746,18 @@
     },
     "ISteamBitPay": {
         "BitPayPaymentNotification": {
+            "_type": "undocumented",
             "version": 1,
             "httpmethod": "POST",
-            "parameters": [],
-            "_type": "undocumented"
+            "parameters": []
         }
     },
     "ISteamBoaCompra": {
         "BoaCompraCheckTransactionStatus": {
+            "_type": "undocumented",
             "version": 1,
             "httpmethod": "POST",
-            "parameters": [],
-            "_type": "undocumented"
+            "parameters": []
         }
     },
     "ISteamBroadcast": {
@@ -9829,6 +9874,7 @@
     },
     "ISteamCloudGaming": {
         "GetSupportedApps": {
+            "_type": "undocumented",
             "version": 1,
             "httpmethod": "GET",
             "parameters": [
@@ -9844,12 +9890,12 @@
                     "optional": true,
                     "description": "Request extra details if supported"
                 }
-            ],
-            "_type": "undocumented"
+            ]
         }
     },
     "ISteamCommunity": {
         "ReportAbuse": {
+            "_type": "publisher_only",
             "version": 1,
             "httpmethod": "POST",
             "parameters": [
@@ -9901,8 +9947,7 @@
                     "optional": true,
                     "description": "GID of related record (depends on content type)"
                 }
-            ],
-            "_type": "publisher_only"
+            ]
         }
     },
     "ISteamDirectory": {
@@ -9962,6 +10007,7 @@
     },
     "ISteamEconomy": {
         "CanTrade": {
+            "_type": "publisher_only",
             "version": 1,
             "httpmethod": "GET",
             "parameters": [
@@ -9983,10 +10029,10 @@
                     "optional": false,
                     "description": "SteamID of user that is the target of the trade invitation"
                 }
-            ],
-            "_type": "publisher_only"
+            ]
         },
         "FinalizeAssetTransaction": {
+            "_type": "publisher_only",
             "version": 1,
             "httpmethod": "POST",
             "parameters": [
@@ -10014,8 +10060,7 @@
                     "optional": false,
                     "description": "The local language for the user"
                 }
-            ],
-            "_type": "publisher_only"
+            ]
         },
         "GetAssetClassInfo": {
             "version": 1,
@@ -10078,6 +10123,7 @@
             ]
         },
         "GetExportedAssetsForUser": {
+            "_type": "publisher_only",
             "version": 1,
             "httpmethod": "GET",
             "parameters": [
@@ -10099,10 +10145,10 @@
                     "optional": false,
                     "description": "The context in the app to get exported items from."
                 }
-            ],
-            "_type": "publisher_only"
+            ]
         },
         "GetMarketPrices": {
+            "_type": "publisher_only",
             "version": 1,
             "httpmethod": "GET",
             "parameters": [
@@ -10112,10 +10158,10 @@
                     "optional": false,
                     "description": "Must be a steam economy app."
                 }
-            ],
-            "_type": "publisher_only"
+            ]
         },
         "StartAssetTransaction": {
+            "_type": "publisher_only",
             "version": 1,
             "httpmethod": "POST",
             "parameters": [
@@ -10173,10 +10219,10 @@
                     "optional": true,
                     "description": "If true (default is false), the authorization will appear in the user's steam client overlay, rather than as a web page - useful for stores that are embedded in products."
                 }
-            ],
-            "_type": "publisher_only"
+            ]
         },
         "StartTrade": {
+            "_type": "publisher_only",
             "version": 1,
             "httpmethod": "GET",
             "parameters": [
@@ -10198,20 +10244,20 @@
                     "optional": false,
                     "description": "SteamID of second user in the trade"
                 }
-            ],
-            "_type": "publisher_only"
+            ]
         }
     },
     "ISteamEnvoy": {
         "PaymentOutReversalNotification": {
+            "_type": "undocumented",
             "version": 1,
             "httpmethod": "POST",
-            "parameters": [],
-            "_type": "undocumented"
+            "parameters": []
         }
     },
     "ISteamGameServerStats": {
         "GetGameServerPlayerStatsForGame": {
+            "_type": "publisher_only",
             "version": 1,
             "httpmethod": "GET",
             "parameters": [
@@ -10251,12 +10297,12 @@
                     "optional": true,
                     "description": "Max number of results to return (up to 1000)"
                 }
-            ],
-            "_type": "publisher_only"
+            ]
         }
     },
     "ISteamLeaderboards": {
         "DeleteLeaderboard": {
+            "_type": "publisher_only",
             "version": 1,
             "httpmethod": "POST",
             "parameters": [
@@ -10272,10 +10318,10 @@
                     "optional": false,
                     "description": "name of the leaderboard to delete"
                 }
-            ],
-            "_type": "publisher_only"
+            ]
         },
         "FindOrCreateLeaderboard": {
+            "_type": "publisher_only",
             "version": 2,
             "httpmethod": "POST",
             "parameters": [
@@ -10321,10 +10367,10 @@
                     "optional": true,
                     "description": "if this is true the leaderboard scores can only be read for friends by clients, scores can always be read by publisher. Defaults to false."
                 }
-            ],
-            "_type": "publisher_only"
+            ]
         },
         "GetLeaderboardEntries": {
+            "_type": "publisher_only",
             "version": 1,
             "httpmethod": "GET",
             "parameters": [
@@ -10370,10 +10416,10 @@
                     "optional": false,
                     "description": "type of request: RequestGlobal, RequestAroundUser, RequestFriends"
                 }
-            ],
-            "_type": "publisher_only"
+            ]
         },
         "GetLeaderboardsForGame": {
+            "_type": "publisher_only",
             "version": 2,
             "httpmethod": "GET",
             "parameters": [
@@ -10389,10 +10435,10 @@
                     "optional": false,
                     "description": "appid of game"
                 }
-            ],
-            "_type": "publisher_only"
+            ]
         },
         "ResetLeaderboard": {
+            "_type": "publisher_only",
             "version": 1,
             "httpmethod": "POST",
             "parameters": [
@@ -10408,10 +10454,10 @@
                     "optional": false,
                     "description": "numeric ID of the target leaderboard. Can be retrieved from GetLeaderboardsForGame"
                 }
-            ],
-            "_type": "publisher_only"
+            ]
         },
         "SetLeaderboardScore": {
+            "_type": "publisher_only",
             "version": 1,
             "httpmethod": "POST",
             "parameters": [
@@ -10451,17 +10497,17 @@
                     "optional": true,
                     "description": "game-specific details for how the score was earned. Up to 256 bytes."
                 }
-            ],
-            "_type": "publisher_only"
+            ]
         }
     },
     "ISteamMicroTxn": {
         "AddToCart": {
+            "_type": "undocumented",
             "version": 1,
-            "parameters": [],
-            "_type": "undocumented"
+            "parameters": []
         },
         "AdjustAgreement": {
+            "_type": "publisher_only",
             "version": 1,
             "httpmethod": "POST",
             "parameters": [
@@ -10489,10 +10535,10 @@
                     "optional": false,
                     "description": "Date for next process"
                 }
-            ],
-            "_type": "publisher_only"
+            ]
         },
         "CancelAgreement": {
+            "_type": "publisher_only",
             "version": 1,
             "httpmethod": "POST",
             "parameters": [
@@ -10514,15 +10560,15 @@
                     "optional": false,
                     "description": "AppID of game"
                 }
-            ],
-            "_type": "publisher_only"
+            ]
         },
         "CreateCart": {
+            "_type": "undocumented",
             "version": 1,
-            "parameters": [],
-            "_type": "undocumented"
+            "parameters": []
         },
         "FinalizeTxn": {
+            "_type": "publisher_only",
             "version": 2,
             "httpmethod": "POST",
             "parameters": [
@@ -10538,15 +10584,15 @@
                     "optional": false,
                     "description": "AppID of game this transaction is for"
                 }
-            ],
-            "_type": "publisher_only"
+            ]
         },
         "GetCartContents": {
+            "_type": "undocumented",
             "version": 1,
-            "parameters": [],
-            "_type": "undocumented"
+            "parameters": []
         },
         "GetReport": {
+            "_type": "publisher_only",
             "version": 5,
             "httpmethod": "GET",
             "parameters": [
@@ -10574,10 +10620,10 @@
                     "optional": true,
                     "description": "Max number of results to return (up to 1000)"
                 }
-            ],
-            "_type": "publisher_only"
+            ]
         },
         "GetUserAgreementInfo": {
+            "_type": "publisher_only",
             "version": 1,
             "httpmethod": "GET",
             "parameters": [
@@ -10593,10 +10639,10 @@
                     "optional": false,
                     "description": "AppID of game"
                 }
-            ],
-            "_type": "publisher_only"
+            ]
         },
         "GetUserInfo": {
+            "_type": "publisher_only",
             "version": 2,
             "httpmethod": "GET",
             "parameters": [
@@ -10612,10 +10658,10 @@
                     "optional": true,
                     "description": "ip address of user in string format (xxx.xxx.xxx.xxx). Only required if usersession=web"
                 }
-            ],
-            "_type": "publisher_only"
+            ]
         },
         "InitTxn": {
+            "_type": "publisher_only",
             "version": 3,
             "httpmethod": "POST",
             "parameters": [
@@ -10769,15 +10815,15 @@
                     "optional": true,
                     "description": "Optional category grouping for bundle"
                 }
-            ],
-            "_type": "publisher_only"
+            ]
         },
         "IsValidCart": {
+            "_type": "undocumented",
             "version": 1,
-            "parameters": [],
-            "_type": "undocumented"
+            "parameters": []
         },
         "ProcessAgreement": {
+            "_type": "publisher_only",
             "version": 1,
             "httpmethod": "POST",
             "parameters": [
@@ -10817,10 +10863,10 @@
                     "optional": false,
                     "description": "ISO 4217 currency code"
                 }
-            ],
-            "_type": "publisher_only"
+            ]
         },
         "QueryTxn": {
+            "_type": "publisher_only",
             "version": 3,
             "httpmethod": "GET",
             "parameters": [
@@ -10842,10 +10888,10 @@
                     "optional": true,
                     "description": "Steam transaction ID"
                 }
-            ],
-            "_type": "publisher_only"
+            ]
         },
         "RefundTxn": {
+            "_type": "publisher_only",
             "version": 2,
             "httpmethod": "POST",
             "parameters": [
@@ -10861,12 +10907,12 @@
                     "optional": false,
                     "description": "AppID of game this transaction is for"
                 }
-            ],
-            "_type": "publisher_only"
+            ]
         }
     },
     "ISteamMicroTxnSandbox": {
         "AdjustAgreement": {
+            "_type": "publisher_only",
             "version": 1,
             "httpmethod": "POST",
             "parameters": [
@@ -10894,10 +10940,10 @@
                     "optional": false,
                     "description": "Date for next process"
                 }
-            ],
-            "_type": "publisher_only"
+            ]
         },
         "CancelAgreement": {
+            "_type": "publisher_only",
             "version": 1,
             "httpmethod": "POST",
             "parameters": [
@@ -10919,10 +10965,10 @@
                     "optional": false,
                     "description": "AppID of game"
                 }
-            ],
-            "_type": "publisher_only"
+            ]
         },
         "FinalizeTxn": {
+            "_type": "publisher_only",
             "version": 2,
             "httpmethod": "POST",
             "parameters": [
@@ -10938,10 +10984,10 @@
                     "optional": false,
                     "description": "AppID of game this transaction is for"
                 }
-            ],
-            "_type": "publisher_only"
+            ]
         },
         "GetReport": {
+            "_type": "publisher_only",
             "version": 5,
             "httpmethod": "GET",
             "parameters": [
@@ -10969,10 +11015,10 @@
                     "optional": true,
                     "description": "Max number of results to return (up to 1000)"
                 }
-            ],
-            "_type": "publisher_only"
+            ]
         },
         "GetUserAgreementInfo": {
+            "_type": "publisher_only",
             "version": 1,
             "httpmethod": "GET",
             "parameters": [
@@ -10988,10 +11034,10 @@
                     "optional": false,
                     "description": "AppID of game"
                 }
-            ],
-            "_type": "publisher_only"
+            ]
         },
         "GetUserInfo": {
+            "_type": "publisher_only",
             "version": 2,
             "httpmethod": "GET",
             "parameters": [
@@ -11007,10 +11053,10 @@
                     "optional": true,
                     "description": "ip address of user in string format (xxx.xxx.xxx.xxx). Only required if usersession=web"
                 }
-            ],
-            "_type": "publisher_only"
+            ]
         },
         "InitTxn": {
+            "_type": "publisher_only",
             "version": 3,
             "httpmethod": "POST",
             "parameters": [
@@ -11116,10 +11162,10 @@
                     "optional": true,
                     "description": "Optional recurring billing amount"
                 }
-            ],
-            "_type": "publisher_only"
+            ]
         },
         "ProcessAgreement": {
+            "_type": "publisher_only",
             "version": 1,
             "httpmethod": "POST",
             "parameters": [
@@ -11153,10 +11199,10 @@
                     "optional": false,
                     "description": "ISO 4217 currency code"
                 }
-            ],
-            "_type": "publisher_only"
+            ]
         },
         "QueryTxn": {
+            "_type": "publisher_only",
             "version": 2,
             "httpmethod": "GET",
             "parameters": [
@@ -11178,10 +11224,10 @@
                     "optional": true,
                     "description": "Steam transaction ID"
                 }
-            ],
-            "_type": "publisher_only"
+            ]
         },
         "RefundTxn": {
+            "_type": "publisher_only",
             "version": 2,
             "httpmethod": "POST",
             "parameters": [
@@ -11197,8 +11243,7 @@
                     "optional": false,
                     "description": "AppID of game this transaction is for"
                 }
-            ],
-            "_type": "publisher_only"
+            ]
         }
     },
     "ISteamNews": {
@@ -11245,6 +11290,7 @@
             ]
         },
         "GetNewsForAppAuthed": {
+            "_type": "publisher_only",
             "version": 2,
             "httpmethod": "GET",
             "parameters": [
@@ -11290,28 +11336,28 @@
                     "optional": true,
                     "description": "Comma-separated list of tags to filter by (e.g. 'patchnodes')"
                 }
-            ],
-            "_type": "publisher_only"
+            ]
         }
     },
     "ISteamNodwin": {
         "NodwinPaymentNotification": {
+            "_type": "undocumented",
             "version": 1,
             "httpmethod": "POST",
-            "parameters": [],
-            "_type": "undocumented"
+            "parameters": []
         }
     },
     "ISteamPayPalPaymentsHub": {
         "PayPalPaymentsHubPaymentNotification": {
+            "_type": "undocumented",
             "version": 1,
             "httpmethod": "POST",
-            "parameters": [],
-            "_type": "undocumented"
+            "parameters": []
         }
     },
     "ISteamPublishedItemSearch": {
         "RankedByPublicationOrder": {
+            "_type": "publisher_only",
             "version": 1,
             "httpmethod": "POST",
             "parameters": [
@@ -11375,10 +11421,10 @@
                     "optional": true,
                     "description": "A user specific tag"
                 }
-            ],
-            "_type": "publisher_only"
+            ]
         },
         "RankedByTrend": {
+            "_type": "publisher_only",
             "version": 1,
             "httpmethod": "POST",
             "parameters": [
@@ -11448,10 +11494,10 @@
                     "optional": true,
                     "description": "A user specific tag"
                 }
-            ],
-            "_type": "publisher_only"
+            ]
         },
         "RankedByVote": {
+            "_type": "publisher_only",
             "version": 1,
             "httpmethod": "POST",
             "parameters": [
@@ -11515,10 +11561,10 @@
                     "optional": true,
                     "description": "A user specific tag"
                 }
-            ],
-            "_type": "publisher_only"
+            ]
         },
         "ResultSetSummary": {
+            "_type": "publisher_only",
             "version": 1,
             "httpmethod": "POST",
             "parameters": [
@@ -11570,12 +11616,12 @@
                     "optional": true,
                     "description": "A user specific tag"
                 }
-            ],
-            "_type": "publisher_only"
+            ]
         }
     },
     "ISteamPublishedItemVoting": {
         "ItemVoteSummary": {
+            "_type": "publisher_only",
             "version": 1,
             "httpmethod": "POST",
             "parameters": [
@@ -11603,10 +11649,10 @@
                     "optional": true,
                     "description": "The Published File ID who's vote details are required"
                 }
-            ],
-            "_type": "publisher_only"
+            ]
         },
         "UserVoteSummary": {
+            "_type": "publisher_only",
             "version": 1,
             "httpmethod": "POST",
             "parameters": [
@@ -11628,12 +11674,12 @@
                     "optional": true,
                     "description": "A Specific Published Item"
                 }
-            ],
-            "_type": "publisher_only"
+            ]
         }
     },
     "ISteamRemoteStorage": {
         "EnumerateUserSubscribedFiles": {
+            "_type": "publisher_only",
             "version": 1,
             "httpmethod": "POST",
             "parameters": [
@@ -11655,8 +11701,7 @@
                     "optional": true,
                     "description": "EUCMListType"
                 }
-            ],
-            "_type": "publisher_only"
+            ]
         },
         "GetCollectionDetails": {
             "version": 1,
@@ -11719,6 +11764,7 @@
             ]
         },
         "SetUGCUsedByGC": {
+            "_type": "publisher_only",
             "version": 1,
             "httpmethod": "POST",
             "parameters": [
@@ -11746,10 +11792,10 @@
                     "optional": false,
                     "description": "New state of flag"
                 }
-            ],
-            "_type": "publisher_only"
+            ]
         },
         "SubscribePublishedFile": {
+            "_type": "publisher_only",
             "version": 1,
             "httpmethod": "POST",
             "parameters": [
@@ -11771,10 +11817,10 @@
                     "optional": false,
                     "description": "published file id to subscribe to"
                 }
-            ],
-            "_type": "publisher_only"
+            ]
         },
         "UnsubscribePublishedFile": {
+            "_type": "publisher_only",
             "version": 1,
             "httpmethod": "POST",
             "parameters": [
@@ -11796,12 +11842,12 @@
                     "optional": false,
                     "description": "published file id to unsubscribe from"
                 }
-            ],
-            "_type": "publisher_only"
+            ]
         }
     },
     "ISteamSpecialSurvey": {
         "CheckUserStatus": {
+            "_type": "publisher_only",
             "version": 1,
             "httpmethod": "GET",
             "parameters": [
@@ -11835,10 +11881,10 @@
                     "optional": false,
                     "description": "Survey identity verification token for the user"
                 }
-            ],
-            "_type": "publisher_only"
+            ]
         },
         "SetUserFinished": {
+            "_type": "publisher_only",
             "version": 1,
             "httpmethod": "POST",
             "parameters": [
@@ -11872,12 +11918,12 @@
                     "optional": false,
                     "description": "Survey identity verification token for the user"
                 }
-            ],
-            "_type": "publisher_only"
+            ]
         }
     },
     "ISteamTVService": {
         "AddChatBan": {
+            "_type": "protobufs",
             "version": 1,
             "httpmethod": "POST",
             "description": "Set the ban for a specific broadcaster. The issuer is the logged in steam account",
@@ -11918,10 +11964,10 @@
                     "optional": true,
                     "description": ""
                 }
-            ],
-            "_type": "protobufs"
+            ]
         },
         "AddChatModerator": {
+            "_type": "protobufs",
             "version": 1,
             "httpmethod": "POST",
             "description": "Add or remove a moderator for this broadcast channel",
@@ -11950,10 +11996,10 @@
                     "optional": true,
                     "description": ""
                 }
-            ],
-            "_type": "protobufs"
+            ]
         },
         "AddWordBan": {
+            "_type": "protobufs",
             "version": 1,
             "httpmethod": "POST",
             "description": "Add or remove a banned keyword in this broadcast channel chat",
@@ -11982,10 +12028,10 @@
                     "optional": true,
                     "description": ""
                 }
-            ],
-            "_type": "protobufs"
+            ]
         },
         "AppCheer": {
+            "_type": "protobufs",
             "version": 1,
             "httpmethod": "POST",
             "description": "The user is cheering for a specific broadcast for a specific app.",
@@ -12014,10 +12060,10 @@
                     "optional": true,
                     "description": "The set of cheers this request represents (could be multiple of different types)."
                 }
-            ],
-            "_type": "protobufs"
+            ]
         },
         "CreateBroadcastChannel": {
+            "_type": "protobufs",
             "version": 1,
             "httpmethod": "POST",
             "description": "Create a channel on SteamTV",
@@ -12034,10 +12080,10 @@
                     "optional": true,
                     "description": "Unique short broadcast channel name, part of Steam.TV URL"
                 }
-            ],
-            "_type": "protobufs"
+            ]
         },
         "FollowBroadcastChannel": {
+            "_type": "protobufs",
             "version": 1,
             "httpmethod": "POST",
             "description": "Follow a broadcast channel",
@@ -12060,10 +12106,10 @@
                     "optional": true,
                     "description": "Indicates this is an unfollow request"
                 }
-            ],
-            "_type": "protobufs"
+            ]
         },
         "GetBroadcastChannelBroadcasters": {
+            "_type": "protobufs",
             "version": 1,
             "description": "Get list of broadcaster info for this channel",
             "parameters": [
@@ -12079,10 +12125,10 @@
                     "optional": true,
                     "description": "Broadcast channel ID"
                 }
-            ],
-            "_type": "protobufs"
+            ]
         },
         "GetBroadcastChannelClips": {
+            "_type": "protobufs",
             "version": 1,
             "description": "Get broadcast channel clips",
             "parameters": [
@@ -12098,10 +12144,10 @@
                     "optional": true,
                     "description": ""
                 }
-            ],
-            "_type": "protobufs"
+            ]
         },
         "GetBroadcastChannelID": {
+            "_type": "protobufs",
             "version": 1,
             "description": "Get a broadcast channel ID for a channel by name or owner SteamID",
             "parameters": [
@@ -12117,10 +12163,10 @@
                     "optional": true,
                     "description": "Channel short name)"
                 }
-            ],
-            "_type": "protobufs"
+            ]
         },
         "GetBroadcastChannelImages": {
+            "_type": "protobufs",
             "version": 1,
             "description": "Get broadcast channel images",
             "parameters": [
@@ -12142,10 +12188,10 @@
                     "optional": true,
                     "description": "list of EBroadcastImage"
                 }
-            ],
-            "_type": "protobufs"
+            ]
         },
         "GetBroadcastChannelInteraction": {
+            "_type": "protobufs",
             "version": 1,
             "description": "Get user's interaction status with a broadcast channel",
             "parameters": [
@@ -12161,10 +12207,10 @@
                     "optional": true,
                     "description": "Broadcast channel ID"
                 }
-            ],
-            "_type": "protobufs"
+            ]
         },
         "GetBroadcastChannelLinks": {
+            "_type": "protobufs",
             "version": 1,
             "description": "Get broadcast channel link regions",
             "parameters": [
@@ -12180,10 +12226,10 @@
                     "optional": true,
                     "description": "Broadcast channel ID"
                 }
-            ],
-            "_type": "protobufs"
+            ]
         },
         "GetBroadcastChannelProfile": {
+            "_type": "protobufs",
             "version": 1,
             "description": "Get broadcast channel profile data",
             "parameters": [
@@ -12199,10 +12245,10 @@
                     "optional": true,
                     "description": "Broadcast channel ID"
                 }
-            ],
-            "_type": "protobufs"
+            ]
         },
         "GetBroadcastChannelStatus": {
+            "_type": "protobufs",
             "version": 1,
             "description": "Get broadcast channel live status",
             "parameters": [
@@ -12218,10 +12264,10 @@
                     "optional": true,
                     "description": "Broadcast channel ID"
                 }
-            ],
-            "_type": "protobufs"
+            ]
         },
         "GetChannels": {
+            "_type": "protobufs",
             "version": 1,
             "description": "Get the list of featured broadcast channels",
             "parameters": [
@@ -12249,10 +12295,10 @@
                     "optional": true,
                     "description": "Filter results to only this appid"
                 }
-            ],
-            "_type": "protobufs"
+            ]
         },
         "GetChatBans": {
+            "_type": "protobufs",
             "version": 1,
             "description": "Get list of bans for a specific broadcaster.",
             "parameters": [
@@ -12268,10 +12314,10 @@
                     "optional": true,
                     "description": ""
                 }
-            ],
-            "_type": "protobufs"
+            ]
         },
         "GetChatModerators": {
+            "_type": "protobufs",
             "version": 1,
             "description": "Returns the list of moderators for this broadcast channel",
             "parameters": [
@@ -12287,10 +12333,10 @@
                     "optional": true,
                     "description": ""
                 }
-            ],
-            "_type": "protobufs"
+            ]
         },
         "GetFollowedChannels": {
+            "_type": "protobufs",
             "version": 1,
             "description": "Get list of followed channels by a viewer",
             "parameters": [
@@ -12300,10 +12346,10 @@
                     "optional": false,
                     "description": "Access key"
                 }
-            ],
-            "_type": "protobufs"
+            ]
         },
         "GetGames": {
+            "_type": "protobufs",
             "version": 1,
             "description": "Get list of games with active broadcasters",
             "parameters": [
@@ -12331,10 +12377,10 @@
                     "optional": true,
                     "description": "The maximum number of results to return"
                 }
-            ],
-            "_type": "protobufs"
+            ]
         },
         "GetHomePageContents": {
+            "_type": "protobufs",
             "version": 1,
             "description": "Returns homepage contents for user",
             "parameters": [
@@ -12344,10 +12390,10 @@
                     "optional": false,
                     "description": "Access key"
                 }
-            ],
-            "_type": "protobufs"
+            ]
         },
         "GetMyBroadcastChannels": {
+            "_type": "protobufs",
             "version": 1,
             "description": "Gets the broadcast channels that the current user owns",
             "parameters": [
@@ -12357,10 +12403,10 @@
                     "optional": false,
                     "description": "Access key"
                 }
-            ],
-            "_type": "protobufs"
+            ]
         },
         "GetSteamTVUserSettings": {
+            "_type": "protobufs",
             "version": 1,
             "description": "Returns a user's SteamTV settings",
             "parameters": [
@@ -12370,10 +12416,10 @@
                     "optional": false,
                     "description": "Access key"
                 }
-            ],
-            "_type": "protobufs"
+            ]
         },
         "GetSubscribedChannels": {
+            "_type": "protobufs",
             "version": 1,
             "description": "Get list of channels a user is subscribed to",
             "parameters": [
@@ -12383,10 +12429,10 @@
                     "optional": false,
                     "description": "Access key"
                 }
-            ],
-            "_type": "protobufs"
+            ]
         },
         "GetWordBans": {
+            "_type": "protobufs",
             "version": 1,
             "description": "Returns the list of banned keywords for this broadcast channel",
             "parameters": [
@@ -12402,10 +12448,10 @@
                     "optional": true,
                     "description": ""
                 }
-            ],
-            "_type": "protobufs"
+            ]
         },
         "JoinChat": {
+            "_type": "protobufs",
             "version": 1,
             "httpmethod": "POST",
             "description": "Joins the chat channel for a broadcast",
@@ -12422,10 +12468,10 @@
                     "optional": true,
                     "description": ""
                 }
-            ],
-            "_type": "protobufs"
+            ]
         },
         "ReportBroadcastChannel": {
+            "_type": "protobufs",
             "version": 1,
             "httpmethod": "POST",
             "description": "Report a broadcast channel",
@@ -12448,10 +12494,10 @@
                     "optional": true,
                     "description": "The reason for the report"
                 }
-            ],
-            "_type": "protobufs"
+            ]
         },
         "Search": {
+            "_type": "protobufs",
             "version": 1,
             "description": "Searches for broadcast channels based on input keywords",
             "parameters": [
@@ -12467,10 +12513,10 @@
                     "optional": true,
                     "description": ""
                 }
-            ],
-            "_type": "protobufs"
+            ]
         },
         "SetBroadcastChannelImage": {
+            "_type": "protobufs",
             "version": 1,
             "httpmethod": "POST",
             "description": "Set broadcast channel image hash",
@@ -12535,10 +12581,10 @@
                     "optional": true,
                     "description": "indicates this is a delete request"
                 }
-            ],
-            "_type": "protobufs"
+            ]
         },
         "SetBroadcastChannelLinkRegions": {
+            "_type": "protobufs",
             "version": 1,
             "httpmethod": "POST",
             "description": "Set broadcast channel link regions",
@@ -12561,10 +12607,10 @@
                     "optional": true,
                     "description": ""
                 }
-            ],
-            "_type": "protobufs"
+            ]
         },
         "SetBroadcastChannelProfile": {
+            "_type": "protobufs",
             "version": 1,
             "httpmethod": "POST",
             "description": "Set broadcast channel profile data",
@@ -12629,10 +12675,10 @@
                     "optional": true,
                     "description": "JSON data representing the channel panel layout"
                 }
-            ],
-            "_type": "protobufs"
+            ]
         },
         "SetSteamTVUserSettings": {
+            "_type": "protobufs",
             "version": 1,
             "httpmethod": "POST",
             "description": "Sets a user's SteamTV settings",
@@ -12655,10 +12701,10 @@
                     "optional": true,
                     "description": "Send Steam notification when followed stream starts"
                 }
-            ],
-            "_type": "protobufs"
+            ]
         },
         "SubscribeBroadcastChannel": {
+            "_type": "protobufs",
             "version": 1,
             "httpmethod": "POST",
             "description": "Subscribe to a broadcast channel",
@@ -12675,12 +12721,12 @@
                     "optional": true,
                     "description": "Broadcast channel ID"
                 }
-            ],
-            "_type": "protobufs"
+            ]
         }
     },
     "ISteamUser": {
         "CheckAppOwnership": {
+            "_type": "publisher_only",
             "version": 2,
             "httpmethod": "GET",
             "parameters": [
@@ -12702,10 +12748,10 @@
                     "optional": false,
                     "description": "AppID to check for ownership"
                 }
-            ],
-            "_type": "publisher_only"
+            ]
         },
         "GetAppPriceInfo": {
+            "_type": "publisher_only",
             "version": 1,
             "httpmethod": "GET",
             "parameters": [
@@ -12727,10 +12773,10 @@
                     "optional": false,
                     "description": "Comma-delimited list of appids (max: 100)"
                 }
-            ],
-            "_type": "publisher_only"
+            ]
         },
         "GetDeletedSteamIDs": {
+            "_type": "undocumented",
             "version": 1,
             "httpmethod": "GET",
             "parameters": [
@@ -12746,8 +12792,7 @@
                     "optional": false,
                     "description": "An unsigned 64-bit value used to page through deleted accounts. Pass 0 when calling this\r\n            API for the first time, then pass the value returned from the previous call for each\r\n            additional request. This value will need to be stored on your server for future calls."
                 }
-            ],
-            "_type": "undocumented"
+            ]
         },
         "GetFriendList": {
             "version": 1,
@@ -12810,6 +12855,7 @@
             ]
         },
         "GetPublisherAppOwnership": {
+            "_type": "publisher_only",
             "version": 3,
             "httpmethod": "GET",
             "parameters": [
@@ -12825,10 +12871,10 @@
                     "optional": false,
                     "description": "SteamID of user"
                 }
-            ],
-            "_type": "publisher_only"
+            ]
         },
         "GetPublisherAppOwnershipChanges": {
+            "_type": "publisher_only",
             "version": 1,
             "httpmethod": "GET",
             "parameters": [
@@ -12850,8 +12896,7 @@
                     "optional": false,
                     "description": "The unsigned 64-bit row version to read CD Key changes from. The row version of data read up to will be returned for use in future calls."
                 }
-            ],
-            "_type": "publisher_only"
+            ]
         },
         "GetUserGroupList": {
             "version": 1,
@@ -12872,6 +12917,7 @@
             ]
         },
         "GrantPackage": {
+            "_type": "publisher_only",
             "version": 2,
             "httpmethod": "POST",
             "parameters": [
@@ -12911,8 +12957,7 @@
                     "optional": true,
                     "description": "Has to be set if 'thirdpartykey' is set. The appid associated with the 'thirdpartykey'."
                 }
-            ],
-            "_type": "publisher_only"
+            ]
         },
         "ResolveVanityURL": {
             "version": 1,
@@ -12939,6 +12984,7 @@
             ]
         },
         "RevokePackage": {
+            "_type": "publisher_only",
             "version": 1,
             "httpmethod": "POST",
             "parameters": [
@@ -12966,8 +13012,7 @@
                     "optional": false,
                     "description": "Reason for why to revoke"
                 }
-            ],
-            "_type": "publisher_only"
+            ]
         }
     },
     "ISteamUserAuth": {
@@ -13022,14 +13067,14 @@
     },
     "ISteamUserOAuth": {
         "GetFriendList": {
+            "_type": "undocumented",
             "version": 1,
-            "parameters": [],
-            "_type": "undocumented"
+            "parameters": []
         },
         "GetGroupList": {
+            "_type": "undocumented",
             "version": 1,
-            "parameters": [],
-            "_type": "undocumented"
+            "parameters": []
         },
         "GetTokenDetails": {
             "version": 1,
@@ -13044,14 +13089,14 @@
             ]
         },
         "GetUserSummaries": {
+            "_type": "undocumented",
             "version": 1,
-            "parameters": [],
-            "_type": "undocumented"
+            "parameters": []
         },
         "Search": {
+            "_type": "undocumented",
             "version": 1,
-            "parameters": [],
-            "_type": "undocumented"
+            "parameters": []
         }
     },
     "ISteamUserStats": {
@@ -13194,6 +13239,7 @@
             ]
         },
         "SetUserStatsForGame": {
+            "_type": "publisher_only",
             "version": 1,
             "httpmethod": "POST",
             "parameters": [
@@ -13233,8 +13279,7 @@
                     "optional": false,
                     "description": "Value to set"
                 }
-            ],
-            "_type": "publisher_only"
+            ]
         }
     },
     "ISteamWebAPIUtil": {
@@ -13258,29 +13303,29 @@
     },
     "ISteamWebUserPresenceOAuth": {
         "DeviceInfo": {
+            "_type": "undocumented",
             "version": 1,
-            "parameters": [],
-            "_type": "undocumented"
+            "parameters": []
         },
         "Logoff": {
+            "_type": "undocumented",
             "version": 1,
-            "parameters": [],
-            "_type": "undocumented"
+            "parameters": []
         },
         "Logon": {
+            "_type": "undocumented",
             "version": 1,
-            "parameters": [],
-            "_type": "undocumented"
+            "parameters": []
         },
         "Message": {
+            "_type": "undocumented",
             "version": 1,
-            "parameters": [],
-            "_type": "undocumented"
+            "parameters": []
         },
         "Poll": {
+            "_type": "undocumented",
             "version": 1,
-            "parameters": [],
-            "_type": "undocumented"
+            "parameters": []
         },
         "PollStatus": {
             "version": 1,
@@ -13333,6 +13378,7 @@
     },
     "ISteamWorkshop": {
         "AssociateWorkshopItems": {
+            "_type": "publisher_only",
             "version": 1,
             "httpmethod": "POST",
             "parameters": [
@@ -13372,10 +13418,10 @@
                     "optional": true,
                     "description": "Game's description of the game item"
                 }
-            ],
-            "_type": "publisher_only"
+            ]
         },
         "GetContributors": {
+            "_type": "publisher_only",
             "version": 1,
             "httpmethod": "POST",
             "parameters": [
@@ -13385,12 +13431,12 @@
                     "optional": false,
                     "description": "AppID of game this transaction is for"
                 }
-            ],
-            "_type": "publisher_only"
+            ]
         }
     },
     "IStoreBrowseService": {
         "GetItems": {
+            "_type": "protobufs",
             "version": 1,
             "parameters": [
                 {
@@ -13417,10 +13463,10 @@
                     "optional": true,
                     "description": ""
                 }
-            ],
-            "_type": "protobufs"
+            ]
         },
         "GetStoreCategories": {
+            "_type": "protobufs",
             "version": 1,
             "parameters": [
                 {
@@ -13429,12 +13475,12 @@
                     "optional": false,
                     "description": "Access key"
                 }
-            ],
-            "_type": "protobufs"
+            ]
         }
     },
     "IStoreQueryService": {
         "Query": {
+            "_type": "protobufs",
             "version": 1,
             "parameters": [
                 {
@@ -13443,10 +13489,10 @@
                     "optional": false,
                     "description": "Access key"
                 }
-            ],
-            "_type": "protobufs"
+            ]
         },
         "SearchSuggestions": {
+            "_type": "protobufs",
             "version": 1,
             "parameters": [
                 {
@@ -13455,15 +13501,14 @@
                     "optional": false,
                     "description": "Access key"
                 }
-            ],
-            "_type": "protobufs"
+            ]
         }
     },
     "IStoreService": {
         "GetAppInfo": {
+            "_type": "undocumented",
             "version": 1,
-            "parameters": [],
-            "_type": "undocumented"
+            "parameters": []
         },
         "GetAppList": {
             "version": 1,
@@ -13533,6 +13578,7 @@
             ]
         },
         "GetLocalizedNameForTags": {
+            "_type": "protobufs",
             "version": 1,
             "description": "Gets tag names in a different language",
             "parameters": [
@@ -13554,10 +13600,10 @@
                     "optional": true,
                     "description": ""
                 }
-            ],
-            "_type": "protobufs"
+            ]
         },
         "GetMostPopularTags": {
+            "_type": "protobufs",
             "version": 1,
             "description": "Get all whitelisted tags, with localized names.",
             "parameters": [
@@ -13573,12 +13619,12 @@
                     "optional": true,
                     "description": ""
                 }
-            ],
-            "_type": "protobufs"
+            ]
         }
     },
     "ITFItems_440": {
         "GetGoldenWrenches": {
+            "_type": "undocumented",
             "version": 2,
             "httpmethod": "GET",
             "parameters": []
@@ -13586,6 +13632,7 @@
     },
     "ITFPromos_440": {
         "GetItemID": {
+            "_type": "undocumented",
             "version": 1,
             "httpmethod": "GET",
             "parameters": [
@@ -13604,6 +13651,7 @@
             ]
         },
         "GrantItem": {
+            "_type": "undocumented",
             "version": 1,
             "httpmethod": "POST",
             "parameters": [
@@ -13624,6 +13672,7 @@
     },
     "ITFPromos_570": {
         "GetItemID": {
+            "_type": "undocumented",
             "version": 1,
             "httpmethod": "GET",
             "parameters": [
@@ -13639,10 +13688,10 @@
                     "optional": false,
                     "description": "The promo ID to grant an item for"
                 }
-            ],
-            "_type": "undocumented"
+            ]
         },
         "GrantItem": {
+            "_type": "undocumented",
             "version": 1,
             "httpmethod": "POST",
             "parameters": [
@@ -13658,8 +13707,7 @@
                     "optional": false,
                     "description": "The promo ID to grant an item for"
                 }
-            ],
-            "_type": "undocumented"
+            ]
         }
     },
     "ITFPromos_620": {
@@ -13702,6 +13750,7 @@
     },
     "ITFPromos_205790": {
         "GetItemID": {
+            "_type": "undocumented",
             "version": 1,
             "httpmethod": "GET",
             "parameters": [
@@ -13720,6 +13769,7 @@
             ]
         },
         "GrantItem": {
+            "_type": "undocumented",
             "version": 1,
             "httpmethod": "POST",
             "parameters": [
@@ -13740,6 +13790,7 @@
     },
     "ITFSystem_440": {
         "GetWorldStatus": {
+            "_type": "undocumented",
             "version": 1,
             "httpmethod": "GET",
             "parameters": []
@@ -13747,6 +13798,7 @@
     },
     "ITestExternalPrivilegeService": {
         "CallPublisherKey": {
+            "_type": "publisher_only",
             "version": 1,
             "httpmethod": "POST",
             "parameters": [
@@ -13756,10 +13808,10 @@
                     "optional": false,
                     "description": "Access key"
                 }
-            ],
-            "_type": "publisher_only"
+            ]
         },
         "CallPublisherKeyOwnsApp": {
+            "_type": "publisher_only",
             "version": 1,
             "httpmethod": "POST",
             "parameters": [
@@ -13774,12 +13826,12 @@
                     "type": "uint32",
                     "optional": false
                 }
-            ],
-            "_type": "publisher_only"
+            ]
         }
     },
     "ITrustService": {
         "GetTrustScore": {
+            "_type": "publisher_only",
             "version": 1,
             "httpmethod": "GET",
             "description": "Returns the Trust Score for the provided account in the specified appid.",
@@ -13800,12 +13852,12 @@
                     "type": "uint32",
                     "optional": false
                 }
-            ],
-            "_type": "publisher_only"
+            ]
         }
     },
     "ITwoFactorService": {
         "AddAuthenticator": {
+            "_type": "protobufs",
             "version": 1,
             "httpmethod": "POST",
             "description": "Add two-factor authenticator to the logged-in account",
@@ -13858,10 +13910,10 @@
                     "optional": true,
                     "description": "HTTP headers alternating by K/V"
                 }
-            ],
-            "_type": "protobufs"
+            ]
         },
         "CreateEmergencyCodes": {
+            "_type": "protobufs",
             "version": 1,
             "httpmethod": "POST",
             "description": "Generate emergency authenticator codes",
@@ -13878,10 +13930,10 @@
                     "optional": true,
                     "description": ""
                 }
-            ],
-            "_type": "protobufs"
+            ]
         },
         "DestroyEmergencyCodes": {
+            "_type": "protobufs",
             "version": 1,
             "httpmethod": "POST",
             "description": "Destroy emergency authenticator codes for the account",
@@ -13898,10 +13950,10 @@
                     "optional": true,
                     "description": "steamid to use"
                 }
-            ],
-            "_type": "protobufs"
+            ]
         },
         "FinalizeAddAuthenticator": {
+            "_type": "protobufs",
             "version": 1,
             "httpmethod": "POST",
             "description": "Finalize two-factor authentication addition to the logged-in account",
@@ -13942,10 +13994,10 @@
                     "optional": true,
                     "description": "HTTP headers alternating by K/V"
                 }
-            ],
-            "_type": "protobufs"
+            ]
         },
         "QueryStatus": {
+            "_type": "protobufs",
             "version": 1,
             "httpmethod": "POST",
             "description": "Get two-factor authentication settings for the logged-in account",
@@ -13962,10 +14014,10 @@
                     "optional": true,
                     "description": "steamid to use"
                 }
-            ],
-            "_type": "protobufs"
+            ]
         },
         "QueryTime": {
+            "_type": "undocumented",
             "version": 1,
             "description": "Get server's idea of the current time",
             "parameters": [
@@ -13981,10 +14033,10 @@
                     "optional": true,
                     "description": "Current time on the sender (for stats, don't trust this)"
                 }
-            ],
-            "_type": "undocumented"
+            ]
         },
         "RemoveAuthenticator": {
+            "_type": "protobufs",
             "version": 1,
             "httpmethod": "POST",
             "description": "Remove two-factor authentication addition from the logged-in account",
@@ -14019,10 +14071,10 @@
                     "optional": true,
                     "description": "Remove all steamguard cookies"
                 }
-            ],
-            "_type": "protobufs"
+            ]
         },
         "SendEmail": {
+            "_type": "protobufs",
             "version": 1,
             "httpmethod": "POST",
             "description": "Send email to the account",
@@ -14051,10 +14103,10 @@
                     "optional": true,
                     "description": "Include activation code in email parameters"
                 }
-            ],
-            "_type": "protobufs"
+            ]
         },
         "UpdateTokenVersion": {
+            "_type": "protobufs",
             "version": 1,
             "httpmethod": "POST",
             "description": "Update the version for my token",
@@ -14071,10 +14123,10 @@
                     "optional": true,
                     "description": "What the version of our token should be"
                 }
-            ],
-            "_type": "protobufs"
+            ]
         },
         "ValidateToken": {
+            "_type": "protobufs",
             "version": 1,
             "httpmethod": "POST",
             "description": "Validate (and consume) a token",
@@ -14091,12 +14143,12 @@
                     "optional": true,
                     "description": "code to validate"
                 }
-            ],
-            "_type": "protobufs"
+            ]
         }
     },
     "IUserAccountService": {
         "GetAvailableValveDiscountPromotions": {
+            "_type": "protobufs",
             "version": 1,
             "description": "Gets the available promotional discounts available to the user",
             "parameters": [
@@ -14112,12 +14164,12 @@
                     "optional": true,
                     "description": ""
                 }
-            ],
-            "_type": "protobufs"
+            ]
         }
     },
     "IVideoService": {
         "GetVideoBookmarks": {
+            "_type": "protobufs",
             "version": 1,
             "httpmethod": "POST",
             "description": "Returns the video bookmarks locations for the specific videos. Includes playback settings per video",
@@ -14140,10 +14192,10 @@
                     "optional": true,
                     "description": "Only return results after time. Min value is 1. (seconds since epoch January 1st, 1970 Unix Time)"
                 }
-            ],
-            "_type": "protobufs"
+            ]
         },
         "SetVideoBookmark": {
+            "_type": "protobufs",
             "version": 1,
             "httpmethod": "POST",
             "description": "Bookmarks the locations in the video the user has reached. As as record playback settings per video. Fire and forget.",
@@ -14160,12 +14212,12 @@
                     "optional": true,
                     "description": "list of bookmarks we want to store."
                 }
-            ],
-            "_type": "protobufs"
+            ]
         }
     },
     "IWorkshopService": {
         "AddSpecialPayment": {
+            "_type": "publisher_only",
             "version": 1,
             "httpmethod": "POST",
             "description": "Add a special payment for an appid/gameitemid.",
@@ -14206,10 +14258,10 @@
                     "optional": false,
                     "description": "ROW Payment portion in USD Cents"
                 }
-            ],
-            "_type": "publisher_only"
+            ]
         },
         "GetFinalizedContributors": {
+            "_type": "publisher_only",
             "version": 1,
             "httpmethod": "GET",
             "description": "Get a list of contributors for a specific gameitemid/app combination.",
@@ -14230,10 +14282,10 @@
                     "type": "uint32",
                     "optional": false
                 }
-            ],
-            "_type": "publisher_only"
+            ]
         },
         "GetItemDailyRevenue": {
+            "_type": "publisher_only",
             "version": 1,
             "httpmethod": "GET",
             "description": "Get item revenue for a specific app/item definition for a date range.",
@@ -14264,10 +14316,10 @@
                     "type": "uint32",
                     "optional": false
                 }
-            ],
-            "_type": "publisher_only"
+            ]
         },
         "PopulateItemDescriptions": {
+            "_type": "publisher_only",
             "version": 1,
             "httpmethod": "POST",
             "description": "Populate block of item descriptions.",
@@ -14288,10 +14340,10 @@
                     "type": "{message}",
                     "optional": false
                 }
-            ],
-            "_type": "publisher_only"
+            ]
         },
         "SetItemPaymentRules": {
+            "_type": "publisher_only",
             "version": 1,
             "httpmethod": "POST",
             "description": "Set item payment rules.",
@@ -14338,8 +14390,7 @@
                     "type": "{message}",
                     "optional": false
                 }
-            ],
-            "_type": "publisher_only"
+            ]
         }
     }
 }
