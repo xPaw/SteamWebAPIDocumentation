@@ -2208,7 +2208,6 @@
     },
     "IClientStats_1046930": {
         "ReportEvent": {
-            "_type": "undocumented",
             "version": 1,
             "httpmethod": "POST",
             "parameters": []
@@ -3182,7 +3181,6 @@
             "parameters": []
         },
         "GetFantasyPlayerStats": {
-            "_type": "undocumented",
             "version": 1,
             "httpmethod": "GET",
             "parameters": [
@@ -3225,7 +3223,6 @@
             ]
         },
         "GetPlayerOfficialInfo": {
-            "_type": "undocumented",
             "version": 1,
             "httpmethod": "GET",
             "parameters": [
@@ -3238,7 +3235,6 @@
             ]
         },
         "GetProPlayerList": {
-            "_type": "undocumented",
             "version": 1,
             "httpmethod": "GET",
             "parameters": []
@@ -3329,7 +3325,6 @@
     },
     "IDOTA2MatchStats_205790": {
         "GetRealtimeStats": {
-            "_type": "undocumented",
             "version": 1,
             "httpmethod": "GET",
             "parameters": [
@@ -3562,13 +3557,11 @@
     },
     "IDOTA2Match_205790": {
         "GetLeagueListing": {
-            "_type": "undocumented",
             "version": 1,
             "httpmethod": "GET",
             "parameters": []
         },
         "GetLiveLeagueGames": {
-            "_type": "undocumented",
             "version": 1,
             "httpmethod": "GET",
             "parameters": [
@@ -3587,7 +3580,6 @@
             ]
         },
         "GetMatchDetails": {
-            "_type": "undocumented",
             "version": 1,
             "httpmethod": "GET",
             "parameters": [
@@ -3600,7 +3592,6 @@
             ]
         },
         "GetMatchHistory": {
-            "_type": "undocumented",
             "version": 1,
             "httpmethod": "GET",
             "parameters": [
@@ -3655,7 +3646,6 @@
             ]
         },
         "GetMatchHistoryBySequenceNum": {
-            "_type": "undocumented",
             "version": 1,
             "httpmethod": "GET",
             "parameters": [
@@ -3679,7 +3669,6 @@
             "parameters": []
         },
         "GetTeamInfoByTeamID": {
-            "_type": "undocumented",
             "version": 1,
             "httpmethod": "GET",
             "parameters": [
@@ -3698,7 +3687,6 @@
             ]
         },
         "GetTopLiveEventGame": {
-            "_type": "undocumented",
             "version": 1,
             "httpmethod": "GET",
             "parameters": [
@@ -3711,7 +3699,6 @@
             ]
         },
         "GetTopLiveGame": {
-            "_type": "undocumented",
             "version": 1,
             "httpmethod": "GET",
             "parameters": [
@@ -3724,7 +3711,6 @@
             ]
         },
         "GetTopWeekendTourneyGames": {
-            "_type": "undocumented",
             "version": 1,
             "httpmethod": "GET",
             "parameters": [
@@ -3743,7 +3729,6 @@
             ]
         },
         "GetTournamentPlayerStats": {
-            "_type": "undocumented",
             "version": 2,
             "httpmethod": "GET",
             "parameters": [
@@ -3837,7 +3822,6 @@
     },
     "IDOTA2StreamSystem_205790": {
         "GetBroadcasterInfo": {
-            "_type": "undocumented",
             "version": 1,
             "httpmethod": "GET",
             "parameters": [
@@ -3930,7 +3914,6 @@
     },
     "IDOTA2Ticket_205790": {
         "ClaimBadgeReward": {
-            "_type": "undocumented",
             "version": 1,
             "httpmethod": "GET",
             "parameters": [
@@ -3961,7 +3944,6 @@
             ]
         },
         "GetSteamIDForBadgeID": {
-            "_type": "undocumented",
             "version": 1,
             "httpmethod": "GET",
             "parameters": [
@@ -3974,7 +3956,6 @@
             ]
         },
         "SetSteamAccountPurchased": {
-            "_type": "undocumented",
             "version": 1,
             "httpmethod": "POST",
             "parameters": [
@@ -3993,7 +3974,6 @@
             ]
         },
         "SteamAccountValidForBadgeType": {
-            "_type": "undocumented",
             "version": 1,
             "httpmethod": "GET",
             "parameters": [
@@ -4137,7 +4117,6 @@
     },
     "IEconDOTA2_205790": {
         "GetEventStatsForAccount": {
-            "_type": "undocumented",
             "version": 1,
             "httpmethod": "GET",
             "parameters": [
@@ -4162,7 +4141,6 @@
             ]
         },
         "GetGameItems": {
-            "_type": "undocumented",
             "version": 1,
             "httpmethod": "GET",
             "parameters": [
@@ -4175,7 +4153,6 @@
             ]
         },
         "GetHeroes": {
-            "_type": "undocumented",
             "version": 1,
             "httpmethod": "GET",
             "parameters": [
@@ -4194,7 +4171,6 @@
             ]
         },
         "GetItemIconPath": {
-            "_type": "undocumented",
             "version": 1,
             "httpmethod": "GET",
             "parameters": [
@@ -4213,7 +4189,6 @@
             ]
         },
         "GetRarities": {
-            "_type": "undocumented",
             "version": 1,
             "httpmethod": "GET",
             "parameters": [
@@ -4226,7 +4201,6 @@
             ]
         },
         "GetTournamentPrizePool": {
-            "_type": "undocumented",
             "version": 1,
             "httpmethod": "GET",
             "parameters": [
@@ -4241,7 +4215,6 @@
     },
     "IEconItems_440": {
         "GetPlayerItems": {
-            "_type": "undocumented",
             "version": 1,
             "httpmethod": "GET",
             "parameters": [
@@ -4254,7 +4227,6 @@
             ]
         },
         "GetSchema": {
-            "_type": "undocumented",
             "version": 1,
             "httpmethod": "GET",
             "parameters": [
@@ -4267,7 +4239,6 @@
             ]
         },
         "GetSchemaItems": {
-            "_type": "undocumented",
             "version": 1,
             "httpmethod": "GET",
             "parameters": [
@@ -4286,7 +4257,6 @@
             ]
         },
         "GetSchemaOverview": {
-            "_type": "undocumented",
             "version": 1,
             "httpmethod": "GET",
             "parameters": [
@@ -4299,13 +4269,11 @@
             ]
         },
         "GetSchemaURL": {
-            "_type": "undocumented",
             "version": 1,
             "httpmethod": "GET",
             "parameters": []
         },
         "GetStoreMetaData": {
-            "_type": "undocumented",
             "version": 1,
             "httpmethod": "GET",
             "parameters": [
@@ -4318,7 +4286,6 @@
             ]
         },
         "GetStoreStatus": {
-            "_type": "undocumented",
             "version": 1,
             "httpmethod": "GET",
             "parameters": []
@@ -4445,7 +4412,6 @@
     },
     "IEconItems_205790": {
         "GetEquippedPlayerItems": {
-            "_type": "undocumented",
             "version": 1,
             "httpmethod": "GET",
             "parameters": [
@@ -4464,7 +4430,6 @@
             ]
         },
         "GetPlayerItems": {
-            "_type": "undocumented",
             "version": 1,
             "httpmethod": "GET",
             "parameters": [
@@ -4477,13 +4442,11 @@
             ]
         },
         "GetSchemaURL": {
-            "_type": "undocumented",
             "version": 1,
             "httpmethod": "GET",
             "parameters": []
         },
         "GetStoreMetaData": {
-            "_type": "undocumented",
             "version": 1,
             "httpmethod": "GET",
             "parameters": [
@@ -4498,7 +4461,6 @@
     },
     "IEconItems_221540": {
         "GetPlayerItems": {
-            "_type": "undocumented",
             "version": 1,
             "httpmethod": "GET",
             "parameters": [
@@ -4547,7 +4509,6 @@
     },
     "IEconItems_1046930": {
         "GetPlayerItems": {
-            "_type": "undocumented",
             "version": 1,
             "httpmethod": "GET",
             "parameters": [
@@ -5182,13 +5143,11 @@
     },
     "IGCVersion_440": {
         "GetClientVersion": {
-            "_type": "undocumented",
             "version": 1,
             "httpmethod": "GET",
             "parameters": []
         },
         "GetServerVersion": {
-            "_type": "undocumented",
             "version": 1,
             "httpmethod": "GET",
             "parameters": []
@@ -5215,13 +5174,11 @@
     },
     "IGCVersion_205790": {
         "GetClientVersion": {
-            "_type": "undocumented",
             "version": 1,
             "httpmethod": "GET",
             "parameters": []
         },
         "GetServerVersion": {
-            "_type": "undocumented",
             "version": 1,
             "httpmethod": "GET",
             "parameters": []
@@ -5241,13 +5198,11 @@
     },
     "IGCVersion_1046930": {
         "GetClientVersion": {
-            "_type": "undocumented",
             "version": 1,
             "httpmethod": "GET",
             "parameters": []
         },
         "GetServerVersion": {
-            "_type": "undocumented",
             "version": 1,
             "httpmethod": "GET",
             "parameters": []
@@ -13624,7 +13579,6 @@
     },
     "ITFItems_440": {
         "GetGoldenWrenches": {
-            "_type": "undocumented",
             "version": 2,
             "httpmethod": "GET",
             "parameters": []
@@ -13632,7 +13586,6 @@
     },
     "ITFPromos_440": {
         "GetItemID": {
-            "_type": "undocumented",
             "version": 1,
             "httpmethod": "GET",
             "parameters": [
@@ -13651,7 +13604,6 @@
             ]
         },
         "GrantItem": {
-            "_type": "undocumented",
             "version": 1,
             "httpmethod": "POST",
             "parameters": [
@@ -13750,7 +13702,6 @@
     },
     "ITFPromos_205790": {
         "GetItemID": {
-            "_type": "undocumented",
             "version": 1,
             "httpmethod": "GET",
             "parameters": [
@@ -13769,7 +13720,6 @@
             ]
         },
         "GrantItem": {
-            "_type": "undocumented",
             "version": 1,
             "httpmethod": "POST",
             "parameters": [
@@ -13790,7 +13740,6 @@
     },
     "ITFSystem_440": {
         "GetWorldStatus": {
-            "_type": "undocumented",
             "version": 1,
             "httpmethod": "GET",
             "parameters": []
