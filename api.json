@@ -4461,7 +4461,6 @@
     },
     "IEconItems_221540": {
         "GetPlayerItems": {
-            "_type": "undocumented",
             "version": 1,
             "httpmethod": "GET",
             "parameters": [
@@ -4490,7 +4489,6 @@
     },
     "IEconItems_583950": {
         "GetEquippedPlayerItems": {
-            "_type": "undocumented",
             "version": 1,
             "httpmethod": "GET",
             "parameters": [
@@ -4525,7 +4523,6 @@
     },
     "IEconItems_1269260": {
         "GetEquippedPlayerItems": {
-            "_type": "undocumented",
             "version": 1,
             "httpmethod": "GET",
             "parameters": [
@@ -5189,13 +5186,11 @@
     },
     "IGCVersion_583950": {
         "GetClientVersion": {
-            "_type": "undocumented",
             "version": 1,
             "httpmethod": "GET",
             "parameters": []
         },
         "GetServerVersion": {
-            "_type": "undocumented",
             "version": 1,
             "httpmethod": "GET",
             "parameters": []
@@ -5215,13 +5210,11 @@
     },
     "IGCVersion_1269260": {
         "GetClientVersion": {
-            "_type": "undocumented",
             "version": 1,
             "httpmethod": "GET",
             "parameters": []
         },
         "GetServerVersion": {
-            "_type": "undocumented",
             "version": 1,
             "httpmethod": "GET",
             "parameters": []
