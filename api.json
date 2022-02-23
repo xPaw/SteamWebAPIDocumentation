@@ -7796,7 +7796,7 @@
         "IsPlayingSharedGame": {
             "version": 1,
             "httpmethod": "GET",
-            "description": "Returns valid lender SteamID if game currently played is borrowed",
+            "description": "Obsolete, partners should use ISteamUser.CheckAppOwnership",
             "parameters": [
                 {
                     "name": "key",
@@ -12873,7 +12873,7 @@
         },
         "GrantPackage": {
             "_type": "publisher_only",
-            "version": 2,
+            "version": 3,
             "httpmethod": "POST",
             "parameters": [
                 {
