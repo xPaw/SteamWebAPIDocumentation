@@ -3217,6 +3217,7 @@
             "parameters": []
         },
         "GetFantasyPlayerStats": {
+            "_type": "publisher_only",
             "version": 1,
             "httpmethod": "GET",
             "parameters": [
@@ -3259,6 +3260,7 @@
             ]
         },
         "GetPlayerOfficialInfo": {
+            "_type": "publisher_only",
             "version": 1,
             "httpmethod": "GET",
             "parameters": [
@@ -3271,6 +3273,7 @@
             ]
         },
         "GetProPlayerList": {
+            "_type": "publisher_only",
             "version": 1,
             "httpmethod": "GET",
             "parameters": []
@@ -3361,6 +3364,7 @@
     },
     "IDOTA2MatchStats_205790": {
         "GetRealtimeStats": {
+            "_type": "publisher_only",
             "version": 1,
             "httpmethod": "GET",
             "parameters": [
@@ -3593,11 +3597,13 @@
     },
     "IDOTA2Match_205790": {
         "GetLeagueListing": {
+            "_type": "publisher_only",
             "version": 1,
             "httpmethod": "GET",
             "parameters": []
         },
         "GetLiveLeagueGames": {
+            "_type": "publisher_only",
             "version": 1,
             "httpmethod": "GET",
             "parameters": [
@@ -3616,6 +3622,7 @@
             ]
         },
         "GetMatchDetails": {
+            "_type": "publisher_only",
             "version": 1,
             "httpmethod": "GET",
             "parameters": [
@@ -3628,6 +3635,7 @@
             ]
         },
         "GetMatchHistory": {
+            "_type": "publisher_only",
             "version": 1,
             "httpmethod": "GET",
             "parameters": [
@@ -3682,6 +3690,7 @@
             ]
         },
         "GetMatchHistoryBySequenceNum": {
+            "_type": "publisher_only",
             "version": 1,
             "httpmethod": "GET",
             "parameters": [
@@ -3705,6 +3714,7 @@
             "parameters": []
         },
         "GetTeamInfoByTeamID": {
+            "_type": "publisher_only",
             "version": 1,
             "httpmethod": "GET",
             "parameters": [
@@ -3723,6 +3733,7 @@
             ]
         },
         "GetTopLiveEventGame": {
+            "_type": "publisher_only",
             "version": 1,
             "httpmethod": "GET",
             "parameters": [
@@ -3735,6 +3746,7 @@
             ]
         },
         "GetTopLiveGame": {
+            "_type": "publisher_only",
             "version": 1,
             "httpmethod": "GET",
             "parameters": [
@@ -3747,6 +3759,7 @@
             ]
         },
         "GetTopWeekendTourneyGames": {
+            "_type": "publisher_only",
             "version": 1,
             "httpmethod": "GET",
             "parameters": [
@@ -3765,6 +3778,7 @@
             ]
         },
         "GetTournamentPlayerStats": {
+            "_type": "publisher_only",
             "version": 2,
             "httpmethod": "GET",
             "parameters": [
@@ -3858,6 +3872,7 @@
     },
     "IDOTA2StreamSystem_205790": {
         "GetBroadcasterInfo": {
+            "_type": "publisher_only",
             "version": 1,
             "httpmethod": "GET",
             "parameters": [
@@ -3950,6 +3965,7 @@
     },
     "IDOTA2Ticket_205790": {
         "ClaimBadgeReward": {
+            "_type": "publisher_only",
             "version": 1,
             "httpmethod": "GET",
             "parameters": [
@@ -3980,6 +3996,7 @@
             ]
         },
         "GetSteamIDForBadgeID": {
+            "_type": "publisher_only",
             "version": 1,
             "httpmethod": "GET",
             "parameters": [
@@ -3992,6 +4009,7 @@
             ]
         },
         "SetSteamAccountPurchased": {
+            "_type": "publisher_only",
             "version": 1,
             "httpmethod": "POST",
             "parameters": [
@@ -4010,6 +4028,7 @@
             ]
         },
         "SteamAccountValidForBadgeType": {
+            "_type": "publisher_only",
             "version": 1,
             "httpmethod": "GET",
             "parameters": [
@@ -4153,6 +4172,7 @@
     },
     "IEconDOTA2_205790": {
         "GetEventStatsForAccount": {
+            "_type": "publisher_only",
             "version": 1,
             "httpmethod": "GET",
             "parameters": [
@@ -4177,6 +4197,7 @@
             ]
         },
         "GetGameItems": {
+            "_type": "publisher_only",
             "version": 1,
             "httpmethod": "GET",
             "parameters": [
@@ -4189,6 +4210,7 @@
             ]
         },
         "GetHeroes": {
+            "_type": "publisher_only",
             "version": 1,
             "httpmethod": "GET",
             "parameters": [
@@ -4207,6 +4229,7 @@
             ]
         },
         "GetItemIconPath": {
+            "_type": "publisher_only",
             "version": 1,
             "httpmethod": "GET",
             "parameters": [
@@ -4225,6 +4248,7 @@
             ]
         },
         "GetRarities": {
+            "_type": "publisher_only",
             "version": 1,
             "httpmethod": "GET",
             "parameters": [
@@ -4237,6 +4261,7 @@
             ]
         },
         "GetTournamentPrizePool": {
+            "_type": "publisher_only",
             "version": 1,
             "httpmethod": "GET",
             "parameters": [
@@ -4448,6 +4473,7 @@
     },
     "IEconItems_205790": {
         "GetEquippedPlayerItems": {
+            "_type": "publisher_only",
             "version": 1,
             "httpmethod": "GET",
             "parameters": [
@@ -4466,6 +4492,7 @@
             ]
         },
         "GetPlayerItems": {
+            "_type": "publisher_only",
             "version": 1,
             "httpmethod": "GET",
             "parameters": [
@@ -4478,11 +4505,13 @@
             ]
         },
         "GetSchemaURL": {
+            "_type": "publisher_only",
             "version": 1,
             "httpmethod": "GET",
             "parameters": []
         },
         "GetStoreMetaData": {
+            "_type": "publisher_only",
             "version": 1,
             "httpmethod": "GET",
             "parameters": [
@@ -5210,11 +5239,13 @@
     },
     "IGCVersion_205790": {
         "GetClientVersion": {
+            "_type": "publisher_only",
             "version": 1,
             "httpmethod": "GET",
             "parameters": []
         },
         "GetServerVersion": {
+            "_type": "publisher_only",
             "version": 1,
             "httpmethod": "GET",
             "parameters": []
@@ -13943,6 +13974,7 @@
     },
     "ITFPromos_205790": {
         "GetItemID": {
+            "_type": "publisher_only",
             "version": 1,
             "httpmethod": "GET",
             "parameters": [
@@ -13961,6 +13993,7 @@
             ]
         },
         "GrantItem": {
+            "_type": "publisher_only",
             "version": 1,
             "httpmethod": "POST",
             "parameters": [
