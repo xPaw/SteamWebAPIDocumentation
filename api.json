@@ -11032,6 +11032,12 @@
                     "type": "string",
                     "optional": true,
                     "description": "ip address of user in string format (xxx.xxx.xxx.xxx). Only required if usersession=web"
+                },
+                {
+                    "name": "appid",
+                    "type": "uint32",
+                    "optional": true,
+                    "description": "AppID of game this transaction is for"
                 }
             ]
         },
@@ -11427,6 +11433,12 @@
                     "type": "string",
                     "optional": true,
                     "description": "ip address of user in string format (xxx.xxx.xxx.xxx). Only required if usersession=web"
+                },
+                {
+                    "name": "appid",
+                    "type": "uint32",
+                    "optional": true,
+                    "description": "AppID of game this transaction is for"
                 }
             ]
         },
