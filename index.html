@@ -319,16 +319,19 @@
 													</div>
 													<div class="form-check form-switch m-2" v-else-if="parameter.type === 'bool'">
 														<input
+															type="hidden"
+															:name="parameter.name"
+															:value="parameter._value"
+															:disabled="!parameter.manuallyToggled"
+														>
+														<input
 															type="checkbox"
 															class="form-check-input"
-															value="1"
-															:name="parameter.name"
-															:id="`check_${methodName}_${parameter.name}`"
+															:id="`param_${methodName}_${parameter.name}`"
 															v-model="parameter._value"
 															:aria-label="parameter.name"
 															@change="parameter.manuallyToggled = true"
 														>
-														<label class="form-check-label" :for="`check_${methodName}_${parameter.name}`"></label>
 														<button class="btn btn-sm btn-danger py-0" type="button" v-if="parameter.manuallyToggled" @click="parameter.manuallyToggled = false; parameter._value = false;">&times;</button>
 													</div>
 													<input
