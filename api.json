@@ -15,7 +15,7 @@
                     "name": "account_type",
                     "type": "EInternalAccountType",
                     "optional": true,
-                    "description": ""
+                    "description": "enum"
                 },
                 {
                     "name": "account_id",
@@ -224,6 +224,19 @@
                     "type": "EAuthTokenPlatformType",
                     "optional": true,
                     "description": "enum"
+                }
+            ]
+        },
+        "GenerateAccessTokenForApp": {
+            "_type": "protobufs",
+            "version": 1,
+            "httpmethod": "POST",
+            "parameters": [
+                {
+                    "name": "key",
+                    "type": "string",
+                    "optional": false,
+                    "description": "Access key"
                 }
             ]
         },
@@ -2254,6 +2267,49 @@
                 {
                     "name": "errors",
                     "type": "CClientMetrics_ReportClientError_Notification.Error",
+                    "optional": true,
+                    "description": ""
+                }
+            ]
+        },
+        "ReportReactUsage": {
+            "_type": "protobufs",
+            "version": 1,
+            "httpmethod": "POST",
+            "parameters": [
+                {
+                    "name": "key",
+                    "type": "string",
+                    "optional": false,
+                    "description": "Access key"
+                },
+                {
+                    "name": "product",
+                    "type": "string",
+                    "optional": true,
+                    "description": ""
+                },
+                {
+                    "name": "version",
+                    "type": "string",
+                    "optional": true,
+                    "description": ""
+                },
+                {
+                    "name": "routes",
+                    "type": "CClientMetrics_ReportReactUsage_Notification.RouteData",
+                    "optional": true,
+                    "description": ""
+                },
+                {
+                    "name": "components",
+                    "type": "CClientMetrics_ReportReactUsage_Notification.ComponentData",
+                    "optional": true,
+                    "description": ""
+                },
+                {
+                    "name": "actions",
+                    "type": "CClientMetrics_ReportReactUsage_Notification.ActionData",
                     "optional": true,
                     "description": ""
                 }
@@ -4758,44 +4814,6 @@
         }
     },
     "IEconService": {
-        "CancelTradeOffer": {
-            "_type": "undocumented",
-            "version": 1,
-            "httpmethod": "POST",
-            "description": "Cancel a trade offer we sent",
-            "parameters": [
-                {
-                    "name": "key",
-                    "type": "string",
-                    "optional": false,
-                    "description": "Access key"
-                },
-                {
-                    "name": "tradeofferid",
-                    "type": "uint64",
-                    "optional": false
-                }
-            ]
-        },
-        "DeclineTradeOffer": {
-            "_type": "undocumented",
-            "version": 1,
-            "httpmethod": "POST",
-            "description": "Decline a trade offer someone sent to us",
-            "parameters": [
-                {
-                    "name": "key",
-                    "type": "string",
-                    "optional": false,
-                    "description": "Access key"
-                },
-                {
-                    "name": "tradeofferid",
-                    "type": "uint64",
-                    "optional": false
-                }
-            ]
-        },
         "FlushAssetAppearanceCache": {
             "_type": "publisher_only",
             "version": 1,
@@ -7146,6 +7164,133 @@
                     "type": "string",
                     "optional": false,
                     "description": "Access key"
+                },
+                {
+                    "name": "serial_number",
+                    "type": "string",
+                    "optional": true,
+                    "description": ""
+                },
+                {
+                    "name": "controller_code",
+                    "type": "string",
+                    "optional": true,
+                    "description": ""
+                }
+            ]
+        }
+    },
+    "IMarketingMessagesService": {
+        "CreateMarketingMessage": {
+            "_type": "protobufs",
+            "version": 1,
+            "httpmethod": "POST",
+            "parameters": [
+                {
+                    "name": "key",
+                    "type": "string",
+                    "optional": false,
+                    "description": "Access key"
+                },
+                {
+                    "name": "message",
+                    "type": "CMarketingMessageProto",
+                    "optional": true,
+                    "description": ""
+                }
+            ]
+        },
+        "DeleteMarketingMessage": {
+            "_type": "protobufs",
+            "version": 1,
+            "httpmethod": "POST",
+            "parameters": [
+                {
+                    "name": "key",
+                    "type": "string",
+                    "optional": false,
+                    "description": "Access key"
+                }
+            ]
+        },
+        "FindMarketingMessages": {
+            "_type": "protobufs",
+            "version": 1,
+            "httpmethod": "POST",
+            "parameters": [
+                {
+                    "name": "key",
+                    "type": "string",
+                    "optional": false,
+                    "description": "Access key"
+                },
+                {
+                    "name": "lookup_type",
+                    "type": "int32",
+                    "optional": true,
+                    "description": "enum"
+                },
+                {
+                    "name": "gid",
+                    "type": "fixed64",
+                    "optional": true,
+                    "description": ""
+                },
+                {
+                    "name": "message_type",
+                    "type": "int32",
+                    "optional": true,
+                    "description": "enum"
+                },
+                {
+                    "name": "gidlist[0]",
+                    "type": "fixed64[]",
+                    "optional": true,
+                    "description": ""
+                },
+                {
+                    "name": "title",
+                    "type": "string",
+                    "optional": true,
+                    "description": ""
+                }
+            ]
+        },
+        "GetActiveMarketingMessages": {
+            "_type": "protobufs",
+            "version": 1,
+            "parameters": [
+                {
+                    "name": "key",
+                    "type": "string",
+                    "optional": false,
+                    "description": "Access key"
+                }
+            ]
+        },
+        "GetMarketingMessage": {
+            "_type": "protobufs",
+            "version": 1,
+            "httpmethod": "POST",
+            "parameters": [
+                {
+                    "name": "key",
+                    "type": "string",
+                    "optional": false,
+                    "description": "Access key"
+                }
+            ]
+        },
+        "UpdateMarketingMessage": {
+            "_type": "protobufs",
+            "version": 1,
+            "httpmethod": "POST",
+            "parameters": [
+                {
+                    "name": "key",
+                    "type": "string",
+                    "optional": false,
+                    "description": "Access key"
                 }
             ]
         }
@@ -7379,6 +7524,20 @@
                     "type": "uint32",
                     "optional": false,
                     "description": "unix time range end to check"
+                }
+            ]
+        }
+    },
+    "IPartnerMembershipInviteService": {
+        "GetInvites": {
+            "_type": "protobufs",
+            "version": 1,
+            "parameters": [
+                {
+                    "name": "key",
+                    "type": "string",
+                    "optional": false,
+                    "description": "Access key"
                 }
             ]
         }
@@ -7752,6 +7911,18 @@
                     "type": "string",
                     "optional": true,
                     "description": ""
+                },
+                {
+                    "name": "filters",
+                    "type": "ECommunityItemClass",
+                    "optional": true,
+                    "description": ""
+                },
+                {
+                    "name": "filters[0]",
+                    "type": "int32[]",
+                    "optional": true,
+                    "description": "enum"
                 }
             ]
         },
@@ -7834,12 +8005,25 @@
         "GetSteamDeckKeyboardSkin": {
             "_type": "protobufs",
             "version": 1,
+            "description": "Gets which Steam Deck keyboard skin is active for a specific user",
             "parameters": [
                 {
                     "name": "key",
                     "type": "string",
                     "optional": false,
                     "description": "Access key"
+                },
+                {
+                    "name": "steamid",
+                    "type": "fixed64",
+                    "optional": true,
+                    "description": "The player we're asking about"
+                },
+                {
+                    "name": "language",
+                    "type": "string",
+                    "optional": true,
+                    "description": ""
                 }
             ]
         },
@@ -8149,6 +8333,7 @@
             "_type": "protobufs",
             "version": 1,
             "httpmethod": "POST",
+            "description": "Sets the user's current Steam Deck keyboard skin",
             "parameters": [
                 {
                     "name": "key",
@@ -8206,6 +8391,228 @@
                     "name": "steamid",
                     "type": "uint64",
                     "optional": false
+                }
+            ]
+        }
+    },
+    "IPromotionEventInvitesService": {
+        "GetAllActiveInvites": {
+            "_type": "protobufs",
+            "version": 1,
+            "parameters": [
+                {
+                    "name": "key",
+                    "type": "string",
+                    "optional": false,
+                    "description": "Access key"
+                }
+            ]
+        },
+        "GetInvite": {
+            "_type": "protobufs",
+            "version": 1,
+            "parameters": [
+                {
+                    "name": "key",
+                    "type": "string",
+                    "optional": false,
+                    "description": "Access key"
+                }
+            ]
+        },
+        "ResendEmailInvite": {
+            "_type": "protobufs",
+            "version": 1,
+            "httpmethod": "POST",
+            "parameters": [
+                {
+                    "name": "key",
+                    "type": "string",
+                    "optional": false,
+                    "description": "Access key"
+                }
+            ]
+        },
+        "SetInvite": {
+            "_type": "protobufs",
+            "version": 1,
+            "httpmethod": "POST",
+            "parameters": [
+                {
+                    "name": "key",
+                    "type": "string",
+                    "optional": false,
+                    "description": "Access key"
+                }
+            ]
+        }
+    },
+    "IPromotionPlanningService": {
+        "CreatePlan": {
+            "_type": "protobufs",
+            "version": 1,
+            "httpmethod": "POST",
+            "parameters": [
+                {
+                    "name": "key",
+                    "type": "string",
+                    "optional": false,
+                    "description": "Access key"
+                },
+                {
+                    "name": "plan",
+                    "type": "CPromotionPlan",
+                    "optional": true,
+                    "description": ""
+                }
+            ]
+        },
+        "CreateTentativePlan": {
+            "_type": "protobufs",
+            "version": 1,
+            "httpmethod": "POST",
+            "parameters": [
+                {
+                    "name": "key",
+                    "type": "string",
+                    "optional": false,
+                    "description": "Access key"
+                },
+                {
+                    "name": "plan",
+                    "type": "CPromotionPlan",
+                    "optional": true,
+                    "description": ""
+                }
+            ]
+        },
+        "DeletePlan": {
+            "_type": "protobufs",
+            "version": 1,
+            "httpmethod": "POST",
+            "parameters": [
+                {
+                    "name": "key",
+                    "type": "string",
+                    "optional": false,
+                    "description": "Access key"
+                },
+                {
+                    "name": "promotion_id",
+                    "type": "fixed64",
+                    "optional": true,
+                    "description": ""
+                }
+            ]
+        },
+        "GetAllActivePlan": {
+            "_type": "protobufs",
+            "version": 1,
+            "parameters": [
+                {
+                    "name": "key",
+                    "type": "string",
+                    "optional": false,
+                    "description": "Access key"
+                }
+            ]
+        },
+        "GetPlan": {
+            "_type": "protobufs",
+            "version": 1,
+            "parameters": [
+                {
+                    "name": "key",
+                    "type": "string",
+                    "optional": false,
+                    "description": "Access key"
+                },
+                {
+                    "name": "promotion_id",
+                    "type": "fixed64",
+                    "optional": true,
+                    "description": ""
+                }
+            ]
+        },
+        "GetPlanByInputAccessKey": {
+            "_type": "protobufs",
+            "version": 1,
+            "parameters": [
+                {
+                    "name": "key",
+                    "type": "string",
+                    "optional": false,
+                    "description": "Access key"
+                }
+            ]
+        },
+        "SearchPlan": {
+            "_type": "protobufs",
+            "version": 1,
+            "parameters": [
+                {
+                    "name": "key",
+                    "type": "string",
+                    "optional": false,
+                    "description": "Access key"
+                }
+            ]
+        },
+        "UpdatePlan": {
+            "_type": "protobufs",
+            "version": 1,
+            "httpmethod": "POST",
+            "parameters": [
+                {
+                    "name": "key",
+                    "type": "string",
+                    "optional": false,
+                    "description": "Access key"
+                },
+                {
+                    "name": "plan",
+                    "type": "CPromotionPlan",
+                    "optional": true,
+                    "description": ""
+                }
+            ]
+        },
+        "UpdatePlanInputData": {
+            "_type": "protobufs",
+            "version": 1,
+            "httpmethod": "POST",
+            "parameters": [
+                {
+                    "name": "key",
+                    "type": "string",
+                    "optional": false,
+                    "description": "Access key"
+                },
+                {
+                    "name": "plan",
+                    "type": "CPromotionPlan",
+                    "optional": true,
+                    "description": ""
+                }
+            ]
+        },
+        "UpdatePlanPartnerInfo": {
+            "_type": "protobufs",
+            "version": 1,
+            "httpmethod": "POST",
+            "parameters": [
+                {
+                    "name": "key",
+                    "type": "string",
+                    "optional": false,
+                    "description": "Access key"
+                },
+                {
+                    "name": "plan",
+                    "type": "CPromotionPlan",
+                    "optional": true,
+                    "description": ""
                 }
             ]
         }
@@ -13948,12 +14355,6 @@
                     "description": ""
                 },
                 {
-                    "name": "context",
-                    "type": "StoreBrowseContext",
-                    "optional": true,
-                    "description": ""
-                },
-                {
                     "name": "search_term",
                     "type": "string",
                     "optional": true,
@@ -13968,12 +14369,6 @@
                 {
                     "name": "filters",
                     "type": "CStoreQueryFilters",
-                    "optional": true,
-                    "description": ""
-                },
-                {
-                    "name": "data_request",
-                    "type": "StoreBrowseItemDataRequest",
                     "optional": true,
                     "description": ""
                 }
@@ -14053,6 +14448,91 @@
                 }
             ]
         },
+        "GetDiscoveryQueue": {
+            "_type": "protobufs",
+            "version": 1,
+            "description": "Get a list of games for the user to explore on the store.",
+            "parameters": [
+                {
+                    "name": "key",
+                    "type": "string",
+                    "optional": false,
+                    "description": "Access key"
+                },
+                {
+                    "name": "queue_type",
+                    "type": "EStoreDiscoveryQueueType",
+                    "optional": true,
+                    "description": "enum"
+                },
+                {
+                    "name": "country_code",
+                    "type": "string",
+                    "optional": true,
+                    "description": ""
+                },
+                {
+                    "name": "rebuild_queue",
+                    "type": "bool",
+                    "optional": true,
+                    "description": ""
+                },
+                {
+                    "name": "settings_changed",
+                    "type": "bool",
+                    "optional": true,
+                    "description": ""
+                },
+                {
+                    "name": "settings",
+                    "type": "CStoreDiscoveryQueueSettings",
+                    "optional": true,
+                    "description": ""
+                },
+                {
+                    "name": "rebuild_queue_if_stale",
+                    "type": "bool",
+                    "optional": true,
+                    "description": ""
+                },
+                {
+                    "name": "ignore_user_preferences",
+                    "type": "bool",
+                    "optional": true,
+                    "description": ""
+                },
+                {
+                    "name": "no_experimental_results",
+                    "type": "bool",
+                    "optional": true,
+                    "description": ""
+                },
+                {
+                    "name": "experimental_cohort",
+                    "type": "uint32",
+                    "optional": true,
+                    "description": ""
+                },
+                {
+                    "name": "debug_get_solr_query",
+                    "type": "bool",
+                    "optional": true,
+                    "description": ""
+                }
+            ]
+        },
+        "GetDiscoveryQueueSettings": {
+            "_type": "protobufs",
+            "version": 1,
+            "parameters": [
+                {
+                    "name": "key",
+                    "type": "string",
+                    "optional": false,
+                    "description": "Access key"
+                }
+            ]
+        },
         "GetLocalizedNameForTags": {
             "_type": "protobufs",
             "version": 1,
@@ -14094,6 +14574,19 @@
                     "type": "string",
                     "optional": true,
                     "description": ""
+                }
+            ]
+        },
+        "SkipDiscoveryQueueItem": {
+            "_type": "protobufs",
+            "version": 1,
+            "httpmethod": "POST",
+            "parameters": [
+                {
+                    "name": "key",
+                    "type": "string",
+                    "optional": false,
+                    "description": "Access key"
                 }
             ]
         }
