@@ -4759,6 +4759,7 @@
     },
     "IEconService": {
         "CancelTradeOffer": {
+            "_type": "undocumented",
             "version": 1,
             "httpmethod": "POST",
             "description": "Cancel a trade offer we sent",
@@ -4777,6 +4778,7 @@
             ]
         },
         "DeclineTradeOffer": {
+            "_type": "undocumented",
             "version": 1,
             "httpmethod": "POST",
             "description": "Decline a trade offer someone sent to us",
