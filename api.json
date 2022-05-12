@@ -4432,12 +4432,6 @@
                 }
             ]
         },
-        "GetSchemaURL": {
-            "_type": "undocumented",
-            "version": 1,
-            "httpmethod": "GET",
-            "parameters": []
-        },
         "GetStoreMetaData": {
             "version": 1,
             "httpmethod": "GET",
@@ -14587,6 +14581,18 @@
                     "type": "string",
                     "optional": false,
                     "description": "Access key"
+                },
+                {
+                    "name": "queue_type",
+                    "type": "int32",
+                    "optional": true,
+                    "description": "enum"
+                },
+                {
+                    "name": "appid",
+                    "type": "uint32",
+                    "optional": true,
+                    "description": ""
                 }
             ]
         }
@@ -14623,46 +14629,6 @@
             "parameters": [
                 {
                     "name": "steamid",
-                    "type": "uint64",
-                    "optional": false,
-                    "description": "The Steam ID to fetch items for"
-                },
-                {
-                    "name": "promoid",
-                    "type": "uint32",
-                    "optional": false,
-                    "description": "The promo ID to grant an item for"
-                }
-            ]
-        }
-    },
-    "ITFPromos_570": {
-        "GetItemID": {
-            "_type": "undocumented",
-            "version": 1,
-            "httpmethod": "GET",
-            "parameters": [
-                {
-                    "name": "SteamID",
-                    "type": "uint64",
-                    "optional": false,
-                    "description": "The Steam ID to fetch items for"
-                },
-                {
-                    "name": "promoid",
-                    "type": "uint32",
-                    "optional": false,
-                    "description": "The promo ID to grant an item for"
-                }
-            ]
-        },
-        "GrantItem": {
-            "_type": "undocumented",
-            "version": 1,
-            "httpmethod": "POST",
-            "parameters": [
-                {
-                    "name": "SteamID",
                     "type": "uint64",
                     "optional": false,
                     "description": "The Steam ID to fetch items for"
