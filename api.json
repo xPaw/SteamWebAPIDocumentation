@@ -14760,7 +14760,7 @@
     },
     "ITrustService": {
         "GetTrustScore": {
-            "_type": "publisher_only",
+            "_type": "undocumented",
             "version": 1,
             "httpmethod": "GET",
             "description": "Returns the Trust Score for the provided account in the specified appid.",
