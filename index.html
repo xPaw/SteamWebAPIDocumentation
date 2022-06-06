@@ -234,13 +234,11 @@
 						<div class="card border-primary mt-3">
 							<div class="card-header bg-primary text-white">Sitemap</div>
 							<div class="card-body">
-								<ul class="list-group">
-									<template v-for="(interface, interfaceName) in interfaces" :key="interfaceName">
-										<li class="list-group-item px-0" v-for="(method, methodName) in interface" :key="methodName">
-											<a :href="'#' + interfaceName + '/' + methodName">{{ interfaceName }}/{{methodName}}</a>
-											<div class="text-info mt-1" v-if="method.parameters.length > 0">{{ method.parameters.map( m => m.name ).join( ', ' ) }}</div>
-										</li>
-									</template>
+								<ul class="list-group" v-for="(interface, interfaceName) in interfaces" :key="interfaceName">
+									<li class="list-group-item px-0" v-for="(method, methodName) in interface" :key="methodName">
+										<a :href="'#' + interfaceName + '/' + methodName">{{ interfaceName }}/{{methodName}}</a>
+										<div class="text-info mt-1" v-if="method.parameters.length > 0">{{ method.parameters.map( m => m.name ).join( ', ' ) }}</div>
+									</li>
 								</ul>
 							</div>
 						</div>
