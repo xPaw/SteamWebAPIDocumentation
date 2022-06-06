@@ -1,0 +1,11 @@
+{
+	"extends": "@vue/tsconfig/tsconfig.json",
+	"compilerOptions": {
+		"outDir": "dist",
+		"target": "esnext",
+		"moduleResolution": "node",
+		"forceConsistentCasingInFileNames": true,
+		"strict": true,
+		"skipLibCheck": true
+	}
+}

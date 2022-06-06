@@ -1,5 +1,9 @@
 /node_modules/
 /vendor/
+/dist/
 /config.php
 /api_from_protos.json
 /api_from_docs.json
+/public/api.json
+/public/documentation.js
+/public/documentation.js.map
