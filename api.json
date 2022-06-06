@@ -292,6 +292,19 @@
                 }
             ]
         },
+        "MigrateMobileSession": {
+            "_type": "protobufs",
+            "version": 1,
+            "httpmethod": "POST",
+            "parameters": [
+                {
+                    "name": "key",
+                    "type": "string",
+                    "optional": false,
+                    "description": "Access key"
+                }
+            ]
+        },
         "PollAuthSessionStatus": {
             "_type": "protobufs",
             "version": 1,
@@ -10034,6 +10047,30 @@
                 }
             ]
         },
+        "GetNumTradingCardsEarned": {
+            "_type": "protobufs",
+            "version": 1,
+            "parameters": [
+                {
+                    "name": "key",
+                    "type": "string",
+                    "optional": false,
+                    "description": "Access key"
+                }
+            ]
+        },
+        "GetVirtualItemRewardDefinition": {
+            "_type": "protobufs",
+            "version": 1,
+            "parameters": [
+                {
+                    "name": "key",
+                    "type": "string",
+                    "optional": false,
+                    "description": "Access key"
+                }
+            ]
+        },
         "PublisherAddCommunityItemsToPlayer": {
             "_type": "publisher_only",
             "version": 1,
@@ -15092,6 +15129,33 @@
                     "type": "string",
                     "optional": true,
                     "description": ""
+                }
+            ]
+        },
+        "GetUserCountry": {
+            "_type": "protobufs",
+            "version": 1,
+            "httpmethod": "POST",
+            "parameters": [
+                {
+                    "name": "key",
+                    "type": "string",
+                    "optional": false,
+                    "description": "Access key"
+                }
+            ]
+        }
+    },
+    "IUserReviewsService": {
+        "GetFriendsRecommendedApp": {
+            "_type": "protobufs",
+            "version": 1,
+            "parameters": [
+                {
+                    "name": "key",
+                    "type": "string",
+                    "optional": false,
+                    "description": "Access key"
                 }
             ]
         }
