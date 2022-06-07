@@ -3,6 +3,7 @@
 // Path to https://github.com/SteamDatabase/SteamworksDocumentation
 $Folder = __DIR__ . '/../SteamworksDocumentation';
 
+/** @var SplFileInfo[] $AllDocs */
 $AllDocs = new RecursiveIteratorIterator(
 	new RecursiveDirectoryIterator(
 		$Folder,
@@ -20,6 +21,12 @@ foreach( $AllDocs as $fileInfo )
 	}
 
 	$Doc = file_get_contents( $fileInfo );
+
+	if( $Doc === false )
+	{
+		throw new Exception( "Failed to read $fileInfo" );
+	}
+
 	$Doc = explode( '<h2 class="bb_section">', $Doc );
 
 	foreach( $Doc as $Section )

@@ -28,6 +28,11 @@ function ProcessFile( SplFileInfo $fileInfo ) : string
 
 	$proto = file_get_contents( $fileInfo );
 
+	if( $proto === false )
+	{
+		throw new Exception( "Failed to read $fileInfo" );
+	}
+
 	return preg_replace_callback( '/^import "(?<file>.+\.proto)";/m', function( array $matches ) use ( $fileInfo ) : string
 	{
 		$path = $fileInfo->getPath() . '/';
@@ -46,7 +51,7 @@ function ProcessFile( SplFileInfo $fileInfo ) : string
 		}
 
 		return ProcessFile( new SplFileInfo( $path ) );
-	}, $proto );
+	}, $proto ) ?? '';
 }
 
 foreach( $allProtos as $fileInfo )
@@ -186,7 +191,7 @@ curl_setopt_array( $c, [
 $knownServices = [];
 
 $response = curl_exec( $c );
-$response = json_decode( $response, true );
+$response = json_decode( $response, true, 512, JSON_THROW_ON_ERROR );
 
 foreach( $response[ 'apilist' ][ 'interfaces' ] as $service )
 {

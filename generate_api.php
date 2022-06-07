@@ -29,18 +29,18 @@ curl_close( $c );
 
 echo 'Generating...' . PHP_EOL;
 
-$YesPublisher = json_decode( $YesPublisher, true );
+$YesPublisher = json_decode( $YesPublisher, true, 512, JSON_THROW_ON_ERROR );
 $YesPublisher = $YesPublisher[ 'apilist' ][ 'interfaces' ] ?? [];
 
-$NonPublisher = json_decode( $NonPublisher, true );
+$NonPublisher = json_decode( $NonPublisher, true, 512, JSON_THROW_ON_ERROR );
 $NonPublisher = $NonPublisher[ 'apilist' ][ 'interfaces' ] ?? [];
 
-$Undocumented = json_decode( $Undocumented, true );
+$Undocumented = json_decode( $Undocumented, true, 512, JSON_THROW_ON_ERROR );
 $Undocumented = $Undocumented[ 'apilist' ][ 'interfaces' ] ?? [];
 
 if( file_exists( __DIR__ . '/api_from_protos.json' ) )
 {
-	$UndocumentedFromServices = json_decode( file_get_contents( __DIR__ . '/api_from_protos.json' ), true );
+	$UndocumentedFromServices = json_decode( file_get_contents( __DIR__ . '/api_from_protos.json' ), true, 512, JSON_THROW_ON_ERROR );
 }
 else
 {
@@ -49,14 +49,14 @@ else
 
 if( file_exists( __DIR__ . '/api_from_docs.json' ) )
 {
-	$UndocumentedFromPartnerDocs = json_decode( file_get_contents( __DIR__ . '/api_from_docs.json' ), true );
+	$UndocumentedFromPartnerDocs = json_decode( file_get_contents( __DIR__ . '/api_from_docs.json' ), true, 512, JSON_THROW_ON_ERROR );
 }
 else
 {
 	$UndocumentedFromPartnerDocs = [];
 }
 
-$FinalList = file_exists( __DIR__ . '/api.json' ) ? json_decode( file_get_contents( __DIR__ . '/api.json' ), true ) : [];
+$FinalList = file_exists( __DIR__ . '/api.json' ) ? json_decode( file_get_contents( __DIR__ . '/api.json' ), true, 512, JSON_THROW_ON_ERROR ) : [];
 
 MarkAsRemoved( $FinalList );
 MergeLists( $FinalList, $NonPublisher );
@@ -92,7 +92,7 @@ foreach( $FinalList as $InterfaceName => $Interface )
 
 if( file_exists( __DIR__ . '/api_type_overrides.json' ) )
 {
-	$ParameterTypeOverrides = json_decode( file_get_contents( __DIR__ . '/api_type_overrides.json' ), true );
+	$ParameterTypeOverrides = json_decode( file_get_contents( __DIR__ . '/api_type_overrides.json' ), true, 512, JSON_THROW_ON_ERROR );
 
 	foreach( $FinalList as $InterfaceName => &$Interface )
 	{

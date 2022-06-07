@@ -1,6 +1,6 @@
 <?php
 
-$FinalList = json_decode( file_get_contents( __DIR__ . '/api.json' ), true );
+$FinalList = json_decode( file_get_contents( __DIR__ . '/api.json' ), true, 512, JSON_THROW_ON_ERROR );
 
 $c = curl_init( );
 
