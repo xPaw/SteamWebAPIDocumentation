@@ -1,6 +1,5 @@
-config.php
-check_removed_apis.php
-generate_api_from_protos.php
-generate_api_from_docs.php
-api_from_protos.json
-api_from_docs.json
+/node_modules/
+/vendor/
+/config.php
+/api_from_protos.json
+/api_from_docs.json
