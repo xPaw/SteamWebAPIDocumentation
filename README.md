@@ -22,3 +22,13 @@ I provide an automatically updated and generated list, I do not personally know 
    - Descriptions and fields are also parsed
 4. [Manual list of undocumented methods](https://github.com/SteamDatabase/UndocumentedAPI)
 5. `api_type_overrides.json` to fix up types of known method parameters. Such as enforcing arrays.
+
+## config.php
+
+To run generation scripts, a config file with API keys needs to be created:
+
+```php
+<?php
+$PublicApiKey    = '';
+$PublisherApiKey = '';
+```
