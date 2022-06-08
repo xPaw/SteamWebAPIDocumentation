@@ -2331,6 +2331,7 @@
     },
     "IClientStats_1046930": {
         "ReportEvent": {
+            "_type": "publisher_only",
             "version": 1,
             "httpmethod": "POST",
             "parameters": []
@@ -3304,6 +3305,7 @@
             "parameters": []
         },
         "GetFantasyPlayerStats": {
+            "_type": "publisher_only",
             "version": 1,
             "httpmethod": "GET",
             "parameters": [
@@ -3346,6 +3348,7 @@
             ]
         },
         "GetPlayerOfficialInfo": {
+            "_type": "publisher_only",
             "version": 1,
             "httpmethod": "GET",
             "parameters": [
@@ -3358,6 +3361,7 @@
             ]
         },
         "GetProPlayerList": {
+            "_type": "publisher_only",
             "version": 1,
             "httpmethod": "GET",
             "parameters": []
@@ -3448,6 +3452,7 @@
     },
     "IDOTA2MatchStats_205790": {
         "GetRealtimeStats": {
+            "_type": "publisher_only",
             "version": 1,
             "httpmethod": "GET",
             "parameters": [
@@ -3680,11 +3685,13 @@
     },
     "IDOTA2Match_205790": {
         "GetLeagueListing": {
+            "_type": "publisher_only",
             "version": 1,
             "httpmethod": "GET",
             "parameters": []
         },
         "GetLiveLeagueGames": {
+            "_type": "publisher_only",
             "version": 1,
             "httpmethod": "GET",
             "parameters": [
@@ -3703,6 +3710,7 @@
             ]
         },
         "GetMatchDetails": {
+            "_type": "publisher_only",
             "version": 1,
             "httpmethod": "GET",
             "parameters": [
@@ -3715,6 +3723,7 @@
             ]
         },
         "GetMatchHistory": {
+            "_type": "publisher_only",
             "version": 1,
             "httpmethod": "GET",
             "parameters": [
@@ -3769,6 +3778,7 @@
             ]
         },
         "GetMatchHistoryBySequenceNum": {
+            "_type": "publisher_only",
             "version": 1,
             "httpmethod": "GET",
             "parameters": [
@@ -3792,6 +3802,7 @@
             "parameters": []
         },
         "GetTeamInfoByTeamID": {
+            "_type": "publisher_only",
             "version": 1,
             "httpmethod": "GET",
             "parameters": [
@@ -3810,6 +3821,7 @@
             ]
         },
         "GetTopLiveEventGame": {
+            "_type": "publisher_only",
             "version": 1,
             "httpmethod": "GET",
             "parameters": [
@@ -3822,6 +3834,7 @@
             ]
         },
         "GetTopLiveGame": {
+            "_type": "publisher_only",
             "version": 1,
             "httpmethod": "GET",
             "parameters": [
@@ -3834,6 +3847,7 @@
             ]
         },
         "GetTopWeekendTourneyGames": {
+            "_type": "publisher_only",
             "version": 1,
             "httpmethod": "GET",
             "parameters": [
@@ -3852,6 +3866,7 @@
             ]
         },
         "GetTournamentPlayerStats": {
+            "_type": "publisher_only",
             "version": 2,
             "httpmethod": "GET",
             "parameters": [
@@ -3945,6 +3960,7 @@
     },
     "IDOTA2StreamSystem_205790": {
         "GetBroadcasterInfo": {
+            "_type": "publisher_only",
             "version": 1,
             "httpmethod": "GET",
             "parameters": [
@@ -4037,6 +4053,7 @@
     },
     "IDOTA2Ticket_205790": {
         "ClaimBadgeReward": {
+            "_type": "publisher_only",
             "version": 1,
             "httpmethod": "GET",
             "parameters": [
@@ -4067,6 +4084,7 @@
             ]
         },
         "GetSteamIDForBadgeID": {
+            "_type": "publisher_only",
             "version": 1,
             "httpmethod": "GET",
             "parameters": [
@@ -4079,6 +4097,7 @@
             ]
         },
         "SetSteamAccountPurchased": {
+            "_type": "publisher_only",
             "version": 1,
             "httpmethod": "POST",
             "parameters": [
@@ -4097,6 +4116,7 @@
             ]
         },
         "SteamAccountValidForBadgeType": {
+            "_type": "publisher_only",
             "version": 1,
             "httpmethod": "GET",
             "parameters": [
@@ -4240,6 +4260,7 @@
     },
     "IEconDOTA2_205790": {
         "GetEventStatsForAccount": {
+            "_type": "publisher_only",
             "version": 1,
             "httpmethod": "GET",
             "parameters": [
@@ -4264,6 +4285,7 @@
             ]
         },
         "GetGameItems": {
+            "_type": "publisher_only",
             "version": 1,
             "httpmethod": "GET",
             "parameters": [
@@ -4276,6 +4298,7 @@
             ]
         },
         "GetHeroes": {
+            "_type": "publisher_only",
             "version": 1,
             "httpmethod": "GET",
             "parameters": [
@@ -4294,6 +4317,7 @@
             ]
         },
         "GetItemIconPath": {
+            "_type": "publisher_only",
             "version": 1,
             "httpmethod": "GET",
             "parameters": [
@@ -4312,6 +4336,7 @@
             ]
         },
         "GetRarities": {
+            "_type": "publisher_only",
             "version": 1,
             "httpmethod": "GET",
             "parameters": [
@@ -4324,6 +4349,7 @@
             ]
         },
         "GetTournamentPrizePool": {
+            "_type": "publisher_only",
             "version": 1,
             "httpmethod": "GET",
             "parameters": [
@@ -4338,6 +4364,7 @@
     },
     "IEconItems_440": {
         "GetPlayerItems": {
+            "_type": "publisher_only",
             "version": 1,
             "httpmethod": "GET",
             "parameters": [
@@ -4350,6 +4377,7 @@
             ]
         },
         "GetSchema": {
+            "_type": "publisher_only",
             "version": 1,
             "httpmethod": "GET",
             "parameters": [
@@ -4362,6 +4390,7 @@
             ]
         },
         "GetSchemaItems": {
+            "_type": "publisher_only",
             "version": 1,
             "httpmethod": "GET",
             "parameters": [
@@ -4380,6 +4409,7 @@
             ]
         },
         "GetSchemaOverview": {
+            "_type": "publisher_only",
             "version": 1,
             "httpmethod": "GET",
             "parameters": [
@@ -4392,11 +4422,13 @@
             ]
         },
         "GetSchemaURL": {
+            "_type": "publisher_only",
             "version": 1,
             "httpmethod": "GET",
             "parameters": []
         },
         "GetStoreMetaData": {
+            "_type": "publisher_only",
             "version": 1,
             "httpmethod": "GET",
             "parameters": [
@@ -4409,6 +4441,7 @@
             ]
         },
         "GetStoreStatus": {
+            "_type": "publisher_only",
             "version": 1,
             "httpmethod": "GET",
             "parameters": []
@@ -4460,6 +4493,7 @@
     },
     "IEconItems_620": {
         "GetPlayerItems": {
+            "_type": "publisher_only",
             "version": 1,
             "httpmethod": "GET",
             "parameters": [
@@ -4472,6 +4506,7 @@
             ]
         },
         "GetSchema": {
+            "_type": "publisher_only",
             "version": 1,
             "httpmethod": "GET",
             "parameters": [
@@ -4529,6 +4564,7 @@
     },
     "IEconItems_205790": {
         "GetEquippedPlayerItems": {
+            "_type": "publisher_only",
             "version": 1,
             "httpmethod": "GET",
             "parameters": [
@@ -4547,6 +4583,7 @@
             ]
         },
         "GetPlayerItems": {
+            "_type": "publisher_only",
             "version": 1,
             "httpmethod": "GET",
             "parameters": [
@@ -4559,11 +4596,13 @@
             ]
         },
         "GetSchemaURL": {
+            "_type": "publisher_only",
             "version": 1,
             "httpmethod": "GET",
             "parameters": []
         },
         "GetStoreMetaData": {
+            "_type": "publisher_only",
             "version": 1,
             "httpmethod": "GET",
             "parameters": [
@@ -4578,6 +4617,7 @@
     },
     "IEconItems_221540": {
         "GetPlayerItems": {
+            "_type": "publisher_only",
             "version": 1,
             "httpmethod": "GET",
             "parameters": [
@@ -4592,6 +4632,7 @@
     },
     "IEconItems_238460": {
         "GetPlayerItems": {
+            "_type": "publisher_only",
             "version": 1,
             "httpmethod": "GET",
             "parameters": [
@@ -4606,6 +4647,7 @@
     },
     "IEconItems_583950": {
         "GetEquippedPlayerItems": {
+            "_type": "publisher_only",
             "version": 1,
             "httpmethod": "GET",
             "parameters": [
@@ -4626,6 +4668,7 @@
     },
     "IEconItems_1046930": {
         "GetPlayerItems": {
+            "_type": "publisher_only",
             "version": 1,
             "httpmethod": "GET",
             "parameters": [
@@ -4640,6 +4683,7 @@
     },
     "IEconItems_1269260": {
         "GetEquippedPlayerItems": {
+            "_type": "publisher_only",
             "version": 1,
             "httpmethod": "GET",
             "parameters": [
@@ -5224,11 +5268,13 @@
     },
     "IGCVersion_440": {
         "GetClientVersion": {
+            "_type": "publisher_only",
             "version": 1,
             "httpmethod": "GET",
             "parameters": []
         },
         "GetServerVersion": {
+            "_type": "publisher_only",
             "version": 1,
             "httpmethod": "GET",
             "parameters": []
@@ -5255,11 +5301,13 @@
     },
     "IGCVersion_205790": {
         "GetClientVersion": {
+            "_type": "publisher_only",
             "version": 1,
             "httpmethod": "GET",
             "parameters": []
         },
         "GetServerVersion": {
+            "_type": "publisher_only",
             "version": 1,
             "httpmethod": "GET",
             "parameters": []
@@ -5267,11 +5315,13 @@
     },
     "IGCVersion_583950": {
         "GetClientVersion": {
+            "_type": "publisher_only",
             "version": 1,
             "httpmethod": "GET",
             "parameters": []
         },
         "GetServerVersion": {
+            "_type": "publisher_only",
             "version": 1,
             "httpmethod": "GET",
             "parameters": []
@@ -5279,11 +5329,13 @@
     },
     "IGCVersion_1046930": {
         "GetClientVersion": {
+            "_type": "publisher_only",
             "version": 1,
             "httpmethod": "GET",
             "parameters": []
         },
         "GetServerVersion": {
+            "_type": "publisher_only",
             "version": 1,
             "httpmethod": "GET",
             "parameters": []
@@ -5291,11 +5343,13 @@
     },
     "IGCVersion_1269260": {
         "GetClientVersion": {
+            "_type": "publisher_only",
             "version": 1,
             "httpmethod": "GET",
             "parameters": []
         },
         "GetServerVersion": {
+            "_type": "publisher_only",
             "version": 1,
             "httpmethod": "GET",
             "parameters": []
@@ -6107,6 +6161,52 @@
                     "type": "string",
                     "optional": false,
                     "description": "The memo to set on the new account"
+                }
+            ]
+        }
+    },
+    "IHelpRequestLogsService": {
+        "GetApplicationLogDemand": {
+            "version": 1,
+            "httpmethod": "POST",
+            "description": "Returns whether the server would like the user to upload logs",
+            "parameters": [
+                {
+                    "name": "appid",
+                    "type": "uint32",
+                    "optional": false
+                }
+            ]
+        },
+        "UploadUserApplicationLog": {
+            "version": 1,
+            "httpmethod": "POST",
+            "description": "User uploading application logs",
+            "parameters": [
+                {
+                    "name": "appid",
+                    "type": "uint32",
+                    "optional": false
+                },
+                {
+                    "name": "log_type",
+                    "type": "string",
+                    "optional": false
+                },
+                {
+                    "name": "version_string",
+                    "type": "string",
+                    "optional": false
+                },
+                {
+                    "name": "log_contents",
+                    "type": "string",
+                    "optional": false
+                },
+                {
+                    "name": "request_id",
+                    "type": "uint64",
+                    "optional": false
                 }
             ]
         }
@@ -8359,6 +8459,7 @@
     },
     "IPortal2Leaderboards_620": {
         "GetBucketizedData": {
+            "_type": "publisher_only",
             "version": 1,
             "httpmethod": "GET",
             "parameters": [
@@ -11132,6 +11233,31 @@
                     "type": "string",
                     "optional": false,
                     "description": "name of the leaderboard to delete"
+                }
+            ]
+        },
+        "DeleteLeaderboardScore": {
+            "_type": "publisher_only",
+            "version": 1,
+            "httpmethod": "POST",
+            "parameters": [
+                {
+                    "name": "appid",
+                    "type": "uint32",
+                    "optional": false,
+                    "description": "appid of game"
+                },
+                {
+                    "name": "leaderboardid",
+                    "type": "uint64",
+                    "optional": false,
+                    "description": "numeric ID of the target leaderboard. Can be retrieved from GetLeaderboardsForGame"
+                },
+                {
+                    "name": "steamid",
+                    "type": "uint64",
+                    "optional": false,
+                    "description": "steamID to set the score for"
                 }
             ]
         },
@@ -14636,6 +14762,7 @@
     },
     "ITFItems_440": {
         "GetGoldenWrenches": {
+            "_type": "publisher_only",
             "version": 2,
             "httpmethod": "GET",
             "parameters": []
@@ -14643,6 +14770,7 @@
     },
     "ITFPromos_440": {
         "GetItemID": {
+            "_type": "publisher_only",
             "version": 1,
             "httpmethod": "GET",
             "parameters": [
@@ -14661,6 +14789,7 @@
             ]
         },
         "GrantItem": {
+            "_type": "publisher_only",
             "version": 1,
             "httpmethod": "POST",
             "parameters": [
@@ -14681,6 +14810,7 @@
     },
     "ITFPromos_620": {
         "GetItemID": {
+            "_type": "publisher_only",
             "version": 1,
             "httpmethod": "GET",
             "parameters": [
@@ -14699,6 +14829,7 @@
             ]
         },
         "GrantItem": {
+            "_type": "publisher_only",
             "version": 1,
             "httpmethod": "POST",
             "parameters": [
@@ -14719,6 +14850,7 @@
     },
     "ITFPromos_205790": {
         "GetItemID": {
+            "_type": "publisher_only",
             "version": 1,
             "httpmethod": "GET",
             "parameters": [
@@ -14737,6 +14869,7 @@
             ]
         },
         "GrantItem": {
+            "_type": "publisher_only",
             "version": 1,
             "httpmethod": "POST",
             "parameters": [
@@ -14757,6 +14890,7 @@
     },
     "ITFSystem_440": {
         "GetWorldStatus": {
+            "_type": "publisher_only",
             "version": 1,
             "httpmethod": "GET",
             "parameters": []
