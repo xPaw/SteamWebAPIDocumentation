@@ -191,13 +191,25 @@
                     "name": "remember_login",
                     "type": "bool",
                     "optional": true,
-                    "description": ""
+                    "description": "deprecated"
                 },
                 {
                     "name": "platform_type",
                     "type": "EAuthTokenPlatformType",
                     "optional": true,
                     "description": "enum"
+                },
+                {
+                    "name": "persistence",
+                    "type": "ESessionPersistence",
+                    "optional": true,
+                    "description": "whether we are requesting a persistent or an ephemeral session"
+                },
+                {
+                    "name": "website_id",
+                    "type": "string",
+                    "optional": true,
+                    "description": "(EMachineAuthWebDomain) identifier of client requesting auth"
                 }
             ]
         },
@@ -231,12 +243,25 @@
             "_type": "protobufs",
             "version": 1,
             "httpmethod": "POST",
+            "description": "Given a refresh token for a client app audience (e.g. desktop client / mobile client), generate an access token",
             "parameters": [
                 {
                     "name": "key",
                     "type": "string",
                     "optional": false,
                     "description": "Access key"
+                },
+                {
+                    "name": "refresh_token",
+                    "type": "string",
+                    "optional": true,
+                    "description": ""
+                },
+                {
+                    "name": "steamid",
+                    "type": "fixed64",
+                    "optional": true,
+                    "description": ""
                 }
             ]
         },
@@ -244,7 +269,7 @@
             "_type": "protobufs",
             "version": 1,
             "httpmethod": "POST",
-            "description": "get metadata of specific auth session",
+            "description": "get metadata of specific auth session, this will also implicitly bind the calling account",
             "parameters": [
                 {
                     "name": "key",
@@ -296,12 +321,31 @@
             "_type": "protobufs",
             "version": 1,
             "httpmethod": "POST",
+            "description": "Migrates a WG token to an access and refresh token using a signature generated with the user's 2FA secret",
             "parameters": [
                 {
                     "name": "key",
                     "type": "string",
                     "optional": false,
                     "description": "Access key"
+                },
+                {
+                    "name": "steamid",
+                    "type": "fixed64",
+                    "optional": true,
+                    "description": "Steam ID of the user to migrate"
+                },
+                {
+                    "name": "token",
+                    "type": "string",
+                    "optional": true,
+                    "description": "WG Token to migrate"
+                },
+                {
+                    "name": "signature",
+                    "type": "string",
+                    "optional": true,
+                    "description": "Signature over the wg token using the user's 2FA token"
                 }
             ]
         },
@@ -328,6 +372,12 @@
                     "type": "bytes",
                     "optional": true,
                     "description": ""
+                },
+                {
+                    "name": "token_to_revoke",
+                    "type": "fixed64",
+                    "optional": true,
+                    "description": "If this is set to a token owned by this user, that token will be retired"
                 }
             ]
         },
@@ -372,6 +422,12 @@
                     "type": "bool",
                     "optional": true,
                     "description": "Whether to confirm the login (true) or deny the login (false)"
+                },
+                {
+                    "name": "persistence",
+                    "type": "ESessionPersistence",
+                    "optional": true,
+                    "description": "whether we are requesting a persistent or an ephemeral session"
                 }
             ]
         },
@@ -410,6 +466,91 @@
                     "type": "EAuthSessionGuardType",
                     "optional": true,
                     "description": "type of confirmation code"
+                }
+            ]
+        }
+    },
+    "IAuthenticationSupportService": {
+        "GetTokenHistory": {
+            "_type": "protobufs",
+            "version": 1,
+            "description": "Gets the audit history for a user's auth token",
+            "parameters": [
+                {
+                    "name": "key",
+                    "type": "string",
+                    "optional": false,
+                    "description": "Access key"
+                },
+                {
+                    "name": "token_id",
+                    "type": "fixed64",
+                    "optional": true,
+                    "description": "Token ID of the token to get history for (required)"
+                }
+            ]
+        },
+        "QueryRefreshTokenByID": {
+            "_type": "protobufs",
+            "version": 1,
+            "description": "Asks the server for a list of refresh tokens associated with an account",
+            "parameters": [
+                {
+                    "name": "key",
+                    "type": "string",
+                    "optional": false,
+                    "description": "Access key"
+                },
+                {
+                    "name": "token_id",
+                    "type": "fixed64",
+                    "optional": true,
+                    "description": "Token ID of the token to look up (required)"
+                }
+            ]
+        },
+        "QueryRefreshTokensByAccount": {
+            "_type": "protobufs",
+            "version": 1,
+            "description": "Asks the server for a list of refresh tokens associated with an account",
+            "parameters": [
+                {
+                    "name": "key",
+                    "type": "string",
+                    "optional": false,
+                    "description": "Access key"
+                },
+                {
+                    "name": "steamid",
+                    "type": "fixed64",
+                    "optional": true,
+                    "description": "SteamID of the account to query (required)"
+                },
+                {
+                    "name": "include_revoked_tokens",
+                    "type": "bool",
+                    "optional": true,
+                    "description": "Includes tokens that are revoked or expired in the query"
+                }
+            ]
+        },
+        "RevokeToken": {
+            "_type": "protobufs",
+            "version": 1,
+            "httpmethod": "POST",
+            "description": "Revokes a user's auth token",
+            "parameters": [
+                {
+                    "name": "key",
+                    "type": "string",
+                    "optional": false,
+                    "description": "Access key"
+                },
+                {
+                    "name": "token_id",
+                    "type": "fixed64",
+                    "optional": true,
+                    "description": "Token ID of the token to revoke (required)"
                 }
             ]
         }
@@ -2818,6 +2959,12 @@
                     "type": "uint32",
                     "optional": true,
                     "description": ""
+                },
+                {
+                    "name": "include_only_game_updates",
+                    "type": "bool",
+                    "optional": true,
+                    "description": ""
                 }
             ]
         },
@@ -2870,7 +3017,7 @@
                     "name": "filter_event_type[0]",
                     "type": "int32[]",
                     "optional": true,
-                    "description": "enum; suggested type: ECommunityWordFilterType"
+                    "description": "enum"
                 },
                 {
                     "name": "filter_to_appid",
@@ -4891,6 +5038,73 @@
                 }
             ]
         },
+        "GetInventoryItemsWithDescriptions": {
+            "_type": "protobufs",
+            "version": 1,
+            "description": "Gets a set of items from a users inventory, along with descriptions",
+            "parameters": [
+                {
+                    "name": "key",
+                    "type": "string",
+                    "optional": false,
+                    "description": "Access key"
+                },
+                {
+                    "name": "steamid",
+                    "type": "fixed64",
+                    "optional": true,
+                    "description": ""
+                },
+                {
+                    "name": "appid",
+                    "type": "uint32",
+                    "optional": true,
+                    "description": ""
+                },
+                {
+                    "name": "contextid",
+                    "type": "uint64",
+                    "optional": true,
+                    "description": ""
+                },
+                {
+                    "name": "get_descriptions",
+                    "type": "bool",
+                    "optional": true,
+                    "description": ""
+                },
+                {
+                    "name": "for_trade_offer_verification",
+                    "type": "bool",
+                    "optional": true,
+                    "description": ""
+                },
+                {
+                    "name": "language",
+                    "type": "string",
+                    "optional": true,
+                    "description": ""
+                },
+                {
+                    "name": "filters",
+                    "type": "CEcon_GetInventoryItemsWithDescriptions_Request.FilterOptions",
+                    "optional": true,
+                    "description": ""
+                },
+                {
+                    "name": "start_assetid",
+                    "type": "uint64",
+                    "optional": true,
+                    "description": ""
+                },
+                {
+                    "name": "count",
+                    "type": "int32",
+                    "optional": true,
+                    "description": ""
+                }
+            ]
+        },
         "GetTradeHistory": {
             "version": 1,
             "httpmethod": "GET",
@@ -5220,6 +5434,20 @@
             "_type": "undocumented",
             "version": 1,
             "parameters": []
+        }
+    },
+    "IFriendsListService": {
+        "GetFriendsList": {
+            "_type": "protobufs",
+            "version": 1,
+            "parameters": [
+                {
+                    "name": "key",
+                    "type": "string",
+                    "optional": false,
+                    "description": "Access key"
+                }
+            ]
         }
     },
     "IGCVersion_440": {
@@ -6887,6 +7115,18 @@
                     "type": "string",
                     "optional": false,
                     "description": "Access key"
+                },
+                {
+                    "name": "amount",
+                    "type": "int64",
+                    "optional": true,
+                    "description": ""
+                },
+                {
+                    "name": "ecurrency",
+                    "type": "uint32",
+                    "optional": true,
+                    "description": ""
                 }
             ]
         },
@@ -6947,6 +7187,12 @@
                     "type": "string",
                     "optional": false,
                     "description": "Access key"
+                },
+                {
+                    "name": "steamid",
+                    "type": "fixed64",
+                    "optional": true,
+                    "description": ""
                 }
             ]
         },
@@ -7200,8 +7446,8 @@
                     "description": ""
                 },
                 {
-                    "name": "expected_points_cost",
-                    "type": "int64",
+                    "name": "communityitemid",
+                    "type": "uint64",
                     "optional": true,
                     "description": ""
                 }
@@ -7263,6 +7509,12 @@
                     "type": "string",
                     "optional": false,
                     "description": "Access key"
+                },
+                {
+                    "name": "gid",
+                    "type": "fixed64",
+                    "optional": true,
+                    "description": ""
                 }
             ]
         },
@@ -7318,6 +7570,42 @@
                     "type": "string",
                     "optional": false,
                     "description": "Access key"
+                },
+                {
+                    "name": "country",
+                    "type": "string",
+                    "optional": true,
+                    "description": ""
+                }
+            ]
+        },
+        "GetDisplayMarketingMessage": {
+            "_type": "protobufs",
+            "version": 1,
+            "parameters": [
+                {
+                    "name": "key",
+                    "type": "string",
+                    "optional": false,
+                    "description": "Access key"
+                },
+                {
+                    "name": "gid",
+                    "type": "fixed64",
+                    "optional": true,
+                    "description": ""
+                },
+                {
+                    "name": "context",
+                    "type": "StoreBrowseContext",
+                    "optional": true,
+                    "description": ""
+                },
+                {
+                    "name": "data_request",
+                    "type": "StoreBrowseItemDataRequest",
+                    "optional": true,
+                    "description": ""
                 }
             ]
         },
@@ -7331,6 +7619,85 @@
                     "type": "string",
                     "optional": false,
                     "description": "Access key"
+                },
+                {
+                    "name": "gid",
+                    "type": "fixed64",
+                    "optional": true,
+                    "description": ""
+                }
+            ]
+        },
+        "GetMarketingMessagesForUser": {
+            "_type": "protobufs",
+            "version": 1,
+            "parameters": [
+                {
+                    "name": "key",
+                    "type": "string",
+                    "optional": false,
+                    "description": "Access key"
+                },
+                {
+                    "name": "include_seen_messages",
+                    "type": "bool",
+                    "optional": true,
+                    "description": ""
+                },
+                {
+                    "name": "country_code",
+                    "type": "string",
+                    "optional": true,
+                    "description": ""
+                },
+                {
+                    "name": "elanguage",
+                    "type": "int32",
+                    "optional": true,
+                    "description": ""
+                },
+                {
+                    "name": "operating_system",
+                    "type": "int32",
+                    "optional": true,
+                    "description": ""
+                },
+                {
+                    "name": "client_package_version",
+                    "type": "int32",
+                    "optional": true,
+                    "description": ""
+                },
+                {
+                    "name": "context",
+                    "type": "StoreBrowseContext",
+                    "optional": true,
+                    "description": ""
+                },
+                {
+                    "name": "data_request",
+                    "type": "StoreBrowseItemDataRequest",
+                    "optional": true,
+                    "description": ""
+                }
+            ]
+        },
+        "MarkMessageSeen": {
+            "_type": "protobufs",
+            "version": 1,
+            "httpmethod": "POST",
+            "parameters": [
+                {
+                    "name": "key",
+                    "type": "string",
+                    "optional": false,
+                    "description": "Access key"
+                },
+                {
+                    "name": "gid",
+                    "type": "fixed64",
+                    "optional": true,
+                    "description": ""
                 }
             ]
         },
@@ -7344,6 +7711,39 @@
                     "type": "string",
                     "optional": false,
                     "description": "Access key"
+                },
+                {
+                    "name": "gid",
+                    "type": "fixed64",
+                    "optional": true,
+                    "description": ""
+                },
+                {
+                    "name": "message",
+                    "type": "CMarketingMessageProto",
+                    "optional": true,
+                    "description": ""
+                }
+            ]
+        }
+    },
+    "IMobileAppService": {
+        "GetMobileSummary": {
+            "_type": "protobufs",
+            "version": 1,
+            "httpmethod": "POST",
+            "parameters": [
+                {
+                    "name": "key",
+                    "type": "string",
+                    "optional": false,
+                    "description": "Access key"
+                },
+                {
+                    "name": "authenticator_gid",
+                    "type": "fixed64",
+                    "optional": true,
+                    "description": ""
                 }
             ]
         }
@@ -7353,6 +7753,37 @@
             "_type": "undocumented",
             "version": 1,
             "parameters": []
+        },
+        "MigrateMobileSession": {
+            "_type": "protobufs",
+            "version": 1,
+            "httpmethod": "POST",
+            "parameters": [
+                {
+                    "name": "key",
+                    "type": "string",
+                    "optional": false,
+                    "description": "Access key"
+                },
+                {
+                    "name": "steamid",
+                    "type": "fixed64",
+                    "optional": true,
+                    "description": ""
+                },
+                {
+                    "name": "token",
+                    "type": "string",
+                    "optional": true,
+                    "description": ""
+                },
+                {
+                    "name": "signature",
+                    "type": "bytes",
+                    "optional": true,
+                    "description": ""
+                }
+            ]
         }
     },
     "IMobileDeviceService": {
@@ -7413,7 +7844,7 @@
                     "name": "mobile_app",
                     "type": "int32",
                     "optional": true,
-                    "description": "enum; suggested type: EMobileApp"
+                    "description": "enum"
                 }
             ]
         }
@@ -7607,20 +8038,117 @@
                     "description": "Access key"
                 },
                 {
-                    "name": "ids",
-                    "type": "StoreItemID",
+                    "name": "request",
+                    "type": "CStoreBrowse_GetItems_Request",
                     "optional": true,
                     "description": ""
                 },
                 {
-                    "name": "context",
-                    "type": "StoreBrowseContext",
+                    "name": "include_unpublished",
+                    "type": "bool",
+                    "optional": true,
+                    "description": ""
+                }
+            ]
+        }
+    },
+    "IPhoneService": {
+        "ConfirmAddPhoneToAccount": {
+            "_type": "protobufs",
+            "version": 1,
+            "httpmethod": "POST",
+            "parameters": [
+                {
+                    "name": "key",
+                    "type": "string",
+                    "optional": false,
+                    "description": "Access key"
+                },
+                {
+                    "name": "steamid",
+                    "type": "fixed64",
                     "optional": true,
                     "description": ""
                 },
                 {
-                    "name": "data_request",
-                    "type": "StoreBrowseItemDataRequest",
+                    "name": "stoken",
+                    "type": "string",
+                    "optional": true,
+                    "description": ""
+                }
+            ]
+        },
+        "IsAccountWaitingForEmailConfirmation": {
+            "_type": "protobufs",
+            "version": 1,
+            "httpmethod": "POST",
+            "parameters": [
+                {
+                    "name": "key",
+                    "type": "string",
+                    "optional": false,
+                    "description": "Access key"
+                }
+            ]
+        },
+        "SendPhoneVerificationCode": {
+            "_type": "protobufs",
+            "version": 1,
+            "httpmethod": "POST",
+            "parameters": [
+                {
+                    "name": "key",
+                    "type": "string",
+                    "optional": false,
+                    "description": "Access key"
+                },
+                {
+                    "name": "language",
+                    "type": "uint32",
+                    "optional": true,
+                    "description": ""
+                }
+            ]
+        },
+        "SetAccountPhoneNumber": {
+            "_type": "protobufs",
+            "version": 1,
+            "httpmethod": "POST",
+            "parameters": [
+                {
+                    "name": "key",
+                    "type": "string",
+                    "optional": false,
+                    "description": "Access key"
+                },
+                {
+                    "name": "phone_number",
+                    "type": "string",
+                    "optional": true,
+                    "description": ""
+                },
+                {
+                    "name": "phone_country_code",
+                    "type": "string",
+                    "optional": true,
+                    "description": ""
+                }
+            ]
+        },
+        "VerifyAccountPhoneWithCode": {
+            "_type": "protobufs",
+            "version": 1,
+            "httpmethod": "POST",
+            "parameters": [
+                {
+                    "name": "key",
+                    "type": "string",
+                    "optional": false,
+                    "description": "Access key"
+                },
+                {
+                    "name": "code",
+                    "type": "string",
                     "optional": true,
                     "description": ""
                 }
@@ -7664,6 +8192,38 @@
                     "type": "uint32",
                     "optional": true,
                     "description": "The most recent last-played time the client already knows about"
+                }
+            ]
+        },
+        "GetAchievementsProgress": {
+            "_type": "protobufs",
+            "version": 1,
+            "httpmethod": "POST",
+            "description": "Gets the achievement completion stats for the specified list of apps.",
+            "parameters": [
+                {
+                    "name": "key",
+                    "type": "string",
+                    "optional": false,
+                    "description": "Access key"
+                },
+                {
+                    "name": "steamid",
+                    "type": "uint64",
+                    "optional": true,
+                    "description": ""
+                },
+                {
+                    "name": "language",
+                    "type": "string",
+                    "optional": true,
+                    "description": ""
+                },
+                {
+                    "name": "appids[0]",
+                    "type": "uint32[]",
+                    "optional": true,
+                    "description": ""
                 }
             ]
         },
@@ -7775,6 +8335,25 @@
                 {
                     "name": "steamid",
                     "type": "uint64",
+                    "optional": true,
+                    "description": ""
+                }
+            ]
+        },
+        "GetFriendsGameplayInfo": {
+            "_type": "protobufs",
+            "version": 1,
+            "description": "Get a list of friends who are playing, have played, own, or want a game",
+            "parameters": [
+                {
+                    "name": "key",
+                    "type": "string",
+                    "optional": false,
+                    "description": "Access key"
+                },
+                {
+                    "name": "appid",
+                    "type": "uint32",
                     "optional": true,
                     "description": ""
                 }
@@ -10139,6 +10718,25 @@
                 }
             ]
         },
+        "GetOptInEmailTracking": {
+            "_type": "protobufs",
+            "version": 1,
+            "httpmethod": "POST",
+            "parameters": [
+                {
+                    "name": "key",
+                    "type": "string",
+                    "optional": false,
+                    "description": "Access key"
+                },
+                {
+                    "name": "email_def_id",
+                    "type": "fixed64",
+                    "optional": true,
+                    "description": ""
+                }
+            ]
+        },
         "GetPartnerAppOptInEmailDefAndStats": {
             "_type": "protobufs",
             "version": 1,
@@ -10278,6 +10876,12 @@
                     "type": "uint32",
                     "optional": true,
                     "description": ""
+                },
+                {
+                    "name": "reviewed",
+                    "type": "bool",
+                    "optional": true,
+                    "description": ""
                 }
             ]
         }
@@ -10383,6 +10987,18 @@
                     "type": "string",
                     "optional": false,
                     "description": "Access key"
+                },
+                {
+                    "name": "timestamp_start",
+                    "type": "uint32",
+                    "optional": true,
+                    "description": ""
+                },
+                {
+                    "name": "timestamp_end",
+                    "type": "uint32",
+                    "optional": true,
+                    "description": ""
                 }
             ]
         },
@@ -10395,6 +11011,18 @@
                     "type": "string",
                     "optional": false,
                     "description": "Access key"
+                },
+                {
+                    "name": "eventid",
+                    "type": "int32",
+                    "optional": true,
+                    "description": "enum"
+                },
+                {
+                    "name": "include_inactive",
+                    "type": "bool",
+                    "optional": true,
+                    "description": ""
                 }
             ]
         },
@@ -10568,6 +11196,38 @@
             "_type": "undocumented",
             "version": 1,
             "parameters": []
+        }
+    },
+    "ISaleFeatureService": {
+        "GetUserYearInReview": {
+            "_type": "protobufs",
+            "version": 1,
+            "parameters": [
+                {
+                    "name": "key",
+                    "type": "string",
+                    "optional": false,
+                    "description": "Access key"
+                },
+                {
+                    "name": "steamid",
+                    "type": "fixed64",
+                    "optional": true,
+                    "description": ""
+                },
+                {
+                    "name": "year",
+                    "type": "uint32",
+                    "optional": true,
+                    "description": ""
+                },
+                {
+                    "name": "force_regenerate",
+                    "type": "bool",
+                    "optional": true,
+                    "description": ""
+                }
+            ]
         }
     },
     "ISaleItemRewardsService": {
@@ -12524,6 +13184,88 @@
             "version": 1,
             "httpmethod": "POST",
             "parameters": []
+        }
+    },
+    "ISteamNotificationService": {
+        "GetPreferences": {
+            "_type": "protobufs",
+            "version": 1,
+            "parameters": [
+                {
+                    "name": "key",
+                    "type": "string",
+                    "optional": false,
+                    "description": "Access key"
+                }
+            ]
+        },
+        "GetSteamNotifications": {
+            "_type": "protobufs",
+            "version": 1,
+            "parameters": [
+                {
+                    "name": "key",
+                    "type": "string",
+                    "optional": false,
+                    "description": "Access key"
+                }
+            ]
+        },
+        "MarkNotificationsRead": {
+            "_type": "protobufs",
+            "version": 1,
+            "httpmethod": "POST",
+            "parameters": [
+                {
+                    "name": "key",
+                    "type": "string",
+                    "optional": false,
+                    "description": "Access key"
+                },
+                {
+                    "name": "timestamp",
+                    "type": "uint32",
+                    "optional": true,
+                    "description": ""
+                },
+                {
+                    "name": "notification_type",
+                    "type": "int32",
+                    "optional": true,
+                    "description": "enum"
+                },
+                {
+                    "name": "notification_ids[0]",
+                    "type": "uint64[]",
+                    "optional": true,
+                    "description": ""
+                },
+                {
+                    "name": "mark_all_read",
+                    "type": "bool",
+                    "optional": true,
+                    "description": ""
+                }
+            ]
+        },
+        "SetPreferences": {
+            "_type": "protobufs",
+            "version": 1,
+            "httpmethod": "POST",
+            "parameters": [
+                {
+                    "name": "key",
+                    "type": "string",
+                    "optional": false,
+                    "description": "Access key"
+                },
+                {
+                    "name": "preferences",
+                    "type": "SteamNotificationPreference",
+                    "optional": true,
+                    "description": ""
+                }
+            ]
         }
     },
     "ISteamPayPalPaymentsHub": {
@@ -14704,6 +15446,18 @@
                     "type": "string",
                     "optional": false,
                     "description": "Access key"
+                },
+                {
+                    "name": "language",
+                    "type": "string",
+                    "optional": true,
+                    "description": ""
+                },
+                {
+                    "name": "elanguage",
+                    "type": "int32",
+                    "optional": true,
+                    "description": ""
                 }
             ]
         }
@@ -14718,6 +15472,36 @@
                     "type": "string",
                     "optional": false,
                     "description": "Access key"
+                },
+                {
+                    "name": "query_name",
+                    "type": "string",
+                    "optional": true,
+                    "description": ""
+                },
+                {
+                    "name": "query",
+                    "type": "CStoreQueryParams",
+                    "optional": true,
+                    "description": ""
+                },
+                {
+                    "name": "context",
+                    "type": "StoreBrowseContext",
+                    "optional": true,
+                    "description": ""
+                },
+                {
+                    "name": "data_request",
+                    "type": "StoreBrowseItemDataRequest",
+                    "optional": true,
+                    "description": ""
+                },
+                {
+                    "name": "override_country_code",
+                    "type": "string",
+                    "optional": true,
+                    "description": ""
                 }
             ]
         },
@@ -14738,6 +15522,12 @@
                     "description": ""
                 },
                 {
+                    "name": "context",
+                    "type": "StoreBrowseContext",
+                    "optional": true,
+                    "description": ""
+                },
+                {
                     "name": "search_term",
                     "type": "string",
                     "optional": true,
@@ -14752,6 +15542,18 @@
                 {
                     "name": "filters",
                     "type": "CStoreQueryFilters",
+                    "optional": true,
+                    "description": ""
+                },
+                {
+                    "name": "data_request",
+                    "type": "StoreBrowseItemDataRequest",
+                    "optional": true,
+                    "description": ""
+                },
+                {
+                    "name": "use_spellcheck",
+                    "type": "bool",
                     "optional": true,
                     "description": ""
                 }
@@ -14907,12 +15709,19 @@
         "GetDiscoveryQueueSettings": {
             "_type": "protobufs",
             "version": 1,
+            "description": "Get the settings that were used to generate a user's discovery queue.",
             "parameters": [
                 {
                     "name": "key",
                     "type": "string",
                     "optional": false,
                     "description": "Access key"
+                },
+                {
+                    "name": "queue_type",
+                    "type": "EStoreDiscoveryQueueType",
+                    "optional": true,
+                    "description": ""
                 }
             ]
         },
@@ -14960,10 +15769,43 @@
                 }
             ]
         },
+        "GetUserGameInterestState": {
+            "_type": "protobufs",
+            "version": 1,
+            "httpmethod": "POST",
+            "description": "Get information about a user's relationship to a game - ownership, wishlist, discovery queue state, etc.",
+            "parameters": [
+                {
+                    "name": "key",
+                    "type": "string",
+                    "optional": false,
+                    "description": "Access key"
+                },
+                {
+                    "name": "appid",
+                    "type": "uint32",
+                    "optional": true,
+                    "description": ""
+                },
+                {
+                    "name": "store_appid",
+                    "type": "uint32",
+                    "optional": true,
+                    "description": ""
+                },
+                {
+                    "name": "beta_appid",
+                    "type": "uint32",
+                    "optional": true,
+                    "description": ""
+                }
+            ]
+        },
         "SkipDiscoveryQueueItem": {
             "_type": "protobufs",
             "version": 1,
             "httpmethod": "POST",
+            "description": "Skip an item in the user's queue.",
             "parameters": [
                 {
                     "name": "key",
@@ -14973,7 +15815,7 @@
                 },
                 {
                     "name": "queue_type",
-                    "type": "int32",
+                    "type": "EStoreDiscoveryQueueType",
                     "optional": true,
                     "description": "enum"
                 },
@@ -15227,6 +16069,12 @@
                     "type": "string[]",
                     "optional": true,
                     "description": "HTTP headers alternating by K/V"
+                },
+                {
+                    "name": "version",
+                    "type": "uint32",
+                    "optional": true,
+                    "description": "What the version of our token should be"
                 }
             ]
         },
@@ -15311,6 +16159,12 @@
                     "type": "string[]",
                     "optional": true,
                     "description": "HTTP headers alternating by K/V"
+                },
+                {
+                    "name": "validate_sms_code",
+                    "type": "bool",
+                    "optional": true,
+                    "description": "When finalizing with an SMS code, pass the request on to the PhoneService to update its state too."
                 }
             ]
         },
@@ -15391,6 +16245,52 @@
                 }
             ]
         },
+        "RemoveAuthenticatorViaChallengeContinue": {
+            "_type": "protobufs",
+            "version": 1,
+            "httpmethod": "POST",
+            "description": "Continue challenge-based authenticator removal",
+            "parameters": [
+                {
+                    "name": "key",
+                    "type": "string",
+                    "optional": false,
+                    "description": "Access key"
+                },
+                {
+                    "name": "sms_code",
+                    "type": "string",
+                    "optional": true,
+                    "description": "Code from SMS"
+                },
+                {
+                    "name": "generate_new_token",
+                    "type": "bool",
+                    "optional": true,
+                    "description": "Generate new token (instead of removing old one)"
+                },
+                {
+                    "name": "version",
+                    "type": "uint32",
+                    "optional": true,
+                    "description": ""
+                }
+            ]
+        },
+        "RemoveAuthenticatorViaChallengeStart": {
+            "_type": "protobufs",
+            "version": 1,
+            "httpmethod": "POST",
+            "description": "Start challenge-based authenticator removal",
+            "parameters": [
+                {
+                    "name": "key",
+                    "type": "string",
+                    "optional": false,
+                    "description": "Access key"
+                }
+            ]
+        },
         "SendEmail": {
             "_type": "protobufs",
             "version": 1,
@@ -15436,10 +16336,22 @@
                     "description": "Access key"
                 },
                 {
+                    "name": "steamid",
+                    "type": "fixed64",
+                    "optional": true,
+                    "description": ""
+                },
+                {
                     "name": "version",
                     "type": "uint32",
                     "optional": true,
                     "description": "What the version of our token should be"
+                },
+                {
+                    "name": "signature",
+                    "type": "bytes",
+                    "optional": true,
+                    "description": "HMAC digest over user's private key"
                 }
             ]
         },
@@ -15484,16 +16396,55 @@
                 }
             ]
         },
-        "GetUserCountry": {
+        "GetClientWalletDetails": {
             "_type": "protobufs",
             "version": 1,
             "httpmethod": "POST",
+            "description": "Returns balance and details about any users wallet",
             "parameters": [
                 {
                     "name": "key",
                     "type": "string",
                     "optional": false,
                     "description": "Access key"
+                },
+                {
+                    "name": "include_balance_in_usd",
+                    "type": "bool",
+                    "optional": true,
+                    "description": ""
+                },
+                {
+                    "name": "wallet_region",
+                    "type": "int32",
+                    "optional": true,
+                    "description": ""
+                },
+                {
+                    "name": "include_formatted_balance",
+                    "type": "bool",
+                    "optional": true,
+                    "description": ""
+                }
+            ]
+        },
+        "GetUserCountry": {
+            "_type": "protobufs",
+            "version": 1,
+            "httpmethod": "POST",
+            "description": "Get the country code associated with the passed steamid (only available for logged-in user or support)",
+            "parameters": [
+                {
+                    "name": "key",
+                    "type": "string",
+                    "optional": false,
+                    "description": "Access key"
+                },
+                {
+                    "name": "steamid",
+                    "type": "fixed64",
+                    "optional": true,
+                    "description": ""
                 }
             ]
         }
@@ -15508,6 +16459,12 @@
                     "type": "string",
                     "optional": false,
                     "description": "Access key"
+                },
+                {
+                    "name": "appid",
+                    "type": "uint32",
+                    "optional": true,
+                    "description": ""
                 }
             ]
         }
