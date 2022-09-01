@@ -15,7 +15,7 @@
                     "name": "account_type",
                     "type": "EInternalAccountType",
                     "optional": true,
-                    "description": "enum"
+                    "description": ""
                 },
                 {
                     "name": "account_id",
@@ -197,7 +197,7 @@
                     "name": "platform_type",
                     "type": "EAuthTokenPlatformType",
                     "optional": true,
-                    "description": "enum"
+                    "description": ""
                 },
                 {
                     "name": "persistence",
@@ -235,7 +235,7 @@
                     "name": "platform_type",
                     "type": "EAuthTokenPlatformType",
                     "optional": true,
-                    "description": "enum"
+                    "description": ""
                 }
             ]
         },
@@ -3017,7 +3017,7 @@
                     "name": "filter_event_type[0]",
                     "type": "int32[]",
                     "optional": true,
-                    "description": "enum"
+                    "description": ""
                 },
                 {
                     "name": "filter_to_appid",
@@ -7048,7 +7048,7 @@
                     "name": "target_type",
                     "type": "int32",
                     "optional": true,
-                    "description": "enum"
+                    "description": ""
                 },
                 {
                     "name": "targetid",
@@ -7103,6 +7103,30 @@
                     "type": "string",
                     "optional": false,
                     "description": "Access key"
+                }
+            ]
+        },
+        "GetEquippedProfileItems": {
+            "_type": "protobufs",
+            "version": 1,
+            "parameters": [
+                {
+                    "name": "key",
+                    "type": "string",
+                    "optional": false,
+                    "description": "Access key"
+                },
+                {
+                    "name": "steamid",
+                    "type": "fixed64",
+                    "optional": true,
+                    "description": ""
+                },
+                {
+                    "name": "language",
+                    "type": "string",
+                    "optional": true,
+                    "description": ""
                 }
             ]
         },
@@ -7168,7 +7192,7 @@
                     "name": "target_type",
                     "type": "int32",
                     "optional": true,
-                    "description": "enum"
+                    "description": ""
                 },
                 {
                     "name": "targetid",
@@ -7264,7 +7288,7 @@
                     "name": "sort",
                     "type": "int32",
                     "optional": true,
-                    "description": "enum"
+                    "description": ""
                 },
                 {
                     "name": "sort_descending",
@@ -7276,7 +7300,7 @@
                     "name": "reward_types[0]",
                     "type": "int32[]",
                     "optional": true,
-                    "description": "enum"
+                    "description": ""
                 },
                 {
                     "name": "excluded_community_item_classes[0]",
@@ -7294,7 +7318,7 @@
                     "name": "filters[0]",
                     "type": "int32[]",
                     "optional": true,
-                    "description": "enum"
+                    "description": ""
                 },
                 {
                     "name": "filter_match_all_category_tags[0]",
@@ -7399,7 +7423,7 @@
                     "name": "customization_type",
                     "type": "int32",
                     "optional": true,
-                    "description": "enum"
+                    "description": ""
                 }
             ]
         },
@@ -7418,7 +7442,7 @@
                     "name": "customization_type",
                     "type": "int32",
                     "optional": true,
-                    "description": "enum"
+                    "description": ""
                 },
                 {
                     "name": "new_level",
@@ -7484,6 +7508,7 @@
             "_type": "protobufs",
             "version": 1,
             "httpmethod": "POST",
+            "description": "Create a new marketing message.",
             "parameters": [
                 {
                     "name": "key",
@@ -7503,6 +7528,7 @@
             "_type": "protobufs",
             "version": 1,
             "httpmethod": "POST",
+            "description": "Delete a marketing message.",
             "parameters": [
                 {
                     "name": "key",
@@ -7518,10 +7544,47 @@
                 }
             ]
         },
+        "DoesUserHavePendingMarketingMessages": {
+            "_type": "protobufs",
+            "version": 1,
+            "parameters": [
+                {
+                    "name": "key",
+                    "type": "string",
+                    "optional": false,
+                    "description": "Access key"
+                },
+                {
+                    "name": "country_code",
+                    "type": "string",
+                    "optional": true,
+                    "description": ""
+                },
+                {
+                    "name": "elanguage",
+                    "type": "int32",
+                    "optional": true,
+                    "description": ""
+                },
+                {
+                    "name": "operating_system",
+                    "type": "int32",
+                    "optional": true,
+                    "description": ""
+                },
+                {
+                    "name": "client_package_version",
+                    "type": "int32",
+                    "optional": true,
+                    "description": ""
+                }
+            ]
+        },
         "FindMarketingMessages": {
             "_type": "protobufs",
             "version": 1,
             "httpmethod": "POST",
+            "description": "Search for marketing messages by name, type, etc.",
             "parameters": [
                 {
                     "name": "key",
@@ -7531,9 +7594,9 @@
                 },
                 {
                     "name": "lookup_type",
-                    "type": "int32",
+                    "type": "EMarketingMessageLookupType",
                     "optional": true,
-                    "description": "enum"
+                    "description": ""
                 },
                 {
                     "name": "gid",
@@ -7543,9 +7606,9 @@
                 },
                 {
                     "name": "message_type",
-                    "type": "int32",
+                    "type": "EMarketingMessageType",
                     "optional": true,
-                    "description": "enum"
+                    "description": ""
                 },
                 {
                     "name": "gidlist[0]",
@@ -7564,6 +7627,7 @@
         "GetActiveMarketingMessages": {
             "_type": "protobufs",
             "version": 1,
+            "description": "Get a list of active marketing messages.",
             "parameters": [
                 {
                     "name": "key",
@@ -7582,6 +7646,7 @@
         "GetDisplayMarketingMessage": {
             "_type": "protobufs",
             "version": 1,
+            "description": "Get a single marketing message, cacheable.",
             "parameters": [
                 {
                     "name": "key",
@@ -7605,7 +7670,7 @@
                     "name": "data_request",
                     "type": "StoreBrowseItemDataRequest",
                     "optional": true,
-                    "description": ""
+                    "description": "If passed, item data will be returned"
                 }
             ]
         },
@@ -7613,6 +7678,7 @@
             "_type": "protobufs",
             "version": 1,
             "httpmethod": "POST",
+            "description": "Get a single marketing message.  Admin account needed for non-active messages",
             "parameters": [
                 {
                     "name": "key",
@@ -7631,6 +7697,7 @@
         "GetMarketingMessagesForUser": {
             "_type": "protobufs",
             "version": 1,
+            "description": "Get a list of active marketing messages filtered for a specific user.",
             "parameters": [
                 {
                     "name": "key",
@@ -7660,7 +7727,7 @@
                     "name": "operating_system",
                     "type": "int32",
                     "optional": true,
-                    "description": ""
+                    "description": "EOSType from client"
                 },
                 {
                     "name": "client_package_version",
@@ -7672,13 +7739,13 @@
                     "name": "context",
                     "type": "StoreBrowseContext",
                     "optional": true,
-                    "description": ""
+                    "description": "Optional, server can fill in from country code/language if not set"
                 },
                 {
                     "name": "data_request",
                     "type": "StoreBrowseItemDataRequest",
                     "optional": true,
-                    "description": ""
+                    "description": "If passed, item data will be returned"
                 }
             ]
         },
@@ -7686,6 +7753,7 @@
             "_type": "protobufs",
             "version": 1,
             "httpmethod": "POST",
+            "description": "Mark that a user has viewed a message (so we won't show it again)'.",
             "parameters": [
                 {
                     "name": "key",
@@ -7705,6 +7773,7 @@
             "_type": "protobufs",
             "version": 1,
             "httpmethod": "POST",
+            "description": "Modify a marketing message.",
             "parameters": [
                 {
                     "name": "key",
@@ -7844,7 +7913,7 @@
                     "name": "mobile_app",
                     "type": "int32",
                     "optional": true,
-                    "description": "enum"
+                    "description": ""
                 }
             ]
         }
@@ -8566,7 +8635,7 @@
                     "name": "filters[0]",
                     "type": "int32[]",
                     "optional": true,
-                    "description": "enum"
+                    "description": ""
                 }
             ]
         },
@@ -11016,7 +11085,7 @@
                     "name": "eventid",
                     "type": "int32",
                     "optional": true,
-                    "description": "enum"
+                    "description": ""
                 },
                 {
                     "name": "include_inactive",
@@ -13232,7 +13301,7 @@
                     "name": "notification_type",
                     "type": "int32",
                     "optional": true,
-                    "description": "enum"
+                    "description": ""
                 },
                 {
                     "name": "notification_ids[0]",
@@ -15377,7 +15446,7 @@
                     "name": "sort",
                     "type": "int32",
                     "optional": true,
-                    "description": "enum"
+                    "description": ""
                 },
                 {
                     "name": "clusters_to_return",
@@ -15410,6 +15479,7 @@
         "GetItems": {
             "_type": "protobufs",
             "version": 1,
+            "description": "Get information about items on the store",
             "parameters": [
                 {
                     "name": "key",
@@ -15440,6 +15510,7 @@
         "GetStoreCategories": {
             "_type": "protobufs",
             "version": 1,
+            "description": "Get category definitions for store.  This is a public-facing API (as compared to StoreCatalog.GetCategories, which is intended for PHP)",
             "parameters": [
                 {
                     "name": "key",
@@ -15457,7 +15528,7 @@
                     "name": "elanguage",
                     "type": "int32",
                     "optional": true,
-                    "description": ""
+                    "description": "ELanguage"
                 }
             ]
         }
@@ -15648,7 +15719,7 @@
                     "name": "queue_type",
                     "type": "EStoreDiscoveryQueueType",
                     "optional": true,
-                    "description": "enum"
+                    "description": ""
                 },
                 {
                     "name": "country_code",
@@ -15817,7 +15888,7 @@
                     "name": "queue_type",
                     "type": "EStoreDiscoveryQueueType",
                     "optional": true,
-                    "description": "enum"
+                    "description": ""
                 },
                 {
                     "name": "appid",
