@@ -4133,12 +4133,24 @@
         }
     },
     "IDOTA2Ticket_570": {
+        "GetSteamIDForBadgeID": {
+            "version": 1,
+            "httpmethod": "GET",
+            "parameters": [
+                {
+                    "name": "BadgeID",
+                    "type": "string",
+                    "optional": false,
+                    "description": "The badge ID"
+                }
+            ]
+        },
         "SetSteamAccountPurchased": {
             "version": 1,
             "httpmethod": "POST",
             "parameters": [
                 {
-                    "name": "SteamID",
+                    "name": "steamid",
                     "type": "uint64",
                     "optional": false,
                     "description": "The 64-bit Steam ID"
@@ -4156,7 +4168,7 @@
             "httpmethod": "GET",
             "parameters": [
                 {
-                    "name": "SteamID",
+                    "name": "steamid",
                     "type": "uint64",
                     "optional": false,
                     "description": "The 64-bit Steam ID"
@@ -4567,7 +4579,7 @@
             "httpmethod": "GET",
             "parameters": [
                 {
-                    "name": "SteamID",
+                    "name": "steamid",
                     "type": "uint64",
                     "optional": false,
                     "description": "The Steam ID to fetch items for"
@@ -4585,7 +4597,7 @@
             "httpmethod": "GET",
             "parameters": [
                 {
-                    "name": "SteamID",
+                    "name": "steamid",
                     "type": "uint64",
                     "optional": false,
                     "description": "The Steam ID to fetch items for"
