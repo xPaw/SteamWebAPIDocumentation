@@ -215,13 +215,13 @@
                     "name": "device_details",
                     "type": "CAuthentication_DeviceDetails",
                     "optional": true,
-                    "description": ""
+                    "description": "User-supplied details about the device attempting to sign in"
                 },
                 {
                     "name": "guard_data",
                     "type": "string",
                     "optional": true,
-                    "description": ""
+                    "description": "steam guard data for client login"
                 }
             ]
         },
@@ -253,7 +253,7 @@
                     "name": "device_details",
                     "type": "CAuthentication_DeviceDetails",
                     "optional": true,
-                    "description": ""
+                    "description": "User-supplied details about the device attempting to sign in"
                 }
             ]
         },
@@ -261,6 +261,7 @@
             "_type": "protobufs",
             "version": 1,
             "httpmethod": "POST",
+            "description": "Enumerate durable (refresh) tokens for the given subject account",
             "parameters": [
                 {
                     "name": "key",
@@ -416,6 +417,7 @@
             "_type": "protobufs",
             "version": 1,
             "httpmethod": "POST",
+            "description": "Mark the given refresh token as revoked",
             "parameters": [
                 {
                     "name": "key",
@@ -433,19 +435,19 @@
                     "name": "steamid",
                     "type": "fixed64",
                     "optional": true,
-                    "description": ""
+                    "description": "Token holder if an admin action on behalf of another user"
                 },
                 {
                     "name": "revoke_action",
-                    "type": "int32",
+                    "type": "EAuthTokenRevokeAction",
                     "optional": true,
-                    "description": ""
+                    "description": "Select between logout and logout-and-forget-machine"
                 },
                 {
                     "name": "signature",
                     "type": "bytes",
                     "optional": true,
-                    "description": ""
+                    "description": "required signature over token_id"
                 }
             ]
         },
@@ -9405,6 +9407,25 @@
                 }
             ]
         },
+        "GetEmailTargets": {
+            "_type": "protobufs",
+            "version": 1,
+            "httpmethod": "POST",
+            "parameters": [
+                {
+                    "name": "key",
+                    "type": "string",
+                    "optional": false,
+                    "description": "Access key"
+                },
+                {
+                    "name": "inviteid",
+                    "type": "fixed64",
+                    "optional": true,
+                    "description": ""
+                }
+            ]
+        },
         "GetInvite": {
             "_type": "protobufs",
             "version": 1,
@@ -11200,6 +11221,37 @@
                 }
             ]
         },
+        "SetFeaturingOnPartnerAppOptIn": {
+            "_type": "protobufs",
+            "version": 1,
+            "httpmethod": "POST",
+            "parameters": [
+                {
+                    "name": "key",
+                    "type": "string",
+                    "optional": false,
+                    "description": "Access key"
+                },
+                {
+                    "name": "appids[0]",
+                    "type": "uint32[]",
+                    "optional": true,
+                    "description": ""
+                },
+                {
+                    "name": "additional_featuring",
+                    "type": "bool",
+                    "optional": true,
+                    "description": ""
+                },
+                {
+                    "name": "opt_in_name",
+                    "type": "string",
+                    "optional": true,
+                    "description": ""
+                }
+            ]
+        },
         "TestFirePartnerAppOptInEmail": {
             "_type": "protobufs",
             "version": 1,
@@ -12071,6 +12123,44 @@
                     "type": "uint32",
                     "optional": true,
                     "description": "Percent cache hits"
+                }
+            ]
+        }
+    },
+    "ISteamChartsService": {
+        "GetGamesByConcurrentPlayers": {
+            "_type": "protobufs",
+            "version": 1,
+            "parameters": [
+                {
+                    "name": "key",
+                    "type": "string",
+                    "optional": false,
+                    "description": "Access key"
+                }
+            ]
+        },
+        "GetMostPlayedGames": {
+            "_type": "protobufs",
+            "version": 1,
+            "parameters": [
+                {
+                    "name": "key",
+                    "type": "string",
+                    "optional": false,
+                    "description": "Access key"
+                }
+            ]
+        },
+        "GetTopReleasesPages": {
+            "_type": "protobufs",
+            "version": 1,
+            "parameters": [
+                {
+                    "name": "key",
+                    "type": "string",
+                    "optional": false,
+                    "description": "Access key"
                 }
             ]
         }
@@ -16225,6 +16315,62 @@
                 {
                     "name": "appid",
                     "type": "uint32",
+                    "optional": true,
+                    "description": ""
+                }
+            ]
+        }
+    },
+    "IStoreTopSellersService": {
+        "GetCountryList": {
+            "_type": "protobufs",
+            "version": 1,
+            "parameters": [
+                {
+                    "name": "key",
+                    "type": "string",
+                    "optional": false,
+                    "description": "Access key"
+                },
+                {
+                    "name": "language",
+                    "type": "string",
+                    "optional": true,
+                    "description": ""
+                }
+            ]
+        },
+        "GetWeeklyTopSellers": {
+            "_type": "protobufs",
+            "version": 1,
+            "parameters": [
+                {
+                    "name": "key",
+                    "type": "string",
+                    "optional": false,
+                    "description": "Access key"
+                },
+                {
+                    "name": "country_code",
+                    "type": "string",
+                    "optional": true,
+                    "description": ""
+                },
+                {
+                    "name": "start_date",
+                    "type": "uint32",
+                    "optional": true,
+                    "description": ""
+                },
+                {
+                    "name": "page_start",
+                    "type": "int32",
+                    "optional": true,
+                    "description": ""
+                },
+                {
+                    "name": "page_count",
+                    "type": "int32",
                     "optional": true,
                     "description": ""
                 }
