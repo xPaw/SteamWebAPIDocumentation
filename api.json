@@ -7750,8 +7750,8 @@
                     "description": ""
                 },
                 {
-                    "name": "communityitemid",
-                    "type": "uint64",
+                    "name": "expected_points_cost",
+                    "type": "int64",
                     "optional": true,
                     "description": ""
                 }
@@ -12149,6 +12149,18 @@
                     "type": "string",
                     "optional": false,
                     "description": "Access key"
+                },
+                {
+                    "name": "context",
+                    "type": "StoreBrowseContext",
+                    "optional": true,
+                    "description": ""
+                },
+                {
+                    "name": "data_request",
+                    "type": "StoreBrowseItemDataRequest",
+                    "optional": true,
+                    "description": ""
                 }
             ]
         },
@@ -15881,6 +15893,18 @@
                     "type": "int32",
                     "optional": true,
                     "description": ""
+                },
+                {
+                    "name": "context",
+                    "type": "StoreBrowseContext",
+                    "optional": true,
+                    "description": ""
+                },
+                {
+                    "name": "data_request",
+                    "type": "StoreBrowseItemDataRequest",
+                    "optional": true,
+                    "description": ""
                 }
             ]
         },
@@ -16353,6 +16377,18 @@
                 {
                     "name": "country_code",
                     "type": "string",
+                    "optional": true,
+                    "description": ""
+                },
+                {
+                    "name": "context",
+                    "type": "StoreBrowseContext",
+                    "optional": true,
+                    "description": ""
+                },
+                {
+                    "name": "data_request",
+                    "type": "StoreBrowseItemDataRequest",
                     "optional": true,
                     "description": ""
                 },
