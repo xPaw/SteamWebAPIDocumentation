@@ -178,6 +178,10 @@
 			{
 				return this.filteredInterfaces[ this.currentInterface ];
 			},
+			uriDelimeterBeforeKey()
+			{
+				return this.hasValidAccessToken || this.hasValidWebApiKey ? '?' : '';
+			},
 		},
 		methods:
 		{
@@ -207,7 +211,7 @@
 					host = 'https://partner.steam-api.com/';
 				}
 
-				return `${host}${this.currentInterface}/${methodName}/v${version}/?`;
+				return `${host}${this.currentInterface}/${methodName}/v${version}/`;
 			},
 			renderApiKey()
 			{
@@ -245,7 +249,17 @@
 
 				const str = parameters.toString();
 
-				return str.length > 0 ? `&${str}` : '';
+				if( str.length === 0 )
+				{
+					return '';
+				}
+
+				if( this.uriDelimeterBeforeKey )
+				{
+					return `&${str}`;
+				}
+
+				return `?${str}`;
 			},
 			useThisMethod( event, method )
 			{
