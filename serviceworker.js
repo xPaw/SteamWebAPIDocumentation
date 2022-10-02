@@ -30,13 +30,13 @@ async function networkOrCache( event )
 			return response.clone();
 		}
 
-		throw new Error( `Request failed with HTTP ${response.status}` );
+		return response;
 	}
 	catch( e )
 	{
 		const cache = await caches.open( 'steamwebapi-cache' );
 		const matching = await cache.match( event.request );
 
-		return matching || Promise.reject( 'request-not-in-cache' );
+		return matching || Promise.reject( e );
 	}
 }
