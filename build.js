@@ -5,6 +5,7 @@ const path = require('path');
 
 esbuild.build({
 	entryPoints: ['src/index.ts'],
+	minify: true,
 	bundle: true,
 	sourcemap: true,
 	outfile: 'public/documentation.js',
