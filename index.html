@@ -252,7 +252,7 @@
 							<a href="#" @click.prevent="currentFilter = ''">Click here to reset filtered results.</a>
 							Use arrows keys in search field to navigate.
 						</div>
-						<template v-for="(method, methodName) in interface">
+						<template v-for="(method, methodName) in interface" :key="methodName">
 							<form
 								target="_blank"
 								:id="methodName"
