@@ -15,6 +15,15 @@ esbuild.build({
     },
 });
 
+// Bootstrap
+esbuild.build({
+	entryPoints: ['src/style.css'],
+	minify: true,
+	bundle: true,
+	sourcemap: true,
+	outfile: 'public/style.css',
+});
+
 // Minify and copy api.json
 const interfaces = JSON.parse(fs.readFileSync(path.resolve(__dirname, 'api.json')));
 
