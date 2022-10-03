@@ -1,6 +1,10 @@
 (async () =>
 {
-	const apiFetch = await fetch( 'api.json' );
+	const apiFetch = await fetch( 'api.json', {
+		method: 'GET',
+		credentials: 'include',
+		mode: 'no-cors',
+	} );
 	const interfaces = await apiFetch.json();
 
 	const flattenedMethods = [];
