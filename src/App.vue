@@ -1,46 +1,5 @@
-<!DOCTYPE html>
-<html lang="en">
-<head>
-	<meta charset="UTF-8">
-	<meta name="viewport" content="width=device-width, initial-scale=1.0">
-	<meta name="theme-color" content="#0d0d0d">
-	<meta name="color-scheme" content="dark">
-	<meta name="referrer" content="no-referrer">
-	<title>Steam Web API Documentation</title>
-	<meta name="description" content="An automatically generated list of Steam Web API interfaces, methods and parameters. Allows you to craft requests in the browser.">
-	<meta property="og:description" content="An automatically generated list of Steam Web API interfaces, methods and parameters. Allows you to craft requests in the browser.">
-	<link rel="shortcut icon" href="favicon.ico">
-	<link rel="manifest" href="manifest.json">
-	<link rel="preload" href="api.json" as="fetch">
-	<link rel="preload" href="documentation.js" as="script">
-	<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/twitter-bootstrap/5.0.1/css/bootstrap.min.css" integrity="sha512-Ez0cGzNzHR1tYAv56860NLspgUGuQw16GiOOp/I2LuTmpSK9xDXlgJz3XN4cnpXWDmkNBKXR/VDMTCnAaEooxA==" crossorigin="anonymous" />
-	<link rel="stylesheet" href="style.css">
-</head>
-<body>
-	<div id="loading">
-		<div class="py-2 no-select header">
-			<div class="container">
-				<div class="row">
-					<div class="col-lg-3">
-						<div class="form-control">&nbsp;</div>
-					</div>
-					<div class="col-lg-9">
-						<h1><a href="#" class="title">Steam Web API Documentation</a></h1>
-						with &hearts; by <a href="https://xpaw.me">xPaw</a>
-					</div>
-				</div>
-			</div>
-		</div>
-		<div class="container">
-			<div class="row text-center">
-				<div class="col-lg-12">
-					<div class="my-5">Loading…<br>You need to have a modern browser with javascript enabled.</div>
-				</div>
-			</div>
-		</div>
-	</div>
-
-	<div id="app" v-cloak>
+<template>
+	<div>
 		<div class="py-2 no-select header" role="banner">
 			<div class="container">
 				<div class="row">
@@ -361,9 +320,6 @@
 			</div>
 		</div>
 	</div>
+</template>
 
-	<script src="https://cdnjs.cloudflare.com/ajax/libs/fuse.js/6.6.2/fuse.min.js" integrity="sha512-Nqw1tH3mpavka9cQCc5zWWEZNfIPdOYyQFjlV1NvflEtQ0/XI6ZQ+H/D3YgJdqSUJlMLAPRj/oXlaHCFbFCjoQ==" crossorigin="anonymous" referrerpolicy="no-referrer"></script>
-	<script src="https://cdnjs.cloudflare.com/ajax/libs/vue/2.7.10/vue.min.js" integrity="sha512-H8u5mlZT1FD7MRlnUsODppkKyk+VEiCmncej8yZW1k/wUT90OQon0F9DSf/2Qh+7L/5UHd+xTLrMszjHEZc2BA==" crossorigin="anonymous" referrerpolicy="no-referrer"></script>
-	<script src="documentation.js"></script>
-</body>
-</html>
+<script src="./App.ts" lang="ts"></script>
