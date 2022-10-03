@@ -3154,6 +3154,43 @@
                     "description": "App ID to which a file will be uploaded to."
                 }
             ]
+        },
+        "SignalAppLaunchIntent": {
+            "_type": "protobufs",
+            "version": 1,
+            "description": "Client intends to launch an app",
+            "parameters": [
+                {
+                    "name": "key",
+                    "type": "string",
+                    "optional": false,
+                    "description": "Access key"
+                },
+                {
+                    "name": "appid",
+                    "type": "uint32",
+                    "optional": true,
+                    "description": ""
+                },
+                {
+                    "name": "client_id",
+                    "type": "uint64",
+                    "optional": true,
+                    "description": ""
+                },
+                {
+                    "name": "machine_name",
+                    "type": "string",
+                    "optional": true,
+                    "description": ""
+                },
+                {
+                    "name": "ignore_pending_operations",
+                    "type": "bool",
+                    "optional": true,
+                    "description": ""
+                }
+            ]
         }
     },
     "ICommunityService": {
@@ -11178,18 +11215,6 @@
                 }
             ]
         },
-        "GetPartnerOptInInvites": {
-            "_type": "undocumented",
-            "version": 1,
-            "parameters": [
-                {
-                    "name": "key",
-                    "type": "string",
-                    "optional": false,
-                    "description": "Access key"
-                }
-            ]
-        },
         "GetSinglePartnerAppOptIn": {
             "_type": "protobufs",
             "version": 1,
@@ -11544,6 +11569,25 @@
             "_type": "undocumented",
             "version": 1,
             "parameters": []
+        },
+        "GetPairingInfo": {
+            "_type": "protobufs",
+            "version": 1,
+            "description": "Get pairing info for an entered PIN",
+            "parameters": [
+                {
+                    "name": "key",
+                    "type": "string",
+                    "optional": false,
+                    "description": "Access key"
+                },
+                {
+                    "name": "pin",
+                    "type": "uint32",
+                    "optional": true,
+                    "description": ""
+                }
+            ]
         },
         "GetReplies": {
             "_type": "undocumented",
