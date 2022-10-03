@@ -15,6 +15,9 @@ esbuild.build({
     },
 });
 
-fs.copyFileSync(path.resolve(__dirname, 'api.json'), path.resolve(__dirname, 'public', 'api.json'));
+// Minify and copy api.json
+const interfaces = JSON.parse(fs.readFileSync(path.resolve(__dirname, 'api.json')));
+
+fs.writeFileSync(path.resolve(__dirname, 'public', 'api.json'), JSON.stringify(interfaces) );
 
 console.log('OK');
