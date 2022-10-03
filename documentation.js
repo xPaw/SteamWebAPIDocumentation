@@ -174,7 +174,7 @@
 
 				return matchedInterfaces;
 			},
-			interface()
+			currentInterfaceMethods()
 			{
 				return this.filteredInterfaces[ this.currentInterface ];
 			},

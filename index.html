@@ -70,7 +70,7 @@
 				<div class="col-lg-3 sidebar py-3" role="navigation">
 					<ul class="interface-list m-0">
 						<li
-							v-for="(interface, interfaceName) in filteredInterfaces"
+							v-for="(interfaceMethods, interfaceName) in filteredInterfaces"
 							:key="interfaceName"
 						>
 							<a
@@ -81,13 +81,14 @@
 
 							<ul class="method-list rounded mb-2 p-2" v-if="currentFilter || interfaceName === currentInterface">
 								<li
-									v-for="(method, methodName) in interface"
+									v-for="(method, methodName) in interfaceMethods"
 									:key="methodName"
 								>
 									<a
 										:href="'#' + interfaceName + '/' + methodName"
 										@click.prevent="setMethod( interfaceName, methodName ); updateUrl( methodName );"
 									>{{ methodName }}</a>
+								</li>
 							</ul>
 						</li>
 					</ul>
@@ -234,8 +235,8 @@
 						<div class="card border-primary mt-3">
 							<div class="card-header bg-primary text-white">Sitemap</div>
 							<div class="card-body">
-								<ul class="list-group" v-for="(interface, interfaceName) in interfaces" :key="interfaceName">
-									<li class="list-group-item px-0" v-for="(method, methodName) in interface" :key="methodName">
+								<ul class="list-group" v-for="(interfaceMethods, interfaceName) in interfaces" :key="interfaceName">
+									<li class="list-group-item px-0" v-for="(method, methodName) in interfaceMethods" :key="methodName">
 										<a :href="'#' + interfaceName + '/' + methodName">{{ interfaceName }}/{{methodName}}</a>
 										<div class="text-info mt-1" v-if="method.parameters.length > 0">{{ method.parameters.map( m => m.name ).join( ', ' ) }}</div>
 									</li>
@@ -251,9 +252,10 @@
 							<a href="#" @click.prevent="currentFilter = ''">Click here to reset filtered results.</a>
 							Use arrows keys in search field to navigate.
 						</div>
-						<template v-for="(method, methodName) in interface">
+						<template v-for="(method, methodName) in currentInterfaceMethods">
 							<form
 								target="_blank"
+								:key="methodName"
 								:id="methodName"
 								:method="method.httpmethod || 'GET'"
 								:action="renderUri( methodName, method )"
