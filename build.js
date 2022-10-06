@@ -1,5 +1,5 @@
 const esbuild = require('esbuild');
-const vuePlugin = require('esbuild-vue');
+const vuePlugin = require('esbuild-plugin-vue3');
 const fs = require('fs');
 const path = require('path');
 
