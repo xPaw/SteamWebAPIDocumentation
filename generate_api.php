@@ -71,7 +71,7 @@ $FinalList = file_exists( __DIR__ . '/api.json' ) ? json_decode( file_get_conten
 MarkAsRemoved( $FinalList );
 MergeLists( $FinalList, $NonPublisher );
 MergeLists( $FinalList, $YesPublisher, 'publisher_only' );
-MergeLists( $FinalList, $UndocumentedFromServices, 'protobufs' );
+MergeLists( $FinalList, $UndocumentedFromServices, 'undocumented' );
 MergeLists( $FinalList, $UndocumentedFromPartnerDocs, 'undocumented' );
 MergeLists( $FinalList, $Undocumented, 'undocumented' );
 

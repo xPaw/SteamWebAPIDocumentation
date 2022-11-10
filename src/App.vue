@@ -232,8 +232,7 @@
 									{ 'bg-warning border-warning text-dark': method._type === 'undocumented' },
 								]">
 									<div class="card-inner-header">
-										<a class="badge bg-light text-dark no-select" href="https://github.com/SteamDatabase/UndocumentedAPI" target="_blank" rel="noopener" v-if="method._type === 'undocumented'">UNDOCUMENTED</a>
-										<a class="badge bg-primary no-select" href="https://github.com/SteamDatabase/Protobufs" target="_blank" rel="noopener" v-if="method._type === 'protobufs'">PROTOBUF</a>
+										<span class="badge bg-primary no-select" v-if="method._type === 'undocumented'">UNDOCUMENTED</span>
 										<span :class="method.httpmethod === 'GET' ? 'badge bg-success' : 'badge bg-danger'">{{ method.httpmethod }}</span>
 										<a class="badge bg-warning text-dark no-select" v-if="method._type === 'publisher_only'" :href="`https://partner.steamgames.com/doc/webapi/${currentInterface}#${methodName}`" target="_blank" rel="noopener">PUBLISHER</a>
 										<a class="card-method-name" :href="'#' + currentInterface + '/' + methodName" @click="updateUrl(methodName)">{{ methodName }}</a>

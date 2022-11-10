@@ -18,7 +18,7 @@ I provide an automatically updated and generated list, I do not personally know 
 2. Official list from [`GetSupportedAPIList`](https://steamapi.xpaw.me/#ISteamWebAPIUtil/GetSupportedAPIList)
    - Using normal API key
    - Using partner API key
-3. [Parsed protobufs](https://github.com/steamdatabase/protobufs) to find service methods and tested against the API
+3. [Parsed protobufs](https://github.com/SteamDatabase/Protobufs) to find service methods and tested against the API
    - Descriptions and fields are also parsed
 4. [Manual list of undocumented methods](https://github.com/SteamDatabase/UndocumentedAPI)
 5. `api_type_overrides.json` to fix up types of known method parameters. Such as enforcing arrays.
