@@ -218,23 +218,17 @@
 								:id="methodName"
 								:method="method.httpmethod || 'GET'"
 								:action="renderUri( methodName, method )"
-								:class="[
-									'card mb-4',
-									{ 'border-warning': method._type === 'undocumented' },
-								]"
+								class="card mb-4"
 								@submit="useThisMethod($event, method)"
 							>
 								<input type="hidden" name="access_token" v-model="userData.access_token" v-if="hasValidAccessToken">
 								<input type="hidden" name="key" v-model="userData.webapi_key" v-if="!hasValidAccessToken && hasValidWebApiKey">
 								<input type="hidden" name="format" v-model="userData.format" v-if="userData.format !== 'json'">
-								<div :class="[
-									'card-header p-0 d-flex justify-content-between',
-									{ 'bg-warning border-warning text-dark': method._type === 'undocumented' },
-								]">
+								<div class="card-header p-0 d-flex justify-content-between">
 									<div class="card-inner-header">
-										<span class="badge bg-primary no-select" v-if="method._type === 'undocumented'">UNDOCUMENTED</span>
-										<span :class="method.httpmethod === 'GET' ? 'badge bg-success' : 'badge bg-danger'">{{ method.httpmethod }}</span>
 										<a class="badge bg-warning text-dark no-select" v-if="method._type === 'publisher_only'" :href="`https://partner.steamgames.com/doc/webapi/${currentInterface}#${methodName}`" target="_blank" rel="noopener">PUBLISHER</a>
+										<span class="badge bg-warning text-dark no-select" v-if="method._type === 'undocumented'">UNDOCUMENTED</span>
+										<span :class="method.httpmethod === 'GET' ? 'badge bg-success' : 'badge bg-danger'">{{ method.httpmethod }}</span>
 										<a class="card-method-name" :href="'#' + currentInterface + '/' + methodName" @click="updateUrl(methodName)">{{ methodName }}</a>
 										<span class="badge bg-primary" v-if="method.version > 1">v{{ method.version }}</span>
 									</div>
