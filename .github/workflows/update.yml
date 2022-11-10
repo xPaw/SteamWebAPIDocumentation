@@ -1,0 +1,25 @@
+name: Daily update
+
+permissions:
+  contents: write
+
+on:
+  workflow_dispatch:
+  schedule:
+    - cron: '0 5 * * *'
+
+jobs:
+  scheduled:
+    runs-on: ubuntu-latest
+    steps:
+    - name: Checkout
+      uses: actions/checkout@v3
+    - name: Git config
+      run: |-
+        git config user.name "Wendy"
+        git config user.email "freeman@steamdb.info"
+    - name: Run script
+      run: ./update.sh
+      env:
+        STEAM_PUBLIC_API_KEY: ${{ secrets.STEAM_PUBLIC_API_KEY }}
+        STEAM_PUBLISHER_API_KEY: ${{ secrets.STEAM_PUBLISHER_API_KEY }}

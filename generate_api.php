@@ -1,6 +1,14 @@
 <?php
 
-require __DIR__ . '/config.php';
+if( getenv( 'CI' ) !== false )
+{
+	$PublicApiKey    = getenv( 'STEAM_PUBLIC_API_KEY' );
+	$PublisherApiKey = getenv( 'STEAM_PUBLISHER_API_KEY' );
+}
+else
+{
+	require __DIR__ . '/config.php';
+}
 
 echo 'Downloading list...' . PHP_EOL;
 
@@ -13,11 +21,13 @@ curl_setopt_array( $c,
 	CURLOPT_USERAGENT      => '',
 	CURLOPT_URL            => 'https://community.steam-api.com/ISteamWebAPIUtil/GetSupportedAPIList/v1/?format=json&key=' . $PublicApiKey
 ] );
+unset( $PublicApiKey );
 $NonPublisher = curl_exec( $c );
 
 echo 'Downloading partner list...' . PHP_EOL;
 
 curl_setopt( $c, CURLOPT_URL, 'https://partner.steam-api.com/ISteamWebAPIUtil/GetSupportedAPIList/v1/?format=json&key=' . $PublisherApiKey );
+unset( $PublisherApiKey );
 $YesPublisher = curl_exec( $c );
 
 echo 'Downloading undocumented list...' . PHP_EOL;
