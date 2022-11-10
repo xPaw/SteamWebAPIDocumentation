@@ -254,6 +254,12 @@
                     "type": "CAuthentication_DeviceDetails",
                     "optional": true,
                     "description": "User-supplied details about the device attempting to sign in"
+                },
+                {
+                    "name": "website_id",
+                    "type": "string",
+                    "optional": true,
+                    "description": "(EMachineAuthWebDomain) identifier of client requesting auth"
                 }
             ]
         },
@@ -621,6 +627,12 @@
                     "type": "fixed64",
                     "optional": true,
                     "description": "Token ID of the token to revoke (required)"
+                },
+                {
+                    "name": "steamid",
+                    "type": "fixed64",
+                    "optional": true,
+                    "description": "Steam ID of the owner of that token (required)"
                 }
             ]
         }
@@ -3156,7 +3168,7 @@
             ]
         },
         "SignalAppLaunchIntent": {
-            "_type": "protobufs",
+            "_type": "undocumented",
             "version": 1,
             "description": "Client intends to launch an app",
             "parameters": [
@@ -7727,6 +7739,12 @@
                     "type": "uint32[]",
                     "optional": true,
                     "description": ""
+                },
+                {
+                    "name": "search_term",
+                    "type": "string",
+                    "optional": true,
+                    "description": ""
                 }
             ]
         },
@@ -7919,6 +7937,7 @@
         "DoesUserHavePendingMarketingMessages": {
             "_type": "protobufs",
             "version": 1,
+            "description": "Returns a boolean if the user has pending marketing messages.  Intended to be fast.",
             "parameters": [
                 {
                     "name": "key",
@@ -7942,7 +7961,7 @@
                     "name": "operating_system",
                     "type": "int32",
                     "optional": true,
-                    "description": ""
+                    "description": "EOSType from client"
                 },
                 {
                     "name": "client_package_version",
@@ -8234,6 +8253,25 @@
         }
     },
     "IMobileDeviceService": {
+        "DeregisterMobileDevice": {
+            "_type": "protobufs",
+            "version": 1,
+            "httpmethod": "POST",
+            "parameters": [
+                {
+                    "name": "key",
+                    "type": "string",
+                    "optional": false,
+                    "description": "Access key"
+                },
+                {
+                    "name": "deviceid",
+                    "type": "string",
+                    "optional": true,
+                    "description": ""
+                }
+            ]
+        },
         "RegisterMobileDevice": {
             "_type": "protobufs",
             "version": 1,
@@ -8459,6 +8497,118 @@
             ]
         }
     },
+    "IParentalService": {
+        "GetParentalSettings": {
+            "_type": "protobufs",
+            "version": 1,
+            "description": "Get the current parental settings for the logged in account",
+            "parameters": [
+                {
+                    "name": "key",
+                    "type": "string",
+                    "optional": false,
+                    "description": "Access key"
+                },
+                {
+                    "name": "steamid",
+                    "type": "fixed64",
+                    "optional": true,
+                    "description": ""
+                }
+            ]
+        },
+        "GetSignedParentalSettings": {
+            "_type": "protobufs",
+            "version": 1,
+            "description": "Get the current parental settings for the logged in account in a form that can by verified by the receiver",
+            "parameters": [
+                {
+                    "name": "key",
+                    "type": "string",
+                    "optional": false,
+                    "description": "Access key"
+                },
+                {
+                    "name": "priority",
+                    "type": "uint32",
+                    "optional": true,
+                    "description": ""
+                }
+            ]
+        },
+        "LockClient": {
+            "_type": "protobufs",
+            "version": 1,
+            "httpmethod": "POST",
+            "description": "Notify connected clients that a lock has occurred in a browser",
+            "parameters": [
+                {
+                    "name": "key",
+                    "type": "string",
+                    "optional": false,
+                    "description": "Access key"
+                },
+                {
+                    "name": "session",
+                    "type": "string",
+                    "optional": true,
+                    "description": ""
+                }
+            ]
+        },
+        "ValidatePassword": {
+            "_type": "protobufs",
+            "version": 1,
+            "httpmethod": "POST",
+            "description": "Validate the plaintext password for the logged in account and return an unlock token",
+            "parameters": [
+                {
+                    "name": "key",
+                    "type": "string",
+                    "optional": false,
+                    "description": "Access key"
+                },
+                {
+                    "name": "password",
+                    "type": "string",
+                    "optional": true,
+                    "description": ""
+                },
+                {
+                    "name": "session",
+                    "type": "string",
+                    "optional": true,
+                    "description": ""
+                },
+                {
+                    "name": "send_unlock_on_success",
+                    "type": "bool",
+                    "optional": true,
+                    "description": ""
+                }
+            ]
+        },
+        "ValidateToken": {
+            "_type": "protobufs",
+            "version": 1,
+            "httpmethod": "POST",
+            "description": "Check if the given parental unlock token is correct for the logged in account",
+            "parameters": [
+                {
+                    "name": "key",
+                    "type": "string",
+                    "optional": false,
+                    "description": "Access key"
+                },
+                {
+                    "name": "unlock_token",
+                    "type": "string",
+                    "optional": true,
+                    "description": ""
+                }
+            ]
+        }
+    },
     "IPartnerMembershipInviteService": {
         "GetInvites": {
             "_type": "protobufs",
@@ -8485,14 +8635,20 @@
                     "description": "Access key"
                 },
                 {
-                    "name": "request",
-                    "type": "CStoreBrowse_GetItems_Request",
+                    "name": "ids",
+                    "type": "StoreItemID",
                     "optional": true,
                     "description": ""
                 },
                 {
-                    "name": "include_unpublished",
-                    "type": "bool",
+                    "name": "context",
+                    "type": "StoreBrowseContext",
+                    "optional": true,
+                    "description": ""
+                },
+                {
+                    "name": "data_request",
+                    "type": "StoreBrowseItemDataRequest",
                     "optional": true,
                     "description": ""
                 }
@@ -11612,6 +11768,37 @@
                     "optional": false
                 }
             ]
+        },
+        "SetVirtualItemRewardDefinition": {
+            "_type": "protobufs",
+            "version": 1,
+            "httpmethod": "POST",
+            "parameters": [
+                {
+                    "name": "key",
+                    "type": "string",
+                    "optional": false,
+                    "description": "Access key"
+                },
+                {
+                    "name": "eventid",
+                    "type": "int32",
+                    "optional": true,
+                    "description": ""
+                },
+                {
+                    "name": "itemsdefs",
+                    "type": "CVirtualItemRewardDefinition",
+                    "optional": true,
+                    "description": ""
+                },
+                {
+                    "name": "action",
+                    "type": "int32",
+                    "optional": true,
+                    "description": ""
+                }
+            ]
         }
     },
     "IRemoteClientService": {
@@ -11626,7 +11813,7 @@
             "parameters": []
         },
         "GetPairingInfo": {
-            "_type": "protobufs",
+            "_type": "undocumented",
             "version": 1,
             "description": "Get pairing info for an entered PIN",
             "parameters": [
@@ -12941,6 +13128,182 @@
             ]
         }
     },
+    "ISteamLearnService": {
+        "CacheData": {
+            "_type": "protobufs",
+            "version": 1,
+            "httpmethod": "POST",
+            "parameters": [
+                {
+                    "name": "key",
+                    "type": "string",
+                    "optional": false,
+                    "description": "Access key"
+                }
+            ]
+        },
+        "CreateProject": {
+            "_type": "protobufs",
+            "version": 1,
+            "httpmethod": "POST",
+            "parameters": [
+                {
+                    "name": "key",
+                    "type": "string",
+                    "optional": false,
+                    "description": "Access key"
+                },
+                {
+                    "name": "project_name",
+                    "type": "string",
+                    "optional": true,
+                    "description": ""
+                },
+                {
+                    "name": "project_description",
+                    "type": "string",
+                    "optional": true,
+                    "description": ""
+                }
+            ]
+        },
+        "EditProject": {
+            "_type": "protobufs",
+            "version": 1,
+            "httpmethod": "POST",
+            "parameters": [
+                {
+                    "name": "key",
+                    "type": "string",
+                    "optional": false,
+                    "description": "Access key"
+                },
+                {
+                    "name": "project",
+                    "type": "CMsgSteamLearnProject",
+                    "optional": true,
+                    "description": ""
+                },
+                {
+                    "name": "published_version",
+                    "type": "uint32",
+                    "optional": true,
+                    "description": ""
+                }
+            ]
+        },
+        "GetDataSource": {
+            "_type": "protobufs",
+            "version": 1,
+            "parameters": [
+                {
+                    "name": "key",
+                    "type": "string",
+                    "optional": false,
+                    "description": "Access key"
+                },
+                {
+                    "name": "data_source_id",
+                    "type": "uint32",
+                    "optional": true,
+                    "description": ""
+                }
+            ]
+        },
+        "GetProject": {
+            "_type": "protobufs",
+            "version": 1,
+            "parameters": [
+                {
+                    "name": "key",
+                    "type": "string",
+                    "optional": false,
+                    "description": "Access key"
+                },
+                {
+                    "name": "project_id",
+                    "type": "uint32",
+                    "optional": true,
+                    "description": ""
+                }
+            ]
+        },
+        "ListDataSources": {
+            "_type": "protobufs",
+            "version": 1,
+            "parameters": [
+                {
+                    "name": "key",
+                    "type": "string",
+                    "optional": false,
+                    "description": "Access key"
+                }
+            ]
+        },
+        "ListProjects": {
+            "_type": "protobufs",
+            "version": 1,
+            "parameters": [
+                {
+                    "name": "key",
+                    "type": "string",
+                    "optional": false,
+                    "description": "Access key"
+                },
+                {
+                    "name": "appid",
+                    "type": "uint32",
+                    "optional": true,
+                    "description": ""
+                }
+            ]
+        },
+        "PublishProject": {
+            "_type": "protobufs",
+            "version": 1,
+            "httpmethod": "POST",
+            "parameters": [
+                {
+                    "name": "key",
+                    "type": "string",
+                    "optional": false,
+                    "description": "Access key"
+                },
+                {
+                    "name": "project_id",
+                    "type": "uint32",
+                    "optional": true,
+                    "description": ""
+                }
+            ]
+        },
+        "RegisterDataSource": {
+            "_type": "protobufs",
+            "version": 1,
+            "httpmethod": "POST",
+            "parameters": [
+                {
+                    "name": "key",
+                    "type": "string",
+                    "optional": false,
+                    "description": "Access key"
+                }
+            ]
+        },
+        "SnapshotProject": {
+            "_type": "protobufs",
+            "version": 1,
+            "httpmethod": "POST",
+            "parameters": [
+                {
+                    "name": "key",
+                    "type": "string",
+                    "optional": false,
+                    "description": "Access key"
+                }
+            ]
+        }
+    },
     "ISteamMicroTxn": {
         "AddToCart": {
             "_type": "undocumented",
@@ -13822,6 +14185,31 @@
                     "type": "string",
                     "optional": false,
                     "description": "Access key"
+                },
+                {
+                    "name": "include_hidden",
+                    "type": "bool",
+                    "optional": true,
+                    "description": ""
+                }
+            ]
+        },
+        "HideNotification": {
+            "_type": "protobufs",
+            "version": 1,
+            "httpmethod": "POST",
+            "parameters": [
+                {
+                    "name": "key",
+                    "type": "string",
+                    "optional": false,
+                    "description": "Access key"
+                },
+                {
+                    "name": "notification_ids[0]",
+                    "type": "uint64[]",
+                    "optional": true,
+                    "description": ""
                 }
             ]
         },
@@ -16331,6 +16719,12 @@
                     "type": "bool",
                     "optional": true,
                     "description": ""
+                },
+                {
+                    "name": "store_page_filter",
+                    "type": "CStorePageFilter",
+                    "optional": true,
+                    "description": ""
                 }
             ]
         },
@@ -16348,6 +16742,43 @@
                 {
                     "name": "queue_type",
                     "type": "EStoreDiscoveryQueueType",
+                    "optional": true,
+                    "description": ""
+                },
+                {
+                    "name": "store_page_filter",
+                    "type": "CStorePageFilter",
+                    "optional": true,
+                    "description": ""
+                }
+            ]
+        },
+        "GetDiscoveryQueueSkippedApps": {
+            "_type": "protobufs",
+            "version": 1,
+            "description": "Returns all the apps skipped so far in the given discovery queue for the given user.",
+            "parameters": [
+                {
+                    "name": "key",
+                    "type": "string",
+                    "optional": false,
+                    "description": "Access key"
+                },
+                {
+                    "name": "steamid",
+                    "type": "fixed64",
+                    "optional": true,
+                    "description": ""
+                },
+                {
+                    "name": "queue_type",
+                    "type": "EStoreDiscoveryQueueType",
+                    "optional": true,
+                    "description": ""
+                },
+                {
+                    "name": "store_page_filter",
+                    "type": "CStorePageFilter",
                     "optional": true,
                     "description": ""
                 }
@@ -16450,6 +16881,12 @@
                 {
                     "name": "appid",
                     "type": "uint32",
+                    "optional": true,
+                    "description": ""
+                },
+                {
+                    "name": "store_page_filter",
+                    "type": "CStorePageFilter",
                     "optional": true,
                     "description": ""
                 }
@@ -16971,7 +17408,7 @@
                     "name": "version",
                     "type": "uint32",
                     "optional": true,
-                    "description": ""
+                    "description": "What the version of our token should be"
                 }
             ]
         },
