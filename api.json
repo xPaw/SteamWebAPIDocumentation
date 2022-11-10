@@ -1,7 +1,7 @@
 {
     "IAccountLinkingService": {
         "GetLinkedAccountInfo": {
-            "_type": "protobufs",
+            "_type": "undocumented",
             "version": 1,
             "description": "List all my active linked external accounts; may be requested to return the access token",
             "parameters": [
@@ -40,7 +40,7 @@
     },
     "IAuctionService": {
         "CancelBid": {
-            "_type": "protobufs",
+            "_type": "undocumented",
             "version": 1,
             "httpmethod": "POST",
             "parameters": [
@@ -59,7 +59,7 @@
             ]
         },
         "GetBidsForItem": {
-            "_type": "protobufs",
+            "_type": "undocumented",
             "version": 1,
             "parameters": [
                 {
@@ -71,7 +71,7 @@
             ]
         },
         "GetBidsForUser": {
-            "_type": "protobufs",
+            "_type": "undocumented",
             "version": 1,
             "parameters": [
                 {
@@ -89,7 +89,7 @@
             ]
         },
         "GetItemDetails": {
-            "_type": "protobufs",
+            "_type": "undocumented",
             "version": 1,
             "parameters": [
                 {
@@ -101,7 +101,7 @@
             ]
         },
         "GetUserBidForItem": {
-            "_type": "protobufs",
+            "_type": "undocumented",
             "version": 1,
             "parameters": [
                 {
@@ -119,7 +119,7 @@
             ]
         },
         "PlaceBid": {
-            "_type": "protobufs",
+            "_type": "undocumented",
             "version": 1,
             "httpmethod": "POST",
             "parameters": [
@@ -152,7 +152,7 @@
     },
     "IAuthenticationService": {
         "BeginAuthSessionViaCredentials": {
-            "_type": "protobufs",
+            "_type": "undocumented",
             "version": 1,
             "httpmethod": "POST",
             "description": "start authentication process",
@@ -226,7 +226,7 @@
             ]
         },
         "BeginAuthSessionViaQR": {
-            "_type": "protobufs",
+            "_type": "undocumented",
             "version": 1,
             "httpmethod": "POST",
             "description": "start authentication process",
@@ -264,7 +264,7 @@
             ]
         },
         "EnumerateTokens": {
-            "_type": "protobufs",
+            "_type": "undocumented",
             "version": 1,
             "httpmethod": "POST",
             "description": "Enumerate durable (refresh) tokens for the given subject account",
@@ -278,7 +278,7 @@
             ]
         },
         "GenerateAccessTokenForApp": {
-            "_type": "protobufs",
+            "_type": "undocumented",
             "version": 1,
             "httpmethod": "POST",
             "description": "Given a refresh token for a client app audience (e.g. desktop client / mobile client), generate an access token",
@@ -304,7 +304,7 @@
             ]
         },
         "GetAuthSessionInfo": {
-            "_type": "protobufs",
+            "_type": "undocumented",
             "version": 1,
             "httpmethod": "POST",
             "description": "get metadata of specific auth session, this will also implicitly bind the calling account",
@@ -324,7 +324,7 @@
             ]
         },
         "GetAuthSessionsForAccount": {
-            "_type": "protobufs",
+            "_type": "undocumented",
             "version": 1,
             "description": "Gets all active auth sessions for an account for reference by the mobile app",
             "parameters": [
@@ -337,7 +337,7 @@
             ]
         },
         "GetPasswordRSAPublicKey": {
-            "_type": "protobufs",
+            "_type": "undocumented",
             "version": 1,
             "description": "Fetches RSA public key to use to encrypt passwords for a given account name",
             "parameters": [
@@ -356,7 +356,7 @@
             ]
         },
         "MigrateMobileSession": {
-            "_type": "protobufs",
+            "_type": "undocumented",
             "version": 1,
             "httpmethod": "POST",
             "description": "Migrates a WG token to an access and refresh token using a signature generated with the user's 2FA secret",
@@ -388,7 +388,7 @@
             ]
         },
         "PollAuthSessionStatus": {
-            "_type": "protobufs",
+            "_type": "undocumented",
             "version": 1,
             "httpmethod": "POST",
             "description": "poll during authentication process",
@@ -420,7 +420,7 @@
             ]
         },
         "RevokeRefreshToken": {
-            "_type": "protobufs",
+            "_type": "undocumented",
             "version": 1,
             "httpmethod": "POST",
             "description": "Mark the given refresh token as revoked",
@@ -458,7 +458,7 @@
             ]
         },
         "UpdateAuthSessionWithMobileConfirmation": {
-            "_type": "protobufs",
+            "_type": "undocumented",
             "version": 1,
             "httpmethod": "POST",
             "description": "approve an authentication session via mobile 2fa",
@@ -508,7 +508,7 @@
             ]
         },
         "UpdateAuthSessionWithSteamGuardCode": {
-            "_type": "protobufs",
+            "_type": "undocumented",
             "version": 1,
             "httpmethod": "POST",
             "description": "approve an authentication session via steam guard code",
@@ -548,7 +548,7 @@
     },
     "IAuthenticationSupportService": {
         "GetTokenHistory": {
-            "_type": "protobufs",
+            "_type": "undocumented",
             "version": 1,
             "description": "Gets the audit history for a user's auth token",
             "parameters": [
@@ -567,7 +567,7 @@
             ]
         },
         "QueryRefreshTokenByID": {
-            "_type": "protobufs",
+            "_type": "undocumented",
             "version": 1,
             "description": "Asks the server for a list of refresh tokens associated with an account",
             "parameters": [
@@ -586,7 +586,7 @@
             ]
         },
         "QueryRefreshTokensByAccount": {
-            "_type": "protobufs",
+            "_type": "undocumented",
             "version": 1,
             "description": "Asks the server for a list of refresh tokens associated with an account",
             "parameters": [
@@ -611,7 +611,7 @@
             ]
         },
         "RevokeToken": {
-            "_type": "protobufs",
+            "_type": "undocumented",
             "version": 1,
             "httpmethod": "POST",
             "description": "Revokes a user's auth token",
@@ -639,7 +639,7 @@
     },
     "IBroadcastService": {
         "GetBroadcastUploadStats": {
-            "_type": "protobufs",
+            "_type": "undocumented",
             "version": 1,
             "description": "Gets broadcast upload stats for user",
             "parameters": [
@@ -682,7 +682,7 @@
             ]
         },
         "GetBroadcastViewerStats": {
-            "_type": "protobufs",
+            "_type": "undocumented",
             "version": 1,
             "description": "Gets viewer stats for given broadcast",
             "parameters": [
@@ -707,7 +707,7 @@
             ]
         },
         "GetBuildClipStatus": {
-            "_type": "protobufs",
+            "_type": "undocumented",
             "version": 1,
             "description": "Start building a broadcast clip",
             "parameters": [
@@ -726,7 +726,7 @@
             ]
         },
         "GetClipDetails": {
-            "_type": "protobufs",
+            "_type": "undocumented",
             "version": 1,
             "description": "Get details for Broadcast Clips",
             "parameters": [
@@ -745,7 +745,7 @@
             ]
         },
         "GetRTMPInfo": {
-            "_type": "protobufs",
+            "_type": "undocumented",
             "version": 1,
             "description": "Gets RTMP broadcast info",
             "parameters": [
@@ -770,7 +770,7 @@
             ]
         },
         "MuteBroadcastChatUser": {
-            "_type": "protobufs",
+            "_type": "undocumented",
             "version": 1,
             "httpmethod": "POST",
             "description": "Mute a user in your broadcast chat",
@@ -802,7 +802,7 @@
             ]
         },
         "PostChatMessage": {
-            "_type": "protobufs",
+            "_type": "undocumented",
             "version": 1,
             "httpmethod": "POST",
             "description": "Post chat message to specified chat room",
@@ -911,7 +911,7 @@
             ]
         },
         "RemoveUserChatText": {
-            "_type": "protobufs",
+            "_type": "undocumented",
             "version": 1,
             "httpmethod": "POST",
             "description": "Tell all viewers to remove user chat text",
@@ -937,7 +937,7 @@
             ]
         },
         "SetClipDetails": {
-            "_type": "protobufs",
+            "_type": "undocumented",
             "version": 1,
             "httpmethod": "POST",
             "description": "Updates a broadcast clip",
@@ -975,7 +975,7 @@
             ]
         },
         "SetRTMPInfo": {
-            "_type": "protobufs",
+            "_type": "undocumented",
             "version": 1,
             "httpmethod": "POST",
             "description": "Sets RTMP broadcast info",
@@ -1055,7 +1055,7 @@
             ]
         },
         "StartBuildClip": {
-            "_type": "protobufs",
+            "_type": "undocumented",
             "version": 1,
             "httpmethod": "POST",
             "description": "Start building a broadcast clip",
@@ -1099,7 +1099,7 @@
             ]
         },
         "UpdateChatMessageFlair": {
-            "_type": "protobufs",
+            "_type": "undocumented",
             "version": 1,
             "httpmethod": "POST",
             "description": "Update chat message flair in the specified chat room",
@@ -2072,7 +2072,7 @@
     },
     "IClanFAQSService": {
         "CheckFAQPermissions": {
-            "_type": "protobufs",
+            "_type": "undocumented",
             "version": 1,
             "httpmethod": "POST",
             "parameters": [
@@ -2085,7 +2085,7 @@
             ]
         },
         "Create": {
-            "_type": "protobufs",
+            "_type": "undocumented",
             "version": 1,
             "httpmethod": "POST",
             "parameters": [
@@ -2116,7 +2116,7 @@
             ]
         },
         "Delete": {
-            "_type": "protobufs",
+            "_type": "undocumented",
             "version": 1,
             "httpmethod": "POST",
             "parameters": [
@@ -2141,7 +2141,7 @@
             ]
         },
         "GetAllDrafts": {
-            "_type": "protobufs",
+            "_type": "undocumented",
             "version": 1,
             "httpmethod": "POST",
             "parameters": [
@@ -2166,7 +2166,7 @@
             ]
         },
         "GetAllFAQsForClan": {
-            "_type": "protobufs",
+            "_type": "undocumented",
             "version": 1,
             "httpmethod": "POST",
             "parameters": [
@@ -2179,7 +2179,7 @@
             ]
         },
         "GetAllLatestVersionPublishedFAQS": {
-            "_type": "protobufs",
+            "_type": "undocumented",
             "version": 1,
             "httpmethod": "POST",
             "parameters": [
@@ -2192,7 +2192,7 @@
             ]
         },
         "GetFAQ": {
-            "_type": "protobufs",
+            "_type": "undocumented",
             "version": 1,
             "parameters": [
                 {
@@ -2204,7 +2204,7 @@
             ]
         },
         "GetFAQVersion": {
-            "_type": "protobufs",
+            "_type": "undocumented",
             "version": 1,
             "httpmethod": "POST",
             "parameters": [
@@ -2241,7 +2241,7 @@
             ]
         },
         "PreviewDraft": {
-            "_type": "protobufs",
+            "_type": "undocumented",
             "version": 1,
             "httpmethod": "POST",
             "parameters": [
@@ -2254,7 +2254,7 @@
             ]
         },
         "PublishDraft": {
-            "_type": "protobufs",
+            "_type": "undocumented",
             "version": 1,
             "httpmethod": "POST",
             "parameters": [
@@ -2285,7 +2285,7 @@
             ]
         },
         "SearchFAQs": {
-            "_type": "protobufs",
+            "_type": "undocumented",
             "version": 1,
             "parameters": [
                 {
@@ -2297,7 +2297,7 @@
             ]
         },
         "SetVisibility": {
-            "_type": "protobufs",
+            "_type": "undocumented",
             "version": 1,
             "httpmethod": "POST",
             "parameters": [
@@ -2334,7 +2334,7 @@
             ]
         },
         "UpdateDraft": {
-            "_type": "protobufs",
+            "_type": "undocumented",
             "version": 1,
             "httpmethod": "POST",
             "parameters": [
@@ -2377,7 +2377,7 @@
             ]
         },
         "UpdateInternalName": {
-            "_type": "protobufs",
+            "_type": "undocumented",
             "version": 1,
             "httpmethod": "POST",
             "parameters": [
@@ -2408,7 +2408,7 @@
             ]
         },
         "UpdateJsonData": {
-            "_type": "protobufs",
+            "_type": "undocumented",
             "version": 1,
             "httpmethod": "POST",
             "parameters": [
@@ -2446,7 +2446,7 @@
             "parameters": []
         },
         "GetPartnerEventsByBuildIDRange": {
-            "_type": "protobufs",
+            "_type": "undocumented",
             "version": 1,
             "parameters": [
                 {
@@ -2478,7 +2478,7 @@
     },
     "IClientCommService": {
         "EnableOrDisableDownloads": {
-            "_type": "protobufs",
+            "_type": "undocumented",
             "version": 1,
             "httpmethod": "POST",
             "parameters": [
@@ -2503,7 +2503,7 @@
             ]
         },
         "GetAllClientLogonInfo": {
-            "_type": "protobufs",
+            "_type": "undocumented",
             "version": 1,
             "parameters": [
                 {
@@ -2515,7 +2515,7 @@
             ]
         },
         "GetClientAppList": {
-            "_type": "protobufs",
+            "_type": "undocumented",
             "version": 1,
             "parameters": [
                 {
@@ -2557,7 +2557,7 @@
             ]
         },
         "GetClientInfo": {
-            "_type": "protobufs",
+            "_type": "undocumented",
             "version": 1,
             "parameters": [
                 {
@@ -2575,7 +2575,7 @@
             ]
         },
         "GetClientLogonInfo": {
-            "_type": "protobufs",
+            "_type": "undocumented",
             "version": 1,
             "parameters": [
                 {
@@ -2593,7 +2593,7 @@
             ]
         },
         "InstallClientApp": {
-            "_type": "protobufs",
+            "_type": "undocumented",
             "version": 1,
             "httpmethod": "POST",
             "parameters": [
@@ -2618,7 +2618,7 @@
             ]
         },
         "SetClientAppUpdateState": {
-            "_type": "protobufs",
+            "_type": "undocumented",
             "version": 1,
             "httpmethod": "POST",
             "parameters": [
@@ -2649,7 +2649,7 @@
             ]
         },
         "UninstallClientApp": {
-            "_type": "protobufs",
+            "_type": "undocumented",
             "version": 1,
             "httpmethod": "POST",
             "parameters": [
@@ -2676,7 +2676,7 @@
     },
     "IClientMetricsService": {
         "ReportClientError": {
-            "_type": "protobufs",
+            "_type": "undocumented",
             "version": 1,
             "httpmethod": "POST",
             "parameters": [
@@ -2707,7 +2707,7 @@
             ]
         },
         "ReportReactUsage": {
-            "_type": "protobufs",
+            "_type": "undocumented",
             "version": 1,
             "httpmethod": "POST",
             "parameters": [
@@ -2759,7 +2759,7 @@
     },
     "ICloudService": {
         "BeginAppUploadBatch": {
-            "_type": "protobufs",
+            "_type": "undocumented",
             "version": 1,
             "httpmethod": "POST",
             "description": "Indicate a batch of files that will be uploaded / deleted for an app.",
@@ -2809,7 +2809,7 @@
             ]
         },
         "BeginHTTPUpload": {
-            "_type": "protobufs",
+            "_type": "undocumented",
             "version": 1,
             "httpmethod": "POST",
             "description": "Begins the process of uploading a file to Steam external storage services. File should be uploaded via HTTP PUT to the returned URL, after which the upload must be finalized by a call to CommitHTTPUpload.",
@@ -2877,7 +2877,7 @@
             ]
         },
         "BeginUGCUpload": {
-            "_type": "protobufs",
+            "_type": "undocumented",
             "version": 1,
             "httpmethod": "POST",
             "description": "Begins the process of uploading a file to Steam external storage services. File should be uploaded via HTTP PUT to the returned URL, after which the upload must be finalized by a call to CommitHTTPUpload.",
@@ -2921,7 +2921,7 @@
             ]
         },
         "CommitHTTPUpload": {
-            "_type": "protobufs",
+            "_type": "undocumented",
             "version": 1,
             "httpmethod": "POST",
             "description": "Commits a file upload initiated by BeginHTTPUpload and transferred via HTTP PUT.",
@@ -2959,7 +2959,7 @@
             ]
         },
         "CommitUGCUpload": {
-            "_type": "protobufs",
+            "_type": "undocumented",
             "version": 1,
             "httpmethod": "POST",
             "description": "Commits a file upload initiated by BeginUGCUpload and transferred via HTTP PUT.",
@@ -2991,7 +2991,7 @@
             ]
         },
         "CompleteAppUploadBatch": {
-            "_type": "protobufs",
+            "_type": "undocumented",
             "version": 1,
             "httpmethod": "POST",
             "description": "Indicate that the batch is complete or being stopped for some other reason.",
@@ -3023,7 +3023,7 @@
             ]
         },
         "CompleteAppUploadBatchBlocking": {
-            "_type": "protobufs",
+            "_type": "undocumented",
             "version": 1,
             "httpmethod": "POST",
             "description": "Indicate that the batch is complete or being stopped for some other reason.",
@@ -3055,7 +3055,7 @@
             ]
         },
         "Delete": {
-            "_type": "protobufs",
+            "_type": "undocumented",
             "version": 1,
             "httpmethod": "POST",
             "description": "Deletes a file from the user's cloud.",
@@ -3087,7 +3087,7 @@
             ]
         },
         "EnumerateUserFiles": {
-            "_type": "protobufs",
+            "_type": "undocumented",
             "version": 1,
             "description": "Enumerates Cloud files for a user of a given app ID. Returns up to 500 files at a time.",
             "parameters": [
@@ -3124,7 +3124,7 @@
             ]
         },
         "GetFileDetails": {
-            "_type": "protobufs",
+            "_type": "undocumented",
             "version": 1,
             "description": "Returns details on a Cloud file.",
             "parameters": [
@@ -3149,7 +3149,7 @@
             ]
         },
         "GetUploadServerInfo": {
-            "_type": "protobufs",
+            "_type": "undocumented",
             "version": 1,
             "description": "Returns the URL of the proper cloud server for a user.",
             "parameters": [
@@ -3207,7 +3207,7 @@
     },
     "ICommunityService": {
         "GetApps": {
-            "_type": "protobufs",
+            "_type": "undocumented",
             "version": 1,
             "parameters": [
                 {
@@ -3231,7 +3231,7 @@
             ]
         },
         "GetAvatarHistory": {
-            "_type": "protobufs",
+            "_type": "undocumented",
             "version": 1,
             "httpmethod": "POST",
             "parameters": [
@@ -3256,7 +3256,7 @@
             ]
         },
         "GetBestEventsForUser": {
-            "_type": "protobufs",
+            "_type": "undocumented",
             "version": 1,
             "parameters": [
                 {
@@ -3291,7 +3291,7 @@
             "parameters": []
         },
         "GetUserPartnerEventNews": {
-            "_type": "protobufs",
+            "_type": "undocumented",
             "version": 1,
             "parameters": [
                 {
@@ -3617,7 +3617,7 @@
     },
     "ICredentialsService": {
         "SteamGuardPhishingReport": {
-            "_type": "protobufs",
+            "_type": "undocumented",
             "version": 1,
             "httpmethod": "POST",
             "description": "SteamGuardPhishingReport",
@@ -3643,7 +3643,7 @@
             ]
         },
         "ValidateEmailAddress": {
-            "_type": "protobufs",
+            "_type": "undocumented",
             "version": 1,
             "httpmethod": "POST",
             "description": "Validate an email address given a token",
@@ -5423,7 +5423,7 @@
             ]
         },
         "GetInventoryItemsWithDescriptions": {
-            "_type": "protobufs",
+            "_type": "undocumented",
             "version": 1,
             "description": "Gets a set of items from a users inventory, along with descriptions",
             "parameters": [
@@ -5723,7 +5723,7 @@
     },
     "IFriendMessagesService": {
         "GetActiveMessageSessions": {
-            "_type": "protobufs",
+            "_type": "undocumented",
             "version": 1,
             "description": "Get information about recent offline messages and chats",
             "parameters": [
@@ -5748,7 +5748,7 @@
             ]
         },
         "GetRecentMessages": {
-            "_type": "protobufs",
+            "_type": "undocumented",
             "version": 1,
             "description": "Get a log of recent chat messages between two users",
             "parameters": [
@@ -5822,7 +5822,7 @@
     },
     "IFriendsListService": {
         "GetFriendsList": {
-            "_type": "protobufs",
+            "_type": "undocumented",
             "version": 1,
             "parameters": [
                 {
@@ -6546,7 +6546,7 @@
             ]
         },
         "GetServerList": {
-            "_type": "protobufs",
+            "_type": "undocumented",
             "version": 1,
             "description": "Gets a list of servers given a filter string",
             "parameters": [
@@ -6986,7 +6986,7 @@
             ]
         },
         "ConsumeItem": {
-            "_type": "protobufs",
+            "_type": "undocumented",
             "version": 1,
             "httpmethod": "POST",
             "description": "Consume an item",
@@ -7133,7 +7133,7 @@
             ]
         },
         "GetItemDefMeta": {
-            "_type": "protobufs",
+            "_type": "undocumented",
             "version": 1,
             "description": "Get metadata about the current item definition for this game.",
             "parameters": [
@@ -7418,7 +7418,7 @@
     },
     "ILoyaltyRewardsService": {
         "AddReaction": {
-            "_type": "protobufs",
+            "_type": "undocumented",
             "version": 1,
             "httpmethod": "POST",
             "parameters": [
@@ -7449,7 +7449,7 @@
             ]
         },
         "BatchedQueryRewardItems": {
-            "_type": "protobufs",
+            "_type": "undocumented",
             "version": 1,
             "parameters": [
                 {
@@ -7467,7 +7467,7 @@
             ]
         },
         "GetActivePurchaseBonuses": {
-            "_type": "protobufs",
+            "_type": "undocumented",
             "version": 1,
             "parameters": [
                 {
@@ -7479,7 +7479,7 @@
             ]
         },
         "GetEligibleApps": {
-            "_type": "protobufs",
+            "_type": "undocumented",
             "version": 1,
             "parameters": [
                 {
@@ -7491,7 +7491,7 @@
             ]
         },
         "GetEquippedProfileItems": {
-            "_type": "protobufs",
+            "_type": "undocumented",
             "version": 1,
             "parameters": [
                 {
@@ -7515,7 +7515,7 @@
             ]
         },
         "GetPointsForSpend": {
-            "_type": "protobufs",
+            "_type": "undocumented",
             "version": 1,
             "parameters": [
                 {
@@ -7539,7 +7539,7 @@
             ]
         },
         "GetProfileCustomizationsConfig": {
-            "_type": "protobufs",
+            "_type": "undocumented",
             "version": 1,
             "parameters": [
                 {
@@ -7551,7 +7551,7 @@
             ]
         },
         "GetReactionConfig": {
-            "_type": "protobufs",
+            "_type": "undocumented",
             "version": 1,
             "parameters": [
                 {
@@ -7563,7 +7563,7 @@
             ]
         },
         "GetReactions": {
-            "_type": "protobufs",
+            "_type": "undocumented",
             "version": 1,
             "parameters": [
                 {
@@ -7587,7 +7587,7 @@
             ]
         },
         "GetReactionsSummaryForUser": {
-            "_type": "protobufs",
+            "_type": "undocumented",
             "version": 1,
             "parameters": [
                 {
@@ -7605,7 +7605,7 @@
             ]
         },
         "GetSummary": {
-            "_type": "protobufs",
+            "_type": "undocumented",
             "version": 1,
             "parameters": [
                 {
@@ -7623,7 +7623,7 @@
             ]
         },
         "QueryRewardItems": {
-            "_type": "protobufs",
+            "_type": "undocumented",
             "version": 1,
             "parameters": [
                 {
@@ -7749,7 +7749,7 @@
             ]
         },
         "RedeemPoints": {
-            "_type": "protobufs",
+            "_type": "undocumented",
             "version": 1,
             "httpmethod": "POST",
             "parameters": [
@@ -7774,7 +7774,7 @@
             ]
         },
         "RedeemPointsForBadgeLevel": {
-            "_type": "protobufs",
+            "_type": "undocumented",
             "version": 1,
             "httpmethod": "POST",
             "parameters": [
@@ -7799,7 +7799,7 @@
             ]
         },
         "RedeemPointsForProfileCustomization": {
-            "_type": "protobufs",
+            "_type": "undocumented",
             "version": 1,
             "httpmethod": "POST",
             "parameters": [
@@ -7818,7 +7818,7 @@
             ]
         },
         "RedeemPointsForProfileCustomizationUpgrade": {
-            "_type": "protobufs",
+            "_type": "undocumented",
             "version": 1,
             "httpmethod": "POST",
             "parameters": [
@@ -7843,7 +7843,7 @@
             ]
         },
         "RedeemPointsToUpgradeItem": {
-            "_type": "protobufs",
+            "_type": "undocumented",
             "version": 1,
             "httpmethod": "POST",
             "parameters": [
@@ -7868,7 +7868,7 @@
             ]
         },
         "RegisterForSteamDeckRewards": {
-            "_type": "protobufs",
+            "_type": "undocumented",
             "version": 1,
             "httpmethod": "POST",
             "parameters": [
@@ -7895,7 +7895,7 @@
     },
     "IMarketingMessagesService": {
         "CreateMarketingMessage": {
-            "_type": "protobufs",
+            "_type": "undocumented",
             "version": 1,
             "httpmethod": "POST",
             "description": "Create a new marketing message.",
@@ -7915,7 +7915,7 @@
             ]
         },
         "DeleteMarketingMessage": {
-            "_type": "protobufs",
+            "_type": "undocumented",
             "version": 1,
             "httpmethod": "POST",
             "description": "Delete a marketing message.",
@@ -7935,7 +7935,7 @@
             ]
         },
         "DoesUserHavePendingMarketingMessages": {
-            "_type": "protobufs",
+            "_type": "undocumented",
             "version": 1,
             "description": "Returns a boolean if the user has pending marketing messages.  Intended to be fast.",
             "parameters": [
@@ -7972,7 +7972,7 @@
             ]
         },
         "FindMarketingMessages": {
-            "_type": "protobufs",
+            "_type": "undocumented",
             "version": 1,
             "httpmethod": "POST",
             "description": "Search for marketing messages by name, type, etc.",
@@ -8016,7 +8016,7 @@
             ]
         },
         "GetActiveMarketingMessages": {
-            "_type": "protobufs",
+            "_type": "undocumented",
             "version": 1,
             "description": "Get a list of active marketing messages.",
             "parameters": [
@@ -8035,7 +8035,7 @@
             ]
         },
         "GetDisplayMarketingMessage": {
-            "_type": "protobufs",
+            "_type": "undocumented",
             "version": 1,
             "description": "Get a single marketing message, cacheable.",
             "parameters": [
@@ -8066,7 +8066,7 @@
             ]
         },
         "GetMarketingMessage": {
-            "_type": "protobufs",
+            "_type": "undocumented",
             "version": 1,
             "httpmethod": "POST",
             "description": "Get a single marketing message.  Admin account needed for non-active messages",
@@ -8086,7 +8086,7 @@
             ]
         },
         "GetMarketingMessagesForUser": {
-            "_type": "protobufs",
+            "_type": "undocumented",
             "version": 1,
             "description": "Get a list of active marketing messages filtered for a specific user.",
             "parameters": [
@@ -8141,7 +8141,7 @@
             ]
         },
         "MarkMessageSeen": {
-            "_type": "protobufs",
+            "_type": "undocumented",
             "version": 1,
             "httpmethod": "POST",
             "description": "Mark that a user has viewed a message (so we won't show it again)'.",
@@ -8161,7 +8161,7 @@
             ]
         },
         "UpdateMarketingMessage": {
-            "_type": "protobufs",
+            "_type": "undocumented",
             "version": 1,
             "httpmethod": "POST",
             "description": "Modify a marketing message.",
@@ -8189,7 +8189,7 @@
     },
     "IMobileAppService": {
         "GetMobileSummary": {
-            "_type": "protobufs",
+            "_type": "undocumented",
             "version": 1,
             "httpmethod": "POST",
             "parameters": [
@@ -8215,7 +8215,7 @@
             "parameters": []
         },
         "MigrateMobileSession": {
-            "_type": "protobufs",
+            "_type": "undocumented",
             "version": 1,
             "httpmethod": "POST",
             "parameters": [
@@ -8254,7 +8254,7 @@
     },
     "IMobileDeviceService": {
         "DeregisterMobileDevice": {
-            "_type": "protobufs",
+            "_type": "undocumented",
             "version": 1,
             "httpmethod": "POST",
             "parameters": [
@@ -8273,7 +8273,7 @@
             ]
         },
         "RegisterMobileDevice": {
-            "_type": "protobufs",
+            "_type": "undocumented",
             "version": 1,
             "httpmethod": "POST",
             "parameters": [
@@ -8348,7 +8348,7 @@
     },
     "INewsService": {
         "ConvertHTMLToBBCode": {
-            "_type": "protobufs",
+            "_type": "undocumented",
             "version": 1,
             "parameters": [
                 {
@@ -8360,7 +8360,7 @@
             ]
         },
         "GetBatchPublishedPartnerEvent": {
-            "_type": "protobufs",
+            "_type": "undocumented",
             "version": 1,
             "parameters": [
                 {
@@ -8390,7 +8390,7 @@
             ]
         },
         "GetNewsFeedByRepublishClan": {
-            "_type": "protobufs",
+            "_type": "undocumented",
             "version": 1,
             "parameters": [
                 {
@@ -8402,7 +8402,7 @@
             ]
         },
         "PreviewPartnerEvents": {
-            "_type": "protobufs",
+            "_type": "undocumented",
             "version": 1,
             "parameters": [
                 {
@@ -8426,7 +8426,7 @@
             ]
         },
         "PublishPartnerEvent": {
-            "_type": "protobufs",
+            "_type": "undocumented",
             "version": 1,
             "httpmethod": "POST",
             "parameters": [
@@ -8499,7 +8499,7 @@
     },
     "IParentalService": {
         "GetParentalSettings": {
-            "_type": "protobufs",
+            "_type": "undocumented",
             "version": 1,
             "description": "Get the current parental settings for the logged in account",
             "parameters": [
@@ -8518,7 +8518,7 @@
             ]
         },
         "GetSignedParentalSettings": {
-            "_type": "protobufs",
+            "_type": "undocumented",
             "version": 1,
             "description": "Get the current parental settings for the logged in account in a form that can by verified by the receiver",
             "parameters": [
@@ -8537,7 +8537,7 @@
             ]
         },
         "LockClient": {
-            "_type": "protobufs",
+            "_type": "undocumented",
             "version": 1,
             "httpmethod": "POST",
             "description": "Notify connected clients that a lock has occurred in a browser",
@@ -8557,7 +8557,7 @@
             ]
         },
         "ValidatePassword": {
-            "_type": "protobufs",
+            "_type": "undocumented",
             "version": 1,
             "httpmethod": "POST",
             "description": "Validate the plaintext password for the logged in account and return an unlock token",
@@ -8589,7 +8589,7 @@
             ]
         },
         "ValidateToken": {
-            "_type": "protobufs",
+            "_type": "undocumented",
             "version": 1,
             "httpmethod": "POST",
             "description": "Check if the given parental unlock token is correct for the logged in account",
@@ -8611,7 +8611,7 @@
     },
     "IPartnerMembershipInviteService": {
         "GetInvites": {
-            "_type": "protobufs",
+            "_type": "undocumented",
             "version": 1,
             "parameters": [
                 {
@@ -8625,7 +8625,7 @@
     },
     "IPartnerStoreBrowseService": {
         "GetItems": {
-            "_type": "protobufs",
+            "_type": "undocumented",
             "version": 1,
             "parameters": [
                 {
@@ -8657,7 +8657,7 @@
     },
     "IPhoneService": {
         "ConfirmAddPhoneToAccount": {
-            "_type": "protobufs",
+            "_type": "undocumented",
             "version": 1,
             "httpmethod": "POST",
             "parameters": [
@@ -8682,7 +8682,7 @@
             ]
         },
         "IsAccountWaitingForEmailConfirmation": {
-            "_type": "protobufs",
+            "_type": "undocumented",
             "version": 1,
             "httpmethod": "POST",
             "parameters": [
@@ -8695,7 +8695,7 @@
             ]
         },
         "SendPhoneVerificationCode": {
-            "_type": "protobufs",
+            "_type": "undocumented",
             "version": 1,
             "httpmethod": "POST",
             "parameters": [
@@ -8714,7 +8714,7 @@
             ]
         },
         "SetAccountPhoneNumber": {
-            "_type": "protobufs",
+            "_type": "undocumented",
             "version": 1,
             "httpmethod": "POST",
             "parameters": [
@@ -8739,7 +8739,7 @@
             ]
         },
         "VerifyAccountPhoneWithCode": {
-            "_type": "protobufs",
+            "_type": "undocumented",
             "version": 1,
             "httpmethod": "POST",
             "parameters": [
@@ -8760,7 +8760,7 @@
     },
     "IPlayerService": {
         "AddFriend": {
-            "_type": "protobufs",
+            "_type": "undocumented",
             "version": 1,
             "httpmethod": "POST",
             "description": "Invites another Steam user to be a friend",
@@ -8780,7 +8780,7 @@
             ]
         },
         "ClientGetLastPlayedTimes": {
-            "_type": "protobufs",
+            "_type": "undocumented",
             "version": 1,
             "description": "Gets the last-played times for the account",
             "parameters": [
@@ -8799,7 +8799,7 @@
             ]
         },
         "GetAchievementsProgress": {
-            "_type": "protobufs",
+            "_type": "undocumented",
             "version": 1,
             "httpmethod": "POST",
             "description": "Gets the achievement completion stats for the specified list of apps.",
@@ -8831,7 +8831,7 @@
             ]
         },
         "GetAnimatedAvatar": {
-            "_type": "protobufs",
+            "_type": "undocumented",
             "version": 1,
             "description": "Gets which animated avatar is active for a specific user",
             "parameters": [
@@ -8856,7 +8856,7 @@
             ]
         },
         "GetAvatarFrame": {
-            "_type": "protobufs",
+            "_type": "undocumented",
             "version": 1,
             "description": "Gets which avatar frame is active for a specific user",
             "parameters": [
@@ -8925,7 +8925,7 @@
             ]
         },
         "GetFavoriteBadge": {
-            "_type": "protobufs",
+            "_type": "undocumented",
             "version": 1,
             "description": "Gets the badge the user has set as their favorite",
             "parameters": [
@@ -8944,7 +8944,7 @@
             ]
         },
         "GetFriendsGameplayInfo": {
-            "_type": "protobufs",
+            "_type": "undocumented",
             "version": 1,
             "description": "Get a list of friends who are playing, have played, own, or want a game",
             "parameters": [
@@ -8963,7 +8963,7 @@
             ]
         },
         "GetMiniProfileBackground": {
-            "_type": "protobufs",
+            "_type": "undocumented",
             "version": 1,
             "description": "Gets which mini profile background is active for a specific user",
             "parameters": [
@@ -8988,7 +8988,7 @@
             ]
         },
         "GetNicknameList": {
-            "_type": "protobufs",
+            "_type": "undocumented",
             "version": 1,
             "description": "Gets the list of nicknames this user has for other users",
             "parameters": [
@@ -9062,7 +9062,7 @@
             ]
         },
         "GetProfileBackground": {
-            "_type": "protobufs",
+            "_type": "undocumented",
             "version": 1,
             "description": "Gets which profile background is active for a specific user",
             "parameters": [
@@ -9087,7 +9087,7 @@
             ]
         },
         "GetProfileCustomization": {
-            "_type": "protobufs",
+            "_type": "undocumented",
             "version": 1,
             "description": "Returns the customizations (if any) for a profile",
             "parameters": [
@@ -9118,7 +9118,7 @@
             ]
         },
         "GetProfileItemsEquipped": {
-            "_type": "protobufs",
+            "_type": "undocumented",
             "version": 1,
             "description": "Returns the items the user has equipped on their profile",
             "parameters": [
@@ -9143,7 +9143,7 @@
             ]
         },
         "GetProfileItemsOwned": {
-            "_type": "protobufs",
+            "_type": "undocumented",
             "version": 1,
             "description": "Returns the items the user can equip on their profile",
             "parameters": [
@@ -9174,7 +9174,7 @@
             ]
         },
         "GetProfileThemesAvailable": {
-            "_type": "protobufs",
+            "_type": "undocumented",
             "version": 1,
             "description": "Gets themes available for the user.",
             "parameters": [
@@ -9187,7 +9187,7 @@
             ]
         },
         "GetPurchasedAndUpgradedProfileCustomizations": {
-            "_type": "protobufs",
+            "_type": "undocumented",
             "version": 1,
             "description": "Returns the purchased and upgraded profile customizations",
             "parameters": [
@@ -9206,7 +9206,7 @@
             ]
         },
         "GetPurchasedProfileCustomizations": {
-            "_type": "protobufs",
+            "_type": "undocumented",
             "version": 1,
             "description": "Returns the purchased profile customizations",
             "parameters": [
@@ -9250,7 +9250,7 @@
             ]
         },
         "GetSteamDeckKeyboardSkin": {
-            "_type": "protobufs",
+            "_type": "undocumented",
             "version": 1,
             "description": "Gets which Steam Deck keyboard skin is active for a specific user",
             "parameters": [
@@ -9312,7 +9312,7 @@
             ]
         },
         "IgnoreFriend": {
-            "_type": "protobufs",
+            "_type": "undocumented",
             "version": 1,
             "httpmethod": "POST",
             "description": "Blocks or unblocks communication with the user.  Despite name, can be a non-friend.",
@@ -9385,7 +9385,7 @@
             ]
         },
         "RemoveFriend": {
-            "_type": "protobufs",
+            "_type": "undocumented",
             "version": 1,
             "httpmethod": "POST",
             "description": "Removes a friend or ignores a friend suggestion",
@@ -9405,7 +9405,7 @@
             ]
         },
         "SetAnimatedAvatar": {
-            "_type": "protobufs",
+            "_type": "undocumented",
             "version": 1,
             "httpmethod": "POST",
             "description": "Sets the user's animated avatar for their profile",
@@ -9425,7 +9425,7 @@
             ]
         },
         "SetAvatarFrame": {
-            "_type": "protobufs",
+            "_type": "undocumented",
             "version": 1,
             "httpmethod": "POST",
             "description": "Sets the user's avatar frame for their profile",
@@ -9445,7 +9445,7 @@
             ]
         },
         "SetEquippedProfileItemFlags": {
-            "_type": "protobufs",
+            "_type": "undocumented",
             "version": 1,
             "httpmethod": "POST",
             "description": "Sets special flags on the equipped item",
@@ -9471,7 +9471,7 @@
             ]
         },
         "SetFavoriteBadge": {
-            "_type": "protobufs",
+            "_type": "undocumented",
             "version": 1,
             "httpmethod": "POST",
             "description": "Sets the badge  as the users favorite",
@@ -9497,7 +9497,7 @@
             ]
         },
         "SetMiniProfileBackground": {
-            "_type": "protobufs",
+            "_type": "undocumented",
             "version": 1,
             "httpmethod": "POST",
             "description": "Sets the user's mini profile background",
@@ -9517,7 +9517,7 @@
             ]
         },
         "SetProfileBackground": {
-            "_type": "protobufs",
+            "_type": "undocumented",
             "version": 1,
             "httpmethod": "POST",
             "description": "Sets the user's profile background",
@@ -9537,7 +9537,7 @@
             ]
         },
         "SetProfilePreferences": {
-            "_type": "protobufs",
+            "_type": "undocumented",
             "version": 1,
             "httpmethod": "POST",
             "description": "Sets profile preferences",
@@ -9557,7 +9557,7 @@
             ]
         },
         "SetProfileTheme": {
-            "_type": "protobufs",
+            "_type": "undocumented",
             "version": 1,
             "httpmethod": "POST",
             "description": "Selects a theme for the profile",
@@ -9577,7 +9577,7 @@
             ]
         },
         "SetSteamDeckKeyboardSkin": {
-            "_type": "protobufs",
+            "_type": "undocumented",
             "version": 1,
             "httpmethod": "POST",
             "description": "Sets the user's current Steam Deck keyboard skin",
@@ -9644,7 +9644,7 @@
     },
     "IPromotionEventInvitesService": {
         "GetAllActiveInvites": {
-            "_type": "protobufs",
+            "_type": "undocumented",
             "version": 1,
             "parameters": [
                 {
@@ -9656,7 +9656,7 @@
             ]
         },
         "GetEmailTargets": {
-            "_type": "protobufs",
+            "_type": "undocumented",
             "version": 1,
             "httpmethod": "POST",
             "parameters": [
@@ -9675,7 +9675,7 @@
             ]
         },
         "GetInvite": {
-            "_type": "protobufs",
+            "_type": "undocumented",
             "version": 1,
             "parameters": [
                 {
@@ -9723,7 +9723,7 @@
             ]
         },
         "ResendEmailInvite": {
-            "_type": "protobufs",
+            "_type": "undocumented",
             "version": 1,
             "httpmethod": "POST",
             "parameters": [
@@ -9736,7 +9736,7 @@
             ]
         },
         "SetInvite": {
-            "_type": "protobufs",
+            "_type": "undocumented",
             "version": 1,
             "httpmethod": "POST",
             "parameters": [
@@ -9763,7 +9763,7 @@
     },
     "IPromotionPlanningService": {
         "CreatePlan": {
-            "_type": "protobufs",
+            "_type": "undocumented",
             "version": 1,
             "httpmethod": "POST",
             "parameters": [
@@ -9782,7 +9782,7 @@
             ]
         },
         "CreateTentativePlan": {
-            "_type": "protobufs",
+            "_type": "undocumented",
             "version": 1,
             "httpmethod": "POST",
             "parameters": [
@@ -9801,7 +9801,7 @@
             ]
         },
         "DeletePlan": {
-            "_type": "protobufs",
+            "_type": "undocumented",
             "version": 1,
             "httpmethod": "POST",
             "parameters": [
@@ -9820,7 +9820,7 @@
             ]
         },
         "GetAllActivePlan": {
-            "_type": "protobufs",
+            "_type": "undocumented",
             "version": 1,
             "parameters": [
                 {
@@ -9832,7 +9832,7 @@
             ]
         },
         "GetPlan": {
-            "_type": "protobufs",
+            "_type": "undocumented",
             "version": 1,
             "parameters": [
                 {
@@ -9850,7 +9850,7 @@
             ]
         },
         "GetPlanByInputAccessKey": {
-            "_type": "protobufs",
+            "_type": "undocumented",
             "version": 1,
             "parameters": [
                 {
@@ -9862,7 +9862,7 @@
             ]
         },
         "SearchPlan": {
-            "_type": "protobufs",
+            "_type": "undocumented",
             "version": 1,
             "parameters": [
                 {
@@ -9874,7 +9874,7 @@
             ]
         },
         "UpdatePlan": {
-            "_type": "protobufs",
+            "_type": "undocumented",
             "version": 1,
             "httpmethod": "POST",
             "parameters": [
@@ -9893,7 +9893,7 @@
             ]
         },
         "UpdatePlanInputData": {
-            "_type": "protobufs",
+            "_type": "undocumented",
             "version": 1,
             "httpmethod": "POST",
             "parameters": [
@@ -9912,7 +9912,7 @@
             ]
         },
         "UpdatePlanPartnerInfo": {
-            "_type": "protobufs",
+            "_type": "undocumented",
             "version": 1,
             "httpmethod": "POST",
             "parameters": [
@@ -9933,7 +9933,7 @@
     },
     "IPublishedFileService": {
         "CanSubscribe": {
-            "_type": "protobufs",
+            "_type": "undocumented",
             "version": 1,
             "description": "Check if the user can subscribe to the published file",
             "parameters": [
@@ -9952,7 +9952,7 @@
             ]
         },
         "Delete": {
-            "_type": "protobufs",
+            "_type": "undocumented",
             "version": 1,
             "httpmethod": "POST",
             "description": "Deletes a published file.",
@@ -10530,7 +10530,7 @@
             ]
         },
         "Publish": {
-            "_type": "protobufs",
+            "_type": "undocumented",
             "version": 1,
             "httpmethod": "POST",
             "description": "Publishes a clouded user file to the Workshop.",
@@ -10959,7 +10959,7 @@
             ]
         },
         "Subscribe": {
-            "_type": "protobufs",
+            "_type": "undocumented",
             "version": 1,
             "httpmethod": "POST",
             "description": "Subscribes the user to the published file",
@@ -10997,7 +10997,7 @@
             ]
         },
         "Unsubscribe": {
-            "_type": "protobufs",
+            "_type": "undocumented",
             "version": 1,
             "httpmethod": "POST",
             "description": "Unsubscribes the user from the published file",
@@ -11035,7 +11035,7 @@
             ]
         },
         "Update": {
-            "_type": "protobufs",
+            "_type": "undocumented",
             "version": 1,
             "httpmethod": "POST",
             "description": "Updates information about a published file.",
@@ -11321,7 +11321,7 @@
     },
     "IPublishingService": {
         "CreatePartnerAppOptInEmails": {
-            "_type": "protobufs",
+            "_type": "undocumented",
             "version": 1,
             "httpmethod": "POST",
             "parameters": [
@@ -11370,7 +11370,7 @@
             ]
         },
         "GetEstimatePartnerAppOptInEmail": {
-            "_type": "protobufs",
+            "_type": "undocumented",
             "version": 1,
             "httpmethod": "POST",
             "parameters": [
@@ -11389,7 +11389,7 @@
             ]
         },
         "GetOptInEmailTracking": {
-            "_type": "protobufs",
+            "_type": "undocumented",
             "version": 1,
             "httpmethod": "POST",
             "parameters": [
@@ -11408,7 +11408,7 @@
             ]
         },
         "GetPartnerAppOptInEmailDefAndStats": {
-            "_type": "protobufs",
+            "_type": "undocumented",
             "version": 1,
             "httpmethod": "POST",
             "parameters": [
@@ -11427,7 +11427,7 @@
             ]
         },
         "GetSinglePartnerAppOptIn": {
-            "_type": "protobufs",
+            "_type": "undocumented",
             "version": 1,
             "parameters": [
                 {
@@ -11439,7 +11439,7 @@
             ]
         },
         "SendPartnerOptInEmailAndWait": {
-            "_type": "protobufs",
+            "_type": "undocumented",
             "version": 1,
             "httpmethod": "POST",
             "parameters": [
@@ -11458,7 +11458,7 @@
             ]
         },
         "SetFeaturingOnPartnerAppOptIn": {
-            "_type": "protobufs",
+            "_type": "undocumented",
             "version": 1,
             "httpmethod": "POST",
             "parameters": [
@@ -11489,7 +11489,7 @@
             ]
         },
         "TestFirePartnerAppOptInEmail": {
-            "_type": "protobufs",
+            "_type": "undocumented",
             "version": 1,
             "httpmethod": "POST",
             "parameters": [
@@ -11520,7 +11520,7 @@
             ]
         },
         "UpdatePartnerAppOptInEmails": {
-            "_type": "protobufs",
+            "_type": "undocumented",
             "version": 1,
             "httpmethod": "POST",
             "parameters": [
@@ -11577,7 +11577,7 @@
     },
     "IQuestService": {
         "ActivateProfileModifierItem": {
-            "_type": "protobufs",
+            "_type": "undocumented",
             "version": 1,
             "httpmethod": "POST",
             "parameters": [
@@ -11608,7 +11608,7 @@
             ]
         },
         "GetCommunityInventory": {
-            "_type": "protobufs",
+            "_type": "undocumented",
             "version": 1,
             "parameters": [
                 {
@@ -11626,7 +11626,7 @@
             ]
         },
         "GetCommunityItemDefinitions": {
-            "_type": "protobufs",
+            "_type": "undocumented",
             "version": 1,
             "parameters": [
                 {
@@ -11668,7 +11668,7 @@
             ]
         },
         "GetNumTradingCardsEarned": {
-            "_type": "protobufs",
+            "_type": "undocumented",
             "version": 1,
             "parameters": [
                 {
@@ -11692,7 +11692,7 @@
             ]
         },
         "GetVirtualItemRewardDefinition": {
-            "_type": "protobufs",
+            "_type": "undocumented",
             "version": 1,
             "parameters": [
                 {
@@ -11770,7 +11770,7 @@
             ]
         },
         "SetVirtualItemRewardDefinition": {
-            "_type": "protobufs",
+            "_type": "undocumented",
             "version": 1,
             "httpmethod": "POST",
             "parameters": [
@@ -11837,7 +11837,7 @@
             "parameters": []
         },
         "NotifyRegisterStatusUpdate": {
-            "_type": "protobufs",
+            "_type": "undocumented",
             "version": 1,
             "httpmethod": "POST",
             "description": "Register for status updates with a Steam client",
@@ -11869,7 +11869,7 @@
             ]
         },
         "NotifyRemotePacket": {
-            "_type": "protobufs",
+            "_type": "undocumented",
             "version": 1,
             "httpmethod": "POST",
             "description": "Send a packet to a Steam client",
@@ -11901,7 +11901,7 @@
             ]
         },
         "NotifyUnregisterStatusUpdate": {
-            "_type": "protobufs",
+            "_type": "undocumented",
             "version": 1,
             "httpmethod": "POST",
             "description": "Unregister for status updates with a Steam client",
@@ -11939,7 +11939,7 @@
     },
     "ISaleFeatureService": {
         "GetUserYearInReview": {
-            "_type": "protobufs",
+            "_type": "undocumented",
             "version": 1,
             "parameters": [
                 {
@@ -11971,7 +11971,7 @@
     },
     "ISaleItemRewardsService": {
         "CanClaimItem": {
-            "_type": "protobufs",
+            "_type": "undocumented",
             "version": 1,
             "parameters": [
                 {
@@ -11989,7 +11989,7 @@
             ]
         },
         "ClaimItem": {
-            "_type": "protobufs",
+            "_type": "undocumented",
             "version": 1,
             "httpmethod": "POST",
             "parameters": [
@@ -12427,7 +12427,7 @@
     },
     "ISteamChartsService": {
         "GetGamesByConcurrentPlayers": {
-            "_type": "protobufs",
+            "_type": "undocumented",
             "version": 1,
             "parameters": [
                 {
@@ -12439,7 +12439,7 @@
             ]
         },
         "GetMostPlayedGames": {
-            "_type": "protobufs",
+            "_type": "undocumented",
             "version": 1,
             "parameters": [
                 {
@@ -12463,7 +12463,7 @@
             ]
         },
         "GetTopReleasesPages": {
-            "_type": "protobufs",
+            "_type": "undocumented",
             "version": 1,
             "parameters": [
                 {
@@ -13130,7 +13130,7 @@
     },
     "ISteamLearnService": {
         "CacheData": {
-            "_type": "protobufs",
+            "_type": "undocumented",
             "version": 1,
             "httpmethod": "POST",
             "parameters": [
@@ -13143,7 +13143,7 @@
             ]
         },
         "CreateProject": {
-            "_type": "protobufs",
+            "_type": "undocumented",
             "version": 1,
             "httpmethod": "POST",
             "parameters": [
@@ -13168,7 +13168,7 @@
             ]
         },
         "EditProject": {
-            "_type": "protobufs",
+            "_type": "undocumented",
             "version": 1,
             "httpmethod": "POST",
             "parameters": [
@@ -13193,7 +13193,7 @@
             ]
         },
         "GetDataSource": {
-            "_type": "protobufs",
+            "_type": "undocumented",
             "version": 1,
             "parameters": [
                 {
@@ -13211,7 +13211,7 @@
             ]
         },
         "GetProject": {
-            "_type": "protobufs",
+            "_type": "undocumented",
             "version": 1,
             "parameters": [
                 {
@@ -13229,7 +13229,7 @@
             ]
         },
         "ListDataSources": {
-            "_type": "protobufs",
+            "_type": "undocumented",
             "version": 1,
             "parameters": [
                 {
@@ -13241,7 +13241,7 @@
             ]
         },
         "ListProjects": {
-            "_type": "protobufs",
+            "_type": "undocumented",
             "version": 1,
             "parameters": [
                 {
@@ -13259,7 +13259,7 @@
             ]
         },
         "PublishProject": {
-            "_type": "protobufs",
+            "_type": "undocumented",
             "version": 1,
             "httpmethod": "POST",
             "parameters": [
@@ -13278,7 +13278,7 @@
             ]
         },
         "RegisterDataSource": {
-            "_type": "protobufs",
+            "_type": "undocumented",
             "version": 1,
             "httpmethod": "POST",
             "parameters": [
@@ -13291,7 +13291,7 @@
             ]
         },
         "SnapshotProject": {
-            "_type": "protobufs",
+            "_type": "undocumented",
             "version": 1,
             "httpmethod": "POST",
             "parameters": [
@@ -14165,7 +14165,7 @@
     },
     "ISteamNotificationService": {
         "GetPreferences": {
-            "_type": "protobufs",
+            "_type": "undocumented",
             "version": 1,
             "parameters": [
                 {
@@ -14177,7 +14177,7 @@
             ]
         },
         "GetSteamNotifications": {
-            "_type": "protobufs",
+            "_type": "undocumented",
             "version": 1,
             "parameters": [
                 {
@@ -14195,7 +14195,7 @@
             ]
         },
         "HideNotification": {
-            "_type": "protobufs",
+            "_type": "undocumented",
             "version": 1,
             "httpmethod": "POST",
             "parameters": [
@@ -14214,7 +14214,7 @@
             ]
         },
         "MarkNotificationsRead": {
-            "_type": "protobufs",
+            "_type": "undocumented",
             "version": 1,
             "httpmethod": "POST",
             "parameters": [
@@ -14251,7 +14251,7 @@
             ]
         },
         "SetPreferences": {
-            "_type": "protobufs",
+            "_type": "undocumented",
             "version": 1,
             "httpmethod": "POST",
             "parameters": [
@@ -14846,7 +14846,7 @@
     },
     "ISteamTVService": {
         "AddChatBan": {
-            "_type": "protobufs",
+            "_type": "undocumented",
             "version": 1,
             "httpmethod": "POST",
             "description": "Set the ban for a specific broadcaster. The issuer is the logged in steam account",
@@ -14890,7 +14890,7 @@
             ]
         },
         "AddChatModerator": {
-            "_type": "protobufs",
+            "_type": "undocumented",
             "version": 1,
             "httpmethod": "POST",
             "description": "Add or remove a moderator for this broadcast channel",
@@ -14922,7 +14922,7 @@
             ]
         },
         "AddWordBan": {
-            "_type": "protobufs",
+            "_type": "undocumented",
             "version": 1,
             "httpmethod": "POST",
             "description": "Add or remove a banned keyword in this broadcast channel chat",
@@ -14954,7 +14954,7 @@
             ]
         },
         "AppCheer": {
-            "_type": "protobufs",
+            "_type": "undocumented",
             "version": 1,
             "httpmethod": "POST",
             "description": "The user is cheering for a specific broadcast for a specific app.",
@@ -14986,7 +14986,7 @@
             ]
         },
         "CreateBroadcastChannel": {
-            "_type": "protobufs",
+            "_type": "undocumented",
             "version": 1,
             "httpmethod": "POST",
             "description": "Create a channel on SteamTV",
@@ -15006,7 +15006,7 @@
             ]
         },
         "FollowBroadcastChannel": {
-            "_type": "protobufs",
+            "_type": "undocumented",
             "version": 1,
             "httpmethod": "POST",
             "description": "Follow a broadcast channel",
@@ -15032,7 +15032,7 @@
             ]
         },
         "GetBroadcastChannelBroadcasters": {
-            "_type": "protobufs",
+            "_type": "undocumented",
             "version": 1,
             "description": "Get list of broadcaster info for this channel",
             "parameters": [
@@ -15051,7 +15051,7 @@
             ]
         },
         "GetBroadcastChannelClips": {
-            "_type": "protobufs",
+            "_type": "undocumented",
             "version": 1,
             "description": "Get broadcast channel clips",
             "parameters": [
@@ -15070,7 +15070,7 @@
             ]
         },
         "GetBroadcastChannelID": {
-            "_type": "protobufs",
+            "_type": "undocumented",
             "version": 1,
             "description": "Get a broadcast channel ID for a channel by name or owner SteamID",
             "parameters": [
@@ -15089,7 +15089,7 @@
             ]
         },
         "GetBroadcastChannelImages": {
-            "_type": "protobufs",
+            "_type": "undocumented",
             "version": 1,
             "description": "Get broadcast channel images",
             "parameters": [
@@ -15114,7 +15114,7 @@
             ]
         },
         "GetBroadcastChannelInteraction": {
-            "_type": "protobufs",
+            "_type": "undocumented",
             "version": 1,
             "description": "Get user's interaction status with a broadcast channel",
             "parameters": [
@@ -15133,7 +15133,7 @@
             ]
         },
         "GetBroadcastChannelLinks": {
-            "_type": "protobufs",
+            "_type": "undocumented",
             "version": 1,
             "description": "Get broadcast channel link regions",
             "parameters": [
@@ -15152,7 +15152,7 @@
             ]
         },
         "GetBroadcastChannelProfile": {
-            "_type": "protobufs",
+            "_type": "undocumented",
             "version": 1,
             "description": "Get broadcast channel profile data",
             "parameters": [
@@ -15171,7 +15171,7 @@
             ]
         },
         "GetBroadcastChannelStatus": {
-            "_type": "protobufs",
+            "_type": "undocumented",
             "version": 1,
             "description": "Get broadcast channel live status",
             "parameters": [
@@ -15190,7 +15190,7 @@
             ]
         },
         "GetChannels": {
-            "_type": "protobufs",
+            "_type": "undocumented",
             "version": 1,
             "description": "Get the list of featured broadcast channels",
             "parameters": [
@@ -15221,7 +15221,7 @@
             ]
         },
         "GetChatBans": {
-            "_type": "protobufs",
+            "_type": "undocumented",
             "version": 1,
             "description": "Get list of bans for a specific broadcaster.",
             "parameters": [
@@ -15240,7 +15240,7 @@
             ]
         },
         "GetChatModerators": {
-            "_type": "protobufs",
+            "_type": "undocumented",
             "version": 1,
             "description": "Returns the list of moderators for this broadcast channel",
             "parameters": [
@@ -15259,7 +15259,7 @@
             ]
         },
         "GetFollowedChannels": {
-            "_type": "protobufs",
+            "_type": "undocumented",
             "version": 1,
             "description": "Get list of followed channels by a viewer",
             "parameters": [
@@ -15272,7 +15272,7 @@
             ]
         },
         "GetGames": {
-            "_type": "protobufs",
+            "_type": "undocumented",
             "version": 1,
             "description": "Get list of games with active broadcasters",
             "parameters": [
@@ -15303,7 +15303,7 @@
             ]
         },
         "GetHomePageContents": {
-            "_type": "protobufs",
+            "_type": "undocumented",
             "version": 1,
             "description": "Returns homepage contents for user",
             "parameters": [
@@ -15316,7 +15316,7 @@
             ]
         },
         "GetMyBroadcastChannels": {
-            "_type": "protobufs",
+            "_type": "undocumented",
             "version": 1,
             "description": "Gets the broadcast channels that the current user owns",
             "parameters": [
@@ -15329,7 +15329,7 @@
             ]
         },
         "GetSteamTVUserSettings": {
-            "_type": "protobufs",
+            "_type": "undocumented",
             "version": 1,
             "description": "Returns a user's SteamTV settings",
             "parameters": [
@@ -15342,7 +15342,7 @@
             ]
         },
         "GetSubscribedChannels": {
-            "_type": "protobufs",
+            "_type": "undocumented",
             "version": 1,
             "description": "Get list of channels a user is subscribed to",
             "parameters": [
@@ -15355,7 +15355,7 @@
             ]
         },
         "GetWordBans": {
-            "_type": "protobufs",
+            "_type": "undocumented",
             "version": 1,
             "description": "Returns the list of banned keywords for this broadcast channel",
             "parameters": [
@@ -15374,7 +15374,7 @@
             ]
         },
         "JoinChat": {
-            "_type": "protobufs",
+            "_type": "undocumented",
             "version": 1,
             "httpmethod": "POST",
             "description": "Joins the chat channel for a broadcast",
@@ -15394,7 +15394,7 @@
             ]
         },
         "ReportBroadcastChannel": {
-            "_type": "protobufs",
+            "_type": "undocumented",
             "version": 1,
             "httpmethod": "POST",
             "description": "Report a broadcast channel",
@@ -15420,7 +15420,7 @@
             ]
         },
         "Search": {
-            "_type": "protobufs",
+            "_type": "undocumented",
             "version": 1,
             "description": "Searches for broadcast channels based on input keywords",
             "parameters": [
@@ -15439,7 +15439,7 @@
             ]
         },
         "SetBroadcastChannelImage": {
-            "_type": "protobufs",
+            "_type": "undocumented",
             "version": 1,
             "httpmethod": "POST",
             "description": "Set broadcast channel image hash",
@@ -15507,7 +15507,7 @@
             ]
         },
         "SetBroadcastChannelLinkRegions": {
-            "_type": "protobufs",
+            "_type": "undocumented",
             "version": 1,
             "httpmethod": "POST",
             "description": "Set broadcast channel link regions",
@@ -15533,7 +15533,7 @@
             ]
         },
         "SetBroadcastChannelProfile": {
-            "_type": "protobufs",
+            "_type": "undocumented",
             "version": 1,
             "httpmethod": "POST",
             "description": "Set broadcast channel profile data",
@@ -15601,7 +15601,7 @@
             ]
         },
         "SetSteamTVUserSettings": {
-            "_type": "protobufs",
+            "_type": "undocumented",
             "version": 1,
             "httpmethod": "POST",
             "description": "Sets a user's SteamTV settings",
@@ -15627,7 +15627,7 @@
             ]
         },
         "SubscribeBroadcastChannel": {
-            "_type": "protobufs",
+            "_type": "undocumented",
             "version": 1,
             "httpmethod": "POST",
             "description": "Subscribe to a broadcast channel",
@@ -16359,7 +16359,7 @@
     },
     "IStoreAppSimilarityService": {
         "IdentifyClustersFromPlaytime": {
-            "_type": "protobufs",
+            "_type": "undocumented",
             "version": 1,
             "httpmethod": "POST",
             "parameters": [
@@ -16408,7 +16408,7 @@
             ]
         },
         "PrioritizeAppsForUser": {
-            "_type": "protobufs",
+            "_type": "undocumented",
             "version": 1,
             "parameters": [
                 {
@@ -16422,7 +16422,7 @@
     },
     "IStoreBrowseService": {
         "GetItems": {
-            "_type": "protobufs",
+            "_type": "undocumented",
             "version": 1,
             "description": "Get information about items on the store",
             "parameters": [
@@ -16453,7 +16453,7 @@
             ]
         },
         "GetStoreCategories": {
-            "_type": "protobufs",
+            "_type": "undocumented",
             "version": 1,
             "description": "Get category definitions for store.  This is a public-facing API (as compared to StoreCatalog.GetCategories, which is intended for PHP)",
             "parameters": [
@@ -16480,7 +16480,7 @@
     },
     "IStoreQueryService": {
         "Query": {
-            "_type": "protobufs",
+            "_type": "undocumented",
             "version": 1,
             "parameters": [
                 {
@@ -16522,7 +16522,7 @@
             ]
         },
         "SearchSuggestions": {
-            "_type": "protobufs",
+            "_type": "undocumented",
             "version": 1,
             "parameters": [
                 {
@@ -16650,7 +16650,7 @@
             ]
         },
         "GetDiscoveryQueue": {
-            "_type": "protobufs",
+            "_type": "undocumented",
             "version": 1,
             "description": "Get a list of games for the user to explore on the store.",
             "parameters": [
@@ -16729,7 +16729,7 @@
             ]
         },
         "GetDiscoveryQueueSettings": {
-            "_type": "protobufs",
+            "_type": "undocumented",
             "version": 1,
             "description": "Get the settings that were used to generate a user's discovery queue.",
             "parameters": [
@@ -16754,7 +16754,7 @@
             ]
         },
         "GetDiscoveryQueueSkippedApps": {
-            "_type": "protobufs",
+            "_type": "undocumented",
             "version": 1,
             "description": "Returns all the apps skipped so far in the given discovery queue for the given user.",
             "parameters": [
@@ -16785,7 +16785,7 @@
             ]
         },
         "GetLocalizedNameForTags": {
-            "_type": "protobufs",
+            "_type": "undocumented",
             "version": 1,
             "description": "Gets tag names in a different language",
             "parameters": [
@@ -16810,7 +16810,7 @@
             ]
         },
         "GetMostPopularTags": {
-            "_type": "protobufs",
+            "_type": "undocumented",
             "version": 1,
             "description": "Get all whitelisted tags, with localized names.",
             "parameters": [
@@ -16829,7 +16829,7 @@
             ]
         },
         "GetUserGameInterestState": {
-            "_type": "protobufs",
+            "_type": "undocumented",
             "version": 1,
             "httpmethod": "POST",
             "description": "Get information about a user's relationship to a game - ownership, wishlist, discovery queue state, etc.",
@@ -16861,7 +16861,7 @@
             ]
         },
         "SkipDiscoveryQueueItem": {
-            "_type": "protobufs",
+            "_type": "undocumented",
             "version": 1,
             "httpmethod": "POST",
             "description": "Skip an item in the user's queue.",
@@ -16895,7 +16895,7 @@
     },
     "IStoreTopSellersService": {
         "GetCountryList": {
-            "_type": "protobufs",
+            "_type": "undocumented",
             "version": 1,
             "parameters": [
                 {
@@ -16913,7 +16913,7 @@
             ]
         },
         "GetWeeklyTopSellers": {
-            "_type": "protobufs",
+            "_type": "undocumented",
             "version": 1,
             "parameters": [
                 {
@@ -17152,7 +17152,7 @@
     },
     "ITwoFactorService": {
         "AddAuthenticator": {
-            "_type": "protobufs",
+            "_type": "undocumented",
             "version": 1,
             "httpmethod": "POST",
             "description": "Add two-factor authenticator to the logged-in account",
@@ -17214,7 +17214,7 @@
             ]
         },
         "CreateEmergencyCodes": {
-            "_type": "protobufs",
+            "_type": "undocumented",
             "version": 1,
             "httpmethod": "POST",
             "description": "Generate emergency authenticator codes",
@@ -17234,7 +17234,7 @@
             ]
         },
         "DestroyEmergencyCodes": {
-            "_type": "protobufs",
+            "_type": "undocumented",
             "version": 1,
             "httpmethod": "POST",
             "description": "Destroy emergency authenticator codes for the account",
@@ -17254,7 +17254,7 @@
             ]
         },
         "FinalizeAddAuthenticator": {
-            "_type": "protobufs",
+            "_type": "undocumented",
             "version": 1,
             "httpmethod": "POST",
             "description": "Finalize two-factor authentication addition to the logged-in account",
@@ -17304,7 +17304,7 @@
             ]
         },
         "QueryStatus": {
-            "_type": "protobufs",
+            "_type": "undocumented",
             "version": 1,
             "httpmethod": "POST",
             "description": "Get two-factor authentication settings for the logged-in account",
@@ -17343,7 +17343,7 @@
             ]
         },
         "RemoveAuthenticator": {
-            "_type": "protobufs",
+            "_type": "undocumented",
             "version": 1,
             "httpmethod": "POST",
             "description": "Remove two-factor authentication addition from the logged-in account",
@@ -17381,7 +17381,7 @@
             ]
         },
         "RemoveAuthenticatorViaChallengeContinue": {
-            "_type": "protobufs",
+            "_type": "undocumented",
             "version": 1,
             "httpmethod": "POST",
             "description": "Continue challenge-based authenticator removal",
@@ -17413,7 +17413,7 @@
             ]
         },
         "RemoveAuthenticatorViaChallengeStart": {
-            "_type": "protobufs",
+            "_type": "undocumented",
             "version": 1,
             "httpmethod": "POST",
             "description": "Start challenge-based authenticator removal",
@@ -17427,7 +17427,7 @@
             ]
         },
         "SendEmail": {
-            "_type": "protobufs",
+            "_type": "undocumented",
             "version": 1,
             "httpmethod": "POST",
             "description": "Send email to the account",
@@ -17459,7 +17459,7 @@
             ]
         },
         "UpdateTokenVersion": {
-            "_type": "protobufs",
+            "_type": "undocumented",
             "version": 1,
             "httpmethod": "POST",
             "description": "Update the version for my token",
@@ -17491,7 +17491,7 @@
             ]
         },
         "ValidateToken": {
-            "_type": "protobufs",
+            "_type": "undocumented",
             "version": 1,
             "httpmethod": "POST",
             "description": "Validate (and consume) a token",
@@ -17513,7 +17513,7 @@
     },
     "IUserAccountService": {
         "GetAvailableValveDiscountPromotions": {
-            "_type": "protobufs",
+            "_type": "undocumented",
             "version": 1,
             "description": "Gets the available promotional discounts available to the user",
             "parameters": [
@@ -17532,7 +17532,7 @@
             ]
         },
         "GetClientWalletDetails": {
-            "_type": "protobufs",
+            "_type": "undocumented",
             "version": 1,
             "httpmethod": "POST",
             "description": "Returns balance and details about any users wallet",
@@ -17564,7 +17564,7 @@
             ]
         },
         "GetUserCountry": {
-            "_type": "protobufs",
+            "_type": "undocumented",
             "version": 1,
             "httpmethod": "POST",
             "description": "Get the country code associated with the passed steamid (only available for logged-in user or support)",
@@ -17586,7 +17586,7 @@
     },
     "IUserReviewsService": {
         "GetFriendsRecommendedApp": {
-            "_type": "protobufs",
+            "_type": "undocumented",
             "version": 1,
             "parameters": [
                 {
@@ -17672,7 +17672,7 @@
     },
     "IVideoService": {
         "GetVideoBookmarks": {
-            "_type": "protobufs",
+            "_type": "undocumented",
             "version": 1,
             "httpmethod": "POST",
             "description": "Returns the video bookmarks locations for the specific videos. Includes playback settings per video",
@@ -17698,7 +17698,7 @@
             ]
         },
         "SetVideoBookmark": {
-            "_type": "protobufs",
+            "_type": "undocumented",
             "version": 1,
             "httpmethod": "POST",
             "description": "Bookmarks the locations in the video the user has reached. As as record playback settings per video. Fire and forget.",
