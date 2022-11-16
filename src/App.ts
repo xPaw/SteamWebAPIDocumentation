@@ -98,24 +98,11 @@ export default defineComponent({
 		document.getElementById('loading')!.remove();
 
 		getInterfaces().then((interfaces) => {
-			this.interfaces = interfaces;
-
-			this.userData.webapi_key = localStorage.getItem('webapi_key') || '';
-			this.userData.access_token = localStorage.getItem('access_token') || '';
-			this.userData.steamid = localStorage.getItem('steamid') || '';
-			this.userData.format = localStorage.getItem('format') || 'json';
-
-			this.setInterface();
-
-			window.addEventListener('hashchange', () => {
-				this.setInterface();
-			}, false);
-
 			const flattenedMethods: FuseSearchType[] = [];
 
-			for (const interfaceName in this.interfaces) {
-				for (const methodName in this.interfaces[interfaceName]) {
-					const method = this.interfaces[interfaceName][methodName];
+			for (const interfaceName in interfaces) {
+				for (const methodName in interfaces[interfaceName]) {
+					const method = interfaces[interfaceName][methodName];
 
 					for (const parameter of method.parameters) {
 						parameter._value = '';
@@ -131,6 +118,19 @@ export default defineComponent({
 					} as FuseSearchType);
 				}
 			}
+
+			this.interfaces = interfaces;
+
+			this.userData.webapi_key = localStorage.getItem('webapi_key') || '';
+			this.userData.access_token = localStorage.getItem('access_token') || '';
+			this.userData.steamid = localStorage.getItem('steamid') || '';
+			this.userData.format = localStorage.getItem('format') || 'json';
+
+			this.setInterface();
+
+			window.addEventListener('hashchange', () => {
+				this.setInterface();
+			}, false);
 
 			const fuseOptions: Fuse.IFuseOptions<FuseSearchType> = {
 				shouldSort: true,
