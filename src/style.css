@@ -168,6 +168,10 @@ body {
 	word-break: break-all;
 }
 
+.card .btn-outline-primary:hover {
+	background-color: #535354;
+}
+
 .card .form-check-input:not(:checked) {
 	background-color: #acacac;
 }
