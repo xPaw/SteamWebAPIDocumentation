@@ -1946,6 +1946,12 @@
                     "type": "uint64",
                     "optional": true,
                     "description": "App specific data about the cheating."
+                },
+                {
+                    "name": "infraction_time",
+                    "type": "uint32",
+                    "optional": true,
+                    "description": "Time when the cheating occured"
                 }
             ]
         },
