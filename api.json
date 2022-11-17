@@ -8968,6 +8968,18 @@
                 }
             ]
         },
+        "GetGameAchievements": {
+            "_type": "undocumented",
+            "version": 1,
+            "parameters": [
+                {
+                    "name": "key",
+                    "type": "string",
+                    "optional": false,
+                    "description": "Access key"
+                }
+            ]
+        },
         "GetMiniProfileBackground": {
             "_type": "undocumented",
             "version": 1,
@@ -13135,6 +13147,19 @@
         }
     },
     "ISteamLearnService": {
+        "BatchOperation": {
+            "_type": "undocumented",
+            "version": 1,
+            "httpmethod": "POST",
+            "parameters": [
+                {
+                    "name": "key",
+                    "type": "string",
+                    "optional": false,
+                    "description": "Access key"
+                }
+            ]
+        },
         "CacheData": {
             "_type": "undocumented",
             "version": 1,
