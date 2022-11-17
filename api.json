@@ -5442,19 +5442,19 @@
                 {
                     "name": "steamid",
                     "type": "fixed64",
-                    "optional": true,
+                    "optional": false,
                     "description": ""
                 },
                 {
                     "name": "appid",
                     "type": "uint32",
-                    "optional": true,
+                    "optional": false,
                     "description": ""
                 },
                 {
                     "name": "contextid",
                     "type": "uint64",
-                    "optional": true,
+                    "optional": false,
                     "description": ""
                 },
                 {
