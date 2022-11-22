@@ -12024,6 +12024,49 @@
                     "description": ""
                 }
             ]
+        },
+        "GetRewardDefinitions": {
+            "_type": "undocumented",
+            "version": 1,
+            "parameters": [
+                {
+                    "name": "key",
+                    "type": "string",
+                    "optional": false,
+                    "description": "Access key"
+                },
+                {
+                    "name": "virtual_item_reward_event_id",
+                    "type": "uint32",
+                    "optional": true,
+                    "description": ""
+                }
+            ]
+        },
+        "SetRewardDefinitions": {
+            "_type": "undocumented",
+            "version": 1,
+            "httpmethod": "POST",
+            "parameters": [
+                {
+                    "name": "key",
+                    "type": "string",
+                    "optional": false,
+                    "description": "Access key"
+                },
+                {
+                    "name": "definitions",
+                    "type": "CSteamItemRewardDefinition",
+                    "optional": true,
+                    "description": ""
+                },
+                {
+                    "name": "action",
+                    "type": "int32",
+                    "optional": true,
+                    "description": ""
+                }
+            ]
         }
     },
     "ISiteLicenseService": {
