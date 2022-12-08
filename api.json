@@ -1,4 +1,31 @@
 {
+    "IAccountHardwareService": {
+        "VRCompatibilityCheck": {
+            "_type": "undocumented",
+            "version": 1,
+            "description": "Check system info for compatibility with VR",
+            "parameters": [
+                {
+                    "name": "key",
+                    "type": "string",
+                    "optional": false,
+                    "description": "Access key"
+                },
+                {
+                    "name": "product_name",
+                    "type": "string",
+                    "optional": true,
+                    "description": "Name of product we're checking"
+                },
+                {
+                    "name": "values",
+                    "type": "CAccountHardware_VRCompatibilityCheck_Request.Pair",
+                    "optional": true,
+                    "description": "Values from client system probe"
+                }
+            ]
+        }
+    },
     "IAccountLinkingService": {
         "GetLinkedAccountInfo": {
             "_type": "undocumented",
