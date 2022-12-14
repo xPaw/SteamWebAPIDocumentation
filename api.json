@@ -14132,7 +14132,7 @@
         },
         "QueryTxn": {
             "_type": "publisher_only",
-            "version": 2,
+            "version": 3,
             "httpmethod": "GET",
             "parameters": [
                 {
