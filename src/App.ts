@@ -79,7 +79,7 @@ export default defineComponent({
 				return;
 			}
 
-			history.replaceState('', '', '#' + newInterface);
+			history.pushState('', '', `#${newInterface}`);
 		},
 		currentFilter(newFilter: string, oldFilter: string): void {
 			if (!newFilter) {
@@ -351,7 +351,7 @@ export default defineComponent({
 			document.execCommand('copy');
 		},
 		updateUrl(method: string): void {
-			history.replaceState('', '', '#' + this.currentInterface + '/' + method);
+			history.pushState('', '', `#${this.currentInterface}/${method}`);
 		},
 		navigateSidebar(direction: number): void {
 			const keys = Object.keys(this.filteredInterfaces);
