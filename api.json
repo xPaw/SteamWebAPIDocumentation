@@ -13323,6 +13323,25 @@
                 }
             ]
         },
+        "GetHMACKeys": {
+            "_type": "undocumented",
+            "version": 1,
+            "description": "Gets the HMAC keys needed for registering data sources, submitting data to them, and snapshotting projects",
+            "parameters": [
+                {
+                    "name": "key",
+                    "type": "string",
+                    "optional": false,
+                    "description": "Access key"
+                },
+                {
+                    "name": "appid",
+                    "type": "uint32",
+                    "optional": true,
+                    "description": ""
+                }
+            ]
+        },
         "GetProject": {
             "_type": "undocumented",
             "version": 1,
