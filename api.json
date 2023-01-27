@@ -1,31 +1,4 @@
 {
-    "IAccountHardwareService": {
-        "VRCompatibilityCheck": {
-            "_type": "undocumented",
-            "version": 1,
-            "description": "Check system info for compatibility with VR",
-            "parameters": [
-                {
-                    "name": "key",
-                    "type": "string",
-                    "optional": false,
-                    "description": "Access key"
-                },
-                {
-                    "name": "product_name",
-                    "type": "string",
-                    "optional": true,
-                    "description": "Name of product we're checking"
-                },
-                {
-                    "name": "values",
-                    "type": "CAccountHardware_VRCompatibilityCheck_Request.Pair",
-                    "optional": true,
-                    "description": "Values from client system probe"
-                }
-            ]
-        }
-    },
     "IAccountLinkingService": {
         "GetLinkedAccountInfo": {
             "_type": "undocumented",
@@ -3204,43 +3177,6 @@
                     "description": "App ID to which a file will be uploaded to."
                 }
             ]
-        },
-        "SignalAppLaunchIntent": {
-            "_type": "undocumented",
-            "version": 1,
-            "description": "Client intends to launch an app",
-            "parameters": [
-                {
-                    "name": "key",
-                    "type": "string",
-                    "optional": false,
-                    "description": "Access key"
-                },
-                {
-                    "name": "appid",
-                    "type": "uint32",
-                    "optional": true,
-                    "description": ""
-                },
-                {
-                    "name": "client_id",
-                    "type": "uint64",
-                    "optional": true,
-                    "description": ""
-                },
-                {
-                    "name": "machine_name",
-                    "type": "string",
-                    "optional": true,
-                    "description": ""
-                },
-                {
-                    "name": "ignore_pending_operations",
-                    "type": "bool",
-                    "optional": true,
-                    "description": ""
-                }
-            ]
         }
     },
     "ICommunityService": {
@@ -3804,68 +3740,6 @@
             "_type": "undocumented",
             "version": 1,
             "parameters": []
-        },
-        "GetFantasyPlayerStats": {
-            "_type": "undocumented",
-            "version": 1,
-            "httpmethod": "GET",
-            "parameters": [
-                {
-                    "name": "FantasyLeagueID",
-                    "type": "uint32",
-                    "optional": false,
-                    "description": "The fantasy league ID"
-                },
-                {
-                    "name": "StartTime",
-                    "type": "uint32",
-                    "optional": true,
-                    "description": "An optional filter for minimum timestamp"
-                },
-                {
-                    "name": "EndTime",
-                    "type": "uint32",
-                    "optional": true,
-                    "description": "An optional filter for maximum timestamp"
-                },
-                {
-                    "name": "MatchID",
-                    "type": "uint64",
-                    "optional": true,
-                    "description": "An optional filter for a specific match"
-                },
-                {
-                    "name": "SeriesID",
-                    "type": "uint32",
-                    "optional": true,
-                    "description": "An optional filter for a specific series"
-                },
-                {
-                    "name": "PlayerAccountID",
-                    "type": "uint32",
-                    "optional": true,
-                    "description": "An optional filter for a specific player"
-                }
-            ]
-        },
-        "GetPlayerOfficialInfo": {
-            "_type": "undocumented",
-            "version": 1,
-            "httpmethod": "GET",
-            "parameters": [
-                {
-                    "name": "accountid",
-                    "type": "uint32",
-                    "optional": false,
-                    "description": "The account ID to look up"
-                }
-            ]
-        },
-        "GetProPlayerList": {
-            "_type": "undocumented",
-            "version": 1,
-            "httpmethod": "GET",
-            "parameters": []
         }
     },
     "IDOTA2Guild_570": {
@@ -4184,12 +4058,6 @@
         }
     },
     "IDOTA2Match_205790": {
-        "GetLeagueListing": {
-            "_type": "undocumented",
-            "version": 1,
-            "httpmethod": "GET",
-            "parameters": []
-        },
         "GetLiveLeagueGames": {
             "version": 1,
             "httpmethod": "GET",
@@ -4572,37 +4440,6 @@
         }
     },
     "IDOTA2Ticket_205790": {
-        "ClaimBadgeReward": {
-            "_type": "undocumented",
-            "version": 1,
-            "httpmethod": "GET",
-            "parameters": [
-                {
-                    "name": "BadgeID",
-                    "type": "string",
-                    "optional": false,
-                    "description": "The Badge ID"
-                },
-                {
-                    "name": "ValidBadgeType1",
-                    "type": "uint32",
-                    "optional": false,
-                    "description": "Valid Badge Type 1"
-                },
-                {
-                    "name": "ValidBadgeType2",
-                    "type": "uint32",
-                    "optional": false,
-                    "description": "Valid Badge Type 2"
-                },
-                {
-                    "name": "ValidBadgeType3",
-                    "type": "uint32",
-                    "optional": false,
-                    "description": "Valid Badge Type 3"
-                }
-            ]
-        },
         "GetSteamIDForBadgeID": {
             "version": 1,
             "httpmethod": "GET",
@@ -4845,25 +4682,6 @@
                     "type": "uint32",
                     "optional": false,
                     "description": "The item definition to get creator information for."
-                }
-            ]
-        },
-        "GetItemIconPath": {
-            "_type": "undocumented",
-            "version": 1,
-            "httpmethod": "GET",
-            "parameters": [
-                {
-                    "name": "iconname",
-                    "type": "string",
-                    "optional": false,
-                    "description": "The item icon name to get the CDN path of"
-                },
-                {
-                    "name": "icontype",
-                    "type": "uint32",
-                    "optional": true,
-                    "description": "The type of image you want. 0 = normal, 1 = large, 2 = ingame"
                 }
             ]
         },
@@ -5125,12 +4943,6 @@
                     "description": "The Steam ID to fetch items for"
                 }
             ]
-        },
-        "GetSchemaURL": {
-            "_type": "undocumented",
-            "version": 1,
-            "httpmethod": "GET",
-            "parameters": []
         },
         "GetStoreMetaData": {
             "version": 1,
@@ -11905,25 +11717,6 @@
             "version": 1,
             "parameters": []
         },
-        "GetPairingInfo": {
-            "_type": "undocumented",
-            "version": 1,
-            "description": "Get pairing info for an entered PIN",
-            "parameters": [
-                {
-                    "name": "key",
-                    "type": "string",
-                    "optional": false,
-                    "description": "Access key"
-                },
-                {
-                    "name": "pin",
-                    "type": "uint32",
-                    "optional": true,
-                    "description": ""
-                }
-            ]
-        },
         "GetReplies": {
             "_type": "undocumented",
             "version": 1,
@@ -17523,46 +17316,6 @@
             ]
         }
     },
-    "ITFPromos_205790": {
-        "GetItemID": {
-            "_type": "undocumented",
-            "version": 1,
-            "httpmethod": "GET",
-            "parameters": [
-                {
-                    "name": "steamid",
-                    "type": "uint64",
-                    "optional": false,
-                    "description": "The Steam ID to fetch items for"
-                },
-                {
-                    "name": "promoid",
-                    "type": "uint32",
-                    "optional": false,
-                    "description": "The promo ID to grant an item for"
-                }
-            ]
-        },
-        "GrantItem": {
-            "_type": "undocumented",
-            "version": 1,
-            "httpmethod": "POST",
-            "parameters": [
-                {
-                    "name": "steamid",
-                    "type": "uint64",
-                    "optional": false,
-                    "description": "The Steam ID to fetch items for"
-                },
-                {
-                    "name": "promoid",
-                    "type": "uint32",
-                    "optional": false,
-                    "description": "The promo ID to grant an item for"
-                }
-            ]
-        }
-    },
     "ITFSystem_440": {
         "GetWorldStatus": {
             "version": 1,
@@ -18211,26 +17964,6 @@
                     "type": "VideoBookmark",
                     "optional": true,
                     "description": "list of bookmarks we want to store."
-                }
-            ]
-        }
-    },
-    "IVoiceChatService": {
-        "RequestOneOnOneChat": {
-            "_type": "undocumented",
-            "version": 1,
-            "parameters": [
-                {
-                    "name": "key",
-                    "type": "string",
-                    "optional": false,
-                    "description": "Access key"
-                },
-                {
-                    "name": "steamid_partner",
-                    "type": "fixed64",
-                    "optional": true,
-                    "description": ""
                 }
             ]
         }
