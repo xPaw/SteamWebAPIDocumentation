@@ -2507,6 +2507,11 @@
                     "description": ""
                 }
             ]
+        },
+        "GetSinglePartnerEvent": {
+            "_type": "undocumented",
+            "version": 1,
+            "parameters": []
         }
     },
     "IClientCommService": {
