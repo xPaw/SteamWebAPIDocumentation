@@ -8103,6 +8103,37 @@
                 }
             ]
         },
+        "GetDisplayMarketingMessageAdmin": {
+            "_type": "undocumented",
+            "version": 1,
+            "description": "Get a single marketing message, cacheable.",
+            "parameters": [
+                {
+                    "name": "key",
+                    "type": "string",
+                    "optional": false,
+                    "description": "Access key"
+                },
+                {
+                    "name": "gid",
+                    "type": "fixed64",
+                    "optional": true,
+                    "description": ""
+                },
+                {
+                    "name": "context",
+                    "type": "StoreBrowseContext",
+                    "optional": true,
+                    "description": ""
+                },
+                {
+                    "name": "data_request",
+                    "type": "StoreBrowseItemDataRequest",
+                    "optional": true,
+                    "description": "If passed, item data will be returned"
+                }
+            ]
+        },
         "GetMarketingMessage": {
             "_type": "undocumented",
             "version": 1,
@@ -12726,6 +12757,18 @@
         }
     },
     "ISteamChartsService": {
+        "GetBestOfYearPages": {
+            "_type": "undocumented",
+            "version": 1,
+            "parameters": [
+                {
+                    "name": "key",
+                    "type": "string",
+                    "optional": false,
+                    "description": "Access key"
+                }
+            ]
+        },
         "GetGamesByConcurrentPlayers": {
             "_type": "undocumented",
             "version": 1,
@@ -13560,6 +13603,19 @@
                 }
             ]
         },
+        "Inference": {
+            "_type": "undocumented",
+            "version": 1,
+            "httpmethod": "POST",
+            "parameters": [
+                {
+                    "name": "key",
+                    "type": "string",
+                    "optional": false,
+                    "description": "Access key"
+                }
+            ]
+        },
         "ListDataSources": {
             "_type": "undocumented",
             "version": 1,
@@ -13626,6 +13682,18 @@
             "_type": "undocumented",
             "version": 1,
             "httpmethod": "POST",
+            "parameters": [
+                {
+                    "name": "key",
+                    "type": "string",
+                    "optional": false,
+                    "description": "Access key"
+                }
+            ]
+        },
+        "Train": {
+            "_type": "undocumented",
+            "version": 1,
             "parameters": [
                 {
                     "name": "key",
@@ -16789,6 +16857,49 @@
                 }
             ]
         },
+        "GetDLCForAppsSolr": {
+            "_type": "undocumented",
+            "version": 1,
+            "description": "Returns all DLC appids for the specified games.",
+            "parameters": [
+                {
+                    "name": "key",
+                    "type": "string",
+                    "optional": false,
+                    "description": "Access key"
+                },
+                {
+                    "name": "context",
+                    "type": "StoreBrowseContext",
+                    "optional": true,
+                    "description": ""
+                },
+                {
+                    "name": "appids[0]",
+                    "type": "uint32[]",
+                    "optional": true,
+                    "description": ""
+                },
+                {
+                    "name": "flavor",
+                    "type": "string",
+                    "optional": true,
+                    "description": ""
+                },
+                {
+                    "name": "count",
+                    "type": "uint32",
+                    "optional": true,
+                    "description": ""
+                },
+                {
+                    "name": "store_page_filter",
+                    "type": "CStorePageFilter",
+                    "optional": true,
+                    "description": ""
+                }
+            ]
+        },
         "GetItems": {
             "_type": "undocumented",
             "version": 1,
@@ -17966,6 +18077,24 @@
                 {
                     "name": "appid",
                     "type": "uint32",
+                    "optional": true,
+                    "description": ""
+                }
+            ]
+        },
+        "GetIndividualRecommendations": {
+            "_type": "undocumented",
+            "version": 1,
+            "parameters": [
+                {
+                    "name": "key",
+                    "type": "string",
+                    "optional": false,
+                    "description": "Access key"
+                },
+                {
+                    "name": "requests",
+                    "type": "CUserReviews_GetIndividualRecommendations_Request_RecommendationRequest",
                     "optional": true,
                     "description": ""
                 }
