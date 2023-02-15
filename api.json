@@ -17916,6 +17916,11 @@
                     "name": "diagnostics",
                     "type": "string",
                     "optional": false
+                },
+                {
+                    "name": "steamid_reporter",
+                    "type": "uint64",
+                    "optional": false
                 }
             ]
         }
