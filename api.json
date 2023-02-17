@@ -13495,6 +13495,36 @@
                     "description": "Access key"
                 }
             ]
+        },
+        "TrainStatus": {
+            "_type": "undocumented",
+            "version": 1,
+            "parameters": [
+                {
+                    "name": "key",
+                    "type": "string",
+                    "optional": false,
+                    "description": "Access key"
+                },
+                {
+                    "name": "project_id",
+                    "type": "uint32",
+                    "optional": true,
+                    "description": ""
+                },
+                {
+                    "name": "fetch_id",
+                    "type": "int32",
+                    "optional": true,
+                    "description": ""
+                },
+                {
+                    "name": "train_id",
+                    "type": "int32",
+                    "optional": true,
+                    "description": ""
+                }
+            ]
         }
     },
     "ISteamMicroTxn": {
