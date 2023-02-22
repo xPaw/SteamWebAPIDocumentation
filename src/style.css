@@ -47,9 +47,8 @@ code {
 .method-list {
 	padding: 0;
 	list-style: none;
-	font-size: 80%;
+	font-size: .9rem;
 	background-color: #2b3647;
-	color: #acacac;
 }
 
 .method-list li {
@@ -214,11 +213,11 @@ body {
 }
 
 .interface-list a {
-	color: #acacac;
+	color: #98caff;
 }
 
 .interface-list a:hover {
-	color: #ddd;
+	color: #fff;
 }
 
 .custom-control-label::before {
