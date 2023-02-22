@@ -152,56 +152,46 @@
     },
     "IAuthenticationService": {
         "BeginAuthSessionViaCredentials": {
-            "_type": "undocumented",
             "version": 1,
             "httpmethod": "POST",
             "description": "start authentication process",
             "parameters": [
                 {
-                    "name": "key",
-                    "type": "string",
-                    "optional": false,
-                    "description": "Access key"
-                },
-                {
                     "name": "device_friendly_name",
                     "type": "string",
-                    "optional": true,
-                    "description": ""
+                    "optional": false
                 },
                 {
                     "name": "account_name",
                     "type": "string",
-                    "optional": true,
-                    "description": ""
+                    "optional": false
                 },
                 {
                     "name": "encrypted_password",
                     "type": "string",
-                    "optional": true,
+                    "optional": false,
                     "description": "password, RSA encrypted client side"
                 },
                 {
                     "name": "encryption_timestamp",
                     "type": "uint64",
-                    "optional": true,
+                    "optional": false,
                     "description": "timestamp to map to a key - STime"
                 },
                 {
                     "name": "remember_login",
                     "type": "bool",
-                    "optional": true,
+                    "optional": false,
                     "description": "deprecated"
                 },
                 {
                     "name": "platform_type",
-                    "type": "EAuthTokenPlatformType",
-                    "optional": true,
-                    "description": ""
+                    "type": "{enum}",
+                    "optional": false
                 },
                 {
                     "name": "persistence",
-                    "type": "ESessionPersistence",
+                    "type": "{enum}",
                     "optional": true,
                     "description": "whether we are requesting a persistent or an ephemeral session"
                 },
@@ -213,46 +203,42 @@
                 },
                 {
                     "name": "device_details",
-                    "type": "CAuthentication_DeviceDetails",
-                    "optional": true,
+                    "type": "{message}",
+                    "optional": false,
                     "description": "User-supplied details about the device attempting to sign in"
                 },
                 {
                     "name": "guard_data",
                     "type": "string",
-                    "optional": true,
+                    "optional": false,
                     "description": "steam guard data for client login"
+                },
+                {
+                    "name": "language",
+                    "type": "uint32",
+                    "optional": false
                 }
             ]
         },
         "BeginAuthSessionViaQR": {
-            "_type": "undocumented",
             "version": 1,
             "httpmethod": "POST",
             "description": "start authentication process",
             "parameters": [
                 {
-                    "name": "key",
-                    "type": "string",
-                    "optional": false,
-                    "description": "Access key"
-                },
-                {
                     "name": "device_friendly_name",
                     "type": "string",
-                    "optional": true,
-                    "description": ""
+                    "optional": false
                 },
                 {
                     "name": "platform_type",
-                    "type": "EAuthTokenPlatformType",
-                    "optional": true,
-                    "description": ""
+                    "type": "{enum}",
+                    "optional": false
                 },
                 {
                     "name": "device_details",
-                    "type": "CAuthentication_DeviceDetails",
-                    "optional": true,
+                    "type": "{message}",
+                    "optional": false,
                     "description": "User-supplied details about the device attempting to sign in"
                 },
                 {
@@ -304,21 +290,14 @@
             ]
         },
         "GetAuthSessionInfo": {
-            "_type": "undocumented",
             "version": 1,
             "httpmethod": "POST",
             "description": "get metadata of specific auth session, this will also implicitly bind the calling account",
             "parameters": [
                 {
-                    "name": "key",
-                    "type": "string",
-                    "optional": false,
-                    "description": "Access key"
-                },
-                {
                     "name": "client_id",
                     "type": "uint64",
-                    "optional": true,
+                    "optional": false,
                     "description": "client ID from scanned QR Code, used for routing"
                 }
             ]
@@ -337,20 +316,14 @@
             ]
         },
         "GetPasswordRSAPublicKey": {
-            "_type": "undocumented",
             "version": 1,
+            "httpmethod": "GET",
             "description": "Fetches RSA public key to use to encrypt passwords for a given account name",
             "parameters": [
                 {
-                    "name": "key",
-                    "type": "string",
-                    "optional": false,
-                    "description": "Access key"
-                },
-                {
                     "name": "account_name",
                     "type": "string",
-                    "optional": true,
+                    "optional": false,
                     "description": "user-provided account name to get an RSA key for"
                 }
             ]
@@ -388,33 +361,24 @@
             ]
         },
         "PollAuthSessionStatus": {
-            "_type": "undocumented",
             "version": 1,
             "httpmethod": "POST",
             "description": "poll during authentication process",
             "parameters": [
                 {
-                    "name": "key",
-                    "type": "string",
-                    "optional": false,
-                    "description": "Access key"
-                },
-                {
                     "name": "client_id",
                     "type": "uint64",
-                    "optional": true,
-                    "description": ""
+                    "optional": false
                 },
                 {
                     "name": "request_id",
-                    "type": "bytes",
-                    "optional": true,
-                    "description": ""
+                    "type": "string",
+                    "optional": false
                 },
                 {
                     "name": "token_to_revoke",
-                    "type": "fixed64",
-                    "optional": true,
+                    "type": "uint64",
+                    "optional": false,
                     "description": "If this is set to a token owned by this user, that token will be retired"
                 }
             ]
@@ -458,39 +422,32 @@
             ]
         },
         "UpdateAuthSessionWithMobileConfirmation": {
-            "_type": "undocumented",
             "version": 1,
             "httpmethod": "POST",
             "description": "approve an authentication session via mobile 2fa",
             "parameters": [
                 {
-                    "name": "key",
-                    "type": "string",
-                    "optional": false,
-                    "description": "Access key"
-                },
-                {
                     "name": "version",
                     "type": "int32",
-                    "optional": true,
+                    "optional": false,
                     "description": "version field"
                 },
                 {
                     "name": "client_id",
                     "type": "uint64",
-                    "optional": true,
+                    "optional": false,
                     "description": "pending client ID, from scanned QR Code"
                 },
                 {
                     "name": "steamid",
-                    "type": "fixed64",
-                    "optional": true,
+                    "type": "uint64",
+                    "optional": false,
                     "description": "user who wants to login"
                 },
                 {
                     "name": "signature",
-                    "type": "bytes",
-                    "optional": true,
+                    "type": "string",
+                    "optional": false,
                     "description": "HMAC digest over {version,client_id,steamid} via user's private key"
                 },
                 {
@@ -501,46 +458,39 @@
                 },
                 {
                     "name": "persistence",
-                    "type": "ESessionPersistence",
+                    "type": "{enum}",
                     "optional": true,
                     "description": "whether we are requesting a persistent or an ephemeral session"
                 }
             ]
         },
         "UpdateAuthSessionWithSteamGuardCode": {
-            "_type": "undocumented",
             "version": 1,
             "httpmethod": "POST",
             "description": "approve an authentication session via steam guard code",
             "parameters": [
                 {
-                    "name": "key",
-                    "type": "string",
-                    "optional": false,
-                    "description": "Access key"
-                },
-                {
                     "name": "client_id",
                     "type": "uint64",
-                    "optional": true,
+                    "optional": false,
                     "description": "pending client ID, from initialized session"
                 },
                 {
                     "name": "steamid",
-                    "type": "fixed64",
-                    "optional": true,
+                    "type": "uint64",
+                    "optional": false,
                     "description": "user who wants to login"
                 },
                 {
                     "name": "code",
                     "type": "string",
-                    "optional": true,
+                    "optional": false,
                     "description": "confirmation code"
                 },
                 {
                     "name": "code_type",
-                    "type": "EAuthSessionGuardType",
-                    "optional": true,
+                    "type": "{enum}",
+                    "optional": false,
                     "description": "type of confirmation code"
                 }
             ]
