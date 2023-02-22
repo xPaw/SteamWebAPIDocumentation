@@ -201,8 +201,10 @@ foreach( $response[ 'apilist' ][ 'interfaces' ] as $service )
 	}
 }
 
-$notFound = "<html>\n<head>\n<title>404 Not Found</title>\n</head>\n<body>\n<h1>Not Found</h1>\n</body>\n</html>";
-$mustBePost = "<html><head><title>Method Not Allowed</title></head><body><h1>Method Not Allowed</h1>This API must be called with a HTTP POST request</body></html>";
+$notFound                  = "<html>\n<head>\n<title>404 Not Found</title>\n</head>\n<body>\n<h1>Not Found</h1>\n</body>\n</html>";
+$notFoundNoInterface       = "<html><head><title>Not Found</title></head><body><h1>Not Found</h1>Interface '%s' not found</body></html>";
+$notFoundMethodInInterface = "<html><head><title>Not Found</title></head><body><h1>Not Found</h1>Method '%s' not found in interface '%s'</body></html>";
+$mustBePost                = "<html><head><title>Method Not Allowed</title></head><body><h1>Method Not Allowed</h1>This API must be called with a HTTP POST request</body></html>";
 
 $foundServices = [];
 
@@ -226,7 +228,19 @@ foreach( $generatedServices as $serviceName => $methods )
 
 		if( $response === $notFound )
 		{
-			echo PHP_EOL;
+			echo ' nothing' . PHP_EOL;
+			continue;
+		}
+
+		if( $response === sprintf( $notFoundNoInterface, $serviceName ) )
+		{
+			echo ' interface not found' . PHP_EOL;
+			continue;
+		}
+
+		if( $response === sprintf( $notFoundMethodInInterface, $methodName, $serviceName ) )
+		{
+			echo ' method not found' . PHP_EOL;
 			continue;
 		}
 
