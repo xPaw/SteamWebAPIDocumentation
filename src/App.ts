@@ -152,6 +152,11 @@ export default defineComponent({
 			const interfaces = this.filteredInterfaces;
 			const groups: ApiServiceGroups = {};
 
+			if (this.currentFilter) {
+				groups[""] = interfaces;
+				return groups;
+			}
+
 			groups[""] = {} as ApiServices;
 			groups["CSGO"] = {} as ApiServices;
 			groups["Dota"] = {} as ApiServices;

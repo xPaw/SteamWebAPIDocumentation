@@ -28,7 +28,7 @@
 			<div class="row row-contain">
 				<div class="col-lg-3 sidebar py-3" role="navigation">
 					<div v-for="(interfaceGroup, groupName) in sidebarInterfaces">
-						<div class="interface-group-name" v-if="groupName !== '' && !currentFilter">{{ groupName }}</div>
+						<div class="interface-group-name" v-if="groupName !== ''">{{ groupName }}</div>
 
 						<ul class="interface-list m-0">
 							<li
