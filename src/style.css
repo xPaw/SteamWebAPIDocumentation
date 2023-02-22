@@ -288,6 +288,10 @@ body {
 	background-clip: padding-box;
 }
 
+::-webkit-scrollbar-thumb:hover {
+	background-color: rgb(132, 134, 137);
+}
+
 @media (max-width: 991px) {
 	.sidebar {
 		height: 200px;
@@ -323,17 +327,21 @@ body {
 }
 
 @media (min-width: 992px) {
+	body {
+		overflow-y: overlay;
+	}
+
 	.header {
 		height: 54px;
+		position: sticky;
+		top: 0;
+		z-index: 100;
 	}
 
-	.row-contain {
-		height: calc(100vh - 54px);
-	}
-
-	.content,
 	.sidebar {
-		height: 100%;
+		top: 54px;
+		height: calc(100vh - 54px);
+		position: sticky;
 		overflow-y: scroll;
 		scrollbar-width: thin;
 		overscroll-behavior: contain;
@@ -341,6 +349,6 @@ body {
 	}
 
 	.card-header {
-		top: -1rem;
+		top: 54px;
 	}
 }

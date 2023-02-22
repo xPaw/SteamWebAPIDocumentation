@@ -16,9 +16,9 @@
 					</div>
 					<div class="col-lg-9">
 						<h1><a href="#" @click.prevent="currentInterface = ''">Steam Web API Documentation</a></h1>
-						<span class="separator text-muted" v-if="currentInterface !== ''"> / </span>
+						<span class="separator" v-if="currentInterface !== ''"> / </span>
 						<h2 v-if="currentInterface !== ''">{{ currentInterface }}</h2>
-						<span v-else>with &hearts; by <a href="https://xpaw.me">xPaw</a></span>
+						<span v-else> with &hearts; by <a href="https://xpaw.me">xPaw</a></span>
 					</div>
 				</div>
 			</div>
