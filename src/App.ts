@@ -1,5 +1,5 @@
 import type { PropType } from 'vue'
-import type { ApiServices, ApiInterface, ApiMethod, ApiMethodParameter } from './interfaces';
+import type { ApiServiceGroups, ApiServices, ApiInterface, ApiMethod, ApiMethodParameter } from './interfaces';
 
 import { defineComponent } from 'vue'
 import Fuse from 'fuse.js'
@@ -148,6 +148,35 @@ export default defineComponent({
 		});
 	},
 	computed: {
+		sidebarInterfaces(): ApiServiceGroups {
+			const interfaces = this.filteredInterfaces;
+			const groups: ApiServiceGroups = {};
+
+			groups[""] = {} as ApiServices;
+			groups["CSGO"] = {} as ApiServices;
+			groups["Dota"] = {} as ApiServices;
+			groups["Other Games"] = {} as ApiServices;
+
+			for (const interfaceName in interfaces) {
+				let group: string;
+
+				if (interfaceName.endsWith("_730")) {
+					group = "CSGO";
+				}
+				else if (interfaceName.endsWith("_570")) {
+					group = "Dota";
+				}
+				else if (/_[0-9]+$/.test(interfaceName)) {
+					group = "Other Games";
+				} else {
+					group = "";
+				}
+
+				groups[group][interfaceName] = interfaces[interfaceName];
+			}
+
+			return groups;
+		},
 		filteredInterfaces(): ApiServices {
 			if (!this.currentFilter) {
 				return this.interfaces;
@@ -169,7 +198,7 @@ export default defineComponent({
 			return matchedInterfaces;
 		},
 		currentInterfaceMethods(): ApiInterface {
-			return this.filteredInterfaces[this.currentInterface];
+			return this.interfaces[this.currentInterface];
 		},
 		uriDelimeterBeforeKey() {
 			return this.hasValidAccessToken || this.hasValidWebApiKey ? '?' : '';

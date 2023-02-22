@@ -1,3 +1,7 @@
+export interface ApiServiceGroups {
+	[x: string]: ApiServices
+}
+
 export interface ApiServices {
 	[x: string]: ApiInterface
 }

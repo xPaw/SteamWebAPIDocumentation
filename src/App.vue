@@ -27,30 +27,34 @@
 		<div class="container">
 			<div class="row row-contain">
 				<div class="col-lg-3 sidebar py-3" role="navigation">
-					<ul class="interface-list m-0">
-						<li
-							v-for="(interfaceMethods, interfaceName) in filteredInterfaces"
-							:key="interfaceName"
-						>
-							<a
-								:href="'#' + interfaceName"
-								:class="interfaceName === currentInterface ? 'fw-bold text-white' : ''"
-								@click.prevent="currentInterface = interfaceName"
-							>{{ interfaceName }}</a>
+					<div v-for="(interfaceGroup, groupName) in sidebarInterfaces">
+						<div class="interface-group-name" v-if="groupName !== '' && !currentFilter">{{ groupName }}</div>
 
-							<ul class="method-list rounded mb-2 p-2" v-if="currentFilter || interfaceName === currentInterface">
-								<li
-									v-for="(method, methodName) in interfaceMethods"
-									:key="methodName"
-								>
-									<a
-										:href="'#' + interfaceName + '/' + methodName"
-										@click.prevent="setMethod( interfaceName, methodName ); updateUrl( methodName );"
-									>{{ methodName }}</a>
-								</li>
-							</ul>
-						</li>
-					</ul>
+						<ul class="interface-list m-0">
+							<li
+								v-for="(interfaceMethods, interfaceName) in interfaceGroup"
+								:key="interfaceName"
+							>
+								<a
+									:href="'#' + interfaceName"
+									:class="interfaceName === currentInterface ? 'fw-bold text-white' : ''"
+									@click.prevent="currentInterface = interfaceName"
+								>{{ interfaceName }}</a>
+
+								<ul class="method-list rounded mb-2 p-2" v-if="currentFilter || interfaceName === currentInterface">
+									<li
+										v-for="(method, methodName) in interfaceMethods"
+										:key="methodName"
+									>
+										<a
+											:href="'#' + interfaceName + '/' + methodName"
+											@click.prevent="setMethod( interfaceName, methodName ); updateUrl( methodName );"
+										>{{ methodName }}</a>
+									</li>
+								</ul>
+							</li>
+						</ul>
+					</div>
 				</div>
 				<div class="col-lg-9 content py-3" role="main">
 					<div class="interface" v-if="currentInterface === '' && !currentFilter">

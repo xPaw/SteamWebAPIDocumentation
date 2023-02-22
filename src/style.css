@@ -204,6 +204,15 @@ body {
 	text-decoration: underline;
 }
 
+.interface-group-name {
+	margin-top: 1rem;
+	margin-bottom: 0.5rem;
+	border-bottom: 1px solid #2b3647;
+	color: #ddd;
+	font-weight: bold;
+	font-size: 1.2rem;
+}
+
 .interface-list a {
 	color: #acacac;
 }
