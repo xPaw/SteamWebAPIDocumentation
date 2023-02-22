@@ -4935,6 +4935,13 @@
             ]
         }
     },
+    "IEconItems_247040": {
+        "GetEquippedPlayerItems": {
+            "_type": "undocumented",
+            "version": 1,
+            "parameters": []
+        }
+    },
     "IEconItems_583950": {
         "GetEquippedPlayerItems": {
             "version": 1,
@@ -4987,6 +4994,20 @@
                     "description": "Return items equipped for this class id"
                 }
             ]
+        }
+    },
+    "IEconItems_1422450": {
+        "GetEquippedPlayerItems": {
+            "_type": "undocumented",
+            "version": 1,
+            "parameters": []
+        }
+    },
+    "IEconItems_2305270": {
+        "GetEquippedPlayerItems": {
+            "_type": "undocumented",
+            "version": 1,
+            "parameters": []
         }
     },
     "IEconMarketService": {
@@ -5677,6 +5698,18 @@
             "parameters": []
         }
     },
+    "IGCVersion_247040": {
+        "GetClientVersion": {
+            "_type": "undocumented",
+            "version": 1,
+            "parameters": []
+        },
+        "GetServerVersion": {
+            "_type": "undocumented",
+            "version": 1,
+            "parameters": []
+        }
+    },
     "IGCVersion_583950": {
         "GetClientVersion": {
             "version": 1,
@@ -5686,6 +5719,18 @@
         "GetServerVersion": {
             "version": 1,
             "httpmethod": "GET",
+            "parameters": []
+        }
+    },
+    "IGCVersion_1024290": {
+        "GetClientVersion": {
+            "_type": "undocumented",
+            "version": 1,
+            "parameters": []
+        },
+        "GetServerVersion": {
+            "_type": "undocumented",
+            "version": 1,
             "parameters": []
         }
     },
@@ -5710,6 +5755,30 @@
         "GetServerVersion": {
             "version": 1,
             "httpmethod": "GET",
+            "parameters": []
+        }
+    },
+    "IGCVersion_1422450": {
+        "GetClientVersion": {
+            "_type": "undocumented",
+            "version": 1,
+            "parameters": []
+        },
+        "GetServerVersion": {
+            "_type": "undocumented",
+            "version": 1,
+            "parameters": []
+        }
+    },
+    "IGCVersion_2305270": {
+        "GetClientVersion": {
+            "_type": "undocumented",
+            "version": 1,
+            "parameters": []
+        },
+        "GetServerVersion": {
+            "_type": "undocumented",
+            "version": 1,
             "parameters": []
         }
     },
@@ -13309,6 +13378,30 @@
                 }
             ]
         },
+        "GetFetchStatus": {
+            "_type": "undocumented",
+            "version": 1,
+            "parameters": [
+                {
+                    "name": "key",
+                    "type": "string",
+                    "optional": false,
+                    "description": "Access key"
+                }
+            ]
+        },
+        "GetFetchStatusVersions": {
+            "_type": "undocumented",
+            "version": 1,
+            "parameters": [
+                {
+                    "name": "key",
+                    "type": "string",
+                    "optional": false,
+                    "description": "Access key"
+                }
+            ]
+        },
         "GetHMACKeys": {
             "_type": "undocumented",
             "version": 1,
@@ -13343,6 +13436,30 @@
                     "type": "uint32",
                     "optional": true,
                     "description": ""
+                }
+            ]
+        },
+        "GetTrainStatus": {
+            "_type": "undocumented",
+            "version": 1,
+            "parameters": [
+                {
+                    "name": "key",
+                    "type": "string",
+                    "optional": false,
+                    "description": "Access key"
+                }
+            ]
+        },
+        "GetTrainStatusVersions": {
+            "_type": "undocumented",
+            "version": 1,
+            "parameters": [
+                {
+                    "name": "key",
+                    "type": "string",
+                    "optional": false,
+                    "description": "Access key"
                 }
             ]
         },
