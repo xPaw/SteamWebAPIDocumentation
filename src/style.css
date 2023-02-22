@@ -123,6 +123,14 @@ body {
 	z-index: 10;
 }
 
+.card-header .badge {
+	margin-right: .3rem;
+}
+
+.card-header .badge-version {
+	margin-left: .3rem;
+}
+
 .card-inner-header {
 	padding: .75rem 1.25rem;
 }

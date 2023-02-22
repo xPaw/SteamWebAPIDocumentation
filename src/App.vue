@@ -229,7 +229,7 @@
 										<span class="badge bg-warning text-dark no-select" v-if="method._type === 'undocumented'">UNDOCUMENTED</span>
 										<span :class="method.httpmethod === 'GET' ? 'badge bg-success' : 'badge bg-danger'">{{ method.httpmethod }}</span>
 										<a class="card-method-name" :href="'#' + currentInterface + '/' + methodName" @click="updateUrl(methodName)">{{ methodName }}</a>
-										<span class="badge bg-primary" v-if="method.version > 1">v{{ method.version }}</span>
+										<span class="badge bg-primary badge-version" v-if="method.version > 1">v{{ method.version }}</span>
 									</div>
 									<button type="submit" class="btn btn-primary use-method rounded-0">
 										Execute
