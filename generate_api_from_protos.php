@@ -228,23 +228,23 @@ foreach( $generatedServices as $serviceName => $methods )
 
 		if( $response === $notFound )
 		{
-			echo ' nothing' . PHP_EOL;
+			echo ' \033[1;31mnothing\033[0m' . PHP_EOL;
 			continue;
 		}
 
 		if( $response === sprintf( $notFoundNoInterface, $serviceName ) )
 		{
-			echo ' interface not found' . PHP_EOL;
+			echo ' \033[1;33minterface not found\033[0m' . PHP_EOL;
 			continue;
 		}
 
 		if( $response === sprintf( $notFoundMethodInInterface, $methodName, $serviceName ) )
 		{
-			echo ' method not found' . PHP_EOL;
+			echo ' \033[1;31mmethod not found\033[0m' . PHP_EOL;
 			continue;
 		}
 
-		echo ' FOUND!' . PHP_EOL;
+		echo ' \033[0;32mFOUND!\033[0m' . PHP_EOL;
 
 		$method =
 		[
