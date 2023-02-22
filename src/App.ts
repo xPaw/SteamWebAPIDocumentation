@@ -346,7 +346,9 @@ export default defineComponent({
 					const element = document.getElementById(methodName);
 
 					if (element) {
-						element.scrollIntoView();
+						element.scrollIntoView({
+							block: "start"
+						});
 					}
 				});
 			}

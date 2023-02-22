@@ -350,4 +350,8 @@ body {
 	.card-header {
 		top: 54px;
 	}
+
+	.card {
+		scroll-margin-top: 54px;
+	}
 }

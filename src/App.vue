@@ -25,7 +25,7 @@
 		</div>
 
 		<div class="container">
-			<div class="row row-contain">
+			<div class="row">
 				<div class="col-lg-3 sidebar py-3" role="navigation">
 					<div v-for="(interfaceGroup, groupName) in sidebarInterfaces">
 						<div class="interface-group-name" v-if="groupName !== ''">{{ groupName }}</div>
@@ -207,7 +207,7 @@
 							</div>
 						</div>
 					</div>
-					<div class="interface" ref="interfaceView" v-else>
+					<div class="interface" v-else>
 						<div class="alert no-email">
 							This page is just a reference of all the known Steam APIs, I do not know how they work. Please do not email me with questions.
 						</div>
