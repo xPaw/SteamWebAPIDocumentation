@@ -16,6 +16,7 @@ export interface ApiMethod {
 	version: number
 	description?: string
 	parameters: ApiMethodParameter[]
+	isFavorite: boolean
 }
 
 export interface ApiMethodParameter {

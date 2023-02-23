@@ -23,6 +23,7 @@ export default defineComponent({
 				access_token: '',
 				steamid: '',
 				format: 'json',
+				favorites: new Set<string>(),
 			},
 			keyInputType: 'password',
 			hasValidWebApiKey: false,
@@ -99,10 +100,32 @@ export default defineComponent({
 		}
 	},
 	mounted(): void {
-		document.getElementById('loading')!.remove();
-
 		getInterfaces().then((interfaces) => {
 			const flattenedMethods: FuseSearchType[] = [];
+			let favorites = [];
+
+			try {
+				this.userData.webapi_key = localStorage.getItem('webapi_key') || '';
+				this.userData.access_token = localStorage.getItem('access_token') || '';
+				this.userData.steamid = localStorage.getItem('steamid') || '';
+				this.userData.format = localStorage.getItem('format') || 'json';
+
+				const favoriteStrings = JSON.parse(localStorage.getItem('favorites') || '[]');
+
+				for (const favorite of favoriteStrings) {
+					const [favoriteInterface, favoriteMethod] = favorite.split('/', 2);
+
+					if (Object.hasOwn(interfaces, favoriteInterface) &&
+						Object.hasOwn(interfaces[favoriteInterface], favoriteMethod)) {
+						interfaces[favoriteInterface][favoriteMethod].isFavorite = true;
+
+						this.userData.favorites.add(favorite);
+					}
+				}
+			}
+			catch (e) {
+				console.error(e);
+			}
 
 			for (const interfaceName in interfaces) {
 				for (const methodName in interfaces[interfaceName]) {
@@ -125,11 +148,6 @@ export default defineComponent({
 
 			this.interfaces = interfaces;
 
-			this.userData.webapi_key = localStorage.getItem('webapi_key') || '';
-			this.userData.access_token = localStorage.getItem('access_token') || '';
-			this.userData.steamid = localStorage.getItem('steamid') || '';
-			this.userData.format = localStorage.getItem('format') || 'json';
-
 			this.setInterface();
 
 			window.addEventListener('hashchange', () => {
@@ -149,6 +167,8 @@ export default defineComponent({
 				}]
 			};
 			this.fuzzy = new Fuse<FuseSearchType>(flattenedMethods, fuseOptions);
+
+			document.getElementById('loading')!.remove();
 		});
 	},
 	computed: {
@@ -161,7 +181,8 @@ export default defineComponent({
 				return groups;
 			}
 
-			groups[""] = {} as ApiServices;
+			const defaultGroup = this.userData.favorites.size > 0 ? 'All interfaces' : '';
+			groups[defaultGroup] = {} as ApiServices;
 			groups["CSGO"] = {} as ApiServices;
 			groups["Dota"] = {} as ApiServices;
 			groups["Other Games"] = {} as ApiServices;
@@ -178,7 +199,7 @@ export default defineComponent({
 				else if (/_[0-9]+$/.test(interfaceName)) {
 					group = "Other Games";
 				} else {
-					group = "";
+					group = defaultGroup;
 				}
 
 				groups[group][interfaceName] = interfaces[interfaceName];
@@ -341,19 +362,28 @@ export default defineComponent({
 				}
 			}
 		},
+		setInterfaceAndMethod(interfaceAndMethod: string): void {
+			const [interfaceName, methodName] = interfaceAndMethod.split('/', 2);
+
+			this.setMethod(interfaceName, methodName);
+			this.updateUrl(methodName);
+		},
 		setMethod(interfaceName: string, methodName: string): void {
 			this.skipInterfaceSet = true;
 			this.currentInterface = interfaceName;
 
 			if (methodName) {
 				this.$nextTick(() => {
-					const element = document.getElementById(methodName);
+					// Work around not scrolling in Chrome on page load
+					setTimeout(() => {
+						const element = document.getElementById(methodName);
 
-					if (element) {
-						element.scrollIntoView({
-							block: "start"
-						});
-					}
+						if (element) {
+							element.scrollIntoView({
+								block: "start"
+							});
+						}
+					}, 0);
 				});
 			}
 		},
@@ -392,6 +422,19 @@ export default defineComponent({
 		},
 		updateUrl(method: string): void {
 			history.pushState('', '', `#${this.currentInterface}/${method}`);
+		},
+		favoriteMethod(method: ApiMethod, methodName: string): void {
+			const name = `${this.currentInterface}/${methodName}`;
+
+			method.isFavorite = !method.isFavorite;
+
+			if (method.isFavorite) {
+				this.userData.favorites.add(name);
+			} else {
+				this.userData.favorites.delete(name);
+			}
+
+			localStorage.setItem('favorites', JSON.stringify([...this.userData.favorites]));
 		},
 		navigateSidebar(direction: number): void {
 			const keys = Object.keys(this.filteredInterfaces);

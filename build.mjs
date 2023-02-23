@@ -3,7 +3,7 @@ import * as vuePlugin from 'esbuild-plugin-vue3';
 import * as fs from 'fs/promises';
 import * as path from 'path';
 
-const isDev = process.argv.length > 2 && process.argv[2] === '--dev';
+const isDev = process.argv.includes('--dev');
 
 // Minify and copy api.json
 const interfaces = JSON.parse(await fs.readFile(path.resolve('api.json')));

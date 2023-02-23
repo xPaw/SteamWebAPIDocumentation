@@ -1,5 +1,9 @@
 @import "bootstrap/dist/css/bootstrap.css";
 
+#loading + #app {
+	display: none;
+}
+
 a {
 	color: #1f8bff;
 	text-decoration: none;
@@ -51,7 +55,7 @@ code {
 	background-color: #2b3647;
 }
 
-.method-list li {
+.interface-list li {
 	text-overflow: ellipsis;
 	overflow: hidden;
 	white-space: nowrap;
@@ -71,10 +75,6 @@ code {
 
 a.badge {
 	text-decoration: underline;
-}
-
-[v-cloak] {
-	display: none;
 }
 
 .no-select {
@@ -203,8 +203,11 @@ body {
 	text-decoration: underline;
 }
 
-.interface-group-name {
+.interface-list-container + .interface-list-container {
 	margin-top: 1rem;
+}
+
+.interface-group-name {
 	margin-bottom: 0.5rem;
 	border-bottom: 1px solid #2b3647;
 	color: #ddd;
