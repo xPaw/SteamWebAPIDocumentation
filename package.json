@@ -1,6 +1,7 @@
 {
 	"scripts": {
-		"build": "node build.js",
+		"build": "node build.mjs",
+		"dev": "node build.mjs --dev",
 		"test": "tsc"
 	},
 	"devDependencies": {
