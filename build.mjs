@@ -25,7 +25,7 @@ const esbuildOptions = {
 
 if (isDev) {
 	esbuildOptions.banner = {
-		js: `new EventSource("/esbuild").addEventListener("change", () => location.reload());`
+		js: `window.DEV_MODE = true;new EventSource("/esbuild").addEventListener("change", () => location.reload());`
 	};
 }
 
