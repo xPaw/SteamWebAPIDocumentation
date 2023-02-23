@@ -92,14 +92,14 @@ body {
 	color: #fff;
 }
 
-.header .form-control:focus,
-.header .form-control {
+.search-input:focus,
+.search-input {
 	border: 1px solid rgba(103, 193, 245, 0.7);
 	background-color: #171b22;
 	color: #fff;
 }
 
-.header .form-control:focus {
+.search-input:focus {
 	box-shadow: 0 0 20px rgba(147, 211, 245, 0.50);
 }
 
@@ -328,6 +328,7 @@ body {
 @media (min-width: 992px) {
 	html {
 		scrollbar-gutter: stable;
+		scroll-padding-top: 54px;
 	}
 
 	.header {
@@ -349,9 +350,5 @@ body {
 
 	.card-header {
 		top: 54px;
-	}
-
-	.card {
-		scroll-margin-top: 54px;
 	}
 }

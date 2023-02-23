@@ -79,6 +79,10 @@ export default defineComponent({
 				return;
 			}
 
+			if (document.scrollingElement) {
+				document.scrollingElement.scrollTop = 0;
+			}
+
 			history.pushState('', '', `#${newInterface}`);
 		},
 		currentFilter(newFilter: string, oldFilter: string): void {

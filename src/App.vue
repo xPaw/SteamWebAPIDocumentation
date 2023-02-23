@@ -6,7 +6,7 @@
 					<div class="col-lg-3" role="search">
 						<input
 							type="search"
-							class="form-control me-sm-2"
+							class="search-input form-control me-sm-2"
 							placeholder="Search methods…"
 							aria-label="Search interfaces and methods"
 							v-model="currentFilter"
