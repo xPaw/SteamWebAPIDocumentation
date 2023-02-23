@@ -326,8 +326,8 @@ body {
 }
 
 @media (min-width: 992px) {
-	body {
-		overflow-y: overlay;
+	html {
+		scrollbar-gutter: stable;
 	}
 
 	.header {
