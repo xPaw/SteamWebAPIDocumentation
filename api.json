@@ -4752,6 +4752,7 @@
     },
     "IEconItems_570": {
         "GetEquippedPlayerItems": {
+            "_type": "undocumented",
             "version": 1,
             "httpmethod": "GET",
             "parameters": [
