@@ -30,12 +30,30 @@ curl_setopt( $c, CURLOPT_URL, 'https://partner.steam-api.com/ISteamWebAPIUtil/Ge
 unset( $PublisherApiKey );
 $YesPublisher = curl_exec( $c );
 
-echo 'Downloading undocumented list...' . PHP_EOL;
+$Undocumented = [];
 
-curl_setopt( $c, CURLOPT_URL, 'https://raw.githubusercontent.com/SteamDatabase/UndocumentedAPI/master/api.json' );
-$Undocumented = curl_exec( $c );
+if( file_exists( __DIR__ . '/api_undocumented_methods.txt' ) )
+{
+	foreach( file( __DIR__ . '/api_undocumented_methods.txt', FILE_IGNORE_NEW_LINES | FILE_SKIP_EMPTY_LINES ) as $Method )
+	{
+		[ $UndocumentedInterface, $UndocumentedMethod, $UndocumentedVersion ] = explode( '/', $Method, 3 );
 
-curl_close( $c );
+		if( !isset( $Undocumented[ $UndocumentedInterface ] ) )
+		{
+			$Undocumented[ $UndocumentedInterface ] =
+			[
+				'name' => $UndocumentedInterface,
+				'methods' => [],
+			];
+		}
+
+		$Undocumented[ $UndocumentedInterface ][ 'methods' ][] =
+		[
+			'name' => $UndocumentedMethod,
+			'version' => (int)substr( $UndocumentedVersion, 1 ),
+		];
+	}
+}
 
 echo 'Generating...' . PHP_EOL;
 
@@ -44,9 +62,6 @@ $YesPublisher = $YesPublisher[ 'apilist' ][ 'interfaces' ] ?? [];
 
 $NonPublisher = json_decode( $NonPublisher, true, 512, JSON_THROW_ON_ERROR );
 $NonPublisher = $NonPublisher[ 'apilist' ][ 'interfaces' ] ?? [];
-
-$Undocumented = json_decode( $Undocumented, true, 512, JSON_THROW_ON_ERROR );
-$Undocumented = $Undocumented[ 'apilist' ][ 'interfaces' ] ?? [];
 
 if( file_exists( __DIR__ . '/api_from_protos.json' ) )
 {

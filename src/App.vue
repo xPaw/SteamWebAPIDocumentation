@@ -156,7 +156,7 @@
 								<p>Type a value in the value field and click the execute button to perform an API request in your browser.</p>
 								<hr>
 								<p>This website is created and maintained by <a href="https://xpaw.me/">xPaw</a>. Use any APIs listed here at your own risk.<br>I do not know how all of them work, this page is simply a reference.</p>
-								<p>If you know of an API that is not listed here, <a href="https://github.com/SteamDatabase/UndocumentedAPI">make a pull request to the repository of undocumented APIs</a>.</p>
+								<p>If you know of an API that is not listed here, <a href="https://github.com/xPaw/SteamWebAPIDocumentation/blob/master/api_undocumented_methods.txt">make a pull request to the file of undocumented APIs</a>.</p>
 								<p>Source code for this page <a href="https://github.com/xPaw/SteamWebAPIDocumentation">is also available on GitHub</a>.</p>
 							</div>
 						</div>
