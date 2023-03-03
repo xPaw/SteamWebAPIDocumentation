@@ -1160,6 +1160,11 @@
             "version": 1,
             "httpmethod": "GET",
             "parameters": []
+        },
+        "GetMonthlyPlayerCount": {
+            "_type": "undocumented",
+            "version": 1,
+            "parameters": []
         }
     },
     "ICSGOStreamSystem_730": {
