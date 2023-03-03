@@ -25,6 +25,7 @@ ICommunityService/GetUserPartnerEventNews/v1
 ICredentialsService/SteamGuardPhishingReport/v1
 ICredentialsService/ValidateEmailAddress/v1
 ICSGOPlayers_730/GetPlayerProfile/v1
+ICSGOServers_730/GetMonthlyPlayerCount/v1
 ICSGOStreamSystem_730/GetMatchScoreboard/v1
 ICSGOStreamSystem_730/ListOfUsersSpectating/v1
 ICSGOTournaments_730/ClaimBadgeReward/v1
