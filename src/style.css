@@ -114,6 +114,10 @@ body {
 	border-radius: 0;
 }
 
+.card:target {
+	outline: 5px solid #096295;
+}
+
 .card-header {
 	background: #4e5155;
 	border: 0;
