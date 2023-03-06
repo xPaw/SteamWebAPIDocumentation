@@ -30,20 +30,20 @@ export default defineComponent({
 			groupsMap: new Map<string, number>(),
 			groupsData: new Map<number, SidebarGroupData>([
 				// Order of apps here defines the order in the sidebar
-				[0, { name: 'Steam', icon: 'steam.jpg', methods: {} }],
-				[730, { name: 'CS:GO', icon: 'csgo.jpg', methods: {} }],
-				[570, { name: 'Dota 2', icon: 'dota.jpg', methods: {} }],
-				[440, { name: 'Team Fortress 2', icon: 'tf.jpg', methods: {} }],
-				[620, { name: 'Portal 2', icon: 'portal2.jpg', methods: {} }],
-				[1046930, { name: 'Dota Underlords', icon: 'underlords.jpg', methods: {} }],
-				[583950, { name: 'Artifact Classic', icon: 'artifact.jpg', methods: {} }],
-				[1269260, { name: 'Artifact Foundry', icon: 'artifact.jpg', methods: {} }],
+				[0, { name: 'Steam', icon: 'steam.jpg', open: true, methods: {} }],
+				[730, { name: 'CS:GO', icon: 'csgo.jpg', open: true, methods: {} }],
+				[570, { name: 'Dota 2', icon: 'dota.jpg', open: true, methods: {} }],
+				[440, { name: 'Team Fortress 2', icon: 'tf.jpg', open: true, methods: {} }],
+				[620, { name: 'Portal 2', icon: 'portal2.jpg', open: true, methods: {} }],
+				[1046930, { name: 'Dota Underlords', icon: 'underlords.jpg', open: true, methods: {} }],
+				[583950, { name: 'Artifact Classic', icon: 'artifact.jpg', open: true, methods: {} }],
+				[1269260, { name: 'Artifact Foundry', icon: 'artifact.jpg', open: true, methods: {} }],
 
 				// Beta apps
-				[205790, { name: 'Dota 2 Test', icon: 'dota.jpg', methods: {} }],
-				[247040, { name: 'Dota 2 Experimental', icon: 'dota.jpg', methods: {} }],
-				[2305270, { name: 'Dota 2 Staging', icon: 'dota.jpg', methods: {} }],
-				[1024290, { name: 'Dota Underlods Beta', icon: 'underlords.jpg', methods: {} }],
+				[205790, { name: 'Dota 2 Test', icon: 'dota.jpg', open: false, methods: {} }],
+				[247040, { name: 'Dota 2 Experimental', icon: 'dota.jpg', open: false, methods: {} }],
+				[2305270, { name: 'Dota 2 Staging', icon: 'dota.jpg', open: false, methods: {} }],
+				[1024290, { name: 'Dota Underlods Beta', icon: 'underlords.jpg', open: false, methods: {} }],
 			]),
 		}
 	},
@@ -190,6 +190,7 @@ export default defineComponent({
 					[0, {
 						name: 'Search results',
 						icon: '',
+						open: true,
 						methods: interfaces,
 					}]
 				]);
@@ -205,6 +206,7 @@ export default defineComponent({
 					groups.set(appid, {
 						name: `App ${appid}`,
 						icon: 'steam.jpg',
+						open: false,
 						methods: {}
 					});
 					group = groups.get(appid);

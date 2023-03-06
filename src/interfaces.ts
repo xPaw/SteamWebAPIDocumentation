@@ -1,6 +1,7 @@
 export interface SidebarGroupData {
 	name: string
 	icon: string
+	open: boolean
 	methods: ApiServices
 }
 

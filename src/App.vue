@@ -26,8 +26,8 @@
 		<div class="container">
 			<div class="row">
 				<div class="col-lg-3 sidebar py-3" role="navigation">
-					<div class="interface-list-container" v-if="userData.favorites.size > 0 && !currentFilter">
-						<div class="interface-group-name">Your favorites</div>
+					<details class="interface-list-container" open v-if="userData.favorites.size > 0 && !currentFilter">
+						<summary class="interface-group-name">Your favorites</summary>
 
 						<ul class="interface-list m-0">
 							<li
@@ -39,13 +39,13 @@
 								>{{ favoriteMethod }}</a>
 							</li>
 						</ul>
-					</div>
+					</details>
 
-					<div class="interface-list-container" v-for="[groupAppid, interfaceGroup] in sidebarInterfaces">
-						<div class="interface-group-name">
+					<details class="interface-list-container" :open="interfaceGroup.open" v-for="[groupAppid, interfaceGroup] in sidebarInterfaces">
+						<summary class="interface-group-name">
 							<img :src="`icons/${interfaceGroup.icon}`" width="24" height="24" alt="" aria-hidden="true" v-if="interfaceGroup.icon">
 							{{ interfaceGroup.name }}
-						</div>
+						</summary>
 
 						<ul class="interface-list m-0">
 							<li
@@ -70,7 +70,7 @@
 								</ul>
 							</li>
 						</ul>
-					</div>
+					</details>
 				</div>
 
 				<div class="col-lg-9 content py-3" role="main">

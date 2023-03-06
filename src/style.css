@@ -217,6 +217,15 @@ body {
 	font-size: 1.2rem;
 }
 
+.interface-group-name::marker {
+	color: #535354;
+}
+
+.interface-group-name:hover::marker,
+.interface-group-name:hover {
+	color: #fff;
+}
+
 .interface-group-name img {
 	border-radius: 3px;
 	vertical-align: -5px;
