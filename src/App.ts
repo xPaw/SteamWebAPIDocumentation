@@ -186,9 +186,13 @@ export default defineComponent({
 			const interfaces = this.filteredInterfaces;
 
 			if (this.currentFilter) {
-				const groups = new Map<number, SidebarGroupData>();
-				//groups.set(-1, interfaces);
-				return groups;
+				return new Map<number, SidebarGroupData>([
+					[0, {
+						name: 'Search results',
+						icon: '',
+						methods: interfaces,
+					}]
+				]);
 			}
 
 			const groups = new Map(this.groupsData);
