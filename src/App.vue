@@ -42,12 +42,15 @@
 						</ul>
 					</div>
 
-					<div class="interface-list-container" v-for="(interfaceGroup, groupName) in sidebarInterfaces">
-						<div class="interface-group-name" v-if="groupName !== ''">{{ groupName }}</div>
+					<div class="interface-list-container" v-for="[groupAppid, interfaceGroup] in sidebarInterfaces">
+						<div class="interface-group-name">
+							<img :src="`icons/${interfaceGroup.icon}`" width="24" height="24" alt="" aria-hidden="true" v-if="interfaceGroup.icon">
+							{{ interfaceGroup.name }}
+						</div>
 
 						<ul class="interface-list m-0">
 							<li
-								v-for="(interfaceMethods, interfaceName) in interfaceGroup"
+								v-for="(interfaceMethods, interfaceName) in interfaceGroup.methods"
 								:key="interfaceName"
 							>
 								<a

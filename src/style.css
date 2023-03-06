@@ -211,11 +211,15 @@ body {
 }
 
 .interface-group-name {
-	margin-bottom: 0.5rem;
-	border-bottom: 1px solid #2b3647;
+	margin-bottom: 0.1rem;
 	color: #ddd;
 	font-weight: bold;
 	font-size: 1.2rem;
+}
+
+.interface-group-name img {
+	border-radius: 3px;
+	vertical-align: -5px;
 }
 
 .interface-list a {

@@ -1,5 +1,4 @@
-import type { PropType } from 'vue'
-import type { ApiServiceGroups, ApiServices, ApiInterface, ApiMethod, ApiMethodParameter } from './interfaces';
+import type { SidebarGroupData, SidebarGroupDataWithMethods, ApiServices, ApiInterface, ApiMethod, ApiMethodParameter } from './interfaces';
 
 import { defineComponent } from 'vue'
 import Fuse from 'fuse.js'
@@ -11,11 +10,6 @@ interface FuseSearchType {
 }
 
 export default defineComponent({
-	props: {
-		interfaces: {
-			type: Object as PropType<ApiServices>,
-		}
-	},
 	data() {
 		return {
 			userData: {
@@ -31,8 +25,26 @@ export default defineComponent({
 			accessTokenVisible: false,
 			currentFilter: '',
 			currentInterface: '',
-			interfaces: {},
+			interfaces: {} as ApiServices,
 			fuzzy: new Object as Fuse<FuseSearchType>,
+			groupsMap: new Map<string, number>(),
+			groupsData: new Map<number, SidebarGroupData>([
+				// Order of apps here defines the order in the sidebar
+				[0, { name: 'Steam', icon: 'steam.jpg', methods: {} }],
+				[730, { name: 'CS:GO', icon: 'csgo.jpg', methods: {} }],
+				[570, { name: 'Dota 2', icon: 'dota.jpg', methods: {} }],
+				[440, { name: 'Team Fortress 2', icon: 'tf.jpg', methods: {} }],
+				[620, { name: 'Portal 2', icon: 'portal2.jpg', methods: {} }],
+				[1046930, { name: 'Dota Underlords', icon: 'underlords.jpg', methods: {} }],
+				[583950, { name: 'Artifact Classic', icon: 'artifact.jpg', methods: {} }],
+				[1269260, { name: 'Artifact Foundry', icon: 'artifact.jpg', methods: {} }],
+
+				// Beta apps
+				[205790, { name: 'Dota 2 Test', icon: 'dota.jpg', methods: {} }],
+				[247040, { name: 'Dota 2 Experimental', icon: 'dota.jpg', methods: {} }],
+				[2305270, { name: 'Dota 2 Staging', icon: 'dota.jpg', methods: {} }],
+				[1024290, { name: 'Dota Underlods Beta', icon: 'underlords.jpg', methods: {} }],
+			]),
 		}
 	},
 	watch: {
@@ -134,6 +146,14 @@ export default defineComponent({
 						method: methodName,
 					} as FuseSearchType);
 				}
+
+				const interfaceAppid = interfaceName.match(/_(?<appid>[0-9]+)$/);
+
+				if (interfaceAppid) {
+					const appid = parseInt(interfaceAppid.groups!.appid, 10);
+
+					this.groupsMap.set(interfaceName, appid);
+				}
 			}
 
 			this.interfaces = interfaces;
@@ -162,36 +182,31 @@ export default defineComponent({
 		});
 	},
 	computed: {
-		sidebarInterfaces(): ApiServiceGroups {
+		sidebarInterfaces(): Map<number, SidebarGroupData> {
 			const interfaces = this.filteredInterfaces;
-			const groups: ApiServiceGroups = {};
 
 			if (this.currentFilter) {
-				groups[""] = interfaces;
+				const groups = new Map<number, SidebarGroupData>();
+				//groups.set(-1, interfaces);
 				return groups;
 			}
 
-			groups["Steam"] = {} as ApiServices;
-			groups["CSGO"] = {} as ApiServices;
-			groups["Dota"] = {} as ApiServices;
-			groups["Other Games"] = {} as ApiServices;
+			const groups = new Map(this.groupsData);
 
 			for (const interfaceName in interfaces) {
-				let group: string;
+				const appid = this.groupsMap.get(interfaceName) || 0;
+				let group = groups.get(appid);
 
-				if (interfaceName.endsWith("_730")) {
-					group = "CSGO";
-				}
-				else if (interfaceName.endsWith("_570")) {
-					group = "Dota";
-				}
-				else if (/_[0-9]+$/.test(interfaceName)) {
-					group = "Other Games";
-				} else {
-					group = "Steam";
+				if (!group) {
+					groups.set(appid, {
+						name: `App ${appid}`,
+						icon: 'steam.jpg',
+						methods: {}
+					});
+					group = groups.get(appid);
 				}
 
-				groups[group][interfaceName] = interfaces[interfaceName];
+				group!.methods[interfaceName] = interfaces[interfaceName];
 			}
 
 			return groups;

@@ -1,5 +1,7 @@
-export interface ApiServiceGroups {
-	[x: string]: ApiServices
+export interface SidebarGroupData {
+	name: string
+	icon: string
+	methods: ApiServices
 }
 
 export interface ApiServices {
