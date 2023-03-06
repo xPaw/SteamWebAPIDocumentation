@@ -31,7 +31,6 @@ export default defineComponent({
 			accessTokenVisible: false,
 			currentFilter: '',
 			currentInterface: '',
-			skipInterfaceSet: false,
 			interfaces: {},
 			fuzzy: new Object as Fuse<FuseSearchType>,
 		}
@@ -74,17 +73,9 @@ export default defineComponent({
 				document.title = `Steam Web API Documentation`;
 			}
 
-			if (this.skipInterfaceSet) {
-				this.skipInterfaceSet = false;
-
-				return;
-			}
-
 			if (document.scrollingElement) {
 				document.scrollingElement.scrollTop = 0;
 			}
-
-			history.pushState('', '', `#${newInterface}`);
 		},
 		currentFilter(newFilter: string, oldFilter: string): void {
 			if (!newFilter) {
@@ -102,7 +93,6 @@ export default defineComponent({
 	mounted(): void {
 		getInterfaces().then((interfaces) => {
 			const flattenedMethods: FuseSearchType[] = [];
-			let favorites = [];
 
 			try {
 				this.userData.webapi_key = localStorage.getItem('webapi_key') || '';
@@ -256,11 +246,22 @@ export default defineComponent({
 				currentMethod = '';
 			}
 
-			this.setMethod(currentInterface, currentMethod);
-			this.$nextTick(() => {
-				this.skipInterfaceSet = false;
-				this.scrollInterfaceIntoView();
-			});
+			const interfaceChanged = this.currentInterface !== currentInterface;
+
+			this.currentInterface = currentInterface;
+
+			if (interfaceChanged) {
+				// Have to scroll manually because location.hash doesn't exist in DOM as target yet
+				this.$nextTick(() => {
+					const element = document.getElementById(`${currentInterface}/${currentMethod}`);
+
+					if (element) {
+						element.scrollIntoView({
+							block: "start"
+						});
+					}
+				});
+			}
 		},
 		fillSteamidParameter(): void {
 			if (!this.userData.steamid) {
@@ -362,31 +363,6 @@ export default defineComponent({
 				}
 			}
 		},
-		setInterfaceAndMethod(interfaceAndMethod: string): void {
-			const [interfaceName, methodName] = interfaceAndMethod.split('/', 2);
-
-			this.setMethod(interfaceName, methodName);
-			this.updateUrl(methodName);
-		},
-		setMethod(interfaceName: string, methodName: string): void {
-			this.skipInterfaceSet = true;
-			this.currentInterface = interfaceName;
-
-			if (methodName) {
-				this.$nextTick(() => {
-					// Work around not scrolling in Chrome on page load
-					setTimeout(() => {
-						const element = document.getElementById(methodName);
-
-						if (element) {
-							element.scrollIntoView({
-								block: "start"
-							});
-						}
-					}, 0);
-				});
-			}
-		},
 		addParamArray(method: ApiMethod, parameter: ApiMethodParameter): void {
 			if (!parameter._counter) {
 				parameter._counter = 1;
@@ -407,7 +383,7 @@ export default defineComponent({
 		scrollInterfaceIntoView(): void {
 			const element = document.querySelector(`.interface-list a[href="#${this.currentInterface}"]`);
 
-			if (element) {
+			if (element instanceof HTMLElement) {
 				element.scrollIntoView();
 			}
 		},
@@ -419,9 +395,6 @@ export default defineComponent({
 			selection.removeAllRanges();
 			selection.addRange(range);
 			document.execCommand('copy');
-		},
-		updateUrl(method: string): void {
-			history.pushState('', '', `#${this.currentInterface}/${method}`);
 		},
 		favoriteMethod(method: ApiMethod, methodName: string): void {
 			const name = `${this.currentInterface}/${methodName}`;

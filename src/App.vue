@@ -37,7 +37,6 @@
 							>
 								<a
 									:href="'#' + favoriteMethod"
-									@click.prevent="setInterfaceAndMethod( favoriteMethod );"
 								>{{ favoriteMethod }}</a>
 							</li>
 						</ul>
@@ -54,7 +53,6 @@
 								<a
 									:href="'#' + interfaceName"
 									:class="interfaceName === currentInterface ? 'fw-bold text-white' : ''"
-									@click.prevent="currentInterface = interfaceName"
 								>{{ interfaceName }}</a>
 
 								<ul class="method-list rounded mb-2 p-2" v-if="currentFilter || interfaceName === currentInterface">
@@ -65,7 +63,6 @@
 										<a
 											:href="'#' + interfaceName + '/' + methodName"
 											:class="method.isFavorite ? 'text-warning' : ''"
-											@click.prevent="setMethod( interfaceName, methodName ); updateUrl( methodName );"
 										>{{ methodName }}</a>
 									</li>
 								</ul>
@@ -236,7 +233,7 @@
 						<template v-for="(method, methodName) in currentInterfaceMethods" :key="methodName">
 							<form
 								target="_blank"
-								:id="methodName"
+								:id="`${currentInterface}/${methodName}`"
 								:method="method.httpmethod || 'GET'"
 								:action="renderUri( methodName, method )"
 								class="card mb-4"
@@ -251,7 +248,7 @@
 										<a class="badge bg-warning text-dark no-select" v-if="method._type === 'publisher_only'" :href="`https://partner.steamgames.com/doc/webapi/${currentInterface}#${methodName}`" target="_blank" rel="noopener">PUBLISHER</a>
 										<span class="badge bg-warning text-dark no-select" v-if="method._type === 'undocumented'">UNDOCUMENTED</span>
 										<span :class="method.httpmethod === 'GET' ? 'badge bg-success' : 'badge bg-danger'">{{ method.httpmethod }}</span>
-										<a class="card-method-name" :href="'#' + currentInterface + '/' + methodName" @click="updateUrl(methodName)">{{ methodName }}</a>
+										<a class="card-method-name" :href="'#' + currentInterface + '/' + methodName">{{ methodName }}</a>
 										<span class="badge bg-primary badge-version" v-if="method.version > 1">v{{ method.version }}</span>
 									</div>
 
