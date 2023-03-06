@@ -2722,6 +2722,13 @@
             ]
         }
     },
+    "IClientStats_1024290": {
+        "ReportEvent": {
+            "_type": "undocumented",
+            "version": 1,
+            "parameters": []
+        }
+    },
     "IClientStats_1046930": {
         "ReportEvent": {
             "version": 1,
@@ -3615,7 +3622,139 @@
             "parameters": []
         }
     },
+    "IDOTA2AutomatedTourney_205790": {
+        "GetParticipationDetails": {
+            "_type": "undocumented",
+            "version": 1,
+            "parameters": []
+        },
+        "GetPlayerHistory": {
+            "_type": "undocumented",
+            "version": 1,
+            "parameters": []
+        },
+        "GetTournamentDetails": {
+            "_type": "undocumented",
+            "version": 1,
+            "parameters": []
+        }
+    },
+    "IDOTA2AutomatedTourney_247040": {
+        "GetParticipationDetails": {
+            "_type": "undocumented",
+            "version": 1,
+            "parameters": []
+        },
+        "GetPlayerHistory": {
+            "_type": "undocumented",
+            "version": 1,
+            "parameters": []
+        },
+        "GetTournamentDetails": {
+            "_type": "undocumented",
+            "version": 1,
+            "parameters": []
+        }
+    },
+    "IDOTA2AutomatedTourney_2305270": {
+        "GetParticipationDetails": {
+            "_type": "undocumented",
+            "version": 1,
+            "parameters": []
+        },
+        "GetPlayerHistory": {
+            "_type": "undocumented",
+            "version": 1,
+            "parameters": []
+        },
+        "GetTournamentDetails": {
+            "_type": "undocumented",
+            "version": 1,
+            "parameters": []
+        }
+    },
     "IDOTA2CustomGames_570": {
+        "GetGamePlayerCounts": {
+            "_type": "undocumented",
+            "version": 1,
+            "parameters": []
+        },
+        "GetPopularGames": {
+            "_type": "undocumented",
+            "version": 1,
+            "parameters": []
+        },
+        "GetSuggestedGames": {
+            "_type": "undocumented",
+            "version": 1,
+            "parameters": []
+        },
+        "GetWhitelist": {
+            "_type": "undocumented",
+            "version": 1,
+            "parameters": []
+        },
+        "GetWorkshopVoteQueue": {
+            "_type": "undocumented",
+            "version": 1,
+            "parameters": []
+        }
+    },
+    "IDOTA2CustomGames_205790": {
+        "GetGamePlayerCounts": {
+            "_type": "undocumented",
+            "version": 1,
+            "parameters": []
+        },
+        "GetPopularGames": {
+            "_type": "undocumented",
+            "version": 1,
+            "parameters": []
+        },
+        "GetSuggestedGames": {
+            "_type": "undocumented",
+            "version": 1,
+            "parameters": []
+        },
+        "GetWhitelist": {
+            "_type": "undocumented",
+            "version": 1,
+            "parameters": []
+        },
+        "GetWorkshopVoteQueue": {
+            "_type": "undocumented",
+            "version": 1,
+            "parameters": []
+        }
+    },
+    "IDOTA2CustomGames_247040": {
+        "GetGamePlayerCounts": {
+            "_type": "undocumented",
+            "version": 1,
+            "parameters": []
+        },
+        "GetPopularGames": {
+            "_type": "undocumented",
+            "version": 1,
+            "parameters": []
+        },
+        "GetSuggestedGames": {
+            "_type": "undocumented",
+            "version": 1,
+            "parameters": []
+        },
+        "GetWhitelist": {
+            "_type": "undocumented",
+            "version": 1,
+            "parameters": []
+        },
+        "GetWorkshopVoteQueue": {
+            "_type": "undocumented",
+            "version": 1,
+            "parameters": []
+        }
+    },
+    "IDOTA2CustomGames_2305270": {
         "GetGamePlayerCounts": {
             "_type": "undocumented",
             "version": 1,
@@ -3674,6 +3813,102 @@
             "parameters": []
         }
     },
+    "IDOTA2Events_205790": {
+        "GetArcanaVotes": {
+            "_type": "undocumented",
+            "version": 1,
+            "parameters": []
+        },
+        "GetCurrentTriviaQuestions": {
+            "_type": "undocumented",
+            "version": 1,
+            "parameters": []
+        },
+        "GetDraftTriviaMatchInfo": {
+            "_type": "undocumented",
+            "version": 1,
+            "parameters": []
+        },
+        "GetDraftTriviaVoteCount": {
+            "_type": "undocumented",
+            "version": 1,
+            "parameters": []
+        },
+        "GetMutations": {
+            "_type": "undocumented",
+            "version": 1,
+            "parameters": []
+        },
+        "GetTriviaQuestionAnswersSummary": {
+            "_type": "undocumented",
+            "version": 1,
+            "parameters": []
+        }
+    },
+    "IDOTA2Events_247040": {
+        "GetArcanaVotes": {
+            "_type": "undocumented",
+            "version": 1,
+            "parameters": []
+        },
+        "GetCurrentTriviaQuestions": {
+            "_type": "undocumented",
+            "version": 1,
+            "parameters": []
+        },
+        "GetDraftTriviaMatchInfo": {
+            "_type": "undocumented",
+            "version": 1,
+            "parameters": []
+        },
+        "GetDraftTriviaVoteCount": {
+            "_type": "undocumented",
+            "version": 1,
+            "parameters": []
+        },
+        "GetMutations": {
+            "_type": "undocumented",
+            "version": 1,
+            "parameters": []
+        },
+        "GetTriviaQuestionAnswersSummary": {
+            "_type": "undocumented",
+            "version": 1,
+            "parameters": []
+        }
+    },
+    "IDOTA2Events_2305270": {
+        "GetArcanaVotes": {
+            "_type": "undocumented",
+            "version": 1,
+            "parameters": []
+        },
+        "GetCurrentTriviaQuestions": {
+            "_type": "undocumented",
+            "version": 1,
+            "parameters": []
+        },
+        "GetDraftTriviaMatchInfo": {
+            "_type": "undocumented",
+            "version": 1,
+            "parameters": []
+        },
+        "GetDraftTriviaVoteCount": {
+            "_type": "undocumented",
+            "version": 1,
+            "parameters": []
+        },
+        "GetMutations": {
+            "_type": "undocumented",
+            "version": 1,
+            "parameters": []
+        },
+        "GetTriviaQuestionAnswersSummary": {
+            "_type": "undocumented",
+            "version": 1,
+            "parameters": []
+        }
+    },
     "IDOTA2Fantasy_570": {
         "GetFantasyPlayerRawStats": {
             "_type": "undocumented",
@@ -3701,6 +3936,65 @@
             "_type": "undocumented",
             "version": 1,
             "parameters": []
+        },
+        "GetPlayerInfo": {
+            "_type": "undocumented",
+            "version": 1,
+            "parameters": []
+        },
+        "GetPlayerInfos": {
+            "_type": "undocumented",
+            "version": 1,
+            "parameters": []
+        },
+        "GetProPlayerInfo": {
+            "_type": "undocumented",
+            "version": 1,
+            "parameters": []
+        }
+    },
+    "IDOTA2Fantasy_247040": {
+        "GetFantasyPlayerRawStats": {
+            "_type": "undocumented",
+            "version": 1,
+            "parameters": []
+        },
+        "GetPlayerInfo": {
+            "_type": "undocumented",
+            "version": 1,
+            "parameters": []
+        },
+        "GetPlayerInfos": {
+            "_type": "undocumented",
+            "version": 1,
+            "parameters": []
+        },
+        "GetProPlayerInfo": {
+            "_type": "undocumented",
+            "version": 1,
+            "parameters": []
+        }
+    },
+    "IDOTA2Fantasy_2305270": {
+        "GetFantasyPlayerRawStats": {
+            "_type": "undocumented",
+            "version": 1,
+            "parameters": []
+        },
+        "GetPlayerInfo": {
+            "_type": "undocumented",
+            "version": 1,
+            "parameters": []
+        },
+        "GetPlayerInfos": {
+            "_type": "undocumented",
+            "version": 1,
+            "parameters": []
+        },
+        "GetProPlayerInfo": {
+            "_type": "undocumented",
+            "version": 1,
+            "parameters": []
         }
     },
     "IDOTA2Guild_570": {
@@ -3725,7 +4019,214 @@
             "parameters": []
         }
     },
+    "IDOTA2Guild_205790": {
+        "FindGuildByTag": {
+            "_type": "undocumented",
+            "version": 1,
+            "parameters": []
+        },
+        "GetGuildPersonaInfo": {
+            "_type": "undocumented",
+            "version": 1,
+            "parameters": []
+        },
+        "GetGuildSummary": {
+            "_type": "undocumented",
+            "version": 1,
+            "parameters": []
+        },
+        "SearchForOpenGuilds": {
+            "_type": "undocumented",
+            "version": 1,
+            "parameters": []
+        }
+    },
+    "IDOTA2Guild_247040": {
+        "FindGuildByTag": {
+            "_type": "undocumented",
+            "version": 1,
+            "parameters": []
+        },
+        "GetGuildPersonaInfo": {
+            "_type": "undocumented",
+            "version": 1,
+            "parameters": []
+        },
+        "GetGuildSummary": {
+            "_type": "undocumented",
+            "version": 1,
+            "parameters": []
+        },
+        "SearchForOpenGuilds": {
+            "_type": "undocumented",
+            "version": 1,
+            "parameters": []
+        }
+    },
+    "IDOTA2Guild_2305270": {
+        "FindGuildByTag": {
+            "_type": "undocumented",
+            "version": 1,
+            "parameters": []
+        },
+        "GetGuildPersonaInfo": {
+            "_type": "undocumented",
+            "version": 1,
+            "parameters": []
+        },
+        "GetGuildSummary": {
+            "_type": "undocumented",
+            "version": 1,
+            "parameters": []
+        },
+        "SearchForOpenGuilds": {
+            "_type": "undocumented",
+            "version": 1,
+            "parameters": []
+        }
+    },
     "IDOTA2League_570": {
+        "GetLeagueData": {
+            "_type": "undocumented",
+            "version": 1,
+            "parameters": []
+        },
+        "GetLeagueInfoList": {
+            "_type": "undocumented",
+            "version": 1,
+            "parameters": []
+        },
+        "GetLeagueNodeResults": {
+            "_type": "undocumented",
+            "version": 1,
+            "parameters": []
+        },
+        "GetLeaguesData": {
+            "_type": "undocumented",
+            "version": 1,
+            "parameters": []
+        },
+        "GetLiveGames": {
+            "_type": "undocumented",
+            "version": 1,
+            "parameters": []
+        },
+        "GetMessages": {
+            "_type": "undocumented",
+            "version": 1,
+            "parameters": []
+        },
+        "GetPredictionResults": {
+            "_type": "undocumented",
+            "version": 1,
+            "parameters": []
+        },
+        "GetPredictions": {
+            "_type": "undocumented",
+            "version": 1,
+            "parameters": []
+        },
+        "GetPrizePool": {
+            "_type": "undocumented",
+            "version": 1,
+            "parameters": []
+        }
+    },
+    "IDOTA2League_205790": {
+        "GetLeagueData": {
+            "_type": "undocumented",
+            "version": 1,
+            "parameters": []
+        },
+        "GetLeagueInfoList": {
+            "_type": "undocumented",
+            "version": 1,
+            "parameters": []
+        },
+        "GetLeagueNodeResults": {
+            "_type": "undocumented",
+            "version": 1,
+            "parameters": []
+        },
+        "GetLeaguesData": {
+            "_type": "undocumented",
+            "version": 1,
+            "parameters": []
+        },
+        "GetLiveGames": {
+            "_type": "undocumented",
+            "version": 1,
+            "parameters": []
+        },
+        "GetMessages": {
+            "_type": "undocumented",
+            "version": 1,
+            "parameters": []
+        },
+        "GetPredictionResults": {
+            "_type": "undocumented",
+            "version": 1,
+            "parameters": []
+        },
+        "GetPredictions": {
+            "_type": "undocumented",
+            "version": 1,
+            "parameters": []
+        },
+        "GetPrizePool": {
+            "_type": "undocumented",
+            "version": 1,
+            "parameters": []
+        }
+    },
+    "IDOTA2League_247040": {
+        "GetLeagueData": {
+            "_type": "undocumented",
+            "version": 1,
+            "parameters": []
+        },
+        "GetLeagueInfoList": {
+            "_type": "undocumented",
+            "version": 1,
+            "parameters": []
+        },
+        "GetLeagueNodeResults": {
+            "_type": "undocumented",
+            "version": 1,
+            "parameters": []
+        },
+        "GetLeaguesData": {
+            "_type": "undocumented",
+            "version": 1,
+            "parameters": []
+        },
+        "GetLiveGames": {
+            "_type": "undocumented",
+            "version": 1,
+            "parameters": []
+        },
+        "GetMessages": {
+            "_type": "undocumented",
+            "version": 1,
+            "parameters": []
+        },
+        "GetPredictionResults": {
+            "_type": "undocumented",
+            "version": 1,
+            "parameters": []
+        },
+        "GetPredictions": {
+            "_type": "undocumented",
+            "version": 1,
+            "parameters": []
+        },
+        "GetPrizePool": {
+            "_type": "undocumented",
+            "version": 1,
+            "parameters": []
+        }
+    },
+    "IDOTA2League_2305270": {
         "GetLeagueData": {
             "_type": "undocumented",
             "version": 1,
@@ -3798,6 +4299,20 @@
                     "description": ""
                 }
             ]
+        }
+    },
+    "IDOTA2MatchStats_247040": {
+        "GetRealtimeStats": {
+            "_type": "undocumented",
+            "version": 1,
+            "parameters": []
+        }
+    },
+    "IDOTA2MatchStats_2305270": {
+        "GetRealtimeStats": {
+            "_type": "undocumented",
+            "version": 1,
+            "parameters": []
         }
     },
     "IDOTA2Match_570": {
@@ -4241,6 +4756,100 @@
             ]
         }
     },
+    "IDOTA2Match_247040": {
+        "GetLiveLeagueGames": {
+            "_type": "undocumented",
+            "version": 1,
+            "parameters": []
+        },
+        "GetMatchDetails": {
+            "_type": "undocumented",
+            "version": 1,
+            "parameters": []
+        },
+        "GetMatchHistory": {
+            "_type": "undocumented",
+            "version": 1,
+            "parameters": []
+        },
+        "GetMatchHistoryBySequenceNum": {
+            "_type": "undocumented",
+            "version": 1,
+            "parameters": []
+        },
+        "GetTeamInfoByTeamID": {
+            "_type": "undocumented",
+            "version": 1,
+            "parameters": []
+        },
+        "GetTopLiveEventGame": {
+            "_type": "undocumented",
+            "version": 1,
+            "parameters": []
+        },
+        "GetTopLiveGame": {
+            "_type": "undocumented",
+            "version": 1,
+            "parameters": []
+        },
+        "GetTopWeekendTourneyGames": {
+            "_type": "undocumented",
+            "version": 1,
+            "parameters": []
+        },
+        "GetTournamentPlayerStats": {
+            "_type": "undocumented",
+            "version": 1,
+            "parameters": []
+        }
+    },
+    "IDOTA2Match_2305270": {
+        "GetLiveLeagueGames": {
+            "_type": "undocumented",
+            "version": 1,
+            "parameters": []
+        },
+        "GetMatchDetails": {
+            "_type": "undocumented",
+            "version": 1,
+            "parameters": []
+        },
+        "GetMatchHistory": {
+            "_type": "undocumented",
+            "version": 1,
+            "parameters": []
+        },
+        "GetMatchHistoryBySequenceNum": {
+            "_type": "undocumented",
+            "version": 1,
+            "parameters": []
+        },
+        "GetTeamInfoByTeamID": {
+            "_type": "undocumented",
+            "version": 1,
+            "parameters": []
+        },
+        "GetTopLiveEventGame": {
+            "_type": "undocumented",
+            "version": 1,
+            "parameters": []
+        },
+        "GetTopLiveGame": {
+            "_type": "undocumented",
+            "version": 1,
+            "parameters": []
+        },
+        "GetTopWeekendTourneyGames": {
+            "_type": "undocumented",
+            "version": 1,
+            "parameters": []
+        },
+        "GetTournamentPlayerStats": {
+            "_type": "undocumented",
+            "version": 1,
+            "parameters": []
+        }
+    },
     "IDOTA2Operations_570": {
         "GetBannedWordList": {
             "_type": "undocumented",
@@ -4248,7 +4857,79 @@
             "parameters": []
         }
     },
+    "IDOTA2Operations_205790": {
+        "GetBannedWordList": {
+            "_type": "undocumented",
+            "version": 1,
+            "parameters": []
+        }
+    },
+    "IDOTA2Operations_247040": {
+        "GetBannedWordList": {
+            "_type": "undocumented",
+            "version": 1,
+            "parameters": []
+        }
+    },
+    "IDOTA2Operations_2305270": {
+        "GetBannedWordList": {
+            "_type": "undocumented",
+            "version": 1,
+            "parameters": []
+        }
+    },
     "IDOTA2Plus_570": {
+        "GetPlusHeroAllyAndEnemyData": {
+            "_type": "undocumented",
+            "version": 1,
+            "parameters": []
+        },
+        "GetPlusHeroTimedStats": {
+            "_type": "undocumented",
+            "version": 1,
+            "parameters": []
+        },
+        "GetPlusStatsData": {
+            "_type": "undocumented",
+            "version": 1,
+            "parameters": []
+        }
+    },
+    "IDOTA2Plus_205790": {
+        "GetPlusHeroAllyAndEnemyData": {
+            "_type": "undocumented",
+            "version": 1,
+            "parameters": []
+        },
+        "GetPlusHeroTimedStats": {
+            "_type": "undocumented",
+            "version": 1,
+            "parameters": []
+        },
+        "GetPlusStatsData": {
+            "_type": "undocumented",
+            "version": 1,
+            "parameters": []
+        }
+    },
+    "IDOTA2Plus_247040": {
+        "GetPlusHeroAllyAndEnemyData": {
+            "_type": "undocumented",
+            "version": 1,
+            "parameters": []
+        },
+        "GetPlusHeroTimedStats": {
+            "_type": "undocumented",
+            "version": 1,
+            "parameters": []
+        },
+        "GetPlusStatsData": {
+            "_type": "undocumented",
+            "version": 1,
+            "parameters": []
+        }
+    },
+    "IDOTA2Plus_2305270": {
         "GetPlusHeroAllyAndEnemyData": {
             "_type": "undocumented",
             "version": 1,
@@ -4308,9 +4989,104 @@
                     "description": "LeagueID to use if we aren't in a lobby"
                 }
             ]
+        },
+        "ListOfUsersSpectating": {
+            "_type": "undocumented",
+            "version": 1,
+            "parameters": []
+        }
+    },
+    "IDOTA2StreamSystem_247040": {
+        "GetBroadcasterInfo": {
+            "_type": "undocumented",
+            "version": 1,
+            "parameters": []
+        },
+        "ListOfUsersSpectating": {
+            "_type": "undocumented",
+            "version": 1,
+            "parameters": []
+        }
+    },
+    "IDOTA2StreamSystem_2305270": {
+        "GetBroadcasterInfo": {
+            "_type": "undocumented",
+            "version": 1,
+            "parameters": []
+        },
+        "ListOfUsersSpectating": {
+            "_type": "undocumented",
+            "version": 1,
+            "parameters": []
         }
     },
     "IDOTA2Teams_570": {
+        "GetFanContentStatus": {
+            "_type": "undocumented",
+            "version": 1,
+            "parameters": []
+        },
+        "GetPlayerInfo": {
+            "_type": "undocumented",
+            "version": 1,
+            "parameters": []
+        },
+        "GetSingleTeamInfo": {
+            "_type": "undocumented",
+            "version": 1,
+            "parameters": []
+        },
+        "GetTeamInfos": {
+            "_type": "undocumented",
+            "version": 1,
+            "parameters": []
+        }
+    },
+    "IDOTA2Teams_205790": {
+        "GetFanContentStatus": {
+            "_type": "undocumented",
+            "version": 1,
+            "parameters": []
+        },
+        "GetPlayerInfo": {
+            "_type": "undocumented",
+            "version": 1,
+            "parameters": []
+        },
+        "GetSingleTeamInfo": {
+            "_type": "undocumented",
+            "version": 1,
+            "parameters": []
+        },
+        "GetTeamInfos": {
+            "_type": "undocumented",
+            "version": 1,
+            "parameters": []
+        }
+    },
+    "IDOTA2Teams_247040": {
+        "GetFanContentStatus": {
+            "_type": "undocumented",
+            "version": 1,
+            "parameters": []
+        },
+        "GetPlayerInfo": {
+            "_type": "undocumented",
+            "version": 1,
+            "parameters": []
+        },
+        "GetSingleTeamInfo": {
+            "_type": "undocumented",
+            "version": 1,
+            "parameters": []
+        },
+        "GetTeamInfos": {
+            "_type": "undocumented",
+            "version": 1,
+            "parameters": []
+        }
+    },
+    "IDOTA2Teams_2305270": {
         "GetFanContentStatus": {
             "_type": "undocumented",
             "version": 1,
@@ -4468,7 +5244,62 @@
             ]
         }
     },
+    "IDOTA2Ticket_247040": {
+        "GetSteamIDForBadgeID": {
+            "_type": "undocumented",
+            "version": 1,
+            "parameters": []
+        },
+        "SetSteamAccountPurchased": {
+            "_type": "undocumented",
+            "version": 1,
+            "parameters": []
+        },
+        "SteamAccountValidForBadgeType": {
+            "_type": "undocumented",
+            "version": 1,
+            "parameters": []
+        }
+    },
+    "IDOTA2Ticket_2305270": {
+        "GetSteamIDForBadgeID": {
+            "_type": "undocumented",
+            "version": 1,
+            "parameters": []
+        },
+        "SetSteamAccountPurchased": {
+            "_type": "undocumented",
+            "version": 1,
+            "parameters": []
+        },
+        "SteamAccountValidForBadgeType": {
+            "_type": "undocumented",
+            "version": 1,
+            "parameters": []
+        }
+    },
     "IDOTAChat_570": {
+        "GetChannelMembers": {
+            "_type": "undocumented",
+            "version": 1,
+            "parameters": []
+        }
+    },
+    "IDOTAChat_205790": {
+        "GetChannelMembers": {
+            "_type": "undocumented",
+            "version": 1,
+            "parameters": []
+        }
+    },
+    "IDOTAChat_247040": {
+        "GetChannelMembers": {
+            "_type": "undocumented",
+            "version": 1,
+            "parameters": []
+        }
+    },
+    "IDOTAChat_2305270": {
         "GetChannelMembers": {
             "_type": "undocumented",
             "version": 1,
@@ -4681,6 +5512,80 @@
                     "description": "The ID of the league to get the prize pool of"
                 }
             ]
+        }
+    },
+    "IEconDOTA2_247040": {
+        "GetEventStatsForAccount": {
+            "_type": "undocumented",
+            "version": 1,
+            "parameters": []
+        },
+        "GetGameItems": {
+            "_type": "undocumented",
+            "version": 1,
+            "parameters": []
+        },
+        "GetHeroes": {
+            "_type": "undocumented",
+            "version": 1,
+            "parameters": []
+        },
+        "GetItemCreators": {
+            "_type": "undocumented",
+            "version": 1,
+            "parameters": []
+        },
+        "GetItemWorkshopPublishedFileIDs": {
+            "_type": "undocumented",
+            "version": 1,
+            "parameters": []
+        },
+        "GetRarities": {
+            "_type": "undocumented",
+            "version": 1,
+            "parameters": []
+        },
+        "GetTournamentPrizePool": {
+            "_type": "undocumented",
+            "version": 1,
+            "parameters": []
+        }
+    },
+    "IEconDOTA2_2305270": {
+        "GetEventStatsForAccount": {
+            "_type": "undocumented",
+            "version": 1,
+            "parameters": []
+        },
+        "GetGameItems": {
+            "_type": "undocumented",
+            "version": 1,
+            "parameters": []
+        },
+        "GetHeroes": {
+            "_type": "undocumented",
+            "version": 1,
+            "parameters": []
+        },
+        "GetItemCreators": {
+            "_type": "undocumented",
+            "version": 1,
+            "parameters": []
+        },
+        "GetItemWorkshopPublishedFileIDs": {
+            "_type": "undocumented",
+            "version": 1,
+            "parameters": []
+        },
+        "GetRarities": {
+            "_type": "undocumented",
+            "version": 1,
+            "parameters": []
+        },
+        "GetTournamentPrizePool": {
+            "_type": "undocumented",
+            "version": 1,
+            "parameters": []
         }
     },
     "IEconItems_440": {
@@ -4952,6 +5857,16 @@
             "_type": "undocumented",
             "version": 1,
             "parameters": []
+        },
+        "GetPlayerItems": {
+            "_type": "undocumented",
+            "version": 1,
+            "parameters": []
+        },
+        "GetStoreMetaData": {
+            "_type": "undocumented",
+            "version": 1,
+            "parameters": []
         }
     },
     "IEconItems_583950": {
@@ -4972,6 +5887,13 @@
                     "description": "Return items equipped for this class id"
                 }
             ]
+        }
+    },
+    "IEconItems_1024290": {
+        "GetPlayerItems": {
+            "_type": "undocumented",
+            "version": 1,
+            "parameters": []
         }
     },
     "IEconItems_1046930": {
@@ -5017,6 +5939,16 @@
     },
     "IEconItems_2305270": {
         "GetEquippedPlayerItems": {
+            "_type": "undocumented",
+            "version": 1,
+            "parameters": []
+        },
+        "GetPlayerItems": {
+            "_type": "undocumented",
+            "version": 1,
+            "parameters": []
+        },
+        "GetStoreMetaData": {
             "_type": "undocumented",
             "version": 1,
             "parameters": []
