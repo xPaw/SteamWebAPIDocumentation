@@ -1,5 +1,4 @@
 <template>
-	<div>
 		<div class="py-2 no-select header" role="banner">
 			<div class="container">
 				<div class="row">
@@ -343,7 +342,6 @@
 				</div>
 			</div>
 		</div>
-	</div>
 </template>
 
 <script src="./App.ts" lang="ts"></script>
