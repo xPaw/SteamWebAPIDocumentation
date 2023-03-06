@@ -1,4 +1,4 @@
-import type { SidebarGroupData, SidebarGroupDataWithMethods, ApiServices, ApiInterface, ApiMethod, ApiMethodParameter } from './interfaces';
+import type { SidebarGroupData, ApiServices, ApiInterface, ApiMethod, ApiMethodParameter } from './interfaces';
 
 import { defineComponent } from 'vue'
 import Fuse from 'fuse.js'
