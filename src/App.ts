@@ -171,8 +171,7 @@ export default defineComponent({
 				return groups;
 			}
 
-			const defaultGroup = this.userData.favorites.size > 0 ? 'All interfaces' : '';
-			groups[defaultGroup] = {} as ApiServices;
+			groups["Steam"] = {} as ApiServices;
 			groups["CSGO"] = {} as ApiServices;
 			groups["Dota"] = {} as ApiServices;
 			groups["Other Games"] = {} as ApiServices;
@@ -189,7 +188,7 @@ export default defineComponent({
 				else if (/_[0-9]+$/.test(interfaceName)) {
 					group = "Other Games";
 				} else {
-					group = defaultGroup;
+					group = "Steam";
 				}
 
 				groups[group][interfaceName] = interfaces[interfaceName];
@@ -419,6 +418,8 @@ export default defineComponent({
 			this.scrollInterfaceIntoView();
 		},
 		focusApikey(): void {
+			location.hash = '';
+
 			this.currentInterface = '';
 			this.currentFilter = '';
 

@@ -15,7 +15,7 @@
 						>
 					</div>
 					<div class="col-lg-9">
-						<h1><a href="#" @click.prevent="currentInterface = ''">Steam Web API Documentation</a></h1>
+						<h1><a href="#" @click.prevent="focusApikey">Steam Web API Documentation</a></h1>
 						<span class="separator" v-if="currentInterface !== ''"> / </span>
 						<h2 v-if="currentInterface !== ''">{{ currentInterface }}</h2>
 						<span v-else> with &hearts; by <a href="https://xpaw.me">xPaw</a></span>
@@ -293,10 +293,10 @@
 													<button type="button" class="btn btn-secondary add-param-array" v-if="parameter.name.endsWith( '[0]' )" @click="addParamArray(method, parameter)">+</button>
 												</td>
 												<td class="font-monospace p-0">
-													<div v-if="parameter.name === 'key'" class="prefilled-key" @click="focusApikey">
+													<a v-if="parameter.name === 'key'" class="prefilled-key" href="#" @click.prevent="focusApikey">
 														<span v-if="hasValidAccessToken || hasValidWebApiKey" class="text-success">filled</span>
 														<span v-else class="text-warning">fill…</span>
-													</div>
+													</a>
 													<div class="form-check form-switch m-2" v-else-if="parameter.type === 'bool'">
 														<input
 															type="hidden"
