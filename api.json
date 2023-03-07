@@ -5668,25 +5668,6 @@
         }
     },
     "IEconItems_570": {
-        "GetEquippedPlayerItems": {
-            "_type": "undocumented",
-            "version": 1,
-            "httpmethod": "GET",
-            "parameters": [
-                {
-                    "name": "steamid",
-                    "type": "uint64",
-                    "optional": false,
-                    "description": "The Steam ID to fetch items for"
-                },
-                {
-                    "name": "class_id",
-                    "type": "uint32",
-                    "optional": false,
-                    "description": "Return items equipped for this class id"
-                }
-            ]
-        },
         "GetPlayerItems": {
             "version": 1,
             "httpmethod": "GET",
@@ -5931,19 +5912,7 @@
             ]
         }
     },
-    "IEconItems_1422450": {
-        "GetEquippedPlayerItems": {
-            "_type": "undocumented",
-            "version": 1,
-            "parameters": []
-        }
-    },
     "IEconItems_2305270": {
-        "GetEquippedPlayerItems": {
-            "_type": "undocumented",
-            "version": 1,
-            "parameters": []
-        },
         "GetPlayerItems": {
             "_type": "undocumented",
             "version": 1,
