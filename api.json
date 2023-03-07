@@ -5332,6 +5332,7 @@
             ]
         },
         "GetGameItems": {
+            "_type": "undocumented",
             "version": 1,
             "httpmethod": "GET",
             "parameters": [
