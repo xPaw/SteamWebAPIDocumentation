@@ -11053,6 +11053,12 @@
                     "description": "At least one of the tags must be present on a published file to satisfy the query."
                 },
                 {
+                    "name": "excluded_content_descriptors",
+                    "type": "{enum}",
+                    "optional": true,
+                    "description": "Filter out items that have these content descriptors."
+                },
+                {
                     "name": "totalonly",
                     "type": "bool",
                     "optional": true,
@@ -11256,6 +11262,12 @@
                     "type": "{message}",
                     "optional": true,
                     "description": "At least one of the tags must be present on a published file to satisfy the query."
+                },
+                {
+                    "name": "excluded_content_descriptors",
+                    "type": "{enum}",
+                    "optional": true,
+                    "description": "Filter out items that have these content descriptors."
                 },
                 {
                     "name": "totalonly",
@@ -11619,6 +11631,12 @@
                     "type": "{message}",
                     "optional": true,
                     "description": "Filter to items updated within this range."
+                },
+                {
+                    "name": "excluded_content_descriptors",
+                    "type": "{enum}",
+                    "optional": true,
+                    "description": "Filter out items that have these content descriptors."
                 },
                 {
                     "name": "totalonly",
