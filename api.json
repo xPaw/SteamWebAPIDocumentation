@@ -14408,6 +14408,49 @@
                 }
             ]
         },
+        "InferenceBackend": {
+            "_type": "undocumented",
+            "version": 1,
+            "httpmethod": "POST",
+            "parameters": [
+                {
+                    "name": "key",
+                    "type": "string",
+                    "optional": false,
+                    "description": "Access key"
+                },
+                {
+                    "name": "project_id",
+                    "type": "uint32",
+                    "optional": true,
+                    "description": ""
+                },
+                {
+                    "name": "fetch_id",
+                    "type": "uint32",
+                    "optional": true,
+                    "description": ""
+                },
+                {
+                    "name": "train_id",
+                    "type": "uint32",
+                    "optional": true,
+                    "description": ""
+                },
+                {
+                    "name": "data",
+                    "type": "CMsgSteamLearnRawDataElement",
+                    "optional": true,
+                    "description": ""
+                },
+                {
+                    "name": "additional_data[0]",
+                    "type": "uint32[]",
+                    "optional": true,
+                    "description": ""
+                }
+            ]
+        },
         "ListDataSources": {
             "_type": "undocumented",
             "version": 1,
@@ -18811,6 +18854,78 @@
                     "type": "fixed64",
                     "optional": true,
                     "description": ""
+                }
+            ]
+        }
+    },
+    "IUserGameNotesService": {
+        "DeleteNote": {
+            "_type": "undocumented",
+            "version": 1,
+            "httpmethod": "POST",
+            "parameters": [
+                {
+                    "name": "key",
+                    "type": "string",
+                    "optional": false,
+                    "description": "Access key"
+                }
+            ]
+        },
+        "GetGamesWithNotes": {
+            "_type": "undocumented",
+            "version": 1,
+            "httpmethod": "POST",
+            "parameters": [
+                {
+                    "name": "key",
+                    "type": "string",
+                    "optional": false,
+                    "description": "Access key"
+                }
+            ]
+        },
+        "GetNotesForGame": {
+            "_type": "undocumented",
+            "version": 1,
+            "httpmethod": "POST",
+            "parameters": [
+                {
+                    "name": "key",
+                    "type": "string",
+                    "optional": false,
+                    "description": "Access key"
+                },
+                {
+                    "name": "appid",
+                    "type": "uint32",
+                    "optional": true,
+                    "description": ""
+                },
+                {
+                    "name": "shortcut_name",
+                    "type": "string",
+                    "optional": true,
+                    "description": ""
+                },
+                {
+                    "name": "shortcutid",
+                    "type": "uint32",
+                    "optional": true,
+                    "description": ""
+                }
+            ]
+        },
+        "SaveNote": {
+            "_type": "undocumented",
+            "version": 1,
+            "httpmethod": "POST",
+            "parameters": [
+                {
+                    "name": "key",
+                    "type": "string",
+                    "optional": false,
+                    "description": "Access key"
                 }
             ]
         }
