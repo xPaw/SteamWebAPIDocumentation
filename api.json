@@ -13268,7 +13268,7 @@
             ]
         },
         "GetSDRConfig": {
-            "version": 2,
+            "version": 1,
             "httpmethod": "GET",
             "parameters": [
                 {
@@ -13280,6 +13280,7 @@
             ]
         },
         "GetSDRConfigLegacy": {
+            "_type": "undocumented",
             "version": 1,
             "httpmethod": "GET",
             "parameters": [
