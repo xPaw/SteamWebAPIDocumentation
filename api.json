@@ -17487,6 +17487,7 @@
             "parameters": []
         },
         "PollStatus": {
+            "_type": "undocumented",
             "version": 1,
             "httpmethod": "POST",
             "parameters": [
