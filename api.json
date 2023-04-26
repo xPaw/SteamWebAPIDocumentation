@@ -5331,19 +5331,6 @@
                 }
             ]
         },
-        "GetGameItems": {
-            "_type": "undocumented",
-            "version": 1,
-            "httpmethod": "GET",
-            "parameters": [
-                {
-                    "name": "language",
-                    "type": "string",
-                    "optional": true,
-                    "description": "The language to provide item names in."
-                }
-            ]
-        },
         "GetHeroes": {
             "version": 1,
             "httpmethod": "GET",
@@ -5835,11 +5822,6 @@
         }
     },
     "IEconItems_247040": {
-        "GetEquippedPlayerItems": {
-            "_type": "undocumented",
-            "version": 1,
-            "parameters": []
-        },
         "GetPlayerItems": {
             "_type": "undocumented",
             "version": 1,
@@ -10711,6 +10693,19 @@
                 }
             ]
         },
+        "SendNotification": {
+            "_type": "undocumented",
+            "version": 1,
+            "httpmethod": "POST",
+            "parameters": [
+                {
+                    "name": "key",
+                    "type": "string",
+                    "optional": false,
+                    "description": "Access key"
+                }
+            ]
+        },
         "UpdatePlan": {
             "_type": "undocumented",
             "version": 1,
@@ -13279,19 +13274,6 @@
                 }
             ]
         },
-        "GetSDRConfigLegacy": {
-            "_type": "undocumented",
-            "version": 1,
-            "httpmethod": "GET",
-            "parameters": [
-                {
-                    "name": "appid",
-                    "type": "uint32",
-                    "optional": false,
-                    "description": "AppID of game"
-                }
-            ]
-        },
         "GetServerList": {
             "_type": "publisher_only",
             "version": 1,
@@ -14449,6 +14431,19 @@
                     "type": "uint32[]",
                     "optional": true,
                     "description": ""
+                }
+            ]
+        },
+        "InferenceMetadata": {
+            "_type": "undocumented",
+            "version": 1,
+            "httpmethod": "POST",
+            "parameters": [
+                {
+                    "name": "key",
+                    "type": "string",
+                    "optional": false,
+                    "description": "Access key"
                 }
             ]
         },
@@ -17485,55 +17480,6 @@
             "_type": "undocumented",
             "version": 1,
             "parameters": []
-        },
-        "PollStatus": {
-            "_type": "undocumented",
-            "version": 1,
-            "httpmethod": "POST",
-            "parameters": [
-                {
-                    "name": "steamid",
-                    "type": "string",
-                    "optional": false,
-                    "description": "Steam ID of the user"
-                },
-                {
-                    "name": "umqid",
-                    "type": "uint64",
-                    "optional": false,
-                    "description": "UMQ Session ID"
-                },
-                {
-                    "name": "message",
-                    "type": "uint32",
-                    "optional": false,
-                    "description": "Message that was last known to the user"
-                },
-                {
-                    "name": "pollid",
-                    "type": "uint32",
-                    "optional": true,
-                    "description": "Caller-specific poll id"
-                },
-                {
-                    "name": "sectimeout",
-                    "type": "uint32",
-                    "optional": true,
-                    "description": "Long-poll timeout in seconds"
-                },
-                {
-                    "name": "secidletime",
-                    "type": "uint32",
-                    "optional": true,
-                    "description": "How many seconds is client considering itself idle, e.g. screen is off"
-                },
-                {
-                    "name": "use_accountids",
-                    "type": "uint32",
-                    "optional": true,
-                    "description": "Boolean, 0 (default): return steamid_from in output, 1: return accountid_from"
-                }
-            ]
         }
     },
     "ISteamWorkshop": {
@@ -18141,6 +18087,31 @@
                     "type": "string",
                     "optional": true,
                     "description": ""
+                }
+            ]
+        },
+        "GetTagList": {
+            "_type": "undocumented",
+            "version": 1,
+            "description": "Get the list of tags, localized",
+            "parameters": [
+                {
+                    "name": "key",
+                    "type": "string",
+                    "optional": false,
+                    "description": "Access key"
+                },
+                {
+                    "name": "language",
+                    "type": "string",
+                    "optional": true,
+                    "description": ""
+                },
+                {
+                    "name": "have_version_hash",
+                    "type": "string",
+                    "optional": true,
+                    "description": "The hash returned in the last call.  Will return no results if the list hasn't changed."
                 }
             ]
         },
