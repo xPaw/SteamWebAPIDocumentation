@@ -427,6 +427,32 @@
                 }
             ]
         },
+        "RevokeToken": {
+            "_type": "undocumented",
+            "version": 1,
+            "httpmethod": "POST",
+            "description": "Revoke a single token immediately, making it unable to renew or generate new access tokens",
+            "parameters": [
+                {
+                    "name": "key",
+                    "type": "string",
+                    "optional": false,
+                    "description": "Access key"
+                },
+                {
+                    "name": "token",
+                    "type": "string",
+                    "optional": true,
+                    "description": ""
+                },
+                {
+                    "name": "revoke_action",
+                    "type": "EAuthTokenRevokeAction",
+                    "optional": true,
+                    "description": "Select between logout and logout-and-forget-machine"
+                }
+            ]
+        },
         "UpdateAuthSessionWithMobileConfirmation": {
             "version": 1,
             "httpmethod": "POST",
@@ -5304,6 +5330,95 @@
             "_type": "undocumented",
             "version": 1,
             "parameters": []
+        }
+    },
+    "IDataPublisherService": {
+        "AddVRDeviceInfo": {
+            "_type": "undocumented",
+            "version": 1,
+            "description": "Adds a device to the VRDeviceInfo table for the hardware survey",
+            "parameters": [
+                {
+                    "name": "key",
+                    "type": "string",
+                    "optional": false,
+                    "description": "Access key"
+                },
+                {
+                    "name": "manufacturer",
+                    "type": "string",
+                    "optional": true,
+                    "description": "Manufacturer for the new device"
+                },
+                {
+                    "name": "model",
+                    "type": "string",
+                    "optional": true,
+                    "description": "Model for the new device"
+                },
+                {
+                    "name": "driver",
+                    "type": "string",
+                    "optional": true,
+                    "description": "driver name (not including driver_). e.g. lighthouse, oculus, holographic"
+                },
+                {
+                    "name": "controller_type",
+                    "type": "string",
+                    "optional": true,
+                    "description": "controller type for the device. Can be an empty string for devices with no inputs"
+                },
+                {
+                    "name": "device_class",
+                    "type": "int32",
+                    "optional": true,
+                    "description": "Class of the device. HMD=1, controller=2, tracker=3, base=4"
+                }
+            ]
+        },
+        "GetVRDeviceInfo": {
+            "_type": "undocumented",
+            "version": 1,
+            "description": "Generate a debug report of what devices are in the survey",
+            "parameters": [
+                {
+                    "name": "key",
+                    "type": "string",
+                    "optional": false,
+                    "description": "Access key"
+                },
+                {
+                    "name": "month_count",
+                    "type": "uint32",
+                    "optional": true,
+                    "description": "Number of months for which to generate a report"
+                }
+            ]
+        },
+        "SetVRDeviceInfoAggregationReference": {
+            "_type": "undocumented",
+            "version": 1,
+            "description": "Set the rollup reference of a single VR device",
+            "parameters": [
+                {
+                    "name": "key",
+                    "type": "string",
+                    "optional": false,
+                    "description": "Access key"
+                },
+                {
+                    "name": "ref",
+                    "type": "uint32",
+                    "optional": true,
+                    "description": "Reference number in the VRDeviceInfo table for the entry to set"
+                },
+                {
+                    "name": "aggregation_ref",
+                    "type": "uint32",
+                    "optional": true,
+                    "description": "Aggregation to set the entry to"
+                }
+            ]
         }
     },
     "IEconDOTA2_570": {
