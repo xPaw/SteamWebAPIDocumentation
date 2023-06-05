@@ -59,7 +59,7 @@ export default defineComponent({
 				// Beta apps
 				[205790, { name: 'Dota 2 Test', icon: 'dota.jpg', open: false, methods: {} }],
 				[247040, { name: 'Dota 2 Experimental', icon: 'dota.jpg', open: false, methods: {} }],
-				[2305270, { name: 'Dota 2 Staging', icon: 'dota.jpg', open: false, methods: {}}],
+				[2305270, { name: 'Dota 2 Staging', icon: 'dota.jpg', open: false, methods: {} }],
 				[1024290, { name: 'Dota Underlods Beta', icon: 'underlords.jpg', open: false, methods: {} }],
 			]),
 		}
@@ -106,7 +106,7 @@ export default defineComponent({
 				this.userData.webapi_key = loadLocalStorage('webapi_key') ?? '';
 				this.userData.access_token = loadLocalStorage('access_token') ?? '';
 				this.userData.steamid = loadLocalStorage('steamid') ?? '';
-				this.userData.format = loadLocalStorage('format') ?? '';
+				this.userData.format = loadLocalStorage('format') ?? 'json';
 
 				const favoriteStrings = JSON.parse(loadLocalStorage('favorites') ?? '[]');
 
