@@ -20,7 +20,13 @@ const loadLocalStorage = (key: string) => localStorage.getItem(key);
 const removeLocalStorage = (key: string) => localStorage.removeItem(key);
 
 export default defineComponent({
-	components: {SuccessIcon, ExecuteIcon, EmptyStarIcon, FilledStarIcon, CopyIcon},
+	components: {
+		SuccessIcon,
+		ExecuteIcon,
+		EmptyStarIcon,
+		FilledStarIcon,
+		CopyIcon
+	},
 	data() {
 		return {
 			userData: {
@@ -41,20 +47,20 @@ export default defineComponent({
 			groupsMap: new Map<string, number>(),
 			groupsData: new Map<number, SidebarGroupData>([
 				// Order of apps here defines the order in the sidebar
-				[0, {name: 'Steam', icon: 'steam.jpg', open: true, methods: {}}],
-				[730, {name: 'CS:GO', icon: 'csgo.jpg', open: true, methods: {}}],
-				[570, {name: 'Dota 2', icon: 'dota.jpg', open: true, methods: {}}],
-				[440, {name: 'Team Fortress 2', icon: 'tf.jpg', open: true, methods: {}}],
-				[620, {name: 'Portal 2', icon: 'portal2.jpg', open: true, methods: {}}],
-				[1046930, {name: 'Dota Underlords', icon: 'underlords.jpg', open: true, methods: {}}],
-				[583950, {name: 'Artifact Classic', icon: 'artifact.jpg', open: true, methods: {}}],
-				[1269260, {name: 'Artifact Foundry', icon: 'artifact.jpg', open: true, methods: {}}],
+				[0, { name: 'Steam', icon: 'steam.jpg', open: true, methods: {} }],
+				[730, { name: 'CS:GO', icon: 'csgo.jpg', open: true, methods: {} }],
+				[570, { name: 'Dota 2', icon: 'dota.jpg', open: true, methods: {} }],
+				[440, { name: 'Team Fortress 2', icon: 'tf.jpg', open: true, methods: {} }],
+				[620, { name: 'Portal 2', icon: 'portal2.jpg', open: true, methods: {} }],
+				[1046930, { name: 'Dota Underlords', icon: 'underlords.jpg', open: true, methods: {} }],
+				[583950, { name: 'Artifact Classic', icon: 'artifact.jpg', open: true, methods: {} }],
+				[1269260, { name: 'Artifact Foundry', icon: 'artifact.jpg', open: true, methods: {} }],
 
 				// Beta apps
-				[205790, {name: 'Dota 2 Test', icon: 'dota.jpg', open: false, methods: {}}],
-				[247040, {name: 'Dota 2 Experimental', icon: 'dota.jpg', open: false, methods: {}}],
-				[2305270, {name: 'Dota 2 Staging', icon: 'dota.jpg', open: false, methods: {}}],
-				[1024290, {name: 'Dota Underlods Beta', icon: 'underlords.jpg', open: false, methods: {}}],
+				[205790, { name: 'Dota 2 Test', icon: 'dota.jpg', open: false, methods: {} }],
+				[247040, { name: 'Dota 2 Experimental', icon: 'dota.jpg', open: false, methods: {} }],
+				[2305270, { name: 'Dota 2 Staging', icon: 'dota.jpg', open: false, methods: {}}],
+				[1024290, { name: 'Dota Underlods Beta', icon: 'underlords.jpg', open: false, methods: {} }],
 			]),
 		}
 	},
