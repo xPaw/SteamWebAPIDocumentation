@@ -23,7 +23,7 @@ export interface ApiMethod {
 }
 
 export interface ApiMethodParameter {
-	_value?: string
+	_value?: string | boolean
 	_counter?: number
 	manuallyToggled?: boolean
 
