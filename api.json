@@ -13359,7 +13359,7 @@
         },
         "GetPartnerAppListForWebAPIKey": {
             "_type": "publisher_only",
-            "version": 1,
+            "version": 2,
             "httpmethod": "GET",
             "parameters": [
                 {
