@@ -5924,6 +5924,7 @@
     },
     "IEconItems_238460": {
         "GetPlayerItems": {
+            "_type": "publisher_only",
             "version": 1,
             "httpmethod": "GET",
             "parameters": [
