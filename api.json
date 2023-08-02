@@ -9002,6 +9002,26 @@
                 }
             ]
         },
+        "GetMarketingMessageViewerStats": {
+            "_type": "undocumented",
+            "version": 1,
+            "httpmethod": "POST",
+            "description": "For a specific marketing message, then all of the viewership stats for the date range it was intended to be visible to customers",
+            "parameters": [
+                {
+                    "name": "key",
+                    "type": "string",
+                    "optional": false,
+                    "description": "Access key"
+                },
+                {
+                    "name": "gid",
+                    "type": "fixed64",
+                    "optional": true,
+                    "description": ""
+                }
+            ]
+        },
         "GetMarketingMessagesForUser": {
             "_type": "undocumented",
             "version": 1,
@@ -9054,6 +9074,32 @@
                     "type": "StoreBrowseItemDataRequest",
                     "optional": true,
                     "description": "If passed, item data will be returned"
+                }
+            ]
+        },
+        "GetMarketingMessagesViewerRangeStats": {
+            "_type": "undocumented",
+            "version": 1,
+            "httpmethod": "POST",
+            "description": "For a time range, return the seen stats across all of the marketing messages",
+            "parameters": [
+                {
+                    "name": "key",
+                    "type": "string",
+                    "optional": false,
+                    "description": "Access key"
+                },
+                {
+                    "name": "rt_start_time",
+                    "type": "uint32",
+                    "optional": true,
+                    "description": ""
+                },
+                {
+                    "name": "rt_end_time",
+                    "type": "uint32",
+                    "optional": true,
+                    "description": ""
                 }
             ]
         },
@@ -9668,6 +9714,32 @@
                 },
                 {
                     "name": "code",
+                    "type": "string",
+                    "optional": true,
+                    "description": ""
+                }
+            ]
+        }
+    },
+    "IPhysicalGoodsService": {
+        "CheckInventoryAvailableByPackage": {
+            "_type": "undocumented",
+            "version": 1,
+            "parameters": [
+                {
+                    "name": "key",
+                    "type": "string",
+                    "optional": false,
+                    "description": "Access key"
+                },
+                {
+                    "name": "packageid",
+                    "type": "int32",
+                    "optional": true,
+                    "description": ""
+                },
+                {
+                    "name": "country_code",
                     "type": "string",
                     "optional": true,
                     "description": ""
@@ -13211,6 +13283,78 @@
             ]
         }
     },
+    "IShoppingCartService": {
+        "AddBundle": {
+            "_type": "undocumented",
+            "version": 1,
+            "httpmethod": "POST",
+            "parameters": [
+                {
+                    "name": "key",
+                    "type": "string",
+                    "optional": false,
+                    "description": "Access key"
+                }
+            ]
+        },
+        "AddPackages": {
+            "_type": "undocumented",
+            "version": 1,
+            "httpmethod": "POST",
+            "parameters": [
+                {
+                    "name": "key",
+                    "type": "string",
+                    "optional": false,
+                    "description": "Access key"
+                }
+            ]
+        },
+        "CreateNewShoppingCart": {
+            "_type": "undocumented",
+            "version": 1,
+            "httpmethod": "POST",
+            "parameters": [
+                {
+                    "name": "key",
+                    "type": "string",
+                    "optional": false,
+                    "description": "Access key"
+                }
+            ]
+        },
+        "GetShoppingCartContents": {
+            "_type": "undocumented",
+            "version": 1,
+            "parameters": [
+                {
+                    "name": "key",
+                    "type": "string",
+                    "optional": false,
+                    "description": "Access key"
+                },
+                {
+                    "name": "gidshoppingcart",
+                    "type": "uint64",
+                    "optional": true,
+                    "description": ""
+                }
+            ]
+        },
+        "RemoveLineItems": {
+            "_type": "undocumented",
+            "version": 1,
+            "httpmethod": "POST",
+            "parameters": [
+                {
+                    "name": "key",
+                    "type": "string",
+                    "optional": false,
+                    "description": "Access key"
+                }
+            ]
+        }
+    },
     "ISiteLicenseService": {
         "GetCurrentClientConnections": {
             "_type": "undocumented",
@@ -14469,6 +14613,30 @@
                 }
             ]
         },
+        "GetLogEvents": {
+            "_type": "undocumented",
+            "version": 1,
+            "parameters": [
+                {
+                    "name": "key",
+                    "type": "string",
+                    "optional": false,
+                    "description": "Access key"
+                },
+                {
+                    "name": "look_behind_days",
+                    "type": "uint32",
+                    "optional": true,
+                    "description": ""
+                },
+                {
+                    "name": "look_ahead_days",
+                    "type": "uint32",
+                    "optional": true,
+                    "description": ""
+                }
+            ]
+        },
         "GetProject": {
             "_type": "undocumented",
             "version": 1,
@@ -14639,6 +14807,42 @@
                     "type": "string",
                     "optional": false,
                     "description": "Access key"
+                }
+            ]
+        },
+        "SetTrainLive": {
+            "_type": "undocumented",
+            "version": 1,
+            "parameters": [
+                {
+                    "name": "key",
+                    "type": "string",
+                    "optional": false,
+                    "description": "Access key"
+                },
+                {
+                    "name": "project_id",
+                    "type": "uint32",
+                    "optional": true,
+                    "description": ""
+                },
+                {
+                    "name": "published_version",
+                    "type": "uint32",
+                    "optional": true,
+                    "description": ""
+                },
+                {
+                    "name": "train_id",
+                    "type": "uint32",
+                    "optional": true,
+                    "description": ""
+                },
+                {
+                    "name": "from_scheduled",
+                    "type": "bool",
+                    "optional": true,
+                    "description": ""
                 }
             ]
         },
@@ -15611,6 +15815,19 @@
                     "type": "bool",
                     "optional": true,
                     "description": ""
+                }
+            ]
+        },
+        "MarkNotificationsViewed": {
+            "_type": "undocumented",
+            "version": 1,
+            "httpmethod": "POST",
+            "parameters": [
+                {
+                    "name": "key",
+                    "type": "string",
+                    "optional": false,
+                    "description": "Access key"
                 }
             ]
         },
