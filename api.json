@@ -18521,6 +18521,38 @@
                 }
             ]
         },
+        "MigratePartnerLinkTracking": {
+            "_type": "undocumented",
+            "version": 1,
+            "httpmethod": "POST",
+            "description": "Move UTM data from the PartnerLinkTrackingLogNoUser table to the PartnerLinkTrackingLogWithUser table",
+            "parameters": [
+                {
+                    "name": "key",
+                    "type": "string",
+                    "optional": false,
+                    "description": "Access key"
+                },
+                {
+                    "name": "accountid",
+                    "type": "uint32",
+                    "optional": true,
+                    "description": ""
+                },
+                {
+                    "name": "browserid",
+                    "type": "uint64",
+                    "optional": true,
+                    "description": ""
+                },
+                {
+                    "name": "backfill_source",
+                    "type": "EPartnerLinkTrackingBackfillSource",
+                    "optional": true,
+                    "description": ""
+                }
+            ]
+        },
         "SkipDiscoveryQueueItem": {
             "_type": "undocumented",
             "version": 1,
