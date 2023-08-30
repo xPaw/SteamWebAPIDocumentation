@@ -9467,6 +9467,119 @@
         }
     },
     "IParentalService": {
+        "ApproveFeatureAccess": {
+            "_type": "undocumented",
+            "version": 1,
+            "httpmethod": "POST",
+            "parameters": [
+                {
+                    "name": "key",
+                    "type": "string",
+                    "optional": false,
+                    "description": "Access key"
+                },
+                {
+                    "name": "approve",
+                    "type": "bool",
+                    "optional": true,
+                    "description": ""
+                },
+                {
+                    "name": "requestid",
+                    "type": "fixed64",
+                    "optional": true,
+                    "description": ""
+                },
+                {
+                    "name": "features",
+                    "type": "uint32",
+                    "optional": true,
+                    "description": ""
+                },
+                {
+                    "name": "duration",
+                    "type": "uint32",
+                    "optional": true,
+                    "description": ""
+                },
+                {
+                    "name": "steamid",
+                    "type": "fixed64",
+                    "optional": true,
+                    "description": ""
+                }
+            ]
+        },
+        "DisableParentalSettings": {
+            "_type": "undocumented",
+            "version": 1,
+            "httpmethod": "POST",
+            "description": "Disable parental settings for the logged in account",
+            "parameters": [
+                {
+                    "name": "key",
+                    "type": "string",
+                    "optional": false,
+                    "description": "Access key"
+                },
+                {
+                    "name": "password",
+                    "type": "string",
+                    "optional": true,
+                    "description": ""
+                },
+                {
+                    "name": "steamid",
+                    "type": "fixed64",
+                    "optional": true,
+                    "description": ""
+                }
+            ]
+        },
+        "EnableParentalSettings": {
+            "_type": "undocumented",
+            "version": 1,
+            "httpmethod": "POST",
+            "description": "Enable parental settings for the logged in account, optionally setting the current settings",
+            "parameters": [
+                {
+                    "name": "key",
+                    "type": "string",
+                    "optional": false,
+                    "description": "Access key"
+                },
+                {
+                    "name": "password",
+                    "type": "string",
+                    "optional": true,
+                    "description": ""
+                },
+                {
+                    "name": "settings",
+                    "type": "ParentalSettings",
+                    "optional": true,
+                    "description": ""
+                },
+                {
+                    "name": "sessionid",
+                    "type": "string",
+                    "optional": true,
+                    "description": ""
+                },
+                {
+                    "name": "enablecode",
+                    "type": "uint32",
+                    "optional": true,
+                    "description": ""
+                },
+                {
+                    "name": "steamid",
+                    "type": "fixed64",
+                    "optional": true,
+                    "description": ""
+                }
+            ]
+        },
         "GetParentalSettings": {
             "_type": "undocumented",
             "version": 1,
@@ -9520,6 +9633,89 @@
                 {
                     "name": "session",
                     "type": "string",
+                    "optional": true,
+                    "description": ""
+                }
+            ]
+        },
+        "RequestFeatureAccess": {
+            "_type": "undocumented",
+            "version": 1,
+            "httpmethod": "POST",
+            "parameters": [
+                {
+                    "name": "key",
+                    "type": "string",
+                    "optional": false,
+                    "description": "Access key"
+                },
+                {
+                    "name": "features",
+                    "type": "uint32",
+                    "optional": true,
+                    "description": ""
+                },
+                {
+                    "name": "steamid",
+                    "type": "fixed64",
+                    "optional": true,
+                    "description": ""
+                }
+            ]
+        },
+        "RequestRecoveryCode": {
+            "_type": "undocumented",
+            "version": 1,
+            "httpmethod": "POST",
+            "description": "Request a recovery code be sent to the recovery email address for the specified account",
+            "parameters": [
+                {
+                    "name": "key",
+                    "type": "string",
+                    "optional": false,
+                    "description": "Access key"
+                }
+            ]
+        },
+        "SetParentalSettings": {
+            "_type": "undocumented",
+            "version": 1,
+            "httpmethod": "POST",
+            "description": "Set the current parental settings for the logged in account",
+            "parameters": [
+                {
+                    "name": "key",
+                    "type": "string",
+                    "optional": false,
+                    "description": "Access key"
+                },
+                {
+                    "name": "password",
+                    "type": "string",
+                    "optional": true,
+                    "description": ""
+                },
+                {
+                    "name": "settings",
+                    "type": "ParentalSettings",
+                    "optional": true,
+                    "description": ""
+                },
+                {
+                    "name": "new_password",
+                    "type": "string",
+                    "optional": true,
+                    "description": ""
+                },
+                {
+                    "name": "sessionid",
+                    "type": "string",
+                    "optional": true,
+                    "description": ""
+                },
+                {
+                    "name": "steamid",
+                    "type": "fixed64",
                     "optional": true,
                     "description": ""
                 }
@@ -10065,6 +10261,24 @@
                     "type": "bool",
                     "optional": false,
                     "description": "true if we want even more details (capsule, sortas, and capabilities) about each game.  include_appinfo must also be true."
+                }
+            ]
+        },
+        "GetPlayerLinkDetails": {
+            "_type": "undocumented",
+            "version": 1,
+            "parameters": [
+                {
+                    "name": "key",
+                    "type": "string",
+                    "optional": false,
+                    "description": "Access key"
+                },
+                {
+                    "name": "steamids[0]",
+                    "type": "uint64[]",
+                    "optional": true,
+                    "description": ""
                 }
             ]
         },
