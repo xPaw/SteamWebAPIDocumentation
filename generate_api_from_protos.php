@@ -2,7 +2,14 @@
 
 set_time_limit( 600 );
 
-require __DIR__ . '/config.php';
+if( getenv( 'CI' ) !== false )
+{
+	$PublisherApiKey = getenv( 'STEAM_PUBLISHER_API_KEY' );
+}
+else
+{
+	require __DIR__ . '/config.php';
+}
 
 $Folder = __DIR__ . DIRECTORY_SEPARATOR . 'protobufs_repo';
 
