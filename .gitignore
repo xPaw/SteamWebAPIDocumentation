@@ -1,6 +1,7 @@
 /node_modules/
 /vendor/
 /dist/
+/protobufs_repo/
 /config.php
 /api_from_protos.json
 /api_from_docs.json

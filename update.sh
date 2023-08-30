@@ -2,6 +2,8 @@
 
 cd "$(dirname "$0")"
 
+php generate_api_from_protos.php
+
 php generate_api.php
 
 git add -A

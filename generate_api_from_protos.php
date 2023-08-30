@@ -4,13 +4,23 @@ set_time_limit( 600 );
 
 require __DIR__ . '/config.php';
 
+$Folder = __DIR__ . DIRECTORY_SEPARATOR . 'protobufs_repo';
+
+if( file_exists( $Folder ) )
+{
+	passthru( 'cd ' . escapeshellarg( $Folder ) . ' && git pull' );
+}
+else
+{
+	passthru( 'git clone --depth=1 https://github.com/SteamDatabase/Protobufs ' . escapeshellarg( $Folder ) );
+}
+
 $generatedServices = [];
 
 /** @var SplFileInfo[] $allProtos */
 $allProtos = new RecursiveIteratorIterator(
 	new RecursiveDirectoryIterator(
-		//'ValveProtobufs/',
-		'/home/steamdb/ValveProtobufs/',
+		$Folder,
 		FilesystemIterator::CURRENT_AS_FILEINFO | FilesystemIterator::SKIP_DOTS
 	)
 );
