@@ -44,9 +44,16 @@ foreach( $AllDocs as $fileInfo )
 			continue;
 		}
 
+		$UrlPath = parse_url( $Url[ 1 ], PHP_URL_PATH );
+
+		if( empty( $UrlPath ) )
+		{
+			continue;
+		}
+
 		$Parameters = [];
 		$HttpMethod = $Url[ 0 ];
-		$HttpPath = explode( '/', parse_url( $Url[ 1 ], PHP_URL_PATH ) );
+		$HttpPath = explode( '/', $UrlPath );
 
 		if( count( $HttpPath ) < 4 )
 		{
