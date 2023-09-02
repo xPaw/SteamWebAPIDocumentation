@@ -1187,6 +1187,11 @@
             "httpmethod": "GET",
             "parameters": []
         },
+        "GetLeaderboardEntries": {
+            "_type": "undocumented",
+            "version": 1,
+            "parameters": []
+        },
         "GetMonthlyPlayerCount": {
             "_type": "undocumented",
             "version": 1,
