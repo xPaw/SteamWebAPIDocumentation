@@ -6670,6 +6670,18 @@
         }
     },
     "IFriendsListService": {
+        "GetFavorites": {
+            "_type": "undocumented",
+            "version": 1,
+            "parameters": [
+                {
+                    "name": "key",
+                    "type": "string",
+                    "optional": false,
+                    "description": "Access key"
+                }
+            ]
+        },
         "GetFriendsList": {
             "_type": "undocumented",
             "version": 1,
