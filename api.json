@@ -4691,6 +4691,11 @@
                 }
             ]
         },
+        "GetMatchMVPVotes": {
+            "_type": "undocumented",
+            "version": 1,
+            "parameters": []
+        },
         "GetTeamInfoByTeamID": {
             "version": 1,
             "httpmethod": "GET",
@@ -5635,6 +5640,11 @@
             "version": 1,
             "parameters": []
         },
+        "GetGameItems": {
+            "_type": "undocumented",
+            "version": 1,
+            "parameters": []
+        },
         "GetHeroes": {
             "_type": "undocumented",
             "version": 1,
@@ -5663,6 +5673,11 @@
     },
     "IEconDOTA2_2305270": {
         "GetEventStatsForAccount": {
+            "_type": "undocumented",
+            "version": 1,
+            "parameters": []
+        },
+        "GetGameItems": {
             "_type": "undocumented",
             "version": 1,
             "parameters": []
@@ -9307,6 +9322,11 @@
     },
     "IMobileNotificationService": {
         "GetUserNotificationCounts": {
+            "_type": "undocumented",
+            "version": 1,
+            "parameters": []
+        },
+        "SwitchSessionToPush": {
             "_type": "undocumented",
             "version": 1,
             "parameters": []
@@ -18124,6 +18144,33 @@
                     "description": "access key"
                 }
             ]
+        }
+    },
+    "ISteamWebUserPresenceOAuth": {
+        "DeviceInfo": {
+            "_type": "undocumented",
+            "version": 1,
+            "parameters": []
+        },
+        "Logoff": {
+            "_type": "undocumented",
+            "version": 1,
+            "parameters": []
+        },
+        "Logon": {
+            "_type": "undocumented",
+            "version": 1,
+            "parameters": []
+        },
+        "Message": {
+            "_type": "undocumented",
+            "version": 1,
+            "parameters": []
+        },
+        "Poll": {
+            "_type": "undocumented",
+            "version": 1,
+            "parameters": []
         }
     },
     "ISteamWorkshop": {
