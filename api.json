@@ -11240,7 +11240,7 @@
             ]
         },
         "Delete": {
-            "_type": "undocumented",
+            "_type": "publisher_only",
             "version": 1,
             "httpmethod": "POST",
             "description": "Deletes a published file.",
@@ -11253,9 +11253,14 @@
                 },
                 {
                     "name": "publishedfileid",
-                    "type": "fixed64",
-                    "optional": true,
+                    "type": "uint64",
+                    "optional": false,
                     "description": "Published file id of the file we'd like to delete."
+                },
+                {
+                    "name": "appid",
+                    "type": "uint32",
+                    "optional": false
                 }
             ]
         },
