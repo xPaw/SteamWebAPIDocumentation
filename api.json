@@ -4338,6 +4338,7 @@
     },
     "IDOTA2MatchStats_205790": {
         "GetRealtimeStats": {
+            "_type": "undocumented",
             "version": 1,
             "httpmethod": "GET",
             "parameters": [
@@ -4584,6 +4585,7 @@
     },
     "IDOTA2Match_205790": {
         "GetLiveLeagueGames": {
+            "_type": "undocumented",
             "version": 1,
             "httpmethod": "GET",
             "parameters": [
@@ -4608,6 +4610,7 @@
             ]
         },
         "GetMatchDetails": {
+            "_type": "undocumented",
             "version": 1,
             "httpmethod": "GET",
             "parameters": [
@@ -4626,6 +4629,7 @@
             ]
         },
         "GetMatchHistory": {
+            "_type": "undocumented",
             "version": 1,
             "httpmethod": "GET",
             "parameters": [
@@ -4680,6 +4684,7 @@
             ]
         },
         "GetMatchHistoryBySequenceNum": {
+            "_type": "undocumented",
             "version": 1,
             "httpmethod": "GET",
             "parameters": [
@@ -4703,6 +4708,7 @@
             "parameters": []
         },
         "GetTeamInfoByTeamID": {
+            "_type": "undocumented",
             "version": 1,
             "httpmethod": "GET",
             "parameters": [
@@ -4721,6 +4727,7 @@
             ]
         },
         "GetTopLiveEventGame": {
+            "_type": "undocumented",
             "version": 1,
             "httpmethod": "GET",
             "parameters": [
@@ -4733,6 +4740,7 @@
             ]
         },
         "GetTopLiveGame": {
+            "_type": "undocumented",
             "version": 1,
             "httpmethod": "GET",
             "parameters": [
@@ -4745,6 +4753,7 @@
             ]
         },
         "GetTopWeekendTourneyGames": {
+            "_type": "undocumented",
             "version": 1,
             "httpmethod": "GET",
             "parameters": [
@@ -4763,6 +4772,7 @@
             ]
         },
         "GetTournamentPlayerStats": {
+            "_type": "undocumented",
             "version": 2,
             "httpmethod": "GET",
             "parameters": [
@@ -5022,6 +5032,7 @@
     },
     "IDOTA2StreamSystem_205790": {
         "GetBroadcasterInfo": {
+            "_type": "undocumented",
             "version": 1,
             "httpmethod": "GET",
             "parameters": [
@@ -5227,6 +5238,7 @@
     },
     "IDOTA2Ticket_205790": {
         "GetSteamIDForBadgeID": {
+            "_type": "undocumented",
             "version": 1,
             "httpmethod": "GET",
             "parameters": [
@@ -5239,6 +5251,7 @@
             ]
         },
         "SetSteamAccountPurchased": {
+            "_type": "undocumented",
             "version": 1,
             "httpmethod": "POST",
             "parameters": [
@@ -5257,6 +5270,7 @@
             ]
         },
         "SteamAccountValidForBadgeType": {
+            "_type": "undocumented",
             "version": 1,
             "httpmethod": "GET",
             "parameters": [
@@ -5538,6 +5552,7 @@
     },
     "IEconDOTA2_205790": {
         "GetEventStatsForAccount": {
+            "_type": "undocumented",
             "version": 1,
             "httpmethod": "GET",
             "parameters": [
@@ -5562,6 +5577,7 @@
             ]
         },
         "GetGameItems": {
+            "_type": "undocumented",
             "version": 1,
             "httpmethod": "GET",
             "parameters": [
@@ -5574,6 +5590,7 @@
             ]
         },
         "GetHeroes": {
+            "_type": "undocumented",
             "version": 1,
             "httpmethod": "GET",
             "parameters": [
@@ -5592,6 +5609,7 @@
             ]
         },
         "GetItemCreators": {
+            "_type": "undocumented",
             "version": 1,
             "httpmethod": "GET",
             "parameters": [
@@ -5604,6 +5622,7 @@
             ]
         },
         "GetItemWorkshopPublishedFileIDs": {
+            "_type": "undocumented",
             "version": 1,
             "httpmethod": "GET",
             "parameters": [
@@ -5616,6 +5635,7 @@
             ]
         },
         "GetRarities": {
+            "_type": "undocumented",
             "version": 1,
             "httpmethod": "GET",
             "parameters": [
@@ -5628,6 +5648,7 @@
             ]
         },
         "GetTournamentPrizePool": {
+            "_type": "undocumented",
             "version": 1,
             "httpmethod": "GET",
             "parameters": [
@@ -5889,6 +5910,7 @@
     },
     "IEconItems_205790": {
         "GetEquippedPlayerItems": {
+            "_type": "undocumented",
             "version": 1,
             "httpmethod": "GET",
             "parameters": [
@@ -5907,6 +5929,7 @@
             ]
         },
         "GetPlayerItems": {
+            "_type": "undocumented",
             "version": 1,
             "httpmethod": "GET",
             "parameters": [
@@ -5919,6 +5942,7 @@
             ]
         },
         "GetStoreMetaData": {
+            "_type": "undocumented",
             "version": 1,
             "httpmethod": "GET",
             "parameters": [
@@ -6734,11 +6758,13 @@
     },
     "IGCVersion_205790": {
         "GetClientVersion": {
+            "_type": "undocumented",
             "version": 1,
             "httpmethod": "GET",
             "parameters": []
         },
         "GetServerVersion": {
+            "_type": "undocumented",
             "version": 1,
             "httpmethod": "GET",
             "parameters": []
@@ -13857,7 +13883,7 @@
         },
         "SetAppBuildLive": {
             "_type": "publisher_only",
-            "version": 1,
+            "version": 2,
             "httpmethod": "POST",
             "parameters": [
                 {
@@ -13877,6 +13903,12 @@
                     "type": "string",
                     "optional": false,
                     "description": "beta key, required. Use public for default branch"
+                },
+                {
+                    "name": "steamid",
+                    "type": "uint64",
+                    "optional": true,
+                    "description": "SteamID of user approving build change, required for public branches of released apps"
                 },
                 {
                     "name": "description",
