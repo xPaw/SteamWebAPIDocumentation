@@ -151,6 +151,12 @@ body {
 	border-color: #161920;
 }
 
+.card .table>:not(caption)>*>* {
+	/* bootstrap 5.3 fix */
+	color: unset;
+	background: unset;
+}
+
 .card .table .custom-control-label {
 	color: #ddd;
 }
