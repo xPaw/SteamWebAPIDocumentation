@@ -5369,6 +5369,125 @@
             "parameters": []
         }
     },
+    "IDailyDealService": {
+        "CreateDailyDeal": {
+            "_type": "undocumented",
+            "version": 1,
+            "httpmethod": "POST",
+            "parameters": [
+                {
+                    "name": "key",
+                    "type": "string",
+                    "optional": false,
+                    "description": "Access key"
+                },
+                {
+                    "name": "daily_deal",
+                    "type": "CDailyDeal",
+                    "optional": true,
+                    "description": ""
+                },
+                {
+                    "name": "appid",
+                    "type": "uint32",
+                    "optional": true,
+                    "description": ""
+                }
+            ]
+        },
+        "DeleteDailyDeal": {
+            "_type": "undocumented",
+            "version": 1,
+            "httpmethod": "POST",
+            "parameters": [
+                {
+                    "name": "key",
+                    "type": "string",
+                    "optional": false,
+                    "description": "Access key"
+                },
+                {
+                    "name": "gid",
+                    "type": "fixed64",
+                    "optional": true,
+                    "description": ""
+                }
+            ]
+        },
+        "GetDailyDeals": {
+            "_type": "undocumented",
+            "version": 1,
+            "parameters": [
+                {
+                    "name": "key",
+                    "type": "string",
+                    "optional": false,
+                    "description": "Access key"
+                },
+                {
+                    "name": "gid",
+                    "type": "fixed64",
+                    "optional": true,
+                    "description": ""
+                },
+                {
+                    "name": "rtime32_start_date",
+                    "type": "uint32",
+                    "optional": true,
+                    "description": ""
+                },
+                {
+                    "name": "rtime32_end_date",
+                    "type": "uint32",
+                    "optional": true,
+                    "description": ""
+                },
+                {
+                    "name": "appid",
+                    "type": "uint32",
+                    "optional": true,
+                    "description": ""
+                },
+                {
+                    "name": "store_item_type",
+                    "type": "int32",
+                    "optional": true,
+                    "description": ""
+                },
+                {
+                    "name": "search_term",
+                    "type": "string",
+                    "optional": true,
+                    "description": ""
+                }
+            ]
+        },
+        "UpdateDailyDeal": {
+            "_type": "undocumented",
+            "version": 1,
+            "httpmethod": "POST",
+            "parameters": [
+                {
+                    "name": "key",
+                    "type": "string",
+                    "optional": false,
+                    "description": "Access key"
+                },
+                {
+                    "name": "daily_deal",
+                    "type": "CDailyDeal",
+                    "optional": true,
+                    "description": ""
+                },
+                {
+                    "name": "gid",
+                    "type": "fixed64",
+                    "optional": true,
+                    "description": ""
+                }
+            ]
+        }
+    },
     "IDataPublisherService": {
         "AddVRDeviceInfo": {
             "_type": "undocumented",
@@ -9037,6 +9156,37 @@
                 }
             ]
         },
+        "GetDisplayMarketingMessageForUser": {
+            "_type": "undocumented",
+            "version": 1,
+            "description": "Get a single marketing message, which can be customized per user.",
+            "parameters": [
+                {
+                    "name": "key",
+                    "type": "string",
+                    "optional": false,
+                    "description": "Access key"
+                },
+                {
+                    "name": "gid",
+                    "type": "fixed64",
+                    "optional": true,
+                    "description": ""
+                },
+                {
+                    "name": "context",
+                    "type": "StoreBrowseContext",
+                    "optional": true,
+                    "description": ""
+                },
+                {
+                    "name": "data_request",
+                    "type": "StoreBrowseItemDataRequest",
+                    "optional": true,
+                    "description": "If passed, item data will be returned"
+                }
+            ]
+        },
         "GetMarketingMessage": {
             "_type": "undocumented",
             "version": 1,
@@ -10161,6 +10311,20 @@
                     "type": "int32",
                     "optional": false,
                     "description": "The badge we're asking about"
+                }
+            ]
+        },
+        "GetCommunityPreferences": {
+            "_type": "undocumented",
+            "version": 1,
+            "httpmethod": "POST",
+            "description": "Returns the player's community preferences",
+            "parameters": [
+                {
+                    "name": "key",
+                    "type": "string",
+                    "optional": false,
+                    "description": "Access key"
                 }
             ]
         },
@@ -13299,6 +13463,24 @@
                 {
                     "name": "return_private",
                     "type": "bool",
+                    "optional": true,
+                    "description": ""
+                }
+            ]
+        },
+        "GetUpdateProcessingProgress": {
+            "_type": "undocumented",
+            "version": 1,
+            "parameters": [
+                {
+                    "name": "key",
+                    "type": "string",
+                    "optional": false,
+                    "description": "Access key"
+                },
+                {
+                    "name": "year",
+                    "type": "uint32",
                     "optional": true,
                     "description": ""
                 }
@@ -18566,6 +18748,32 @@
                 {
                     "name": "use_spellcheck",
                     "type": "bool",
+                    "optional": true,
+                    "description": ""
+                }
+            ]
+        }
+    },
+    "IStoreSalesService": {
+        "GetVoteDefinitions": {
+            "_type": "undocumented",
+            "version": 1,
+            "parameters": [
+                {
+                    "name": "key",
+                    "type": "string",
+                    "optional": false,
+                    "description": "Access key"
+                },
+                {
+                    "name": "language",
+                    "type": "string",
+                    "optional": true,
+                    "description": ""
+                },
+                {
+                    "name": "sale_appid",
+                    "type": "uint32",
                     "optional": true,
                     "description": ""
                 }
