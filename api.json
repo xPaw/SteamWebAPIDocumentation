@@ -38,6 +38,45 @@
             ]
         }
     },
+    "IAccountPrivateAppsService": {
+        "GetPrivateAppList": {
+            "_type": "undocumented",
+            "version": 1,
+            "parameters": [
+                {
+                    "name": "key",
+                    "type": "string",
+                    "optional": false,
+                    "description": "Access key"
+                }
+            ]
+        },
+        "ToggleAppPrivacy": {
+            "_type": "undocumented",
+            "version": 1,
+            "httpmethod": "POST",
+            "parameters": [
+                {
+                    "name": "key",
+                    "type": "string",
+                    "optional": false,
+                    "description": "Access key"
+                },
+                {
+                    "name": "appid",
+                    "type": "int32",
+                    "optional": true,
+                    "description": ""
+                },
+                {
+                    "name": "private",
+                    "type": "bool",
+                    "optional": true,
+                    "description": ""
+                }
+            ]
+        }
+    },
     "IAuctionService": {
         "CancelBid": {
             "_type": "undocumented",
@@ -7059,6 +7098,31 @@
                     "description": ""
                 }
             ]
+        },
+        "SetFamilyCooldownOverrides": {
+            "_type": "undocumented",
+            "version": 1,
+            "httpmethod": "POST",
+            "parameters": [
+                {
+                    "name": "key",
+                    "type": "string",
+                    "optional": false,
+                    "description": "Access key"
+                },
+                {
+                    "name": "family_groupid",
+                    "type": "uint64",
+                    "optional": true,
+                    "description": ""
+                },
+                {
+                    "name": "cooldown_count",
+                    "type": "uint32",
+                    "optional": true,
+                    "description": ""
+                }
+            ]
         }
     },
     "IFriendMessagesService": {
@@ -13379,6 +13443,24 @@
                 }
             ]
         },
+        "GetPartnerPaidGivenPackageList": {
+            "_type": "undocumented",
+            "version": 1,
+            "parameters": [
+                {
+                    "name": "key",
+                    "type": "string",
+                    "optional": false,
+                    "description": "Access key"
+                },
+                {
+                    "name": "packageids[0]",
+                    "type": "uint32[]",
+                    "optional": true,
+                    "description": ""
+                }
+            ]
+        },
         "GetSinglePartnerAppOptIn": {
             "_type": "undocumented",
             "version": 1,
@@ -14266,6 +14348,37 @@
                     "type": "string",
                     "optional": false,
                     "description": "Access key"
+                }
+            ]
+        },
+        "UpdatePackageQuantity": {
+            "_type": "undocumented",
+            "version": 1,
+            "httpmethod": "POST",
+            "parameters": [
+                {
+                    "name": "key",
+                    "type": "string",
+                    "optional": false,
+                    "description": "Access key"
+                },
+                {
+                    "name": "gidshoppingcart",
+                    "type": "uint64",
+                    "optional": true,
+                    "description": ""
+                },
+                {
+                    "name": "gidlineitem",
+                    "type": "uint64",
+                    "optional": true,
+                    "description": ""
+                },
+                {
+                    "name": "quantity",
+                    "type": "uint32",
+                    "optional": true,
+                    "description": ""
                 }
             ]
         }
@@ -19131,6 +19244,30 @@
                 }
             ]
         },
+        "GetHardwareItems": {
+            "_type": "undocumented",
+            "version": 1,
+            "parameters": [
+                {
+                    "name": "key",
+                    "type": "string",
+                    "optional": false,
+                    "description": "Access key"
+                },
+                {
+                    "name": "packageid[0]",
+                    "type": "uint32[]",
+                    "optional": true,
+                    "description": ""
+                },
+                {
+                    "name": "context",
+                    "type": "StoreBrowseContext",
+                    "optional": true,
+                    "description": ""
+                }
+            ]
+        },
         "GetItems": {
             "_type": "undocumented",
             "version": 1,
@@ -19313,6 +19450,49 @@
         }
     },
     "IStoreService": {
+        "DeleteReservationPositionMessage": {
+            "_type": "undocumented",
+            "version": 1,
+            "httpmethod": "POST",
+            "parameters": [
+                {
+                    "name": "key",
+                    "type": "string",
+                    "optional": false,
+                    "description": "Access key"
+                },
+                {
+                    "name": "edistributor",
+                    "type": "uint32",
+                    "optional": true,
+                    "description": ""
+                },
+                {
+                    "name": "product_identifier",
+                    "type": "string",
+                    "optional": true,
+                    "description": ""
+                },
+                {
+                    "name": "start_queue_position",
+                    "type": "uint32",
+                    "optional": true,
+                    "description": ""
+                }
+            ]
+        },
+        "GetAllReservationPositionMessages": {
+            "_type": "undocumented",
+            "version": 1,
+            "parameters": [
+                {
+                    "name": "key",
+                    "type": "string",
+                    "optional": false,
+                    "description": "Access key"
+                }
+            ]
+        },
         "GetAppInfo": {
             "_type": "undocumented",
             "version": 1,
@@ -19648,6 +19828,25 @@
                 {
                     "name": "backfill_source",
                     "type": "EPartnerLinkTrackingBackfillSource",
+                    "optional": true,
+                    "description": ""
+                }
+            ]
+        },
+        "SetReservationPositionMessage": {
+            "_type": "undocumented",
+            "version": 1,
+            "httpmethod": "POST",
+            "parameters": [
+                {
+                    "name": "key",
+                    "type": "string",
+                    "optional": false,
+                    "description": "Access key"
+                },
+                {
+                    "name": "settings",
+                    "type": "CReservationPositionMessage",
                     "optional": true,
                     "description": ""
                 }
