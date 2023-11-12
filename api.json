@@ -106,6 +106,12 @@
                     "type": "string",
                     "optional": false,
                     "description": "Access key"
+                },
+                {
+                    "name": "auctiondescriptionid",
+                    "type": "uint64",
+                    "optional": true,
+                    "description": ""
                 }
             ]
         },
@@ -136,6 +142,12 @@
                     "type": "string",
                     "optional": false,
                     "description": "Access key"
+                },
+                {
+                    "name": "auctiondescriptionid",
+                    "type": "uint64",
+                    "optional": true,
+                    "description": ""
                 }
             ]
         },
@@ -329,6 +341,12 @@
                 {
                     "name": "steamid",
                     "type": "fixed64",
+                    "optional": true,
+                    "description": ""
+                },
+                {
+                    "name": "renewal_type",
+                    "type": "ETokenRenewalType",
                     "optional": true,
                     "description": ""
                 }
@@ -1072,6 +1090,12 @@
                     "type": "bool",
                     "optional": true,
                     "description": "When true, then only steamwork partner can create chat messages."
+                },
+                {
+                    "name": "wordban_list",
+                    "type": "string",
+                    "optional": true,
+                    "description": ""
                 }
             ]
         },
@@ -2130,6 +2154,12 @@
                     "type": "string",
                     "optional": false,
                     "description": "Access key"
+                },
+                {
+                    "name": "steamid",
+                    "type": "fixed64",
+                    "optional": true,
+                    "description": ""
                 }
             ]
         },
@@ -2224,6 +2254,12 @@
                     "type": "string",
                     "optional": false,
                     "description": "Access key"
+                },
+                {
+                    "name": "steamid",
+                    "type": "uint64",
+                    "optional": true,
+                    "description": ""
                 }
             ]
         },
@@ -2237,6 +2273,18 @@
                     "type": "string",
                     "optional": false,
                     "description": "Access key"
+                },
+                {
+                    "name": "steamid",
+                    "type": "uint64",
+                    "optional": true,
+                    "description": ""
+                },
+                {
+                    "name": "faq_id",
+                    "type": "uint64",
+                    "optional": true,
+                    "description": ""
                 }
             ]
         },
@@ -2249,6 +2297,18 @@
                     "type": "string",
                     "optional": false,
                     "description": "Access key"
+                },
+                {
+                    "name": "faq_id",
+                    "type": "uint64",
+                    "optional": true,
+                    "description": ""
+                },
+                {
+                    "name": "language",
+                    "type": "uint32",
+                    "optional": true,
+                    "description": ""
                 }
             ]
         },
@@ -2299,6 +2359,24 @@
                     "type": "string",
                     "optional": false,
                     "description": "Access key"
+                },
+                {
+                    "name": "steamid",
+                    "type": "uint64",
+                    "optional": true,
+                    "description": ""
+                },
+                {
+                    "name": "faq_id",
+                    "type": "uint64",
+                    "optional": true,
+                    "description": ""
+                },
+                {
+                    "name": "language",
+                    "type": "uint32",
+                    "optional": true,
+                    "description": ""
                 }
             ]
         },
@@ -2342,6 +2420,36 @@
                     "type": "string",
                     "optional": false,
                     "description": "Access key"
+                },
+                {
+                    "name": "search_text",
+                    "type": "string",
+                    "optional": true,
+                    "description": ""
+                },
+                {
+                    "name": "elanguages[0]",
+                    "type": "int32[]",
+                    "optional": true,
+                    "description": ""
+                },
+                {
+                    "name": "count",
+                    "type": "int32",
+                    "optional": true,
+                    "description": ""
+                },
+                {
+                    "name": "cursor",
+                    "type": "string",
+                    "optional": true,
+                    "description": ""
+                },
+                {
+                    "name": "filter_clanids[0]",
+                    "type": "uint32[]",
+                    "optional": true,
+                    "description": ""
                 }
             ]
         },
@@ -2866,6 +2974,24 @@
                     "type": "uint64",
                     "optional": true,
                     "description": "Current local build of the app which made these changes"
+                },
+                {
+                    "name": "access_token",
+                    "type": "string",
+                    "optional": false,
+                    "description": "OAuth access token for the user"
+                },
+                {
+                    "name": "files_to_upload",
+                    "type": "string list",
+                    "optional": false,
+                    "description": "List of all files to be uploaded (new files or updates for existing files) as part of\n            this batch."
+                },
+                {
+                    "name": "files_to_delete",
+                    "type": "string list",
+                    "optional": false,
+                    "description": "List of all files to be deleted from Steam Cloud as part of this batch."
                 }
             ]
         },
@@ -3181,6 +3307,12 @@
                     "type": "uint32",
                     "optional": true,
                     "description": "Starting index to begin enumeration at. Defaults to the beginning of the list."
+                },
+                {
+                    "name": "access_token",
+                    "type": "string",
+                    "optional": false,
+                    "description": "OAuth access token for the user"
                 }
             ]
         },
@@ -8473,13 +8605,13 @@
                     "name": "itemid",
                     "type": "uint64",
                     "optional": true,
-                    "description": ""
+                    "description": "Item ID to be consumed"
                 },
                 {
                     "name": "quantity",
                     "type": "uint32",
                     "optional": true,
-                    "description": ""
+                    "description": "Amount of the given item stack to be consumed"
                 },
                 {
                     "name": "timestamp",
@@ -8497,7 +8629,7 @@
                     "name": "requestid",
                     "type": "uint64",
                     "optional": true,
-                    "description": ""
+                    "description": "Clients may provide a unique identifier for a request to perform at most once execution.\n            When a requestid is resubmitted, it will not cause the work to be performed again; the\n            response message will be the current state of items affected by the original successful\n            execution."
                 }
             ]
         },
@@ -9330,6 +9462,12 @@
                     "type": "int64",
                     "optional": true,
                     "description": ""
+                },
+                {
+                    "name": "communityitemid",
+                    "type": "uint64",
+                    "optional": true,
+                    "description": ""
                 }
             ]
         },
@@ -9377,6 +9515,12 @@
                     "type": "CMarketingMessageProto",
                     "optional": true,
                     "description": ""
+                },
+                {
+                    "name": "from_json",
+                    "type": "bool",
+                    "optional": true,
+                    "description": "If set, then overwrite the template_vars and additional_restrictions keyvalues from json"
                 }
             ]
         },
@@ -9497,6 +9641,12 @@
                     "type": "string",
                     "optional": true,
                     "description": ""
+                },
+                {
+                    "name": "anonymous_user",
+                    "type": "bool",
+                    "optional": true,
+                    "description": "Will not return any marketing message that requires ownership/playtime/wishlist"
                 }
             ]
         },
@@ -9731,6 +9881,18 @@
                     "type": "fixed64",
                     "optional": true,
                     "description": ""
+                },
+                {
+                    "name": "display_index",
+                    "type": "uint32",
+                    "optional": true,
+                    "description": "Where in the stack was the marketing message, 1-based, zero means we don't know"
+                },
+                {
+                    "name": "template_type",
+                    "type": "EMarketingMessageTemplateType",
+                    "optional": true,
+                    "description": "Which type of template did they see"
                 }
             ]
         },
@@ -9757,6 +9919,12 @@
                     "type": "CMarketingMessageProto",
                     "optional": true,
                     "description": ""
+                },
+                {
+                    "name": "from_json",
+                    "type": "bool",
+                    "optional": true,
+                    "description": "If set, then overwrite the template_vars and additional_restrictions keyvalues from json"
                 }
             ]
         }
@@ -10076,6 +10244,7 @@
             "_type": "undocumented",
             "version": 1,
             "httpmethod": "POST",
+            "description": "Approve or deny temporary access to a feature from a child account",
             "parameters": [
                 {
                     "name": "key",
@@ -10087,7 +10256,7 @@
                     "name": "approve",
                     "type": "bool",
                     "optional": true,
-                    "description": ""
+                    "description": "Approve or deny temporary access to a feature from a child account"
                 },
                 {
                     "name": "requestid",
@@ -10099,13 +10268,13 @@
                     "name": "features",
                     "type": "uint32",
                     "optional": true,
-                    "description": ""
+                    "description": "Approve or deny temporary access to a feature from a child account"
                 },
                 {
                     "name": "duration",
                     "type": "uint32",
                     "optional": true,
-                    "description": ""
+                    "description": "Approve or deny temporary access to a feature from a child account"
                 },
                 {
                     "name": "steamid",
@@ -10119,6 +10288,7 @@
             "_type": "undocumented",
             "version": 1,
             "httpmethod": "POST",
+            "description": "Approve or deny a temporary playtime request from a child account",
             "parameters": [
                 {
                     "name": "key",
@@ -10244,6 +10414,7 @@
         "GetRequests": {
             "_type": "undocumented",
             "version": 1,
+            "description": "Return a list of pending (or pending and completed) feature and playtime requests for the given steamid",
             "parameters": [
                 {
                     "name": "key",
@@ -10255,13 +10426,13 @@
                     "name": "rt_include_completed_since",
                     "type": "uint32",
                     "optional": true,
-                    "description": ""
+                    "description": "Return a list of pending (or pending and completed) feature and playtime requests for the given steamid"
                 },
                 {
                     "name": "steamid",
                     "type": "fixed64",
                     "optional": true,
-                    "description": ""
+                    "description": "Return a list of pending (or pending and completed) feature and playtime requests for the given steamid"
                 }
             ]
         },
@@ -10308,6 +10479,7 @@
             "_type": "undocumented",
             "version": 1,
             "httpmethod": "POST",
+            "description": "Request temporary access to a feature from a parent account",
             "parameters": [
                 {
                     "name": "key",
@@ -10319,7 +10491,7 @@
                     "name": "features",
                     "type": "uint32",
                     "optional": true,
-                    "description": ""
+                    "description": "Request temporary access to a feature from a parent account"
                 },
                 {
                     "name": "steamid",
@@ -10333,6 +10505,7 @@
             "_type": "undocumented",
             "version": 1,
             "httpmethod": "POST",
+            "description": "Request temporary additional playtime from a parent account",
             "parameters": [
                 {
                     "name": "key",
@@ -10344,13 +10517,13 @@
                     "name": "time_expires",
                     "type": "uint32",
                     "optional": true,
-                    "description": ""
+                    "description": "Request temporary additional playtime from a parent account"
                 },
                 {
                     "name": "current_playtime_restrictions",
                     "type": "ParentalPlaytimeDay",
                     "optional": true,
-                    "description": ""
+                    "description": "Request temporary additional playtime from a parent account"
                 },
                 {
                     "name": "steamid",
@@ -10481,6 +10654,18 @@
                     "type": "string",
                     "optional": false,
                     "description": "Access key"
+                },
+                {
+                    "name": "partnerid",
+                    "type": "uint32",
+                    "optional": true,
+                    "description": ""
+                },
+                {
+                    "name": "filter_states[0]",
+                    "type": "int32[]",
+                    "optional": true,
+                    "description": ""
                 }
             ]
         }
@@ -10511,6 +10696,18 @@
                 {
                     "name": "data_request",
                     "type": "StoreBrowseItemDataRequest",
+                    "optional": true,
+                    "description": ""
+                },
+                {
+                    "name": "request",
+                    "type": "CStoreBrowse_GetItems_Request",
+                    "optional": true,
+                    "description": ""
+                },
+                {
+                    "name": "include_unpublished",
+                    "type": "bool",
                     "optional": true,
                     "description": ""
                 }
@@ -10867,12 +11064,25 @@
         "GetGameAchievements": {
             "_type": "undocumented",
             "version": 1,
+            "description": "Get a games available achievements for display purposes.",
             "parameters": [
                 {
                     "name": "key",
                     "type": "string",
                     "optional": false,
                     "description": "Access key"
+                },
+                {
+                    "name": "appid",
+                    "type": "uint32",
+                    "optional": true,
+                    "description": ""
+                },
+                {
+                    "name": "language",
+                    "type": "string",
+                    "optional": true,
+                    "description": "Lowercase, language shortnames"
                 }
             ]
         },
@@ -10978,6 +11188,7 @@
         "GetPlayerLinkDetails": {
             "_type": "undocumented",
             "version": 1,
+            "description": "Replacement for WG GetPlayerLinkDetails",
             "parameters": [
                 {
                     "name": "key",
@@ -11271,12 +11482,37 @@
         "GetTopAchievementsForGames": {
             "_type": "undocumented",
             "version": 1,
+            "description": "Gets the best achievements the user has gotten for the specified list of apps.",
             "parameters": [
                 {
                     "name": "key",
                     "type": "string",
                     "optional": false,
                     "description": "Access key"
+                },
+                {
+                    "name": "steamid",
+                    "type": "uint64",
+                    "optional": true,
+                    "description": ""
+                },
+                {
+                    "name": "language",
+                    "type": "string",
+                    "optional": true,
+                    "description": ""
+                },
+                {
+                    "name": "max_achievements",
+                    "type": "uint32",
+                    "optional": true,
+                    "description": "The max achievements to load. Max 8"
+                },
+                {
+                    "name": "appids[0]",
+                    "type": "uint32[]",
+                    "optional": true,
+                    "description": ""
                 }
             ]
         },
@@ -11621,6 +11857,12 @@
                     "type": "string",
                     "optional": false,
                     "description": "Access key"
+                },
+                {
+                    "name": "partnerid",
+                    "type": "uint32",
+                    "optional": true,
+                    "description": ""
                 }
             ]
         },
@@ -11701,6 +11943,18 @@
                     "type": "string",
                     "optional": false,
                     "description": "Access key"
+                },
+                {
+                    "name": "inviteid",
+                    "type": "fixed64",
+                    "optional": true,
+                    "description": ""
+                },
+                {
+                    "name": "only_notify_additional_email",
+                    "type": "bool",
+                    "optional": true,
+                    "description": ""
                 }
             ]
         },
@@ -11827,6 +12081,12 @@
                     "type": "string",
                     "optional": false,
                     "description": "Access key"
+                },
+                {
+                    "name": "input_access_key",
+                    "type": "string",
+                    "optional": true,
+                    "description": ""
                 }
             ]
         },
@@ -11839,6 +12099,12 @@
                     "type": "string",
                     "optional": false,
                     "description": "Access key"
+                },
+                {
+                    "name": "token",
+                    "type": "string",
+                    "optional": true,
+                    "description": ""
                 }
             ]
         },
@@ -11852,6 +12118,24 @@
                     "type": "string",
                     "optional": false,
                     "description": "Access key"
+                },
+                {
+                    "name": "promotion_id",
+                    "type": "fixed64",
+                    "optional": true,
+                    "description": ""
+                },
+                {
+                    "name": "notification_type",
+                    "type": "int32",
+                    "optional": true,
+                    "description": ""
+                },
+                {
+                    "name": "only_explicit_email_addresses",
+                    "type": "bool",
+                    "optional": true,
+                    "description": ""
                 }
             ]
         },
@@ -11869,6 +12153,12 @@
                 {
                     "name": "plan",
                     "type": "CPromotionPlan",
+                    "optional": true,
+                    "description": ""
+                },
+                {
+                    "name": "promotion_id",
+                    "type": "fixed64",
                     "optional": true,
                     "description": ""
                 }
@@ -11890,6 +12180,12 @@
                     "type": "CPromotionPlan",
                     "optional": true,
                     "description": ""
+                },
+                {
+                    "name": "promotion_id",
+                    "type": "fixed64",
+                    "optional": true,
+                    "description": ""
                 }
             ]
         },
@@ -11907,6 +12203,12 @@
                 {
                     "name": "plan",
                     "type": "CPromotionPlan",
+                    "optional": true,
+                    "description": ""
+                },
+                {
+                    "name": "promotion_id",
+                    "type": "fixed64",
                     "optional": true,
                     "description": ""
                 }
@@ -13128,6 +13430,12 @@
                     "type": "uint32",
                     "optional": true,
                     "description": "If this is an image file, you can specify the image height."
+                },
+                {
+                    "name": "language",
+                    "type": "int32",
+                    "optional": true,
+                    "description": "If setting title & description, what language to set"
                 }
             ]
         },
@@ -13470,6 +13778,12 @@
                     "type": "string",
                     "optional": false,
                     "description": "Access key"
+                },
+                {
+                    "name": "appid",
+                    "type": "uint32",
+                    "optional": true,
+                    "description": ""
                 }
             ]
         },
@@ -13487,6 +13801,12 @@
                 {
                     "name": "email_def_id",
                     "type": "fixed64",
+                    "optional": true,
+                    "description": ""
+                },
+                {
+                    "name": "force_resend",
+                    "type": "bool",
                     "optional": true,
                     "description": ""
                 }
@@ -14011,6 +14331,24 @@
                     "type": "string",
                     "optional": false,
                     "description": "Access key"
+                },
+                {
+                    "name": "steamid",
+                    "type": "fixed64",
+                    "optional": true,
+                    "description": ""
+                },
+                {
+                    "name": "gid",
+                    "type": "fixed64",
+                    "optional": true,
+                    "description": ""
+                },
+                {
+                    "name": "type",
+                    "type": "int32",
+                    "optional": true,
+                    "description": ""
                 }
             ]
         },
@@ -14024,6 +14362,18 @@
                     "type": "string",
                     "optional": false,
                     "description": "Access key"
+                },
+                {
+                    "name": "steamid",
+                    "type": "fixed64",
+                    "optional": true,
+                    "description": ""
+                },
+                {
+                    "name": "year",
+                    "type": "uint32",
+                    "optional": true,
+                    "description": ""
                 }
             ]
         },
@@ -14088,6 +14438,12 @@
                 {
                     "name": "force_regenerate",
                     "type": "bool",
+                    "optional": true,
+                    "description": ""
+                },
+                {
+                    "name": "access_source",
+                    "type": "int32",
                     "optional": true,
                     "description": ""
                 }
@@ -14163,6 +14519,30 @@
                     "type": "string",
                     "optional": false,
                     "description": "Access key"
+                },
+                {
+                    "name": "steamid",
+                    "type": "fixed64",
+                    "optional": true,
+                    "description": ""
+                },
+                {
+                    "name": "gid",
+                    "type": "fixed64",
+                    "optional": true,
+                    "description": ""
+                },
+                {
+                    "name": "type",
+                    "type": "int32",
+                    "optional": true,
+                    "description": ""
+                },
+                {
+                    "name": "jsondata",
+                    "type": "string",
+                    "optional": true,
+                    "description": ""
                 }
             ]
         },
@@ -14291,6 +14671,42 @@
                     "type": "string",
                     "optional": false,
                     "description": "Access key"
+                },
+                {
+                    "name": "gidshoppingcart",
+                    "type": "uint64",
+                    "optional": true,
+                    "description": ""
+                },
+                {
+                    "name": "bundleid",
+                    "type": "uint32",
+                    "optional": true,
+                    "description": ""
+                },
+                {
+                    "name": "browserid",
+                    "type": "uint64",
+                    "optional": true,
+                    "description": ""
+                },
+                {
+                    "name": "store_country",
+                    "type": "string",
+                    "optional": true,
+                    "description": ""
+                },
+                {
+                    "name": "quantity",
+                    "type": "uint32",
+                    "optional": true,
+                    "description": ""
+                },
+                {
+                    "name": "beta_mode",
+                    "type": "bool",
+                    "optional": true,
+                    "description": ""
                 }
             ]
         },
@@ -14304,6 +14720,36 @@
                     "type": "string",
                     "optional": false,
                     "description": "Access key"
+                },
+                {
+                    "name": "gidshoppingcart",
+                    "type": "uint64",
+                    "optional": true,
+                    "description": ""
+                },
+                {
+                    "name": "browserid",
+                    "type": "uint64",
+                    "optional": true,
+                    "description": ""
+                },
+                {
+                    "name": "cart_items",
+                    "type": "CShoppingCart_PackageItem",
+                    "optional": true,
+                    "description": ""
+                },
+                {
+                    "name": "store_country_code",
+                    "type": "string",
+                    "optional": true,
+                    "description": ""
+                },
+                {
+                    "name": "beta_mode",
+                    "type": "bool",
+                    "optional": true,
+                    "description": ""
                 }
             ]
         },
@@ -14348,6 +14794,24 @@
                     "type": "string",
                     "optional": false,
                     "description": "Access key"
+                },
+                {
+                    "name": "gidshoppingcart",
+                    "type": "uint64",
+                    "optional": true,
+                    "description": ""
+                },
+                {
+                    "name": "gidlineitems[0]",
+                    "type": "uint64[]",
+                    "optional": true,
+                    "description": ""
+                },
+                {
+                    "name": "browserid",
+                    "type": "uint64",
+                    "optional": true,
+                    "description": ""
                 }
             ]
         },
@@ -14914,6 +15378,18 @@
                     "type": "string",
                     "optional": false,
                     "description": "Access key"
+                },
+                {
+                    "name": "context",
+                    "type": "StoreBrowseContext",
+                    "optional": true,
+                    "description": ""
+                },
+                {
+                    "name": "data_request",
+                    "type": "StoreBrowseItemDataRequest",
+                    "optional": true,
+                    "description": ""
                 }
             ]
         },
@@ -15691,12 +16167,25 @@
             "_type": "undocumented",
             "version": 1,
             "httpmethod": "POST",
+            "description": "Batches multiple data updates, snapshots, and inference requests into a single call",
             "parameters": [
                 {
                     "name": "key",
                     "type": "string",
                     "optional": false,
                     "description": "Access key"
+                },
+                {
+                    "name": "cache_data_requests",
+                    "type": "CMsgSteamLearn_CacheData_Request",
+                    "optional": true,
+                    "description": ""
+                },
+                {
+                    "name": "snapshot_requests",
+                    "type": "CMsgSteamLearn_SnapshotProject_Request",
+                    "optional": true,
+                    "description": ""
                 }
             ]
         },
@@ -15704,12 +16193,31 @@
             "_type": "undocumented",
             "version": 1,
             "httpmethod": "POST",
+            "description": "Updates a cached data entry.",
             "parameters": [
                 {
                     "name": "key",
                     "type": "string",
                     "optional": false,
                     "description": "Access key"
+                },
+                {
+                    "name": "access_token",
+                    "type": "string",
+                    "optional": true,
+                    "description": ""
+                },
+                {
+                    "name": "access_data",
+                    "type": "CMsgSteamLearn_AccessData",
+                    "optional": true,
+                    "description": ""
+                },
+                {
+                    "name": "data",
+                    "type": "CMsgSteamLearnData",
+                    "optional": true,
+                    "description": ""
                 }
             ]
         },
@@ -15790,6 +16298,18 @@
                     "type": "string",
                     "optional": false,
                     "description": "Access key"
+                },
+                {
+                    "name": "project_id",
+                    "type": "uint32",
+                    "optional": true,
+                    "description": ""
+                },
+                {
+                    "name": "fetch_id",
+                    "type": "uint32",
+                    "optional": true,
+                    "description": ""
                 }
             ]
         },
@@ -15802,6 +16322,18 @@
                     "type": "string",
                     "optional": false,
                     "description": "Access key"
+                },
+                {
+                    "name": "project_id",
+                    "type": "uint32",
+                    "optional": true,
+                    "description": ""
+                },
+                {
+                    "name": "published_version",
+                    "type": "uint32",
+                    "optional": true,
+                    "description": ""
                 }
             ]
         },
@@ -15875,6 +16407,18 @@
                     "type": "string",
                     "optional": false,
                     "description": "Access key"
+                },
+                {
+                    "name": "project_id",
+                    "type": "uint32",
+                    "optional": true,
+                    "description": ""
+                },
+                {
+                    "name": "train_id",
+                    "type": "uint32",
+                    "optional": true,
+                    "description": ""
                 }
             ]
         },
@@ -15887,6 +16431,18 @@
                     "type": "string",
                     "optional": false,
                     "description": "Access key"
+                },
+                {
+                    "name": "project_id",
+                    "type": "uint32",
+                    "optional": true,
+                    "description": ""
+                },
+                {
+                    "name": "published_version",
+                    "type": "uint32",
+                    "optional": true,
+                    "description": ""
                 }
             ]
         },
@@ -15894,12 +16450,61 @@
             "_type": "undocumented",
             "version": 1,
             "httpmethod": "POST",
+            "description": "Inferences using supplied data, or data associated with the specified key.",
             "parameters": [
                 {
                     "name": "key",
                     "type": "string",
                     "optional": false,
                     "description": "Access key"
+                },
+                {
+                    "name": "access_token",
+                    "type": "string",
+                    "optional": true,
+                    "description": ""
+                },
+                {
+                    "name": "access_data",
+                    "type": "CMsgSteamLearn_AccessData",
+                    "optional": true,
+                    "description": ""
+                },
+                {
+                    "name": "project_id",
+                    "type": "uint32",
+                    "optional": true,
+                    "description": ""
+                },
+                {
+                    "name": "published_version",
+                    "type": "uint32",
+                    "optional": true,
+                    "description": ""
+                },
+                {
+                    "name": "override_train_id",
+                    "type": "uint32",
+                    "optional": true,
+                    "description": ""
+                },
+                {
+                    "name": "data",
+                    "type": "CMsgSteamLearnDataList",
+                    "optional": true,
+                    "description": ""
+                },
+                {
+                    "name": "additional_data[0]",
+                    "type": "float[]",
+                    "optional": true,
+                    "description": ""
+                },
+                {
+                    "name": "keys[0]",
+                    "type": "uint64[]",
+                    "optional": true,
+                    "description": ""
                 }
             ]
         },
@@ -15950,12 +16555,43 @@
             "_type": "undocumented",
             "version": 1,
             "httpmethod": "POST",
+            "description": "Requests the metadata that was generated from a specified fetch.",
             "parameters": [
                 {
                     "name": "key",
                     "type": "string",
                     "optional": false,
                     "description": "Access key"
+                },
+                {
+                    "name": "access_token",
+                    "type": "string",
+                    "optional": true,
+                    "description": ""
+                },
+                {
+                    "name": "access_data",
+                    "type": "CMsgSteamLearn_AccessData",
+                    "optional": true,
+                    "description": ""
+                },
+                {
+                    "name": "project_id",
+                    "type": "uint32",
+                    "optional": true,
+                    "description": ""
+                },
+                {
+                    "name": "published_version",
+                    "type": "uint32",
+                    "optional": true,
+                    "description": ""
+                },
+                {
+                    "name": "override_train_id",
+                    "type": "uint32",
+                    "optional": true,
+                    "description": ""
                 }
             ]
         },
@@ -16012,12 +16648,31 @@
             "_type": "undocumented",
             "version": 1,
             "httpmethod": "POST",
+            "description": "Registers a data desc (or finds a data desc if it's already registered).",
             "parameters": [
                 {
                     "name": "key",
                     "type": "string",
                     "optional": false,
                     "description": "Access key"
+                },
+                {
+                    "name": "access_token",
+                    "type": "string",
+                    "optional": true,
+                    "description": ""
+                },
+                {
+                    "name": "access_data",
+                    "type": "CMsgSteamLearn_AccessData",
+                    "optional": true,
+                    "description": ""
+                },
+                {
+                    "name": "data_source",
+                    "type": "CMsgSteamLearnDataSource",
+                    "optional": true,
+                    "description": ""
                 }
             ]
         },
@@ -16061,12 +16716,55 @@
             "_type": "undocumented",
             "version": 1,
             "httpmethod": "POST",
+            "description": "Snapshots the current data for a project.",
             "parameters": [
                 {
                     "name": "key",
                     "type": "string",
                     "optional": false,
                     "description": "Access key"
+                },
+                {
+                    "name": "access_token",
+                    "type": "string",
+                    "optional": true,
+                    "description": ""
+                },
+                {
+                    "name": "access_data",
+                    "type": "CMsgSteamLearn_AccessData",
+                    "optional": true,
+                    "description": ""
+                },
+                {
+                    "name": "project_id",
+                    "type": "uint32",
+                    "optional": true,
+                    "description": ""
+                },
+                {
+                    "name": "published_version",
+                    "type": "uint32",
+                    "optional": true,
+                    "description": ""
+                },
+                {
+                    "name": "keys[0]",
+                    "type": "uint64[]",
+                    "optional": true,
+                    "description": ""
+                },
+                {
+                    "name": "data",
+                    "type": "CMsgSteamLearnData",
+                    "optional": true,
+                    "description": ""
+                },
+                {
+                    "name": "pending_data_limit_seconds",
+                    "type": "uint32",
+                    "optional": true,
+                    "description": ""
                 }
             ]
         },
@@ -16079,6 +16777,24 @@
                     "type": "string",
                     "optional": false,
                     "description": "Access key"
+                },
+                {
+                    "name": "project_config",
+                    "type": "CMsgSteamLearnProjectConfig",
+                    "optional": true,
+                    "description": ""
+                },
+                {
+                    "name": "fetch",
+                    "type": "CMsgSteamLearn_Train_Request_Fetch",
+                    "optional": true,
+                    "description": ""
+                },
+                {
+                    "name": "train",
+                    "type": "CMsgSteamLearn_Train_Request_Train",
+                    "optional": true,
+                    "description": ""
                 }
             ]
         }
@@ -16967,6 +17683,36 @@
                 },
                 {
                     "name": "include_hidden",
+                    "type": "bool",
+                    "optional": true,
+                    "description": ""
+                },
+                {
+                    "name": "language",
+                    "type": "int32",
+                    "optional": true,
+                    "description": ""
+                },
+                {
+                    "name": "include_confirmation_count",
+                    "type": "bool",
+                    "optional": true,
+                    "description": ""
+                },
+                {
+                    "name": "include_pinned_counts",
+                    "type": "bool",
+                    "optional": true,
+                    "description": ""
+                },
+                {
+                    "name": "include_read",
+                    "type": "bool",
+                    "optional": true,
+                    "description": ""
+                },
+                {
+                    "name": "count_only",
                     "type": "bool",
                     "optional": true,
                     "description": ""
@@ -17902,6 +18648,12 @@
                     "type": "EBroadcastImageType",
                     "optional": true,
                     "description": "list of EBroadcastImage"
+                },
+                {
+                    "name": "image_types[0]",
+                    "type": "int32[]",
+                    "optional": true,
+                    "description": ""
                 }
             ]
         },
@@ -19160,6 +19912,42 @@
                     "type": "string",
                     "optional": false,
                     "description": "Access key"
+                },
+                {
+                    "name": "steamid",
+                    "type": "fixed64",
+                    "optional": true,
+                    "description": ""
+                },
+                {
+                    "name": "country_code",
+                    "type": "string",
+                    "optional": true,
+                    "description": ""
+                },
+                {
+                    "name": "ids",
+                    "type": "StoreItemID",
+                    "optional": true,
+                    "description": ""
+                },
+                {
+                    "name": "options",
+                    "type": "StoreAppSimilarityPriorityOptions",
+                    "optional": true,
+                    "description": ""
+                },
+                {
+                    "name": "debug",
+                    "type": "bool",
+                    "optional": true,
+                    "description": ""
+                },
+                {
+                    "name": "include_owned_games",
+                    "type": "bool",
+                    "optional": true,
+                    "description": ""
                 }
             ]
         }
@@ -19168,6 +19956,7 @@
         "GetDLCForApps": {
             "_type": "undocumented",
             "version": 1,
+            "description": "Returns all DLC appids for games owned by the user.",
             "parameters": [
                 {
                     "name": "key",
@@ -19191,13 +19980,13 @@
                     "name": "appids",
                     "type": "StoreItemID",
                     "optional": true,
-                    "description": ""
+                    "description": "Returns all DLC appids for games owned by the user."
                 },
                 {
                     "name": "steamid",
                     "type": "uint64",
                     "optional": true,
-                    "description": ""
+                    "description": "Returns all DLC appids for games owned by the user."
                 }
             ]
         },
@@ -19247,6 +20036,7 @@
         "GetHardwareItems": {
             "_type": "undocumented",
             "version": 1,
+            "description": "Get additional meta data specific to hardware store items (things that require physical shipping)",
             "parameters": [
                 {
                     "name": "key",
@@ -19419,6 +20209,24 @@
                     "type": "bool",
                     "optional": true,
                     "description": ""
+                },
+                {
+                    "name": "search_tags",
+                    "type": "bool",
+                    "optional": true,
+                    "description": ""
+                },
+                {
+                    "name": "search_creators",
+                    "type": "bool",
+                    "optional": true,
+                    "description": ""
+                },
+                {
+                    "name": "prefilter_creators",
+                    "type": "bool",
+                    "optional": true,
+                    "description": ""
                 }
             ]
         }
@@ -19454,6 +20262,7 @@
             "_type": "undocumented",
             "version": 1,
             "httpmethod": "POST",
+            "description": "Marks a position is deleted and will no longer be surfaced",
             "parameters": [
                 {
                     "name": "key",
@@ -19484,6 +20293,7 @@
         "GetAllReservationPositionMessages": {
             "_type": "undocumented",
             "version": 1,
+            "description": "Marks a position is deleted and will no longer be surfaced",
             "parameters": [
                 {
                     "name": "key",
@@ -19833,10 +20643,25 @@
                 }
             ]
         },
+        "ReloadAllReservationPositionMessages": {
+            "_type": "undocumented",
+            "version": 1,
+            "httpmethod": "POST",
+            "description": "Refreshes all of the caches through the store features servers",
+            "parameters": [
+                {
+                    "name": "key",
+                    "type": "string",
+                    "optional": false,
+                    "description": "Access key"
+                }
+            ]
+        },
         "SetReservationPositionMessage": {
             "_type": "undocumented",
             "version": 1,
             "httpmethod": "POST",
+            "description": "Creates/Update a reservation position message for people in the queue or next queue position for people deciding to join",
             "parameters": [
                 {
                     "name": "key",

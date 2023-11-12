@@ -86,9 +86,9 @@ $FinalList = file_exists( __DIR__ . '/api.json' ) ? json_decode( file_get_conten
 MarkAsRemoved( $FinalList );
 MergeLists( $FinalList, $NonPublisher );
 MergeLists( $FinalList, $YesPublisher, 'publisher_only' );
-MergeLists( $FinalList, $UndocumentedFromServices, 'undocumented' );
-MergeLists( $FinalList, $UndocumentedFromPartnerDocs, 'undocumented' );
 MergeLists( $FinalList, $Undocumented, 'undocumented' );
+MergeLists( $FinalList, $UndocumentedFromPartnerDocs, 'undocumented' );
+MergeLists( $FinalList, $UndocumentedFromServices, 'undocumented' );
 
 $MethodKeysOrder =
 [
@@ -197,6 +197,39 @@ function MergeLists( array &$FinalList, array $Interfaces, ?string $Type = null 
 
 			if( $CurrentType === 'undocumented' && $CurrentType === $Type )
 			{
+				if( !empty( $Method[ 'description' ] ) && empty( $FinalList[ $InterfaceName ][ $MethodName ][ 'description' ] ) )
+				{
+					$FinalList[ $InterfaceName ][ $MethodName ][ 'description' ] = $Method[ 'description' ];
+				}
+
+				if( !empty( $Method[ 'parameters' ] ) )
+				{
+					foreach( $Method[ 'parameters' ] as $Parameter )
+					{
+						$Found = false;
+
+						foreach( $FinalList[ $InterfaceName ][ $MethodName ][ 'parameters' ] as $ParameterId => $CurrentParameter )
+						{
+							if( $Parameter[ 'name' ] === $CurrentParameter[ 'name' ] )
+							{
+								$Found = true;
+
+								if( !empty( $Parameter[ 'description' ] ) && empty( $CurrentParameter[ 'description' ] ) )
+								{
+									$FinalList[ $InterfaceName ][ $MethodName ][ 'parameters' ][ $ParameterId ][ 'description' ] = $Parameter[ 'description' ];
+								}
+
+								break;
+							}
+						}
+
+						if( !$Found )
+						{
+							$FinalList[ $InterfaceName ][ $MethodName ][ 'parameters' ][] = $Parameter;
+						}
+					}
+				}
+
 				continue;
 			}
 
