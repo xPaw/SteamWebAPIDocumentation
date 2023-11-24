@@ -6938,6 +6938,12 @@
                     "type": "string",
                     "optional": true,
                     "description": ""
+                },
+                {
+                    "name": "steamid",
+                    "type": "fixed64",
+                    "optional": true,
+                    "description": ""
                 }
             ]
         },
@@ -7049,6 +7055,12 @@
                     "type": "uint64",
                     "optional": true,
                     "description": ""
+                },
+                {
+                    "name": "include_completed",
+                    "type": "bool",
+                    "optional": true,
+                    "description": ""
                 }
             ]
         },
@@ -7065,6 +7077,12 @@
                 {
                     "name": "family_groupid",
                     "type": "uint64",
+                    "optional": true,
+                    "description": ""
+                },
+                {
+                    "name": "client_session_id",
+                    "type": "int32",
                     "optional": true,
                     "description": ""
                 }
@@ -14763,6 +14781,12 @@
                     "type": "string",
                     "optional": false,
                     "description": "Access key"
+                },
+                {
+                    "name": "steamid_requester",
+                    "type": "fixed64",
+                    "optional": true,
+                    "description": ""
                 }
             ]
         },
@@ -16706,6 +16730,12 @@
                 },
                 {
                     "name": "from_scheduled",
+                    "type": "bool",
+                    "optional": true,
+                    "description": ""
+                },
+                {
+                    "name": "deactivate",
                     "type": "bool",
                     "optional": true,
                     "description": ""
@@ -20704,6 +20734,37 @@
                 {
                     "name": "store_page_filter",
                     "type": "CStorePageFilter",
+                    "optional": true,
+                    "description": ""
+                }
+            ]
+        },
+        "UpdatePackageReservations": {
+            "_type": "undocumented",
+            "version": 1,
+            "httpmethod": "POST",
+            "parameters": [
+                {
+                    "name": "key",
+                    "type": "string",
+                    "optional": false,
+                    "description": "Access key"
+                },
+                {
+                    "name": "packages_to_reserve[0]",
+                    "type": "uint32[]",
+                    "optional": true,
+                    "description": ""
+                },
+                {
+                    "name": "packages_to_unreserve[0]",
+                    "type": "uint32[]",
+                    "optional": true,
+                    "description": ""
+                },
+                {
+                    "name": "country_code",
+                    "type": "string",
                     "optional": true,
                     "description": ""
                 }
