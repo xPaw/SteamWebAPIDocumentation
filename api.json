@@ -7085,6 +7085,12 @@
                     "type": "int32",
                     "optional": true,
                     "description": ""
+                },
+                {
+                    "name": "client_instance_id",
+                    "type": "uint64",
+                    "optional": true,
+                    "description": ""
                 }
             ]
         },
@@ -8062,6 +8068,56 @@
                     "type": "uint64",
                     "optional": true,
                     "description": "steamid to make the request on behalf of -- if specified, the user must be in the session and all users being added to the session must be friends with the user."
+                }
+            ]
+        }
+    },
+    "IGameRecordingClipService": {
+        "GetSharedClips": {
+            "_type": "undocumented",
+            "version": 1,
+            "parameters": [
+                {
+                    "name": "key",
+                    "type": "string",
+                    "optional": false,
+                    "description": "Access key"
+                },
+                {
+                    "name": "steamid",
+                    "type": "fixed64",
+                    "optional": true,
+                    "description": ""
+                },
+                {
+                    "name": "appid",
+                    "type": "uint32",
+                    "optional": true,
+                    "description": ""
+                }
+            ]
+        },
+        "GetSingleSharedClip": {
+            "_type": "undocumented",
+            "version": 1,
+            "parameters": [
+                {
+                    "name": "key",
+                    "type": "string",
+                    "optional": false,
+                    "description": "Access key"
+                },
+                {
+                    "name": "steamid",
+                    "type": "fixed64",
+                    "optional": true,
+                    "description": ""
+                },
+                {
+                    "name": "clip_id",
+                    "type": "fixed64",
+                    "optional": true,
+                    "description": ""
                 }
             ]
         }
@@ -9876,6 +9932,24 @@
                 },
                 {
                     "name": "rt_end_time",
+                    "type": "uint32",
+                    "optional": true,
+                    "description": ""
+                }
+            ]
+        },
+        "GetPartnerReadyToPublishMessages": {
+            "_type": "undocumented",
+            "version": 1,
+            "parameters": [
+                {
+                    "name": "key",
+                    "type": "string",
+                    "optional": false,
+                    "description": "Access key"
+                },
+                {
+                    "name": "partnerid",
                     "type": "uint32",
                     "optional": true,
                     "description": ""
@@ -16313,6 +16387,48 @@
                 }
             ]
         },
+        "GetEmbeddingValues": {
+            "_type": "undocumented",
+            "version": 1,
+            "parameters": [
+                {
+                    "name": "key",
+                    "type": "string",
+                    "optional": false,
+                    "description": "Access key"
+                },
+                {
+                    "name": "project_id",
+                    "type": "uint32",
+                    "optional": true,
+                    "description": ""
+                },
+                {
+                    "name": "published_version",
+                    "type": "uint32",
+                    "optional": true,
+                    "description": ""
+                },
+                {
+                    "name": "train_id",
+                    "type": "uint32",
+                    "optional": true,
+                    "description": ""
+                },
+                {
+                    "name": "export_name",
+                    "type": "string",
+                    "optional": true,
+                    "description": ""
+                },
+                {
+                    "name": "numerical_values[0]",
+                    "type": "uint32[]",
+                    "optional": true,
+                    "description": ""
+                }
+            ]
+        },
         "GetFetchStatus": {
             "_type": "undocumented",
             "version": 1,
@@ -16399,6 +16515,54 @@
                 {
                     "name": "look_ahead_days",
                     "type": "uint32",
+                    "optional": true,
+                    "description": ""
+                }
+            ]
+        },
+        "GetNearestEmbedding": {
+            "_type": "undocumented",
+            "version": 1,
+            "parameters": [
+                {
+                    "name": "key",
+                    "type": "string",
+                    "optional": false,
+                    "description": "Access key"
+                },
+                {
+                    "name": "project_id",
+                    "type": "uint32",
+                    "optional": true,
+                    "description": ""
+                },
+                {
+                    "name": "published_version",
+                    "type": "uint32",
+                    "optional": true,
+                    "description": ""
+                },
+                {
+                    "name": "train_id",
+                    "type": "uint32",
+                    "optional": true,
+                    "description": ""
+                },
+                {
+                    "name": "export_name",
+                    "type": "string",
+                    "optional": true,
+                    "description": ""
+                },
+                {
+                    "name": "result_count",
+                    "type": "uint32",
+                    "optional": true,
+                    "description": ""
+                },
+                {
+                    "name": "values[0]",
+                    "type": "float[]",
                     "optional": true,
                     "description": ""
                 }
