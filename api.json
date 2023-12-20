@@ -1,4 +1,192 @@
 {
+    "IAccountCartService": {
+        "AddItemToCart": {
+            "_type": "undocumented",
+            "version": 1,
+            "httpmethod": "POST",
+            "parameters": [
+                {
+                    "name": "key",
+                    "type": "string",
+                    "optional": false,
+                    "description": "Access key"
+                },
+                {
+                    "name": "packageid",
+                    "type": "uint32",
+                    "optional": true,
+                    "description": ""
+                },
+                {
+                    "name": "bundleid",
+                    "type": "uint32",
+                    "optional": true,
+                    "description": ""
+                },
+                {
+                    "name": "user_country",
+                    "type": "string",
+                    "optional": true,
+                    "description": ""
+                },
+                {
+                    "name": "gift_info",
+                    "type": "CartGiftInfo",
+                    "optional": true,
+                    "description": ""
+                },
+                {
+                    "name": "flags",
+                    "type": "AccountCartLineItemFlags",
+                    "optional": true,
+                    "description": ""
+                }
+            ]
+        },
+        "DeleteCart": {
+            "_type": "undocumented",
+            "version": 1,
+            "httpmethod": "POST",
+            "parameters": [
+                {
+                    "name": "key",
+                    "type": "string",
+                    "optional": false,
+                    "description": "Access key"
+                }
+            ]
+        },
+        "GetCart": {
+            "_type": "undocumented",
+            "version": 1,
+            "parameters": [
+                {
+                    "name": "key",
+                    "type": "string",
+                    "optional": false,
+                    "description": "Access key"
+                },
+                {
+                    "name": "user_country",
+                    "type": "string",
+                    "optional": true,
+                    "description": ""
+                }
+            ]
+        },
+        "GetRelevantCoupons": {
+            "_type": "undocumented",
+            "version": 1,
+            "httpmethod": "POST",
+            "parameters": [
+                {
+                    "name": "key",
+                    "type": "string",
+                    "optional": false,
+                    "description": "Access key"
+                },
+                {
+                    "name": "language",
+                    "type": "uint32",
+                    "optional": true,
+                    "description": ""
+                }
+            ]
+        },
+        "MergeShoppingCartContents": {
+            "_type": "undocumented",
+            "version": 1,
+            "httpmethod": "POST",
+            "parameters": [
+                {
+                    "name": "key",
+                    "type": "string",
+                    "optional": false,
+                    "description": "Access key"
+                },
+                {
+                    "name": "gidshoppingcart",
+                    "type": "fixed64",
+                    "optional": true,
+                    "description": ""
+                },
+                {
+                    "name": "user_country",
+                    "type": "string",
+                    "optional": true,
+                    "description": ""
+                }
+            ]
+        },
+        "ModifyLineItem": {
+            "_type": "undocumented",
+            "version": 1,
+            "httpmethod": "POST",
+            "parameters": [
+                {
+                    "name": "key",
+                    "type": "string",
+                    "optional": false,
+                    "description": "Access key"
+                },
+                {
+                    "name": "line_item_id",
+                    "type": "uint64",
+                    "optional": true,
+                    "description": ""
+                },
+                {
+                    "name": "user_country",
+                    "type": "string",
+                    "optional": true,
+                    "description": ""
+                },
+                {
+                    "name": "gift_info",
+                    "type": "CartGiftInfo",
+                    "optional": true,
+                    "description": ""
+                },
+                {
+                    "name": "flags",
+                    "type": "AccountCartLineItemFlags",
+                    "optional": true,
+                    "description": ""
+                },
+                {
+                    "name": "apply_gidcoupon",
+                    "type": "uint64",
+                    "optional": true,
+                    "description": ""
+                }
+            ]
+        },
+        "RemoveItemFromCart": {
+            "_type": "undocumented",
+            "version": 1,
+            "httpmethod": "POST",
+            "parameters": [
+                {
+                    "name": "key",
+                    "type": "string",
+                    "optional": false,
+                    "description": "Access key"
+                },
+                {
+                    "name": "line_item_id",
+                    "type": "uint64",
+                    "optional": true,
+                    "description": ""
+                },
+                {
+                    "name": "user_country",
+                    "type": "string",
+                    "optional": true,
+                    "description": ""
+                }
+            ]
+        }
+    },
     "IAccountLinkingService": {
         "GetLinkedAccountInfo": {
             "_type": "undocumented",
@@ -2149,6 +2337,38 @@
             ]
         }
     },
+    "ICheckoutService": {
+        "ValidateStartCheckout": {
+            "_type": "undocumented",
+            "version": 1,
+            "parameters": [
+                {
+                    "name": "key",
+                    "type": "string",
+                    "optional": false,
+                    "description": "Access key"
+                },
+                {
+                    "name": "gidshoppingcart",
+                    "type": "int64",
+                    "optional": true,
+                    "description": ""
+                },
+                {
+                    "name": "context",
+                    "type": "StoreBrowseContext",
+                    "optional": true,
+                    "description": ""
+                },
+                {
+                    "name": "data_request",
+                    "type": "StoreBrowseItemDataRequest",
+                    "optional": true,
+                    "description": ""
+                }
+            ]
+        }
+    },
     "IClanFAQSService": {
         "CheckFAQPermissions": {
             "_type": "undocumented",
@@ -2843,6 +3063,234 @@
         }
     },
     "IClientMetricsService": {
+        "ClientBootstrapReport": {
+            "_type": "undocumented",
+            "version": 1,
+            "parameters": [
+                {
+                    "name": "key",
+                    "type": "string",
+                    "optional": false,
+                    "description": "Access key"
+                },
+                {
+                    "name": "summary",
+                    "type": "CClientMetrics_ClientBootstrap_Summary",
+                    "optional": true,
+                    "description": ""
+                }
+            ]
+        },
+        "ClientCloudAppSyncStats": {
+            "_type": "undocumented",
+            "version": 1,
+            "parameters": [
+                {
+                    "name": "key",
+                    "type": "string",
+                    "optional": false,
+                    "description": "Access key"
+                },
+                {
+                    "name": "app_id",
+                    "type": "uint32",
+                    "optional": true,
+                    "description": ""
+                },
+                {
+                    "name": "platform_type",
+                    "type": "uint32",
+                    "optional": true,
+                    "description": ""
+                },
+                {
+                    "name": "preload",
+                    "type": "bool",
+                    "optional": true,
+                    "description": ""
+                },
+                {
+                    "name": "blocking_app_launch",
+                    "type": "bool",
+                    "optional": true,
+                    "description": ""
+                },
+                {
+                    "name": "files_uploaded",
+                    "type": "uint32",
+                    "optional": true,
+                    "description": ""
+                },
+                {
+                    "name": "files_downloaded",
+                    "type": "uint32",
+                    "optional": true,
+                    "description": ""
+                },
+                {
+                    "name": "files_deleted",
+                    "type": "uint32",
+                    "optional": true,
+                    "description": ""
+                },
+                {
+                    "name": "bytes_uploaded",
+                    "type": "uint64",
+                    "optional": true,
+                    "description": ""
+                },
+                {
+                    "name": "bytes_downloaded",
+                    "type": "uint64",
+                    "optional": true,
+                    "description": ""
+                },
+                {
+                    "name": "microsec_total",
+                    "type": "uint64",
+                    "optional": true,
+                    "description": ""
+                },
+                {
+                    "name": "microsec_init_caches",
+                    "type": "uint64",
+                    "optional": true,
+                    "description": ""
+                },
+                {
+                    "name": "microsec_validate_state",
+                    "type": "uint64",
+                    "optional": true,
+                    "description": ""
+                },
+                {
+                    "name": "microsec_ac_launch",
+                    "type": "uint64",
+                    "optional": true,
+                    "description": ""
+                },
+                {
+                    "name": "microsec_ac_prep_user_files",
+                    "type": "uint64",
+                    "optional": true,
+                    "description": ""
+                },
+                {
+                    "name": "microsec_ac_exit",
+                    "type": "uint64",
+                    "optional": true,
+                    "description": ""
+                },
+                {
+                    "name": "microsec_build_sync_list",
+                    "type": "uint64",
+                    "optional": true,
+                    "description": ""
+                },
+                {
+                    "name": "microsec_delete_files",
+                    "type": "uint64",
+                    "optional": true,
+                    "description": ""
+                },
+                {
+                    "name": "microsec_download_files",
+                    "type": "uint64",
+                    "optional": true,
+                    "description": ""
+                },
+                {
+                    "name": "microsec_upload_files",
+                    "type": "uint64",
+                    "optional": true,
+                    "description": ""
+                },
+                {
+                    "name": "hardware_type",
+                    "type": "uint32",
+                    "optional": true,
+                    "description": ""
+                },
+                {
+                    "name": "files_managed",
+                    "type": "uint32",
+                    "optional": true,
+                    "description": ""
+                }
+            ]
+        },
+        "ClientContentValidationReport": {
+            "_type": "undocumented",
+            "version": 1,
+            "parameters": [
+                {
+                    "name": "key",
+                    "type": "string",
+                    "optional": false,
+                    "description": "Access key"
+                },
+                {
+                    "name": "validation_result",
+                    "type": "int32",
+                    "optional": true,
+                    "description": ""
+                },
+                {
+                    "name": "app_id",
+                    "type": "uint32",
+                    "optional": true,
+                    "description": ""
+                },
+                {
+                    "name": "staged_files",
+                    "type": "bool",
+                    "optional": true,
+                    "description": ""
+                },
+                {
+                    "name": "user_initiated",
+                    "type": "bool",
+                    "optional": true,
+                    "description": ""
+                },
+                {
+                    "name": "early_out",
+                    "type": "bool",
+                    "optional": true,
+                    "description": ""
+                },
+                {
+                    "name": "chunks_scanned",
+                    "type": "uint32",
+                    "optional": true,
+                    "description": ""
+                },
+                {
+                    "name": "chunks_corrupt",
+                    "type": "uint32",
+                    "optional": true,
+                    "description": ""
+                },
+                {
+                    "name": "bytes_scanned",
+                    "type": "uint64",
+                    "optional": true,
+                    "description": ""
+                },
+                {
+                    "name": "chunk_bytes_corrupt",
+                    "type": "uint64",
+                    "optional": true,
+                    "description": ""
+                },
+                {
+                    "name": "total_file_size_corrupt",
+                    "type": "uint64",
+                    "optional": true,
+                    "description": ""
+                }
+            ]
+        },
         "ReportClientError": {
             "_type": "undocumented",
             "version": 1,
@@ -3715,6 +4163,36 @@
         }
     },
     "IContentServerDirectoryService": {
+        "GetCDNAuthToken": {
+            "_type": "undocumented",
+            "version": 1,
+            "parameters": [
+                {
+                    "name": "key",
+                    "type": "string",
+                    "optional": false,
+                    "description": "Access key"
+                },
+                {
+                    "name": "depot_id",
+                    "type": "uint32",
+                    "optional": true,
+                    "description": ""
+                },
+                {
+                    "name": "host_name",
+                    "type": "string",
+                    "optional": true,
+                    "description": ""
+                },
+                {
+                    "name": "app_id",
+                    "type": "uint32",
+                    "optional": true,
+                    "description": ""
+                }
+            ]
+        },
         "GetCDNForVideo": {
             "version": 1,
             "httpmethod": "GET",
@@ -5775,6 +6253,78 @@
                 }
             ]
         },
+        "ClientContentCorruptionReport": {
+            "_type": "undocumented",
+            "version": 1,
+            "parameters": [
+                {
+                    "name": "key",
+                    "type": "string",
+                    "optional": false,
+                    "description": "Access key"
+                },
+                {
+                    "name": "appid",
+                    "type": "uint32",
+                    "optional": true,
+                    "description": ""
+                },
+                {
+                    "name": "depotid",
+                    "type": "uint32",
+                    "optional": true,
+                    "description": ""
+                },
+                {
+                    "name": "download_source",
+                    "type": "string",
+                    "optional": true,
+                    "description": ""
+                },
+                {
+                    "name": "objectid",
+                    "type": "string",
+                    "optional": true,
+                    "description": ""
+                },
+                {
+                    "name": "cellid",
+                    "type": "uint32",
+                    "optional": true,
+                    "description": ""
+                },
+                {
+                    "name": "is_manifest",
+                    "type": "bool",
+                    "optional": true,
+                    "description": ""
+                },
+                {
+                    "name": "object_size",
+                    "type": "uint64",
+                    "optional": true,
+                    "description": ""
+                },
+                {
+                    "name": "corruption_type",
+                    "type": "uint32",
+                    "optional": true,
+                    "description": ""
+                },
+                {
+                    "name": "used_https",
+                    "type": "bool",
+                    "optional": true,
+                    "description": ""
+                },
+                {
+                    "name": "oc_proxy_detected",
+                    "type": "bool",
+                    "optional": true,
+                    "description": ""
+                }
+            ]
+        },
         "GetVRDeviceInfo": {
             "_type": "undocumented",
             "version": 1,
@@ -5816,6 +6366,26 @@
                     "type": "uint32",
                     "optional": true,
                     "description": "Aggregation to set the entry to"
+                }
+            ]
+        }
+    },
+    "IDeviceAuthService": {
+        "GetExcludedGamesInLibrary": {
+            "_type": "undocumented",
+            "version": 1,
+            "parameters": [
+                {
+                    "name": "key",
+                    "type": "string",
+                    "optional": false,
+                    "description": "Access key"
+                },
+                {
+                    "name": "steamid",
+                    "type": "fixed64",
+                    "optional": true,
+                    "description": ""
                 }
             ]
         }

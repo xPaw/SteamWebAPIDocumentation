@@ -225,8 +225,12 @@ $mustBePost                = "<html><head><title>Method Not Allowed</title></hea
 
 $foundServices = [];
 
+ksort( $generatedServices );
+
 foreach( $generatedServices as $serviceName => $methods )
 {
+	ksort( $methods );
+
 	$foundMethods = [];
 
 	foreach( $methods as $methodName => $trash )
