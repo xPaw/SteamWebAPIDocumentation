@@ -6989,6 +6989,68 @@
                 }
             ]
         },
+        "ConfirmInviteToFamilyGroup": {
+            "_type": "undocumented",
+            "version": 1,
+            "httpmethod": "POST",
+            "parameters": [
+                {
+                    "name": "key",
+                    "type": "string",
+                    "optional": false,
+                    "description": "Access key"
+                },
+                {
+                    "name": "family_groupid",
+                    "type": "uint64",
+                    "optional": true,
+                    "description": ""
+                },
+                {
+                    "name": "invite_id",
+                    "type": "uint64",
+                    "optional": true,
+                    "description": ""
+                },
+                {
+                    "name": "nonce",
+                    "type": "uint64",
+                    "optional": true,
+                    "description": ""
+                }
+            ]
+        },
+        "ConfirmJoinFamilyGroup": {
+            "_type": "undocumented",
+            "version": 1,
+            "httpmethod": "POST",
+            "parameters": [
+                {
+                    "name": "key",
+                    "type": "string",
+                    "optional": false,
+                    "description": "Access key"
+                },
+                {
+                    "name": "family_groupid",
+                    "type": "uint64",
+                    "optional": true,
+                    "description": ""
+                },
+                {
+                    "name": "invite_id",
+                    "type": "uint64",
+                    "optional": true,
+                    "description": ""
+                },
+                {
+                    "name": "nonce",
+                    "type": "uint64",
+                    "optional": true,
+                    "description": ""
+                }
+            ]
+        },
         "CreateFamilyGroup": {
             "_type": "undocumented",
             "version": 1,
@@ -13653,6 +13715,12 @@
                     "type": "bool",
                     "optional": true,
                     "description": ""
+                },
+                {
+                    "name": "include_dependencies",
+                    "type": "bool",
+                    "optional": true,
+                    "description": ""
                 }
             ]
         },
@@ -16775,6 +16843,18 @@
                 },
                 {
                     "name": "look_ahead_days",
+                    "type": "uint32",
+                    "optional": true,
+                    "description": ""
+                },
+                {
+                    "name": "start_timestamp",
+                    "type": "uint32",
+                    "optional": true,
+                    "description": ""
+                },
+                {
+                    "name": "end_timestamp",
                     "type": "uint32",
                     "optional": true,
                     "description": ""
@@ -20576,6 +20656,50 @@
             ]
         }
     },
+    "IStoreMarketingService": {
+        "GetItemsToFeature": {
+            "_type": "undocumented",
+            "version": 1,
+            "parameters": [
+                {
+                    "name": "key",
+                    "type": "string",
+                    "optional": false,
+                    "description": "Access key"
+                },
+                {
+                    "name": "context",
+                    "type": "StoreBrowseContext",
+                    "optional": true,
+                    "description": ""
+                },
+                {
+                    "name": "data_request",
+                    "type": "StoreBrowseItemDataRequest",
+                    "optional": true,
+                    "description": ""
+                },
+                {
+                    "name": "include_spotlights",
+                    "type": "CStoreMarketing_GetItemsToFeature_Request_SpotlightFilter",
+                    "optional": true,
+                    "description": ""
+                },
+                {
+                    "name": "include_dailydeals",
+                    "type": "bool",
+                    "optional": true,
+                    "description": ""
+                },
+                {
+                    "name": "include_top_specials_count",
+                    "type": "int32",
+                    "optional": true,
+                    "description": ""
+                }
+            ]
+        }
+    },
     "IStoreQueryService": {
         "Query": {
             "_type": "undocumented",
@@ -21914,6 +22038,30 @@
                     "type": "string",
                     "optional": false,
                     "description": "Access key"
+                },
+                {
+                    "name": "appid",
+                    "type": "uint32",
+                    "optional": true,
+                    "description": ""
+                },
+                {
+                    "name": "shortcut_name",
+                    "type": "string",
+                    "optional": true,
+                    "description": ""
+                },
+                {
+                    "name": "shortcutid",
+                    "type": "uint32",
+                    "optional": true,
+                    "description": ""
+                },
+                {
+                    "name": "note_id",
+                    "type": "string",
+                    "optional": true,
+                    "description": ""
                 }
             ]
         },
@@ -21958,6 +22106,12 @@
                     "type": "uint32",
                     "optional": true,
                     "description": ""
+                },
+                {
+                    "name": "include_content",
+                    "type": "bool",
+                    "optional": true,
+                    "description": ""
                 }
             ]
         },
@@ -21971,6 +22125,48 @@
                     "type": "string",
                     "optional": false,
                     "description": "Access key"
+                },
+                {
+                    "name": "appid",
+                    "type": "uint32",
+                    "optional": true,
+                    "description": ""
+                },
+                {
+                    "name": "shortcut_name",
+                    "type": "string",
+                    "optional": true,
+                    "description": ""
+                },
+                {
+                    "name": "shortcutid",
+                    "type": "uint32",
+                    "optional": true,
+                    "description": ""
+                },
+                {
+                    "name": "note_id",
+                    "type": "string",
+                    "optional": true,
+                    "description": ""
+                },
+                {
+                    "name": "create_new",
+                    "type": "bool",
+                    "optional": true,
+                    "description": ""
+                },
+                {
+                    "name": "title",
+                    "type": "string",
+                    "optional": true,
+                    "description": ""
+                },
+                {
+                    "name": "content",
+                    "type": "string",
+                    "optional": true,
+                    "description": ""
                 }
             ]
         }
