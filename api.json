@@ -3900,6 +3900,11 @@
             "version": 1,
             "parameters": []
         },
+        "GetSingleClanAnnouncement": {
+            "_type": "undocumented",
+            "version": 1,
+            "parameters": []
+        },
         "GetUserPartnerEventNews": {
             "_type": "undocumented",
             "version": 1,
