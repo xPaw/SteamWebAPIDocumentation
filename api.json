@@ -251,12 +251,6 @@
                     "description": "Access key"
                 },
                 {
-                    "name": "appid",
-                    "type": "int32",
-                    "optional": true,
-                    "description": ""
-                },
-                {
                     "name": "private",
                     "type": "bool",
                     "optional": true,
@@ -6090,6 +6084,25 @@
         }
     },
     "IDailyDealService": {
+        "CancelDailyDeal": {
+            "_type": "undocumented",
+            "version": 1,
+            "httpmethod": "POST",
+            "parameters": [
+                {
+                    "name": "key",
+                    "type": "string",
+                    "optional": false,
+                    "description": "Access key"
+                },
+                {
+                    "name": "gid",
+                    "type": "fixed64",
+                    "optional": true,
+                    "description": ""
+                }
+            ]
+        },
         "CreateDailyDeal": {
             "_type": "undocumented",
             "version": 1,
