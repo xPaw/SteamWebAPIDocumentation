@@ -362,3 +362,6 @@ ITwoFactorService/SendEmail/v1
 ITwoFactorService/ValidateToken/v1
 IVideoService/GetVideoBookmarks/v1
 IVideoService/SetVideoBookmark/v1
+https://api.steampowered.com/ICSGOPlayers_730/GetNextMatchSharingCode/v1/? access_token=5043c4a46518358cb15812162812ed36 &steamid=76561198289098419&steamidkey=76561198289098419
+https://api.steampowered.com/IDOTA2Events_570/GetArcanaVotes/v1/? access_token=5043c4a46518358cb15812162812ed36
+https://api.steampowered.com/IDOTA2League_570/GetPrizePool/v1/? access_token=5043c4a46518358cb15812162812ed36
