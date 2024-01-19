@@ -7721,6 +7721,12 @@
                     "type": "uint64",
                     "optional": true,
                     "description": ""
+                },
+                {
+                    "name": "send_running_apps",
+                    "type": "bool",
+                    "optional": true,
+                    "description": ""
                 }
             ]
         },
@@ -7917,6 +7923,12 @@
                     "type": "uint64",
                     "optional": true,
                     "description": ""
+                },
+                {
+                    "name": "nonce",
+                    "type": "uint64",
+                    "optional": true,
+                    "description": ""
                 }
             ]
         },
@@ -8007,6 +8019,31 @@
                     "type": "bool",
                     "optional": true,
                     "description": "Request the contents of the account cart instead of gidshoppingcart?"
+                }
+            ]
+        },
+        "ResendInvitationToFamilyGroup": {
+            "_type": "undocumented",
+            "version": 1,
+            "httpmethod": "POST",
+            "parameters": [
+                {
+                    "name": "key",
+                    "type": "string",
+                    "optional": false,
+                    "description": "Access key"
+                },
+                {
+                    "name": "family_groupid",
+                    "type": "uint64",
+                    "optional": true,
+                    "description": ""
+                },
+                {
+                    "name": "steamid",
+                    "type": "uint64",
+                    "optional": true,
+                    "description": ""
                 }
             ]
         },
@@ -12836,6 +12873,31 @@
                     "type": "string",
                     "optional": true,
                     "description": ""
+                },
+                {
+                    "name": "skip_discount_event",
+                    "type": "bool",
+                    "optional": true,
+                    "description": ""
+                }
+            ]
+        },
+        "CancelInvite": {
+            "_type": "undocumented",
+            "version": 1,
+            "httpmethod": "POST",
+            "parameters": [
+                {
+                    "name": "key",
+                    "type": "string",
+                    "optional": false,
+                    "description": "Access key"
+                },
+                {
+                    "name": "inviteid",
+                    "type": "fixed64",
+                    "optional": true,
+                    "description": ""
                 }
             ]
         },
@@ -13042,6 +13104,24 @@
                     "type": "string",
                     "optional": false,
                     "description": "Access key"
+                }
+            ]
+        },
+        "GetAllPlansForApps": {
+            "_type": "undocumented",
+            "version": 1,
+            "parameters": [
+                {
+                    "name": "key",
+                    "type": "string",
+                    "optional": false,
+                    "description": "Access key"
+                },
+                {
+                    "name": "appids[0]",
+                    "type": "uint32[]",
+                    "optional": true,
+                    "description": ""
                 }
             ]
         },
@@ -17669,6 +17749,12 @@
                 {
                     "name": "additional_data[0]",
                     "type": "uint32[]",
+                    "optional": true,
+                    "description": ""
+                },
+                {
+                    "name": "keys[0]",
+                    "type": "uint64[]",
                     "optional": true,
                     "description": ""
                 }
