@@ -96,7 +96,10 @@
 								</div>
 								<div class="mb-3 col-md-6">
 									<a href="#" class="float-end" @click="accessTokenVisible = !accessTokenVisible">What is this?</a>
-									<label class="form-label" for="form-access-token">Access token</label>
+									<label class="form-label" for="form-access-token">
+										Access token
+										<span v-if="accessTokenExpiration > 0">expires on {{formatAccessTokenExpirationDate}}</span>
+									</label>
 									<input
 										:type="keyInputType"
 										:class="[

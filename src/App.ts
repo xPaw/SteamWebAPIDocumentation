@@ -22,6 +22,7 @@ export default defineComponent({
 			keyInputType: 'password',
 			hasValidWebApiKey: false,
 			hasValidAccessToken: false,
+			accessTokenExpiration: 0,
 			accessTokenVisible: false,
 			currentFilter: '',
 			currentInterface: '',
@@ -60,6 +61,23 @@ export default defineComponent({
 			}
 		},
 		"userData.access_token"(value: string): void {
+			try {
+				if (/^[\w-]+\.[\w-]+\.[\w-]+$/.test(value)) {
+					const jwt = value.split('.');
+					const token = JSON.parse(atob(jwt[1]));
+
+					this.accessTokenExpiration = token.exp * 1000;
+
+					if (token.sub && !this.userData.steamid) {
+						this.userData.steamid = token.sub;
+					}
+				}
+			}
+			catch (e) {
+				console.log(e);
+				this.accessTokenExpiration = 0;
+			}
+
 			if (this.isFieldValid('access_token')) {
 				localStorage.setItem('access_token', value);
 			}
@@ -107,10 +125,10 @@ export default defineComponent({
 			const flattenedMethods: FuseSearchType[] = [];
 
 			try {
+				this.userData.format = localStorage.getItem('format') || 'json';
+				this.userData.steamid = localStorage.getItem('steamid') || '';
 				this.userData.webapi_key = localStorage.getItem('webapi_key') || '';
 				this.userData.access_token = localStorage.getItem('access_token') || '';
-				this.userData.steamid = localStorage.getItem('steamid') || '';
-				this.userData.format = localStorage.getItem('format') || 'json';
 
 				const favoriteStrings = JSON.parse(localStorage.getItem('favorites') || '[]');
 
@@ -243,6 +261,15 @@ export default defineComponent({
 		uriDelimeterBeforeKey() {
 			return this.hasValidAccessToken || this.hasValidWebApiKey ? '?' : '';
 		},
+		formatAccessTokenExpirationDate(): string {
+			const formatter = new Intl.DateTimeFormat('en-US', {
+				hourCycle: 'h23',
+				dateStyle: 'short',
+				timeStyle: 'short',
+			});
+
+			return formatter.format(this.accessTokenExpiration);
+		}
 	},
 	methods: {
 		setInterface(): void {
@@ -301,7 +328,7 @@ export default defineComponent({
 		isFieldValid(field: string): boolean {
 			switch (field) {
 				case 'access_token':
-					this.hasValidAccessToken = /^[\w-]+\.[\w-]+\.[\w-]+$/.test(this.userData[field]);
+					this.hasValidAccessToken = this.accessTokenExpiration > Date.now();
 					return this.hasValidAccessToken;
 
 				case 'webapi_key':
