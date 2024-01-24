@@ -40,6 +40,43 @@
                     "type": "AccountCartLineItemFlags",
                     "optional": true,
                     "description": ""
+                },
+                {
+                    "name": "navdata",
+                    "type": "CUserInterface_NavData",
+                    "optional": true,
+                    "description": ""
+                }
+            ]
+        },
+        "AddItemsToCart": {
+            "_type": "undocumented",
+            "version": 1,
+            "httpmethod": "POST",
+            "parameters": [
+                {
+                    "name": "key",
+                    "type": "string",
+                    "optional": false,
+                    "description": "Access key"
+                },
+                {
+                    "name": "user_country",
+                    "type": "string",
+                    "optional": true,
+                    "description": ""
+                },
+                {
+                    "name": "items",
+                    "type": "CAccountCart_AddItemsToCart_Request_ItemToAdd",
+                    "optional": true,
+                    "description": ""
+                },
+                {
+                    "name": "navdata",
+                    "type": "CUserInterface_NavData",
+                    "optional": true,
+                    "description": ""
                 }
             ]
         },
@@ -2332,6 +2369,54 @@
         }
     },
     "ICheckoutService": {
+        "GetFriendOwnershipForGifting": {
+            "_type": "undocumented",
+            "version": 1,
+            "parameters": [
+                {
+                    "name": "key",
+                    "type": "string",
+                    "optional": false,
+                    "description": "Access key"
+                },
+                {
+                    "name": "item_ids",
+                    "type": "StoreItemID",
+                    "optional": true,
+                    "description": ""
+                }
+            ]
+        },
+        "ValidateCart": {
+            "_type": "undocumented",
+            "version": 1,
+            "parameters": [
+                {
+                    "name": "key",
+                    "type": "string",
+                    "optional": false,
+                    "description": "Access key"
+                },
+                {
+                    "name": "gidshoppingcart",
+                    "type": "int64",
+                    "optional": true,
+                    "description": ""
+                },
+                {
+                    "name": "context",
+                    "type": "StoreBrowseContext",
+                    "optional": true,
+                    "description": ""
+                },
+                {
+                    "name": "data_request",
+                    "type": "StoreBrowseItemDataRequest",
+                    "optional": true,
+                    "description": ""
+                }
+            ]
+        },
         "ValidateStartCheckout": {
             "_type": "undocumented",
             "version": 1,
@@ -6196,6 +6281,24 @@
                 {
                     "name": "search_term",
                     "type": "string",
+                    "optional": true,
+                    "description": ""
+                }
+            ]
+        },
+        "GetDailyDealsForApps": {
+            "_type": "undocumented",
+            "version": 1,
+            "parameters": [
+                {
+                    "name": "key",
+                    "type": "string",
+                    "optional": false,
+                    "description": "Access key"
+                },
+                {
+                    "name": "appids[0]",
+                    "type": "uint32[]",
                     "optional": true,
                     "description": ""
                 }
@@ -10687,6 +10790,25 @@
                 }
             ]
         },
+        "GetMarketingMessagesForApps": {
+            "_type": "undocumented",
+            "version": 1,
+            "httpmethod": "POST",
+            "parameters": [
+                {
+                    "name": "key",
+                    "type": "string",
+                    "optional": false,
+                    "description": "Access key"
+                },
+                {
+                    "name": "appids[0]",
+                    "type": "uint32[]",
+                    "optional": true,
+                    "description": ""
+                }
+            ]
+        },
         "GetMarketingMessagesForUser": {
             "_type": "undocumented",
             "version": 1,
@@ -12353,6 +12475,25 @@
                 {
                     "name": "steamid",
                     "type": "fixed64",
+                    "optional": true,
+                    "description": ""
+                }
+            ]
+        },
+        "GetRecentPlaytimeSessionsForChild": {
+            "_type": "undocumented",
+            "version": 1,
+            "httpmethod": "POST",
+            "parameters": [
+                {
+                    "name": "key",
+                    "type": "string",
+                    "optional": false,
+                    "description": "Access key"
+                },
+                {
+                    "name": "steamid",
+                    "type": "uint64",
                     "optional": true,
                     "description": ""
                 }
