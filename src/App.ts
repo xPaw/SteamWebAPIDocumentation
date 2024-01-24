@@ -301,7 +301,7 @@ export default defineComponent({
 		isFieldValid(field: string): boolean {
 			switch (field) {
 				case 'access_token':
-					this.hasValidAccessToken = /^[0-9a-f]{32}$/i.test(this.userData[field]);
+					this.hasValidAccessToken = /^[\w-]+\.[\w-]+\.[\w-]+$/.test(this.userData[field]);
 					return this.hasValidAccessToken;
 
 				case 'webapi_key':
