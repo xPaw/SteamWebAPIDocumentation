@@ -23,6 +23,8 @@ export default defineComponent({
 			hasValidWebApiKey: false,
 			hasValidAccessToken: false,
 			accessTokenExpiration: 0,
+			accessTokenSteamId: null,
+			accessTokenAudience: [],
 			accessTokenVisible: false,
 			currentFilter: '',
 			currentInterface: '',
@@ -67,6 +69,8 @@ export default defineComponent({
 					const token = JSON.parse(atob(jwt[1]));
 
 					this.accessTokenExpiration = token.exp * 1000;
+					this.accessTokenAudience = token.aud;
+					this.accessTokenSteamId = token.sub;
 
 					if (token.sub && !this.userData.steamid) {
 						this.userData.steamid = token.sub;
@@ -76,6 +80,8 @@ export default defineComponent({
 			catch (e) {
 				console.log(e);
 				this.accessTokenExpiration = 0;
+				this.accessTokenSteamId = null;
+				this.accessTokenAudience = [];
 			}
 
 			if (this.isFieldValid('access_token')) {

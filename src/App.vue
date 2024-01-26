@@ -79,7 +79,7 @@
 							<div class="card-header">Settings</div>
 							<div class="card-body row">
 								<div class="mb-3 col-md-6">
-									<a href="https://steamcommunity.com/dev/apikey" target="_blank" rel="noopener" class="float-end">Get your key here</a>
+									<a href="https://steamcommunity.com/dev/apikey" target="_blank" class="float-end">Get your key here</a>
 									<label class="form-label" for="form-api-key">WebAPI key</label>
 									<input
 										:type="keyInputType"
@@ -95,7 +95,7 @@
 										@blur="keyInputType = 'password'">
 								</div>
 								<div class="mb-3 col-md-6">
-									<a href="#" class="float-end" @click="accessTokenVisible = !accessTokenVisible">What is this?</a>
+									<a href="#" class="float-end" @click="accessTokenVisible = !accessTokenVisible">How to get it</a>
 									<label class="form-label" for="form-access-token">
 										Access token
 										<span v-if="accessTokenExpiration > 0">expires on {{formatAccessTokenExpirationDate}}</span>
@@ -122,7 +122,7 @@
 									</select>
 								</div>
 								<div class="mb-3 col-md-6">
-									<a href="https://steamdb.info/calculator/" target="_blank" rel="noopener" class="float-end">Get your id here</a>
+									<a href="https://steamdb.info/calculator/" target="_blank" class="float-end">Get your id here</a>
 									<label class="form-label" for="form-steamid">Pre-fill SteamID</label>
 									<input type="text" :class="[
 										'form-control',
@@ -135,14 +135,19 @@
 						<div class="card mt-3" v-if="accessTokenVisible">
 							<div class="card-header bg-info text-dark">What is an access token?</div>
 							<div class="card-body">
-								<p>Some APIs work with OAuth access token, if you have one you can provide it here and it will be preferred over the webapi key.</p>
-								<p>Here's how to get one:</p>
+								<p>Some APIs work with access tokens, if you have one you can provide it here and it will be preferred over the webapi key.</p>
+								<p v-if="accessTokenAudience.length > 0">Currently entered token is for <span class="badge bg-primary" v-for="aud in accessTokenAudience" :key="aud">{{ aud }}</span> with steamid {{ accessTokenSteamId }} and expires on {{ formatAccessTokenExpirationDate }}.</p>
+								<p>Here's how to get a store token:</p>
 								<ul>
-									<li>Open <a href="https://store.steampowered.com/pointssummary/ajaxgetasyncconfig" target="_blank" rel="noopener"><code>https://store.steampowered.com/pointssummary/ajaxgetasyncconfig</code></a></li>
+									<li>Open <a href="https://store.steampowered.com/pointssummary/ajaxgetasyncconfig" target="_blank"><code>https://store.steampowered.com/pointssummary/ajaxgetasyncconfig</code></a></li>
 									<li>Copy the value of <code>webapi_token</code></li>
 								</ul>
 
-								<p>You can then use <a href="#ISteamUserOAuth/GetTokenDetails">ISteamUserOAuth/GetTokenDetails</a> endpoint to get information about the token.</p>
+								<p>Here's how to get a community token:</p>
+								<ul>
+									<li>Open <a href="https://steamcommunity.com/my/edit/info" target="_blank"><code>https://steamcommunity.com/my/edit/info</code></a></li>
+									<li>Run the following script: <code>JSON.parse(application_config.dataset.loyalty_webapi_token)</code> <i>(or manually copy data-loyalty_webapi_token from application_config element)</i></li>
+								</ul>
 							</div>
 						</div>
 
@@ -246,7 +251,7 @@
 
 								<div class="card-header p-0 d-flex">
 									<div class="card-inner-header">
-										<a class="badge bg-warning text-dark no-select" v-if="method._type === 'publisher_only'" :href="`https://partner.steamgames.com/doc/webapi/${currentInterface}#${methodName}`" target="_blank" rel="noopener">PUBLISHER</a>
+										<a class="badge bg-warning text-dark no-select" v-if="method._type === 'publisher_only'" :href="`https://partner.steamgames.com/doc/webapi/${currentInterface}#${methodName}`" target="_blank">PUBLISHER</a>
 										<span class="badge bg-warning text-dark no-select" v-if="method._type === 'undocumented'">UNDOCUMENTED</span>
 										<span :class="method.httpmethod === 'GET' ? 'badge bg-success' : 'badge bg-danger'">{{ method.httpmethod }}</span>
 										<a class="card-method-name" :href="'#' + currentInterface + '/' + methodName">{{ methodName }}</a>
