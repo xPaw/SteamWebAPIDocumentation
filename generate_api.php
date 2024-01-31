@@ -1,11 +1,9 @@
 <?php
 
-if( getenv( 'CI' ) !== false )
-{
-	$PublicApiKey    = getenv( 'STEAM_PUBLIC_API_KEY' );
-	$PublisherApiKey = getenv( 'STEAM_PUBLISHER_API_KEY' );
-}
-else
+$PublicApiKey    = getenv( 'STEAM_PUBLIC_API_KEY' );
+$PublisherApiKey = getenv( 'STEAM_PUBLISHER_API_KEY' );
+
+if( empty( $PublicApiKey ) || empty( $PublisherApiKey ) )
 {
 	require __DIR__ . '/config.php';
 }

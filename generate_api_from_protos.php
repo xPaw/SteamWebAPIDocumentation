@@ -2,24 +2,28 @@
 
 set_time_limit( 600 );
 
-if( getenv( 'CI' ) !== false )
-{
-	$PublisherApiKey = getenv( 'STEAM_PUBLISHER_API_KEY' );
-}
-else
+$PublisherApiKey = getenv( 'STEAM_PUBLISHER_API_KEY' );
+
+if( empty( $PublisherApiKey ) )
 {
 	require __DIR__ . '/config.php';
 }
 
-$Folder = __DIR__ . DIRECTORY_SEPARATOR . 'protobufs_repo';
+$Folder = getenv( 'STEAM_PROTOBUFS_REPO_PATH' );
+
+if( empty( $Folder ) )
+{
+	$Folder = __DIR__ . DIRECTORY_SEPARATOR . 'protobufs_repo';
+
+	if( !file_exists( $Folder ) )
+	{
+		passthru( 'git clone --depth=1 https://github.com/SteamDatabase/Protobufs ' . escapeshellarg( $Folder ) );
+	}
+}
 
 if( file_exists( $Folder ) )
 {
 	passthru( 'cd ' . escapeshellarg( $Folder ) . ' && git pull' );
-}
-else
-{
-	passthru( 'git clone --depth=1 https://github.com/SteamDatabase/Protobufs ' . escapeshellarg( $Folder ) );
 }
 
 $generatedServices = [];
