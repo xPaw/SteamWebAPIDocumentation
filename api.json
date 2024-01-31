@@ -2414,6 +2414,12 @@
                     "type": "StoreBrowseItemDataRequest",
                     "optional": true,
                     "description": ""
+                },
+                {
+                    "name": "gift_info",
+                    "type": "CartGiftInfo",
+                    "optional": true,
+                    "description": ""
                 }
             ]
         },
@@ -6492,6 +6498,30 @@
         }
     },
     "IDeviceAuthService": {
+        "GetBorrowerPlayHistory": {
+            "_type": "undocumented",
+            "version": 1,
+            "parameters": [
+                {
+                    "name": "key",
+                    "type": "string",
+                    "optional": false,
+                    "description": "Access key"
+                },
+                {
+                    "name": "steamid",
+                    "type": "fixed64",
+                    "optional": true,
+                    "description": ""
+                },
+                {
+                    "name": "appid",
+                    "type": "uint32",
+                    "optional": true,
+                    "description": ""
+                }
+            ]
+        },
         "GetExcludedGamesInLibrary": {
             "_type": "undocumented",
             "version": 1,
@@ -6505,6 +6535,30 @@
                 {
                     "name": "steamid",
                     "type": "fixed64",
+                    "optional": true,
+                    "description": ""
+                }
+            ]
+        },
+        "GetOwnAuthorizedDevices": {
+            "_type": "undocumented",
+            "version": 1,
+            "parameters": [
+                {
+                    "name": "key",
+                    "type": "string",
+                    "optional": false,
+                    "description": "Access key"
+                },
+                {
+                    "name": "steamid",
+                    "type": "fixed64",
+                    "optional": true,
+                    "description": ""
+                },
+                {
+                    "name": "include_canceled",
+                    "type": "bool",
                     "optional": true,
                     "description": ""
                 }
@@ -7872,6 +7926,24 @@
                 }
             ]
         },
+        "GetPreferredLenders": {
+            "_type": "undocumented",
+            "version": 1,
+            "parameters": [
+                {
+                    "name": "key",
+                    "type": "string",
+                    "optional": false,
+                    "description": "Access key"
+                },
+                {
+                    "name": "family_groupid",
+                    "type": "uint64",
+                    "optional": true,
+                    "description": ""
+                }
+            ]
+        },
         "GetPurchaseRequests": {
             "_type": "undocumented",
             "version": 1,
@@ -8210,6 +8282,37 @@
                     "type": "uint32",
                     "optional": true,
                     "description": "How many cooldown overrides this family group should have"
+                }
+            ]
+        },
+        "SetPreferredLender": {
+            "_type": "undocumented",
+            "version": 1,
+            "httpmethod": "POST",
+            "parameters": [
+                {
+                    "name": "key",
+                    "type": "string",
+                    "optional": false,
+                    "description": "Access key"
+                },
+                {
+                    "name": "family_groupid",
+                    "type": "uint64",
+                    "optional": true,
+                    "description": ""
+                },
+                {
+                    "name": "appid",
+                    "type": "uint32",
+                    "optional": true,
+                    "description": ""
+                },
+                {
+                    "name": "lender_steamid",
+                    "type": "fixed64",
+                    "optional": true,
+                    "description": ""
                 }
             ]
         }
@@ -11784,6 +11887,24 @@
         }
     },
     "IPartnerStoreBrowseService": {
+        "GetCountryRestrictions": {
+            "_type": "undocumented",
+            "version": 1,
+            "parameters": [
+                {
+                    "name": "key",
+                    "type": "string",
+                    "optional": false,
+                    "description": "Access key"
+                },
+                {
+                    "name": "ids",
+                    "type": "StoreItemID",
+                    "optional": true,
+                    "description": ""
+                }
+            ]
+        },
         "GetItems": {
             "_type": "undocumented",
             "version": 1,
@@ -13263,6 +13384,18 @@
                     "type": "uint32[]",
                     "optional": true,
                     "description": ""
+                },
+                {
+                    "name": "exclude_sales",
+                    "type": "bool",
+                    "optional": true,
+                    "description": ""
+                },
+                {
+                    "name": "exclude_direct_featuring",
+                    "type": "bool",
+                    "optional": true,
+                    "description": ""
                 }
             ]
         },
@@ -13297,6 +13430,30 @@
                 {
                     "name": "input_access_key",
                     "type": "string",
+                    "optional": true,
+                    "description": ""
+                }
+            ]
+        },
+        "GetPlansUpdatedSince": {
+            "_type": "undocumented",
+            "version": 1,
+            "parameters": [
+                {
+                    "name": "key",
+                    "type": "string",
+                    "optional": false,
+                    "description": "Access key"
+                },
+                {
+                    "name": "rtime",
+                    "type": "uint32",
+                    "optional": true,
+                    "description": ""
+                },
+                {
+                    "name": "upto_rtime",
+                    "type": "uint32",
                     "optional": true,
                     "description": ""
                 }
@@ -17414,6 +17571,12 @@
                 {
                     "name": "snapshot_requests",
                     "type": "CMsgSteamLearn_SnapshotProject_Request",
+                    "optional": true,
+                    "description": ""
+                },
+                {
+                    "name": "inference_requests",
+                    "type": "CMsgSteamLearn_Inference_Request",
                     "optional": true,
                     "description": ""
                 }
