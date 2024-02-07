@@ -280,6 +280,8 @@
 										</button>
 									</div>
 
+									<div class="form-control font-monospace mb-3" v-if="method.hasArrays">Decoded: {{ decodeURIComponent( renderParameters( method ) ) }}</div>
+
 									<div class="alert alert-danger" v-if="method.hasArrays">⚠️ This method includes fields generated from protobufs, input_json was generated, which is very error prone. You may be able to get it to work by fiddling with the JSON manually. Please do not report issues when this doesn't work.</div>
 								</div>
 
