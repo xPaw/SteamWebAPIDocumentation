@@ -217,6 +217,11 @@ function MergeLists( array &$FinalList, array $Interfaces, ?string $Type = null 
 									$FinalList[ $InterfaceName ][ $MethodName ][ 'parameters' ][ $ParameterId ][ 'description' ] = $Parameter[ 'description' ];
 								}
 
+								if( isset( $Parameter[ 'extra' ] ) )
+								{
+									$FinalList[ $InterfaceName ][ $MethodName ][ 'parameters' ][ $ParameterId ][ 'extra' ] = $Parameter[ 'extra' ];
+								}
+
 								break;
 							}
 						}

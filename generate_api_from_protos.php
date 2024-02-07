@@ -75,6 +75,76 @@ function ProcessFile( SplFileInfo $fileInfo ) : string
 	}, $proto ) ?? '';
 }
 
+function ParseTypeToRequestParameters( string $request, string $proto, int $level = 0 )
+{
+	if( !preg_match( "/message " . $request . " {(.+?)^}/ms", $proto, $message ) )
+	{
+		echo $request . ' not found' . PHP_EOL;
+		return [];
+	}
+
+	$parameters = [];
+
+	if( preg_match_all(
+		"/^\t(?<rule>optional|repeated|required) (?<type>[\w\.]+) (?<name>\w+).+?(?:\(description\) = \"(?<description>.+?)\".+?)?;$/m",
+		$message[ 1 ] ?? '',
+		$fields
+	) > 0 )
+	{
+		for( $y = 0; $y < count( $fields[ 0 ] ); $y++ )
+		{
+			$name = $fields[ 'name' ][ $y ];
+			$extra = null;
+
+			if( strpos( $fields[ 'type' ][ $y ], '.' ) !== false )
+			{
+				$type = substr( $fields[ 'type' ][ $y ], 1 );
+				// TODO: Support inner types with dots in middle
+
+				if( $type !== $request && $level < 5 )
+				{
+					$extra = ParseTypeToRequestParameters( $type, $proto, $level + 1 );
+				}
+			}
+			else
+			{
+				$type = $fields[ 'type' ][ $y ];
+			}
+
+			if( $fields[ 'rule' ][ $y ] === 'repeated' )
+			{
+				$name .= '[0]';
+				$type .= '[]';
+			}
+
+			if( !empty( $parameters[ $name ] ) )
+			{
+				if( empty( $parameters[ $name ][ 'description' ] ) )
+				{
+					$parameters[ $name ][ 'description' ] = trim( $fields[ 'description' ][ $y ] );
+				}
+
+				continue;
+			}
+
+			$parameters[ $name ] =
+			[
+				'name' => $name,
+				'type' => $type,
+				'optional' => true,
+				'description' => trim( $fields[ 'description' ][ $y ] ),
+			];
+
+			if( !empty( $extra ) )
+			{
+				$parameters[ $name ][ 'extra' ] = array_values( $extra );
+			}
+		}
+	}
+
+	return $parameters;
+}
+
 foreach( $allProtos as $fileInfo )
 {
 	if( strpos( $fileInfo, '.git' ) !== false  || $fileInfo->getExtension() !== 'proto' )
@@ -138,54 +208,7 @@ foreach( $allProtos as $fileInfo )
 				];
 			}
 
-			if( !preg_match( "/message " . $request . " {(.+?)^}/ms", $proto, $message ) )
-			{
-				echo $request . ' not found in ' . $fileInfo . PHP_EOL;
-			}
-
-			if( preg_match_all(
-				"/^\t(?<rule>optional|repeated|required) (?<type>[\w\.]+) (?<name>\w+).+?(?:\(description\) = \"(?<description>.+?)\".+?)?;$/m",
-				$message[ 1 ] ?? '',
-				$fields
-			) > 0 )
-			{
-				for( $y = 0; $y < count( $fields[ 0 ] ); $y++ )
-				{
-					$name = $fields[ 'name' ][ $y ];
-
-					if( strpos( $fields[ 'type' ][ $y ], '.' ) !== false )
-					{
-						$type = substr( $fields[ 'type' ][ $y ], 1 );
-					}
-					else
-					{
-						$type = $fields[ 'type' ][ $y ];
-
-						if( $fields[ 'rule' ][ $y ] === 'repeated' )
-						{
-							$name .= '[0]';
-						}
-					}
-
-					if( !empty( $methodParameters[ $methodPath ][ $name ] ) )
-					{
-						if( empty( $methodParameters[ $methodPath ][ $name ][ 'description' ] ) )
-						{
-							$methodParameters[ $methodPath ][ $name ][ 'description' ] = trim( $fields[ 'description' ][ $y ] );
-						}
-
-						continue;
-					}
-
-					$methodParameters[ $methodPath ][ $name ] =
-					[
-						'name' => $name,
-						'type' => $type,
-						'optional' => true,
-						'description' => trim( $fields[ 'description' ][ $y ] ),
-					];
-				}
-			}
+			$methodParameters[ $methodPath ] += ParseTypeToRequestParameters( $request, $proto );
 
 			$generatedMethods[ $methodName ] = true;
 		}

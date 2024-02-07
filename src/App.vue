@@ -279,6 +279,8 @@
 											<svg viewBox="0 0 14 16" version="1.1" width="14" height="16" aria-label="Copy"><path fill-rule="evenodd" d="M2 13h4v1H2v-1zm5-6H2v1h5V7zm2 3V8l-3 3 3 3v-2h5v-2H9zM4.5 9H2v1h2.5V9zM2 12h2.5v-1H2v1zm9 1h1v2c-.02.28-.11.52-.3.7-.19.18-.42.28-.7.3H1c-.55 0-1-.45-1-1V4c0-.55.45-1 1-1h3c0-1.11.89-2 2-2 1.11 0 2 .89 2 2h3c.55 0 1 .45 1 1v5h-1V6H1v9h10v-2zM2 5h8c0-.55-.45-1-1-1H8c-.55 0-1-.45-1-1s-.45-1-1-1-1 .45-1 1-.45 1-1 1H3c-.55 0-1 .45-1 1z"></path></svg>
 										</button>
 									</div>
+
+									<div class="alert alert-danger" v-if="method.hasArrays">⚠️ This method includes fields generated from protobufs, I have attempted to generate input_json fields for these, which is very error prone. You may be able to get it to work by fiddling with the JSON.</div>
 								</div>
 
 								<div class="table-responsive" v-if="method.parameters.length > 0">
@@ -293,50 +295,17 @@
 											</tr>
 										</thead>
 										<tbody>
-											<tr class="attribute" v-for="parameter in method.parameters" :key="parameter.name">
-												<td class="font-monospace">
-													<label class="form-control-label" :for="`param_${methodName}_${parameter.name}`">{{ parameter.name }}</label>
-													<button type="button" class="btn btn-secondary add-param-array" v-if="parameter.name.endsWith( '[0]' )" @click="addParamArray(method, parameter)">+</button>
-												</td>
-												<td class="font-monospace p-0">
-													<a v-if="parameter.name === 'key'" class="prefilled-key" href="#" @click.prevent="focusApikey">
-														<span v-if="hasValidAccessToken || hasValidWebApiKey" class="text-success">filled</span>
-														<span v-else class="text-warning">fill…</span>
-													</a>
-													<div class="form-check form-switch m-2" v-else-if="parameter.type === 'bool'">
-														<input
-															type="hidden"
-															:name="parameter.name"
-															:value="parameter._value"
-															:disabled="!parameter.manuallyToggled"
-														>
-														<input
-															type="checkbox"
-															class="form-check-input"
-															:id="`param_${methodName}_${parameter.name}`"
-															v-model="parameter._value"
-															:aria-label="parameter.name"
-															@change="parameter.manuallyToggled = true"
-														>
-														<button class="btn btn-sm btn-danger py-0" type="button" v-if="parameter.manuallyToggled" @click="parameter.manuallyToggled = false; parameter._value = false;">&times;</button>
-													</div>
-													<input
-														v-else
-														class="form-control border-0 rounded-0"
-														placeholder="…"
-														:name="parameter.name"
-														:id="`param_${methodName}_${parameter.name}`"
-														v-model="parameter._value"
-													>
-												</td>
-												<td>{{ parameter.type }}</td>
-												<td v-if="parameter.optional">No</td>
-												<td v-else>
-													<svg aria-hidden="true" focusable="false" width="16" height="16" role="img" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 512 512"><path fill="currentColor" d="M256 8C119.033 8 8 119.033 8 256s111.033 248 248 248 248-111.033 248-248S392.967 8 256 8zm0 48c110.532 0 200 89.451 200 200 0 110.532-89.451 200-200 200-110.532 0-200-89.451-200-200 0-110.532 89.451-200 200-200m140.204 130.267l-22.536-22.718c-4.667-4.705-12.265-4.736-16.97-.068L215.346 303.697l-59.792-60.277c-4.667-4.705-12.265-4.736-16.97-.069l-22.719 22.536c-4.705 4.667-4.736 12.265-.068 16.971l90.781 91.516c4.667 4.705 12.265 4.736 16.97.068l172.589-171.204c4.704-4.668 4.734-12.266.067-16.971z"></path></svg>
-													Yes
-												</td>
-												<td>{{ parameter.description }}</td>
-											</tr>
+											<ApiParameter
+												v-for="parameter in method.parameters"
+												:key="parameter.name"
+												:method="method"
+												:parameter="parameter"
+												:methodName="methodName"
+												:apiKeyFilled="hasValidAccessToken || hasValidWebApiKey"
+												:addParamArray="addParamArray"
+												:focusApiKey="focusApikey"
+												:level="0"
+											/>
 										</tbody>
 									</table>
 								</div>

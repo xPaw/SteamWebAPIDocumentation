@@ -201,6 +201,26 @@ body {
 	box-shadow: none;
 }
 
+.card .table .level-1 td:first-child {
+	border-left: 10px solid #22252b;
+}
+
+.card .table .level-2 td:first-child {
+	border-left: 20px solid #22252b;
+}
+
+.card .table .level-3 td:first-child {
+	border-left: 30px solid #22252b;
+}
+
+.card .table .level-4 td:first-child {
+	border-left: 40px solid #22252b;
+}
+
+.card .table .level-5 td:first-child {
+	border-left: 50px solid #22252b;
+}
+
 .prefilled-key {
 	padding: .375rem .75rem;
 	cursor: pointer;

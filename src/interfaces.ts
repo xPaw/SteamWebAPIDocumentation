@@ -20,6 +20,7 @@ export interface ApiMethod {
 	description?: string
 	parameters: ApiMethodParameter[]
 	isFavorite: boolean
+	hasArrays: boolean
 }
 
 export interface ApiMethodParameter {
@@ -31,6 +32,7 @@ export interface ApiMethodParameter {
 	type?: string
 	description?: string
 	optional: boolean
+	extra?: ApiMethodParameter[]
 }
 
 export async function getInterfaces() {

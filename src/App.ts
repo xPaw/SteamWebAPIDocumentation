@@ -3,6 +3,7 @@ import type { SidebarGroupData, ApiServices, ApiInterface, ApiMethod, ApiMethodP
 import { defineComponent } from 'vue'
 import Fuse from 'fuse.js'
 import { getInterfaces } from './interfaces';
+import ApiParameter from './ApiParameter.vue';
 
 interface FuseSearchType {
 	interface: string
@@ -10,6 +11,9 @@ interface FuseSearchType {
 }
 
 export default defineComponent({
+	components: {
+		ApiParameter,
+	},
 	data() {
 		return {
 			userData: {
@@ -375,12 +379,42 @@ export default defineComponent({
 				parameters.set('format', this.userData.format);
 			}
 
+			let hasArrays = false;
+			const inputJson = {} as any;
+
 			for (const parameter of method.parameters) {
+				if (parameter.extra) {
+					const arr = this.getInnerParameters(parameter);
+
+					if (Object.keys(arr).length > 0) {
+						hasArrays = true;
+
+						if (parameter.type?.endsWith('[]')) {
+							const paramName = parameter.name.substring(0, parameter.name.length - 3);
+
+							if (!Object.hasOwn(inputJson, paramName)) {
+								inputJson[paramName] = [];
+							}
+
+							inputJson[paramName].push(arr);
+						} else {
+							inputJson[parameter.name] = arr;
+						}
+					}
+
+					continue;
+				}
+
 				if (!parameter._value && !parameter.manuallyToggled) {
 					continue;
 				}
 
 				parameters.set(parameter.name, parameter._value || '');
+			}
+
+			if (hasArrays) {
+				method.hasArrays = true;
+				parameters.set('input_json', JSON.stringify(inputJson));
 			}
 
 			const str = parameters.toString();
@@ -395,7 +429,72 @@ export default defineComponent({
 
 			return `?${str}`;
 		},
+		getInnerParameters(parameterParent: ApiMethodParameter) {
+			const arr = {} as any;
+
+			for (const parameter of parameterParent.extra!) {
+				if (parameter.extra) {
+					const result = this.getInnerParameters(parameter);
+
+					if (Object.keys(result).length > 0) {
+						if (parameter.type?.endsWith('[]')) {
+							const paramName = parameter.name.substring(0, parameter.name.length - 3);
+
+							if (!Object.hasOwn(arr, paramName)) {
+								arr[paramName] = [];
+							}
+
+							arr[paramName].push(result);
+						} else {
+							arr[parameter.name] = result;
+						}
+					}
+
+					continue;
+				}
+
+				if (!parameter._value && !parameter.manuallyToggled) {
+					continue;
+				}
+
+				if (parameter.type?.endsWith('[]')) {
+					const paramName = parameter.name.substring(0, parameter.name.length - 3);
+
+					if (!Object.hasOwn(arr, paramName)) {
+						arr[paramName] = [];
+					}
+
+					arr[paramName].push(parameter._value || '');
+				} else {
+					arr[parameter.name] = parameter._value || '';
+				}
+			}
+
+			return arr;
+		},
 		useThisMethod(event: SubmitEvent, method: ApiMethod): void {
+			const form = event.target as HTMLFormElement;
+
+			if (method.hasArrays) {
+				event.preventDefault();
+
+				if (method.httpmethod === 'POST') {
+					alert('Executing POST requests with input_json is not yet supported.');
+					return;
+				}
+
+				const url = [form.action, this.uriDelimeterBeforeKey, this.renderApiKey(), this.renderParameters(method)].join('');
+
+				try {
+					window.open(url, '_blank');
+				}
+				catch {
+					alert('Failed to open window');
+				}
+
+				return;
+			}
+
 			if (method.httpmethod === 'POST' && !confirm(
 				'Executing POST requests could be potentially disastrous.\n\n'
 				+ 'Author is not responsible for any damage done.\n\n'
@@ -404,7 +503,7 @@ export default defineComponent({
 				event.preventDefault();
 			}
 
-			for (const field of (event.target as HTMLFormElement).elements) {
+			for (const field of form.elements) {
 				if (!(field instanceof HTMLInputElement)) {
 					continue;
 				}
@@ -441,13 +540,16 @@ export default defineComponent({
 			}
 		},
 		copyUrl(event: MouseEvent): void {
-			const element = (event.target as Element).closest('.input-group')!.querySelector('.form-control')!;
-			const selection = window.getSelection()!;
-			const range = document.createRange();
-			range.selectNodeContents(element);
-			selection.removeAllRanges();
-			selection.addRange(range);
-			document.execCommand('copy');
+			const button = event.target as Element;
+			const element = button.closest('.input-group')!.querySelector('.form-control')!;
+
+			navigator.clipboard.writeText(element.textContent || '').then(() => {
+				button.classList.add('bg-success');
+
+				setTimeout(() => button.classList.remove('bg-success'), 500);
+			}, () => {
+				// write fail
+			});
 		},
 		favoriteMethod(method: ApiMethod, methodName: string): void {
 			const name = `${this.currentInterface}/${methodName}`;
