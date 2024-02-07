@@ -280,7 +280,7 @@
 										</button>
 									</div>
 
-									<div class="alert alert-danger" v-if="method.hasArrays">⚠️ This method includes fields generated from protobufs, I have attempted to generate input_json fields for these, which is very error prone. You may be able to get it to work by fiddling with the JSON.</div>
+									<div class="alert alert-danger" v-if="method.hasArrays">⚠️ This method includes fields generated from protobufs, input_json was generated, which is very error prone. You may be able to get it to work by fiddling with the JSON manually. Please do not report issues when this doesn't work.</div>
 								</div>
 
 								<div class="table-responsive" v-if="method.parameters.length > 0">

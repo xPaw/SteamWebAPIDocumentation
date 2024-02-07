@@ -400,6 +400,8 @@ export default defineComponent({
 						} else {
 							inputJson[parameter.name] = arr;
 						}
+					} else if (parameter._value) {
+						parameters.set(parameter.name, parameter._value || '');
 					}
 
 					continue;
@@ -526,8 +528,21 @@ export default defineComponent({
 			const newParameter: ApiMethodParameter =
 			{
 				name: `${parameter.name.substring(0, parameter.name.length - 3)}[${parameter._counter}]`,
+				type: parameter.type,
 				optional: true,
 			};
+
+			if (parameter.extra) {
+				newParameter.extra = [];
+
+				for (const parameter2 of parameter.extra!) {
+					newParameter.extra.push({
+						name: parameter2.name,
+						type: parameter2.type,
+						optional: true,
+					});
+				}
+			}
 
 			const parameterIndex = method.parameters.findIndex(param => param.name === parameter.name);
 			method.parameters.splice(parameterIndex + parameter._counter, 0, newParameter);

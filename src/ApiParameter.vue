@@ -3,7 +3,7 @@
 		<td class="font-monospace">
 			<template v-if="level > 0">↳ </template>
 			<label class="form-control-label" :for="`param_${methodName}_${parameter.name}`">{{ parameter.name }}</label>
-			<button type="button" class="btn btn-secondary add-param-array" v-if="parameter.name.endsWith( '[0]' ) && level === 0 && !parameter.extra" @click="addParamArray(method, parameter)">+</button>
+			<button type="button" class="btn btn-secondary add-param-array" v-if="parameter.name.endsWith( '[0]' ) && level === 0" @click="addParamArray(method, parameter)">+</button>
 		</td>
 		<td class="font-monospace p-0">
 			<a v-if="level === 0 && parameter.name === 'key'" class="prefilled-key" href="#" @click.prevent="focusApikey">
