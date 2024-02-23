@@ -2956,6 +2956,12 @@
                             "type": "bool",
                             "optional": true,
                             "description": ""
+                        },
+                        {
+                            "name": "apply_user_filters",
+                            "type": "bool",
+                            "optional": true,
+                            "description": ""
                         }
                     ]
                 },
@@ -8768,6 +8774,18 @@
                     "type": "bool",
                     "optional": true,
                     "description": ""
+                },
+                {
+                    "name": "request_ids[0]",
+                    "type": "uint64[]",
+                    "optional": true,
+                    "description": ""
+                },
+                {
+                    "name": "rt_include_completed_since",
+                    "type": "uint32",
+                    "optional": true,
+                    "description": ""
                 }
             ]
         },
@@ -14378,6 +14396,12 @@
                                     "type": "bool",
                                     "optional": true,
                                     "description": ""
+                                },
+                                {
+                                    "name": "apply_user_filters",
+                                    "type": "bool",
+                                    "optional": true,
+                                    "description": ""
                                 }
                             ]
                         }
@@ -16147,6 +16171,42 @@
                 }
             ]
         },
+        "GetAllPlansForPartner": {
+            "_type": "undocumented",
+            "version": 1,
+            "parameters": [
+                {
+                    "name": "key",
+                    "type": "string",
+                    "optional": false,
+                    "description": "Access key"
+                },
+                {
+                    "name": "partnerid",
+                    "type": "uint32",
+                    "optional": true,
+                    "description": ""
+                },
+                {
+                    "name": "start_date_after_rtime",
+                    "type": "uint32",
+                    "optional": true,
+                    "description": ""
+                },
+                {
+                    "name": "start_date_before_rtime",
+                    "type": "uint32",
+                    "optional": true,
+                    "description": ""
+                },
+                {
+                    "name": "show_hidden",
+                    "type": "bool",
+                    "optional": true,
+                    "description": ""
+                }
+            ]
+        },
         "GetPlan": {
             "_type": "undocumented",
             "version": 1,
@@ -16202,6 +16262,31 @@
                 {
                     "name": "upto_rtime",
                     "type": "uint32",
+                    "optional": true,
+                    "description": ""
+                }
+            ]
+        },
+        "MarkLocalizationAssetComplete": {
+            "_type": "undocumented",
+            "version": 1,
+            "httpmethod": "POST",
+            "parameters": [
+                {
+                    "name": "key",
+                    "type": "string",
+                    "optional": false,
+                    "description": "Access key"
+                },
+                {
+                    "name": "promotion_id",
+                    "type": "fixed64",
+                    "optional": true,
+                    "description": ""
+                },
+                {
+                    "name": "value",
+                    "type": "bool",
                     "optional": true,
                     "description": ""
                 }
@@ -16572,6 +16657,26 @@
             ]
         }
     },
+    "IPromotionStatsService": {
+        "GetOptInDemoStats": {
+            "_type": "undocumented",
+            "version": 1,
+            "parameters": [
+                {
+                    "name": "key",
+                    "type": "string",
+                    "optional": false,
+                    "description": "Access key"
+                },
+                {
+                    "name": "opt_in_name",
+                    "type": "string",
+                    "optional": true,
+                    "description": ""
+                }
+            ]
+        }
+    },
     "IPublishedFileService": {
         "CanSubscribe": {
             "_type": "undocumented",
@@ -16716,6 +16821,12 @@
                     "type": "bool",
                     "optional": true,
                     "description": "If true, then reactions to items will be returned."
+                },
+                {
+                    "name": "admin_query",
+                    "type": "bool",
+                    "optional": false,
+                    "description": "Admin tool is doing a query, return hidden items"
                 }
             ]
         },
@@ -16871,6 +16982,12 @@
                     "type": "{enum}",
                     "optional": true,
                     "description": "Filter out items that have these content descriptors."
+                },
+                {
+                    "name": "admin_query",
+                    "type": "bool",
+                    "optional": false,
+                    "description": "Admin tool is doing a query, return hidden items"
                 },
                 {
                     "name": "totalonly",
@@ -17088,6 +17205,12 @@
                     "type": "{enum}",
                     "optional": true,
                     "description": "Filter out items that have these content descriptors."
+                },
+                {
+                    "name": "admin_query",
+                    "type": "bool",
+                    "optional": false,
+                    "description": "Admin tool is doing a query, return hidden items"
                 },
                 {
                     "name": "totalonly",
@@ -17457,6 +17580,12 @@
                     "type": "{enum}",
                     "optional": true,
                     "description": "Filter out items that have these content descriptors."
+                },
+                {
+                    "name": "admin_query",
+                    "type": "bool",
+                    "optional": false,
+                    "description": "Admin tool is doing a query, return hidden items"
                 },
                 {
                     "name": "totalonly",
@@ -20057,6 +20186,12 @@
                             "type": "bool",
                             "optional": true,
                             "description": ""
+                        },
+                        {
+                            "name": "apply_user_filters",
+                            "type": "bool",
+                            "optional": true,
+                            "description": ""
                         }
                     ]
                 }
@@ -20196,6 +20331,12 @@
                         },
                         {
                             "name": "include_assets_without_overrides",
+                            "type": "bool",
+                            "optional": true,
+                            "description": ""
+                        },
+                        {
+                            "name": "apply_user_filters",
                             "type": "bool",
                             "optional": true,
                             "description": ""
@@ -20987,32 +21128,6 @@
                             "description": ""
                         },
                         {
-                            "name": "access_data",
-                            "type": "CMsgSteamLearn_AccessData",
-                            "optional": true,
-                            "description": "",
-                            "extra": [
-                                {
-                                    "name": "publisher_id",
-                                    "type": "uint32",
-                                    "optional": true,
-                                    "description": ""
-                                },
-                                {
-                                    "name": "timestamp",
-                                    "type": "uint32",
-                                    "optional": true,
-                                    "description": ""
-                                },
-                                {
-                                    "name": "random_value",
-                                    "type": "uint64",
-                                    "optional": true,
-                                    "description": ""
-                                }
-                            ]
-                        },
-                        {
                             "name": "data",
                             "type": "CMsgSteamLearnData",
                             "optional": true,
@@ -21105,32 +21220,6 @@
                             "type": "string",
                             "optional": true,
                             "description": ""
-                        },
-                        {
-                            "name": "access_data",
-                            "type": "CMsgSteamLearn_AccessData",
-                            "optional": true,
-                            "description": "",
-                            "extra": [
-                                {
-                                    "name": "publisher_id",
-                                    "type": "uint32",
-                                    "optional": true,
-                                    "description": ""
-                                },
-                                {
-                                    "name": "timestamp",
-                                    "type": "uint32",
-                                    "optional": true,
-                                    "description": ""
-                                },
-                                {
-                                    "name": "random_value",
-                                    "type": "uint64",
-                                    "optional": true,
-                                    "description": ""
-                                }
-                            ]
                         },
                         {
                             "name": "project_id",
@@ -21249,32 +21338,6 @@
                             "type": "string",
                             "optional": true,
                             "description": ""
-                        },
-                        {
-                            "name": "access_data",
-                            "type": "CMsgSteamLearn_AccessData",
-                            "optional": true,
-                            "description": "",
-                            "extra": [
-                                {
-                                    "name": "publisher_id",
-                                    "type": "uint32",
-                                    "optional": true,
-                                    "description": ""
-                                },
-                                {
-                                    "name": "timestamp",
-                                    "type": "uint32",
-                                    "optional": true,
-                                    "description": ""
-                                },
-                                {
-                                    "name": "random_value",
-                                    "type": "uint64",
-                                    "optional": true,
-                                    "description": ""
-                                }
-                            ]
                         },
                         {
                             "name": "project_id",
@@ -23315,6 +23378,95 @@
                     "type": "uint32",
                     "optional": true,
                     "description": ""
+                }
+            ]
+        },
+        "GetAccessTokens": {
+            "_type": "undocumented",
+            "version": 1,
+            "description": "Gets the access tokens needed for registering data sources, submitting data to them, and snapshotting projects",
+            "parameters": [
+                {
+                    "name": "key",
+                    "type": "string",
+                    "optional": false,
+                    "description": "Access key"
+                },
+                {
+                    "name": "appid",
+                    "type": "uint32",
+                    "optional": true,
+                    "description": ""
+                }
+            ]
+        },
+        "GetAccessTokensWeb": {
+            "_type": "undocumented",
+            "version": 1,
+            "parameters": [
+                {
+                    "name": "key",
+                    "type": "string",
+                    "optional": false,
+                    "description": "Access key"
+                },
+                {
+                    "name": "appid",
+                    "type": "uint32",
+                    "optional": true,
+                    "description": ""
+                }
+            ]
+        },
+        "GetBatchedStatus": {
+            "_type": "undocumented",
+            "version": 1,
+            "parameters": [
+                {
+                    "name": "key",
+                    "type": "string",
+                    "optional": false,
+                    "description": "Access key"
+                },
+                {
+                    "name": "fetch_requests[0]",
+                    "type": "CMsgSteamLearn_GetFetchStatus_Request[]",
+                    "optional": true,
+                    "description": "",
+                    "extra": [
+                        {
+                            "name": "project_id",
+                            "type": "uint32",
+                            "optional": true,
+                            "description": ""
+                        },
+                        {
+                            "name": "fetch_id",
+                            "type": "uint32",
+                            "optional": true,
+                            "description": ""
+                        }
+                    ]
+                },
+                {
+                    "name": "train_requests[0]",
+                    "type": "CMsgSteamLearn_GetTrainStatus_Request[]",
+                    "optional": true,
+                    "description": "",
+                    "extra": [
+                        {
+                            "name": "project_id",
+                            "type": "uint32",
+                            "optional": true,
+                            "description": ""
+                        },
+                        {
+                            "name": "train_id",
+                            "type": "uint32",
+                            "optional": true,
+                            "description": ""
+                        }
+                    ]
                 }
             ]
         },
@@ -28495,6 +28647,12 @@
                             "type": "bool",
                             "optional": true,
                             "description": ""
+                        },
+                        {
+                            "name": "apply_user_filters",
+                            "type": "bool",
+                            "optional": true,
+                            "description": ""
                         }
                     ]
                 }
@@ -29244,6 +29402,12 @@
                             "type": "bool",
                             "optional": true,
                             "description": ""
+                        },
+                        {
+                            "name": "apply_user_filters",
+                            "type": "bool",
+                            "optional": true,
+                            "description": ""
                         }
                     ]
                 },
@@ -29746,6 +29910,12 @@
                             "type": "bool",
                             "optional": true,
                             "description": ""
+                        },
+                        {
+                            "name": "apply_user_filters",
+                            "type": "bool",
+                            "optional": true,
+                            "description": ""
                         }
                     ]
                 },
@@ -30197,6 +30367,12 @@
                         },
                         {
                             "name": "include_assets_without_overrides",
+                            "type": "bool",
+                            "optional": true,
+                            "description": ""
+                        },
+                        {
+                            "name": "apply_user_filters",
                             "type": "bool",
                             "optional": true,
                             "description": ""
@@ -31153,6 +31329,12 @@
                         },
                         {
                             "name": "include_assets_without_overrides",
+                            "type": "bool",
+                            "optional": true,
+                            "description": ""
+                        },
+                        {
+                            "name": "apply_user_filters",
                             "type": "bool",
                             "optional": true,
                             "description": ""
