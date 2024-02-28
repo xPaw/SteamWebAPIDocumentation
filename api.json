@@ -336,53 +336,7 @@
                             "name": "gift_info",
                             "type": "CartGiftInfo",
                             "optional": true,
-                            "description": "",
-                            "extra": [
-                                {
-                                    "name": "accountid_giftee",
-                                    "type": "int32",
-                                    "optional": true,
-                                    "description": ""
-                                },
-                                {
-                                    "name": "gift_message",
-                                    "type": "CartGiftMessage",
-                                    "optional": true,
-                                    "description": "",
-                                    "extra": [
-                                        {
-                                            "name": "gifteename",
-                                            "type": "string",
-                                            "optional": true,
-                                            "description": ""
-                                        },
-                                        {
-                                            "name": "message",
-                                            "type": "string",
-                                            "optional": true,
-                                            "description": ""
-                                        },
-                                        {
-                                            "name": "sentiment",
-                                            "type": "string",
-                                            "optional": true,
-                                            "description": ""
-                                        },
-                                        {
-                                            "name": "signature",
-                                            "type": "string",
-                                            "optional": true,
-                                            "description": ""
-                                        }
-                                    ]
-                                },
-                                {
-                                    "name": "time_scheduled_send",
-                                    "type": "int32",
-                                    "optional": true,
-                                    "description": ""
-                                }
-                            ]
+                            "description": ""
                         },
                         {
                             "name": "flags",
