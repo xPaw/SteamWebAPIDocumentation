@@ -16288,6 +16288,18 @@
                     "type": "bool",
                     "optional": true,
                     "description": ""
+                },
+                {
+                    "name": "start_date",
+                    "type": "uint32",
+                    "optional": true,
+                    "description": ""
+                },
+                {
+                    "name": "end_date",
+                    "type": "uint32",
+                    "optional": true,
+                    "description": ""
                 }
             ]
         },
@@ -22042,6 +22054,12 @@
                                                     "type": "string",
                                                     "optional": true,
                                                     "description": ""
+                                                },
+                                                {
+                                                    "name": "embed_name",
+                                                    "type": "string",
+                                                    "optional": true,
+                                                    "description": ""
                                                 }
                                             ]
                                         },
@@ -22276,6 +22294,38 @@
                                             "type": "CMsgSteamLearnModelNodeCombine",
                                             "optional": true,
                                             "description": ""
+                                        },
+                                        {
+                                            "name": "text_vectorization",
+                                            "type": "CMsgSteamLearnModelNodeTextVectorization",
+                                            "optional": true,
+                                            "description": "",
+                                            "extra": [
+                                                {
+                                                    "name": "vocabulary_size",
+                                                    "type": "uint32",
+                                                    "optional": true,
+                                                    "description": ""
+                                                },
+                                                {
+                                                    "name": "standardize",
+                                                    "type": "int32",
+                                                    "optional": true,
+                                                    "description": ""
+                                                },
+                                                {
+                                                    "name": "output",
+                                                    "type": "int32",
+                                                    "optional": true,
+                                                    "description": ""
+                                                },
+                                                {
+                                                    "name": "sequence_length",
+                                                    "type": "uint32",
+                                                    "optional": true,
+                                                    "description": ""
+                                                }
+                                            ]
                                         }
                                     ]
                                 },
@@ -22886,6 +22936,12 @@
                                                     "type": "string",
                                                     "optional": true,
                                                     "description": ""
+                                                },
+                                                {
+                                                    "name": "embed_name",
+                                                    "type": "string",
+                                                    "optional": true,
+                                                    "description": ""
                                                 }
                                             ]
                                         },
@@ -23120,6 +23176,38 @@
                                             "type": "CMsgSteamLearnModelNodeCombine",
                                             "optional": true,
                                             "description": ""
+                                        },
+                                        {
+                                            "name": "text_vectorization",
+                                            "type": "CMsgSteamLearnModelNodeTextVectorization",
+                                            "optional": true,
+                                            "description": "",
+                                            "extra": [
+                                                {
+                                                    "name": "vocabulary_size",
+                                                    "type": "uint32",
+                                                    "optional": true,
+                                                    "description": ""
+                                                },
+                                                {
+                                                    "name": "standardize",
+                                                    "type": "int32",
+                                                    "optional": true,
+                                                    "description": ""
+                                                },
+                                                {
+                                                    "name": "output",
+                                                    "type": "int32",
+                                                    "optional": true,
+                                                    "description": ""
+                                                },
+                                                {
+                                                    "name": "sequence_length",
+                                                    "type": "uint32",
+                                                    "optional": true,
+                                                    "description": ""
+                                                }
+                                            ]
                                         }
                                     ]
                                 },
@@ -24868,6 +24956,12 @@
                                             "type": "string",
                                             "optional": true,
                                             "description": ""
+                                        },
+                                        {
+                                            "name": "embed_name",
+                                            "type": "string",
+                                            "optional": true,
+                                            "description": ""
                                         }
                                     ]
                                 },
@@ -25102,6 +25196,38 @@
                                     "type": "CMsgSteamLearnModelNodeCombine",
                                     "optional": true,
                                     "description": ""
+                                },
+                                {
+                                    "name": "text_vectorization",
+                                    "type": "CMsgSteamLearnModelNodeTextVectorization",
+                                    "optional": true,
+                                    "description": "",
+                                    "extra": [
+                                        {
+                                            "name": "vocabulary_size",
+                                            "type": "uint32",
+                                            "optional": true,
+                                            "description": ""
+                                        },
+                                        {
+                                            "name": "standardize",
+                                            "type": "int32",
+                                            "optional": true,
+                                            "description": ""
+                                        },
+                                        {
+                                            "name": "output",
+                                            "type": "int32",
+                                            "optional": true,
+                                            "description": ""
+                                        },
+                                        {
+                                            "name": "sequence_length",
+                                            "type": "uint32",
+                                            "optional": true,
+                                            "description": ""
+                                        }
+                                    ]
                                 }
                             ]
                         },
