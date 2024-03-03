@@ -10,6 +10,7 @@
 							placeholder="Search methods… (type / to focus)"
 							aria-label="Search interfaces and methods"
 							@input="onSearchInput"
+							@keydown.escape.prevent="this.searchInput.blur()"
 							@keydown.up.prevent="navigateSidebar(-1)"
 							@keydown.down.prevent="navigateSidebar(1)"
 						>

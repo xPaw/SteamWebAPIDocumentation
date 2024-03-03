@@ -665,12 +665,6 @@ export default defineComponent({
 
 				const target = e.target as HTMLElement;
 
-				if (e.key === 'Escape') {
-					if (target === this.searchInput) {
-						target.blur();
-					}
-				}
-
 				if (['INPUT', 'TEXTAREA', 'SELECT', 'BUTTON'].includes(target.tagName)) {
 					return;
 				}
