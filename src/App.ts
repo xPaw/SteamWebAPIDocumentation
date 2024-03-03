@@ -1,7 +1,7 @@
 import type { SidebarGroupData, ApiServices, ApiInterface, ApiMethod, ApiMethodParameter } from './interfaces';
 
 import { defineComponent } from 'vue'
-import Fuse, { type FuseSortFunctionArg, type IFuseOptions } from 'fuse.js'
+import Fuse, { type FuseResultMatch, type FuseSortFunctionArg, type IFuseOptions } from 'fuse.js'
 import { getInterfaces } from './interfaces';
 import ApiParameter from './ApiParameter.vue';
 
@@ -206,6 +206,7 @@ export default defineComponent({
 			const fuseOptions: IFuseOptions<FuseSearchType> = {
 				shouldSort: true,
 				useExtendedSearch: true,
+				includeMatches: true,
 				threshold: 0.3,
 				keys: [{
 					name: 'interface',
@@ -260,7 +261,17 @@ export default defineComponent({
 					matchedInterfaces[match.interface] = {};
 				}
 
-				matchedInterfaces[match.interface][match.method] = this.interfaces[match.interface][match.method];
+				let highlight: string | undefined;
+				for (const m of searchResult.matches!) {
+					if (m.key === 'method' && m.indices[0][1] > 0) {
+						highlight = this.highlightMatches(m);
+						break;
+					}
+				}
+
+				const method = this.interfaces[match.interface][match.method];
+				method.highlight = highlight;
+				matchedInterfaces[match.interface][match.method] = method;
 			}
 
 			return matchedInterfaces;
@@ -601,6 +612,43 @@ export default defineComponent({
 					element.focus();
 				}
 			});
-		}
+		},
+		onSearchInput(e: InputEvent) {
+			requestAnimationFrame(() => {
+				this.currentFilter = (e.target as HTMLInputElement).value;
+			});
+		},
+		highlightMatches(match: FuseResultMatch) {
+			let lastIndex = 0;
+			const result: string[] = [];
+			const sortedMatches = match.indices.toSorted((a, b) => a[0] - b[0]);
+			const value = match.value!;
+
+			for (let [start, end] of sortedMatches) {
+				if (end <= lastIndex) {
+					continue;
+				}
+
+				if (start < lastIndex) {
+					start = lastIndex;
+				}
+
+				if (lastIndex < start) {
+					result.push(value.slice(lastIndex, start));
+				}
+
+				end++;
+
+				result.push('<b>', value.slice(start, end), '</b>');
+
+				lastIndex = end;
+			}
+
+			if (lastIndex !== value.length) {
+				result.push(value.slice(lastIndex));
+			}
+
+			return result.join('');
+		},
 	},
 });

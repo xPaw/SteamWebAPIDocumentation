@@ -8,7 +8,7 @@
 							class="search-input form-control me-sm-2"
 							placeholder="Search methods…"
 							aria-label="Search interfaces and methods"
-							v-model="currentFilter"
+							@input="onSearchInput"
 							@keydown.up.prevent="navigateSidebar(-1)"
 							@keydown.down.prevent="navigateSidebar(1)"
 						>
@@ -69,6 +69,12 @@
 										:key="methodName"
 									>
 										<a
+											v-if="method.highlight"
+											:href="'#' + interfaceName + '/' + methodName"
+											v-html="method.highlight"
+										></a>
+										<a
+											v-else
 											:href="'#' + interfaceName + '/' + methodName"
 											:class="method.isFavorite ? 'text-warning' : ''"
 										>{{ methodName }}</a>

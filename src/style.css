@@ -55,6 +55,10 @@ code {
 	background-color: #2b3647;
 }
 
+.method-list a > b {
+	color: #fff;
+}
+
 .interface-list li {
 	text-overflow: ellipsis;
 	overflow: hidden;
