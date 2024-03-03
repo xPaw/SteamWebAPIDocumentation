@@ -1,6 +1,6 @@
 import type { SidebarGroupData, ApiServices, ApiInterface, ApiMethod, ApiMethodParameter } from './interfaces';
 
-import { defineComponent } from 'vue'
+import { ref, defineComponent } from 'vue'
 import Fuse, { type FuseResultMatch, type FuseSortFunctionArg, type IFuseOptions } from 'fuse.js'
 import { getInterfaces } from './interfaces';
 import ApiParameter from './ApiParameter.vue';
@@ -9,6 +9,8 @@ interface FuseSearchType {
 	interface: string
 	method: string
 }
+
+const searchInput = ref<HTMLInputElement | null>(null);
 
 export default defineComponent({
 	components: {
@@ -53,6 +55,9 @@ export default defineComponent({
 				[1024290, { name: 'Dota Underlods Beta', icon: 'underlords.jpg', open: false, methods: {} }],
 			]),
 		}
+	},
+	setup() {
+		return { searchInput };
 	},
 	watch: {
 		"userData.format"(value: string): void {
@@ -217,6 +222,8 @@ export default defineComponent({
 				}]
 			};
 			this.fuzzy = new Fuse<FuseSearchType>(flattenedMethods, fuseOptions);
+
+			this.bindGlobalKeybind();
 
 			document.getElementById('loading')!.remove();
 		});
@@ -650,5 +657,29 @@ export default defineComponent({
 
 			return result.join('');
 		},
+		bindGlobalKeybind() {
+			document.addEventListener('keydown', (e: KeyboardEvent) => {
+				if (e.ctrlKey || e.metaKey) {
+					return;
+				}
+
+				const target = e.target as HTMLElement;
+
+				if (e.key === 'Escape') {
+					if (target === this.searchInput) {
+						target.blur();
+					}
+				}
+
+				if (['INPUT', 'TEXTAREA', 'SELECT', 'BUTTON'].includes(target.tagName)) {
+					return;
+				}
+
+				if (e.key === '/' || e.key === 's') {
+					e.preventDefault();
+					this.searchInput?.focus();
+				}
+			});
+		}
 	},
 });

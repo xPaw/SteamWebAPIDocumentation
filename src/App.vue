@@ -4,9 +4,10 @@
 				<div class="row">
 					<div class="col-lg-3" role="search">
 						<input
+							ref="searchInput"
 							type="search"
 							class="search-input form-control me-sm-2"
-							placeholder="Search methods…"
+							placeholder="Search methods… (type / to focus)"
 							aria-label="Search interfaces and methods"
 							@input="onSearchInput"
 							@keydown.up.prevent="navigateSidebar(-1)"
