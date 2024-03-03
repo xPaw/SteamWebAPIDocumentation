@@ -107,6 +107,10 @@ body {
 	box-shadow: 0 0 20px rgba(147, 211, 245, 0.50);
 }
 
+.search-input::placeholder {
+	color: #888;
+}
+
 .header a {
 	color: inherit;
 }
