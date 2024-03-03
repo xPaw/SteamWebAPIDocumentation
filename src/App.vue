@@ -41,7 +41,13 @@
 						</ul>
 					</details>
 
-					<details class="interface-list-container" :open="interfaceGroup.open" v-for="[groupAppid, interfaceGroup] in sidebarInterfaces">
+					<details
+						v-for="[groupAppid, interfaceGroup] in sidebarInterfaces"
+						class="interface-list-container"
+						:open="interfaceGroup.open"
+						:key="groupAppid"
+						@toggle="(e: ToggleEvent) => interfaceGroup.open = e.newState === 'open'"
+					>
 						<summary class="interface-group-name">
 							<img :src="`icons/${interfaceGroup.icon}`" width="24" height="24" alt="" aria-hidden="true" v-if="interfaceGroup.icon">
 							{{ interfaceGroup.name }}

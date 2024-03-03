@@ -1,7 +1,7 @@
 import type { SidebarGroupData, ApiServices, ApiInterface, ApiMethod, ApiMethodParameter } from './interfaces';
 
 import { defineComponent } from 'vue'
-import Fuse, { type IFuseOptions } from 'fuse.js'
+import Fuse, { type FuseSortFunctionArg, type IFuseOptions } from 'fuse.js'
 import { getInterfaces } from './interfaces';
 import ApiParameter from './ApiParameter.vue';
 
@@ -181,6 +181,17 @@ export default defineComponent({
 					const appid = parseInt(interfaceAppid.groups!.appid, 10);
 
 					this.groupsMap.set(interfaceName, appid);
+
+					let group = this.groupsData.get(appid);
+
+					if (!group) {
+						this.groupsData.set(appid, {
+							name: `App ${appid}`,
+							icon: 'steam.jpg',
+							open: false,
+							methods: {}
+						});
+					}
 				}
 			}
 
@@ -215,7 +226,7 @@ export default defineComponent({
 
 			if (this.currentFilter) {
 				return new Map<number, SidebarGroupData>([
-					[0, {
+					[-1, {
 						name: 'Search results',
 						icon: '',
 						open: true,
@@ -228,19 +239,8 @@ export default defineComponent({
 
 			for (const interfaceName in interfaces) {
 				const appid = this.groupsMap.get(interfaceName) || 0;
-				let group = groups.get(appid);
-
-				if (!group) {
-					groups.set(appid, {
-						name: `App ${appid}`,
-						icon: 'steam.jpg',
-						open: false,
-						methods: {}
-					});
-					group = groups.get(appid);
-				}
-
-				group!.methods[interfaceName] = interfaces[interfaceName];
+				const group = groups.get(appid)!;
+				group.methods[interfaceName] = interfaces[interfaceName];
 			}
 
 			return groups;
