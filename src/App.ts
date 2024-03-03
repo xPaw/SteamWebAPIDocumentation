@@ -1,7 +1,7 @@
 import type { SidebarGroupData, ApiServices, ApiInterface, ApiMethod, ApiMethodParameter } from './interfaces';
 
 import { defineComponent } from 'vue'
-import Fuse from 'fuse.js'
+import Fuse, { type IFuseOptions } from 'fuse.js'
 import { getInterfaces } from './interfaces';
 import ApiParameter from './ApiParameter.vue';
 
@@ -192,7 +192,7 @@ export default defineComponent({
 				this.setInterface();
 			}, false);
 
-			const fuseOptions: Fuse.IFuseOptions<FuseSearchType> = {
+			const fuseOptions: IFuseOptions<FuseSearchType> = {
 				shouldSort: true,
 				useExtendedSearch: true,
 				threshold: 0.3,
