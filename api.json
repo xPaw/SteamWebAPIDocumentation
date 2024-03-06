@@ -7049,6 +7049,12 @@
                     "type": "string",
                     "optional": true,
                     "description": ""
+                },
+                {
+                    "name": "partnerid",
+                    "type": "uint32",
+                    "optional": true,
+                    "description": ""
                 }
             ]
         },
@@ -8708,6 +8714,24 @@
                 }
             ]
         },
+        "GetDispersionForFamily": {
+            "_type": "undocumented",
+            "version": 1,
+            "parameters": [
+                {
+                    "name": "key",
+                    "type": "string",
+                    "optional": false,
+                    "description": "Access key"
+                },
+                {
+                    "name": "family_groupid",
+                    "type": "uint64",
+                    "optional": true,
+                    "description": ""
+                }
+            ]
+        },
         "GetFamilyGroup": {
             "_type": "undocumented",
             "version": 1,
@@ -8749,6 +8773,12 @@
                     "type": "uint64",
                     "optional": true,
                     "description": "Actually optional. This should only be set when support or admin accounts needs to fetch the family group for another user. Outside of the support tool it should be omitted."
+                },
+                {
+                    "name": "include_family_group_response",
+                    "type": "bool",
+                    "optional": true,
+                    "description": ""
                 }
             ]
         },
@@ -18255,6 +18285,24 @@
                 }
             ]
         },
+        "GetOptInAppealsSummaryStats": {
+            "_type": "undocumented",
+            "version": 1,
+            "parameters": [
+                {
+                    "name": "key",
+                    "type": "string",
+                    "optional": false,
+                    "description": "Access key"
+                },
+                {
+                    "name": "opt_in_names[0]",
+                    "type": "string[]",
+                    "optional": true,
+                    "description": ""
+                }
+            ]
+        },
         "GetOptInEmailTracking": {
             "_type": "undocumented",
             "version": 1,
@@ -19144,6 +19192,24 @@
                 {
                     "name": "appids[0]",
                     "type": "uint32[]",
+                    "optional": true,
+                    "description": ""
+                }
+            ]
+        },
+        "GetYIRCurrentMonthlySummary": {
+            "_type": "undocumented",
+            "version": 1,
+            "parameters": [
+                {
+                    "name": "key",
+                    "type": "string",
+                    "optional": false,
+                    "description": "Access key"
+                },
+                {
+                    "name": "steamid",
+                    "type": "fixed64",
                     "optional": true,
                     "description": ""
                 }
@@ -22280,6 +22346,18 @@
                                                     "description": ""
                                                 }
                                             ]
+                                        },
+                                        {
+                                            "name": "batch_normalization",
+                                            "type": "CMsgSteamLearnModelNodeBatchNormalization",
+                                            "optional": true,
+                                            "description": ""
+                                        },
+                                        {
+                                            "name": "normalize",
+                                            "type": "CMsgSteamLearnModelNodeNormalize",
+                                            "optional": true,
+                                            "description": ""
                                         }
                                     ]
                                 },
@@ -23162,6 +23240,18 @@
                                                     "description": ""
                                                 }
                                             ]
+                                        },
+                                        {
+                                            "name": "batch_normalization",
+                                            "type": "CMsgSteamLearnModelNodeBatchNormalization",
+                                            "optional": true,
+                                            "description": ""
+                                        },
+                                        {
+                                            "name": "normalize",
+                                            "type": "CMsgSteamLearnModelNodeNormalize",
+                                            "optional": true,
+                                            "description": ""
                                         }
                                     ]
                                 },
@@ -25182,6 +25272,18 @@
                                             "description": ""
                                         }
                                     ]
+                                },
+                                {
+                                    "name": "batch_normalization",
+                                    "type": "CMsgSteamLearnModelNodeBatchNormalization",
+                                    "optional": true,
+                                    "description": ""
+                                },
+                                {
+                                    "name": "normalize",
+                                    "type": "CMsgSteamLearnModelNodeNormalize",
+                                    "optional": true,
+                                    "description": ""
                                 }
                             ]
                         },
