@@ -6,9 +6,9 @@
 			<button type="button" class="btn btn-secondary add-param-array" v-if="parameter.name.endsWith( '[0]' ) && level === 0" @click="addParamArray(method, parameter)">+</button>
 		</td>
 		<td class="font-monospace p-0">
-			<a v-if="level === 0 && parameter.name === 'key'" class="prefilled-key" href="#" @click.prevent="focusApikey">
-				<span v-if="apiKeyFilled" class="text-success">filled</span>
-				<span v-else class="text-warning">fill…</span>
+			<a v-if="level === 0 && parameter.name === 'key'" class="prefilled-key form-control border-0 rounded-0" href="#" @click.prevent="focusApiKey">
+				<span v-if="apiKeyFilled" class="text-success">click to change</span>
+				<span v-else class="text-warning">click to set</span>
 			</a>
 			<div class="form-check form-switch m-2" v-else-if="parameter.type === 'bool'">
 				<input
@@ -65,7 +65,7 @@ defineProps<{
 	method: ApiMethod,
 	parameter: ApiMethodParameter,
 	methodName: String,
-	focusApikey: (payload: MouseEvent) => void,
+	focusApiKey: (payload: MouseEvent) => void,
 	addParamArray: (method: ApiMethod, parameter: ApiMethodParameter) => void,
 	apiKeyFilled: Boolean,
 

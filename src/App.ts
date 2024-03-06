@@ -10,7 +10,9 @@ interface FuseSearchType {
 	method: string
 }
 
-const searchInput = ref<HTMLInputElement | null>(null);
+const inputSearch = ref<HTMLInputElement | null>(null);
+const inputApiKey = ref<HTMLInputElement | null>(null);
+const inputAccessToken = ref<HTMLInputElement | null>(null);
 
 export default defineComponent({
 	components: {
@@ -57,7 +59,11 @@ export default defineComponent({
 		}
 	},
 	setup() {
-		return { searchInput };
+		return {
+			inputSearch,
+			inputApiKey,
+			inputAccessToken,
+		};
 	},
 	watch: {
 		"userData.format"(value: string): void {
@@ -606,14 +612,14 @@ export default defineComponent({
 			this.currentInterface = keys[((index % size) + size) % size];
 			this.scrollInterfaceIntoView();
 		},
-		focusApikey(): void {
+		focusApiKey(): void {
 			location.hash = '';
 
 			this.currentInterface = '';
 			this.currentFilter = '';
 
 			this.$nextTick(() => {
-				const element = document.getElementById(this.hasValidAccessToken ? 'form-access-token' : 'form-api-key');
+				const element = this.hasValidAccessToken ? this.inputAccessToken : this.inputApiKey;
 
 				if (element) {
 					element.focus();
@@ -671,7 +677,7 @@ export default defineComponent({
 
 				if (e.key === '/' || e.key === 's') {
 					e.preventDefault();
-					this.searchInput?.focus();
+					this.inputSearch?.focus();
 				}
 			});
 		}

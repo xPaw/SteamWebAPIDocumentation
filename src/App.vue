@@ -4,7 +4,7 @@
 				<div class="row">
 					<div class="col-lg-3" role="search">
 						<input
-							ref="searchInput"
+							ref="inputSearch"
 							type="search"
 							class="search-input form-control me-sm-2"
 							placeholder="Search methods… (type / to focus)"
@@ -16,7 +16,7 @@
 						>
 					</div>
 					<div class="col-lg-9">
-						<h1><a href="#" @click.prevent="focusApikey">Steam Web API Documentation</a></h1>
+						<h1><a href="#" @click.prevent="focusApiKey">Steam Web API Documentation</a></h1>
 						<span class="separator" v-if="currentInterface !== ''"> / </span>
 						<h2 v-if="currentInterface !== ''">{{ currentInterface }}</h2>
 						<span v-else> with &hearts; by <a href="https://xpaw.me">xPaw</a></span>
@@ -101,6 +101,7 @@
 											'form-control',
 											isFieldValid( 'webapi_key' ) ? 'is-valid' : 'is-invalid'
 										]"
+										ref="inputApiKey"
 										id="form-api-key"
 										placeholder="Your key (stored in your browser only)"
 										autocomplete="off"
@@ -120,6 +121,7 @@
 											'form-control',
 											isFieldValid( 'access_token' ) ? 'is-valid' : 'is-invalid'
 										]"
+										ref="inputAccessToken"
 										id="form-access-token"
 										placeholder="Your key (stored in your browser only)"
 										autocomplete="off"
@@ -319,7 +321,7 @@
 												:methodName="methodName"
 												:apiKeyFilled="hasValidAccessToken || hasValidWebApiKey"
 												:addParamArray="addParamArray"
-												:focusApiKey="focusApikey"
+												:focusApiKey="focusApiKey"
 												:level="0"
 											/>
 										</tbody>

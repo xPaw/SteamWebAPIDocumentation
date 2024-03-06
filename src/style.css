@@ -230,14 +230,8 @@ body {
 }
 
 .prefilled-key {
-	padding: .375rem .75rem;
-	cursor: pointer;
 	color: #acacac;
 	font-style: italic;
-}
-
-.prefilled-key:hover {
-	text-decoration: underline;
 }
 
 .interface-list-container + .interface-list-container {
