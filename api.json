@@ -12060,6 +12060,12 @@
                             "type": "bool",
                             "optional": true,
                             "description": ""
+                        },
+                        {
+                            "name": "apply_user_filters",
+                            "type": "bool",
+                            "optional": true,
+                            "description": ""
                         }
                     ]
                 }
@@ -12209,6 +12215,12 @@
                             "type": "bool",
                             "optional": true,
                             "description": ""
+                        },
+                        {
+                            "name": "apply_user_filters",
+                            "type": "bool",
+                            "optional": true,
+                            "description": ""
                         }
                     ]
                 }
@@ -12355,6 +12367,12 @@
                         },
                         {
                             "name": "include_assets_without_overrides",
+                            "type": "bool",
+                            "optional": true,
+                            "description": ""
+                        },
+                        {
+                            "name": "apply_user_filters",
                             "type": "bool",
                             "optional": true,
                             "description": ""
@@ -12587,6 +12605,12 @@
                         },
                         {
                             "name": "include_assets_without_overrides",
+                            "type": "bool",
+                            "optional": true,
+                            "description": ""
+                        },
+                        {
+                            "name": "apply_user_filters",
                             "type": "bool",
                             "optional": true,
                             "description": ""
@@ -13705,6 +13729,18 @@
                                     "description": ""
                                 }
                             ]
+                        },
+                        {
+                            "name": "excluded_store_content_descriptors[0]",
+                            "type": "uint32[]",
+                            "optional": true,
+                            "description": ""
+                        },
+                        {
+                            "name": "excluded_community_content_descriptors[0]",
+                            "type": "uint32[]",
+                            "optional": true,
+                            "description": ""
                         }
                     ]
                 },
@@ -14100,6 +14136,18 @@
                                     "description": ""
                                 }
                             ]
+                        },
+                        {
+                            "name": "excluded_store_content_descriptors[0]",
+                            "type": "uint32[]",
+                            "optional": true,
+                            "description": ""
+                        },
+                        {
+                            "name": "excluded_community_content_descriptors[0]",
+                            "type": "uint32[]",
+                            "optional": true,
+                            "description": ""
                         }
                     ]
                 },
@@ -29496,6 +29544,12 @@
                         },
                         {
                             "name": "include_assets_without_overrides",
+                            "type": "bool",
+                            "optional": true,
+                            "description": ""
+                        },
+                        {
+                            "name": "apply_user_filters",
                             "type": "bool",
                             "optional": true,
                             "description": ""
