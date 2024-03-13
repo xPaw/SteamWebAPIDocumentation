@@ -1243,6 +1243,88 @@
             ]
         }
     },
+    "IBroadcastClientService": {
+        "NotifyBroadcastChannelLive": {
+            "_type": "undocumented",
+            "version": 1,
+            "parameters": [
+                {
+                    "name": "key",
+                    "type": "string",
+                    "optional": false,
+                    "description": "Access key"
+                },
+                {
+                    "name": "broadcast_channel_id",
+                    "type": "fixed64",
+                    "optional": true,
+                    "description": ""
+                },
+                {
+                    "name": "broadcast_channel_name",
+                    "type": "string",
+                    "optional": true,
+                    "description": ""
+                },
+                {
+                    "name": "broadcast_channel_avatar",
+                    "type": "string",
+                    "optional": true,
+                    "description": ""
+                }
+            ]
+        },
+        "NotifyWebRTCAddViewerCandidate": {
+            "_type": "undocumented",
+            "version": 1,
+            "parameters": [
+                {
+                    "name": "key",
+                    "type": "string",
+                    "optional": false,
+                    "description": "Access key"
+                },
+                {
+                    "name": "broadcast_session_id",
+                    "type": "fixed64",
+                    "optional": true,
+                    "description": ""
+                },
+                {
+                    "name": "webrtc_session_id",
+                    "type": "fixed64",
+                    "optional": true,
+                    "description": ""
+                },
+                {
+                    "name": "candidate",
+                    "type": "CBroadcast_WebRTC_Candidate",
+                    "optional": true,
+                    "description": "",
+                    "extra": [
+                        {
+                            "name": "sdp_mid",
+                            "type": "string",
+                            "optional": true,
+                            "description": ""
+                        },
+                        {
+                            "name": "sdp_mline_index",
+                            "type": "int32",
+                            "optional": true,
+                            "description": ""
+                        },
+                        {
+                            "name": "candidate",
+                            "type": "string",
+                            "optional": true,
+                            "description": ""
+                        }
+                    ]
+                }
+            ]
+        }
+    },
     "IBroadcastService": {
         "GetBroadcastUploadStats": {
             "_type": "undocumented",
