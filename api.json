@@ -22406,6 +22406,114 @@
                                             "type": "CMsgSteamLearnModelNodeNormalize",
                                             "optional": true,
                                             "description": ""
+                                        },
+                                        {
+                                            "name": "named_inference",
+                                            "type": "CMsgSteamLearnModelNodeNamedInference",
+                                            "optional": true,
+                                            "description": "",
+                                            "extra": [
+                                                {
+                                                    "name": "name",
+                                                    "type": "string",
+                                                    "optional": true,
+                                                    "description": ""
+                                                }
+                                            ]
+                                        },
+                                        {
+                                            "name": "dot",
+                                            "type": "CMsgSteamLearnModelNodeDot",
+                                            "optional": true,
+                                            "description": "",
+                                            "extra": [
+                                                {
+                                                    "name": "normalize",
+                                                    "type": "bool",
+                                                    "optional": true,
+                                                    "description": ""
+                                                }
+                                            ]
+                                        },
+                                        {
+                                            "name": "extract",
+                                            "type": "CMsgSteamLearnModelNodeExtract",
+                                            "optional": true,
+                                            "description": "",
+                                            "extra": [
+                                                {
+                                                    "name": "input_type",
+                                                    "type": "int32",
+                                                    "optional": true,
+                                                    "description": ""
+                                                },
+                                                {
+                                                    "name": "mode",
+                                                    "type": "int32",
+                                                    "optional": true,
+                                                    "description": ""
+                                                },
+                                                {
+                                                    "name": "exclusion",
+                                                    "type": "int32",
+                                                    "optional": true,
+                                                    "description": ""
+                                                },
+                                                {
+                                                    "name": "selection",
+                                                    "type": "int32",
+                                                    "optional": true,
+                                                    "description": ""
+                                                },
+                                                {
+                                                    "name": "bias_start",
+                                                    "type": "float",
+                                                    "optional": true,
+                                                    "description": ""
+                                                },
+                                                {
+                                                    "name": "bias_end",
+                                                    "type": "float",
+                                                    "optional": true,
+                                                    "description": ""
+                                                },
+                                                {
+                                                    "name": "input_bias_input_number",
+                                                    "type": "uint32",
+                                                    "optional": true,
+                                                    "description": ""
+                                                },
+                                                {
+                                                    "name": "input_bias_strength",
+                                                    "type": "float",
+                                                    "optional": true,
+                                                    "description": ""
+                                                },
+                                                {
+                                                    "name": "positive_sample_percent",
+                                                    "type": "uint32",
+                                                    "optional": true,
+                                                    "description": ""
+                                                },
+                                                {
+                                                    "name": "compact_table",
+                                                    "type": "string",
+                                                    "optional": true,
+                                                    "description": ""
+                                                },
+                                                {
+                                                    "name": "extracted_compact_table",
+                                                    "type": "string",
+                                                    "optional": true,
+                                                    "description": ""
+                                                },
+                                                {
+                                                    "name": "recency_months",
+                                                    "type": "uint32",
+                                                    "optional": true,
+                                                    "description": ""
+                                                }
+                                            ]
                                         }
                                     ]
                                 },
@@ -23300,6 +23408,114 @@
                                             "type": "CMsgSteamLearnModelNodeNormalize",
                                             "optional": true,
                                             "description": ""
+                                        },
+                                        {
+                                            "name": "named_inference",
+                                            "type": "CMsgSteamLearnModelNodeNamedInference",
+                                            "optional": true,
+                                            "description": "",
+                                            "extra": [
+                                                {
+                                                    "name": "name",
+                                                    "type": "string",
+                                                    "optional": true,
+                                                    "description": ""
+                                                }
+                                            ]
+                                        },
+                                        {
+                                            "name": "dot",
+                                            "type": "CMsgSteamLearnModelNodeDot",
+                                            "optional": true,
+                                            "description": "",
+                                            "extra": [
+                                                {
+                                                    "name": "normalize",
+                                                    "type": "bool",
+                                                    "optional": true,
+                                                    "description": ""
+                                                }
+                                            ]
+                                        },
+                                        {
+                                            "name": "extract",
+                                            "type": "CMsgSteamLearnModelNodeExtract",
+                                            "optional": true,
+                                            "description": "",
+                                            "extra": [
+                                                {
+                                                    "name": "input_type",
+                                                    "type": "int32",
+                                                    "optional": true,
+                                                    "description": ""
+                                                },
+                                                {
+                                                    "name": "mode",
+                                                    "type": "int32",
+                                                    "optional": true,
+                                                    "description": ""
+                                                },
+                                                {
+                                                    "name": "exclusion",
+                                                    "type": "int32",
+                                                    "optional": true,
+                                                    "description": ""
+                                                },
+                                                {
+                                                    "name": "selection",
+                                                    "type": "int32",
+                                                    "optional": true,
+                                                    "description": ""
+                                                },
+                                                {
+                                                    "name": "bias_start",
+                                                    "type": "float",
+                                                    "optional": true,
+                                                    "description": ""
+                                                },
+                                                {
+                                                    "name": "bias_end",
+                                                    "type": "float",
+                                                    "optional": true,
+                                                    "description": ""
+                                                },
+                                                {
+                                                    "name": "input_bias_input_number",
+                                                    "type": "uint32",
+                                                    "optional": true,
+                                                    "description": ""
+                                                },
+                                                {
+                                                    "name": "input_bias_strength",
+                                                    "type": "float",
+                                                    "optional": true,
+                                                    "description": ""
+                                                },
+                                                {
+                                                    "name": "positive_sample_percent",
+                                                    "type": "uint32",
+                                                    "optional": true,
+                                                    "description": ""
+                                                },
+                                                {
+                                                    "name": "compact_table",
+                                                    "type": "string",
+                                                    "optional": true,
+                                                    "description": ""
+                                                },
+                                                {
+                                                    "name": "extracted_compact_table",
+                                                    "type": "string",
+                                                    "optional": true,
+                                                    "description": ""
+                                                },
+                                                {
+                                                    "name": "recency_months",
+                                                    "type": "uint32",
+                                                    "optional": true,
+                                                    "description": ""
+                                                }
+                                            ]
                                         }
                                     ]
                                 },
@@ -23975,6 +24191,36 @@
                 }
             ]
         },
+        "GetTrainLogs": {
+            "_type": "undocumented",
+            "version": 1,
+            "parameters": [
+                {
+                    "name": "key",
+                    "type": "string",
+                    "optional": false,
+                    "description": "Access key"
+                },
+                {
+                    "name": "project_id",
+                    "type": "uint32",
+                    "optional": true,
+                    "description": ""
+                },
+                {
+                    "name": "fetch_id",
+                    "type": "uint32",
+                    "optional": true,
+                    "description": ""
+                },
+                {
+                    "name": "train_id",
+                    "type": "uint32",
+                    "optional": true,
+                    "description": ""
+                }
+            ]
+        },
         "GetTrainStatus": {
             "_type": "undocumented",
             "version": 1,
@@ -24184,6 +24430,12 @@
                     "type": "uint64[]",
                     "optional": true,
                     "description": ""
+                },
+                {
+                    "name": "named_inference",
+                    "type": "string",
+                    "optional": true,
+                    "description": ""
                 }
             ]
         },
@@ -24247,6 +24499,12 @@
                             "description": ""
                         }
                     ]
+                },
+                {
+                    "name": "named_inference",
+                    "type": "string",
+                    "optional": true,
+                    "description": ""
                 }
             ]
         },
@@ -25332,6 +25590,114 @@
                                     "type": "CMsgSteamLearnModelNodeNormalize",
                                     "optional": true,
                                     "description": ""
+                                },
+                                {
+                                    "name": "named_inference",
+                                    "type": "CMsgSteamLearnModelNodeNamedInference",
+                                    "optional": true,
+                                    "description": "",
+                                    "extra": [
+                                        {
+                                            "name": "name",
+                                            "type": "string",
+                                            "optional": true,
+                                            "description": ""
+                                        }
+                                    ]
+                                },
+                                {
+                                    "name": "dot",
+                                    "type": "CMsgSteamLearnModelNodeDot",
+                                    "optional": true,
+                                    "description": "",
+                                    "extra": [
+                                        {
+                                            "name": "normalize",
+                                            "type": "bool",
+                                            "optional": true,
+                                            "description": ""
+                                        }
+                                    ]
+                                },
+                                {
+                                    "name": "extract",
+                                    "type": "CMsgSteamLearnModelNodeExtract",
+                                    "optional": true,
+                                    "description": "",
+                                    "extra": [
+                                        {
+                                            "name": "input_type",
+                                            "type": "int32",
+                                            "optional": true,
+                                            "description": ""
+                                        },
+                                        {
+                                            "name": "mode",
+                                            "type": "int32",
+                                            "optional": true,
+                                            "description": ""
+                                        },
+                                        {
+                                            "name": "exclusion",
+                                            "type": "int32",
+                                            "optional": true,
+                                            "description": ""
+                                        },
+                                        {
+                                            "name": "selection",
+                                            "type": "int32",
+                                            "optional": true,
+                                            "description": ""
+                                        },
+                                        {
+                                            "name": "bias_start",
+                                            "type": "float",
+                                            "optional": true,
+                                            "description": ""
+                                        },
+                                        {
+                                            "name": "bias_end",
+                                            "type": "float",
+                                            "optional": true,
+                                            "description": ""
+                                        },
+                                        {
+                                            "name": "input_bias_input_number",
+                                            "type": "uint32",
+                                            "optional": true,
+                                            "description": ""
+                                        },
+                                        {
+                                            "name": "input_bias_strength",
+                                            "type": "float",
+                                            "optional": true,
+                                            "description": ""
+                                        },
+                                        {
+                                            "name": "positive_sample_percent",
+                                            "type": "uint32",
+                                            "optional": true,
+                                            "description": ""
+                                        },
+                                        {
+                                            "name": "compact_table",
+                                            "type": "string",
+                                            "optional": true,
+                                            "description": ""
+                                        },
+                                        {
+                                            "name": "extracted_compact_table",
+                                            "type": "string",
+                                            "optional": true,
+                                            "description": ""
+                                        },
+                                        {
+                                            "name": "recency_months",
+                                            "type": "uint32",
+                                            "optional": true,
+                                            "description": ""
+                                        }
+                                    ]
                                 }
                             ]
                         },
