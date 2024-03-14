@@ -3136,6 +3136,12 @@
                             "description": ""
                         }
                     ]
+                },
+                {
+                    "name": "gidreplayoftransid",
+                    "type": "fixed64",
+                    "optional": true,
+                    "description": ""
                 }
             ]
         },
@@ -30216,6 +30222,56 @@
                     "type": "int32",
                     "optional": true,
                     "description": ""
+                },
+                {
+                    "name": "include_purchase_recommendations",
+                    "type": "bool",
+                    "optional": true,
+                    "description": ""
+                },
+                {
+                    "name": "additional_purchase_item_ids[0]",
+                    "type": "StoreItemID[]",
+                    "optional": true,
+                    "description": "",
+                    "extra": [
+                        {
+                            "name": "appid",
+                            "type": "uint32",
+                            "optional": true,
+                            "description": ""
+                        },
+                        {
+                            "name": "packageid",
+                            "type": "uint32",
+                            "optional": true,
+                            "description": ""
+                        },
+                        {
+                            "name": "bundleid",
+                            "type": "uint32",
+                            "optional": true,
+                            "description": ""
+                        },
+                        {
+                            "name": "tagid",
+                            "type": "uint32",
+                            "optional": true,
+                            "description": ""
+                        },
+                        {
+                            "name": "creatorid",
+                            "type": "uint32",
+                            "optional": true,
+                            "description": ""
+                        },
+                        {
+                            "name": "hubcategoryid",
+                            "type": "uint32",
+                            "optional": true,
+                            "description": ""
+                        }
+                    ]
                 }
             ]
         }
