@@ -9309,6 +9309,18 @@
                     "type": "uint32",
                     "optional": true,
                     "description": ""
+                },
+                {
+                    "name": "include_non_games",
+                    "type": "bool",
+                    "optional": true,
+                    "description": ""
+                },
+                {
+                    "name": "steamid",
+                    "type": "fixed64",
+                    "optional": true,
+                    "description": ""
                 }
             ]
         },
@@ -22920,6 +22932,40 @@
                                                     "description": ""
                                                 }
                                             ]
+                                        },
+                                        {
+                                            "name": "conv_1d",
+                                            "type": "CMsgSteamLearnModelNodeConv1D",
+                                            "optional": true,
+                                            "description": "",
+                                            "extra": [
+                                                {
+                                                    "name": "filters",
+                                                    "type": "uint32",
+                                                    "optional": true,
+                                                    "description": ""
+                                                },
+                                                {
+                                                    "name": "kernel_size",
+                                                    "type": "uint32",
+                                                    "optional": true,
+                                                    "description": ""
+                                                }
+                                            ]
+                                        },
+                                        {
+                                            "name": "max_pooling_1d",
+                                            "type": "CMsgSteamLearnModelNodeMaxPooling1D",
+                                            "optional": true,
+                                            "description": "",
+                                            "extra": [
+                                                {
+                                                    "name": "pool_size",
+                                                    "type": "uint32",
+                                                    "optional": true,
+                                                    "description": ""
+                                                }
+                                            ]
                                         }
                                     ]
                                 },
@@ -23917,6 +23963,40 @@
                                                 },
                                                 {
                                                     "name": "recency_months",
+                                                    "type": "uint32",
+                                                    "optional": true,
+                                                    "description": ""
+                                                }
+                                            ]
+                                        },
+                                        {
+                                            "name": "conv_1d",
+                                            "type": "CMsgSteamLearnModelNodeConv1D",
+                                            "optional": true,
+                                            "description": "",
+                                            "extra": [
+                                                {
+                                                    "name": "filters",
+                                                    "type": "uint32",
+                                                    "optional": true,
+                                                    "description": ""
+                                                },
+                                                {
+                                                    "name": "kernel_size",
+                                                    "type": "uint32",
+                                                    "optional": true,
+                                                    "description": ""
+                                                }
+                                            ]
+                                        },
+                                        {
+                                            "name": "max_pooling_1d",
+                                            "type": "CMsgSteamLearnModelNodeMaxPooling1D",
+                                            "optional": true,
+                                            "description": "",
+                                            "extra": [
+                                                {
+                                                    "name": "pool_size",
                                                     "type": "uint32",
                                                     "optional": true,
                                                     "description": ""
@@ -26099,6 +26179,40 @@
                                         },
                                         {
                                             "name": "recency_months",
+                                            "type": "uint32",
+                                            "optional": true,
+                                            "description": ""
+                                        }
+                                    ]
+                                },
+                                {
+                                    "name": "conv_1d",
+                                    "type": "CMsgSteamLearnModelNodeConv1D",
+                                    "optional": true,
+                                    "description": "",
+                                    "extra": [
+                                        {
+                                            "name": "filters",
+                                            "type": "uint32",
+                                            "optional": true,
+                                            "description": ""
+                                        },
+                                        {
+                                            "name": "kernel_size",
+                                            "type": "uint32",
+                                            "optional": true,
+                                            "description": ""
+                                        }
+                                    ]
+                                },
+                                {
+                                    "name": "max_pooling_1d",
+                                    "type": "CMsgSteamLearnModelNodeMaxPooling1D",
+                                    "optional": true,
+                                    "description": "",
+                                    "extra": [
+                                        {
+                                            "name": "pool_size",
                                             "type": "uint32",
                                             "optional": true,
                                             "description": ""
