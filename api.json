@@ -14223,6 +14223,12 @@
                     "type": "fixed64",
                     "optional": true,
                     "description": "Return a list of pending (or pending and completed) feature and playtime requests for the given steamid"
+                },
+                {
+                    "name": "family_groupid",
+                    "type": "fixed64",
+                    "optional": true,
+                    "description": ""
                 }
             ]
         },
@@ -22810,6 +22816,18 @@
                                                     "type": "uint32",
                                                     "optional": true,
                                                     "description": ""
+                                                },
+                                                {
+                                                    "name": "split",
+                                                    "type": "int32",
+                                                    "optional": true,
+                                                    "description": ""
+                                                },
+                                                {
+                                                    "name": "ngrams",
+                                                    "type": "uint32",
+                                                    "optional": true,
+                                                    "description": ""
                                                 }
                                             ]
                                         },
@@ -22834,6 +22852,12 @@
                                                 {
                                                     "name": "name",
                                                     "type": "string",
+                                                    "optional": true,
+                                                    "description": ""
+                                                },
+                                                {
+                                                    "name": "only_inference",
+                                                    "type": "bool",
                                                     "optional": true,
                                                     "description": ""
                                                 }
@@ -23846,6 +23870,18 @@
                                                     "type": "uint32",
                                                     "optional": true,
                                                     "description": ""
+                                                },
+                                                {
+                                                    "name": "split",
+                                                    "type": "int32",
+                                                    "optional": true,
+                                                    "description": ""
+                                                },
+                                                {
+                                                    "name": "ngrams",
+                                                    "type": "uint32",
+                                                    "optional": true,
+                                                    "description": ""
                                                 }
                                             ]
                                         },
@@ -23870,6 +23906,12 @@
                                                 {
                                                     "name": "name",
                                                     "type": "string",
+                                                    "optional": true,
+                                                    "description": ""
+                                                },
+                                                {
+                                                    "name": "only_inference",
+                                                    "type": "bool",
                                                     "optional": true,
                                                     "description": ""
                                                 }
@@ -26062,6 +26104,18 @@
                                             "type": "uint32",
                                             "optional": true,
                                             "description": ""
+                                        },
+                                        {
+                                            "name": "split",
+                                            "type": "int32",
+                                            "optional": true,
+                                            "description": ""
+                                        },
+                                        {
+                                            "name": "ngrams",
+                                            "type": "uint32",
+                                            "optional": true,
+                                            "description": ""
                                         }
                                     ]
                                 },
@@ -26086,6 +26140,12 @@
                                         {
                                             "name": "name",
                                             "type": "string",
+                                            "optional": true,
+                                            "description": ""
+                                        },
+                                        {
+                                            "name": "only_inference",
+                                            "type": "bool",
                                             "optional": true,
                                             "description": ""
                                         }
