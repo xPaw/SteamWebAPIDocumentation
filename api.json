@@ -9621,6 +9621,25 @@
                     "description": ""
                 }
             ]
+        },
+        "UndeleteFamilyGroup": {
+            "_type": "undocumented",
+            "version": 1,
+            "httpmethod": "POST",
+            "parameters": [
+                {
+                    "name": "key",
+                    "type": "string",
+                    "optional": false,
+                    "description": "Access key"
+                },
+                {
+                    "name": "family_groupid",
+                    "type": "uint64",
+                    "optional": true,
+                    "description": ""
+                }
+            ]
         }
     },
     "IFriendMessagesService": {
@@ -22740,6 +22759,12 @@
                                                     "type": "string",
                                                     "optional": true,
                                                     "description": ""
+                                                },
+                                                {
+                                                    "name": "multi_hot",
+                                                    "type": "bool",
+                                                    "optional": true,
+                                                    "description": ""
                                                 }
                                             ]
                                         },
@@ -22990,6 +23015,12 @@
                                                     "description": ""
                                                 }
                                             ]
+                                        },
+                                        {
+                                            "name": "flatten",
+                                            "type": "CMsgSteamLearnModelNodeFlatten",
+                                            "optional": true,
+                                            "description": ""
                                         }
                                     ]
                                 },
@@ -23794,6 +23825,12 @@
                                                     "type": "string",
                                                     "optional": true,
                                                     "description": ""
+                                                },
+                                                {
+                                                    "name": "multi_hot",
+                                                    "type": "bool",
+                                                    "optional": true,
+                                                    "description": ""
                                                 }
                                             ]
                                         },
@@ -24044,6 +24081,12 @@
                                                     "description": ""
                                                 }
                                             ]
+                                        },
+                                        {
+                                            "name": "flatten",
+                                            "type": "CMsgSteamLearnModelNodeFlatten",
+                                            "optional": true,
+                                            "description": ""
                                         }
                                     ]
                                 },
@@ -26028,6 +26071,12 @@
                                             "type": "string",
                                             "optional": true,
                                             "description": ""
+                                        },
+                                        {
+                                            "name": "multi_hot",
+                                            "type": "bool",
+                                            "optional": true,
+                                            "description": ""
                                         }
                                     ]
                                 },
@@ -26278,6 +26327,12 @@
                                             "description": ""
                                         }
                                     ]
+                                },
+                                {
+                                    "name": "flatten",
+                                    "type": "CMsgSteamLearnModelNodeFlatten",
+                                    "optional": true,
+                                    "description": ""
                                 }
                             ]
                         },
@@ -29375,6 +29430,7 @@
     },
     "ISteamUserAuth": {
         "AuthenticateUser": {
+            "_type": "undocumented",
             "version": 1,
             "httpmethod": "POST",
             "parameters": [
