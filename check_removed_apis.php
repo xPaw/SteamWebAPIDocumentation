@@ -20,12 +20,22 @@ foreach( $copy as $serviceName => $Interface )
 	{
 		$path = $serviceName . '/' . $methodName . '/v' . $Method[ 'version' ];
 
-		echo 'Checking ' . $path . '...';
+		printf( 'Checking %-70s', $path . '...' );
 
 		curl_setopt( $c, CURLOPT_URL, "https://api.steampowered.com/{$path}/" );
 		$response = curl_exec( $c );
 
-		if( $response !== $notFound && !str_contains( $response, "' not found" ) )
+		$code = curl_getinfo( $c, CURLINFO_HTTP_CODE );
+
+		echo ' ' . $code;
+
+		if( $code !== 404 )
+		{
+			echo PHP_EOL;
+			continue;
+		}
+
+		if( $response === $notFound || !str_contains( $response, "' not found" ) )
 		{
 			echo PHP_EOL;
 			continue;
