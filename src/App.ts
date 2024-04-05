@@ -90,10 +90,12 @@ export default defineComponent({
 					if (token.sub && !this.userData.steamid) {
 						this.userData.steamid = token.sub;
 					}
+				} else {
+					throw new Error("Invalid token format (or empty)");
 				}
 			}
 			catch (e) {
-				console.log(e);
+				console.log((e as Error).message);
 				this.accessTokenExpiration = 0;
 				this.accessTokenSteamId = null;
 				this.accessTokenAudience = [];

@@ -126,7 +126,7 @@
 										placeholder="Your key (stored in your browser only)"
 										autocomplete="off"
 										v-model="userData.access_token"
-										@focus="keyInputType = 'text'"
+										@focus="keyInputType = 'text'; accessTokenVisible = true"
 										@blur="keyInputType = 'password'">
 								</div>
 								<div class="mb-3 col-md-6">
