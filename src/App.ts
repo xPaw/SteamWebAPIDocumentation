@@ -300,7 +300,7 @@ export default defineComponent({
 		formatAccessTokenExpirationDate(): string {
 			const formatter = new Intl.DateTimeFormat('en-US', {
 				hourCycle: 'h23',
-				dateStyle: 'short',
+				dateStyle: 'medium',
 				timeStyle: 'short',
 			});
 
