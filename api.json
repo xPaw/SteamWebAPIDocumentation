@@ -22341,6 +22341,12 @@
                                             "type": "uint32",
                                             "optional": true,
                                             "description": ""
+                                        },
+                                        {
+                                            "name": "compress",
+                                            "type": "bool",
+                                            "optional": true,
+                                            "description": ""
                                         }
                                     ]
                                 },
@@ -23405,6 +23411,12 @@
                                         {
                                             "name": "snapshot_schedule_day_of_month",
                                             "type": "uint32",
+                                            "optional": true,
+                                            "description": ""
+                                        },
+                                        {
+                                            "name": "compress",
+                                            "type": "bool",
                                             "optional": true,
                                             "description": ""
                                         }
@@ -25651,6 +25663,12 @@
                                 {
                                     "name": "snapshot_schedule_day_of_month",
                                     "type": "uint32",
+                                    "optional": true,
+                                    "description": ""
+                                },
+                                {
+                                    "name": "compress",
+                                    "type": "bool",
                                     "optional": true,
                                     "description": ""
                                 }
