@@ -427,7 +427,7 @@ export default defineComponent({
 							inputJson[parameter.name] = arr;
 						}
 					} else if (parameter._value) {
-						parameters.set(parameter.name, parameter._value || '');
+						parameters.set(parameter.name, parameter._value);
 					}
 
 					continue;
@@ -437,7 +437,7 @@ export default defineComponent({
 					continue;
 				}
 
-				parameters.set(parameter.name, parameter._value || '');
+				parameters.set(parameter.name, parameter._value);
 			}
 
 			if (hasArrays) {
