@@ -30685,6 +30685,26 @@
                             "description": ""
                         }
                     ]
+                },
+                {
+                    "name": "sections[0]",
+                    "type": "CStoreQuery_GetItemsByUserRecommendedTags_Request_Section[]",
+                    "optional": true,
+                    "description": "",
+                    "extra": [
+                        {
+                            "name": "sort",
+                            "type": "int32",
+                            "optional": true,
+                            "description": ""
+                        },
+                        {
+                            "name": "min_items",
+                            "type": "uint32",
+                            "optional": true,
+                            "description": ""
+                        }
+                    ]
                 }
             ]
         },
