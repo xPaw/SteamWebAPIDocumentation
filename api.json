@@ -30703,6 +30703,12 @@
                             "type": "uint32",
                             "optional": true,
                             "description": ""
+                        },
+                        {
+                            "name": "randomize",
+                            "type": "bool",
+                            "optional": true,
+                            "description": ""
                         }
                     ]
                 }
