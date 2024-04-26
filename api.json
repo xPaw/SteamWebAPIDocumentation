@@ -16435,6 +16435,38 @@
                 }
             ]
         },
+        "GetPromotionPlanForSalePages": {
+            "_type": "undocumented",
+            "version": 1,
+            "parameters": [
+                {
+                    "name": "key",
+                    "type": "string",
+                    "optional": false,
+                    "description": "Access key"
+                },
+                {
+                    "name": "request_list[0]",
+                    "type": "CPromotionPlanning_GetPromotionPlanForSalePages_Request_CSalePage[]",
+                    "optional": true,
+                    "description": "",
+                    "extra": [
+                        {
+                            "name": "clan_account_id",
+                            "type": "uint32",
+                            "optional": true,
+                            "description": ""
+                        },
+                        {
+                            "name": "gid_clan_event",
+                            "type": "fixed64",
+                            "optional": true,
+                            "description": ""
+                        }
+                    ]
+                }
+            ]
+        },
         "MarkLocalizationAssetComplete": {
             "_type": "undocumented",
             "version": 1,
