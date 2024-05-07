@@ -3460,6 +3460,12 @@
                     "type": "fixed64",
                     "optional": true,
                     "description": ""
+                },
+                {
+                    "name": "for_init_purchase",
+                    "type": "bool",
+                    "optional": true,
+                    "description": ""
                 }
             ]
         },
@@ -22737,7 +22743,19 @@
                                                     "description": ""
                                                 },
                                                 {
-                                                    "name": "key_dim",
+                                                    "name": "feedforward_size",
+                                                    "type": "uint32",
+                                                    "optional": true,
+                                                    "description": ""
+                                                },
+                                                {
+                                                    "name": "dropout_pct",
+                                                    "type": "uint32",
+                                                    "optional": true,
+                                                    "description": ""
+                                                },
+                                                {
+                                                    "name": "num_internal_blocks",
                                                     "type": "uint32",
                                                     "optional": true,
                                                     "description": ""
@@ -23853,7 +23871,19 @@
                                                     "description": ""
                                                 },
                                                 {
-                                                    "name": "key_dim",
+                                                    "name": "feedforward_size",
+                                                    "type": "uint32",
+                                                    "optional": true,
+                                                    "description": ""
+                                                },
+                                                {
+                                                    "name": "dropout_pct",
+                                                    "type": "uint32",
+                                                    "optional": true,
+                                                    "description": ""
+                                                },
+                                                {
+                                                    "name": "num_internal_blocks",
                                                     "type": "uint32",
                                                     "optional": true,
                                                     "description": ""
@@ -26149,7 +26179,19 @@
                                             "description": ""
                                         },
                                         {
-                                            "name": "key_dim",
+                                            "name": "feedforward_size",
+                                            "type": "uint32",
+                                            "optional": true,
+                                            "description": ""
+                                        },
+                                        {
+                                            "name": "dropout_pct",
+                                            "type": "uint32",
+                                            "optional": true,
+                                            "description": ""
+                                        },
+                                        {
+                                            "name": "num_internal_blocks",
                                             "type": "uint32",
                                             "optional": true,
                                             "description": ""
@@ -30787,6 +30829,18 @@
                         },
                         {
                             "name": "randomize",
+                            "type": "bool",
+                            "optional": true,
+                            "description": ""
+                        },
+                        {
+                            "name": "include_packages",
+                            "type": "bool",
+                            "optional": true,
+                            "description": ""
+                        },
+                        {
+                            "name": "include_bundles",
                             "type": "bool",
                             "optional": true,
                             "description": ""
