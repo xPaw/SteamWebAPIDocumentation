@@ -8621,6 +8621,25 @@
                 }
             ]
         },
+        "ClearCooldownSkip": {
+            "_type": "undocumented",
+            "version": 1,
+            "httpmethod": "POST",
+            "parameters": [
+                {
+                    "name": "key",
+                    "type": "string",
+                    "optional": false,
+                    "description": "Access key"
+                },
+                {
+                    "name": "steamid",
+                    "type": "fixed64",
+                    "optional": true,
+                    "description": ""
+                }
+            ]
+        },
         "ConfirmInviteToFamilyGroup": {
             "_type": "undocumented",
             "version": 1,
@@ -10483,6 +10502,11 @@
                     "optional": false
                 },
                 {
+                    "name": "itemquantity",
+                    "type": "uint32",
+                    "optional": false
+                },
+                {
                     "name": "steamid",
                     "type": "uint64",
                     "optional": false
@@ -10537,6 +10561,11 @@
                 {
                     "name": "itempropsjson",
                     "type": "string",
+                    "optional": false
+                },
+                {
+                    "name": "itemquantity",
+                    "type": "uint32",
                     "optional": false
                 },
                 {
