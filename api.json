@@ -8637,6 +8637,12 @@
                     "type": "fixed64",
                     "optional": true,
                     "description": ""
+                },
+                {
+                    "name": "invite_id",
+                    "type": "uint64",
+                    "optional": true,
+                    "description": ""
                 }
             ]
         },
@@ -8768,6 +8774,24 @@
                 {
                     "name": "steamid",
                     "type": "fixed64",
+                    "optional": true,
+                    "description": ""
+                }
+            ]
+        },
+        "GetAllPreferredLenders": {
+            "_type": "undocumented",
+            "version": 1,
+            "parameters": [
+                {
+                    "name": "key",
+                    "type": "string",
+                    "optional": false,
+                    "description": "Access key"
+                },
+                {
+                    "name": "family_groupid",
+                    "type": "uint64",
                     "optional": true,
                     "description": ""
                 }
@@ -20665,6 +20689,154 @@
                 }
             ]
         },
+        "GetMostPlayedSteamDeckGames": {
+            "_type": "undocumented",
+            "version": 1,
+            "parameters": [
+                {
+                    "name": "key",
+                    "type": "string",
+                    "optional": false,
+                    "description": "Access key"
+                },
+                {
+                    "name": "context",
+                    "type": "StoreBrowseContext",
+                    "optional": true,
+                    "description": "",
+                    "extra": [
+                        {
+                            "name": "language",
+                            "type": "string",
+                            "optional": true,
+                            "description": ""
+                        },
+                        {
+                            "name": "elanguage",
+                            "type": "int32",
+                            "optional": true,
+                            "description": ""
+                        },
+                        {
+                            "name": "country_code",
+                            "type": "string",
+                            "optional": true,
+                            "description": ""
+                        },
+                        {
+                            "name": "steam_realm",
+                            "type": "int32",
+                            "optional": true,
+                            "description": ""
+                        }
+                    ]
+                },
+                {
+                    "name": "data_request",
+                    "type": "StoreBrowseItemDataRequest",
+                    "optional": true,
+                    "description": "",
+                    "extra": [
+                        {
+                            "name": "include_assets",
+                            "type": "bool",
+                            "optional": true,
+                            "description": ""
+                        },
+                        {
+                            "name": "include_release",
+                            "type": "bool",
+                            "optional": true,
+                            "description": ""
+                        },
+                        {
+                            "name": "include_platforms",
+                            "type": "bool",
+                            "optional": true,
+                            "description": ""
+                        },
+                        {
+                            "name": "include_all_purchase_options",
+                            "type": "bool",
+                            "optional": true,
+                            "description": ""
+                        },
+                        {
+                            "name": "include_screenshots",
+                            "type": "bool",
+                            "optional": true,
+                            "description": ""
+                        },
+                        {
+                            "name": "include_trailers",
+                            "type": "bool",
+                            "optional": true,
+                            "description": ""
+                        },
+                        {
+                            "name": "include_ratings",
+                            "type": "bool",
+                            "optional": true,
+                            "description": ""
+                        },
+                        {
+                            "name": "include_tag_count",
+                            "type": "int32",
+                            "optional": true,
+                            "description": ""
+                        },
+                        {
+                            "name": "include_reviews",
+                            "type": "bool",
+                            "optional": true,
+                            "description": ""
+                        },
+                        {
+                            "name": "include_basic_info",
+                            "type": "bool",
+                            "optional": true,
+                            "description": ""
+                        },
+                        {
+                            "name": "include_supported_languages",
+                            "type": "bool",
+                            "optional": true,
+                            "description": ""
+                        },
+                        {
+                            "name": "include_full_description",
+                            "type": "bool",
+                            "optional": true,
+                            "description": ""
+                        },
+                        {
+                            "name": "include_included_items",
+                            "type": "bool",
+                            "optional": true,
+                            "description": ""
+                        },
+                        {
+                            "name": "included_item_data_request",
+                            "type": "StoreBrowseItemDataRequest",
+                            "optional": true,
+                            "description": ""
+                        },
+                        {
+                            "name": "include_assets_without_overrides",
+                            "type": "bool",
+                            "optional": true,
+                            "description": ""
+                        },
+                        {
+                            "name": "apply_user_filters",
+                            "type": "bool",
+                            "optional": true,
+                            "description": ""
+                        }
+                    ]
+                }
+            ]
+        },
         "GetTopReleasesPages": {
             "_type": "undocumented",
             "version": 1,
@@ -24575,6 +24747,18 @@
                 },
                 {
                     "name": "fetch_id",
+                    "type": "uint32",
+                    "optional": true,
+                    "description": ""
+                },
+                {
+                    "name": "popularity_weight",
+                    "type": "uint32",
+                    "optional": true,
+                    "description": ""
+                },
+                {
+                    "name": "focus_weight",
                     "type": "uint32",
                     "optional": true,
                     "description": ""
@@ -32400,6 +32584,31 @@
                 }
             ]
         },
+        "GetWishlistDemoEmailStatus": {
+            "_type": "undocumented",
+            "version": 1,
+            "httpmethod": "POST",
+            "parameters": [
+                {
+                    "name": "key",
+                    "type": "string",
+                    "optional": false,
+                    "description": "Access key"
+                },
+                {
+                    "name": "appid",
+                    "type": "uint32",
+                    "optional": true,
+                    "description": ""
+                },
+                {
+                    "name": "demo_appid",
+                    "type": "uint32",
+                    "optional": true,
+                    "description": ""
+                }
+            ]
+        },
         "MigratePartnerLinkTracking": {
             "_type": "undocumented",
             "version": 1,
@@ -32427,6 +32636,31 @@
                 {
                     "name": "backfill_source",
                     "type": "EPartnerLinkTrackingBackfillSource",
+                    "optional": true,
+                    "description": ""
+                }
+            ]
+        },
+        "QueueWishlistDemoEmailToFire": {
+            "_type": "undocumented",
+            "version": 1,
+            "httpmethod": "POST",
+            "parameters": [
+                {
+                    "name": "key",
+                    "type": "string",
+                    "optional": false,
+                    "description": "Access key"
+                },
+                {
+                    "name": "appid",
+                    "type": "uint32",
+                    "optional": true,
+                    "description": ""
+                },
+                {
+                    "name": "demo_appid",
+                    "type": "uint32",
                     "optional": true,
                     "description": ""
                 }
