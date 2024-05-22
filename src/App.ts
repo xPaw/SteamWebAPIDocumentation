@@ -51,7 +51,6 @@ export default defineComponent({
 				[1269260, { name: 'Artifact Foundry', icon: 'artifact.jpg', open: true, methods: {} }],
 
 				// Beta apps
-				[205790, { name: 'Dota 2 Test', icon: 'dota.jpg', open: false, methods: {} }],
 				[247040, { name: 'Dota 2 Experimental', icon: 'dota.jpg', open: false, methods: {} }],
 				[2305270, { name: 'Dota 2 Staging', icon: 'dota.jpg', open: false, methods: {} }],
 				[1024290, { name: 'Dota Underlods Beta', icon: 'underlords.jpg', open: false, methods: {} }],
