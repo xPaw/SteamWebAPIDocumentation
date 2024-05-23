@@ -42,7 +42,7 @@ export default defineComponent({
 			groupsData: new Map<number, SidebarGroupData>([
 				// Order of apps here defines the order in the sidebar
 				[0, { name: 'Steam', icon: 'steam.jpg', open: true, methods: {} }],
-				[730, { name: 'CS:GO', icon: 'csgo.jpg', open: true, methods: {} }],
+				[730, { name: 'Counter-Strike 2', icon: 'cs2.jpg', open: true, methods: {} }],
 				[570, { name: 'Dota 2', icon: 'dota.jpg', open: true, methods: {} }],
 				[440, { name: 'Team Fortress 2', icon: 'tf.jpg', open: true, methods: {} }],
 				[620, { name: 'Portal 2', icon: 'portal2.jpg', open: true, methods: {} }],
@@ -51,10 +51,8 @@ export default defineComponent({
 				[1269260, { name: 'Artifact Foundry', icon: 'artifact.jpg', open: true, methods: {} }],
 
 				// Beta apps
-				[205790, { name: 'Dota 2 Test', icon: 'dota.jpg', open: false, methods: {} }],
 				[247040, { name: 'Dota 2 Experimental', icon: 'dota.jpg', open: false, methods: {} }],
 				[2305270, { name: 'Dota 2 Staging', icon: 'dota.jpg', open: false, methods: {} }],
-				[1024290, { name: 'Dota Underlods Beta', icon: 'underlords.jpg', open: false, methods: {} }],
 			]),
 		}
 	},
