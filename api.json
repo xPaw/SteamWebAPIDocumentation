@@ -7956,34 +7956,6 @@
             ]
         }
     },
-    "IEconItems_221540": {
-        "GetPlayerItems": {
-            "version": 1,
-            "httpmethod": "GET",
-            "parameters": [
-                {
-                    "name": "steamid",
-                    "type": "uint64",
-                    "optional": false,
-                    "description": "The Steam ID to fetch items for"
-                }
-            ]
-        }
-    },
-    "IEconItems_238460": {
-        "GetPlayerItems": {
-            "version": 1,
-            "httpmethod": "GET",
-            "parameters": [
-                {
-                    "name": "steamid",
-                    "type": "uint64",
-                    "optional": false,
-                    "description": "The Steam ID to fetch items for"
-                }
-            ]
-        }
-    },
     "IEconItems_247040": {
         "GetPlayerItems": {
             "_type": "undocumented",

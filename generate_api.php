@@ -155,6 +155,10 @@ if( file_exists( __DIR__ . '/api_type_overrides.json' ) )
 	unset( $Interface );
 }
 
+// Remove third-party games
+unset( $FinalList[ 'IEconItems_221540' ] );
+unset( $FinalList[ 'IEconItems_238460' ] );
+
 ksort( $FinalList, SORT_NATURAL );
 
 foreach( $FinalList as &$Interface )
