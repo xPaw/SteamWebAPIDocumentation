@@ -29,3 +29,11 @@ To run generation scripts, a `config.php` file needs to be created with API keys
 $PublicApiKey    = '';
 $PublisherApiKey = '';
 ```
+
+## Developing locally
+
+This requires [Node.js](https://nodejs.org). Run `npm install` to install the dependencies.
+
+Use `npm run dev` command to start a local server with hot reloading.
+
+Run `npm test` to check typescript.
