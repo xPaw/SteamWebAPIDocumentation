@@ -435,7 +435,7 @@ export default defineComponent({
 					continue;
 				}
 
-				parameters.set(parameter.name, parameter._value);
+				parameters.set(parameter.name, parameter._value ?? '');
 			}
 
 			if (hasArrays) {
