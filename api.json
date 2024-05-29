@@ -13855,6 +13855,12 @@
                             "type": "uint32[]",
                             "optional": true,
                             "description": ""
+                        },
+                        {
+                            "name": "utility_appids[0]",
+                            "type": "uint32[]",
+                            "optional": true,
+                            "description": ""
                         }
                     ]
                 },
@@ -14265,6 +14271,12 @@
                         },
                         {
                             "name": "excluded_community_content_descriptors[0]",
+                            "type": "uint32[]",
+                            "optional": true,
+                            "description": ""
+                        },
+                        {
+                            "name": "utility_appids[0]",
                             "type": "uint32[]",
                             "optional": true,
                             "description": ""
