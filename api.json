@@ -7192,6 +7192,12 @@
                     "type": "uint32",
                     "optional": true,
                     "description": ""
+                },
+                {
+                    "name": "inviteid",
+                    "type": "fixed64",
+                    "optional": true,
+                    "description": ""
                 }
             ]
         },
@@ -16145,6 +16151,12 @@
                         {
                             "name": "rtime32_cancel_time",
                             "type": "uint32",
+                            "optional": true,
+                            "description": ""
+                        },
+                        {
+                            "name": "require_sale_page",
+                            "type": "bool",
                             "optional": true,
                             "description": ""
                         }
