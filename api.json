@@ -16271,6 +16271,73 @@
                 }
             ]
         },
+        "CreateSalePageForPromo": {
+            "_type": "undocumented",
+            "version": 1,
+            "httpmethod": "POST",
+            "parameters": [
+                {
+                    "name": "key",
+                    "type": "string",
+                    "optional": false,
+                    "description": "Access key"
+                },
+                {
+                    "name": "clan_account_id",
+                    "type": "uint32",
+                    "optional": true,
+                    "description": ""
+                },
+                {
+                    "name": "clan_event_gid",
+                    "type": "fixed64",
+                    "optional": true,
+                    "description": ""
+                },
+                {
+                    "name": "rtime_sale_start",
+                    "type": "uint32",
+                    "optional": true,
+                    "description": ""
+                },
+                {
+                    "name": "rtime_sale_end",
+                    "type": "uint32",
+                    "optional": true,
+                    "description": ""
+                },
+                {
+                    "name": "daily_deal_gid",
+                    "type": "fixed64",
+                    "optional": true,
+                    "description": ""
+                },
+                {
+                    "name": "promotion_gid",
+                    "type": "fixed64",
+                    "optional": true,
+                    "description": ""
+                },
+                {
+                    "name": "create_asset_request",
+                    "type": "bool",
+                    "optional": true,
+                    "description": ""
+                },
+                {
+                    "name": "partner_id",
+                    "type": "uint32",
+                    "optional": true,
+                    "description": ""
+                },
+                {
+                    "name": "advertising_appid",
+                    "type": "uint32",
+                    "optional": true,
+                    "description": ""
+                }
+            ]
+        },
         "CreateTentativePlan": {
             "_type": "undocumented",
             "version": 1,
@@ -16620,6 +16687,90 @@
                 {
                     "name": "partnerid",
                     "type": "uint32",
+                    "optional": true,
+                    "description": ""
+                }
+            ]
+        },
+        "GetPromotionPlanSummarySales": {
+            "_type": "undocumented",
+            "version": 1,
+            "parameters": [
+                {
+                    "name": "key",
+                    "type": "string",
+                    "optional": false,
+                    "description": "Access key"
+                },
+                {
+                    "name": "num_weeks",
+                    "type": "uint32",
+                    "optional": true,
+                    "description": ""
+                },
+                {
+                    "name": "promotion_types[0]",
+                    "type": "string[]",
+                    "optional": true,
+                    "description": ""
+                }
+            ]
+        },
+        "GetSalePageCandidatesForPromo": {
+            "_type": "undocumented",
+            "version": 1,
+            "parameters": [
+                {
+                    "name": "key",
+                    "type": "string",
+                    "optional": false,
+                    "description": "Access key"
+                },
+                {
+                    "name": "account_id",
+                    "type": "uint32",
+                    "optional": true,
+                    "description": ""
+                },
+                {
+                    "name": "include_published",
+                    "type": "bool",
+                    "optional": true,
+                    "description": ""
+                }
+            ]
+        },
+        "GetUpcomingScheduledDiscounts": {
+            "_type": "undocumented",
+            "version": 1,
+            "parameters": [
+                {
+                    "name": "key",
+                    "type": "string",
+                    "optional": false,
+                    "description": "Access key"
+                },
+                {
+                    "name": "rtstart",
+                    "type": "uint32",
+                    "optional": true,
+                    "description": ""
+                },
+                {
+                    "name": "rtend",
+                    "type": "uint32",
+                    "optional": true,
+                    "description": ""
+                },
+                {
+                    "name": "include_packages",
+                    "type": "bool",
+                    "optional": true,
+                    "description": ""
+                },
+                {
+                    "name": "filter_modified_sales_rank",
+                    "type": "bool",
                     "optional": true,
                     "description": ""
                 }
@@ -20909,6 +21060,12 @@
                             "description": ""
                         }
                     ]
+                },
+                {
+                    "name": "top_played_period",
+                    "type": "int32",
+                    "optional": true,
+                    "description": ""
                 }
             ]
         },
@@ -22672,7 +22829,15 @@
                                             "name": "concatenate",
                                             "type": "CMsgSteamLearnModelNodeConcatenate",
                                             "optional": true,
-                                            "description": ""
+                                            "description": "",
+                                            "extra": [
+                                                {
+                                                    "name": "axis",
+                                                    "type": "uint32",
+                                                    "optional": true,
+                                                    "description": ""
+                                                }
+                                            ]
                                         },
                                         {
                                             "name": "shuffle",
@@ -23032,6 +23197,58 @@
                                                 },
                                                 {
                                                     "name": "num_internal_blocks",
+                                                    "type": "uint32",
+                                                    "optional": true,
+                                                    "description": ""
+                                                }
+                                            ]
+                                        },
+                                        {
+                                            "name": "external_embedding",
+                                            "type": "CMsgSteamLearnModelNodeExternalEmbedding",
+                                            "optional": true,
+                                            "description": "",
+                                            "extra": [
+                                                {
+                                                    "name": "project_id",
+                                                    "type": "uint32",
+                                                    "optional": true,
+                                                    "description": ""
+                                                },
+                                                {
+                                                    "name": "published_version",
+                                                    "type": "uint32",
+                                                    "optional": true,
+                                                    "description": ""
+                                                },
+                                                {
+                                                    "name": "embedding_name",
+                                                    "type": "string",
+                                                    "optional": true,
+                                                    "description": ""
+                                                },
+                                                {
+                                                    "name": "compact_table",
+                                                    "type": "string",
+                                                    "optional": true,
+                                                    "description": ""
+                                                }
+                                            ]
+                                        },
+                                        {
+                                            "name": "time_distributed_dense",
+                                            "type": "CMsgSteamLearnModelNodeTimeDistributedDense",
+                                            "optional": true,
+                                            "description": "",
+                                            "extra": [
+                                                {
+                                                    "name": "activation",
+                                                    "type": "int32",
+                                                    "optional": true,
+                                                    "description": ""
+                                                },
+                                                {
+                                                    "name": "width",
                                                     "type": "uint32",
                                                     "optional": true,
                                                     "description": ""
@@ -23800,7 +24017,15 @@
                                             "name": "concatenate",
                                             "type": "CMsgSteamLearnModelNodeConcatenate",
                                             "optional": true,
-                                            "description": ""
+                                            "description": "",
+                                            "extra": [
+                                                {
+                                                    "name": "axis",
+                                                    "type": "uint32",
+                                                    "optional": true,
+                                                    "description": ""
+                                                }
+                                            ]
                                         },
                                         {
                                             "name": "shuffle",
@@ -24160,6 +24385,58 @@
                                                 },
                                                 {
                                                     "name": "num_internal_blocks",
+                                                    "type": "uint32",
+                                                    "optional": true,
+                                                    "description": ""
+                                                }
+                                            ]
+                                        },
+                                        {
+                                            "name": "external_embedding",
+                                            "type": "CMsgSteamLearnModelNodeExternalEmbedding",
+                                            "optional": true,
+                                            "description": "",
+                                            "extra": [
+                                                {
+                                                    "name": "project_id",
+                                                    "type": "uint32",
+                                                    "optional": true,
+                                                    "description": ""
+                                                },
+                                                {
+                                                    "name": "published_version",
+                                                    "type": "uint32",
+                                                    "optional": true,
+                                                    "description": ""
+                                                },
+                                                {
+                                                    "name": "embedding_name",
+                                                    "type": "string",
+                                                    "optional": true,
+                                                    "description": ""
+                                                },
+                                                {
+                                                    "name": "compact_table",
+                                                    "type": "string",
+                                                    "optional": true,
+                                                    "description": ""
+                                                }
+                                            ]
+                                        },
+                                        {
+                                            "name": "time_distributed_dense",
+                                            "type": "CMsgSteamLearnModelNodeTimeDistributedDense",
+                                            "optional": true,
+                                            "description": "",
+                                            "extra": [
+                                                {
+                                                    "name": "activation",
+                                                    "type": "int32",
+                                                    "optional": true,
+                                                    "description": ""
+                                                },
+                                                {
+                                                    "name": "width",
                                                     "type": "uint32",
                                                     "optional": true,
                                                     "description": ""
@@ -26120,7 +26397,15 @@
                                     "name": "concatenate",
                                     "type": "CMsgSteamLearnModelNodeConcatenate",
                                     "optional": true,
-                                    "description": ""
+                                    "description": "",
+                                    "extra": [
+                                        {
+                                            "name": "axis",
+                                            "type": "uint32",
+                                            "optional": true,
+                                            "description": ""
+                                        }
+                                    ]
                                 },
                                 {
                                     "name": "shuffle",
@@ -26480,6 +26765,58 @@
                                         },
                                         {
                                             "name": "num_internal_blocks",
+                                            "type": "uint32",
+                                            "optional": true,
+                                            "description": ""
+                                        }
+                                    ]
+                                },
+                                {
+                                    "name": "external_embedding",
+                                    "type": "CMsgSteamLearnModelNodeExternalEmbedding",
+                                    "optional": true,
+                                    "description": "",
+                                    "extra": [
+                                        {
+                                            "name": "project_id",
+                                            "type": "uint32",
+                                            "optional": true,
+                                            "description": ""
+                                        },
+                                        {
+                                            "name": "published_version",
+                                            "type": "uint32",
+                                            "optional": true,
+                                            "description": ""
+                                        },
+                                        {
+                                            "name": "embedding_name",
+                                            "type": "string",
+                                            "optional": true,
+                                            "description": ""
+                                        },
+                                        {
+                                            "name": "compact_table",
+                                            "type": "string",
+                                            "optional": true,
+                                            "description": ""
+                                        }
+                                    ]
+                                },
+                                {
+                                    "name": "time_distributed_dense",
+                                    "type": "CMsgSteamLearnModelNodeTimeDistributedDense",
+                                    "optional": true,
+                                    "description": "",
+                                    "extra": [
+                                        {
+                                            "name": "activation",
+                                            "type": "int32",
+                                            "optional": true,
+                                            "description": ""
+                                        },
+                                        {
+                                            "name": "width",
                                             "type": "uint32",
                                             "optional": true,
                                             "description": ""
