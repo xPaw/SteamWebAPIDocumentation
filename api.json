@@ -16159,6 +16159,12 @@
                             "type": "bool",
                             "optional": true,
                             "description": ""
+                        },
+                        {
+                            "name": "require_sale_page_type",
+                            "type": "int32",
+                            "optional": true,
+                            "description": ""
                         }
                     ]
                 },
@@ -21063,6 +21069,12 @@
                 },
                 {
                     "name": "top_played_period",
+                    "type": "int32",
+                    "optional": true,
+                    "description": ""
+                },
+                {
+                    "name": "count",
                     "type": "int32",
                     "optional": true,
                     "description": ""
@@ -33552,6 +33564,20 @@
                     "name": "appid",
                     "type": "uint32",
                     "optional": false
+                }
+            ]
+        }
+    },
+    "ITest_TransportErrorService": {
+        "InvalidService": {
+            "_type": "undocumented",
+            "version": 1,
+            "parameters": [
+                {
+                    "name": "key",
+                    "type": "string",
+                    "optional": false,
+                    "description": "Access key"
                 }
             ]
         }
