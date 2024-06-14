@@ -17188,6 +17188,12 @@
                     "type": "string",
                     "optional": true,
                     "description": ""
+                },
+                {
+                    "name": "partner_id",
+                    "type": "uint32",
+                    "optional": true,
+                    "description": ""
                 }
             ]
         }
