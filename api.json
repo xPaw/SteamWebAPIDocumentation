@@ -14362,6 +14362,158 @@
             ]
         }
     },
+    "IPartnerDeadlineService": {
+        "GetDeadlinesForPartner": {
+            "_type": "undocumented",
+            "version": 1,
+            "parameters": [
+                {
+                    "name": "key",
+                    "type": "string",
+                    "optional": false,
+                    "description": "Access key"
+                },
+                {
+                    "name": "partnerid",
+                    "type": "uint32",
+                    "optional": true,
+                    "description": ""
+                },
+                {
+                    "name": "start_date",
+                    "type": "uint32",
+                    "optional": true,
+                    "description": ""
+                },
+                {
+                    "name": "end_date",
+                    "type": "uint32",
+                    "optional": true,
+                    "description": ""
+                },
+                {
+                    "name": "include_complete",
+                    "type": "bool",
+                    "optional": true,
+                    "description": ""
+                }
+            ]
+        }
+    },
+    "IPartnerDismissService": {
+        "CreateDismiss": {
+            "_type": "undocumented",
+            "version": 1,
+            "httpmethod": "POST",
+            "parameters": [
+                {
+                    "name": "key",
+                    "type": "string",
+                    "optional": false,
+                    "description": "Access key"
+                },
+                {
+                    "name": "dismiss_list[0]",
+                    "type": "CDismissPinData[]",
+                    "optional": true,
+                    "description": "",
+                    "extra": [
+                        {
+                            "name": "state",
+                            "type": "int32",
+                            "optional": true,
+                            "description": ""
+                        },
+                        {
+                            "name": "accountid",
+                            "type": "uint32",
+                            "optional": true,
+                            "description": ""
+                        },
+                        {
+                            "name": "key_json",
+                            "type": "string",
+                            "optional": true,
+                            "description": ""
+                        },
+                        {
+                            "name": "partnerid",
+                            "type": "uint32",
+                            "optional": true,
+                            "description": ""
+                        },
+                        {
+                            "name": "rtime_create",
+                            "type": "uint32",
+                            "optional": true,
+                            "description": ""
+                        },
+                        {
+                            "name": "rtime_validity",
+                            "type": "uint32",
+                            "optional": true,
+                            "description": ""
+                        },
+                        {
+                            "name": "dismiss_id",
+                            "type": "fixed64",
+                            "optional": true,
+                            "description": ""
+                        }
+                    ]
+                }
+            ]
+        },
+        "DeleteDismiss": {
+            "_type": "undocumented",
+            "version": 1,
+            "httpmethod": "POST",
+            "parameters": [
+                {
+                    "name": "key",
+                    "type": "string",
+                    "optional": false,
+                    "description": "Access key"
+                },
+                {
+                    "name": "dismiss_id",
+                    "type": "fixed64",
+                    "optional": true,
+                    "description": ""
+                }
+            ]
+        },
+        "GetDismissTimeRange": {
+            "_type": "undocumented",
+            "version": 1,
+            "parameters": [
+                {
+                    "name": "key",
+                    "type": "string",
+                    "optional": false,
+                    "description": "Access key"
+                },
+                {
+                    "name": "partnerid",
+                    "type": "uint32",
+                    "optional": true,
+                    "description": ""
+                },
+                {
+                    "name": "accountid",
+                    "type": "uint32",
+                    "optional": true,
+                    "description": ""
+                },
+                {
+                    "name": "rtime_after",
+                    "type": "uint32",
+                    "optional": true,
+                    "description": ""
+                }
+            ]
+        }
+    },
     "IPartnerMembershipInviteService": {
         "GetInvites": {
             "_type": "undocumented",
