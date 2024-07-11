@@ -15333,6 +15333,12 @@
                     "type": "uint32[]",
                     "optional": true,
                     "description": ""
+                },
+                {
+                    "name": "include_unvetted_apps",
+                    "type": "bool",
+                    "optional": true,
+                    "description": ""
                 }
             ]
         },
@@ -16630,6 +16636,18 @@
                             "type": "int32",
                             "optional": true,
                             "description": ""
+                        },
+                        {
+                            "name": "admin_notes",
+                            "type": "string",
+                            "optional": true,
+                            "description": ""
+                        },
+                        {
+                            "name": "partner_notes",
+                            "type": "string",
+                            "optional": true,
+                            "description": ""
                         }
                     ]
                 },
@@ -17029,6 +17047,24 @@
                 },
                 {
                     "name": "end_date",
+                    "type": "uint32",
+                    "optional": true,
+                    "description": ""
+                }
+            ]
+        },
+        "GetAvailableWeekSlots": {
+            "_type": "undocumented",
+            "version": 1,
+            "parameters": [
+                {
+                    "name": "key",
+                    "type": "string",
+                    "optional": false,
+                    "description": "Access key"
+                },
+                {
+                    "name": "publisherid",
                     "type": "uint32",
                     "optional": true,
                     "description": ""
@@ -23805,6 +23841,26 @@
                                                     "description": ""
                                                 }
                                             ]
+                                        },
+                                        {
+                                            "name": "weighted_average",
+                                            "type": "CMsgSteamLearnModelNodeWeightedAverage",
+                                            "optional": true,
+                                            "description": "",
+                                            "extra": [
+                                                {
+                                                    "name": "axis",
+                                                    "type": "uint32",
+                                                    "optional": true,
+                                                    "description": ""
+                                                },
+                                                {
+                                                    "name": "use_weights",
+                                                    "type": "bool",
+                                                    "optional": true,
+                                                    "description": ""
+                                                }
+                                            ]
                                         }
                                     ]
                                 },
@@ -23901,6 +23957,12 @@
                                         {
                                             "name": "compress",
                                             "type": "bool",
+                                            "optional": true,
+                                            "description": ""
+                                        },
+                                        {
+                                            "name": "job_count",
+                                            "type": "uint32",
                                             "optional": true,
                                             "description": ""
                                         }
@@ -25043,6 +25105,26 @@
                                                     "description": ""
                                                 }
                                             ]
+                                        },
+                                        {
+                                            "name": "weighted_average",
+                                            "type": "CMsgSteamLearnModelNodeWeightedAverage",
+                                            "optional": true,
+                                            "description": "",
+                                            "extra": [
+                                                {
+                                                    "name": "axis",
+                                                    "type": "uint32",
+                                                    "optional": true,
+                                                    "description": ""
+                                                },
+                                                {
+                                                    "name": "use_weights",
+                                                    "type": "bool",
+                                                    "optional": true,
+                                                    "description": ""
+                                                }
+                                            ]
                                         }
                                     ]
                                 },
@@ -25139,6 +25221,12 @@
                                         {
                                             "name": "compress",
                                             "type": "bool",
+                                            "optional": true,
+                                            "description": ""
+                                        },
+                                        {
+                                            "name": "job_count",
+                                            "type": "uint32",
                                             "optional": true,
                                             "description": ""
                                         }
@@ -27473,6 +27561,26 @@
                                             "description": ""
                                         }
                                     ]
+                                },
+                                {
+                                    "name": "weighted_average",
+                                    "type": "CMsgSteamLearnModelNodeWeightedAverage",
+                                    "optional": true,
+                                    "description": "",
+                                    "extra": [
+                                        {
+                                            "name": "axis",
+                                            "type": "uint32",
+                                            "optional": true,
+                                            "description": ""
+                                        },
+                                        {
+                                            "name": "use_weights",
+                                            "type": "bool",
+                                            "optional": true,
+                                            "description": ""
+                                        }
+                                    ]
                                 }
                             ]
                         },
@@ -27569,6 +27677,12 @@
                                 {
                                     "name": "compress",
                                     "type": "bool",
+                                    "optional": true,
+                                    "description": ""
+                                },
+                                {
+                                    "name": "job_count",
+                                    "type": "uint32",
                                     "optional": true,
                                     "description": ""
                                 }
