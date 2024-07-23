@@ -4278,6 +4278,30 @@
             "version": 1,
             "parameters": []
         },
+        "GetDraftAndRecentPartnerEventSnippet": {
+            "_type": "undocumented",
+            "version": 1,
+            "parameters": [
+                {
+                    "name": "key",
+                    "type": "string",
+                    "optional": false,
+                    "description": "Access key"
+                },
+                {
+                    "name": "steamid",
+                    "type": "fixed64",
+                    "optional": true,
+                    "description": ""
+                },
+                {
+                    "name": "rtime_oldest_date",
+                    "type": "uint32",
+                    "optional": true,
+                    "description": ""
+                }
+            ]
+        },
         "GetPartnerEventsByBuildIDRange": {
             "_type": "undocumented",
             "version": 1,
@@ -16478,6 +16502,52 @@
             ]
         }
     },
+    "IPlaytestService": {
+        "GetInvites": {
+            "_type": "undocumented",
+            "version": 1,
+            "httpmethod": "POST",
+            "parameters": [
+                {
+                    "name": "key",
+                    "type": "string",
+                    "optional": false,
+                    "description": "Access key"
+                },
+                {
+                    "name": "invite_id",
+                    "type": "uint64",
+                    "optional": true,
+                    "description": ""
+                }
+            ]
+        },
+        "UpdateInvites": {
+            "_type": "undocumented",
+            "version": 1,
+            "httpmethod": "POST",
+            "parameters": [
+                {
+                    "name": "key",
+                    "type": "string",
+                    "optional": false,
+                    "description": "Access key"
+                },
+                {
+                    "name": "invite_ids[0]",
+                    "type": "uint64[]",
+                    "optional": true,
+                    "description": ""
+                },
+                {
+                    "name": "status",
+                    "type": "int32",
+                    "optional": true,
+                    "description": ""
+                }
+            ]
+        }
+    },
     "IPortal2Leaderboards_620": {
         "GetBucketizedData": {
             "version": 1,
@@ -17287,6 +17357,12 @@
                 },
                 {
                     "name": "publisherid",
+                    "type": "uint32",
+                    "optional": true,
+                    "description": ""
+                },
+                {
+                    "name": "rtime_start",
                     "type": "uint32",
                     "optional": true,
                     "description": ""
