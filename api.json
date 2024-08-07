@@ -23497,6 +23497,18 @@
                                             "type": "uint32",
                                             "optional": true,
                                             "description": ""
+                                        },
+                                        {
+                                            "name": "sort_sequence",
+                                            "type": "bool",
+                                            "optional": true,
+                                            "description": ""
+                                        },
+                                        {
+                                            "name": "sequence_min_length",
+                                            "type": "uint32",
+                                            "optional": true,
+                                            "description": ""
                                         }
                                     ]
                                 },
@@ -23593,6 +23605,12 @@
                                                     "type": "uint32",
                                                     "optional": true,
                                                     "description": ""
+                                                },
+                                                {
+                                                    "name": "regularization",
+                                                    "type": "int32",
+                                                    "optional": true,
+                                                    "description": ""
                                                 }
                                             ]
                                         },
@@ -23617,6 +23635,12 @@
                                                 {
                                                     "name": "dropout_pct",
                                                     "type": "uint32",
+                                                    "optional": true,
+                                                    "description": ""
+                                                },
+                                                {
+                                                    "name": "regularization",
+                                                    "type": "int32",
                                                     "optional": true,
                                                     "description": ""
                                                 }
@@ -24189,6 +24213,12 @@
                                                     "type": "uint32",
                                                     "optional": true,
                                                     "description": ""
+                                                },
+                                                {
+                                                    "name": "regularization",
+                                                    "type": "int32",
+                                                    "optional": true,
+                                                    "description": ""
                                                 }
                                             ]
                                         },
@@ -24333,6 +24363,12 @@
                                                     "type": "uint32",
                                                     "optional": true,
                                                     "description": ""
+                                                },
+                                                {
+                                                    "name": "filter",
+                                                    "type": "int32",
+                                                    "optional": true,
+                                                    "description": ""
                                                 }
                                             ]
                                         },
@@ -24405,6 +24441,12 @@
                                             "type": "uint32",
                                             "optional": true,
                                             "description": ""
+                                        },
+                                        {
+                                            "name": "snapshot_schedule_hour_of_day",
+                                            "type": "uint32",
+                                            "optional": true,
+                                            "description": ""
                                         }
                                     ]
                                 },
@@ -24459,6 +24501,12 @@
                                         {
                                             "name": "train_learning_rate",
                                             "type": "float",
+                                            "optional": true,
+                                            "description": ""
+                                        },
+                                        {
+                                            "name": "train_gpu",
+                                            "type": "int32",
                                             "optional": true,
                                             "description": ""
                                         }
@@ -24761,6 +24809,18 @@
                                             "type": "uint32",
                                             "optional": true,
                                             "description": ""
+                                        },
+                                        {
+                                            "name": "sort_sequence",
+                                            "type": "bool",
+                                            "optional": true,
+                                            "description": ""
+                                        },
+                                        {
+                                            "name": "sequence_min_length",
+                                            "type": "uint32",
+                                            "optional": true,
+                                            "description": ""
                                         }
                                     ]
                                 },
@@ -24857,6 +24917,12 @@
                                                     "type": "uint32",
                                                     "optional": true,
                                                     "description": ""
+                                                },
+                                                {
+                                                    "name": "regularization",
+                                                    "type": "int32",
+                                                    "optional": true,
+                                                    "description": ""
                                                 }
                                             ]
                                         },
@@ -24881,6 +24947,12 @@
                                                 {
                                                     "name": "dropout_pct",
                                                     "type": "uint32",
+                                                    "optional": true,
+                                                    "description": ""
+                                                },
+                                                {
+                                                    "name": "regularization",
+                                                    "type": "int32",
                                                     "optional": true,
                                                     "description": ""
                                                 }
@@ -25453,6 +25525,12 @@
                                                     "type": "uint32",
                                                     "optional": true,
                                                     "description": ""
+                                                },
+                                                {
+                                                    "name": "regularization",
+                                                    "type": "int32",
+                                                    "optional": true,
+                                                    "description": ""
                                                 }
                                             ]
                                         },
@@ -25597,6 +25675,12 @@
                                                     "type": "uint32",
                                                     "optional": true,
                                                     "description": ""
+                                                },
+                                                {
+                                                    "name": "filter",
+                                                    "type": "int32",
+                                                    "optional": true,
+                                                    "description": ""
                                                 }
                                             ]
                                         },
@@ -25669,6 +25753,12 @@
                                             "type": "uint32",
                                             "optional": true,
                                             "description": ""
+                                        },
+                                        {
+                                            "name": "snapshot_schedule_hour_of_day",
+                                            "type": "uint32",
+                                            "optional": true,
+                                            "description": ""
                                         }
                                     ]
                                 },
@@ -25723,6 +25813,12 @@
                                         {
                                             "name": "train_learning_rate",
                                             "type": "float",
+                                            "optional": true,
+                                            "description": ""
+                                        },
+                                        {
+                                            "name": "train_gpu",
+                                            "type": "int32",
                                             "optional": true,
                                             "description": ""
                                         }
@@ -27217,6 +27313,18 @@
                                     "type": "uint32",
                                     "optional": true,
                                     "description": ""
+                                },
+                                {
+                                    "name": "sort_sequence",
+                                    "type": "bool",
+                                    "optional": true,
+                                    "description": ""
+                                },
+                                {
+                                    "name": "sequence_min_length",
+                                    "type": "uint32",
+                                    "optional": true,
+                                    "description": ""
                                 }
                             ]
                         },
@@ -27313,6 +27421,12 @@
                                             "type": "uint32",
                                             "optional": true,
                                             "description": ""
+                                        },
+                                        {
+                                            "name": "regularization",
+                                            "type": "int32",
+                                            "optional": true,
+                                            "description": ""
                                         }
                                     ]
                                 },
@@ -27337,6 +27451,12 @@
                                         {
                                             "name": "dropout_pct",
                                             "type": "uint32",
+                                            "optional": true,
+                                            "description": ""
+                                        },
+                                        {
+                                            "name": "regularization",
+                                            "type": "int32",
                                             "optional": true,
                                             "description": ""
                                         }
@@ -27909,6 +28029,12 @@
                                             "type": "uint32",
                                             "optional": true,
                                             "description": ""
+                                        },
+                                        {
+                                            "name": "regularization",
+                                            "type": "int32",
+                                            "optional": true,
+                                            "description": ""
                                         }
                                     ]
                                 },
@@ -28053,6 +28179,12 @@
                                             "type": "uint32",
                                             "optional": true,
                                             "description": ""
+                                        },
+                                        {
+                                            "name": "filter",
+                                            "type": "int32",
+                                            "optional": true,
+                                            "description": ""
                                         }
                                     ]
                                 },
@@ -28125,6 +28257,12 @@
                                     "type": "uint32",
                                     "optional": true,
                                     "description": ""
+                                },
+                                {
+                                    "name": "snapshot_schedule_hour_of_day",
+                                    "type": "uint32",
+                                    "optional": true,
+                                    "description": ""
                                 }
                             ]
                         },
@@ -28179,6 +28317,12 @@
                                 {
                                     "name": "train_learning_rate",
                                     "type": "float",
+                                    "optional": true,
+                                    "description": ""
+                                },
+                                {
+                                    "name": "train_gpu",
+                                    "type": "int32",
                                     "optional": true,
                                     "description": ""
                                 }
