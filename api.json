@@ -1531,6 +1531,31 @@
                 }
             ]
         },
+        "MarkTokenCompromised": {
+            "_type": "undocumented",
+            "version": 1,
+            "httpmethod": "POST",
+            "parameters": [
+                {
+                    "name": "key",
+                    "type": "string",
+                    "optional": false,
+                    "description": "Access key"
+                },
+                {
+                    "name": "steamid",
+                    "type": "fixed64",
+                    "optional": true,
+                    "description": ""
+                },
+                {
+                    "name": "token_id",
+                    "type": "fixed64",
+                    "optional": true,
+                    "description": ""
+                }
+            ]
+        },
         "QueryRefreshTokenByID": {
             "_type": "undocumented",
             "version": 1,
@@ -35776,6 +35801,26 @@
                             "description": ""
                         }
                     ]
+                }
+            ]
+        }
+    },
+    "IWishlistService": {
+        "GetWishlistItemCount": {
+            "version": 1,
+            "httpmethod": "GET",
+            "description": "Get the number of items on a user's wishlist.",
+            "parameters": [
+                {
+                    "name": "key",
+                    "type": "string",
+                    "optional": false,
+                    "description": "Access key"
+                },
+                {
+                    "name": "steamid",
+                    "type": "uint64",
+                    "optional": false
                 }
             ]
         }
