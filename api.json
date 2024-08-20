@@ -24404,6 +24404,12 @@
                                                     "description": ""
                                                 }
                                             ]
+                                        },
+                                        {
+                                            "name": "global_avg_pooling_1d",
+                                            "type": "CMsgSteamLearnModelNodeGlobalAvgPooling1D",
+                                            "optional": true,
+                                            "description": ""
                                         }
                                     ]
                                 },
@@ -25716,6 +25722,12 @@
                                                     "description": ""
                                                 }
                                             ]
+                                        },
+                                        {
+                                            "name": "global_avg_pooling_1d",
+                                            "type": "CMsgSteamLearnModelNodeGlobalAvgPooling1D",
+                                            "optional": true,
+                                            "description": ""
                                         }
                                     ]
                                 },
@@ -28220,6 +28232,12 @@
                                             "description": ""
                                         }
                                     ]
+                                },
+                                {
+                                    "name": "global_avg_pooling_1d",
+                                    "type": "CMsgSteamLearnModelNodeGlobalAvgPooling1D",
+                                    "optional": true,
+                                    "description": ""
                                 }
                             ]
                         },
