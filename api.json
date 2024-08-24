@@ -9927,13 +9927,13 @@
     },
     "IGCVersion_1422450": {
         "GetClientVersion": {
-            "_type": "undocumented",
             "version": 1,
+            "httpmethod": "GET",
             "parameters": []
         },
         "GetServerVersion": {
-            "_type": "undocumented",
             "version": 1,
+            "httpmethod": "GET",
             "parameters": []
         }
     },
