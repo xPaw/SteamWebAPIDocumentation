@@ -32481,6 +32481,33 @@
             ]
         }
     },
+    "IStoreCatalogService": {
+        "GetDevPageAllAppsLinked": {
+            "_type": "undocumented",
+            "version": 1,
+            "httpmethod": "POST",
+            "parameters": [
+                {
+                    "name": "key",
+                    "type": "string",
+                    "optional": false,
+                    "description": "Access key"
+                },
+                {
+                    "name": "clan_account_ids[0]",
+                    "type": "uint32[]",
+                    "optional": true,
+                    "description": ""
+                },
+                {
+                    "name": "ignore_dlc",
+                    "type": "bool",
+                    "optional": true,
+                    "description": ""
+                }
+            ]
+        }
+    },
     "IStoreMarketingService": {
         "GetItemsToFeature": {
             "_type": "undocumented",
