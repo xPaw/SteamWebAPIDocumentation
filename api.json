@@ -31081,7 +31081,7 @@
     "ISteamUser": {
         "CheckAppOwnership": {
             "_type": "publisher_only",
-            "version": 2,
+            "version": 3,
             "httpmethod": "GET",
             "parameters": [
                 {
@@ -31210,7 +31210,7 @@
         },
         "GetPublisherAppOwnership": {
             "_type": "publisher_only",
-            "version": 3,
+            "version": 4,
             "httpmethod": "GET",
             "parameters": [
                 {
