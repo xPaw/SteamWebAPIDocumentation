@@ -2220,6 +2220,36 @@
                     "description": ""
                 }
             ]
+        },
+        "WebRTCSetAnswer": {
+            "_type": "undocumented",
+            "version": 1,
+            "parameters": [
+                {
+                    "name": "key",
+                    "type": "string",
+                    "optional": false,
+                    "description": "Access key"
+                },
+                {
+                    "name": "broadcaster_steamid",
+                    "type": "fixed64",
+                    "optional": true,
+                    "description": ""
+                },
+                {
+                    "name": "webrtc_session_id",
+                    "type": "fixed64",
+                    "optional": true,
+                    "description": ""
+                },
+                {
+                    "name": "answer",
+                    "type": "string",
+                    "optional": true,
+                    "description": ""
+                }
+            ]
         }
     },
     "ICSGOPlayers_730": {
