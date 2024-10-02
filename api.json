@@ -13250,6 +13250,30 @@
                 }
             ]
         },
+        "GetPastMarketingMessages": {
+            "_type": "undocumented",
+            "version": 1,
+            "parameters": [
+                {
+                    "name": "key",
+                    "type": "string",
+                    "optional": false,
+                    "description": "Access key"
+                },
+                {
+                    "name": "start_past_days",
+                    "type": "uint32",
+                    "optional": true,
+                    "description": ""
+                },
+                {
+                    "name": "upto_past_days",
+                    "type": "uint32",
+                    "optional": true,
+                    "description": ""
+                }
+            ]
+        },
         "MarkMessageSeen": {
             "_type": "undocumented",
             "version": 1,
