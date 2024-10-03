@@ -36002,6 +36002,119 @@
         }
     },
     "IWishlistService": {
+        "AddToWishlist": {
+            "_type": "undocumented",
+            "version": 1,
+            "httpmethod": "POST",
+            "parameters": [
+                {
+                    "name": "key",
+                    "type": "string",
+                    "optional": false,
+                    "description": "Access key"
+                },
+                {
+                    "name": "appid",
+                    "type": "uint32",
+                    "optional": true,
+                    "description": ""
+                },
+                {
+                    "name": "navdata",
+                    "type": "CUserInterface_NavData",
+                    "optional": true,
+                    "description": "",
+                    "extra": [
+                        {
+                            "name": "domain",
+                            "type": "string",
+                            "optional": true,
+                            "description": ""
+                        },
+                        {
+                            "name": "controller",
+                            "type": "string",
+                            "optional": true,
+                            "description": ""
+                        },
+                        {
+                            "name": "method",
+                            "type": "string",
+                            "optional": true,
+                            "description": ""
+                        },
+                        {
+                            "name": "submethod",
+                            "type": "string",
+                            "optional": true,
+                            "description": ""
+                        },
+                        {
+                            "name": "feature",
+                            "type": "string",
+                            "optional": true,
+                            "description": ""
+                        },
+                        {
+                            "name": "depth",
+                            "type": "uint32",
+                            "optional": true,
+                            "description": ""
+                        },
+                        {
+                            "name": "countrycode",
+                            "type": "string",
+                            "optional": true,
+                            "description": ""
+                        },
+                        {
+                            "name": "webkey",
+                            "type": "uint64",
+                            "optional": true,
+                            "description": ""
+                        },
+                        {
+                            "name": "is_client",
+                            "type": "bool",
+                            "optional": true,
+                            "description": ""
+                        },
+                        {
+                            "name": "curator_data",
+                            "type": "CUserInterface_CuratorData",
+                            "optional": true,
+                            "description": "",
+                            "extra": [
+                                {
+                                    "name": "clanid",
+                                    "type": "uint32",
+                                    "optional": true,
+                                    "description": ""
+                                },
+                                {
+                                    "name": "listid",
+                                    "type": "uint64",
+                                    "optional": true,
+                                    "description": ""
+                                }
+                            ]
+                        },
+                        {
+                            "name": "is_likely_bot",
+                            "type": "bool",
+                            "optional": true,
+                            "description": ""
+                        },
+                        {
+                            "name": "is_utm",
+                            "type": "bool",
+                            "optional": true,
+                            "description": ""
+                        }
+                    ]
+                }
+            ]
+        },
         "GetWishlist": {
             "version": 1,
             "httpmethod": "GET",
@@ -36067,6 +36180,25 @@
                     "name": "page_size",
                     "type": "int32",
                     "optional": true
+                }
+            ]
+        },
+        "RemoveFromWishlist": {
+            "_type": "undocumented",
+            "version": 1,
+            "httpmethod": "POST",
+            "parameters": [
+                {
+                    "name": "key",
+                    "type": "string",
+                    "optional": false,
+                    "description": "Access key"
+                },
+                {
+                    "name": "appid",
+                    "type": "uint32",
+                    "optional": true,
+                    "description": ""
                 }
             ]
         }
