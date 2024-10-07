@@ -12239,6 +12239,11 @@
             "_type": "undocumented",
             "version": 1,
             "parameters": []
+        },
+        "SwitchSessionToPush": {
+            "_type": "undocumented",
+            "version": 1,
+            "parameters": []
         }
     },
     "INewsService": {
