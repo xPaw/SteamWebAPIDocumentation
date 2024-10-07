@@ -35,9 +35,9 @@ foreach( $copy as $serviceName => $Interface )
 			continue;
 		}
 
-		if( $response === $notFound || !str_contains( $response, "' not found" ) )
+		if( $response !== $notFound )
 		{
-			echo PHP_EOL;
+			echo ' different kind of error' . PHP_EOL;
 			continue;
 		}
 
