@@ -18318,6 +18318,24 @@
                 }
             ]
         },
+        "GetPartnerAppOptInsIDs": {
+            "_type": "undocumented",
+            "version": 1,
+            "parameters": [
+                {
+                    "name": "key",
+                    "type": "string",
+                    "optional": false,
+                    "description": "Access key"
+                },
+                {
+                    "name": "opt_in_name",
+                    "type": "string",
+                    "optional": true,
+                    "description": ""
+                }
+            ]
+        },
         "GetPartnerPaidGivenPackageList": {
             "_type": "undocumented",
             "version": 1,
@@ -22718,6 +22736,12 @@
                                                     "type": "uint32",
                                                     "optional": true,
                                                     "description": ""
+                                                },
+                                                {
+                                                    "name": "fest_name",
+                                                    "type": "string",
+                                                    "optional": true,
+                                                    "description": ""
                                                 }
                                             ]
                                         },
@@ -24034,6 +24058,12 @@
                                                 {
                                                     "name": "recency_months",
                                                     "type": "uint32",
+                                                    "optional": true,
+                                                    "description": ""
+                                                },
+                                                {
+                                                    "name": "fest_name",
+                                                    "type": "string",
                                                     "optional": true,
                                                     "description": ""
                                                 }
@@ -26525,6 +26555,12 @@
                                         {
                                             "name": "recency_months",
                                             "type": "uint32",
+                                            "optional": true,
+                                            "description": ""
+                                        },
+                                        {
+                                            "name": "fest_name",
+                                            "type": "string",
                                             "optional": true,
                                             "description": ""
                                         }
