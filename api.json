@@ -13566,6 +13566,56 @@
                     "type": "bool",
                     "optional": true,
                     "description": ""
+                },
+                {
+                    "name": "lookup_key[0]",
+                    "type": "CPartnerDeadlineLookUpKey[]",
+                    "optional": true,
+                    "description": "",
+                    "extra": [
+                        {
+                            "name": "deadlineid",
+                            "type": "fixed64",
+                            "optional": true,
+                            "description": ""
+                        },
+                        {
+                            "name": "partnerid",
+                            "type": "uint32",
+                            "optional": true,
+                            "description": ""
+                        },
+                        {
+                            "name": "type",
+                            "type": "int32",
+                            "optional": true,
+                            "description": ""
+                        },
+                        {
+                            "name": "gid",
+                            "type": "fixed64",
+                            "optional": true,
+                            "description": ""
+                        },
+                        {
+                            "name": "store_item_type",
+                            "type": "int32",
+                            "optional": true,
+                            "description": ""
+                        },
+                        {
+                            "name": "store_item_id",
+                            "type": "uint32",
+                            "optional": true,
+                            "description": ""
+                        },
+                        {
+                            "name": "discount_event_id",
+                            "type": "uint32",
+                            "optional": true,
+                            "description": ""
+                        }
+                    ]
                 }
             ]
         }
