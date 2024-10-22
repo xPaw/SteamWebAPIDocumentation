@@ -2917,6 +2917,63 @@
         }
     },
     "ICheckoutService": {
+        "AddFreeLicense": {
+            "_type": "undocumented",
+            "version": 1,
+            "httpmethod": "POST",
+            "parameters": [
+                {
+                    "name": "key",
+                    "type": "string",
+                    "optional": false,
+                    "description": "Access key"
+                },
+                {
+                    "name": "item_id",
+                    "type": "StoreItemID",
+                    "optional": true,
+                    "description": "",
+                    "extra": [
+                        {
+                            "name": "appid",
+                            "type": "uint32",
+                            "optional": true,
+                            "description": ""
+                        },
+                        {
+                            "name": "packageid",
+                            "type": "uint32",
+                            "optional": true,
+                            "description": ""
+                        },
+                        {
+                            "name": "bundleid",
+                            "type": "uint32",
+                            "optional": true,
+                            "description": ""
+                        },
+                        {
+                            "name": "tagid",
+                            "type": "uint32",
+                            "optional": true,
+                            "description": ""
+                        },
+                        {
+                            "name": "creatorid",
+                            "type": "uint32",
+                            "optional": true,
+                            "description": ""
+                        },
+                        {
+                            "name": "hubcategoryid",
+                            "type": "uint32",
+                            "optional": true,
+                            "description": ""
+                        }
+                    ]
+                }
+            ]
+        },
         "GetFriendOwnershipForGifting": {
             "_type": "undocumented",
             "version": 1,
@@ -4580,6 +4637,30 @@
             "_type": "undocumented",
             "version": 1,
             "parameters": []
+        },
+        "GetClanEventCrowdInMetadata": {
+            "_type": "undocumented",
+            "version": 1,
+            "parameters": [
+                {
+                    "name": "key",
+                    "type": "string",
+                    "optional": false,
+                    "description": "Access key"
+                },
+                {
+                    "name": "steamid",
+                    "type": "fixed64",
+                    "optional": true,
+                    "description": ""
+                },
+                {
+                    "name": "itemid",
+                    "type": "uint64",
+                    "optional": true,
+                    "description": ""
+                }
+            ]
         },
         "GetSingleClanAnnouncement": {
             "_type": "undocumented",
@@ -22178,6 +22259,18 @@
                                             "type": "uint32",
                                             "optional": true,
                                             "description": ""
+                                        },
+                                        {
+                                            "name": "table_full_sample",
+                                            "type": "bool",
+                                            "optional": true,
+                                            "description": ""
+                                        },
+                                        {
+                                            "name": "sequence_prefix_frequency",
+                                            "type": "float",
+                                            "optional": true,
+                                            "description": ""
                                         }
                                     ]
                                 },
@@ -23500,6 +23593,18 @@
                                         {
                                             "name": "sequence_min_length",
                                             "type": "uint32",
+                                            "optional": true,
+                                            "description": ""
+                                        },
+                                        {
+                                            "name": "table_full_sample",
+                                            "type": "bool",
+                                            "optional": true,
+                                            "description": ""
+                                        },
+                                        {
+                                            "name": "sequence_prefix_frequency",
+                                            "type": "float",
                                             "optional": true,
                                             "description": ""
                                         }
@@ -25997,6 +26102,18 @@
                                 {
                                     "name": "sequence_min_length",
                                     "type": "uint32",
+                                    "optional": true,
+                                    "description": ""
+                                },
+                                {
+                                    "name": "table_full_sample",
+                                    "type": "bool",
+                                    "optional": true,
+                                    "description": ""
+                                },
+                                {
+                                    "name": "sequence_prefix_frequency",
+                                    "type": "float",
                                     "optional": true,
                                     "description": ""
                                 }
