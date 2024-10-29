@@ -1171,6 +1171,37 @@
                 }
             ]
         },
+        "NotifyRiskQuizResults": {
+            "version": 1,
+            "httpmethod": "POST",
+            "description": "notify the server about risk quiz responses for metrics purposes",
+            "parameters": [
+                {
+                    "name": "client_id",
+                    "type": "uint64",
+                    "optional": false,
+                    "description": "client ID for the auth session, used for routing"
+                },
+                {
+                    "name": "results",
+                    "type": "{message}",
+                    "optional": false,
+                    "description": "Whether or not the user correctly answered each risk quiz question"
+                },
+                {
+                    "name": "selected_action",
+                    "type": "string",
+                    "optional": false,
+                    "description": "The action being taken selected by the user during the quiz"
+                },
+                {
+                    "name": "did_confirm_login",
+                    "type": "bool",
+                    "optional": false,
+                    "description": "Whether or not the user went on to confirm the login or not in the case of a passed quiz"
+                }
+            ]
+        },
         "PollAuthSessionStatus": {
             "version": 1,
             "httpmethod": "POST",
@@ -4637,6 +4668,24 @@
             "_type": "undocumented",
             "version": 1,
             "parameters": []
+        },
+        "GetClanCrowdInMetadata": {
+            "_type": "undocumented",
+            "version": 1,
+            "parameters": [
+                {
+                    "name": "key",
+                    "type": "string",
+                    "optional": false,
+                    "description": "Access key"
+                },
+                {
+                    "name": "steamid",
+                    "type": "fixed64",
+                    "optional": true,
+                    "description": ""
+                }
+            ]
         },
         "GetClanEventCrowdInMetadata": {
             "_type": "undocumented",
@@ -13695,8 +13744,20 @@
                             "type": "uint32",
                             "optional": true,
                             "description": ""
+                        },
+                        {
+                            "name": "accountid",
+                            "type": "uint32",
+                            "optional": true,
+                            "description": ""
                         }
                     ]
+                },
+                {
+                    "name": "accountid",
+                    "type": "uint32",
+                    "optional": true,
+                    "description": ""
                 }
             ]
         }
@@ -13809,6 +13870,98 @@
                 {
                     "name": "rtime_after",
                     "type": "uint32",
+                    "optional": true,
+                    "description": ""
+                }
+            ]
+        }
+    },
+    "IPartnerMeetSteamService": {
+        "GetAvailability": {
+            "_type": "undocumented",
+            "version": 1,
+            "parameters": [
+                {
+                    "name": "key",
+                    "type": "string",
+                    "optional": false,
+                    "description": "Access key"
+                },
+                {
+                    "name": "clan_event_gid",
+                    "type": "fixed64",
+                    "optional": true,
+                    "description": ""
+                }
+            ]
+        },
+        "GetRegistrations": {
+            "_type": "undocumented",
+            "version": 1,
+            "parameters": [
+                {
+                    "name": "key",
+                    "type": "string",
+                    "optional": false,
+                    "description": "Access key"
+                },
+                {
+                    "name": "clan_event_gid",
+                    "type": "fixed64",
+                    "optional": true,
+                    "description": ""
+                },
+                {
+                    "name": "steamid",
+                    "type": "fixed64",
+                    "optional": true,
+                    "description": ""
+                }
+            ]
+        },
+        "UpdateRegistration": {
+            "_type": "undocumented",
+            "version": 1,
+            "parameters": [
+                {
+                    "name": "key",
+                    "type": "string",
+                    "optional": false,
+                    "description": "Access key"
+                },
+                {
+                    "name": "clan_event_gid",
+                    "type": "fixed64",
+                    "optional": true,
+                    "description": ""
+                },
+                {
+                    "name": "steamid",
+                    "type": "fixed64",
+                    "optional": true,
+                    "description": ""
+                },
+                {
+                    "name": "registration_group_id",
+                    "type": "uint32",
+                    "optional": true,
+                    "description": ""
+                },
+                {
+                    "name": "registration_session_id",
+                    "type": "uint32",
+                    "optional": true,
+                    "description": ""
+                },
+                {
+                    "name": "guest_count",
+                    "type": "uint32",
+                    "optional": true,
+                    "description": ""
+                },
+                {
+                    "name": "jsondata",
+                    "type": "string",
                     "optional": true,
                     "description": ""
                 }
@@ -19113,6 +19266,36 @@
                 {
                     "name": "return_private",
                     "type": "bool",
+                    "optional": true,
+                    "description": ""
+                }
+            ]
+        },
+        "GetMultipleUserActionData": {
+            "_type": "undocumented",
+            "version": 1,
+            "parameters": [
+                {
+                    "name": "key",
+                    "type": "string",
+                    "optional": false,
+                    "description": "Access key"
+                },
+                {
+                    "name": "steamid",
+                    "type": "fixed64",
+                    "optional": true,
+                    "description": ""
+                },
+                {
+                    "name": "gids[0]",
+                    "type": "fixed64[]",
+                    "optional": true,
+                    "description": ""
+                },
+                {
+                    "name": "type",
+                    "type": "int32",
                     "optional": true,
                     "description": ""
                 }
@@ -31245,6 +31428,160 @@
         }
     },
     "IStoreMarketingService": {
+        "GetFrontPageConfig": {
+            "_type": "undocumented",
+            "version": 1,
+            "parameters": [
+                {
+                    "name": "key",
+                    "type": "string",
+                    "optional": false,
+                    "description": "Access key"
+                },
+                {
+                    "name": "context",
+                    "type": "StoreBrowseContext",
+                    "optional": true,
+                    "description": "",
+                    "extra": [
+                        {
+                            "name": "language",
+                            "type": "string",
+                            "optional": true,
+                            "description": ""
+                        },
+                        {
+                            "name": "elanguage",
+                            "type": "int32",
+                            "optional": true,
+                            "description": ""
+                        },
+                        {
+                            "name": "country_code",
+                            "type": "string",
+                            "optional": true,
+                            "description": ""
+                        },
+                        {
+                            "name": "steam_realm",
+                            "type": "int32",
+                            "optional": true,
+                            "description": ""
+                        }
+                    ]
+                },
+                {
+                    "name": "data_request",
+                    "type": "StoreBrowseItemDataRequest",
+                    "optional": true,
+                    "description": "",
+                    "extra": [
+                        {
+                            "name": "include_assets",
+                            "type": "bool",
+                            "optional": true,
+                            "description": ""
+                        },
+                        {
+                            "name": "include_release",
+                            "type": "bool",
+                            "optional": true,
+                            "description": ""
+                        },
+                        {
+                            "name": "include_platforms",
+                            "type": "bool",
+                            "optional": true,
+                            "description": ""
+                        },
+                        {
+                            "name": "include_all_purchase_options",
+                            "type": "bool",
+                            "optional": true,
+                            "description": ""
+                        },
+                        {
+                            "name": "include_screenshots",
+                            "type": "bool",
+                            "optional": true,
+                            "description": ""
+                        },
+                        {
+                            "name": "include_trailers",
+                            "type": "bool",
+                            "optional": true,
+                            "description": ""
+                        },
+                        {
+                            "name": "include_ratings",
+                            "type": "bool",
+                            "optional": true,
+                            "description": ""
+                        },
+                        {
+                            "name": "include_tag_count",
+                            "type": "int32",
+                            "optional": true,
+                            "description": ""
+                        },
+                        {
+                            "name": "include_reviews",
+                            "type": "bool",
+                            "optional": true,
+                            "description": ""
+                        },
+                        {
+                            "name": "include_basic_info",
+                            "type": "bool",
+                            "optional": true,
+                            "description": ""
+                        },
+                        {
+                            "name": "include_supported_languages",
+                            "type": "bool",
+                            "optional": true,
+                            "description": ""
+                        },
+                        {
+                            "name": "include_full_description",
+                            "type": "bool",
+                            "optional": true,
+                            "description": ""
+                        },
+                        {
+                            "name": "include_included_items",
+                            "type": "bool",
+                            "optional": true,
+                            "description": ""
+                        },
+                        {
+                            "name": "included_item_data_request",
+                            "type": "StoreBrowseItemDataRequest",
+                            "optional": true,
+                            "description": ""
+                        },
+                        {
+                            "name": "include_assets_without_overrides",
+                            "type": "bool",
+                            "optional": true,
+                            "description": ""
+                        },
+                        {
+                            "name": "apply_user_filters",
+                            "type": "bool",
+                            "optional": true,
+                            "description": ""
+                        },
+                        {
+                            "name": "include_links",
+                            "type": "bool",
+                            "optional": true,
+                            "description": ""
+                        }
+                    ]
+                }
+            ]
+        },
         "GetItemsToFeature": {
             "_type": "undocumented",
             "version": 1,
@@ -31834,6 +32171,12 @@
                                     ]
                                 },
                                 {
+                                    "name": "exclude_from[0]",
+                                    "type": "int32[]",
+                                    "optional": true,
+                                    "description": ""
+                                },
+                                {
                                     "name": "tagids_must_match[0]",
                                     "type": "CStoreQueryFilters_TagFilter[]",
                                     "optional": true,
@@ -31868,6 +32211,12 @@
                                         {
                                             "name": "exclude_free_items",
                                             "type": "bool",
+                                            "optional": true,
+                                            "description": ""
+                                        },
+                                        {
+                                            "name": "min_discount_percent",
+                                            "type": "int32",
                                             "optional": true,
                                             "description": ""
                                         }
@@ -32334,6 +32683,12 @@
                             ]
                         },
                         {
+                            "name": "exclude_from[0]",
+                            "type": "int32[]",
+                            "optional": true,
+                            "description": ""
+                        },
+                        {
                             "name": "tagids_must_match[0]",
                             "type": "CStoreQueryFilters_TagFilter[]",
                             "optional": true,
@@ -32368,6 +32723,12 @@
                                 {
                                     "name": "exclude_free_items",
                                     "type": "bool",
+                                    "optional": true,
+                                    "description": ""
+                                },
+                                {
+                                    "name": "min_discount_percent",
+                                    "type": "int32",
                                     "optional": true,
                                     "description": ""
                                 }
