@@ -204,6 +204,11 @@ function MergeLists( array &$FinalList, array $Interfaces, ?string $Type = null 
 					$FinalList[ $InterfaceName ][ $MethodName ][ 'description' ] = $Method[ 'description' ];
 				}
 
+				if( !empty( $Method[ 'httpmethod' ] ) && empty( $FinalList[ $InterfaceName ][ $MethodName ][ 'httpmethod' ] ) )
+				{
+					$FinalList[ $InterfaceName ][ $MethodName ][ 'httpmethod' ] = $Method[ 'httpmethod' ];
+				}
+
 				if( !empty( $Method[ 'parameters' ] ) )
 				{
 					foreach( $Method[ 'parameters' ] as $Parameter )

@@ -419,39 +419,7 @@
         "GetLinkedAccountInfo": {
             "_type": "undocumented",
             "version": 1,
-            "description": "List all my active linked external accounts; may be requested to return the access token",
-            "parameters": [
-                {
-                    "name": "key",
-                    "type": "string",
-                    "optional": false,
-                    "description": "Access key"
-                },
-                {
-                    "name": "account_type",
-                    "type": "EInternalAccountType",
-                    "optional": true,
-                    "description": ""
-                },
-                {
-                    "name": "account_id",
-                    "type": "uint64",
-                    "optional": true,
-                    "description": "Internal account ID"
-                },
-                {
-                    "name": "filter",
-                    "type": "EExternalAccountType",
-                    "optional": true,
-                    "description": "if specified then only return this external account type"
-                },
-                {
-                    "name": "return_access_token",
-                    "type": "bool",
-                    "optional": true,
-                    "description": "if provided and true, then returns valid access token if available. It may refresh the token."
-                }
-            ]
+            "parameters": []
         }
     },
     "IAccountPrivateAppsService": {
@@ -8328,6 +8296,7 @@
         "RespondToRequestedPurchase": {
             "_type": "undocumented",
             "version": 1,
+            "httpmethod": "POST",
             "description": "Act on a purchase request",
             "parameters": [
                 {
@@ -19549,43 +19518,6 @@
                 }
             ]
         },
-        "SetUserActionData": {
-            "_type": "undocumented",
-            "version": 1,
-            "httpmethod": "POST",
-            "parameters": [
-                {
-                    "name": "key",
-                    "type": "string",
-                    "optional": false,
-                    "description": "Access key"
-                },
-                {
-                    "name": "steamid",
-                    "type": "fixed64",
-                    "optional": true,
-                    "description": ""
-                },
-                {
-                    "name": "gid",
-                    "type": "fixed64",
-                    "optional": true,
-                    "description": ""
-                },
-                {
-                    "name": "type",
-                    "type": "int32",
-                    "optional": true,
-                    "description": ""
-                },
-                {
-                    "name": "jsondata",
-                    "type": "string",
-                    "optional": true,
-                    "description": ""
-                }
-            ]
-        },
         "SetUserSharingPermissions": {
             "_type": "undocumented",
             "version": 1,
@@ -20307,6 +20239,7 @@
         "GetNominationShareLink": {
             "_type": "undocumented",
             "version": 1,
+            "httpmethod": "POST",
             "parameters": [
                 {
                     "name": "key",
@@ -26180,6 +26113,7 @@
         "Train": {
             "_type": "undocumented",
             "version": 1,
+            "httpmethod": "POST",
             "parameters": [
                 {
                     "name": "key",
@@ -34383,6 +34317,7 @@
         "QueryTime": {
             "_type": "undocumented",
             "version": 1,
+            "httpmethod": "POST",
             "description": "Get server's idea of the current time",
             "parameters": [
                 {
