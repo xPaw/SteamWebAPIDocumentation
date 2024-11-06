@@ -1,4 +1,3 @@
-IAccountLinkingService/GetLinkedAccountInfo/v1
 IBroadcastService/GetBroadcastUploadStats/v1
 IBroadcastService/GetBroadcastViewerStats/v1
 IBroadcastService/GetBuildClipStatus/v1

@@ -415,13 +415,6 @@
             ]
         }
     },
-    "IAccountLinkingService": {
-        "GetLinkedAccountInfo": {
-            "_type": "undocumented",
-            "version": 1,
-            "parameters": []
-        }
-    },
     "IAccountPrivateAppsService": {
         "GetPrivateAppList": {
             "_type": "undocumented",
