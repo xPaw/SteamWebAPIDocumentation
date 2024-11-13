@@ -3263,7 +3263,7 @@
                     "name": "steamid",
                     "type": "fixed64",
                     "optional": true,
-                    "description": ""
+                    "description": "The clan."
                 }
             ]
         },
@@ -3282,19 +3282,19 @@
                     "name": "steamid",
                     "type": "uint64",
                     "optional": true,
-                    "description": ""
+                    "description": "The clan the FAQ is for."
                 },
                 {
                     "name": "internal_name",
                     "type": "string",
                     "optional": true,
-                    "description": ""
+                    "description": "Human-readable name, for editor use only."
                 },
                 {
                     "name": "json_data",
                     "type": "string",
                     "optional": true,
-                    "description": ""
+                    "description": "extra metadata, like legacy KB data. Optional."
                 }
             ]
         },
@@ -3313,13 +3313,13 @@
                     "name": "steamid",
                     "type": "uint64",
                     "optional": true,
-                    "description": ""
+                    "description": "The clan the FAQ is for."
                 },
                 {
                     "name": "faq_id",
                     "type": "uint64",
                     "optional": true,
-                    "description": ""
+                    "description": "The unique FAQ identifier."
                 }
             ]
         },
@@ -3338,13 +3338,13 @@
                     "name": "steamid",
                     "type": "uint64",
                     "optional": true,
-                    "description": ""
+                    "description": "The clan the FAQ is for."
                 },
                 {
                     "name": "faq_id",
                     "type": "uint64",
                     "optional": true,
-                    "description": ""
+                    "description": "The unique FAQ identifier."
                 }
             ]
         },
@@ -3363,7 +3363,7 @@
                     "name": "steamid",
                     "type": "uint64",
                     "optional": true,
-                    "description": ""
+                    "description": "The clan."
                 }
             ]
         },
@@ -3382,13 +3382,13 @@
                     "name": "steamid",
                     "type": "uint64",
                     "optional": true,
-                    "description": ""
+                    "description": "The clan."
                 },
                 {
                     "name": "faq_id",
                     "type": "uint64",
                     "optional": true,
-                    "description": ""
+                    "description": "The unique FAQ identifier."
                 }
             ]
         },
@@ -3406,13 +3406,13 @@
                     "name": "faq_id",
                     "type": "uint64",
                     "optional": true,
-                    "description": ""
+                    "description": "The unique FAQ identifier."
                 },
                 {
                     "name": "language",
                     "type": "uint32",
                     "optional": true,
-                    "description": ""
+                    "description": "ELanguage to fetch. Falls back to English or SC, based on realm."
                 }
             ]
         },
@@ -3431,25 +3431,25 @@
                     "name": "steamid",
                     "type": "uint64",
                     "optional": true,
-                    "description": ""
+                    "description": "The clan the FAQ is for."
                 },
                 {
                     "name": "faq_id",
                     "type": "uint64",
                     "optional": true,
-                    "description": ""
+                    "description": "The unique FAQ identifier."
                 },
                 {
                     "name": "language",
                     "type": "uint32",
                     "optional": true,
-                    "description": ""
+                    "description": "ELanguage to fetch. Falls back to English or SC, based on realm."
                 },
                 {
                     "name": "version",
                     "type": "uint64",
                     "optional": true,
-                    "description": ""
+                    "description": "Version number for this FAQ, counting up, or zero (0) for the current draft."
                 }
             ]
         },
@@ -3468,19 +3468,19 @@
                     "name": "steamid",
                     "type": "uint64",
                     "optional": true,
-                    "description": ""
+                    "description": "The clan the FAQ is for."
                 },
                 {
                     "name": "faq_id",
                     "type": "uint64",
                     "optional": true,
-                    "description": ""
+                    "description": "The unique FAQ identifier."
                 },
                 {
                     "name": "language",
                     "type": "uint32",
                     "optional": true,
-                    "description": ""
+                    "description": "ELanguage to fetch."
                 }
             ]
         },
@@ -3499,19 +3499,19 @@
                     "name": "steamid",
                     "type": "uint64",
                     "optional": true,
-                    "description": ""
+                    "description": "The clan the FAQ is for."
                 },
                 {
                     "name": "faq_id",
                     "type": "uint64",
                     "optional": true,
-                    "description": ""
+                    "description": "The unique FAQ identifier."
                 },
                 {
                     "name": "language[0]",
                     "type": "ELanguage[]",
                     "optional": true,
-                    "description": ""
+                    "description": "ELanguages to publish"
                 }
             ]
         },
@@ -3529,31 +3529,31 @@
                     "name": "search_text",
                     "type": "string",
                     "optional": true,
-                    "description": ""
+                    "description": "The text that we will use to search name/content in solr"
                 },
                 {
                     "name": "elanguages[0]",
                     "type": "int32[]",
                     "optional": true,
-                    "description": ""
+                    "description": "List of Elanguages to return resultsin, in order of priority"
                 },
                 {
                     "name": "count",
                     "type": "int32",
                     "optional": true,
-                    "description": ""
+                    "description": "Number of results to return for this page"
                 },
                 {
                     "name": "cursor",
                     "type": "string",
                     "optional": true,
-                    "description": ""
+                    "description": "Optional cursor if you are paging through results"
                 },
                 {
                     "name": "filter_clanids[0]",
                     "type": "uint32[]",
                     "optional": true,
-                    "description": ""
+                    "description": "List of clanids to limit search to"
                 }
             ]
         },
@@ -3572,25 +3572,25 @@
                     "name": "steamid",
                     "type": "uint64",
                     "optional": true,
-                    "description": ""
+                    "description": "The clan the FAQ is for."
                 },
                 {
                     "name": "faq_id",
                     "type": "uint64",
                     "optional": true,
-                    "description": ""
+                    "description": "The unique FAQ identifier."
                 },
                 {
                     "name": "visible_in_global_realm",
                     "type": "bool",
                     "optional": true,
-                    "description": ""
+                    "description": "true to show, false to hide."
                 },
                 {
                     "name": "visible_in_china_realm",
                     "type": "bool",
                     "optional": true,
-                    "description": ""
+                    "description": "true to show, false to hide."
                 }
             ]
         },
@@ -3609,31 +3609,31 @@
                     "name": "steamid",
                     "type": "uint64",
                     "optional": true,
-                    "description": ""
+                    "description": "The clan the FAQ is for."
                 },
                 {
                     "name": "faq_id",
                     "type": "uint64",
                     "optional": true,
-                    "description": ""
+                    "description": "The unique FAQ identifier."
                 },
                 {
                     "name": "language",
                     "type": "ELanguage",
                     "optional": true,
-                    "description": ""
+                    "description": "ELanguage"
                 },
                 {
                     "name": "content",
                     "type": "string",
                     "optional": true,
-                    "description": ""
+                    "description": "Presumably BBCode"
                 },
                 {
                     "name": "title",
                     "type": "string",
                     "optional": true,
-                    "description": ""
+                    "description": "Human-readable name, for page title."
                 }
             ]
         },
@@ -3652,19 +3652,19 @@
                     "name": "steamid",
                     "type": "uint64",
                     "optional": true,
-                    "description": ""
+                    "description": "The clan the FAQ is for."
                 },
                 {
                     "name": "faq_id",
                     "type": "uint64",
                     "optional": true,
-                    "description": ""
+                    "description": "The new FAQ's unique identifier."
                 },
                 {
                     "name": "internal_name",
                     "type": "string",
                     "optional": true,
-                    "description": ""
+                    "description": "Human-readable name, for editor use only."
                 }
             ]
         },
@@ -3683,19 +3683,19 @@
                     "name": "steamid",
                     "type": "uint64",
                     "optional": true,
-                    "description": ""
+                    "description": "The clan the FAQ is for."
                 },
                 {
                     "name": "faq_id",
                     "type": "uint64",
                     "optional": true,
-                    "description": ""
+                    "description": "The new FAQ's unique identifier."
                 },
                 {
                     "name": "json_data",
                     "type": "string",
                     "optional": true,
-                    "description": ""
+                    "description": "extra metadata, like legacy KB data."
                 }
             ]
         }
@@ -3744,13 +3744,13 @@
                     "name": "cursor",
                     "type": "string",
                     "optional": true,
-                    "description": ""
+                    "description": "Optional cursor if you are paging through results"
                 },
                 {
                     "name": "count",
                     "type": "uint32",
                     "optional": true,
-                    "description": ""
+                    "description": "How many results to return"
                 },
                 {
                     "name": "requests[0]",
@@ -3808,13 +3808,13 @@
                     "name": "client_instanceid",
                     "type": "uint64",
                     "optional": true,
-                    "description": ""
+                    "description": "Uses first desktop session if not specified"
                 },
                 {
                     "name": "enable",
                     "type": "bool",
                     "optional": true,
-                    "description": ""
+                    "description": "True to enable downloads, false to disable"
                 }
             ]
         },
@@ -3844,31 +3844,31 @@
                     "name": "fields",
                     "type": "string",
                     "optional": true,
-                    "description": ""
+                    "description": "A combination of fields : 'all|media|tools|games'"
                 },
                 {
                     "name": "filters",
                     "type": "string",
                     "optional": true,
-                    "description": ""
+                    "description": "A combination of state filters : 'none|changing|installed'"
                 },
                 {
                     "name": "client_instanceid",
                     "type": "uint64",
                     "optional": true,
-                    "description": ""
+                    "description": "Uses first desktop session if not specified"
                 },
                 {
                     "name": "include_client_info",
                     "type": "bool",
                     "optional": true,
-                    "description": ""
+                    "description": "If true, response will also include ClientData message"
                 },
                 {
                     "name": "language",
                     "type": "string",
                     "optional": true,
-                    "description": ""
+                    "description": "Language for app names"
                 },
                 {
                     "name": "filter_appids[0]",
@@ -3892,7 +3892,7 @@
                     "name": "client_instanceid",
                     "type": "uint64",
                     "optional": true,
-                    "description": ""
+                    "description": "Uses first desktop session if not specified"
                 }
             ]
         },
@@ -3910,7 +3910,7 @@
                     "name": "client_instanceid",
                     "type": "uint64",
                     "optional": true,
-                    "description": ""
+                    "description": "Uses first desktop session if not specified"
                 }
             ]
         },
@@ -3929,13 +3929,13 @@
                     "name": "appid",
                     "type": "uint32",
                     "optional": true,
-                    "description": ""
+                    "description": "appID of product to install"
                 },
                 {
                     "name": "client_instanceid",
                     "type": "uint64",
                     "optional": true,
-                    "description": ""
+                    "description": "Uses first desktop session if not specified"
                 }
             ]
         },
@@ -3985,19 +3985,19 @@
                     "name": "appid",
                     "type": "uint32",
                     "optional": true,
-                    "description": ""
+                    "description": "appID of product to uninstall"
                 },
                 {
                     "name": "action",
                     "type": "uint32",
                     "optional": true,
-                    "description": ""
+                    "description": "1 to resume downloading, 0 to pause downloading"
                 },
                 {
                     "name": "client_instanceid",
                     "type": "uint64",
                     "optional": true,
-                    "description": ""
+                    "description": "Uses first desktop session if not specified"
                 }
             ]
         },
@@ -4016,13 +4016,13 @@
                     "name": "appid",
                     "type": "uint32",
                     "optional": true,
-                    "description": ""
+                    "description": "appID of product to install"
                 },
                 {
                     "name": "client_instanceid",
                     "type": "uint64",
                     "optional": true,
-                    "description": ""
+                    "description": "Uses first desktop session if not specified"
                 }
             ]
         }
@@ -4460,6 +4460,7 @@
         "EnumerateUserFiles": {
             "_type": "undocumented",
             "version": 1,
+            "httpmethod": "GET",
             "description": "Enumerates Cloud files for a user of a given app ID. Returns up to 500 files at a time.",
             "parameters": [
                 {
@@ -4609,19 +4610,19 @@
                     "name": "include_steam_blog",
                     "type": "bool",
                     "optional": true,
-                    "description": ""
+                    "description": "Optional: if true Steam blog events will be included"
                 },
                 {
                     "name": "filter_to_played_within_days",
                     "type": "uint32",
                     "optional": true,
-                    "description": ""
+                    "description": "Optional: if set Steam will only return events for apps the user has played within the set number of trailing days"
                 },
                 {
                     "name": "include_only_game_updates",
                     "type": "bool",
                     "optional": true,
-                    "description": ""
+                    "description": "Optional: if true means only return data for events that are major/minor game updates, not other game news/events"
                 }
             ]
         },
@@ -4691,61 +4692,61 @@
                     "name": "count",
                     "type": "uint32",
                     "optional": true,
-                    "description": ""
+                    "description": "Maximum number of results you want back"
                 },
                 {
                     "name": "offset",
                     "type": "uint32",
                     "optional": true,
-                    "description": ""
+                    "description": "On a continuing request, where to continue requesting events from."
                 },
                 {
                     "name": "rtime32_start_time",
                     "type": "uint32",
                     "optional": true,
-                    "description": ""
+                    "description": "Required: Unix time for when to beginning of today for search - users timezone sensitive"
                 },
                 {
                     "name": "rtime32_end_time",
                     "type": "uint32",
                     "optional": true,
-                    "description": ""
+                    "description": "Required: Unix time for when to end of today the search - users timezone sensitive"
                 },
                 {
                     "name": "language_preference[0]",
                     "type": "uint32[]",
                     "optional": true,
-                    "description": ""
+                    "description": "Preferred languages (in order of preference)"
                 },
                 {
                     "name": "filter_event_type[0]",
                     "type": "int32[]",
                     "optional": true,
-                    "description": ""
+                    "description": "Optional: Limit the results to only these types of events"
                 },
                 {
                     "name": "filter_to_appid",
                     "type": "bool",
                     "optional": true,
-                    "description": ""
+                    "description": "If true, then filter to only the appids in the below list. Otherwise, combination of server determined appids and the below requested appids"
                 },
                 {
                     "name": "count_after",
                     "type": "uint32",
                     "optional": true,
-                    "description": ""
+                    "description": "Optional: Return up to this number of events after end-time"
                 },
                 {
                     "name": "count_before",
                     "type": "uint32",
                     "optional": true,
-                    "description": ""
+                    "description": "Optional: Return up to this number of events before start-time"
                 },
                 {
                     "name": "app_list[0]",
                     "type": "CAppPriority[]",
                     "optional": true,
-                    "description": "",
+                    "description": "Optional: include these appids on the event list",
                     "extra": [
                         {
                             "name": "priority",
@@ -9636,6 +9637,37 @@
                 }
             ]
         },
+        "ArchiveItemDef": {
+            "_type": "undocumented",
+            "version": 1,
+            "httpmethod": "POST",
+            "parameters": [
+                {
+                    "name": "key",
+                    "type": "string",
+                    "optional": false,
+                    "description": "Access key"
+                },
+                {
+                    "name": "appid",
+                    "type": "uint32",
+                    "optional": true,
+                    "description": ""
+                },
+                {
+                    "name": "itemdefid",
+                    "type": "uint64",
+                    "optional": true,
+                    "description": ""
+                },
+                {
+                    "name": "archive",
+                    "type": "bool",
+                    "optional": true,
+                    "description": ""
+                }
+            ]
+        },
         "CombineItemStacks": {
             "version": 1,
             "httpmethod": "POST",
@@ -10378,7 +10410,7 @@
                     "name": "language",
                     "type": "string",
                     "optional": true,
-                    "description": ""
+                    "description": "language short name"
                 }
             ]
         },
@@ -12169,7 +12201,7 @@
                     "name": "authenticator_gid",
                     "type": "fixed64",
                     "optional": true,
-                    "description": ""
+                    "description": "GID of the mobile app's authenticator for this user"
                 }
             ]
         }
@@ -12195,25 +12227,25 @@
                     "name": "steamid",
                     "type": "fixed64",
                     "optional": true,
-                    "description": ""
+                    "description": "Steam ID of the user to migrate"
                 },
                 {
                     "name": "token",
                     "type": "string",
                     "optional": true,
-                    "description": ""
+                    "description": "WG Token to migrate"
                 },
                 {
                     "name": "signature",
                     "type": "bytes",
                     "optional": true,
-                    "description": ""
+                    "description": "Signature over the wg token using the user's 2FA token"
                 },
                 {
                     "name": "device_details",
                     "type": "CMobileAuth_MigrateMobileSession_Request_DeviceDetails",
                     "optional": true,
-                    "description": "",
+                    "description": "User-supplied description of the authenticating device",
                     "extra": [
                         {
                             "name": "device_friendly_name",
@@ -12279,49 +12311,49 @@
                     "name": "deviceid",
                     "type": "string",
                     "optional": true,
-                    "description": ""
+                    "description": "Mobile device ID string sent up by the mobile device, e.g. 'GOOG:abcdefg...' or 'AAPL:123456...'"
                 },
                 {
                     "name": "language",
                     "type": "string",
                     "optional": true,
-                    "description": ""
+                    "description": "Language the mobile app is configured for (see s_LanguageNames::m_pchShortName for acceptable values)."
                 },
                 {
                     "name": "push_enabled",
                     "type": "bool",
                     "optional": true,
-                    "description": ""
+                    "description": "True if push is enabled on this device, false otherwise."
                 },
                 {
                     "name": "app_version",
                     "type": "string",
                     "optional": true,
-                    "description": ""
+                    "description": "Steam mobile application version string, e.g. 1.2.1"
                 },
                 {
                     "name": "os_version",
                     "type": "string",
                     "optional": true,
-                    "description": ""
+                    "description": "Mobile device OS version string, e.g. 6.1.0"
                 },
                 {
                     "name": "device_model",
                     "type": "string",
                     "optional": true,
-                    "description": ""
+                    "description": "Mobile device model, e.g. iPhone, iPad, Nexus 7"
                 },
                 {
                     "name": "twofactor_device_identifier",
                     "type": "string",
                     "optional": true,
-                    "description": ""
+                    "description": "Identifier used by two-factor provider"
                 },
                 {
                     "name": "mobile_app",
                     "type": "int32",
                     "optional": true,
-                    "description": ""
+                    "description": "Which app is this?"
                 }
             ]
         }
@@ -12359,7 +12391,7 @@
                     "name": "preserve_newlines",
                     "type": "bool",
                     "optional": true,
-                    "description": ""
+                    "description": "by default, newlines are all removed and then <p> and <br> will become newlines"
                 }
             ]
         },
@@ -12377,7 +12409,7 @@
                     "name": "news_feed_gid",
                     "type": "fixed64",
                     "optional": true,
-                    "description": ""
+                    "description": "Gid of news source"
                 },
                 {
                     "name": "start_index",
@@ -12407,7 +12439,7 @@
                     "name": "clan_account_id",
                     "type": "uint32",
                     "optional": true,
-                    "description": ""
+                    "description": "The clan account ID which we are republishing to"
                 }
             ]
         },
@@ -12450,7 +12482,7 @@
                     "name": "post",
                     "type": "CNewsFeedPostDef",
                     "optional": true,
-                    "description": "",
+                    "description": "The post user wants to publish that was previously received from Preview method",
                     "extra": [
                         {
                             "name": "gid",
@@ -12560,7 +12592,7 @@
                     "name": "draft",
                     "type": "bool",
                     "optional": true,
-                    "description": ""
+                    "description": "If true, then create the partner event in draft mode"
                 }
             ]
         }
@@ -14478,13 +14510,13 @@
                     "name": "steamid",
                     "type": "fixed64",
                     "optional": true,
-                    "description": ""
+                    "description": "steamid to use"
                 },
                 {
                     "name": "stoken",
                     "type": "string",
                     "optional": true,
-                    "description": ""
+                    "description": "Encrypted token"
                 }
             ]
         },
@@ -14535,13 +14567,13 @@
                     "name": "phone_number",
                     "type": "string",
                     "optional": true,
-                    "description": ""
+                    "description": "new phone number"
                 },
                 {
                     "name": "phone_country_code",
                     "type": "string",
                     "optional": true,
-                    "description": ""
+                    "description": "country code of origin"
                 }
             ]
         },
@@ -14560,7 +14592,7 @@
                     "name": "code",
                     "type": "string",
                     "optional": true,
-                    "description": ""
+                    "description": "code received from SMS"
                 }
             ]
         }
@@ -15795,37 +15827,37 @@
                     "name": "inviteid",
                     "type": "fixed64",
                     "optional": true,
-                    "description": ""
+                    "description": "If provided, return only this one"
                 },
                 {
                     "name": "appid",
                     "type": "uint32",
                     "optional": true,
-                    "description": ""
+                    "description": "if invite is is missing then will return all active invitations for this appid"
                 },
                 {
                     "name": "packageid",
                     "type": "uint32",
                     "optional": true,
-                    "description": ""
+                    "description": "If provided, will search on packages; must match appid for routing"
                 },
                 {
                     "name": "bundleid",
                     "type": "uint32",
                     "optional": true,
-                    "description": ""
+                    "description": "If provided, will search on bundles; must match appid for routing"
                 },
                 {
                     "name": "partnerid",
                     "type": "uint32",
                     "optional": true,
-                    "description": ""
+                    "description": "To verify the partner admin has access to this partner information"
                 },
                 {
                     "name": "promotion_id",
                     "type": "string",
                     "optional": true,
-                    "description": ""
+                    "description": "Email specific to this promotion planning event"
                 }
             ]
         },
@@ -15844,13 +15876,13 @@
                     "name": "inviteid",
                     "type": "fixed64",
                     "optional": true,
-                    "description": ""
+                    "description": "Invite we want to re-send"
                 },
                 {
                     "name": "only_notify_additional_email",
                     "type": "bool",
                     "optional": true,
-                    "description": ""
+                    "description": "We prefer to only notify the users explicitly added, not users with contact permissions on the associated partner ids"
                 }
             ]
         },
@@ -16035,7 +16067,7 @@
                     "name": "queue_email_to_send",
                     "type": "bool",
                     "optional": true,
-                    "description": ""
+                    "description": "If true, we will fire the email immediately; does not wait on the email to complete"
                 }
             ]
         }
@@ -16709,7 +16741,7 @@
                     "name": "only_explicit_email_addresses",
                     "type": "bool",
                     "optional": true,
-                    "description": ""
+                    "description": "If true, then only contact explicitly added emails to the promotion plan"
                 }
             ]
         },
@@ -18530,37 +18562,37 @@
                     "name": "opt_in_name",
                     "type": "string",
                     "optional": true,
-                    "description": ""
+                    "description": "what optin are we creating the email for"
                 },
                 {
                     "name": "targeting_flag",
                     "type": "fixed64",
                     "optional": true,
-                    "description": ""
+                    "description": "Who should receive this email"
                 },
                 {
                     "name": "settings_flag",
                     "type": "fixed64",
                     "optional": true,
-                    "description": ""
+                    "description": "Settings for firing the email"
                 },
                 {
                     "name": "email_templates",
                     "type": "string",
                     "optional": true,
-                    "description": ""
+                    "description": "Custom Email template we should use"
                 },
                 {
                     "name": "start_rtime",
                     "type": "uint32",
                     "optional": true,
-                    "description": ""
+                    "description": "Earliest we can send the email, zero means requires manual firing"
                 },
                 {
                     "name": "end_rtime",
                     "type": "uint32",
                     "optional": true,
-                    "description": ""
+                    "description": "Stop sending email after this point, zero means requires manual firing"
                 }
             ]
         },
@@ -18635,7 +18667,7 @@
                     "name": "opt_in_name",
                     "type": "string",
                     "optional": true,
-                    "description": ""
+                    "description": "what optin are we creating the email for"
                 }
             ]
         },
@@ -18714,7 +18746,7 @@
                     "name": "force_resend",
                     "type": "bool",
                     "optional": true,
-                    "description": ""
+                    "description": "This will resend the email to those who were previously marked failed, hoping to unlodge the email"
                 }
             ]
         },
@@ -18739,7 +18771,7 @@
                     "name": "additional_featuring",
                     "type": "bool",
                     "optional": true,
-                    "description": ""
+                    "description": "If true, we want to enable the additional featuring for this app"
                 },
                 {
                     "name": "opt_in_name",
@@ -18801,37 +18833,37 @@
                     "name": "targeting_flag",
                     "type": "fixed64",
                     "optional": true,
-                    "description": ""
+                    "description": "Who should receive this email"
                 },
                 {
                     "name": "settings_flag",
                     "type": "fixed64",
                     "optional": true,
-                    "description": ""
+                    "description": "Settings for firing the email"
                 },
                 {
                     "name": "email_templates",
                     "type": "string",
                     "optional": true,
-                    "description": ""
+                    "description": "Custom Email template we should use"
                 },
                 {
                     "name": "start_rtime",
                     "type": "uint32",
                     "optional": true,
-                    "description": ""
+                    "description": "Earliest we can send the email, zero means requires manual firing"
                 },
                 {
                     "name": "end_rtime",
                     "type": "uint32",
                     "optional": true,
-                    "description": ""
+                    "description": "Stop sending email after this point, zero means requires manual firing"
                 },
                 {
                     "name": "reviewed",
                     "type": "bool",
                     "optional": true,
-                    "description": ""
+                    "description": "Indicates we can reviewed the result of the email and deal"
                 }
             ]
         }
@@ -18882,7 +18914,7 @@
                     "name": "filter_appids[0]",
                     "type": "uint32[]",
                     "optional": true,
-                    "description": ""
+                    "description": "Filter to only community items for these apps."
                 }
             ]
         },
@@ -18912,7 +18944,7 @@
                     "name": "language",
                     "type": "string",
                     "optional": true,
-                    "description": ""
+                    "description": "language short name"
                 },
                 {
                     "name": "broadcast_channel_id",
@@ -18924,7 +18956,7 @@
                     "name": "keyvalues_as_json",
                     "type": "bool",
                     "optional": true,
-                    "description": ""
+                    "description": "when true, json will be returned in item_key_values"
                 }
             ]
         },
@@ -19057,7 +19089,7 @@
                     "name": "itemsdefs[0]",
                     "type": "CVirtualItemRewardDefinition[]",
                     "optional": true,
-                    "description": "",
+                    "description": "Include only item def we are updating or adding. Don't mix adds with updates",
                     "extra": [
                         {
                             "name": "eventid",
@@ -19292,19 +19324,19 @@
                     "name": "steamid",
                     "type": "fixed64",
                     "optional": true,
-                    "description": ""
+                    "description": "Whose friends we are looking"
                 },
                 {
                     "name": "year",
                     "type": "uint32",
                     "optional": true,
-                    "description": ""
+                    "description": "The period being queried"
                 },
                 {
                     "name": "return_private",
                     "type": "bool",
                     "optional": true,
-                    "description": ""
+                    "description": "Valve/Support can also request private ones too"
                 }
             ]
         },
@@ -19376,7 +19408,7 @@
                     "name": "gid",
                     "type": "fixed64",
                     "optional": true,
-                    "description": ""
+                    "description": "That Event GID or Giveaway GID etc..."
                 },
                 {
                     "name": "type",
@@ -19431,19 +19463,19 @@
                     "name": "year",
                     "type": "uint32",
                     "optional": true,
-                    "description": ""
+                    "description": "The period being queried"
                 },
                 {
                     "name": "appids[0]",
                     "type": "uint32[]",
                     "optional": true,
-                    "description": ""
+                    "description": "The apps to filter down to"
                 },
                 {
                     "name": "total_only",
                     "type": "bool",
                     "optional": true,
-                    "description": ""
+                    "description": "If true, we do not generate the game_achievements fields"
                 }
             ]
         },
@@ -19479,7 +19511,7 @@
                     "name": "access_source",
                     "type": "int32",
                     "optional": true,
-                    "description": ""
+                    "description": "EYearInReviewAccessSource"
                 }
             ]
         },
@@ -19533,13 +19565,13 @@
                     "name": "year",
                     "type": "uint32",
                     "optional": true,
-                    "description": ""
+                    "description": "The period being queried"
                 },
                 {
                     "name": "appids[0]",
                     "type": "uint32[]",
                     "optional": true,
-                    "description": ""
+                    "description": "The apps to filter down to"
                 }
             ]
         },
@@ -19608,7 +19640,7 @@
                     "name": "language",
                     "type": "string",
                     "optional": true,
-                    "description": ""
+                    "description": "language short name"
                 }
             ]
         },
@@ -19627,7 +19659,7 @@
                     "name": "language",
                     "type": "string",
                     "optional": true,
-                    "description": ""
+                    "description": "language short name"
                 }
             ]
         },
@@ -28699,37 +28731,37 @@
                     "name": "include_hidden",
                     "type": "bool",
                     "optional": true,
-                    "description": ""
+                    "description": "Whether to include notifications the user has hidden previously"
                 },
                 {
                     "name": "language",
                     "type": "int32",
                     "optional": true,
-                    "description": ""
+                    "description": "What language to get notifications in, for the general type that is pre-localized on the server, default english"
                 },
                 {
                     "name": "include_confirmation_count",
                     "type": "bool",
                     "optional": true,
-                    "description": ""
+                    "description": "Whether to include counts of pending confirmations"
                 },
                 {
                     "name": "include_pinned_counts",
                     "type": "bool",
                     "optional": true,
-                    "description": ""
+                    "description": "Whether to include counts of unclaimed gifts or pending friend requests"
                 },
                 {
                     "name": "include_read",
                     "type": "bool",
                     "optional": true,
-                    "description": ""
+                    "description": "Whether to include read notifications"
                 },
                 {
                     "name": "count_only",
                     "type": "bool",
                     "optional": true,
-                    "description": ""
+                    "description": "Whether to return only the count of unread notifications"
                 }
             ]
         },
@@ -28767,25 +28799,25 @@
                     "name": "timestamp",
                     "type": "uint32",
                     "optional": true,
-                    "description": ""
+                    "description": "If set, marks ALL notifications older than this timestamp read"
                 },
                 {
                     "name": "notification_type",
                     "type": "int32",
                     "optional": true,
-                    "description": ""
+                    "description": "If set, marks only notifications of a specific type read"
                 },
                 {
                     "name": "notification_ids[0]",
                     "type": "uint64[]",
                     "optional": true,
-                    "description": ""
+                    "description": "If set, only the specified notification will be marked read"
                 },
                 {
                     "name": "mark_all_read",
                     "type": "bool",
                     "optional": true,
-                    "description": ""
+                    "description": "Mark all of the user's notifications as read"
                 }
             ]
         },
@@ -29695,7 +29727,7 @@
                     "name": "image_types[0]",
                     "type": "int32[]",
                     "optional": true,
-                    "description": ""
+                    "description": "list of EBroadcastImage"
                 }
             ]
         },
@@ -30872,13 +30904,13 @@
                     "name": "clusters_to_return",
                     "type": "int32",
                     "optional": true,
-                    "description": ""
+                    "description": "Number of clusters to populare and return; if 0, all clusters will be returned"
                 },
                 {
                     "name": "cluster_index",
                     "type": "int32",
                     "optional": true,
-                    "description": ""
+                    "description": "When limiting the number of clusters, can change this seed to select a different cluster than the previous call."
                 },
                 {
                     "name": "context",
@@ -30916,7 +30948,7 @@
                     "name": "data_request",
                     "type": "StoreBrowseItemDataRequest",
                     "optional": true,
-                    "description": "",
+                    "description": "If passed, item data will be returned",
                     "extra": [
                         {
                             "name": "include_assets",
@@ -32091,6 +32123,20 @@
             ]
         }
     },
+    "IStorePreferencesService": {
+        "GetIgnoreList": {
+            "_type": "undocumented",
+            "version": 1,
+            "parameters": [
+                {
+                    "name": "key",
+                    "type": "string",
+                    "optional": false,
+                    "description": "Access key"
+                }
+            ]
+        }
+    },
     "IStoreQueryService": {
         "GetItemsByUserRecommendedTags": {
             "_type": "undocumented",
@@ -32312,7 +32358,7 @@
                     "name": "query_name",
                     "type": "string",
                     "optional": true,
-                    "description": ""
+                    "description": "Descriptive name of the query or caller; will be used in logging and metrics."
                 },
                 {
                     "name": "query",
@@ -32676,7 +32722,7 @@
                     "name": "data_request",
                     "type": "StoreBrowseItemDataRequest",
                     "optional": true,
-                    "description": "",
+                    "description": "If passed, item data will be returned",
                     "extra": [
                         {
                             "name": "include_assets",
@@ -32786,7 +32832,7 @@
                     "name": "override_country_code",
                     "type": "string",
                     "optional": true,
-                    "description": ""
+                    "description": "2-character override country code for pulling data from other countries"
                 }
             ]
         },
@@ -32804,7 +32850,7 @@
                     "name": "query_name",
                     "type": "string",
                     "optional": true,
-                    "description": ""
+                    "description": "Descriptive name of the query or caller; will be used in logging and metrics."
                 },
                 {
                     "name": "context",
@@ -33154,7 +33200,7 @@
                     "name": "data_request",
                     "type": "StoreBrowseItemDataRequest",
                     "optional": true,
-                    "description": "",
+                    "description": "If passed, item data will be returned",
                     "extra": [
                         {
                             "name": "include_assets",
@@ -33264,25 +33310,25 @@
                     "name": "use_spellcheck",
                     "type": "bool",
                     "optional": true,
-                    "description": ""
+                    "description": "Use Solr's spellchecking feature if true."
                 },
                 {
                     "name": "search_tags",
                     "type": "bool",
                     "optional": true,
-                    "description": ""
+                    "description": "Include tags in search results"
                 },
                 {
                     "name": "search_creators",
                     "type": "bool",
                     "optional": true,
-                    "description": ""
+                    "description": "Include creators (publishers/developers/franchises) in search results"
                 },
                 {
                     "name": "prefilter_creators",
                     "type": "bool",
                     "optional": true,
-                    "description": ""
+                    "description": "Pre-filter returned creators"
                 }
             ]
         }
@@ -33355,6 +33401,12 @@
                 },
                 {
                     "name": "sale_appid",
+                    "type": "uint32",
+                    "optional": true,
+                    "description": ""
+                },
+                {
+                    "name": "developerid",
                     "type": "uint32",
                     "optional": true,
                     "description": ""
@@ -34134,7 +34186,7 @@
                     "name": "country_code",
                     "type": "string",
                     "optional": true,
-                    "description": ""
+                    "description": "2-character country code; leave blank for global.  Always pass user country in the context object."
                 },
                 {
                     "name": "context",
@@ -34282,19 +34334,19 @@
                     "name": "start_date",
                     "type": "uint32",
                     "optional": true,
-                    "description": ""
+                    "description": "Start date of the week to return.  Leave blank for current week."
                 },
                 {
                     "name": "page_start",
                     "type": "int32",
                     "optional": true,
-                    "description": ""
+                    "description": "For pagination, start at the Nth top seller."
                 },
                 {
                     "name": "page_count",
                     "type": "int32",
                     "optional": true,
-                    "description": ""
+                    "description": "# of top sellers to return per page."
                 }
             ]
         }
@@ -34418,6 +34470,70 @@
                     "name": "appid",
                     "type": "uint32",
                     "optional": false
+                }
+            ]
+        }
+    },
+    "ITestService": {
+        "CallWithIgnoredExternalField": {
+            "_type": "undocumented",
+            "version": 1,
+            "httpmethod": "POST",
+            "parameters": [
+                {
+                    "name": "key",
+                    "type": "string",
+                    "optional": false,
+                    "description": "Access key"
+                },
+                {
+                    "name": "internal_field_should_be_set",
+                    "type": "bool",
+                    "optional": true,
+                    "description": ""
+                },
+                {
+                    "name": "internal_field_expected_value",
+                    "type": "bool",
+                    "optional": true,
+                    "description": ""
+                },
+                {
+                    "name": "external_nested",
+                    "type": "CMsgTest_CallWithIgnoredExternalField_Request_Nested",
+                    "optional": true,
+                    "description": ""
+                }
+            ]
+        },
+        "NotifyWithIgnoredExternalField": {
+            "_type": "undocumented",
+            "version": 1,
+            "httpmethod": "POST",
+            "parameters": [
+                {
+                    "name": "key",
+                    "type": "string",
+                    "optional": false,
+                    "description": "Access key"
+                },
+                {
+                    "name": "internal_field_should_be_set",
+                    "type": "bool",
+                    "optional": true,
+                    "description": ""
+                },
+                {
+                    "name": "internal_field_expected_value",
+                    "type": "bool",
+                    "optional": true,
+                    "description": ""
+                },
+                {
+                    "name": "external_nested",
+                    "type": "CMsgTest_NotifyWithIgnoredExternalField_Notification_Nested",
+                    "optional": true,
+                    "description": ""
                 }
             ]
         }
@@ -34967,7 +35083,7 @@
                     "name": "include_content",
                     "type": "bool",
                     "optional": true,
-                    "description": ""
+                    "description": "Include the text content.  If not passed, content will be empty in the response objects but title will be available."
                 }
             ]
         },
