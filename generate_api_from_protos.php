@@ -178,7 +178,7 @@ foreach( $allProtos as $fileInfo )
 
 		$service = substr( $proto, $matches[ $i - 1 ][ 1 ][ 1 ], $matches[ $i ][ 1 ][ 1 ] - $matches[ $i - 1 ][ 1 ][ 1 ] );
 
-		preg_match_all( "/rpc (.+?) \(.(.+?)\) returns \(.(?:.+?)\)\s*(?:;|\{\s*option \(method_description\) = \"(.+?)\";)$/m", $service, $rpcs );
+		preg_match_all( "/rpc (.+?) \(\.?(.+?)\) returns \(\.?(?:.+?)\)\s*(?:;|{}|\{\s*option \(method_description\) = \"(.+?)\";)$/m", $service, $rpcs );
 
 		$generatedMethods = [];
 
