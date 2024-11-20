@@ -4547,6 +4547,37 @@
         }
     },
     "ICommunityService": {
+        "FetchTranslationFromCrowdIn": {
+            "_type": "undocumented",
+            "version": 1,
+            "httpmethod": "POST",
+            "parameters": [
+                {
+                    "name": "key",
+                    "type": "string",
+                    "optional": false,
+                    "description": "Access key"
+                },
+                {
+                    "name": "steamid",
+                    "type": "fixed64",
+                    "optional": true,
+                    "description": ""
+                },
+                {
+                    "name": "itemid",
+                    "type": "uint64",
+                    "optional": true,
+                    "description": ""
+                },
+                {
+                    "name": "language",
+                    "type": "uint32",
+                    "optional": true,
+                    "description": ""
+                }
+            ]
+        },
         "GetApps": {
             "_type": "undocumented",
             "version": 1,
@@ -23409,6 +23440,32 @@
                                                     "description": ""
                                                 }
                                             ]
+                                        },
+                                        {
+                                            "name": "external_model",
+                                            "type": "CMsgSteamLearnModelNodeExternalModel",
+                                            "optional": true,
+                                            "description": "",
+                                            "extra": [
+                                                {
+                                                    "name": "project_id",
+                                                    "type": "uint32",
+                                                    "optional": true,
+                                                    "description": ""
+                                                },
+                                                {
+                                                    "name": "published_version",
+                                                    "type": "uint32",
+                                                    "optional": true,
+                                                    "description": ""
+                                                },
+                                                {
+                                                    "name": "named_inference_name",
+                                                    "type": "string",
+                                                    "optional": true,
+                                                    "description": ""
+                                                }
+                                            ]
                                         }
                                     ]
                                 },
@@ -24829,6 +24886,32 @@
                                                 {
                                                     "name": "transformer_dropout_pct",
                                                     "type": "uint32",
+                                                    "optional": true,
+                                                    "description": ""
+                                                }
+                                            ]
+                                        },
+                                        {
+                                            "name": "external_model",
+                                            "type": "CMsgSteamLearnModelNodeExternalModel",
+                                            "optional": true,
+                                            "description": "",
+                                            "extra": [
+                                                {
+                                                    "name": "project_id",
+                                                    "type": "uint32",
+                                                    "optional": true,
+                                                    "description": ""
+                                                },
+                                                {
+                                                    "name": "published_version",
+                                                    "type": "uint32",
+                                                    "optional": true,
+                                                    "description": ""
+                                                },
+                                                {
+                                                    "name": "named_inference_name",
+                                                    "type": "string",
                                                     "optional": true,
                                                     "description": ""
                                                 }
@@ -27427,6 +27510,32 @@
                                         {
                                             "name": "transformer_dropout_pct",
                                             "type": "uint32",
+                                            "optional": true,
+                                            "description": ""
+                                        }
+                                    ]
+                                },
+                                {
+                                    "name": "external_model",
+                                    "type": "CMsgSteamLearnModelNodeExternalModel",
+                                    "optional": true,
+                                    "description": "",
+                                    "extra": [
+                                        {
+                                            "name": "project_id",
+                                            "type": "uint32",
+                                            "optional": true,
+                                            "description": ""
+                                        },
+                                        {
+                                            "name": "published_version",
+                                            "type": "uint32",
+                                            "optional": true,
+                                            "description": ""
+                                        },
+                                        {
+                                            "name": "named_inference_name",
+                                            "type": "string",
                                             "optional": true,
                                             "description": ""
                                         }
