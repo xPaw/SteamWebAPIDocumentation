@@ -34309,6 +34309,12 @@
                     "type": "uint32",
                     "optional": true,
                     "description": ""
+                },
+                {
+                    "name": "allow_late_firing",
+                    "type": "bool",
+                    "optional": true,
+                    "description": ""
                 }
             ]
         },
@@ -34364,6 +34370,12 @@
                 {
                     "name": "demo_appid",
                     "type": "uint32",
+                    "optional": true,
+                    "description": ""
+                },
+                {
+                    "name": "allow_late_firing",
+                    "type": "bool",
                     "optional": true,
                     "description": ""
                 }
