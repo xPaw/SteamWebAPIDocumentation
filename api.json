@@ -10392,6 +10392,18 @@
                             "type": "string",
                             "optional": true,
                             "description": ""
+                        },
+                        {
+                            "name": "store_tagids[0]",
+                            "type": "uint32[]",
+                            "optional": true,
+                            "description": ""
+                        },
+                        {
+                            "name": "search_term__field_21",
+                            "type": "string",
+                            "optional": true,
+                            "description": ""
                         }
                     ]
                 }
@@ -10673,6 +10685,18 @@
                 },
                 {
                     "name": "search_term",
+                    "type": "string",
+                    "optional": true,
+                    "description": ""
+                },
+                {
+                    "name": "store_tagids[0]",
+                    "type": "uint32[]",
+                    "optional": true,
+                    "description": ""
+                },
+                {
+                    "name": "search_term__field_21",
                     "type": "string",
                     "optional": true,
                     "description": ""
@@ -19543,6 +19567,12 @@
                     "type": "int32",
                     "optional": true,
                     "description": "EYearInReviewAccessSource"
+                },
+                {
+                    "name": "fetch_previous_year_summary",
+                    "type": "bool",
+                    "optional": true,
+                    "description": ""
                 }
             ]
         },
@@ -23078,6 +23108,18 @@
                                                     "type": "uint32",
                                                     "optional": true,
                                                     "description": ""
+                                                },
+                                                {
+                                                    "name": "other_project_id",
+                                                    "type": "uint32",
+                                                    "optional": true,
+                                                    "description": ""
+                                                },
+                                                {
+                                                    "name": "other_fetch_id",
+                                                    "type": "uint32",
+                                                    "optional": true,
+                                                    "description": ""
                                                 }
                                             ]
                                         },
@@ -23328,7 +23370,7 @@
                                                     "description": ""
                                                 },
                                                 {
-                                                    "name": "published_version",
+                                                    "name": "train_id",
                                                     "type": "uint32",
                                                     "optional": true,
                                                     "description": ""
@@ -23532,7 +23574,7 @@
                                                     "description": ""
                                                 },
                                                 {
-                                                    "name": "published_version",
+                                                    "name": "train_id",
                                                     "type": "uint32",
                                                     "optional": true,
                                                     "description": ""
@@ -23540,6 +23582,12 @@
                                                 {
                                                     "name": "named_inference_name",
                                                     "type": "string",
+                                                    "optional": true,
+                                                    "description": ""
+                                                },
+                                                {
+                                                    "name": "freeze_weights",
+                                                    "type": "bool",
                                                     "optional": true,
                                                     "description": ""
                                                 }
@@ -23720,6 +23768,12 @@
                                         {
                                             "name": "train_gpu",
                                             "type": "int32",
+                                            "optional": true,
+                                            "description": ""
+                                        },
+                                        {
+                                            "name": "gpu_count",
+                                            "type": "uint32",
                                             "optional": true,
                                             "description": ""
                                         }
@@ -24534,6 +24588,18 @@
                                                     "type": "uint32",
                                                     "optional": true,
                                                     "description": ""
+                                                },
+                                                {
+                                                    "name": "other_project_id",
+                                                    "type": "uint32",
+                                                    "optional": true,
+                                                    "description": ""
+                                                },
+                                                {
+                                                    "name": "other_fetch_id",
+                                                    "type": "uint32",
+                                                    "optional": true,
+                                                    "description": ""
                                                 }
                                             ]
                                         },
@@ -24784,7 +24850,7 @@
                                                     "description": ""
                                                 },
                                                 {
-                                                    "name": "published_version",
+                                                    "name": "train_id",
                                                     "type": "uint32",
                                                     "optional": true,
                                                     "description": ""
@@ -24988,7 +25054,7 @@
                                                     "description": ""
                                                 },
                                                 {
-                                                    "name": "published_version",
+                                                    "name": "train_id",
                                                     "type": "uint32",
                                                     "optional": true,
                                                     "description": ""
@@ -24996,6 +25062,12 @@
                                                 {
                                                     "name": "named_inference_name",
                                                     "type": "string",
+                                                    "optional": true,
+                                                    "description": ""
+                                                },
+                                                {
+                                                    "name": "freeze_weights",
+                                                    "type": "bool",
                                                     "optional": true,
                                                     "description": ""
                                                 }
@@ -25176,6 +25248,12 @@
                                         {
                                             "name": "train_gpu",
                                             "type": "int32",
+                                            "optional": true,
+                                            "description": ""
+                                        },
+                                        {
+                                            "name": "gpu_count",
+                                            "type": "uint32",
                                             "optional": true,
                                             "description": ""
                                         }
@@ -27164,6 +27242,18 @@
                                             "type": "uint32",
                                             "optional": true,
                                             "description": ""
+                                        },
+                                        {
+                                            "name": "other_project_id",
+                                            "type": "uint32",
+                                            "optional": true,
+                                            "description": ""
+                                        },
+                                        {
+                                            "name": "other_fetch_id",
+                                            "type": "uint32",
+                                            "optional": true,
+                                            "description": ""
                                         }
                                     ]
                                 },
@@ -27414,7 +27504,7 @@
                                             "description": ""
                                         },
                                         {
-                                            "name": "published_version",
+                                            "name": "train_id",
                                             "type": "uint32",
                                             "optional": true,
                                             "description": ""
@@ -27618,7 +27708,7 @@
                                             "description": ""
                                         },
                                         {
-                                            "name": "published_version",
+                                            "name": "train_id",
                                             "type": "uint32",
                                             "optional": true,
                                             "description": ""
@@ -27626,6 +27716,12 @@
                                         {
                                             "name": "named_inference_name",
                                             "type": "string",
+                                            "optional": true,
+                                            "description": ""
+                                        },
+                                        {
+                                            "name": "freeze_weights",
+                                            "type": "bool",
                                             "optional": true,
                                             "description": ""
                                         }
@@ -27806,6 +27902,12 @@
                                 {
                                     "name": "train_gpu",
                                     "type": "int32",
+                                    "optional": true,
+                                    "description": ""
+                                },
+                                {
+                                    "name": "gpu_count",
+                                    "type": "uint32",
                                     "optional": true,
                                     "description": ""
                                 }
