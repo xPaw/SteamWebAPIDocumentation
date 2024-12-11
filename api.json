@@ -15690,6 +15690,19 @@
                 }
             ]
         },
+        "GetUserStatus": {
+            "_type": "undocumented",
+            "version": 1,
+            "httpmethod": "POST",
+            "parameters": [
+                {
+                    "name": "key",
+                    "type": "string",
+                    "optional": false,
+                    "description": "Access key"
+                }
+            ]
+        },
         "RequestInvite": {
             "_type": "undocumented",
             "version": 1,
