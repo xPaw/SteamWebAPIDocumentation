@@ -10388,8 +10388,8 @@
                             "description": ""
                         },
                         {
-                            "name": "search_term",
-                            "type": "string",
+                            "name": "excluded_store_tagids[0]",
+                            "type": "uint32[]",
                             "optional": true,
                             "description": ""
                         },
@@ -10400,7 +10400,7 @@
                             "description": ""
                         },
                         {
-                            "name": "search_term__field_21",
+                            "name": "search_term",
                             "type": "string",
                             "optional": true,
                             "description": ""
@@ -10698,6 +10698,12 @@
                 {
                     "name": "search_term__field_21",
                     "type": "string",
+                    "optional": true,
+                    "description": ""
+                },
+                {
+                    "name": "excluded_store_tagids[0]",
+                    "type": "uint32[]",
                     "optional": true,
                     "description": ""
                 }
@@ -14488,6 +14494,12 @@
                                 },
                                 {
                                     "name": "apply_user_filters",
+                                    "type": "bool",
+                                    "optional": true,
+                                    "description": ""
+                                },
+                                {
+                                    "name": "include_links",
                                     "type": "bool",
                                     "optional": true,
                                     "description": ""
