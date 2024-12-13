@@ -5114,6 +5114,18 @@
             ]
         }
     },
+    "ICrashReportService": {
+        "FinishCrashUpload": {
+            "_type": "undocumented",
+            "version": 1,
+            "parameters": []
+        },
+        "StartCrashUpload": {
+            "_type": "undocumented",
+            "version": 1,
+            "parameters": []
+        }
+    },
     "ICredentialsService": {
         "SteamGuardPhishingReport": {
             "_type": "undocumented",

@@ -22,6 +22,8 @@ ICommunityService/GetBestEventsForUser/v1
 ICommunityService/GetClanAnnouncements/v1
 ICommunityService/GetSingleClanAnnouncement/v1
 ICommunityService/GetUserPartnerEventNews/v1
+ICrashReportService/FinishCrashUpload/v1
+ICrashReportService/StartCrashUpload/v1
 ICredentialsService/SteamGuardPhishingReport/v1
 ICredentialsService/ValidateEmailAddress/v1
 ICSGOPlayers_730/GetPlayerProfile/v1
