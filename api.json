@@ -23595,6 +23595,12 @@
                                                     "type": "uint32",
                                                     "optional": true,
                                                     "description": ""
+                                                },
+                                                {
+                                                    "name": "compact_table",
+                                                    "type": "string",
+                                                    "optional": true,
+                                                    "description": ""
                                                 }
                                             ]
                                         },
@@ -25073,6 +25079,12 @@
                                                 {
                                                     "name": "transformer_dropout_pct",
                                                     "type": "uint32",
+                                                    "optional": true,
+                                                    "description": ""
+                                                },
+                                                {
+                                                    "name": "compact_table",
+                                                    "type": "string",
                                                     "optional": true,
                                                     "description": ""
                                                 }
@@ -27727,6 +27739,12 @@
                                         {
                                             "name": "transformer_dropout_pct",
                                             "type": "uint32",
+                                            "optional": true,
+                                            "description": ""
+                                        },
+                                        {
+                                            "name": "compact_table",
+                                            "type": "string",
                                             "optional": true,
                                             "description": ""
                                         }
