@@ -15695,6 +15695,25 @@
         }
     },
     "IPlaytestService": {
+        "GetInviteOptions": {
+            "_type": "undocumented",
+            "version": 1,
+            "httpmethod": "POST",
+            "parameters": [
+                {
+                    "name": "key",
+                    "type": "string",
+                    "optional": false,
+                    "description": "Access key"
+                },
+                {
+                    "name": "appid",
+                    "type": "uint32",
+                    "optional": true,
+                    "description": ""
+                }
+            ]
+        },
         "GetInvites": {
             "_type": "undocumented",
             "version": 1,
@@ -23751,6 +23770,12 @@
                                             "type": "uint32",
                                             "optional": true,
                                             "description": ""
+                                        },
+                                        {
+                                            "name": "snapshot_location",
+                                            "type": "int32",
+                                            "optional": true,
+                                            "description": ""
                                         }
                                     ]
                                 },
@@ -23817,6 +23842,12 @@
                                         {
                                             "name": "gpu_count",
                                             "type": "uint32",
+                                            "optional": true,
+                                            "description": ""
+                                        },
+                                        {
+                                            "name": "mixed_precision",
+                                            "type": "bool",
                                             "optional": true,
                                             "description": ""
                                         }
@@ -25237,6 +25268,12 @@
                                             "type": "uint32",
                                             "optional": true,
                                             "description": ""
+                                        },
+                                        {
+                                            "name": "snapshot_location",
+                                            "type": "int32",
+                                            "optional": true,
+                                            "description": ""
                                         }
                                     ]
                                 },
@@ -25303,6 +25340,12 @@
                                         {
                                             "name": "gpu_count",
                                             "type": "uint32",
+                                            "optional": true,
+                                            "description": ""
+                                        },
+                                        {
+                                            "name": "mixed_precision",
+                                            "type": "bool",
                                             "optional": true,
                                             "description": ""
                                         }
@@ -27897,6 +27940,12 @@
                                     "type": "uint32",
                                     "optional": true,
                                     "description": ""
+                                },
+                                {
+                                    "name": "snapshot_location",
+                                    "type": "int32",
+                                    "optional": true,
+                                    "description": ""
                                 }
                             ]
                         },
@@ -27963,6 +28012,12 @@
                                 {
                                     "name": "gpu_count",
                                     "type": "uint32",
+                                    "optional": true,
+                                    "description": ""
+                                },
+                                {
+                                    "name": "mixed_precision",
+                                    "type": "bool",
                                     "optional": true,
                                     "description": ""
                                 }
