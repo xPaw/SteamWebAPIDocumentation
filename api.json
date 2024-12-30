@@ -29242,6 +29242,18 @@
                     "type": "string",
                     "optional": false,
                     "description": "Access key"
+                },
+                {
+                    "name": "remote_client_id",
+                    "type": "uint64",
+                    "optional": true,
+                    "description": ""
+                },
+                {
+                    "name": "target_client_type",
+                    "type": "uint32",
+                    "optional": true,
+                    "description": ""
                 }
             ]
         },
