@@ -11680,6 +11680,25 @@
                 }
             ]
         },
+        "GetMarketingMessageClickedStats": {
+            "_type": "undocumented",
+            "version": 1,
+            "httpmethod": "POST",
+            "parameters": [
+                {
+                    "name": "key",
+                    "type": "string",
+                    "optional": false,
+                    "description": "Access key"
+                },
+                {
+                    "name": "gid",
+                    "type": "fixed64",
+                    "optional": true,
+                    "description": ""
+                }
+            ]
+        },
         "GetMarketingMessageViewerStats": {
             "_type": "undocumented",
             "version": 1,
@@ -12011,6 +12030,43 @@
                 {
                     "name": "upto_past_days",
                     "type": "uint32",
+                    "optional": true,
+                    "description": ""
+                }
+            ]
+        },
+        "MarkMessageClicked": {
+            "_type": "undocumented",
+            "version": 1,
+            "httpmethod": "POST",
+            "parameters": [
+                {
+                    "name": "key",
+                    "type": "string",
+                    "optional": false,
+                    "description": "Access key"
+                },
+                {
+                    "name": "gid",
+                    "type": "fixed64",
+                    "optional": true,
+                    "description": ""
+                },
+                {
+                    "name": "display_index",
+                    "type": "uint32",
+                    "optional": true,
+                    "description": ""
+                },
+                {
+                    "name": "template_type",
+                    "type": "int32",
+                    "optional": true,
+                    "description": ""
+                },
+                {
+                    "name": "click_location",
+                    "type": "int32",
                     "optional": true,
                     "description": ""
                 }
@@ -23850,6 +23906,12 @@
                                             "type": "bool",
                                             "optional": true,
                                             "description": ""
+                                        },
+                                        {
+                                            "name": "snapshot_location",
+                                            "type": "int32",
+                                            "optional": true,
+                                            "description": ""
                                         }
                                     ]
                                 },
@@ -25346,6 +25408,12 @@
                                         {
                                             "name": "mixed_precision",
                                             "type": "bool",
+                                            "optional": true,
+                                            "description": ""
+                                        },
+                                        {
+                                            "name": "snapshot_location",
+                                            "type": "int32",
                                             "optional": true,
                                             "description": ""
                                         }
@@ -28018,6 +28086,12 @@
                                 {
                                     "name": "mixed_precision",
                                     "type": "bool",
+                                    "optional": true,
+                                    "description": ""
+                                },
+                                {
+                                    "name": "snapshot_location",
+                                    "type": "int32",
                                     "optional": true,
                                     "description": ""
                                 }
