@@ -2425,6 +2425,24 @@
                 }
             ]
         },
+        "GetChatRoomGroupState": {
+            "_type": "undocumented",
+            "version": 1,
+            "parameters": [
+                {
+                    "name": "key",
+                    "type": "string",
+                    "optional": false,
+                    "description": "Access key"
+                },
+                {
+                    "name": "chat_group_id",
+                    "type": "uint64",
+                    "optional": true,
+                    "description": ""
+                }
+            ]
+        },
         "SetAppChatRoomConfig": {
             "_type": "publisher_only",
             "version": 1,
