@@ -18907,6 +18907,12 @@
                     "type": "uint32",
                     "optional": true,
                     "description": ""
+                },
+                {
+                    "name": "opt_in_name",
+                    "type": "string",
+                    "optional": true,
+                    "description": ""
                 }
             ]
         },
@@ -22750,6 +22756,18 @@
                                             "type": "float",
                                             "optional": true,
                                             "description": ""
+                                        },
+                                        {
+                                            "name": "other_project_id",
+                                            "type": "uint32",
+                                            "optional": true,
+                                            "description": ""
+                                        },
+                                        {
+                                            "name": "other_fetch_id",
+                                            "type": "uint32",
+                                            "optional": true,
+                                            "description": ""
                                         }
                                     ]
                                 },
@@ -23928,6 +23946,18 @@
                                         {
                                             "name": "snapshot_location",
                                             "type": "int32",
+                                            "optional": true,
+                                            "description": ""
+                                        },
+                                        {
+                                            "name": "train_weight_decay",
+                                            "type": "float",
+                                            "optional": true,
+                                            "description": ""
+                                        },
+                                        {
+                                            "name": "train_clip_norm",
+                                            "type": "float",
                                             "optional": true,
                                             "description": ""
                                         }
@@ -24254,6 +24284,18 @@
                                             "type": "float",
                                             "optional": true,
                                             "description": ""
+                                        },
+                                        {
+                                            "name": "other_project_id",
+                                            "type": "uint32",
+                                            "optional": true,
+                                            "description": ""
+                                        },
+                                        {
+                                            "name": "other_fetch_id",
+                                            "type": "uint32",
+                                            "optional": true,
+                                            "description": ""
                                         }
                                     ]
                                 },
@@ -25432,6 +25474,18 @@
                                         {
                                             "name": "snapshot_location",
                                             "type": "int32",
+                                            "optional": true,
+                                            "description": ""
+                                        },
+                                        {
+                                            "name": "train_weight_decay",
+                                            "type": "float",
+                                            "optional": true,
+                                            "description": ""
+                                        },
+                                        {
+                                            "name": "train_clip_norm",
+                                            "type": "float",
                                             "optional": true,
                                             "description": ""
                                         }
@@ -26932,6 +26986,18 @@
                                     "type": "float",
                                     "optional": true,
                                     "description": ""
+                                },
+                                {
+                                    "name": "other_project_id",
+                                    "type": "uint32",
+                                    "optional": true,
+                                    "description": ""
+                                },
+                                {
+                                    "name": "other_fetch_id",
+                                    "type": "uint32",
+                                    "optional": true,
+                                    "description": ""
                                 }
                             ]
                         },
@@ -28110,6 +28176,18 @@
                                 {
                                     "name": "snapshot_location",
                                     "type": "int32",
+                                    "optional": true,
+                                    "description": ""
+                                },
+                                {
+                                    "name": "train_weight_decay",
+                                    "type": "float",
+                                    "optional": true,
+                                    "description": ""
+                                },
+                                {
+                                    "name": "train_clip_norm",
+                                    "type": "float",
                                     "optional": true,
                                     "description": ""
                                 }
