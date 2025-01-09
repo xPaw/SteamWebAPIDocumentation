@@ -16796,6 +16796,30 @@
                 }
             ]
         },
+        "GetPromotionPlanSalesDaily": {
+            "_type": "undocumented",
+            "version": 1,
+            "parameters": [
+                {
+                    "name": "key",
+                    "type": "string",
+                    "optional": false,
+                    "description": "Access key"
+                },
+                {
+                    "name": "promotionids[0]",
+                    "type": "uint64[]",
+                    "optional": true,
+                    "description": ""
+                },
+                {
+                    "name": "partnerid",
+                    "type": "uint32",
+                    "optional": true,
+                    "description": ""
+                }
+            ]
+        },
         "GetSalePageCandidatesForPromo": {
             "_type": "undocumented",
             "version": 1,
