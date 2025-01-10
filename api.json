@@ -14085,6 +14085,24 @@
                 }
             ]
         },
+        "GetSaleEventOrganizers": {
+            "_type": "undocumented",
+            "version": 1,
+            "parameters": [
+                {
+                    "name": "key",
+                    "type": "string",
+                    "optional": false,
+                    "description": "Access key"
+                },
+                {
+                    "name": "rt_oldest_date",
+                    "type": "uint32",
+                    "optional": true,
+                    "description": ""
+                }
+            ]
+        },
         "TestFireEmails": {
             "_type": "undocumented",
             "version": 1,
