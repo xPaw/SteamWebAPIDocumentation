@@ -31434,6 +31434,20 @@
             ]
         }
     },
+    "ISteamVRVoiceChatService": {
+        "Active": {
+            "_type": "undocumented",
+            "version": 1,
+            "parameters": [
+                {
+                    "name": "key",
+                    "type": "string",
+                    "optional": false,
+                    "description": "Access key"
+                }
+            ]
+        }
+    },
     "ISteamWebAPIUtil": {
         "GetServerInfo": {
             "version": 1,
