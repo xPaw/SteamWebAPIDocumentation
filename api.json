@@ -16894,6 +16894,30 @@
                 }
             ]
         },
+        "GetBatchPartnerEmailAndName": {
+            "_type": "undocumented",
+            "version": 1,
+            "parameters": [
+                {
+                    "name": "key",
+                    "type": "string",
+                    "optional": false,
+                    "description": "Access key"
+                },
+                {
+                    "name": "accountids[0]",
+                    "type": "uint32[]",
+                    "optional": true,
+                    "description": ""
+                },
+                {
+                    "name": "partnerids[0]",
+                    "type": "uint32[]",
+                    "optional": true,
+                    "description": ""
+                }
+            ]
+        },
         "GetRegistrations": {
             "_type": "undocumented",
             "version": 1,
@@ -19448,6 +19472,12 @@
                     "type": "string",
                     "optional": false,
                     "description": "Access key"
+                },
+                {
+                    "name": "appid",
+                    "type": "uint32",
+                    "optional": true,
+                    "description": ""
                 }
             ]
         },
@@ -30009,6 +30039,12 @@
                                             "type": "float",
                                             "optional": true,
                                             "description": ""
+                                        },
+                                        {
+                                            "name": "use_class_weights",
+                                            "type": "bool",
+                                            "optional": true,
+                                            "description": ""
                                         }
                                     ]
                                 },
@@ -31537,6 +31573,12 @@
                                             "type": "float",
                                             "optional": true,
                                             "description": ""
+                                        },
+                                        {
+                                            "name": "use_class_weights",
+                                            "type": "bool",
+                                            "optional": true,
+                                            "description": ""
                                         }
                                     ]
                                 },
@@ -31967,6 +32009,18 @@
                 },
                 {
                     "name": "end_timestamp",
+                    "type": "uint32",
+                    "optional": true,
+                    "description": ""
+                },
+                {
+                    "name": "project_id",
+                    "type": "uint32",
+                    "optional": true,
+                    "description": ""
+                },
+                {
+                    "name": "published_version",
                     "type": "uint32",
                     "optional": true,
                     "description": ""
@@ -34237,6 +34291,12 @@
                                 {
                                     "name": "train_clip_norm",
                                     "type": "float",
+                                    "optional": true,
+                                    "description": ""
+                                },
+                                {
+                                    "name": "use_class_weights",
+                                    "type": "bool",
                                     "optional": true,
                                     "description": ""
                                 }
