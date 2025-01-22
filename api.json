@@ -32111,6 +32111,36 @@
                 }
             ]
         },
+        "GetSnapshotStatus": {
+            "_type": "undocumented",
+            "version": 1,
+            "parameters": [
+                {
+                    "name": "key",
+                    "type": "string",
+                    "optional": false,
+                    "description": "Access key"
+                },
+                {
+                    "name": "project_id",
+                    "type": "uint32",
+                    "optional": true,
+                    "description": ""
+                },
+                {
+                    "name": "published_version",
+                    "type": "uint32",
+                    "optional": true,
+                    "description": ""
+                },
+                {
+                    "name": "snapshot_example_count",
+                    "type": "uint32",
+                    "optional": true,
+                    "description": ""
+                }
+            ]
+        },
         "GetTrainLogs": {
             "_type": "undocumented",
             "version": 1,
@@ -39385,6 +39415,26 @@
                                     "description": ""
                                 },
                                 {
+                                    "name": "predefined_filter",
+                                    "type": "CStoreQueryFilters_PredefinedFilter",
+                                    "optional": true,
+                                    "description": "",
+                                    "extra": [
+                                        {
+                                            "name": "filter_type",
+                                            "type": "int32",
+                                            "optional": true,
+                                            "description": ""
+                                        },
+                                        {
+                                            "name": "language_preferences[0]",
+                                            "type": "int32[]",
+                                            "optional": true,
+                                            "description": ""
+                                        }
+                                    ]
+                                },
+                                {
                                     "name": "tagids_must_match[0]",
                                     "type": "CStoreQueryFilters_TagFilter[]",
                                     "optional": true,
@@ -39895,6 +39945,26 @@
                             "type": "int32[]",
                             "optional": true,
                             "description": ""
+                        },
+                        {
+                            "name": "predefined_filter",
+                            "type": "CStoreQueryFilters_PredefinedFilter",
+                            "optional": true,
+                            "description": "",
+                            "extra": [
+                                {
+                                    "name": "filter_type",
+                                    "type": "int32",
+                                    "optional": true,
+                                    "description": ""
+                                },
+                                {
+                                    "name": "language_preferences[0]",
+                                    "type": "int32[]",
+                                    "optional": true,
+                                    "description": ""
+                                }
+                            ]
                         },
                         {
                             "name": "tagids_must_match[0]",
