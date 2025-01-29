@@ -17030,6 +17030,12 @@
                     "type": "string",
                     "optional": true,
                     "description": ""
+                },
+                {
+                    "name": "skip_email",
+                    "type": "bool",
+                    "optional": true,
+                    "description": ""
                 }
             ]
         }
@@ -29947,6 +29953,20 @@
                                             "type": "int32",
                                             "optional": true,
                                             "description": ""
+                                        },
+                                        {
+                                            "name": "config_data_source",
+                                            "type": "CMsgSteamLearnProjectSnapshotConfigDataSource",
+                                            "optional": true,
+                                            "description": "",
+                                            "extra": [
+                                                {
+                                                    "name": "data_source_id",
+                                                    "type": "uint32",
+                                                    "optional": true,
+                                                    "description": ""
+                                                }
+                                            ]
                                         }
                                     ]
                                 },
@@ -30043,6 +30063,30 @@
                                         {
                                             "name": "use_class_weights",
                                             "type": "bool",
+                                            "optional": true,
+                                            "description": ""
+                                        },
+                                        {
+                                            "name": "train_warmup_steps",
+                                            "type": "uint32",
+                                            "optional": true,
+                                            "description": ""
+                                        },
+                                        {
+                                            "name": "train_warmup_start",
+                                            "type": "float",
+                                            "optional": true,
+                                            "description": ""
+                                        },
+                                        {
+                                            "name": "train_decay_steps",
+                                            "type": "int32",
+                                            "optional": true,
+                                            "description": ""
+                                        },
+                                        {
+                                            "name": "train_decay_rate",
+                                            "type": "float",
                                             "optional": true,
                                             "description": ""
                                         }
@@ -31481,6 +31525,20 @@
                                             "type": "int32",
                                             "optional": true,
                                             "description": ""
+                                        },
+                                        {
+                                            "name": "config_data_source",
+                                            "type": "CMsgSteamLearnProjectSnapshotConfigDataSource",
+                                            "optional": true,
+                                            "description": "",
+                                            "extra": [
+                                                {
+                                                    "name": "data_source_id",
+                                                    "type": "uint32",
+                                                    "optional": true,
+                                                    "description": ""
+                                                }
+                                            ]
                                         }
                                     ]
                                 },
@@ -31577,6 +31635,30 @@
                                         {
                                             "name": "use_class_weights",
                                             "type": "bool",
+                                            "optional": true,
+                                            "description": ""
+                                        },
+                                        {
+                                            "name": "train_warmup_steps",
+                                            "type": "uint32",
+                                            "optional": true,
+                                            "description": ""
+                                        },
+                                        {
+                                            "name": "train_warmup_start",
+                                            "type": "float",
+                                            "optional": true,
+                                            "description": ""
+                                        },
+                                        {
+                                            "name": "train_decay_steps",
+                                            "type": "int32",
+                                            "optional": true,
+                                            "description": ""
+                                        },
+                                        {
+                                            "name": "train_decay_rate",
+                                            "type": "float",
                                             "optional": true,
                                             "description": ""
                                         }
@@ -34231,6 +34313,20 @@
                                     "type": "int32",
                                     "optional": true,
                                     "description": ""
+                                },
+                                {
+                                    "name": "config_data_source",
+                                    "type": "CMsgSteamLearnProjectSnapshotConfigDataSource",
+                                    "optional": true,
+                                    "description": "",
+                                    "extra": [
+                                        {
+                                            "name": "data_source_id",
+                                            "type": "uint32",
+                                            "optional": true,
+                                            "description": ""
+                                        }
+                                    ]
                                 }
                             ]
                         },
@@ -34327,6 +34423,30 @@
                                 {
                                     "name": "use_class_weights",
                                     "type": "bool",
+                                    "optional": true,
+                                    "description": ""
+                                },
+                                {
+                                    "name": "train_warmup_steps",
+                                    "type": "uint32",
+                                    "optional": true,
+                                    "description": ""
+                                },
+                                {
+                                    "name": "train_warmup_start",
+                                    "type": "float",
+                                    "optional": true,
+                                    "description": ""
+                                },
+                                {
+                                    "name": "train_decay_steps",
+                                    "type": "int32",
+                                    "optional": true,
+                                    "description": ""
+                                },
+                                {
+                                    "name": "train_decay_rate",
+                                    "type": "float",
                                     "optional": true,
                                     "description": ""
                                 }
