@@ -15811,6 +15811,31 @@
         }
     },
     "IPlaytestService": {
+        "GetInviteHistory": {
+            "_type": "undocumented",
+            "version": 1,
+            "httpmethod": "POST",
+            "parameters": [
+                {
+                    "name": "key",
+                    "type": "string",
+                    "optional": false,
+                    "description": "Access key"
+                },
+                {
+                    "name": "limit",
+                    "type": "uint32",
+                    "optional": true,
+                    "description": ""
+                },
+                {
+                    "name": "time_before",
+                    "type": "uint32",
+                    "optional": true,
+                    "description": ""
+                }
+            ]
+        },
         "GetInviteOptions": {
             "_type": "undocumented",
             "version": 1,
@@ -23588,6 +23613,12 @@
                                                     "type": "string",
                                                     "optional": true,
                                                     "description": ""
+                                                },
+                                                {
+                                                    "name": "fetch_id",
+                                                    "type": "uint32",
+                                                    "optional": true,
+                                                    "description": ""
                                                 }
                                             ]
                                         },
@@ -25158,6 +25189,12 @@
                                                 {
                                                     "name": "compact_table",
                                                     "type": "string",
+                                                    "optional": true,
+                                                    "description": ""
+                                                },
+                                                {
+                                                    "name": "fetch_id",
+                                                    "type": "uint32",
                                                     "optional": true,
                                                     "description": ""
                                                 }
@@ -27946,6 +27983,12 @@
                                         {
                                             "name": "compact_table",
                                             "type": "string",
+                                            "optional": true,
+                                            "description": ""
+                                        },
+                                        {
+                                            "name": "fetch_id",
+                                            "type": "uint32",
                                             "optional": true,
                                             "description": ""
                                         }
