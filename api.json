@@ -23846,6 +23846,20 @@
                                                     "description": ""
                                                 }
                                             ]
+                                        },
+                                        {
+                                            "name": "reshape_2d",
+                                            "type": "CMsgSteamLearnModelNodeReshape2D",
+                                            "optional": true,
+                                            "description": "",
+                                            "extra": [
+                                                {
+                                                    "name": "dimension",
+                                                    "type": "uint32",
+                                                    "optional": true,
+                                                    "description": ""
+                                                }
+                                            ]
                                         }
                                     ]
                                 },
@@ -25420,6 +25434,20 @@
                                                 {
                                                     "name": "freeze_weights",
                                                     "type": "bool",
+                                                    "optional": true,
+                                                    "description": ""
+                                                }
+                                            ]
+                                        },
+                                        {
+                                            "name": "reshape_2d",
+                                            "type": "CMsgSteamLearnModelNodeReshape2D",
+                                            "optional": true,
+                                            "description": "",
+                                            "extra": [
+                                                {
+                                                    "name": "dimension",
+                                                    "type": "uint32",
                                                     "optional": true,
                                                     "description": ""
                                                 }
@@ -28214,6 +28242,20 @@
                                         {
                                             "name": "freeze_weights",
                                             "type": "bool",
+                                            "optional": true,
+                                            "description": ""
+                                        }
+                                    ]
+                                },
+                                {
+                                    "name": "reshape_2d",
+                                    "type": "CMsgSteamLearnModelNodeReshape2D",
+                                    "optional": true,
+                                    "description": "",
+                                    "extra": [
+                                        {
+                                            "name": "dimension",
+                                            "type": "uint32",
                                             "optional": true,
                                             "description": ""
                                         }
@@ -31147,7 +31189,7 @@
     "ISteamUser": {
         "CheckAppOwnership": {
             "_type": "publisher_only",
-            "version": 3,
+            "version": 4,
             "httpmethod": "GET",
             "parameters": [
                 {
@@ -31276,7 +31318,7 @@
         },
         "GetPublisherAppOwnership": {
             "_type": "publisher_only",
-            "version": 4,
+            "version": 5,
             "httpmethod": "GET",
             "parameters": [
                 {
