@@ -5,9 +5,9 @@
 		"test": "tsc"
 	},
 	"devDependencies": {
-		"@vue/tsconfig": "^0.5.1",
+		"@vue/tsconfig": "^0.7.0",
 		"bootstrap": "^5.2.2",
-		"esbuild": "^0.20.0",
+		"esbuild": "^0.25.0",
 		"esbuild-plugin-vue3": "^0.4.2",
 		"fuse.js": "^7.0.0",
 		"typescript": "^5.2.2",
