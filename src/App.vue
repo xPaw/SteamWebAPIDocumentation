@@ -156,7 +156,7 @@
 								<p>Here's how to get a store token:</p>
 								<ul>
 									<li>Open <a href="https://store.steampowered.com/pointssummary/ajaxgetasyncconfig" target="_blank"><code>https://store.steampowered.com/pointssummary/ajaxgetasyncconfig</code></a></li>
-									<li>Copy the value of <code>webapi_token</code></li>
+									<li>Copy the value of <code>webapi_token</code> or simply paste the full JSON in</li>
 								</ul>
 
 								<p>Here's how to get a community token:</p>

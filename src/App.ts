@@ -78,6 +78,14 @@ export default defineComponent({
 		},
 		"userData.access_token"(value: string): void {
 			try {
+				if (value.length > 2 && value[0] === '{' && value[value.length - 1] === '}') {
+					const obj = JSON.parse(value);
+
+					if (obj.data && obj.data.webapi_token) {
+						this.userData.access_token = obj.data.webapi_token;
+						return;
+					}
+				}
 				if (/^[\w-]+\.[\w-]+\.[\w-]+$/.test(value)) {
 					const jwt = value.split('.');
 					const token = JSON.parse(atob(jwt[1]));
