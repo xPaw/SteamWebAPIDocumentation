@@ -2,6 +2,7 @@ import * as esbuild from 'esbuild';
 import * as vuePlugin from 'esbuild-plugin-vue3';
 import * as fs from 'fs/promises';
 import * as path from 'path';
+import htmlPlugin from '@chialab/esbuild-plugin-html';
 
 const isDev = process.argv.includes('--dev');
 
@@ -12,12 +13,20 @@ await fs.writeFile(path.resolve('public', 'api.json'), JSON.stringify(interfaces
 
 // Esbuild
 const esbuildOptions = {
-	entryPoints: ['src/documentation.ts', 'src/style.css'],
+	entryPoints: ['src/index.html'],
 	minify: true,
 	bundle: true,
-	sourcemap: true,
+	sourcemap: false,
+	chunkNames: '[name]-[hash]',
 	outdir: 'public/',
-	plugins: [vuePlugin.default()],
+	plugins: [
+		htmlPlugin({
+			minifyOptions: {
+				minifySvg: false,
+			},
+		}),
+		vuePlugin.default(),
+	],
 	define: {
         "process.env.NODE_ENV": JSON.stringify("production"),
     },

@@ -6,7 +6,6 @@
 /api_from_protos.json
 /api_from_docs.json
 /public/api.json
-/public/documentation.js
-/public/documentation.js.map
-/public/style.css
-/public/style.css.map
+/public/*.js
+/public/*.css
+/public/index.html
