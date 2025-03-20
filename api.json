@@ -139,53 +139,7 @@
                             "name": "gift_info",
                             "type": "CartGiftInfo",
                             "optional": true,
-                            "description": "",
-                            "extra": [
-                                {
-                                    "name": "accountid_giftee",
-                                    "type": "int32",
-                                    "optional": true,
-                                    "description": ""
-                                },
-                                {
-                                    "name": "gift_message",
-                                    "type": "CartGiftMessage",
-                                    "optional": true,
-                                    "description": "",
-                                    "extra": [
-                                        {
-                                            "name": "gifteename",
-                                            "type": "string",
-                                            "optional": true,
-                                            "description": ""
-                                        },
-                                        {
-                                            "name": "message",
-                                            "type": "string",
-                                            "optional": true,
-                                            "description": ""
-                                        },
-                                        {
-                                            "name": "sentiment",
-                                            "type": "string",
-                                            "optional": true,
-                                            "description": ""
-                                        },
-                                        {
-                                            "name": "signature",
-                                            "type": "string",
-                                            "optional": true,
-                                            "description": ""
-                                        }
-                                    ]
-                                },
-                                {
-                                    "name": "time_scheduled_send",
-                                    "type": "int32",
-                                    "optional": true,
-                                    "description": ""
-                                }
-                            ]
+                            "description": ""
                         },
                         {
                             "name": "flags",
@@ -10425,24 +10379,6 @@
                             "type": "uint32[]",
                             "optional": true,
                             "description": ""
-                        },
-                        {
-                            "name": "excluded_store_tagids[0]",
-                            "type": "uint32[]",
-                            "optional": true,
-                            "description": ""
-                        },
-                        {
-                            "name": "store_tagids[0]",
-                            "type": "uint32[]",
-                            "optional": true,
-                            "description": ""
-                        },
-                        {
-                            "name": "search_term",
-                            "type": "string",
-                            "optional": true,
-                            "description": ""
                         }
                     ]
                 }
@@ -16410,36 +16346,6 @@
                             "type": "string",
                             "optional": true,
                             "description": ""
-                        },
-                        {
-                            "name": "last_update_time",
-                            "type": "uint32",
-                            "optional": true,
-                            "description": ""
-                        },
-                        {
-                            "name": "partner_readonly_jsondata",
-                            "type": "string",
-                            "optional": true,
-                            "description": ""
-                        },
-                        {
-                            "name": "partner_writable_jsondata",
-                            "type": "string",
-                            "optional": true,
-                            "description": ""
-                        },
-                        {
-                            "name": "assets_readonly_jsondata",
-                            "type": "string",
-                            "optional": true,
-                            "description": ""
-                        },
-                        {
-                            "name": "assets_writable_jsondata",
-                            "type": "string",
-                            "optional": true,
-                            "description": ""
                         }
                     ]
                 }
@@ -16573,36 +16479,6 @@
                         },
                         {
                             "name": "input_access_key",
-                            "type": "string",
-                            "optional": true,
-                            "description": ""
-                        },
-                        {
-                            "name": "last_update_time",
-                            "type": "uint32",
-                            "optional": true,
-                            "description": ""
-                        },
-                        {
-                            "name": "partner_readonly_jsondata",
-                            "type": "string",
-                            "optional": true,
-                            "description": ""
-                        },
-                        {
-                            "name": "partner_writable_jsondata",
-                            "type": "string",
-                            "optional": true,
-                            "description": ""
-                        },
-                        {
-                            "name": "assets_readonly_jsondata",
-                            "type": "string",
-                            "optional": true,
-                            "description": ""
-                        },
-                        {
-                            "name": "assets_writable_jsondata",
                             "type": "string",
                             "optional": true,
                             "description": ""
@@ -17106,36 +16982,6 @@
                             "type": "string",
                             "optional": true,
                             "description": ""
-                        },
-                        {
-                            "name": "last_update_time",
-                            "type": "uint32",
-                            "optional": true,
-                            "description": ""
-                        },
-                        {
-                            "name": "partner_readonly_jsondata",
-                            "type": "string",
-                            "optional": true,
-                            "description": ""
-                        },
-                        {
-                            "name": "partner_writable_jsondata",
-                            "type": "string",
-                            "optional": true,
-                            "description": ""
-                        },
-                        {
-                            "name": "assets_readonly_jsondata",
-                            "type": "string",
-                            "optional": true,
-                            "description": ""
-                        },
-                        {
-                            "name": "assets_writable_jsondata",
-                            "type": "string",
-                            "optional": true,
-                            "description": ""
                         }
                     ]
                 },
@@ -17211,36 +17057,6 @@
                             "type": "string",
                             "optional": true,
                             "description": ""
-                        },
-                        {
-                            "name": "last_update_time",
-                            "type": "uint32",
-                            "optional": true,
-                            "description": ""
-                        },
-                        {
-                            "name": "partner_readonly_jsondata",
-                            "type": "string",
-                            "optional": true,
-                            "description": ""
-                        },
-                        {
-                            "name": "partner_writable_jsondata",
-                            "type": "string",
-                            "optional": true,
-                            "description": ""
-                        },
-                        {
-                            "name": "assets_readonly_jsondata",
-                            "type": "string",
-                            "optional": true,
-                            "description": ""
-                        },
-                        {
-                            "name": "assets_writable_jsondata",
-                            "type": "string",
-                            "optional": true,
-                            "description": ""
                         }
                     ]
                 },
@@ -17313,36 +17129,6 @@
                         },
                         {
                             "name": "input_access_key",
-                            "type": "string",
-                            "optional": true,
-                            "description": ""
-                        },
-                        {
-                            "name": "last_update_time",
-                            "type": "uint32",
-                            "optional": true,
-                            "description": ""
-                        },
-                        {
-                            "name": "partner_readonly_jsondata",
-                            "type": "string",
-                            "optional": true,
-                            "description": ""
-                        },
-                        {
-                            "name": "partner_writable_jsondata",
-                            "type": "string",
-                            "optional": true,
-                            "description": ""
-                        },
-                        {
-                            "name": "assets_readonly_jsondata",
-                            "type": "string",
-                            "optional": true,
-                            "description": ""
-                        },
-                        {
-                            "name": "assets_writable_jsondata",
                             "type": "string",
                             "optional": true,
                             "description": ""
@@ -35221,6 +35007,35 @@
                     "type": "string",
                     "optional": true,
                     "description": ""
+                }
+            ]
+        },
+        "GetRecommendedTagsForUser": {
+            "version": 1,
+            "httpmethod": "GET",
+            "description": "Get a set of tags that are recommended for the user based on recent playtime.",
+            "parameters": [
+                {
+                    "name": "steamid",
+                    "type": "uint64",
+                    "optional": false,
+                    "description": "this is no longer used, we use the steamid in the header.  Here for compatibility with PHP until we can clean that up."
+                },
+                {
+                    "name": "language",
+                    "type": "string",
+                    "optional": false
+                },
+                {
+                    "name": "country_code",
+                    "type": "string",
+                    "optional": false
+                },
+                {
+                    "name": "favor_rarer_tags",
+                    "type": "bool",
+                    "optional": false,
+                    "description": "Biases tags towards tags that are less common. e.g. Favor Zombies over Action if the user plays the same number of games with both tags."
                 }
             ]
         },
