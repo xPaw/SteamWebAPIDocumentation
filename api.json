@@ -139,7 +139,53 @@
                             "name": "gift_info",
                             "type": "CartGiftInfo",
                             "optional": true,
-                            "description": ""
+                            "description": "",
+                            "extra": [
+                                {
+                                    "name": "accountid_giftee",
+                                    "type": "int32",
+                                    "optional": true,
+                                    "description": ""
+                                },
+                                {
+                                    "name": "gift_message",
+                                    "type": "CartGiftMessage",
+                                    "optional": true,
+                                    "description": "",
+                                    "extra": [
+                                        {
+                                            "name": "gifteename",
+                                            "type": "string",
+                                            "optional": true,
+                                            "description": ""
+                                        },
+                                        {
+                                            "name": "message",
+                                            "type": "string",
+                                            "optional": true,
+                                            "description": ""
+                                        },
+                                        {
+                                            "name": "sentiment",
+                                            "type": "string",
+                                            "optional": true,
+                                            "description": ""
+                                        },
+                                        {
+                                            "name": "signature",
+                                            "type": "string",
+                                            "optional": true,
+                                            "description": ""
+                                        }
+                                    ]
+                                },
+                                {
+                                    "name": "time_scheduled_send",
+                                    "type": "int32",
+                                    "optional": true,
+                                    "description": ""
+                                }
+                            ]
                         },
                         {
                             "name": "flags",
@@ -10379,6 +10425,24 @@
                             "type": "uint32[]",
                             "optional": true,
                             "description": ""
+                        },
+                        {
+                            "name": "excluded_store_tagids[0]",
+                            "type": "uint32[]",
+                            "optional": true,
+                            "description": ""
+                        },
+                        {
+                            "name": "store_tagids[0]",
+                            "type": "uint32[]",
+                            "optional": true,
+                            "description": ""
+                        },
+                        {
+                            "name": "search_term",
+                            "type": "string",
+                            "optional": true,
+                            "description": ""
                         }
                     ]
                 }
@@ -16346,6 +16410,36 @@
                             "type": "string",
                             "optional": true,
                             "description": ""
+                        },
+                        {
+                            "name": "last_update_time",
+                            "type": "uint32",
+                            "optional": true,
+                            "description": ""
+                        },
+                        {
+                            "name": "partner_readonly_jsondata",
+                            "type": "string",
+                            "optional": true,
+                            "description": ""
+                        },
+                        {
+                            "name": "partner_writable_jsondata",
+                            "type": "string",
+                            "optional": true,
+                            "description": ""
+                        },
+                        {
+                            "name": "assets_readonly_jsondata",
+                            "type": "string",
+                            "optional": true,
+                            "description": ""
+                        },
+                        {
+                            "name": "assets_writable_jsondata",
+                            "type": "string",
+                            "optional": true,
+                            "description": ""
                         }
                     ]
                 }
@@ -16479,6 +16573,36 @@
                         },
                         {
                             "name": "input_access_key",
+                            "type": "string",
+                            "optional": true,
+                            "description": ""
+                        },
+                        {
+                            "name": "last_update_time",
+                            "type": "uint32",
+                            "optional": true,
+                            "description": ""
+                        },
+                        {
+                            "name": "partner_readonly_jsondata",
+                            "type": "string",
+                            "optional": true,
+                            "description": ""
+                        },
+                        {
+                            "name": "partner_writable_jsondata",
+                            "type": "string",
+                            "optional": true,
+                            "description": ""
+                        },
+                        {
+                            "name": "assets_readonly_jsondata",
+                            "type": "string",
+                            "optional": true,
+                            "description": ""
+                        },
+                        {
+                            "name": "assets_writable_jsondata",
                             "type": "string",
                             "optional": true,
                             "description": ""
@@ -16982,6 +17106,36 @@
                             "type": "string",
                             "optional": true,
                             "description": ""
+                        },
+                        {
+                            "name": "last_update_time",
+                            "type": "uint32",
+                            "optional": true,
+                            "description": ""
+                        },
+                        {
+                            "name": "partner_readonly_jsondata",
+                            "type": "string",
+                            "optional": true,
+                            "description": ""
+                        },
+                        {
+                            "name": "partner_writable_jsondata",
+                            "type": "string",
+                            "optional": true,
+                            "description": ""
+                        },
+                        {
+                            "name": "assets_readonly_jsondata",
+                            "type": "string",
+                            "optional": true,
+                            "description": ""
+                        },
+                        {
+                            "name": "assets_writable_jsondata",
+                            "type": "string",
+                            "optional": true,
+                            "description": ""
                         }
                     ]
                 },
@@ -17057,6 +17211,36 @@
                             "type": "string",
                             "optional": true,
                             "description": ""
+                        },
+                        {
+                            "name": "last_update_time",
+                            "type": "uint32",
+                            "optional": true,
+                            "description": ""
+                        },
+                        {
+                            "name": "partner_readonly_jsondata",
+                            "type": "string",
+                            "optional": true,
+                            "description": ""
+                        },
+                        {
+                            "name": "partner_writable_jsondata",
+                            "type": "string",
+                            "optional": true,
+                            "description": ""
+                        },
+                        {
+                            "name": "assets_readonly_jsondata",
+                            "type": "string",
+                            "optional": true,
+                            "description": ""
+                        },
+                        {
+                            "name": "assets_writable_jsondata",
+                            "type": "string",
+                            "optional": true,
+                            "description": ""
                         }
                     ]
                 },
@@ -17129,6 +17313,36 @@
                         },
                         {
                             "name": "input_access_key",
+                            "type": "string",
+                            "optional": true,
+                            "description": ""
+                        },
+                        {
+                            "name": "last_update_time",
+                            "type": "uint32",
+                            "optional": true,
+                            "description": ""
+                        },
+                        {
+                            "name": "partner_readonly_jsondata",
+                            "type": "string",
+                            "optional": true,
+                            "description": ""
+                        },
+                        {
+                            "name": "partner_writable_jsondata",
+                            "type": "string",
+                            "optional": true,
+                            "description": ""
+                        },
+                        {
+                            "name": "assets_readonly_jsondata",
+                            "type": "string",
+                            "optional": true,
+                            "description": ""
+                        },
+                        {
+                            "name": "assets_writable_jsondata",
                             "type": "string",
                             "optional": true,
                             "description": ""
@@ -23634,6 +23848,12 @@
                                                     "type": "string",
                                                     "optional": true,
                                                     "description": ""
+                                                },
+                                                {
+                                                    "name": "is_causal",
+                                                    "type": "bool",
+                                                    "optional": true,
+                                                    "description": ""
                                                 }
                                             ]
                                         },
@@ -23678,6 +23898,20 @@
                                                 {
                                                     "name": "dimension",
                                                     "type": "uint32",
+                                                    "optional": true,
+                                                    "description": ""
+                                                }
+                                            ]
+                                        },
+                                        {
+                                            "name": "row_extract",
+                                            "type": "CMsgSteamLearnModelNodeRowExtract",
+                                            "optional": true,
+                                            "description": "",
+                                            "extra": [
+                                                {
+                                                    "name": "row",
+                                                    "type": "int32",
                                                     "optional": true,
                                                     "description": ""
                                                 }
@@ -23926,6 +24160,24 @@
                                         {
                                             "name": "train_decay_rate",
                                             "type": "float",
+                                            "optional": true,
+                                            "description": ""
+                                        },
+                                        {
+                                            "name": "profile_epoch",
+                                            "type": "uint32",
+                                            "optional": true,
+                                            "description": ""
+                                        },
+                                        {
+                                            "name": "profile_start_batch",
+                                            "type": "uint32",
+                                            "optional": true,
+                                            "description": ""
+                                        },
+                                        {
+                                            "name": "profile_end_batch",
+                                            "type": "uint32",
                                             "optional": true,
                                             "description": ""
                                         }
@@ -25246,6 +25498,12 @@
                                                     "type": "string",
                                                     "optional": true,
                                                     "description": ""
+                                                },
+                                                {
+                                                    "name": "is_causal",
+                                                    "type": "bool",
+                                                    "optional": true,
+                                                    "description": ""
                                                 }
                                             ]
                                         },
@@ -25290,6 +25548,20 @@
                                                 {
                                                     "name": "dimension",
                                                     "type": "uint32",
+                                                    "optional": true,
+                                                    "description": ""
+                                                }
+                                            ]
+                                        },
+                                        {
+                                            "name": "row_extract",
+                                            "type": "CMsgSteamLearnModelNodeRowExtract",
+                                            "optional": true,
+                                            "description": "",
+                                            "extra": [
+                                                {
+                                                    "name": "row",
+                                                    "type": "int32",
                                                     "optional": true,
                                                     "description": ""
                                                 }
@@ -25538,6 +25810,24 @@
                                         {
                                             "name": "train_decay_rate",
                                             "type": "float",
+                                            "optional": true,
+                                            "description": ""
+                                        },
+                                        {
+                                            "name": "profile_epoch",
+                                            "type": "uint32",
+                                            "optional": true,
+                                            "description": ""
+                                        },
+                                        {
+                                            "name": "profile_start_batch",
+                                            "type": "uint32",
+                                            "optional": true,
+                                            "description": ""
+                                        },
+                                        {
+                                            "name": "profile_end_batch",
+                                            "type": "uint32",
                                             "optional": true,
                                             "description": ""
                                         }
@@ -26373,6 +26663,24 @@
                     "type": "string",
                     "optional": true,
                     "description": ""
+                },
+                {
+                    "name": "inference_iterations",
+                    "type": "uint32",
+                    "optional": true,
+                    "description": ""
+                },
+                {
+                    "name": "weighted_items[0]",
+                    "type": "uint32[]",
+                    "optional": true,
+                    "description": ""
+                },
+                {
+                    "name": "item_weights[0]",
+                    "type": "float[]",
+                    "optional": true,
+                    "description": ""
                 }
             ]
         },
@@ -26440,6 +26748,24 @@
                 {
                     "name": "named_inference",
                     "type": "string",
+                    "optional": true,
+                    "description": ""
+                },
+                {
+                    "name": "inference_iterations",
+                    "type": "uint32",
+                    "optional": true,
+                    "description": ""
+                },
+                {
+                    "name": "weighted_items[0]",
+                    "type": "uint32[]",
+                    "optional": true,
+                    "description": ""
+                },
+                {
+                    "name": "item_weights[0]",
+                    "type": "float[]",
                     "optional": true,
                     "description": ""
                 }
@@ -28074,6 +28400,12 @@
                                             "type": "string",
                                             "optional": true,
                                             "description": ""
+                                        },
+                                        {
+                                            "name": "is_causal",
+                                            "type": "bool",
+                                            "optional": true,
+                                            "description": ""
                                         }
                                     ]
                                 },
@@ -28118,6 +28450,20 @@
                                         {
                                             "name": "dimension",
                                             "type": "uint32",
+                                            "optional": true,
+                                            "description": ""
+                                        }
+                                    ]
+                                },
+                                {
+                                    "name": "row_extract",
+                                    "type": "CMsgSteamLearnModelNodeRowExtract",
+                                    "optional": true,
+                                    "description": "",
+                                    "extra": [
+                                        {
+                                            "name": "row",
+                                            "type": "int32",
                                             "optional": true,
                                             "description": ""
                                         }
@@ -28366,6 +28712,24 @@
                                 {
                                     "name": "train_decay_rate",
                                     "type": "float",
+                                    "optional": true,
+                                    "description": ""
+                                },
+                                {
+                                    "name": "profile_epoch",
+                                    "type": "uint32",
+                                    "optional": true,
+                                    "description": ""
+                                },
+                                {
+                                    "name": "profile_start_batch",
+                                    "type": "uint32",
+                                    "optional": true,
+                                    "description": ""
+                                },
+                                {
+                                    "name": "profile_end_batch",
+                                    "type": "uint32",
                                     "optional": true,
                                     "description": ""
                                 }
@@ -31985,6 +32349,50 @@
         }
     },
     "IStoreBrowseService": {
+        "GetContentHubConfig": {
+            "_type": "undocumented",
+            "version": 1,
+            "parameters": [
+                {
+                    "name": "key",
+                    "type": "string",
+                    "optional": false,
+                    "description": "Access key"
+                },
+                {
+                    "name": "context",
+                    "type": "StoreBrowseContext",
+                    "optional": true,
+                    "description": "",
+                    "extra": [
+                        {
+                            "name": "language",
+                            "type": "string",
+                            "optional": true,
+                            "description": ""
+                        },
+                        {
+                            "name": "elanguage",
+                            "type": "int32",
+                            "optional": true,
+                            "description": ""
+                        },
+                        {
+                            "name": "country_code",
+                            "type": "string",
+                            "optional": true,
+                            "description": ""
+                        },
+                        {
+                            "name": "steam_realm",
+                            "type": "int32",
+                            "optional": true,
+                            "description": ""
+                        }
+                    ]
+                }
+            ]
+        },
         "GetDLCForApps": {
             "_type": "undocumented",
             "version": 1,
