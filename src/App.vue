@@ -73,6 +73,7 @@
 										<a
 											v-if="method.highlight"
 											:href="'#' + interfaceName + '/' + methodName"
+											:class="method.isFavorite ? 'text-warning' : ''"
 											v-html="method.highlight"
 										></a>
 										<a

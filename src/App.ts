@@ -227,6 +227,7 @@ export default defineComponent({
 				shouldSort: true,
 				useExtendedSearch: true,
 				includeMatches: true,
+				minMatchCharLength: 3,
 				threshold: 0.3,
 				keys: [{
 					name: 'interface',
@@ -285,7 +286,7 @@ export default defineComponent({
 
 				let highlight: string | undefined;
 				for (const m of searchResult.matches!) {
-					if (m.key === 'method' && m.indices[0][1] > 0) {
+					if (m.key === 'method') {
 						highlight = this.highlightMatches(m);
 						break;
 					}
