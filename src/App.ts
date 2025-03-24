@@ -1,6 +1,6 @@
 import type { SidebarGroupData, ApiServices, ApiInterface, ApiMethod, ApiMethodParameter } from './interfaces';
 
-import { ref, defineComponent } from 'vue'
+import { ref, defineComponent, markRaw } from 'vue'
 import Fuse, { type FuseResultMatch, type FuseSortFunctionArg, type IFuseOptions } from 'fuse.js'
 import { getInterfaces } from './interfaces';
 import ApiParameter from './ApiParameter.vue';
@@ -237,7 +237,8 @@ export default defineComponent({
 					weight: 0.7
 				}]
 			};
-			this.fuzzy = new Fuse<FuseSearchType>(flattenedMethods, fuseOptions);
+			const fuse = new Fuse<FuseSearchType>(flattenedMethods, fuseOptions);
+			this.fuzzy = markRaw(fuse);
 
 			this.bindGlobalKeybind();
 

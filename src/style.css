@@ -338,15 +338,20 @@ body {
 	background-color: rgb(132, 134, 137);
 }
 
+.sidebar {
+	scrollbar-gutter: stable;
+	overflow-y: auto;
+	scrollbar-width: thin;
+	overscroll-behavior: contain;
+	-webkit-overflow-scrolling: touch;
+}
+
 @media (max-width: 991px) {
 	.sidebar {
 		height: 200px;
 		margin-top: 1.5rem;
 		padding-top: 0 !important;
 		padding-bottom: 0 !important;
-		overflow-y: scroll;
-		overscroll-behavior: contain;
-		-webkit-overflow-scrolling: touch;
 	}
 
 	.interface-list a {
@@ -394,10 +399,6 @@ body {
 		top: 54px;
 		height: calc(100vh - 54px);
 		position: sticky;
-		overflow-y: scroll;
-		scrollbar-width: thin;
-		overscroll-behavior: contain;
-		-webkit-overflow-scrolling: touch;
 	}
 
 	.card-header {
