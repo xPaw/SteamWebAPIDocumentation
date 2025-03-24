@@ -15,7 +15,7 @@ code {
 }
 
 .card-body {
-	padding-bottom: 0
+	padding-bottom: 0;
 }
 
 .card .table {
@@ -47,7 +47,7 @@ code {
 .method-list {
 	padding: 0;
 	list-style: none;
-	font-size: .9rem;
+	font-size: 0.9rem;
 	background-color: #2b3647;
 }
 
@@ -101,7 +101,7 @@ body {
 }
 
 .search-input:focus {
-	box-shadow: 0 0 20px rgba(147, 211, 245, 0.50);
+	box-shadow: 0 0 20px rgba(147, 211, 245, 0.5);
 }
 
 .search-input::placeholder {
@@ -131,15 +131,15 @@ body {
 }
 
 .card-header .badge {
-	margin-right: .3rem;
+	margin-right: 0.3rem;
 }
 
 .card-header .badge-version {
-	margin-left: .3rem;
+	margin-left: 0.3rem;
 }
 
 .card-inner-header {
-	padding: .75rem 1.25rem;
+	padding: 0.75rem 1.25rem;
 }
 
 .card-method-name {
@@ -156,7 +156,7 @@ body {
 	border-color: #161920;
 }
 
-.card .table>:not(caption)>*>* {
+.card .table > :not(caption) > * > * {
 	/* bootstrap 5.3 fix */
 	color: unset;
 	background: unset;
@@ -356,9 +356,9 @@ body {
 		padding: 5px 0;
 	}
 
-	.header div[role=search] {
+	.header div[role="search"] {
 		order: 2;
-		margin-top: .5rem;
+		margin-top: 0.5rem;
 	}
 
 	.card-method-name {

@@ -1,7 +1,7 @@
-import * as esbuild from 'esbuild';
-import * as vuePlugin from 'esbuild-plugin-vue3';
 import htmlPlugin from '@chialab/esbuild-plugin-html';
 import { exec } from 'child_process';
+import * as esbuild from 'esbuild';
+import * as vuePlugin from 'esbuild-plugin-vue3';
 import fs from 'fs/promises';
 
 const isDev = process.argv.includes('--dev');
@@ -25,7 +25,7 @@ const esbuildOptions = {
 		vuePlugin.default(),
 	],
 	define: {
-		"process.env.NODE_ENV": JSON.stringify("production"),
+		'process.env.NODE_ENV': JSON.stringify('production'),
 	},
 };
 
@@ -34,7 +34,7 @@ if (isDev) {
 	esbuildOptions.sourcemap = true;
 	esbuildOptions.chunkNames = undefined;
 	esbuildOptions.banner = {
-		js: `window.DEV_MODE = true;new EventSource("/esbuild").addEventListener("change", () => location.reload());`
+		js: `window.DEV_MODE = true;new EventSource("/esbuild").addEventListener("change", () => location.reload());`,
 	};
 }
 
@@ -67,7 +67,7 @@ if (isDev) {
 		indexHtml = indexHtml.replace('<div id="app"></div>', `<div id="app">${ssrHtml}</div>`);
 
 		await fs.writeFile(indexPath, indexHtml);
-		await fs.unlink("public/ssr.js");
+		await fs.unlink('public/ssr.js');
 
 		console.log('SSR HTML injected successfully');
 	});

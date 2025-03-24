@@ -1,14 +1,13 @@
-import type { SidebarGroupData, ApiServices, ApiInterface, ApiMethod, ApiMethodParameter } from './interfaces';
+import Fuse, { type FuseResultMatch, type FuseSortFunctionArg, type IFuseOptions } from 'fuse.js';
 
-import { ref, defineComponent, markRaw } from 'vue'
-import Fuse, { type FuseResultMatch, type FuseSortFunctionArg, type IFuseOptions } from 'fuse.js'
-import ApiParameter from './ApiParameter.vue';
-
+import { defineComponent, markRaw, ref } from 'vue';
 import interfacesJson from '../api.json';
+import ApiParameter from './ApiParameter.vue';
+import type { ApiInterface, ApiMethod, ApiMethodParameter, ApiServices, SidebarGroupData } from './interfaces';
 
 interface FuseSearchType {
-	interface: string
-	method: string
+	interface: string;
+	method: string;
 }
 
 const inputSearch = ref<HTMLInputElement | null>(null);
@@ -24,22 +23,25 @@ export default defineComponent({
 		const interfaces = interfacesJson as ApiServices;
 
 		const groupsMap = new Map<string, number>();
-		const groupsData = new Map<number, SidebarGroupData>([
-			// Order of apps here defines the order in the sidebar
-			[0, { name: 'Steam', icon: 'steam.jpg', open: true, methods: {} }],
-			[730, { name: 'Counter-Strike 2', icon: 'cs2.jpg', open: true, methods: {} }],
-			[570, { name: 'Dota 2', icon: 'dota.jpg', open: true, methods: {} }],
-			[1422450, { name: 'Deadlock', icon: 'deadlock.jpg', open: true, methods: {} }],
-			[440, { name: 'Team Fortress 2', icon: 'tf.jpg', open: true, methods: {} }],
-			[620, { name: 'Portal 2', icon: 'portal2.jpg', open: true, methods: {} }],
-			[1046930, { name: 'Dota Underlords', icon: 'underlords.jpg', open: true, methods: {} }],
-			[583950, { name: 'Artifact Classic', icon: 'artifact.jpg', open: true, methods: {} }],
-			[1269260, { name: 'Artifact Foundry', icon: 'artifact.jpg', open: true, methods: {} }],
+		const groupsData = new Map<number, SidebarGroupData>(
+			// biome-ignore format: too verbose
+			[
+				// Order of apps here defines the order in the sidebar
+				[0, { name: 'Steam', icon: 'steam.jpg', open: true, methods: {} }],
+				[730, { name: 'Counter-Strike 2', icon: 'cs2.jpg', open: true, methods: {} }],
+				[570, { name: 'Dota 2', icon: 'dota.jpg', open: true, methods: {} }],
+				[1422450, { name: 'Deadlock', icon: 'deadlock.jpg', open: true, methods: {} }],
+				[440, { name: 'Team Fortress 2', icon: 'tf.jpg', open: true, methods: {} }],
+				[620, { name: 'Portal 2', icon: 'portal2.jpg', open: true, methods: {} }],
+				[1046930, { name: 'Dota Underlords', icon: 'underlords.jpg', open: true, methods: {} }],
+				[583950, { name: 'Artifact Classic', icon: 'artifact.jpg', open: true, methods: {} }],
+				[1269260, { name: 'Artifact Foundry', icon: 'artifact.jpg', open: true, methods: {} }],
 
-			// Beta apps
-			[247040, { name: 'Dota 2 Experimental', icon: 'dota.jpg', open: false, methods: {} }],
-			[2305270, { name: 'Dota 2 Staging', icon: 'dota.jpg', open: false, methods: {} }],
-		]);
+				// Beta apps
+				[247040, { name: 'Dota 2 Experimental', icon: 'dota.jpg', open: false, methods: {} }],
+				[2305270, { name: 'Dota 2 Staging', icon: 'dota.jpg', open: false, methods: {} }],
+			],
+		);
 
 		for (const interfaceName in interfaces) {
 			const interfaceAppid = interfaceName.match(/_(?<appid>[0-9]+)$/);
@@ -56,7 +58,7 @@ export default defineComponent({
 						name: `App ${appid}`,
 						icon: 'steam.jpg',
 						open: false,
-						methods: {}
+						methods: {},
 					});
 				}
 			}
@@ -79,11 +81,11 @@ export default defineComponent({
 			accessTokenVisible: false,
 			currentFilter: '',
 			currentInterface: '',
-			fuzzy: new Object as Fuse<FuseSearchType>,
+			fuzzy: new Object() as Fuse<FuseSearchType>,
 			interfaces,
 			groupsMap,
 			groupsData,
-		}
+		};
 	},
 	setup() {
 		return {
@@ -93,23 +95,22 @@ export default defineComponent({
 		};
 	},
 	watch: {
-		"userData.format"(value: string): void {
+		'userData.format'(value: string): void {
 			localStorage.setItem('format', value);
 		},
-		"userData.webapi_key"(value: string): void {
+		'userData.webapi_key'(value: string): void {
 			if (this.isFieldValid('webapi_key')) {
 				localStorage.setItem('webapi_key', value);
-			}
-			else {
+			} else {
 				localStorage.removeItem('webapi_key');
 			}
 		},
-		"userData.access_token"(value: string): void {
+		'userData.access_token'(value: string): void {
 			try {
 				if (value.length > 2 && value[0] === '{' && value[value.length - 1] === '}') {
 					const obj = JSON.parse(value);
 
-					if (obj.data && obj.data.webapi_token) {
+					if (obj.data?.webapi_token) {
 						this.userData.access_token = obj.data.webapi_token;
 						return;
 					}
@@ -126,10 +127,9 @@ export default defineComponent({
 						this.userData.steamid = token.sub;
 					}
 				} else {
-					throw new Error("Invalid token format (or empty)");
+					throw new Error('Invalid token format (or empty)');
 				}
-			}
-			catch (e) {
+			} catch (e) {
 				console.log((e as Error).message);
 				this.accessTokenExpiration = 0;
 				this.accessTokenSteamId = null;
@@ -138,26 +138,23 @@ export default defineComponent({
 
 			if (this.isFieldValid('access_token')) {
 				localStorage.setItem('access_token', value);
-			}
-			else {
+			} else {
 				localStorage.removeItem('access_token');
 			}
 		},
-		"userData.steamid"(value: string): void {
+		'userData.steamid'(value: string): void {
 			if (this.isFieldValid('steamid')) {
 				localStorage.setItem('steamid', value);
 
 				this.fillSteamidParameter();
-			}
-			else {
+			} else {
 				localStorage.removeItem('steamid');
 			}
 		},
 		currentInterface(newInterface: string): void {
 			if (newInterface) {
 				document.title = `${newInterface} – Steam Web API Documentation`;
-			}
-			else {
+			} else {
 				document.title = `Steam Web API Documentation`;
 			}
 
@@ -168,15 +165,14 @@ export default defineComponent({
 		currentFilter(newFilter: string, oldFilter: string): void {
 			if (!newFilter) {
 				this.$nextTick(this.scrollInterfaceIntoView);
-			}
-			else {
+			} else {
 				this.currentInterface = '';
 
 				if (!oldFilter) {
 					document.querySelector('.sidebar')!.scrollTop = 0;
 				}
 			}
-		}
+		},
 	},
 	mounted(): void {
 		const flattenedMethods: FuseSearchType[] = [];
@@ -192,15 +188,16 @@ export default defineComponent({
 			for (const favorite of favoriteStrings) {
 				const [favoriteInterface, favoriteMethod] = favorite.split('/', 2);
 
-				if (Object.hasOwn(this.interfaces, favoriteInterface) &&
-					Object.hasOwn(this.interfaces[favoriteInterface], favoriteMethod)) {
+				if (
+					Object.hasOwn(this.interfaces, favoriteInterface) &&
+					Object.hasOwn(this.interfaces[favoriteInterface], favoriteMethod)
+				) {
 					this.interfaces[favoriteInterface][favoriteMethod].isFavorite = true;
 
 					this.userData.favorites.add(favorite);
 				}
 			}
-		}
-		catch (e) {
+		} catch (e) {
 			console.error(e);
 		}
 
@@ -225,9 +222,13 @@ export default defineComponent({
 
 		this.setInterface();
 
-		window.addEventListener('hashchange', () => {
-			this.setInterface();
-		}, false);
+		window.addEventListener(
+			'hashchange',
+			() => {
+				this.setInterface();
+			},
+			false,
+		);
 
 		const fuseOptions: IFuseOptions<FuseSearchType> = {
 			shouldSort: true,
@@ -235,13 +236,16 @@ export default defineComponent({
 			includeMatches: true,
 			minMatchCharLength: 3,
 			threshold: 0.3,
-			keys: [{
-				name: 'interface',
-				weight: 0.3
-			}, {
-				name: 'method',
-				weight: 0.7
-			}]
+			keys: [
+				{
+					name: 'interface',
+					weight: 0.3,
+				},
+				{
+					name: 'method',
+					weight: 0.7,
+				},
+			],
 		};
 		const fuse = new Fuse<FuseSearchType>(flattenedMethods, fuseOptions);
 		this.fuzzy = markRaw(fuse);
@@ -254,12 +258,15 @@ export default defineComponent({
 
 			if (this.currentFilter) {
 				return new Map<number, SidebarGroupData>([
-					[-1, {
-						name: 'Search results',
-						icon: '',
-						open: true,
-						methods: interfaces,
-					}]
+					[
+						-1,
+						{
+							name: 'Search results',
+							icon: '',
+							open: true,
+							methods: interfaces,
+						},
+					],
 				]);
 			}
 
@@ -317,7 +324,7 @@ export default defineComponent({
 			});
 
 			return formatter.format(this.accessTokenExpiration);
-		}
+		},
 	},
 	methods: {
 		setInterface(): void {
@@ -333,11 +340,10 @@ export default defineComponent({
 				}
 			}
 
-			if (!this.interfaces.hasOwnProperty(currentInterface)) {
+			if (!Object.hasOwn(this.interfaces, currentInterface)) {
 				currentInterface = '';
 				currentMethod = '';
-			}
-			else if (!this.interfaces[currentInterface].hasOwnProperty(currentMethod)) {
+			} else if (!Object.hasOwn(this.interfaces[currentInterface], currentMethod)) {
 				currentMethod = '';
 			}
 
@@ -352,7 +358,7 @@ export default defineComponent({
 
 					if (element) {
 						element.scrollIntoView({
-							block: "start"
+							block: 'start',
 						});
 					}
 				});
@@ -403,8 +409,7 @@ export default defineComponent({
 
 			if (this.hasValidAccessToken) {
 				parameters.set('access_token', this.userData.access_token);
-			}
-			else if (this.hasValidWebApiKey) {
+			} else if (this.hasValidWebApiKey) {
 				parameters.set('key', this.userData.webapi_key);
 			}
 
@@ -523,23 +528,30 @@ export default defineComponent({
 					return;
 				}
 
-				const url = [form.action, this.uriDelimeterBeforeKey, this.renderApiKey(), this.renderParameters(method)].join('');
+				const url = [
+					form.action,
+					this.uriDelimeterBeforeKey,
+					this.renderApiKey(),
+					this.renderParameters(method),
+				].join('');
 
 				try {
 					window.open(url, '_blank');
-				}
-				catch {
+				} catch {
 					alert('Failed to open window');
 				}
 
 				return;
 			}
 
-			if (method.httpmethod === 'POST' && !confirm(
-				'Executing POST requests could be potentially disastrous.\n\n'
-				+ 'Author is not responsible for any damage done.\n\n'
-				+ 'Are you sure you want to continue?'
-			)) {
+			if (
+				method.httpmethod === 'POST' &&
+				!confirm(
+					'Executing POST requests could be potentially disastrous.\n\n' +
+						'Author is not responsible for any damage done.\n\n' +
+						'Are you sure you want to continue?',
+				)
+			) {
 				event.preventDefault();
 			}
 
@@ -548,23 +560,23 @@ export default defineComponent({
 					continue;
 				}
 
-				if (!field.value && !field.disabled && field.tagName === "INPUT") {
+				if (!field.value && !field.disabled && field.tagName === 'INPUT') {
 					field.disabled = true;
 
-					setTimeout(() => field.disabled = false, 0);
+					setTimeout(() => {
+						field.disabled = false;
+					}, 0);
 				}
 			}
 		},
 		addParamArray(method: ApiMethod, parameter: ApiMethodParameter): void {
 			if (!parameter._counter) {
 				parameter._counter = 1;
-			}
-			else {
+			} else {
 				parameter._counter++;
 			}
 
-			const newParameter: ApiMethodParameter =
-			{
+			const newParameter: ApiMethodParameter = {
 				name: `${parameter.name.substring(0, parameter.name.length - 3)}[${parameter._counter}]`,
 				type: parameter.type,
 				optional: true,
@@ -582,7 +594,7 @@ export default defineComponent({
 				}
 			}
 
-			const parameterIndex = method.parameters.findIndex(param => param.name === parameter.name);
+			const parameterIndex = method.parameters.findIndex((param) => param.name === parameter.name);
 			method.parameters.splice(parameterIndex + parameter._counter, 0, newParameter);
 		},
 		scrollInterfaceIntoView(): void {
@@ -596,13 +608,16 @@ export default defineComponent({
 			const button = event.target as Element;
 			const element = button.closest('.input-group')!.querySelector('.form-control')!;
 
-			navigator.clipboard.writeText(element.textContent || '').then(() => {
-				button.classList.add('bg-success');
+			navigator.clipboard.writeText(element.textContent || '').then(
+				() => {
+					button.classList.add('bg-success');
 
-				setTimeout(() => button.classList.remove('bg-success'), 500);
-			}, () => {
-				// write fail
-			});
+					setTimeout(() => button.classList.remove('bg-success'), 500);
+				},
+				() => {
+					// write fail
+				},
+			);
 		},
 		favoriteMethod(method: ApiMethod, methodName: string): void {
 			const name = `${this.currentInterface}/${methodName}`;
@@ -694,6 +709,6 @@ export default defineComponent({
 					this.inputSearch?.focus();
 				}
 			});
-		}
+		},
 	},
 });

@@ -61,13 +61,12 @@
 import type { ApiMethod, ApiMethodParameter } from './interfaces';
 
 defineProps<{
-	level: number,
-	method: ApiMethod,
-	parameter: ApiMethodParameter,
-	methodName: String,
-	focusApiKey: (payload: MouseEvent) => void,
-	addParamArray: (method: ApiMethod, parameter: ApiMethodParameter) => void,
-	apiKeyFilled: Boolean,
-
+	level: number;
+	method: ApiMethod;
+	parameter: ApiMethodParameter;
+	methodName: string;
+	focusApiKey: (payload: MouseEvent) => void;
+	addParamArray: (method: ApiMethod, parameter: ApiMethodParameter) => void;
+	apiKeyFilled: boolean;
 }>();
 </script>

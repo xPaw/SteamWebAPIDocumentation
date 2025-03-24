@@ -2,9 +2,11 @@
 	"scripts": {
 		"build": "node build.mjs",
 		"dev": "node build.mjs --dev",
-		"test": "tsc"
+		"test": "tsc && biome check",
+		"fix": "biome check --write"
 	},
 	"devDependencies": {
+		"@biomejs/biome": "^2.0.0-beta.1",
 		"@chialab/esbuild-plugin-html": "^0.18.2",
 		"@vue/tsconfig": "^0.7.0",
 		"bootstrap": "^5.2.2",
