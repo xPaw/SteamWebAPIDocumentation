@@ -268,13 +268,6 @@ body {
 	background-color: transparent;
 }
 
-.list-group-item {
-	line-height: 1;
-	background-color: transparent;
-	border: 0;
-	border-bottom: 1px solid #4e5155;
-}
-
 .no-email {
 	color: hsl(45, 94%, 40%);
 	background-color: hsl(46, 100%, 10%);
