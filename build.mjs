@@ -12,6 +12,7 @@ const interfaces = JSON.parse(await fs.readFile(path.resolve('api.json')));
 await fs.writeFile(path.resolve('public', 'api.json'), JSON.stringify(interfaces));
 
 // Esbuild
+/** @type {esbuild.BuildOptions} */
 const esbuildOptions = {
 	entryPoints: ['src/index.html'],
 	minify: true,
@@ -19,6 +20,7 @@ const esbuildOptions = {
 	sourcemap: false,
 	chunkNames: '[name]-[hash]',
 	outdir: 'public/',
+	logLevel: 'info',
 	plugins: [
 		htmlPlugin({
 			minifyOptions: {
@@ -33,6 +35,8 @@ const esbuildOptions = {
 };
 
 if (isDev) {
+	esbuildOptions.minify = false;
+	esbuildOptions.sourcemap = true;
 	esbuildOptions.banner = {
 		js: `window.DEV_MODE = true;new EventSource("/esbuild").addEventListener("change", () => location.reload());`
 	};
@@ -42,13 +46,10 @@ const context = await esbuild.context(esbuildOptions);
 
 if (isDev) {
 	await context.watch();
-
-	const { host, port } = await context.serve({
+	await context.serve({
 		host: 'localhost',
         servedir: 'public/',
     });
-
-	console.log(`Serving at http://${host}:${port}`);
 } else {
 	console.log('Building');
 

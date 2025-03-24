@@ -8,4 +8,5 @@
 /public/api.json
 /public/*.js
 /public/*.css
+/public/*.map
 /public/index.html
