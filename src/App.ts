@@ -2,8 +2,9 @@ import type { SidebarGroupData, ApiServices, ApiInterface, ApiMethod, ApiMethodP
 
 import { ref, defineComponent, markRaw } from 'vue'
 import Fuse, { type FuseResultMatch, type FuseSortFunctionArg, type IFuseOptions } from 'fuse.js'
-import { getInterfaces } from './interfaces';
 import ApiParameter from './ApiParameter.vue';
+
+import interfacesJson from '../api.json';
 
 interface FuseSearchType {
 	interface: string
@@ -19,6 +20,48 @@ export default defineComponent({
 		ApiParameter,
 	},
 	data() {
+		// @ts-ignore
+		const interfaces = interfacesJson as ApiServices;
+
+		const groupsMap = new Map<string, number>();
+		const groupsData = new Map<number, SidebarGroupData>([
+			// Order of apps here defines the order in the sidebar
+			[0, { name: 'Steam', icon: 'steam.jpg', open: true, methods: {} }],
+			[730, { name: 'Counter-Strike 2', icon: 'cs2.jpg', open: true, methods: {} }],
+			[570, { name: 'Dota 2', icon: 'dota.jpg', open: true, methods: {} }],
+			[1422450, { name: 'Deadlock', icon: 'deadlock.jpg', open: true, methods: {} }],
+			[440, { name: 'Team Fortress 2', icon: 'tf.jpg', open: true, methods: {} }],
+			[620, { name: 'Portal 2', icon: 'portal2.jpg', open: true, methods: {} }],
+			[1046930, { name: 'Dota Underlords', icon: 'underlords.jpg', open: true, methods: {} }],
+			[583950, { name: 'Artifact Classic', icon: 'artifact.jpg', open: true, methods: {} }],
+			[1269260, { name: 'Artifact Foundry', icon: 'artifact.jpg', open: true, methods: {} }],
+
+			// Beta apps
+			[247040, { name: 'Dota 2 Experimental', icon: 'dota.jpg', open: false, methods: {} }],
+			[2305270, { name: 'Dota 2 Staging', icon: 'dota.jpg', open: false, methods: {} }],
+		]);
+
+		for (const interfaceName in interfaces) {
+			const interfaceAppid = interfaceName.match(/_(?<appid>[0-9]+)$/);
+
+			if (interfaceAppid) {
+				const appid = parseInt(interfaceAppid.groups!.appid, 10);
+
+				groupsMap.set(interfaceName, appid);
+
+				let group = groupsData.get(appid);
+
+				if (!group) {
+					groupsData.set(appid, {
+						name: `App ${appid}`,
+						icon: 'steam.jpg',
+						open: false,
+						methods: {}
+					});
+				}
+			}
+		}
+
 		return {
 			userData: {
 				webapi_key: '',
@@ -36,25 +79,10 @@ export default defineComponent({
 			accessTokenVisible: false,
 			currentFilter: '',
 			currentInterface: '',
-			interfaces: {} as ApiServices,
 			fuzzy: new Object as Fuse<FuseSearchType>,
-			groupsMap: new Map<string, number>(),
-			groupsData: new Map<number, SidebarGroupData>([
-				// Order of apps here defines the order in the sidebar
-				[0, { name: 'Steam', icon: 'steam.jpg', open: true, methods: {} }],
-				[730, { name: 'Counter-Strike 2', icon: 'cs2.jpg', open: true, methods: {} }],
-				[570, { name: 'Dota 2', icon: 'dota.jpg', open: true, methods: {} }],
-				[1422450, { name: 'Deadlock', icon: 'deadlock.jpg', open: true, methods: {} }],
-				[440, { name: 'Team Fortress 2', icon: 'tf.jpg', open: true, methods: {} }],
-				[620, { name: 'Portal 2', icon: 'portal2.jpg', open: true, methods: {} }],
-				[1046930, { name: 'Dota Underlords', icon: 'underlords.jpg', open: true, methods: {} }],
-				[583950, { name: 'Artifact Classic', icon: 'artifact.jpg', open: true, methods: {} }],
-				[1269260, { name: 'Artifact Foundry', icon: 'artifact.jpg', open: true, methods: {} }],
-
-				// Beta apps
-				[247040, { name: 'Dota 2 Experimental', icon: 'dota.jpg', open: false, methods: {} }],
-				[2305270, { name: 'Dota 2 Staging', icon: 'dota.jpg', open: false, methods: {} }],
-			]),
+			interfaces,
+			groupsMap,
+			groupsData,
 		}
 	},
 	setup() {
@@ -151,99 +179,74 @@ export default defineComponent({
 		}
 	},
 	mounted(): void {
-		getInterfaces().then((interfaces) => {
-			const flattenedMethods: FuseSearchType[] = [];
+		const flattenedMethods: FuseSearchType[] = [];
 
-			try {
-				this.userData.format = localStorage.getItem('format') || 'json';
-				this.userData.steamid = localStorage.getItem('steamid') || '';
-				this.userData.webapi_key = localStorage.getItem('webapi_key') || '';
-				this.userData.access_token = localStorage.getItem('access_token') || '';
+		try {
+			this.userData.format = localStorage.getItem('format') || 'json';
+			this.userData.steamid = localStorage.getItem('steamid') || '';
+			this.userData.webapi_key = localStorage.getItem('webapi_key') || '';
+			this.userData.access_token = localStorage.getItem('access_token') || '';
 
-				const favoriteStrings = JSON.parse(localStorage.getItem('favorites') || '[]');
+			const favoriteStrings = JSON.parse(localStorage.getItem('favorites') || '[]');
 
-				for (const favorite of favoriteStrings) {
-					const [favoriteInterface, favoriteMethod] = favorite.split('/', 2);
+			for (const favorite of favoriteStrings) {
+				const [favoriteInterface, favoriteMethod] = favorite.split('/', 2);
 
-					if (Object.hasOwn(interfaces, favoriteInterface) &&
-						Object.hasOwn(interfaces[favoriteInterface], favoriteMethod)) {
-						interfaces[favoriteInterface][favoriteMethod].isFavorite = true;
+				if (Object.hasOwn(this.interfaces, favoriteInterface) &&
+					Object.hasOwn(this.interfaces[favoriteInterface], favoriteMethod)) {
+					this.interfaces[favoriteInterface][favoriteMethod].isFavorite = true;
 
-						this.userData.favorites.add(favorite);
-					}
+					this.userData.favorites.add(favorite);
 				}
 			}
-			catch (e) {
-				console.error(e);
-			}
+		}
+		catch (e) {
+			console.error(e);
+		}
 
-			for (const interfaceName in interfaces) {
-				for (const methodName in interfaces[interfaceName]) {
-					const method = interfaces[interfaceName][methodName];
+		for (const interfaceName in this.interfaces) {
+			for (const methodName in this.interfaces[interfaceName]) {
+				const method = this.interfaces[interfaceName][methodName];
 
-					for (const parameter of method.parameters) {
-						parameter._value = '';
+				for (const parameter of method.parameters) {
+					parameter._value = '';
 
-						if (parameter.type === 'bool') {
-							parameter.manuallyToggled = false;
-						}
-					}
-
-					flattenedMethods.push({
-						interface: interfaceName,
-						method: methodName,
-					} as FuseSearchType);
-				}
-
-				const interfaceAppid = interfaceName.match(/_(?<appid>[0-9]+)$/);
-
-				if (interfaceAppid) {
-					const appid = parseInt(interfaceAppid.groups!.appid, 10);
-
-					this.groupsMap.set(interfaceName, appid);
-
-					let group = this.groupsData.get(appid);
-
-					if (!group) {
-						this.groupsData.set(appid, {
-							name: `App ${appid}`,
-							icon: 'steam.jpg',
-							open: false,
-							methods: {}
-						});
+					if (parameter.type === 'bool') {
+						parameter.manuallyToggled = false;
 					}
 				}
+
+				flattenedMethods.push({
+					interface: interfaceName,
+					method: methodName,
+				} as FuseSearchType);
 			}
+		}
 
-			this.interfaces = interfaces;
+		this.setInterface();
 
+		window.addEventListener('hashchange', () => {
 			this.setInterface();
+		}, false);
 
-			window.addEventListener('hashchange', () => {
-				this.setInterface();
-			}, false);
+		const fuseOptions: IFuseOptions<FuseSearchType> = {
+			shouldSort: true,
+			useExtendedSearch: true,
+			includeMatches: true,
+			minMatchCharLength: 3,
+			threshold: 0.3,
+			keys: [{
+				name: 'interface',
+				weight: 0.3
+			}, {
+				name: 'method',
+				weight: 0.7
+			}]
+		};
+		const fuse = new Fuse<FuseSearchType>(flattenedMethods, fuseOptions);
+		this.fuzzy = markRaw(fuse);
 
-			const fuseOptions: IFuseOptions<FuseSearchType> = {
-				shouldSort: true,
-				useExtendedSearch: true,
-				includeMatches: true,
-				minMatchCharLength: 3,
-				threshold: 0.3,
-				keys: [{
-					name: 'interface',
-					weight: 0.3
-				}, {
-					name: 'method',
-					weight: 0.7
-				}]
-			};
-			const fuse = new Fuse<FuseSearchType>(flattenedMethods, fuseOptions);
-			this.fuzzy = markRaw(fuse);
-
-			this.bindGlobalKeybind();
-
-			document.getElementById('loading')!.remove();
-		});
+		this.bindGlobalKeybind();
 	},
 	computed: {
 		sidebarInterfaces(): Map<number, SidebarGroupData> {

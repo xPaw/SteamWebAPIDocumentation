@@ -1,20 +1,15 @@
 import * as esbuild from 'esbuild';
 import * as vuePlugin from 'esbuild-plugin-vue3';
-import * as fs from 'fs/promises';
-import * as path from 'path';
 import htmlPlugin from '@chialab/esbuild-plugin-html';
+import { exec } from 'child_process';
+import fs from 'fs/promises';
 
 const isDev = process.argv.includes('--dev');
-
-// Minify and copy api.json
-const interfaces = JSON.parse(await fs.readFile(path.resolve('api.json')));
-
-await fs.writeFile(path.resolve('public', 'api.json'), JSON.stringify(interfaces));
 
 // Esbuild
 /** @type {esbuild.BuildOptions} */
 const esbuildOptions = {
-	entryPoints: ['src/index.html'],
+	entryPoints: ['src/index.html', 'src/ssr.ts'],
 	minify: true,
 	bundle: true,
 	sourcemap: false,
@@ -56,4 +51,24 @@ if (isDev) {
 
 	await context.rebuild();
 	await context.dispose();
+
+	console.log('Running SSR...');
+	exec('node public/ssr.js', async (error, stdout, stderr) => {
+		if (error) {
+			console.error(`SSR Error: ${error}`);
+			return;
+		}
+
+		const ssrHtml = stdout.trim();
+
+		const indexPath = 'public/index.html';
+
+		let indexHtml = await fs.readFile(indexPath, 'utf8');
+		indexHtml = indexHtml.replace('<div id="app"></div>', `<div id="app">${ssrHtml}</div>`);
+
+		await fs.writeFile(indexPath, indexHtml);
+		await fs.unlink("public/ssr.js");
+
+		console.log('SSR HTML injected successfully');
+	});
 }

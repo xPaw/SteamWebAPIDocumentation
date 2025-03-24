@@ -35,14 +35,3 @@ export interface ApiMethodParameter {
 	optional: boolean
 	extra?: ApiMethodParameter[]
 }
-
-export async function getInterfaces() {
-	const apiFetch = await fetch('api.json', {
-		method: 'GET',
-		credentials: 'include',
-		mode: 'no-cors',
-	});
-	const interfaces: ApiServices = await apiFetch.json();
-
-	return interfaces;
-}
