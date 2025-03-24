@@ -30,13 +30,14 @@ const esbuildOptions = {
 		vuePlugin.default(),
 	],
 	define: {
-        "process.env.NODE_ENV": JSON.stringify("production"),
-    },
+		"process.env.NODE_ENV": JSON.stringify("production"),
+	},
 };
 
 if (isDev) {
 	esbuildOptions.minify = false;
 	esbuildOptions.sourcemap = true;
+	esbuildOptions.chunkNames = undefined;
 	esbuildOptions.banner = {
 		js: `window.DEV_MODE = true;new EventSource("/esbuild").addEventListener("change", () => location.reload());`
 	};
@@ -48,8 +49,8 @@ if (isDev) {
 	await context.watch();
 	await context.serve({
 		host: 'localhost',
-        servedir: 'public/',
-    });
+		servedir: 'public/',
+	});
 } else {
 	console.log('Building');
 
