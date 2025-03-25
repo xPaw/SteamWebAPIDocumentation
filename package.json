@@ -12,7 +12,6 @@
 		"bootstrap": "^5.2.2",
 		"esbuild": "^0.25.0",
 		"esbuild-plugin-vue3": "^0.4.2",
-		"fuse.js": "^7.0.0",
 		"htmlnano": "^2.1.1",
 		"typescript": "^5.2.2",
 		"vue": "^3.2.40"

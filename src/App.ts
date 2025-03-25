@@ -1,9 +1,8 @@
-import Fuse, { type FuseResultMatch, type FuseSortFunctionArg, type IFuseOptions } from 'fuse.js';
-
 import { defineComponent, markRaw, ref } from 'vue';
 import interfacesJson from '../api.json';
 import ApiParameter from './ApiParameter.vue';
 import type { ApiInterface, ApiMethod, ApiMethodParameter, ApiServices, SidebarGroupData } from './interfaces';
+import { ApiSearcher } from './search';
 
 interface FuseSearchType {
 	interface: string;
@@ -81,7 +80,7 @@ export default defineComponent({
 			accessTokenVisible: false,
 			currentFilter: '',
 			currentInterface: '',
-			fuzzy: new Object() as Fuse<FuseSearchType>,
+			search: markRaw(new ApiSearcher(interfaces)),
 			interfaces,
 			groupsMap,
 			groupsData,
@@ -230,26 +229,6 @@ export default defineComponent({
 			false,
 		);
 
-		const fuseOptions: IFuseOptions<FuseSearchType> = {
-			shouldSort: true,
-			useExtendedSearch: true,
-			includeMatches: true,
-			minMatchCharLength: 3,
-			threshold: 0.3,
-			keys: [
-				{
-					name: 'interface',
-					weight: 0.3,
-				},
-				{
-					name: 'method',
-					weight: 0.7,
-				},
-			],
-		};
-		const fuse = new Fuse<FuseSearchType>(flattenedMethods, fuseOptions);
-		this.fuzzy = markRaw(fuse);
-
 		this.bindGlobalKeybind();
 	},
 	computed: {
@@ -285,26 +264,16 @@ export default defineComponent({
 				return this.interfaces;
 			}
 
-			const matches = this.fuzzy.search(this.currentFilter.replace('/', '|'));
 			const matchedInterfaces: ApiServices = {};
+			const hits = this.search.search(this.currentFilter);
 
-			for (const searchResult of matches) {
-				const match = searchResult.item;
-
+			for (const match of hits) {
 				if (!matchedInterfaces[match.interface]) {
 					matchedInterfaces[match.interface] = {};
 				}
 
-				let highlight: string | undefined;
-				for (const m of searchResult.matches!) {
-					if (m.key === 'method') {
-						highlight = this.highlightMatches(m);
-						break;
-					}
-				}
-
 				const method = this.interfaces[match.interface][match.method];
-				method.highlight = highlight;
+				method.highlight = match.highlight;
 				matchedInterfaces[match.interface][match.method] = method;
 			}
 
@@ -659,38 +628,6 @@ export default defineComponent({
 			requestAnimationFrame(() => {
 				this.currentFilter = (e.target as HTMLInputElement).value;
 			});
-		},
-		highlightMatches(match: FuseResultMatch) {
-			let lastIndex = 0;
-			const result: string[] = [];
-			const sortedMatches = match.indices.toSorted((a, b) => a[0] - b[0]);
-			const value = match.value!;
-
-			for (let [start, end] of sortedMatches) {
-				if (end <= lastIndex) {
-					continue;
-				}
-
-				if (start < lastIndex) {
-					start = lastIndex;
-				}
-
-				if (lastIndex < start) {
-					result.push(value.slice(lastIndex, start));
-				}
-
-				end++;
-
-				result.push('<b>', value.slice(start, end), '</b>');
-
-				lastIndex = end;
-			}
-
-			if (lastIndex !== value.length) {
-				result.push(value.slice(lastIndex));
-			}
-
-			return result.join('');
 		},
 		bindGlobalKeybind() {
 			document.addEventListener('keydown', (e: KeyboardEvent) => {
