@@ -19613,6 +19613,42 @@
         }
     },
     "ISaleFeatureService": {
+        "GetAllUserActionDataForType": {
+            "_type": "undocumented",
+            "version": 1,
+            "parameters": [
+                {
+                    "name": "key",
+                    "type": "string",
+                    "optional": false,
+                    "description": "Access key"
+                },
+                {
+                    "name": "gid",
+                    "type": "fixed64",
+                    "optional": true,
+                    "description": ""
+                },
+                {
+                    "name": "type",
+                    "type": "int32",
+                    "optional": true,
+                    "description": ""
+                },
+                {
+                    "name": "count",
+                    "type": "uint32",
+                    "optional": true,
+                    "description": ""
+                },
+                {
+                    "name": "last_account_index",
+                    "type": "uint32",
+                    "optional": true,
+                    "description": ""
+                }
+            ]
+        },
         "GetFriendsSharedYearInReview": {
             "_type": "undocumented",
             "version": 1,
@@ -35423,12 +35459,6 @@
             "httpmethod": "GET",
             "description": "Get a set of tags that are recommended for the user based on recent playtime.",
             "parameters": [
-                {
-                    "name": "steamid",
-                    "type": "uint64",
-                    "optional": false,
-                    "description": "this is no longer used, we use the steamid in the header.  Here for compatibility with PHP until we can clean that up."
-                },
                 {
                     "name": "language",
                     "type": "string",
