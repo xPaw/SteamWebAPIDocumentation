@@ -155,10 +155,7 @@ export class ApiSearcher {
 				results.push({
 					interface: item.interface,
 					method: item.method,
-					highlight:
-						methodResult.indices.length > 0
-							? this.highlightMethod(item.method, methodResult.indices)
-							: item.method,
+					highlight: this.highlightMethod(item.method, methodResult.indices),
 					score: totalScore,
 				});
 			}
@@ -197,10 +194,7 @@ export class ApiSearcher {
 						results.push({
 							interface: item.interface,
 							method: item.method,
-							highlight:
-								methodResult.indices.length > 0
-									? this.highlightMethod(item.method, methodResult.indices)
-									: item.method,
+							highlight: this.highlightMethod(item.method, methodResult.indices),
 							score: totalScore,
 						});
 					}
