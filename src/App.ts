@@ -1,6 +1,7 @@
 import { defineComponent, markRaw, ref } from 'vue';
 import interfacesJson from '../api.json';
 import ApiParameter from './ApiParameter.vue';
+import HighlightedSearchMethod from './HighlightedSearchMethod';
 import type { ApiInterface, ApiMethod, ApiMethodParameter, ApiServices, SidebarGroupData } from './interfaces';
 import { ApiSearcher } from './search';
 
@@ -16,6 +17,7 @@ const inputAccessToken = ref<HTMLInputElement | null>(null);
 export default defineComponent({
 	components: {
 		ApiParameter,
+		HighlightedSearchMethod,
 	},
 	data() {
 		// @ts-ignore
@@ -273,7 +275,7 @@ export default defineComponent({
 				}
 
 				const method = this.interfaces[match.interface][match.method];
-				method.highlight = match.highlight;
+				method.highlight = match.indices;
 				matchedInterfaces[match.interface][match.method] = method;
 			}
 

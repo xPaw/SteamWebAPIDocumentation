@@ -18,7 +18,7 @@ export interface ApiMethod {
 	httpmethod: 'GET' | 'POST' | null;
 	version: number;
 	description?: string;
-	highlight?: string;
+	highlight?: number[];
 	parameters: ApiMethodParameter[];
 	isFavorite: boolean;
 	hasArrays: boolean;

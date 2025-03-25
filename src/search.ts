@@ -3,7 +3,7 @@ import type { ApiServices } from './interfaces';
 export interface SearchResult {
 	interface: string;
 	method: string;
-	highlight: string;
+	indices: number[];
 	score: number;
 }
 
@@ -155,7 +155,7 @@ export class ApiSearcher {
 				results.push({
 					interface: item.interface,
 					method: item.method,
-					highlight: this.highlightMethod(item.method, methodResult.indices),
+					indices: methodResult.indices,
 					score: totalScore,
 				});
 			}
@@ -194,7 +194,7 @@ export class ApiSearcher {
 						results.push({
 							interface: item.interface,
 							method: item.method,
-							highlight: this.highlightMethod(item.method, methodResult.indices),
+							indices: methodResult.indices,
 							score: totalScore,
 						});
 					}
@@ -384,51 +384,5 @@ export class ApiSearcher {
 		const score = weight * 0.4 * (1 - gapPenalty) * (1 + 0.3 * positionBonus + 0.3 * density) * lengthFactor;
 
 		return { score, indices: matchIndices };
-	}
-
-	private highlightMethod(text: string, indices: number[]): string {
-		if (indices.length === 0) return text;
-
-		// Group consecutive indices for proper highlighting spans
-		const spans: { start: number; end: number }[] = [];
-		let currentSpan: { start: number; end: number } | null = null;
-
-		for (let i = 0; i < indices.length; i++) {
-			const index = indices[i];
-
-			if (currentSpan === null) {
-				currentSpan = { start: index, end: index };
-			} else if (index === currentSpan.end + 1) {
-				currentSpan.end = index;
-			} else {
-				spans.push(currentSpan);
-				currentSpan = { start: index, end: index };
-			}
-		}
-
-		if (currentSpan !== null) {
-			spans.push(currentSpan);
-		}
-
-		// Build the highlighted text
-		let result = '';
-		let lastIndex = 0;
-
-		for (const span of spans) {
-			// Add text before the span
-			result += text.substring(lastIndex, span.start);
-
-			// Add highlighted span
-			result += '<b>' + text.substring(span.start, span.end + 1) + '</b>';
-
-			lastIndex = span.end + 1;
-		}
-
-		// Add remaining text
-		if (lastIndex < text.length) {
-			result += text.substring(lastIndex);
-		}
-
-		return result;
 	}
 }

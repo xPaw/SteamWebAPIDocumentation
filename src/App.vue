@@ -71,16 +71,12 @@
 										:key="methodName"
 									>
 										<a
-											v-if="method.highlight"
 											:href="'#' + interfaceName + '/' + methodName"
 											:class="method.isFavorite ? 'text-warning' : ''"
-											v-html="method.highlight"
-										></a>
-										<a
-											v-else
-											:href="'#' + interfaceName + '/' + methodName"
-											:class="method.isFavorite ? 'text-warning' : ''"
-										>{{ methodName }}</a>
+										>
+											<HighlightedSearchMethod :method="methodName" :indices="method.highlight" v-if="method.highlight && method.highlight.length > 0" />
+											<template v-else>{{ methodName }}</template>
+										</a>
 									</li>
 								</ul>
 							</li>
