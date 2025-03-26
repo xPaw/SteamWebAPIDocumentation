@@ -44,6 +44,8 @@ export default defineComponent({
 			],
 		);
 
+		const steamGroup = groupsData.get(0)!;
+
 		for (const interfaceName in interfaces) {
 			const interfaceAppid = interfaceName.match(/_(?<appid>[0-9]+)$/);
 
@@ -55,13 +57,19 @@ export default defineComponent({
 				let group = groupsData.get(appid);
 
 				if (!group) {
-					groupsData.set(appid, {
+					group = {
 						name: `App ${appid}`,
 						icon: 'steam.jpg',
 						open: false,
 						methods: {},
-					});
+					};
+
+					groupsData.set(appid, group);
 				}
+
+				group.methods[interfaceName] = interfaces[interfaceName];
+			} else {
+				steamGroup.methods[interfaceName] = interfaces[interfaceName];
 			}
 		}
 
@@ -251,15 +259,7 @@ export default defineComponent({
 				]);
 			}
 
-			const groups = new Map(this.groupsData);
-
-			for (const interfaceName in interfaces) {
-				const appid = this.groupsMap.get(interfaceName) || 0;
-				const group = groups.get(appid)!;
-				group.methods[interfaceName] = interfaces[interfaceName];
-			}
-
-			return groups;
+			return this.groupsData;
 		},
 		filteredInterfaces(): ApiServices {
 			if (!this.currentFilter) {
