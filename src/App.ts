@@ -5,11 +5,6 @@ import HighlightedSearchMethod from './HighlightedSearchMethod';
 import type { ApiInterface, ApiMethod, ApiMethodParameter, ApiServices, SidebarGroupData } from './interfaces';
 import { ApiSearcher } from './search';
 
-interface FuseSearchType {
-	interface: string;
-	method: string;
-}
-
 const inputSearch = ref<HTMLInputElement | null>(null);
 const inputApiKey = ref<HTMLInputElement | null>(null);
 const inputAccessToken = ref<HTMLInputElement | null>(null);
@@ -70,6 +65,18 @@ export default defineComponent({
 				group.methods[interfaceName] = interfaces[interfaceName];
 			} else {
 				steamGroup.methods[interfaceName] = interfaces[interfaceName];
+			}
+
+			for (const methodName in interfaces[interfaceName]) {
+				const method = interfaces[interfaceName][methodName];
+
+				for (const parameter of method.parameters) {
+					parameter._value = '';
+
+					if (parameter.type === 'bool') {
+						parameter.manuallyToggled = false;
+					}
+				}
 			}
 		}
 
@@ -184,8 +191,6 @@ export default defineComponent({
 		},
 	},
 	mounted(): void {
-		const flattenedMethods: FuseSearchType[] = [];
-
 		try {
 			this.userData.format = localStorage.getItem('format') || 'json';
 			this.userData.steamid = localStorage.getItem('steamid') || '';
@@ -208,25 +213,6 @@ export default defineComponent({
 			}
 		} catch (e) {
 			console.error(e);
-		}
-
-		for (const interfaceName in this.interfaces) {
-			for (const methodName in this.interfaces[interfaceName]) {
-				const method = this.interfaces[interfaceName][methodName];
-
-				for (const parameter of method.parameters) {
-					parameter._value = '';
-
-					if (parameter.type === 'bool') {
-						parameter.manuallyToggled = false;
-					}
-				}
-
-				flattenedMethods.push({
-					interface: interfaceName,
-					method: methodName,
-				} as FuseSearchType);
-			}
 		}
 
 		this.setInterface();
