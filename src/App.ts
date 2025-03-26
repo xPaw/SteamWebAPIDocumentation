@@ -31,12 +31,12 @@ export default defineComponent({
 				[0, { name: 'Steam', icon: 'steam.jpg', open: true, methods: {} }],
 				[730, { name: 'Counter-Strike 2', icon: 'cs2.jpg', open: true, methods: {} }],
 				[570, { name: 'Dota 2', icon: 'dota.jpg', open: true, methods: {} }],
-				[1422450, { name: 'Deadlock', icon: 'deadlock.jpg', open: true, methods: {} }],
 				[440, { name: 'Team Fortress 2', icon: 'tf.jpg', open: true, methods: {} }],
-				[620, { name: 'Portal 2', icon: 'portal2.jpg', open: true, methods: {} }],
-				[1046930, { name: 'Dota Underlords', icon: 'underlords.jpg', open: true, methods: {} }],
-				[583950, { name: 'Artifact Classic', icon: 'artifact.jpg', open: true, methods: {} }],
-				[1269260, { name: 'Artifact Foundry', icon: 'artifact.jpg', open: true, methods: {} }],
+				[1422450, { name: 'Deadlock', icon: 'deadlock.jpg', open: true, methods: {} }],
+				[620, { name: 'Portal 2', icon: 'portal2.jpg', open: false, methods: {} }],
+				[1046930, { name: 'Dota Underlords', icon: 'underlords.jpg', open: false, methods: {} }],
+				[583950, { name: 'Artifact Classic', icon: 'artifact.jpg', open: false, methods: {} }],
+				[1269260, { name: 'Artifact Foundry', icon: 'artifact.jpg', open: false, methods: {} }],
 
 				// Beta apps
 				[247040, { name: 'Dota 2 Experimental', icon: 'dota.jpg', open: false, methods: {} }],
