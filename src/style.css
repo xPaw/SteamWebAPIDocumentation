@@ -332,6 +332,10 @@ body {
 	.card-method-name {
 		display: block;
 	}
+
+	.value-column {
+		min-width: 13em;
+	}
 }
 
 @media (max-width: 575px) {
@@ -369,5 +373,9 @@ body {
 	.card-header {
 		position: sticky;
 		top: 54px;
+	}
+
+	.value-column {
+		width: 13em;
 	}
 }

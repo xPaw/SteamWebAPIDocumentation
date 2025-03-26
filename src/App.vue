@@ -304,7 +304,7 @@
 										<thead>
 											<tr>
 												<th>Name</th>
-												<th style="width:13em">Value</th>
+												<th class="value-column">Value</th>
 												<th>Type</th>
 												<th>Required</th>
 												<th>Description</th>
