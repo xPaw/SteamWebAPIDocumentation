@@ -350,7 +350,7 @@ body {
 @media (min-width: 992px) {
 	html {
 		scrollbar-gutter: stable;
-		scroll-padding-top: 54px;
+		scroll-padding-top: 69px;
 	}
 
 	.header {
