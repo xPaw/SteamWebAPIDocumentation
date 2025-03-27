@@ -2,7 +2,7 @@
 	<tr :class="`attribute level-${level}`">
 		<td class="font-monospace">
 			<template v-if="level > 0">↳ </template>
-			<label class="form-control-label" :for="`param_${methodName}_${parameter.name}`">{{ parameter.name }}</label>
+			<label class="form-control-label" :for="labelId">{{ parameter.name }}</label>
 			<button type="button" class="btn btn-secondary add-param-array" v-if="parameter.name.endsWith( '[0]' ) && level === 0" @click="addParamArray(method, parameter)">+</button>
 		</td>
 		<td class="font-monospace p-0">
@@ -20,19 +20,19 @@
 				<input
 					type="checkbox"
 					class="form-check-input"
-					:id="`param_${methodName}_${parameter.name}`"
+					:id="labelId"
 					v-model="parameter._value"
 					:aria-label="parameter.name"
 					@change="parameter.manuallyToggled = true"
 				>
-				<button class="btn btn-sm btn-danger py-0" type="button" v-if="parameter.manuallyToggled" @click="parameter.manuallyToggled = false; parameter._value = false;">&times;</button>
+				<button class="btn btn-sm btn-danger py-0" type="button" v-if="parameter.manuallyToggled" @click="parameter.manuallyToggled = false; parameter._value = '';">&times;</button>
 			</div>
 			<input
 				v-else
 				class="form-control border-0 rounded-0"
 				placeholder="…"
 				:name="level === 0 ? parameter.name : ''"
-				:id="`param_${methodName}_${parameter.name}`"
+				:id="labelId"
 				v-model="parameter._value"
 			>
 		</td>
@@ -59,14 +59,17 @@
 
 <script setup lang="ts">
 import type { ApiMethod, ApiMethodParameter } from './interfaces';
+import { useId } from 'vue';
+
+const labelId = useId();
 
 defineProps<{
 	level: number;
 	method: ApiMethod;
 	parameter: ApiMethodParameter;
 	methodName: string;
-	focusApiKey: (payload: MouseEvent) => void;
 	addParamArray: (method: ApiMethod, parameter: ApiMethodParameter) => void;
-	apiKeyFilled: boolean;
+	focusApiKey?: (payload: MouseEvent) => void;
+	apiKeyFilled?: boolean;
 }>();
 </script>

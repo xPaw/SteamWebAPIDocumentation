@@ -10,7 +10,7 @@
 							placeholder="Search methods… (type / to focus)"
 							aria-label="Search interfaces and methods"
 							@input="onSearchInput"
-							@keydown.escape.prevent="this.searchInput.blur()"
+							@keydown.escape.prevent="inputSearch?.blur()"
 							@keydown.up.prevent="navigateSidebar(-1)"
 							@keydown.down.prevent="navigateSidebar(1)"
 						>
@@ -38,6 +38,7 @@
 							>
 								<a
 									:href="'#' + favoriteMethod"
+									@click.prevent="setInterface(favoriteMethod)"
 								>{{ favoriteMethod }}</a>
 							</li>
 						</ul>
@@ -62,6 +63,7 @@
 							>
 								<a
 									:href="'#' + interfaceName"
+									@click.prevent="setInterface(interfaceName as string)"
 									:class="interfaceName === currentInterface ? 'fw-bold text-white' : ''"
 								>{{ interfaceName }}</a>
 
@@ -73,6 +75,7 @@
 										<a
 											:href="'#' + interfaceName + '/' + methodName"
 											:class="method.isFavorite ? 'text-warning' : ''"
+											@click.prevent="setInterface(interfaceName + '/' + methodName)"
 										>
 											<HighlightedSearchMethod :method="methodName" :indices="method.highlight" v-if="method.highlight && method.highlight.length > 0" />
 											<template v-else>{{ methodName }}</template>
@@ -233,7 +236,13 @@
 							<div class="card-header bg-primary text-white">Sitemap</div>
 							<div class="card-body">
 								<div class="list-group mb-3" v-for="(interfaceMethods, interfaceName) in interfaces" :key="interfaceName">
-									<a class="list-group-item list-group-item-action" v-for="(method, methodName) in interfaceMethods" :key="methodName" :href="'#' + interfaceName + '/' + methodName">
+									<a
+										class="list-group-item list-group-item-action"
+										v-for="(method, methodName) in interfaceMethods"
+										:key="methodName"
+										:href="'#' + interfaceName + '/' + methodName"
+										@click.prevent="setInterface(interfaceName + '/' + methodName)"
+									>
 										<b>{{ interfaceName }}/{{methodName}}</b>
 										<div class="text-info mt-1" v-if="method.description">{{ method.description }}</div>
 										<div class="text-muted mt-1" v-if="method.parameters.length > 0">Parameters: {{ method.parameters.map( m => m.description ? `${m.name} (${m.description})` : m.name ).join( ', ' ) }}</div>
@@ -255,9 +264,9 @@
 								target="_blank"
 								:id="`${currentInterface}/${methodName}`"
 								:method="method.httpmethod || 'GET'"
-								:action="renderUri( methodName, method )"
+								:action="renderUri(methodName as string, method)"
 								class="card mb-4"
-								@submit="useThisMethod($event, method)"
+								@submit="useThisMethod($event as SubmitEvent, method)"
 							>
 								<input type="hidden" name="access_token" v-model="userData.access_token" v-if="hasValidAccessToken">
 								<input type="hidden" name="key" v-model="userData.webapi_key" v-if="!hasValidAccessToken && hasValidWebApiKey">
@@ -273,7 +282,7 @@
 									</div>
 
 									<div class="d-flex ms-auto">
-										<button type="button" class="btn btn-link text-warning favorite-method" @click="favoriteMethod(method, methodName)">
+										<button type="button" class="btn btn-link text-warning favorite-method" @click="favoriteMethod(method, methodName as string)">
 											<svg viewBox="0 0 16 16" width="24" height="24" v-if="method.isFavorite"><path fill="currentColor" d="M8 .25a.75.75 0 0 1 .673.418l1.882 3.815 4.21.612a.75.75 0 0 1 .416 1.279l-3.046 2.97.719 4.192a.751.751 0 0 1-1.088.791L8 12.347l-3.766 1.98a.75.75 0 0 1-1.088-.79l.72-4.194L.818 6.374a.75.75 0 0 1 .416-1.28l4.21-.611L7.327.668A.75.75 0 0 1 8 .25Z"></path></svg>
 											<svg viewBox="0 0 16 16" width="24" height="24" v-if="!method.isFavorite"><path fill="currentColor" d="M8 .25a.75.75 0 0 1 .673.418l1.882 3.815 4.21.612a.75.75 0 0 1 .416 1.279l-3.046 2.97.719 4.192a.751.751 0 0 1-1.088.791L8 12.347l-3.766 1.98a.75.75 0 0 1-1.088-.79l.72-4.194L.818 6.374a.75.75 0 0 1 .416-1.28l4.21-.611L7.327.668A.75.75 0 0 1 8 .25Zm0 2.445L6.615 5.5a.75.75 0 0 1-.564.41l-3.097.45 2.24 2.184a.75.75 0 0 1 .216.664l-.528 3.084 2.769-1.456a.75.75 0 0 1 .698 0l2.77 1.456-.53-3.084a.75.75 0 0 1 .216-.664l2.24-2.183-3.096-.45a.75.75 0 0 1-.564-.41L8 2.694Z"></path></svg>
 										</button>
@@ -288,7 +297,7 @@
 									<p v-if="method.description">{{ method.description }}</p>
 
 									<div class="input-group mb-3">
-										<div class="form-control font-monospace h-auto">{{ renderUri( methodName, method ) }}{{ uriDelimeterBeforeKey }}<span :class="hasValidAccessToken ? 'hidden-token' : 'hidden-key'">{{ renderApiKey() }}</span>{{ renderParameters( method ) }}</div>
+										<div class="form-control font-monospace h-auto">{{ renderUri(methodName as string, method) }}{{ uriDelimeterBeforeKey }}<span :class="hasValidAccessToken ? 'hidden-token' : 'hidden-key'">{{ renderApiKey() }}</span>{{ renderParameters( method ) }}</div>
 										<button class="btn btn-outline-primary pt-0" type="button" @click.prevent="copyUrl($event)">
 											<svg viewBox="0 0 14 16" version="1.1" width="14" height="16" aria-label="Copy"><path fill-rule="evenodd" d="M2 13h4v1H2v-1zm5-6H2v1h5V7zm2 3V8l-3 3 3 3v-2h5v-2H9zM4.5 9H2v1h2.5V9zM2 12h2.5v-1H2v1zm9 1h1v2c-.02.28-.11.52-.3.7-.19.18-.42.28-.7.3H1c-.55 0-1-.45-1-1V4c0-.55.45-1 1-1h3c0-1.11.89-2 2-2 1.11 0 2 .89 2 2h3c.55 0 1 .45 1 1v5h-1V6H1v9h10v-2zM2 5h8c0-.55-.45-1-1-1H8c-.55 0-1-.45-1-1s-.45-1-1-1-1 .45-1 1-.45 1-1 1H3c-.55 0-1 .45-1 1z"></path></svg>
 										</button>
