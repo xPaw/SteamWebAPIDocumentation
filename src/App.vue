@@ -27,7 +27,7 @@
 
 		<div class="container">
 			<div class="row">
-				<div class="col-lg-3 sidebar py-3" role="navigation">
+				<div class="col-lg-3 sidebar py-3" role="navigation" ref="sidebar">
 					<details class="interface-list-container" open v-if="userData.favorites.size > 0 && !currentFilter">
 						<summary class="interface-group-name">Your favorites</summary>
 

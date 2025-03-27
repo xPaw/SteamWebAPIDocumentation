@@ -117,10 +117,11 @@ body {
 	color: #e5e5e5;
 	border: 0;
 	border-radius: 0;
+	transition: box-shadow 0.2s;
 }
 
 .card:target {
-	outline: 5px solid #096295;
+	box-shadow: 0 0 0 5px #66c0f4;
 }
 
 .card-header {

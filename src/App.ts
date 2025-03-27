@@ -5,6 +5,7 @@ import HighlightedSearchMethod from './HighlightedSearchMethod';
 import type { ApiInterface, ApiMethod, ApiMethodParameter, ApiServices, SidebarGroupData } from './interfaces';
 import { ApiSearcher } from './search';
 
+const sidebar = ref<HTMLElement | null>(null);
 const inputSearch = ref<HTMLInputElement | null>(null);
 const inputApiKey = ref<HTMLInputElement | null>(null);
 const inputAccessToken = ref<HTMLInputElement | null>(null);
@@ -88,6 +89,7 @@ export default defineComponent({
 				format: 'json',
 				favorites: new Set<string>(),
 			},
+			skipNextHashChange: false,
 			keyInputType: 'password',
 			hasValidWebApiKey: false,
 			hasValidAccessToken: false,
@@ -105,6 +107,7 @@ export default defineComponent({
 	},
 	setup() {
 		return {
+			sidebar,
 			inputSearch,
 			inputApiKey,
 			inputAccessToken,
@@ -167,25 +170,18 @@ export default defineComponent({
 				localStorage.removeItem('steamid');
 			}
 		},
-		currentInterface(newInterface: string): void {
-			if (newInterface) {
-				document.title = `${newInterface} – Steam Web API Documentation`;
-			} else {
-				document.title = `Steam Web API Documentation`;
-			}
-
-			if (document.scrollingElement) {
-				document.scrollingElement.scrollTop = 0;
-			}
-		},
 		currentFilter(newFilter: string, oldFilter: string): void {
 			if (!newFilter) {
 				this.$nextTick(this.scrollInterfaceIntoView);
+
+				if (oldFilter) {
+					this.sidebar!.scrollTop = 0;
+				}
 			} else {
-				this.currentInterface = '';
+				this.setInterface('');
 
 				if (!oldFilter) {
-					document.querySelector('.sidebar')!.scrollTop = 0;
+					this.sidebar!.scrollTop = 0;
 				}
 			}
 		},
@@ -215,12 +211,19 @@ export default defineComponent({
 			console.error(e);
 		}
 
-		this.setInterface();
+		if (location.hash.startsWith('#')) {
+			this.setInterface(location.hash.substring(1), true);
+		}
 
 		window.addEventListener(
 			'hashchange',
 			() => {
-				this.setInterface();
+				if (this.skipNextHashChange) {
+					this.skipNextHashChange = false;
+					return;
+				}
+
+				this.setInterface(location.hash.substring(1));
 			},
 			false,
 		);
@@ -284,42 +287,46 @@ export default defineComponent({
 		},
 	},
 	methods: {
-		setInterface(): void {
-			let currentInterface = location.hash;
-			let currentMethod = '';
-
-			if (currentInterface[0] === '#') {
-				const split = currentInterface.substring(1).split('/', 2);
-				currentInterface = split[0];
-
-				if (split[1]) {
-					currentMethod = split[1];
-				}
-			}
+		setInterface(interfaceAndMethod: string, setFromUrl = false): void {
+			const split = interfaceAndMethod.split('/', 2);
+			let currentInterface: string | null = split[0];
+			let currentMethod: string | null = split.length > 1 ? split[1] : null;
 
 			if (!Object.hasOwn(this.interfaces, currentInterface)) {
-				currentInterface = '';
-				currentMethod = '';
-			} else if (!Object.hasOwn(this.interfaces[currentInterface], currentMethod)) {
-				currentMethod = '';
+				currentInterface = null;
+				currentMethod = null;
+			} else if (currentMethod !== null && !Object.hasOwn(this.interfaces[currentInterface], currentMethod)) {
+				currentMethod = null;
 			}
 
-			const interfaceChanged = this.currentInterface !== currentInterface;
+			this.currentInterface = currentInterface || '';
 
-			this.currentInterface = currentInterface;
-
-			if (interfaceChanged) {
-				// Have to scroll manually because location.hash doesn't exist in DOM as target yet
-				this.$nextTick(() => {
-					const element = document.getElementById(`${currentInterface}/${currentMethod}`);
-
-					if (element) {
-						element.scrollIntoView({
-							block: 'start',
-						});
-					}
-				});
+			if (currentInterface) {
+				document.title = `${currentInterface} – Steam Web API Documentation`;
+			} else {
+				document.title = `Steam Web API Documentation`;
 			}
+
+			// Since we won't scroll to a method, scroll to top (as there is no element with just interface id)
+			if (document.scrollingElement && !currentMethod) {
+				document.scrollingElement.scrollTop = 0;
+			}
+
+			if (setFromUrl) {
+				return;
+			}
+
+			this.$nextTick(() => {
+				this.skipNextHashChange = true;
+
+				if (currentMethod) {
+					location.hash = `#${currentInterface}/${currentMethod}`;
+				} else if (currentInterface) {
+					location.hash = `#${currentInterface}`;
+				} else {
+					location.hash = '';
+				}
+			});
 		},
 		fillSteamidParameter(): void {
 			if (!this.userData.steamid) {
@@ -590,19 +597,23 @@ export default defineComponent({
 			localStorage.setItem('favorites', JSON.stringify([...this.userData.favorites]));
 		},
 		navigateSidebar(direction: number): void {
-			const keys = Object.keys(this.filteredInterfaces);
+			const entries = Object.entries(this.filteredInterfaces);
+			const index = entries.findIndex((x) => x[0] === this.currentInterface) + direction;
+			const size = entries.length;
+			const [interfaceName, methods] = entries[((index % size) + size) % size];
+			const firstMethodName = Object.keys(methods)[0];
 
-			const size = keys.length;
-			const index = keys.indexOf(this.currentInterface) + direction;
-
-			this.currentInterface = keys[((index % size) + size) % size];
+			this.setInterface(`${interfaceName}/${firstMethodName}`);
 			this.scrollInterfaceIntoView();
+
+			// This is trash, but the focus gets lost because of location.hash change
+			this.$nextTick(() => {
+				this.inputSearch?.focus();
+			});
 		},
 		focusApiKey(): void {
-			location.hash = '';
-
-			this.currentInterface = '';
 			this.currentFilter = '';
+			this.setInterface('');
 
 			this.$nextTick(() => {
 				const element = this.hasValidAccessToken ? this.inputAccessToken : this.inputApiKey;
@@ -612,7 +623,7 @@ export default defineComponent({
 				}
 			});
 		},
-		onSearchInput(e: InputEvent) {
+		onSearchInput(e: Event) {
 			requestAnimationFrame(() => {
 				this.currentFilter = (e.target as HTMLInputElement).value;
 			});

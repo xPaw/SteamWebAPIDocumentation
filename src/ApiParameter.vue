@@ -58,8 +58,8 @@
 </template>
 
 <script setup lang="ts">
-import type { ApiMethod, ApiMethodParameter } from './interfaces';
 import { useId } from 'vue';
+import type { ApiMethod, ApiMethodParameter } from './interfaces';
 
 const labelId = useId();
 
