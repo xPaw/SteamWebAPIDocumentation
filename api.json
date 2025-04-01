@@ -6466,6 +6466,12 @@
                             "type": "fixed64",
                             "optional": true,
                             "description": ""
+                        },
+                        {
+                            "name": "descids",
+                            "type": "string",
+                            "optional": true,
+                            "description": ""
                         }
                     ]
                 },
@@ -6684,6 +6690,12 @@
                         {
                             "name": "asset_request_id",
                             "type": "fixed64",
+                            "optional": true,
+                            "description": ""
+                        },
+                        {
+                            "name": "descids",
+                            "type": "string",
                             "optional": true,
                             "description": ""
                         }
@@ -35474,6 +35486,18 @@
                     "type": "bool",
                     "optional": false,
                     "description": "Biases tags towards tags that are less common. e.g. Favor Zombies over Action if the user plays the same number of games with both tags."
+                }
+            ]
+        },
+        "GetStorePreferences": {
+            "_type": "undocumented",
+            "version": 1,
+            "parameters": [
+                {
+                    "name": "key",
+                    "type": "string",
+                    "optional": false,
+                    "description": "Access key"
                 }
             ]
         },
