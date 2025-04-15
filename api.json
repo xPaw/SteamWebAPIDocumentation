@@ -23718,6 +23718,12 @@
                                                     "type": "uint32",
                                                     "optional": true,
                                                     "description": ""
+                                                },
+                                                {
+                                                    "name": "exclude_missing",
+                                                    "type": "bool",
+                                                    "optional": true,
+                                                    "description": ""
                                                 }
                                             ]
                                         },
@@ -23932,6 +23938,12 @@
                                                 {
                                                     "name": "freeze_weights",
                                                     "type": "bool",
+                                                    "optional": true,
+                                                    "description": ""
+                                                },
+                                                {
+                                                    "name": "unfrozen_layers",
+                                                    "type": "uint32",
                                                     "optional": true,
                                                     "description": ""
                                                 }
@@ -24438,6 +24450,18 @@
                                             "description": ""
                                         }
                                     ]
+                                },
+                                {
+                                    "name": "hidden",
+                                    "type": "bool",
+                                    "optional": true,
+                                    "description": ""
+                                },
+                                {
+                                    "name": "last_edit_time",
+                                    "type": "uint32",
+                                    "optional": true,
+                                    "description": ""
                                 }
                             ]
                         },
@@ -25368,6 +25392,12 @@
                                                     "type": "uint32",
                                                     "optional": true,
                                                     "description": ""
+                                                },
+                                                {
+                                                    "name": "exclude_missing",
+                                                    "type": "bool",
+                                                    "optional": true,
+                                                    "description": ""
                                                 }
                                             ]
                                         },
@@ -25582,6 +25612,12 @@
                                                 {
                                                     "name": "freeze_weights",
                                                     "type": "bool",
+                                                    "optional": true,
+                                                    "description": ""
+                                                },
+                                                {
+                                                    "name": "unfrozen_layers",
+                                                    "type": "uint32",
                                                     "optional": true,
                                                     "description": ""
                                                 }
@@ -26088,8 +26124,26 @@
                                             "description": ""
                                         }
                                     ]
+                                },
+                                {
+                                    "name": "hidden",
+                                    "type": "bool",
+                                    "optional": true,
+                                    "description": ""
+                                },
+                                {
+                                    "name": "last_edit_time",
+                                    "type": "uint32",
+                                    "optional": true,
+                                    "description": ""
                                 }
                             ]
+                        },
+                        {
+                            "name": "hidden",
+                            "type": "bool",
+                            "optional": true,
+                            "description": ""
                         }
                     ]
                 },
@@ -28270,6 +28324,12 @@
                                             "type": "uint32",
                                             "optional": true,
                                             "description": ""
+                                        },
+                                        {
+                                            "name": "exclude_missing",
+                                            "type": "bool",
+                                            "optional": true,
+                                            "description": ""
                                         }
                                     ]
                                 },
@@ -28484,6 +28544,12 @@
                                         {
                                             "name": "freeze_weights",
                                             "type": "bool",
+                                            "optional": true,
+                                            "description": ""
+                                        },
+                                        {
+                                            "name": "unfrozen_layers",
+                                            "type": "uint32",
                                             "optional": true,
                                             "description": ""
                                         }
@@ -28990,6 +29056,18 @@
                                     "description": ""
                                 }
                             ]
+                        },
+                        {
+                            "name": "hidden",
+                            "type": "bool",
+                            "optional": true,
+                            "description": ""
+                        },
+                        {
+                            "name": "last_edit_time",
+                            "type": "uint32",
+                            "optional": true,
+                            "description": ""
                         }
                     ]
                 },
