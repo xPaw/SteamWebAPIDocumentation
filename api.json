@@ -4719,6 +4719,91 @@
                 }
             ]
         },
+        "GetCommentThread": {
+            "_type": "undocumented",
+            "version": 1,
+            "httpmethod": "POST",
+            "parameters": [
+                {
+                    "name": "key",
+                    "type": "string",
+                    "optional": false,
+                    "description": "Access key"
+                },
+                {
+                    "name": "steamid",
+                    "type": "fixed64",
+                    "optional": true,
+                    "description": ""
+                },
+                {
+                    "name": "comment_thread_type",
+                    "type": "ECommentThreadType",
+                    "optional": true,
+                    "description": ""
+                },
+                {
+                    "name": "gidfeature",
+                    "type": "fixed64",
+                    "optional": true,
+                    "description": ""
+                },
+                {
+                    "name": "gidfeature2",
+                    "type": "fixed64",
+                    "optional": true,
+                    "description": ""
+                },
+                {
+                    "name": "commentthreadid",
+                    "type": "fixed64",
+                    "optional": true,
+                    "description": ""
+                },
+                {
+                    "name": "start",
+                    "type": "int32",
+                    "optional": true,
+                    "description": ""
+                },
+                {
+                    "name": "count",
+                    "type": "int32",
+                    "optional": true,
+                    "description": ""
+                },
+                {
+                    "name": "upvoters",
+                    "type": "int32",
+                    "optional": true,
+                    "description": ""
+                },
+                {
+                    "name": "include_deleted",
+                    "type": "bool",
+                    "optional": true,
+                    "description": ""
+                },
+                {
+                    "name": "gidcomment",
+                    "type": "fixed64",
+                    "optional": true,
+                    "description": ""
+                },
+                {
+                    "name": "time_oldest",
+                    "type": "uint32",
+                    "optional": true,
+                    "description": ""
+                },
+                {
+                    "name": "oldest_first",
+                    "type": "bool",
+                    "optional": true,
+                    "description": ""
+                }
+            ]
+        },
         "GetSingleClanAnnouncement": {
             "_type": "undocumented",
             "version": 1,
@@ -33050,6 +33135,123 @@
                 {
                     "name": "ignore_dlc",
                     "type": "bool",
+                    "optional": true,
+                    "description": ""
+                }
+            ]
+        },
+        "GetDevPageLinks": {
+            "_type": "undocumented",
+            "version": 1,
+            "parameters": [
+                {
+                    "name": "key",
+                    "type": "string",
+                    "optional": false,
+                    "description": "Access key"
+                },
+                {
+                    "name": "appid",
+                    "type": "uint32",
+                    "optional": true,
+                    "description": ""
+                }
+            ]
+        },
+        "GetDevPagesForPartner": {
+            "_type": "undocumented",
+            "version": 1,
+            "parameters": [
+                {
+                    "name": "key",
+                    "type": "string",
+                    "optional": false,
+                    "description": "Access key"
+                },
+                {
+                    "name": "partnerid",
+                    "type": "uint32",
+                    "optional": true,
+                    "description": ""
+                }
+            ]
+        },
+        "SetDevPageLink": {
+            "_type": "undocumented",
+            "version": 1,
+            "httpmethod": "POST",
+            "parameters": [
+                {
+                    "name": "key",
+                    "type": "string",
+                    "optional": false,
+                    "description": "Access key"
+                },
+                {
+                    "name": "appid",
+                    "type": "uint32",
+                    "optional": true,
+                    "description": ""
+                },
+                {
+                    "name": "link",
+                    "type": "CDeveloperPageLink",
+                    "optional": true,
+                    "description": "",
+                    "extra": [
+                        {
+                            "name": "appid",
+                            "type": "uint32",
+                            "optional": true,
+                            "description": ""
+                        },
+                        {
+                            "name": "clan_steamid",
+                            "type": "fixed64",
+                            "optional": true,
+                            "description": ""
+                        },
+                        {
+                            "name": "relation",
+                            "type": "int32",
+                            "optional": true,
+                            "description": ""
+                        },
+                        {
+                            "name": "linkname",
+                            "type": "string",
+                            "optional": true,
+                            "description": ""
+                        },
+                        {
+                            "name": "json",
+                            "type": "string",
+                            "optional": true,
+                            "description": ""
+                        }
+                    ]
+                },
+                {
+                    "name": "remove",
+                    "type": "bool",
+                    "optional": true,
+                    "description": ""
+                },
+                {
+                    "name": "update_json_only",
+                    "type": "bool",
+                    "optional": true,
+                    "description": ""
+                },
+                {
+                    "name": "skip_clan_permissions",
+                    "type": "bool",
+                    "optional": true,
+                    "description": ""
+                },
+                {
+                    "name": "partner_id",
+                    "type": "uint32",
                     "optional": true,
                     "description": ""
                 }
