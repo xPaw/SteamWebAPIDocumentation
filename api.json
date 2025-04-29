@@ -8557,6 +8557,141 @@
             ]
         }
     },
+    "IForumsService": {
+        "GetTopicDetails": {
+            "_type": "undocumented",
+            "version": 1,
+            "parameters": [
+                {
+                    "name": "key",
+                    "type": "string",
+                    "optional": false,
+                    "description": "Access key"
+                },
+                {
+                    "name": "steamid",
+                    "type": "uint64",
+                    "optional": true,
+                    "description": ""
+                },
+                {
+                    "name": "gidforum",
+                    "type": "uint64",
+                    "optional": true,
+                    "description": ""
+                },
+                {
+                    "name": "forumtype",
+                    "type": "string",
+                    "optional": true,
+                    "description": ""
+                },
+                {
+                    "name": "gidfeature",
+                    "type": "uint64",
+                    "optional": true,
+                    "description": ""
+                },
+                {
+                    "name": "gidtopics[0]",
+                    "type": "uint64[]",
+                    "optional": true,
+                    "description": ""
+                },
+                {
+                    "name": "include_preview",
+                    "type": "bool",
+                    "optional": true,
+                    "description": ""
+                },
+                {
+                    "name": "include_full_text",
+                    "type": "bool",
+                    "optional": true,
+                    "description": ""
+                }
+            ]
+        },
+        "ReportPost": {
+            "_type": "undocumented",
+            "version": 1,
+            "httpmethod": "POST",
+            "parameters": [
+                {
+                    "name": "key",
+                    "type": "string",
+                    "optional": false,
+                    "description": "Access key"
+                },
+                {
+                    "name": "steamid",
+                    "type": "uint64",
+                    "optional": true,
+                    "description": ""
+                },
+                {
+                    "name": "forum_type",
+                    "type": "string",
+                    "optional": true,
+                    "description": ""
+                },
+                {
+                    "name": "gidfeature",
+                    "type": "int64",
+                    "optional": true,
+                    "description": ""
+                },
+                {
+                    "name": "gidforum",
+                    "type": "uint64",
+                    "optional": true,
+                    "description": ""
+                },
+                {
+                    "name": "gidtopic",
+                    "type": "uint64",
+                    "optional": true,
+                    "description": ""
+                },
+                {
+                    "name": "gidcomment",
+                    "type": "uint64",
+                    "optional": true,
+                    "description": ""
+                },
+                {
+                    "name": "authorname",
+                    "type": "string",
+                    "optional": true,
+                    "description": ""
+                },
+                {
+                    "name": "reportername",
+                    "type": "string",
+                    "optional": true,
+                    "description": ""
+                },
+                {
+                    "name": "report",
+                    "type": "string",
+                    "optional": true,
+                    "description": ""
+                },
+                {
+                    "name": "report_type",
+                    "type": "int32",
+                    "optional": true,
+                    "description": ""
+                },
+                {
+                    "name": "report_reason",
+                    "type": "int32",
+                    "optional": true,
+                    "description": ""
+                }
+            ]
+        }
+    },
     "IFriendMessagesService": {
         "GetActiveMessageSessions": {
             "_type": "undocumented",
@@ -26240,6 +26375,1693 @@
                 }
             ]
         },
+        "EditProjectConfig": {
+            "_type": "undocumented",
+            "version": 1,
+            "httpmethod": "POST",
+            "parameters": [
+                {
+                    "name": "key",
+                    "type": "string",
+                    "optional": false,
+                    "description": "Access key"
+                },
+                {
+                    "name": "project_config",
+                    "type": "CMsgSteamLearnProjectConfig",
+                    "optional": true,
+                    "description": "",
+                    "extra": [
+                        {
+                            "name": "project_id",
+                            "type": "uint32",
+                            "optional": true,
+                            "description": ""
+                        },
+                        {
+                            "name": "publish_time",
+                            "type": "uint32",
+                            "optional": true,
+                            "description": ""
+                        },
+                        {
+                            "name": "published_version",
+                            "type": "uint32",
+                            "optional": true,
+                            "description": ""
+                        },
+                        {
+                            "name": "data_source_ids[0]",
+                            "type": "uint32[]",
+                            "optional": true,
+                            "description": ""
+                        },
+                        {
+                            "name": "data_source_element_usages[0]",
+                            "type": "CMsgSteamLearnDataSourceElementUsage[]",
+                            "optional": true,
+                            "description": "",
+                            "extra": [
+                                {
+                                    "name": "data_source_id",
+                                    "type": "uint32",
+                                    "optional": true,
+                                    "description": ""
+                                },
+                                {
+                                    "name": "data_element_path",
+                                    "type": "string",
+                                    "optional": true,
+                                    "description": ""
+                                },
+                                {
+                                    "name": "is_string",
+                                    "type": "bool",
+                                    "optional": true,
+                                    "description": ""
+                                },
+                                {
+                                    "name": "input",
+                                    "type": "uint32",
+                                    "optional": true,
+                                    "description": ""
+                                },
+                                {
+                                    "name": "sql_column",
+                                    "type": "uint32",
+                                    "optional": true,
+                                    "description": ""
+                                },
+                                {
+                                    "name": "preprocessing_type",
+                                    "type": "int32",
+                                    "optional": true,
+                                    "description": ""
+                                },
+                                {
+                                    "name": "min_range",
+                                    "type": "float",
+                                    "optional": true,
+                                    "description": ""
+                                },
+                                {
+                                    "name": "max_range",
+                                    "type": "float",
+                                    "optional": true,
+                                    "description": ""
+                                },
+                                {
+                                    "name": "std_dev",
+                                    "type": "float",
+                                    "optional": true,
+                                    "description": ""
+                                },
+                                {
+                                    "name": "compact_table",
+                                    "type": "string",
+                                    "optional": true,
+                                    "description": ""
+                                },
+                                {
+                                    "name": "compact_table_count",
+                                    "type": "uint32",
+                                    "optional": true,
+                                    "description": ""
+                                },
+                                {
+                                    "name": "sequence_table",
+                                    "type": "string",
+                                    "optional": true,
+                                    "description": ""
+                                },
+                                {
+                                    "name": "sequence_table_count",
+                                    "type": "uint32",
+                                    "optional": true,
+                                    "description": ""
+                                },
+                                {
+                                    "name": "sort_sequence",
+                                    "type": "bool",
+                                    "optional": true,
+                                    "description": ""
+                                },
+                                {
+                                    "name": "sequence_min_length",
+                                    "type": "uint32",
+                                    "optional": true,
+                                    "description": ""
+                                },
+                                {
+                                    "name": "table_full_sample",
+                                    "type": "bool",
+                                    "optional": true,
+                                    "description": ""
+                                },
+                                {
+                                    "name": "sequence_prefix_frequency",
+                                    "type": "float",
+                                    "optional": true,
+                                    "description": ""
+                                },
+                                {
+                                    "name": "other_project_id",
+                                    "type": "uint32",
+                                    "optional": true,
+                                    "description": ""
+                                },
+                                {
+                                    "name": "other_fetch_id",
+                                    "type": "uint32",
+                                    "optional": true,
+                                    "description": ""
+                                }
+                            ]
+                        },
+                        {
+                            "name": "project_nodes[0]",
+                            "type": "CMsgSteamLearnProjectNode[]",
+                            "optional": true,
+                            "description": "",
+                            "extra": [
+                                {
+                                    "name": "node_id",
+                                    "type": "uint32",
+                                    "optional": true,
+                                    "description": ""
+                                },
+                                {
+                                    "name": "location_x",
+                                    "type": "int32",
+                                    "optional": true,
+                                    "description": ""
+                                },
+                                {
+                                    "name": "location_y",
+                                    "type": "int32",
+                                    "optional": true,
+                                    "description": ""
+                                },
+                                {
+                                    "name": "comment",
+                                    "type": "string",
+                                    "optional": true,
+                                    "description": ""
+                                },
+                                {
+                                    "name": "type",
+                                    "type": "int32",
+                                    "optional": true,
+                                    "description": ""
+                                },
+                                {
+                                    "name": "connectors[0]",
+                                    "type": "CMsgSteamLearnProjectNodeConnector[]",
+                                    "optional": true,
+                                    "description": "",
+                                    "extra": [
+                                        {
+                                            "name": "connector_id",
+                                            "type": "uint32",
+                                            "optional": true,
+                                            "description": ""
+                                        },
+                                        {
+                                            "name": "linked_connector_ids[0]",
+                                            "type": "uint32[]",
+                                            "optional": true,
+                                            "description": ""
+                                        },
+                                        {
+                                            "name": "is_input_connector",
+                                            "type": "bool",
+                                            "optional": true,
+                                            "description": ""
+                                        }
+                                    ]
+                                },
+                                {
+                                    "name": "input",
+                                    "type": "CMsgSteamLearnModelNodeInput",
+                                    "optional": true,
+                                    "description": "",
+                                    "extra": [
+                                        {
+                                            "name": "input_num",
+                                            "type": "uint32",
+                                            "optional": true,
+                                            "description": ""
+                                        },
+                                        {
+                                            "name": "inference_iterate",
+                                            "type": "bool",
+                                            "optional": true,
+                                            "description": ""
+                                        }
+                                    ]
+                                },
+                                {
+                                    "name": "dense",
+                                    "type": "CMsgSteamLearnModelNodeDense",
+                                    "optional": true,
+                                    "description": "",
+                                    "extra": [
+                                        {
+                                            "name": "activation",
+                                            "type": "int32",
+                                            "optional": true,
+                                            "description": ""
+                                        },
+                                        {
+                                            "name": "width",
+                                            "type": "uint32",
+                                            "optional": true,
+                                            "description": ""
+                                        },
+                                        {
+                                            "name": "regularization",
+                                            "type": "int32",
+                                            "optional": true,
+                                            "description": ""
+                                        }
+                                    ]
+                                },
+                                {
+                                    "name": "dense_stack",
+                                    "type": "CMsgSteamLearnModelNodeDenseStack",
+                                    "optional": true,
+                                    "description": "",
+                                    "extra": [
+                                        {
+                                            "name": "activation",
+                                            "type": "int32",
+                                            "optional": true,
+                                            "description": ""
+                                        },
+                                        {
+                                            "name": "width[0]",
+                                            "type": "uint32[]",
+                                            "optional": true,
+                                            "description": ""
+                                        },
+                                        {
+                                            "name": "dropout_pct",
+                                            "type": "uint32",
+                                            "optional": true,
+                                            "description": ""
+                                        },
+                                        {
+                                            "name": "regularization",
+                                            "type": "int32",
+                                            "optional": true,
+                                            "description": ""
+                                        }
+                                    ]
+                                },
+                                {
+                                    "name": "dropout",
+                                    "type": "CMsgSteamLearnModelNodeDropout",
+                                    "optional": true,
+                                    "description": "",
+                                    "extra": [
+                                        {
+                                            "name": "dropout_pct",
+                                            "type": "uint32",
+                                            "optional": true,
+                                            "description": ""
+                                        }
+                                    ]
+                                },
+                                {
+                                    "name": "embedding",
+                                    "type": "CMsgSteamLearnModelNodeEmbedding",
+                                    "optional": true,
+                                    "description": "",
+                                    "extra": [
+                                        {
+                                            "name": "max_value",
+                                            "type": "uint32",
+                                            "optional": true,
+                                            "description": ""
+                                        },
+                                        {
+                                            "name": "compact_table",
+                                            "type": "string",
+                                            "optional": true,
+                                            "description": ""
+                                        },
+                                        {
+                                            "name": "embedding_width",
+                                            "type": "uint32",
+                                            "optional": true,
+                                            "description": ""
+                                        },
+                                        {
+                                            "name": "flatten",
+                                            "type": "bool",
+                                            "optional": true,
+                                            "description": ""
+                                        },
+                                        {
+                                            "name": "export_name",
+                                            "type": "string",
+                                            "optional": true,
+                                            "description": ""
+                                        },
+                                        {
+                                            "name": "embed_name",
+                                            "type": "string",
+                                            "optional": true,
+                                            "description": ""
+                                        }
+                                    ]
+                                },
+                                {
+                                    "name": "train",
+                                    "type": "CMsgSteamLearnModelNodeTrain",
+                                    "optional": true,
+                                    "description": "",
+                                    "extra": [
+                                        {
+                                            "name": "input_count",
+                                            "type": "uint32",
+                                            "optional": true,
+                                            "description": ""
+                                        },
+                                        {
+                                            "name": "activation",
+                                            "type": "int32",
+                                            "optional": true,
+                                            "description": ""
+                                        },
+                                        {
+                                            "name": "width",
+                                            "type": "uint32",
+                                            "optional": true,
+                                            "description": ""
+                                        },
+                                        {
+                                            "name": "compact_table",
+                                            "type": "string",
+                                            "optional": true,
+                                            "description": ""
+                                        },
+                                        {
+                                            "name": "loss",
+                                            "type": "int32",
+                                            "optional": true,
+                                            "description": ""
+                                        },
+                                        {
+                                            "name": "learning_rate",
+                                            "type": "float",
+                                            "optional": true,
+                                            "description": ""
+                                        },
+                                        {
+                                            "name": "uses_weight_mask",
+                                            "type": "bool",
+                                            "optional": true,
+                                            "description": ""
+                                        }
+                                    ]
+                                },
+                                {
+                                    "name": "conditional_extract",
+                                    "type": "CMsgSteamLearnModelNodeConditionalExtract",
+                                    "optional": true,
+                                    "description": "",
+                                    "extra": [
+                                        {
+                                            "name": "extract_filter_type",
+                                            "type": "int32",
+                                            "optional": true,
+                                            "description": ""
+                                        },
+                                        {
+                                            "name": "extract_weight_type",
+                                            "type": "int32",
+                                            "optional": true,
+                                            "description": ""
+                                        },
+                                        {
+                                            "name": "filter_info",
+                                            "type": "CMsgSteamLearnModelNodeConditionalExtract_FilterInfo",
+                                            "optional": true,
+                                            "description": "",
+                                            "extra": [
+                                                {
+                                                    "name": "appid_release_recency_months",
+                                                    "type": "uint32",
+                                                    "optional": true,
+                                                    "description": ""
+                                                },
+                                                {
+                                                    "name": "appid_publisher_id",
+                                                    "type": "uint32",
+                                                    "optional": true,
+                                                    "description": ""
+                                                },
+                                                {
+                                                    "name": "appid_featured_tag_id",
+                                                    "type": "uint32",
+                                                    "optional": true,
+                                                    "description": ""
+                                                },
+                                                {
+                                                    "name": "appid_theme_tag_id",
+                                                    "type": "uint32",
+                                                    "optional": true,
+                                                    "description": ""
+                                                }
+                                            ]
+                                        },
+                                        {
+                                            "name": "weight_info",
+                                            "type": "CMsgSteamLearnModelNodeConditionalExtract_WeightInfo",
+                                            "optional": true,
+                                            "description": "",
+                                            "extra": [
+                                                {
+                                                    "name": "appid_release_recency_bias",
+                                                    "type": "float",
+                                                    "optional": true,
+                                                    "description": ""
+                                                },
+                                                {
+                                                    "name": "input_number",
+                                                    "type": "uint32",
+                                                    "optional": true,
+                                                    "description": ""
+                                                },
+                                                {
+                                                    "name": "input_strength",
+                                                    "type": "float",
+                                                    "optional": true,
+                                                    "description": ""
+                                                }
+                                            ]
+                                        },
+                                        {
+                                            "name": "compact_table",
+                                            "type": "string",
+                                            "optional": true,
+                                            "description": ""
+                                        },
+                                        {
+                                            "name": "extracted_compact_table",
+                                            "type": "string",
+                                            "optional": true,
+                                            "description": ""
+                                        }
+                                    ]
+                                },
+                                {
+                                    "name": "concatenate",
+                                    "type": "CMsgSteamLearnModelNodeConcatenate",
+                                    "optional": true,
+                                    "description": "",
+                                    "extra": [
+                                        {
+                                            "name": "axis",
+                                            "type": "uint32",
+                                            "optional": true,
+                                            "description": ""
+                                        }
+                                    ]
+                                },
+                                {
+                                    "name": "shuffle",
+                                    "type": "CMsgSteamLearnModelNodeShuffle",
+                                    "optional": true,
+                                    "description": "",
+                                    "extra": [
+                                        {
+                                            "name": "exclude_zeroes",
+                                            "type": "bool",
+                                            "optional": true,
+                                            "description": ""
+                                        }
+                                    ]
+                                },
+                                {
+                                    "name": "synced_shuffle",
+                                    "type": "CMsgSteamLearnModelNodeSyncedShuffle",
+                                    "optional": true,
+                                    "description": "",
+                                    "extra": [
+                                        {
+                                            "name": "exclude_zeroes",
+                                            "type": "bool",
+                                            "optional": true,
+                                            "description": ""
+                                        }
+                                    ]
+                                },
+                                {
+                                    "name": "onehot",
+                                    "type": "CMsgSteamLearnModelNodeOnehot",
+                                    "optional": true,
+                                    "description": "",
+                                    "extra": [
+                                        {
+                                            "name": "width",
+                                            "type": "uint32",
+                                            "optional": true,
+                                            "description": ""
+                                        },
+                                        {
+                                            "name": "compact_table",
+                                            "type": "string",
+                                            "optional": true,
+                                            "description": ""
+                                        },
+                                        {
+                                            "name": "multi_hot",
+                                            "type": "bool",
+                                            "optional": true,
+                                            "description": ""
+                                        }
+                                    ]
+                                },
+                                {
+                                    "name": "explode",
+                                    "type": "CMsgSteamLearnModelNodeExplode",
+                                    "optional": true,
+                                    "description": ""
+                                },
+                                {
+                                    "name": "conditional_swap",
+                                    "type": "CMsgSteamLearnModelNodeConditionalSwap",
+                                    "optional": true,
+                                    "description": ""
+                                },
+                                {
+                                    "name": "kmeans",
+                                    "type": "CMsgSteamLearnModelNodeKMeansCluster",
+                                    "optional": true,
+                                    "description": "",
+                                    "extra": [
+                                        {
+                                            "name": "num_clusters",
+                                            "type": "uint32",
+                                            "optional": true,
+                                            "description": ""
+                                        },
+                                        {
+                                            "name": "name",
+                                            "type": "string",
+                                            "optional": true,
+                                            "description": ""
+                                        },
+                                        {
+                                            "name": "generate_clusters",
+                                            "type": "bool",
+                                            "optional": true,
+                                            "description": ""
+                                        }
+                                    ]
+                                },
+                                {
+                                    "name": "combine",
+                                    "type": "CMsgSteamLearnModelNodeCombine",
+                                    "optional": true,
+                                    "description": ""
+                                },
+                                {
+                                    "name": "text_vectorization",
+                                    "type": "CMsgSteamLearnModelNodeTextVectorization",
+                                    "optional": true,
+                                    "description": "",
+                                    "extra": [
+                                        {
+                                            "name": "vocabulary_size",
+                                            "type": "uint32",
+                                            "optional": true,
+                                            "description": ""
+                                        },
+                                        {
+                                            "name": "standardize",
+                                            "type": "int32",
+                                            "optional": true,
+                                            "description": ""
+                                        },
+                                        {
+                                            "name": "output",
+                                            "type": "int32",
+                                            "optional": true,
+                                            "description": ""
+                                        },
+                                        {
+                                            "name": "sequence_length",
+                                            "type": "uint32",
+                                            "optional": true,
+                                            "description": ""
+                                        },
+                                        {
+                                            "name": "split",
+                                            "type": "int32",
+                                            "optional": true,
+                                            "description": ""
+                                        },
+                                        {
+                                            "name": "ngrams",
+                                            "type": "uint32",
+                                            "optional": true,
+                                            "description": ""
+                                        },
+                                        {
+                                            "name": "other_project_id",
+                                            "type": "uint32",
+                                            "optional": true,
+                                            "description": ""
+                                        },
+                                        {
+                                            "name": "other_fetch_id",
+                                            "type": "uint32",
+                                            "optional": true,
+                                            "description": ""
+                                        }
+                                    ]
+                                },
+                                {
+                                    "name": "batch_normalization",
+                                    "type": "CMsgSteamLearnModelNodeBatchNormalization",
+                                    "optional": true,
+                                    "description": ""
+                                },
+                                {
+                                    "name": "normalize",
+                                    "type": "CMsgSteamLearnModelNodeNormalize",
+                                    "optional": true,
+                                    "description": ""
+                                },
+                                {
+                                    "name": "named_inference",
+                                    "type": "CMsgSteamLearnModelNodeNamedInference",
+                                    "optional": true,
+                                    "description": "",
+                                    "extra": [
+                                        {
+                                            "name": "name",
+                                            "type": "string",
+                                            "optional": true,
+                                            "description": ""
+                                        },
+                                        {
+                                            "name": "only_inference",
+                                            "type": "bool",
+                                            "optional": true,
+                                            "description": ""
+                                        }
+                                    ]
+                                },
+                                {
+                                    "name": "dot",
+                                    "type": "CMsgSteamLearnModelNodeDot",
+                                    "optional": true,
+                                    "description": "",
+                                    "extra": [
+                                        {
+                                            "name": "normalize",
+                                            "type": "bool",
+                                            "optional": true,
+                                            "description": ""
+                                        }
+                                    ]
+                                },
+                                {
+                                    "name": "extract",
+                                    "type": "CMsgSteamLearnModelNodeExtract",
+                                    "optional": true,
+                                    "description": "",
+                                    "extra": [
+                                        {
+                                            "name": "input_type",
+                                            "type": "int32",
+                                            "optional": true,
+                                            "description": ""
+                                        },
+                                        {
+                                            "name": "mode",
+                                            "type": "int32",
+                                            "optional": true,
+                                            "description": ""
+                                        },
+                                        {
+                                            "name": "exclusion",
+                                            "type": "int32",
+                                            "optional": true,
+                                            "description": ""
+                                        },
+                                        {
+                                            "name": "selection",
+                                            "type": "int32",
+                                            "optional": true,
+                                            "description": ""
+                                        },
+                                        {
+                                            "name": "bias_start",
+                                            "type": "float",
+                                            "optional": true,
+                                            "description": ""
+                                        },
+                                        {
+                                            "name": "bias_end",
+                                            "type": "float",
+                                            "optional": true,
+                                            "description": ""
+                                        },
+                                        {
+                                            "name": "input_bias_input_number",
+                                            "type": "uint32",
+                                            "optional": true,
+                                            "description": ""
+                                        },
+                                        {
+                                            "name": "input_bias_strength",
+                                            "type": "float",
+                                            "optional": true,
+                                            "description": ""
+                                        },
+                                        {
+                                            "name": "positive_sample_percent",
+                                            "type": "uint32",
+                                            "optional": true,
+                                            "description": ""
+                                        },
+                                        {
+                                            "name": "compact_table",
+                                            "type": "string",
+                                            "optional": true,
+                                            "description": ""
+                                        },
+                                        {
+                                            "name": "extracted_compact_table",
+                                            "type": "string",
+                                            "optional": true,
+                                            "description": ""
+                                        },
+                                        {
+                                            "name": "recency_months",
+                                            "type": "uint32",
+                                            "optional": true,
+                                            "description": ""
+                                        },
+                                        {
+                                            "name": "fest_name",
+                                            "type": "string",
+                                            "optional": true,
+                                            "description": ""
+                                        }
+                                    ]
+                                },
+                                {
+                                    "name": "conv_1d",
+                                    "type": "CMsgSteamLearnModelNodeConv1D",
+                                    "optional": true,
+                                    "description": "",
+                                    "extra": [
+                                        {
+                                            "name": "filters",
+                                            "type": "uint32",
+                                            "optional": true,
+                                            "description": ""
+                                        },
+                                        {
+                                            "name": "kernel_size",
+                                            "type": "uint32",
+                                            "optional": true,
+                                            "description": ""
+                                        },
+                                        {
+                                            "name": "strides",
+                                            "type": "uint32",
+                                            "optional": true,
+                                            "description": ""
+                                        },
+                                        {
+                                            "name": "activation",
+                                            "type": "int32",
+                                            "optional": true,
+                                            "description": ""
+                                        }
+                                    ]
+                                },
+                                {
+                                    "name": "max_pooling_1d",
+                                    "type": "CMsgSteamLearnModelNodeMaxPooling1D",
+                                    "optional": true,
+                                    "description": "",
+                                    "extra": [
+                                        {
+                                            "name": "pool_size",
+                                            "type": "uint32",
+                                            "optional": true,
+                                            "description": ""
+                                        },
+                                        {
+                                            "name": "strides",
+                                            "type": "uint32",
+                                            "optional": true,
+                                            "description": ""
+                                        }
+                                    ]
+                                },
+                                {
+                                    "name": "flatten",
+                                    "type": "CMsgSteamLearnModelNodeFlatten",
+                                    "optional": true,
+                                    "description": ""
+                                },
+                                {
+                                    "name": "global_max_pooling",
+                                    "type": "CMsgSteamLearnModelNodeGlobalMaxPooling1D",
+                                    "optional": true,
+                                    "description": ""
+                                },
+                                {
+                                    "name": "transformer",
+                                    "type": "CMsgSteamLearnModelNodeTransformer",
+                                    "optional": true,
+                                    "description": "",
+                                    "extra": [
+                                        {
+                                            "name": "num_heads",
+                                            "type": "uint32",
+                                            "optional": true,
+                                            "description": ""
+                                        },
+                                        {
+                                            "name": "feedforward_size",
+                                            "type": "uint32",
+                                            "optional": true,
+                                            "description": ""
+                                        },
+                                        {
+                                            "name": "dropout_pct",
+                                            "type": "uint32",
+                                            "optional": true,
+                                            "description": ""
+                                        },
+                                        {
+                                            "name": "num_internal_blocks",
+                                            "type": "uint32",
+                                            "optional": true,
+                                            "description": ""
+                                        },
+                                        {
+                                            "name": "regularization",
+                                            "type": "int32",
+                                            "optional": true,
+                                            "description": ""
+                                        }
+                                    ]
+                                },
+                                {
+                                    "name": "external_embedding",
+                                    "type": "CMsgSteamLearnModelNodeExternalEmbedding",
+                                    "optional": true,
+                                    "description": "",
+                                    "extra": [
+                                        {
+                                            "name": "project_id",
+                                            "type": "uint32",
+                                            "optional": true,
+                                            "description": ""
+                                        },
+                                        {
+                                            "name": "train_id",
+                                            "type": "uint32",
+                                            "optional": true,
+                                            "description": ""
+                                        },
+                                        {
+                                            "name": "embedding_name",
+                                            "type": "string",
+                                            "optional": true,
+                                            "description": ""
+                                        },
+                                        {
+                                            "name": "compact_table",
+                                            "type": "string",
+                                            "optional": true,
+                                            "description": ""
+                                        },
+                                        {
+                                            "name": "fetch_id",
+                                            "type": "uint32",
+                                            "optional": true,
+                                            "description": ""
+                                        },
+                                        {
+                                            "name": "exclude_missing",
+                                            "type": "bool",
+                                            "optional": true,
+                                            "description": ""
+                                        }
+                                    ]
+                                },
+                                {
+                                    "name": "time_distributed_dense",
+                                    "type": "CMsgSteamLearnModelNodeTimeDistributedDense",
+                                    "optional": true,
+                                    "description": "",
+                                    "extra": [
+                                        {
+                                            "name": "activation",
+                                            "type": "int32",
+                                            "optional": true,
+                                            "description": ""
+                                        },
+                                        {
+                                            "name": "width",
+                                            "type": "uint32",
+                                            "optional": true,
+                                            "description": ""
+                                        }
+                                    ]
+                                },
+                                {
+                                    "name": "sequence_split",
+                                    "type": "CMsgSteamLearnModelNodeSequenceSplit",
+                                    "optional": true,
+                                    "description": "",
+                                    "extra": [
+                                        {
+                                            "name": "head_split_chance",
+                                            "type": "uint32",
+                                            "optional": true,
+                                            "description": ""
+                                        },
+                                        {
+                                            "name": "mid_split_chance",
+                                            "type": "uint32",
+                                            "optional": true,
+                                            "description": ""
+                                        },
+                                        {
+                                            "name": "tail_split_chance",
+                                            "type": "uint32",
+                                            "optional": true,
+                                            "description": ""
+                                        },
+                                        {
+                                            "name": "sequence_table_name",
+                                            "type": "string",
+                                            "optional": true,
+                                            "description": ""
+                                        },
+                                        {
+                                            "name": "compact_table_name",
+                                            "type": "string",
+                                            "optional": true,
+                                            "description": ""
+                                        }
+                                    ]
+                                },
+                                {
+                                    "name": "weighted_average",
+                                    "type": "CMsgSteamLearnModelNodeWeightedAverage",
+                                    "optional": true,
+                                    "description": "",
+                                    "extra": [
+                                        {
+                                            "name": "axis",
+                                            "type": "uint32",
+                                            "optional": true,
+                                            "description": ""
+                                        },
+                                        {
+                                            "name": "use_weights",
+                                            "type": "bool",
+                                            "optional": true,
+                                            "description": ""
+                                        }
+                                    ]
+                                },
+                                {
+                                    "name": "global_avg_pooling_1d",
+                                    "type": "CMsgSteamLearnModelNodeGlobalAvgPooling1D",
+                                    "optional": true,
+                                    "description": ""
+                                },
+                                {
+                                    "name": "token_mask",
+                                    "type": "CMsgSteamLearnModelNodeTokenMask",
+                                    "optional": true,
+                                    "description": "",
+                                    "extra": [
+                                        {
+                                            "name": "mask_pct",
+                                            "type": "uint32",
+                                            "optional": true,
+                                            "description": ""
+                                        },
+                                        {
+                                            "name": "mask_count_limit",
+                                            "type": "uint32",
+                                            "optional": true,
+                                            "description": ""
+                                        },
+                                        {
+                                            "name": "random_pct",
+                                            "type": "uint32",
+                                            "optional": true,
+                                            "description": ""
+                                        },
+                                        {
+                                            "name": "keep_pct",
+                                            "type": "uint32",
+                                            "optional": true,
+                                            "description": ""
+                                        }
+                                    ]
+                                },
+                                {
+                                    "name": "masked_head",
+                                    "type": "CMsgSteamLearnModelNodeMaskedHead",
+                                    "optional": true,
+                                    "description": ""
+                                },
+                                {
+                                    "name": "token_transformer",
+                                    "type": "CMsgSteamLearnModelNodeTokenTransformer",
+                                    "optional": true,
+                                    "description": "",
+                                    "extra": [
+                                        {
+                                            "name": "vocabulary_size",
+                                            "type": "uint32",
+                                            "optional": true,
+                                            "description": ""
+                                        },
+                                        {
+                                            "name": "sequence_length",
+                                            "type": "uint32",
+                                            "optional": true,
+                                            "description": ""
+                                        },
+                                        {
+                                            "name": "embedding_width",
+                                            "type": "uint32",
+                                            "optional": true,
+                                            "description": ""
+                                        },
+                                        {
+                                            "name": "transformer_layers",
+                                            "type": "uint32",
+                                            "optional": true,
+                                            "description": ""
+                                        },
+                                        {
+                                            "name": "transformer_dim",
+                                            "type": "uint32",
+                                            "optional": true,
+                                            "description": ""
+                                        },
+                                        {
+                                            "name": "transformer_heads",
+                                            "type": "uint32",
+                                            "optional": true,
+                                            "description": ""
+                                        },
+                                        {
+                                            "name": "transformer_dropout_pct",
+                                            "type": "uint32",
+                                            "optional": true,
+                                            "description": ""
+                                        },
+                                        {
+                                            "name": "compact_table",
+                                            "type": "string",
+                                            "optional": true,
+                                            "description": ""
+                                        },
+                                        {
+                                            "name": "is_causal",
+                                            "type": "bool",
+                                            "optional": true,
+                                            "description": ""
+                                        }
+                                    ]
+                                },
+                                {
+                                    "name": "external_model",
+                                    "type": "CMsgSteamLearnModelNodeExternalModel",
+                                    "optional": true,
+                                    "description": "",
+                                    "extra": [
+                                        {
+                                            "name": "project_id",
+                                            "type": "uint32",
+                                            "optional": true,
+                                            "description": ""
+                                        },
+                                        {
+                                            "name": "train_id",
+                                            "type": "uint32",
+                                            "optional": true,
+                                            "description": ""
+                                        },
+                                        {
+                                            "name": "named_inference_name",
+                                            "type": "string",
+                                            "optional": true,
+                                            "description": ""
+                                        },
+                                        {
+                                            "name": "freeze_weights",
+                                            "type": "bool",
+                                            "optional": true,
+                                            "description": ""
+                                        },
+                                        {
+                                            "name": "unfrozen_layers",
+                                            "type": "uint32",
+                                            "optional": true,
+                                            "description": ""
+                                        }
+                                    ]
+                                },
+                                {
+                                    "name": "reshape_2d",
+                                    "type": "CMsgSteamLearnModelNodeReshape2D",
+                                    "optional": true,
+                                    "description": "",
+                                    "extra": [
+                                        {
+                                            "name": "dimension",
+                                            "type": "uint32",
+                                            "optional": true,
+                                            "description": ""
+                                        }
+                                    ]
+                                },
+                                {
+                                    "name": "row_extract",
+                                    "type": "CMsgSteamLearnModelNodeRowExtract",
+                                    "optional": true,
+                                    "description": "",
+                                    "extra": [
+                                        {
+                                            "name": "row",
+                                            "type": "int32",
+                                            "optional": true,
+                                            "description": ""
+                                        }
+                                    ]
+                                }
+                            ]
+                        },
+                        {
+                            "name": "snapshot_config",
+                            "type": "CMsgSteamLearnProjectSnapshotConfig",
+                            "optional": true,
+                            "description": "",
+                            "extra": [
+                                {
+                                    "name": "snapshot_type",
+                                    "type": "int32",
+                                    "optional": true,
+                                    "description": ""
+                                },
+                                {
+                                    "name": "config_account_ids",
+                                    "type": "CMsgSteamLearnProjectSnapshotConfigAccountIDs",
+                                    "optional": true,
+                                    "description": "",
+                                    "extra": [
+                                        {
+                                            "name": "percent",
+                                            "type": "uint32",
+                                            "optional": true,
+                                            "description": ""
+                                        },
+                                        {
+                                            "name": "activity_recency_days",
+                                            "type": "uint32",
+                                            "optional": true,
+                                            "description": ""
+                                        },
+                                        {
+                                            "name": "filter",
+                                            "type": "int32",
+                                            "optional": true,
+                                            "description": ""
+                                        }
+                                    ]
+                                },
+                                {
+                                    "name": "config_app_ids",
+                                    "type": "CMsgSteamLearnProjectSnapshotConfigAppIDs",
+                                    "optional": true,
+                                    "description": "",
+                                    "extra": [
+                                        {
+                                            "name": "percent",
+                                            "type": "uint32",
+                                            "optional": true,
+                                            "description": ""
+                                        },
+                                        {
+                                            "name": "release_recency_days",
+                                            "type": "uint32",
+                                            "optional": true,
+                                            "description": ""
+                                        }
+                                    ]
+                                },
+                                {
+                                    "name": "config_other_project",
+                                    "type": "CMsgSteamLearnProjectSnapshotConfigOtherProject",
+                                    "optional": true,
+                                    "description": "",
+                                    "extra": [
+                                        {
+                                            "name": "project_id",
+                                            "type": "uint32",
+                                            "optional": true,
+                                            "description": ""
+                                        },
+                                        {
+                                            "name": "published_version",
+                                            "type": "uint32",
+                                            "optional": true,
+                                            "description": ""
+                                        }
+                                    ]
+                                },
+                                {
+                                    "name": "snapshot_schedule_type",
+                                    "type": "int32",
+                                    "optional": true,
+                                    "description": ""
+                                },
+                                {
+                                    "name": "snapshot_schedule_day_of_week",
+                                    "type": "uint32",
+                                    "optional": true,
+                                    "description": ""
+                                },
+                                {
+                                    "name": "snapshot_schedule_day_of_month",
+                                    "type": "uint32",
+                                    "optional": true,
+                                    "description": ""
+                                },
+                                {
+                                    "name": "compress",
+                                    "type": "bool",
+                                    "optional": true,
+                                    "description": ""
+                                },
+                                {
+                                    "name": "job_count",
+                                    "type": "uint32",
+                                    "optional": true,
+                                    "description": ""
+                                },
+                                {
+                                    "name": "snapshot_schedule_hour_of_day",
+                                    "type": "uint32",
+                                    "optional": true,
+                                    "description": ""
+                                },
+                                {
+                                    "name": "config_data_source",
+                                    "type": "CMsgSteamLearnProjectSnapshotConfigDataSource",
+                                    "optional": true,
+                                    "description": "",
+                                    "extra": [
+                                        {
+                                            "name": "data_source_id",
+                                            "type": "uint32",
+                                            "optional": true,
+                                            "description": ""
+                                        }
+                                    ]
+                                }
+                            ]
+                        },
+                        {
+                            "name": "train_config",
+                            "type": "CMsgSteamLearnTrainConfig",
+                            "optional": true,
+                            "description": "",
+                            "extra": [
+                                {
+                                    "name": "fetch_workers",
+                                    "type": "uint32",
+                                    "optional": true,
+                                    "description": ""
+                                },
+                                {
+                                    "name": "fetch_chunk_size",
+                                    "type": "uint32",
+                                    "optional": true,
+                                    "description": ""
+                                },
+                                {
+                                    "name": "train_batch_size",
+                                    "type": "uint32",
+                                    "optional": true,
+                                    "description": ""
+                                },
+                                {
+                                    "name": "train_epoch_count",
+                                    "type": "uint32",
+                                    "optional": true,
+                                    "description": ""
+                                },
+                                {
+                                    "name": "train_loss_improvement_threshold",
+                                    "type": "float",
+                                    "optional": true,
+                                    "description": ""
+                                },
+                                {
+                                    "name": "train_no_loss_improvement_epoch_limit",
+                                    "type": "uint32",
+                                    "optional": true,
+                                    "description": ""
+                                },
+                                {
+                                    "name": "train_optimizer",
+                                    "type": "int32",
+                                    "optional": true,
+                                    "description": ""
+                                },
+                                {
+                                    "name": "train_learning_rate",
+                                    "type": "float",
+                                    "optional": true,
+                                    "description": ""
+                                },
+                                {
+                                    "name": "train_gpu",
+                                    "type": "int32",
+                                    "optional": true,
+                                    "description": ""
+                                },
+                                {
+                                    "name": "gpu_count",
+                                    "type": "uint32",
+                                    "optional": true,
+                                    "description": ""
+                                },
+                                {
+                                    "name": "mixed_precision",
+                                    "type": "bool",
+                                    "optional": true,
+                                    "description": ""
+                                },
+                                {
+                                    "name": "train_weight_decay",
+                                    "type": "float",
+                                    "optional": true,
+                                    "description": ""
+                                },
+                                {
+                                    "name": "train_clip_norm",
+                                    "type": "float",
+                                    "optional": true,
+                                    "description": ""
+                                },
+                                {
+                                    "name": "use_class_weights",
+                                    "type": "bool",
+                                    "optional": true,
+                                    "description": ""
+                                },
+                                {
+                                    "name": "train_warmup_steps",
+                                    "type": "uint32",
+                                    "optional": true,
+                                    "description": ""
+                                },
+                                {
+                                    "name": "train_warmup_start",
+                                    "type": "float",
+                                    "optional": true,
+                                    "description": ""
+                                },
+                                {
+                                    "name": "train_decay_steps",
+                                    "type": "int32",
+                                    "optional": true,
+                                    "description": ""
+                                },
+                                {
+                                    "name": "train_decay_rate",
+                                    "type": "float",
+                                    "optional": true,
+                                    "description": ""
+                                },
+                                {
+                                    "name": "profile_epoch",
+                                    "type": "uint32",
+                                    "optional": true,
+                                    "description": ""
+                                },
+                                {
+                                    "name": "profile_start_batch",
+                                    "type": "uint32",
+                                    "optional": true,
+                                    "description": ""
+                                },
+                                {
+                                    "name": "profile_end_batch",
+                                    "type": "uint32",
+                                    "optional": true,
+                                    "description": ""
+                                }
+                            ]
+                        },
+                        {
+                            "name": "snapshot_filter",
+                            "type": "CMsgSteamLearnProjectSnapshotFilter",
+                            "optional": true,
+                            "description": "",
+                            "extra": [
+                                {
+                                    "name": "sample_reduce_percent",
+                                    "type": "uint32",
+                                    "optional": true,
+                                    "description": ""
+                                },
+                                {
+                                    "name": "histogram",
+                                    "type": "CMsgSteamLearnProjectSnapshotFilterHistogram",
+                                    "optional": true,
+                                    "description": "",
+                                    "extra": [
+                                        {
+                                            "name": "data_element_path",
+                                            "type": "string",
+                                            "optional": true,
+                                            "description": ""
+                                        },
+                                        {
+                                            "name": "min_value",
+                                            "type": "float",
+                                            "optional": true,
+                                            "description": ""
+                                        },
+                                        {
+                                            "name": "max_value",
+                                            "type": "float",
+                                            "optional": true,
+                                            "description": ""
+                                        },
+                                        {
+                                            "name": "num_buckets",
+                                            "type": "uint32",
+                                            "optional": true,
+                                            "description": ""
+                                        }
+                                    ]
+                                },
+                                {
+                                    "name": "filter_range",
+                                    "type": "CMsgSteamLearnProjectSnapshotFilterRange",
+                                    "optional": true,
+                                    "description": "",
+                                    "extra": [
+                                        {
+                                            "name": "data_element_path",
+                                            "type": "string",
+                                            "optional": true,
+                                            "description": ""
+                                        },
+                                        {
+                                            "name": "min_value",
+                                            "type": "float",
+                                            "optional": true,
+                                            "description": ""
+                                        },
+                                        {
+                                            "name": "max_value",
+                                            "type": "float",
+                                            "optional": true,
+                                            "description": ""
+                                        }
+                                    ]
+                                }
+                            ]
+                        },
+                        {
+                            "name": "map_data_element_sql_column[0]",
+                            "type": "CMsgSteamLearnProjectConfig_MapDataElementSqlColumnEntry[]",
+                            "optional": true,
+                            "description": "",
+                            "extra": [
+                                {
+                                    "name": "key",
+                                    "type": "string",
+                                    "optional": true,
+                                    "description": ""
+                                },
+                                {
+                                    "name": "value",
+                                    "type": "int32",
+                                    "optional": true,
+                                    "description": ""
+                                }
+                            ]
+                        },
+                        {
+                            "name": "total_sql_columns",
+                            "type": "uint32",
+                            "optional": true,
+                            "description": ""
+                        },
+                        {
+                            "name": "data_retention_config",
+                            "type": "CMsgSteamLearnDataRetentionConfig",
+                            "optional": true,
+                            "description": "",
+                            "extra": [
+                                {
+                                    "name": "snapshot_keep_duration_days",
+                                    "type": "uint32",
+                                    "optional": true,
+                                    "description": ""
+                                },
+                                {
+                                    "name": "fetch_keep_count",
+                                    "type": "uint32",
+                                    "optional": true,
+                                    "description": ""
+                                }
+                            ]
+                        },
+                        {
+                            "name": "scheduled_train_config",
+                            "type": "CMsgSteamLearnScheduledTrainConfig",
+                            "optional": true,
+                            "description": "",
+                            "extra": [
+                                {
+                                    "name": "scheduled_type",
+                                    "type": "int32",
+                                    "optional": true,
+                                    "description": ""
+                                },
+                                {
+                                    "name": "scheduled_minute",
+                                    "type": "uint32",
+                                    "optional": true,
+                                    "description": ""
+                                },
+                                {
+                                    "name": "scheduled_hour",
+                                    "type": "uint32",
+                                    "optional": true,
+                                    "description": ""
+                                },
+                                {
+                                    "name": "scheduled_day_of_week",
+                                    "type": "uint32",
+                                    "optional": true,
+                                    "description": ""
+                                },
+                                {
+                                    "name": "scheduled_day_of_month",
+                                    "type": "uint32",
+                                    "optional": true,
+                                    "description": ""
+                                },
+                                {
+                                    "name": "auto_activate_accuracy_threshold",
+                                    "type": "float",
+                                    "optional": true,
+                                    "description": ""
+                                }
+                            ]
+                        },
+                        {
+                            "name": "fetch_infos[0]",
+                            "type": "CMsgSteamLearnFetchInfo[]",
+                            "optional": true,
+                            "description": "",
+                            "extra": [
+                                {
+                                    "name": "fetch_id",
+                                    "type": "uint32",
+                                    "optional": true,
+                                    "description": ""
+                                }
+                            ]
+                        },
+                        {
+                            "name": "train_infos[0]",
+                            "type": "CMsgSteamLearnTrainInfo[]",
+                            "optional": true,
+                            "description": "",
+                            "extra": [
+                                {
+                                    "name": "fetch_id",
+                                    "type": "uint32",
+                                    "optional": true,
+                                    "description": ""
+                                },
+                                {
+                                    "name": "train_id",
+                                    "type": "uint32",
+                                    "optional": true,
+                                    "description": ""
+                                },
+                                {
+                                    "name": "scheduled_train",
+                                    "type": "bool",
+                                    "optional": true,
+                                    "description": ""
+                                },
+                                {
+                                    "name": "auto_snapshot_pending",
+                                    "type": "bool",
+                                    "optional": true,
+                                    "description": ""
+                                }
+                            ]
+                        },
+                        {
+                            "name": "hidden",
+                            "type": "bool",
+                            "optional": true,
+                            "description": ""
+                        },
+                        {
+                            "name": "last_edit_time",
+                            "type": "uint32",
+                            "optional": true,
+                            "description": ""
+                        }
+                    ]
+                }
+            ]
+        },
         "GetAccessTokens": {
             "_type": "undocumented",
             "version": 1,
@@ -26575,6 +28397,30 @@
                 }
             ]
         },
+        "GetProjectConfig": {
+            "_type": "undocumented",
+            "version": 1,
+            "parameters": [
+                {
+                    "name": "key",
+                    "type": "string",
+                    "optional": false,
+                    "description": "Access key"
+                },
+                {
+                    "name": "project_id",
+                    "type": "uint32",
+                    "optional": true,
+                    "description": ""
+                },
+                {
+                    "name": "published_version",
+                    "type": "uint32",
+                    "optional": true,
+                    "description": ""
+                }
+            ]
+        },
         "GetSnapshotStatus": {
             "_type": "undocumented",
             "version": 1,
@@ -26868,6 +28714,58 @@
                     "type": "float[]",
                     "optional": true,
                     "description": ""
+                },
+                {
+                    "name": "iterate_beam_search",
+                    "type": "CMsgInferenceIterateBeamSearch",
+                    "optional": true,
+                    "description": "",
+                    "extra": [
+                        {
+                            "name": "beam_length",
+                            "type": "uint32",
+                            "optional": true,
+                            "description": ""
+                        },
+                        {
+                            "name": "beam_width",
+                            "type": "uint32",
+                            "optional": true,
+                            "description": ""
+                        },
+                        {
+                            "name": "item_decay",
+                            "type": "float",
+                            "optional": true,
+                            "description": ""
+                        },
+                        {
+                            "name": "next_item_count",
+                            "type": "uint32",
+                            "optional": true,
+                            "description": ""
+                        },
+                        {
+                            "name": "item_scalars[0]",
+                            "type": "CMsgInferenceIterateBeamSearch_CustomItemScalar[]",
+                            "optional": true,
+                            "description": "",
+                            "extra": [
+                                {
+                                    "name": "item",
+                                    "type": "uint32",
+                                    "optional": true,
+                                    "description": ""
+                                },
+                                {
+                                    "name": "scale",
+                                    "type": "float",
+                                    "optional": true,
+                                    "description": ""
+                                }
+                            ]
+                        }
+                    ]
                 }
             ]
         },
@@ -26955,6 +28853,58 @@
                     "type": "float[]",
                     "optional": true,
                     "description": ""
+                },
+                {
+                    "name": "iterate_beam_search",
+                    "type": "CMsgInferenceIterateBeamSearch",
+                    "optional": true,
+                    "description": "",
+                    "extra": [
+                        {
+                            "name": "beam_length",
+                            "type": "uint32",
+                            "optional": true,
+                            "description": ""
+                        },
+                        {
+                            "name": "beam_width",
+                            "type": "uint32",
+                            "optional": true,
+                            "description": ""
+                        },
+                        {
+                            "name": "item_decay",
+                            "type": "float",
+                            "optional": true,
+                            "description": ""
+                        },
+                        {
+                            "name": "next_item_count",
+                            "type": "uint32",
+                            "optional": true,
+                            "description": ""
+                        },
+                        {
+                            "name": "item_scalars[0]",
+                            "type": "CMsgInferenceIterateBeamSearch_CustomItemScalar[]",
+                            "optional": true,
+                            "description": "",
+                            "extra": [
+                                {
+                                    "name": "item",
+                                    "type": "uint32",
+                                    "optional": true,
+                                    "description": ""
+                                },
+                                {
+                                    "name": "scale",
+                                    "type": "float",
+                                    "optional": true,
+                                    "description": ""
+                                }
+                            ]
+                        }
+                    ]
                 }
             ]
         },
@@ -27023,6 +28973,18 @@
             ]
         },
         "ListDataSources": {
+            "_type": "undocumented",
+            "version": 1,
+            "parameters": [
+                {
+                    "name": "key",
+                    "type": "string",
+                    "optional": false,
+                    "description": "Access key"
+                }
+            ]
+        },
+        "ListProjectConfigs": {
             "_type": "undocumented",
             "version": 1,
             "parameters": [
@@ -36676,6 +38638,12 @@
                     "type": "fixed64",
                     "optional": true,
                     "description": "steamid to use"
+                },
+                {
+                    "name": "include",
+                    "type": "int32",
+                    "optional": true,
+                    "description": ""
                 }
             ]
         },
