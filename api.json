@@ -24196,6 +24196,46 @@
                                                     "description": ""
                                                 }
                                             ]
+                                        },
+                                        {
+                                            "name": "bert",
+                                            "type": "CMsgSteamLearnModelNodeBert",
+                                            "optional": true,
+                                            "description": ""
+                                        },
+                                        {
+                                            "name": "bert_tokenizer",
+                                            "type": "CMsgSteamLearnModelNodeBertTokenizer",
+                                            "optional": true,
+                                            "description": "",
+                                            "extra": [
+                                                {
+                                                    "name": "bert_model",
+                                                    "type": "int32",
+                                                    "optional": true,
+                                                    "description": ""
+                                                }
+                                            ]
+                                        },
+                                        {
+                                            "name": "bert_finetune",
+                                            "type": "CMsgSteamLearnModelNodeBertFinetune",
+                                            "optional": true,
+                                            "description": "",
+                                            "extra": [
+                                                {
+                                                    "name": "bert_model",
+                                                    "type": "int32",
+                                                    "optional": true,
+                                                    "description": ""
+                                                },
+                                                {
+                                                    "name": "unfrozen_layers",
+                                                    "type": "uint32",
+                                                    "optional": true,
+                                                    "description": ""
+                                                }
+                                            ]
                                         }
                                     ]
                                 },
@@ -25866,6 +25906,46 @@
                                                 {
                                                     "name": "row",
                                                     "type": "int32",
+                                                    "optional": true,
+                                                    "description": ""
+                                                }
+                                            ]
+                                        },
+                                        {
+                                            "name": "bert",
+                                            "type": "CMsgSteamLearnModelNodeBert",
+                                            "optional": true,
+                                            "description": ""
+                                        },
+                                        {
+                                            "name": "bert_tokenizer",
+                                            "type": "CMsgSteamLearnModelNodeBertTokenizer",
+                                            "optional": true,
+                                            "description": "",
+                                            "extra": [
+                                                {
+                                                    "name": "bert_model",
+                                                    "type": "int32",
+                                                    "optional": true,
+                                                    "description": ""
+                                                }
+                                            ]
+                                        },
+                                        {
+                                            "name": "bert_finetune",
+                                            "type": "CMsgSteamLearnModelNodeBertFinetune",
+                                            "optional": true,
+                                            "description": "",
+                                            "extra": [
+                                                {
+                                                    "name": "bert_model",
+                                                    "type": "int32",
+                                                    "optional": true,
+                                                    "description": ""
+                                                },
+                                                {
+                                                    "name": "unfrozen_layers",
+                                                    "type": "uint32",
                                                     "optional": true,
                                                     "description": ""
                                                 }
@@ -27571,6 +27651,46 @@
                                             "description": ""
                                         }
                                     ]
+                                },
+                                {
+                                    "name": "bert",
+                                    "type": "CMsgSteamLearnModelNodeBert",
+                                    "optional": true,
+                                    "description": ""
+                                },
+                                {
+                                    "name": "bert_tokenizer",
+                                    "type": "CMsgSteamLearnModelNodeBertTokenizer",
+                                    "optional": true,
+                                    "description": "",
+                                    "extra": [
+                                        {
+                                            "name": "bert_model",
+                                            "type": "int32",
+                                            "optional": true,
+                                            "description": ""
+                                        }
+                                    ]
+                                },
+                                {
+                                    "name": "bert_finetune",
+                                    "type": "CMsgSteamLearnModelNodeBertFinetune",
+                                    "optional": true,
+                                    "description": "",
+                                    "extra": [
+                                        {
+                                            "name": "bert_model",
+                                            "type": "int32",
+                                            "optional": true,
+                                            "description": ""
+                                        },
+                                        {
+                                            "name": "unfrozen_layers",
+                                            "type": "uint32",
+                                            "optional": true,
+                                            "description": ""
+                                        }
+                                    ]
                                 }
                             ]
                         },
@@ -28764,6 +28884,12 @@
                                     "description": ""
                                 }
                             ]
+                        },
+                        {
+                            "name": "next_item_threshold",
+                            "type": "float",
+                            "optional": true,
+                            "description": ""
                         }
                     ]
                 }
@@ -28903,6 +29029,12 @@
                                     "description": ""
                                 }
                             ]
+                        },
+                        {
+                            "name": "next_item_threshold",
+                            "type": "float",
+                            "optional": true,
+                            "description": ""
                         }
                     ]
                 }
@@ -30625,6 +30757,46 @@
                                         {
                                             "name": "row",
                                             "type": "int32",
+                                            "optional": true,
+                                            "description": ""
+                                        }
+                                    ]
+                                },
+                                {
+                                    "name": "bert",
+                                    "type": "CMsgSteamLearnModelNodeBert",
+                                    "optional": true,
+                                    "description": ""
+                                },
+                                {
+                                    "name": "bert_tokenizer",
+                                    "type": "CMsgSteamLearnModelNodeBertTokenizer",
+                                    "optional": true,
+                                    "description": "",
+                                    "extra": [
+                                        {
+                                            "name": "bert_model",
+                                            "type": "int32",
+                                            "optional": true,
+                                            "description": ""
+                                        }
+                                    ]
+                                },
+                                {
+                                    "name": "bert_finetune",
+                                    "type": "CMsgSteamLearnModelNodeBertFinetune",
+                                    "optional": true,
+                                    "description": "",
+                                    "extra": [
+                                        {
+                                            "name": "bert_model",
+                                            "type": "int32",
+                                            "optional": true,
+                                            "description": ""
+                                        },
+                                        {
+                                            "name": "unfrozen_layers",
+                                            "type": "uint32",
                                             "optional": true,
                                             "description": ""
                                         }
