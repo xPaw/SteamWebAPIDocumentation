@@ -28886,7 +28886,13 @@
                             ]
                         },
                         {
-                            "name": "next_item_threshold",
+                            "name": "item_sequence_end",
+                            "type": "uint32",
+                            "optional": true,
+                            "description": ""
+                        },
+                        {
+                            "name": "item_sequence_end_threshold",
                             "type": "float",
                             "optional": true,
                             "description": ""
@@ -29031,7 +29037,13 @@
                             ]
                         },
                         {
-                            "name": "next_item_threshold",
+                            "name": "item_sequence_end",
+                            "type": "uint32",
+                            "optional": true,
+                            "description": ""
+                        },
+                        {
+                            "name": "item_sequence_end_threshold",
                             "type": "float",
                             "optional": true,
                             "description": ""
@@ -34673,6 +34685,12 @@
                         {
                             "name": "popularity_base_score",
                             "type": "int64",
+                            "optional": true,
+                            "description": ""
+                        },
+                        {
+                            "name": "played_since",
+                            "type": "uint32",
                             "optional": true,
                             "description": ""
                         }
