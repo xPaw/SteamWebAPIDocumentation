@@ -34394,6 +34394,26 @@
             ]
         }
     },
+    "IStorageDeviceManagerService": {
+        "Unmount": {
+            "_type": "undocumented",
+            "version": 1,
+            "parameters": [
+                {
+                    "name": "key",
+                    "type": "string",
+                    "optional": false,
+                    "description": "Access key"
+                },
+                {
+                    "name": "block_device_id",
+                    "type": "uint32",
+                    "optional": true,
+                    "description": ""
+                }
+            ]
+        }
+    },
     "IStoreAppSimilarityService": {
         "IdentifyClustersFromPlaytime": {
             "_type": "undocumented",
