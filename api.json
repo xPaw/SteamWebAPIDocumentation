@@ -22837,6 +22837,68 @@
                             "type": "float[]",
                             "optional": true,
                             "description": ""
+                        },
+                        {
+                            "name": "keys[0]",
+                            "type": "uint64[]",
+                            "optional": true,
+                            "description": ""
+                        },
+                        {
+                            "name": "named_inference",
+                            "type": "string",
+                            "optional": true,
+                            "description": ""
+                        },
+                        {
+                            "name": "iterate_beam_search",
+                            "type": "CMsgInferenceIterateBeamSearch",
+                            "optional": true,
+                            "description": "",
+                            "extra": [
+                                {
+                                    "name": "beam_length",
+                                    "type": "uint32",
+                                    "optional": true,
+                                    "description": ""
+                                },
+                                {
+                                    "name": "beam_width",
+                                    "type": "uint32",
+                                    "optional": true,
+                                    "description": ""
+                                },
+                                {
+                                    "name": "item_decay",
+                                    "type": "float",
+                                    "optional": true,
+                                    "description": ""
+                                },
+                                {
+                                    "name": "next_item_count",
+                                    "type": "uint32",
+                                    "optional": true,
+                                    "description": ""
+                                },
+                                {
+                                    "name": "item_scalars[0]",
+                                    "type": "CMsgInferenceIterateBeamSearch.CustomItemScalar[]",
+                                    "optional": true,
+                                    "description": ""
+                                },
+                                {
+                                    "name": "item_sequence_end",
+                                    "type": "uint32",
+                                    "optional": true,
+                                    "description": ""
+                                },
+                                {
+                                    "name": "item_sequence_end_threshold",
+                                    "type": "float",
+                                    "optional": true,
+                                    "description": ""
+                                }
+                            ]
                         }
                     ]
                 }
@@ -28934,23 +28996,9 @@
                         },
                         {
                             "name": "item_scalars[0]",
-                            "type": "CMsgInferenceIterateBeamSearch_CustomItemScalar[]",
+                            "type": "CMsgInferenceIterateBeamSearch.CustomItemScalar[]",
                             "optional": true,
-                            "description": "",
-                            "extra": [
-                                {
-                                    "name": "item",
-                                    "type": "uint32",
-                                    "optional": true,
-                                    "description": ""
-                                },
-                                {
-                                    "name": "scale",
-                                    "type": "float",
-                                    "optional": true,
-                                    "description": ""
-                                }
-                            ]
+                            "description": ""
                         },
                         {
                             "name": "item_sequence_end",
