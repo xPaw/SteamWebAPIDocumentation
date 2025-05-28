@@ -14325,6 +14325,58 @@
             ]
         }
     },
+    "IPartnerFinancialsService": {
+        "GetChangedDatesForPartner": {
+            "_type": "undocumented",
+            "version": 1,
+            "httpmethod": "GET",
+            "parameters": [
+                {
+                    "name": "key",
+                    "type": "string",
+                    "optional": false,
+                    "description": "Steamworks Web API publisher authentication key"
+                },
+                {
+                    "name": "highwatermark",
+                    "type": "uint64",
+                    "optional": false,
+                    "description": "A unique identifier, the point at which to query data forward from. Should be set to\n                0 on first run."
+                }
+            ]
+        },
+        "GetDetailedSales": {
+            "_type": "undocumented",
+            "version": 1,
+            "httpmethod": "GET",
+            "parameters": [
+                {
+                    "name": "key",
+                    "type": "string",
+                    "optional": false,
+                    "description": "Steamworks Web API publisher authentication key"
+                },
+                {
+                    "name": "date",
+                    "type": "string",
+                    "optional": false,
+                    "description": "Date to retrieve the sales data for. The date should be formatted as YYYY-MM-DD,\n                YYYY/MM/DD, or YYYYMMDD."
+                },
+                {
+                    "name": "highwatermark_id",
+                    "type": "uint64",
+                    "optional": false,
+                    "description": "A per-date value (ie. should be set at 0 for each date being queried). Informs the\n                number of new records to query for."
+                },
+                {
+                    "name": "include_view_grants",
+                    "type": "bool",
+                    "optional": true,
+                    "description": "Include sales data that is visible via view grants in the response"
+                }
+            ]
+        }
+    },
     "IPartnerMeetSteamService": {
         "EmailInvitees": {
             "_type": "undocumented",
