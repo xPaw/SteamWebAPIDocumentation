@@ -23589,6 +23589,12 @@
                                                     "type": "bool",
                                                     "optional": true,
                                                     "description": ""
+                                                },
+                                                {
+                                                    "name": "label_smoothing",
+                                                    "type": "float",
+                                                    "optional": true,
+                                                    "description": ""
                                                 }
                                             ]
                                         },
@@ -25301,6 +25307,12 @@
                                                 {
                                                     "name": "uses_weight_mask",
                                                     "type": "bool",
+                                                    "optional": true,
+                                                    "description": ""
+                                                },
+                                                {
+                                                    "name": "label_smoothing",
+                                                    "type": "float",
                                                     "optional": true,
                                                     "description": ""
                                                 }
@@ -27042,6 +27054,12 @@
                                         {
                                             "name": "uses_weight_mask",
                                             "type": "bool",
+                                            "optional": true,
+                                            "description": ""
+                                        },
+                                        {
+                                            "name": "label_smoothing",
+                                            "type": "float",
                                             "optional": true,
                                             "description": ""
                                         }
@@ -29065,6 +29083,12 @@
                             "description": ""
                         }
                     ]
+                },
+                {
+                    "name": "debug_spew",
+                    "type": "uint32",
+                    "optional": true,
+                    "description": ""
                 }
             ]
         },
@@ -29214,8 +29238,20 @@
                             "type": "float",
                             "optional": true,
                             "description": ""
+                        },
+                        {
+                            "name": "repeat_multiplier",
+                            "type": "float",
+                            "optional": true,
+                            "description": ""
                         }
                     ]
+                },
+                {
+                    "name": "debug_spew",
+                    "type": "uint32",
+                    "optional": true,
+                    "description": ""
                 }
             ]
         },
@@ -30150,6 +30186,12 @@
                                         {
                                             "name": "uses_weight_mask",
                                             "type": "bool",
+                                            "optional": true,
+                                            "description": ""
+                                        },
+                                        {
+                                            "name": "label_smoothing",
+                                            "type": "float",
                                             "optional": true,
                                             "description": ""
                                         }
