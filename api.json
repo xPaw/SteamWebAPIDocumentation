@@ -3268,6 +3268,20 @@
             ]
         }
     },
+    "ICitadelAdmin_3488080": {
+        "GetReplayURL": {
+            "_type": "undocumented",
+            "version": 1,
+            "parameters": []
+        }
+    },
+    "ICitadelAdmin_3781850": {
+        "GetReplayURL": {
+            "_type": "undocumented",
+            "version": 1,
+            "parameters": []
+        }
+    },
     "IClanFAQSService": {
         "CheckFAQPermissions": {
             "_type": "undocumented",

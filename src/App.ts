@@ -37,6 +37,8 @@ export default defineComponent({
 				// Beta apps
 				[247040, { name: 'Dota 2 Experimental', icon: 'dota.jpg', open: false, methods: {} }],
 				[2305270, { name: 'Dota 2 Staging', icon: 'dota.jpg', open: false, methods: {} }],
+				[3488080, { name: 'Deadlock Experimental', icon: 'deadlock.jpg', open: false, methods: {} }],
+				[3781850, { name: 'Deadlock Unknown', icon: 'deadlock.jpg', open: false, methods: {} }],
 			],
 		);
 
