@@ -8999,6 +8999,18 @@
             "parameters": []
         }
     },
+    "IGCVersion_3781850": {
+        "GetClientVersion": {
+            "_type": "undocumented",
+            "version": 1,
+            "parameters": []
+        },
+        "GetServerVersion": {
+            "_type": "undocumented",
+            "version": 1,
+            "parameters": []
+        }
+    },
     "IGameCoordinator": {
         "GetMessages": {
             "_type": "undocumented",
@@ -38877,12 +38889,14 @@
                 {
                     "name": "steamid",
                     "type": "uint64",
-                    "optional": false
+                    "optional": false,
+                    "description": "Steam ID of user for which Trust is being requested."
                 },
                 {
                     "name": "appid",
                     "type": "uint32",
-                    "optional": false
+                    "optional": false,
+                    "description": "App ID for which Trust is being requested."
                 }
             ]
         }

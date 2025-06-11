@@ -220,6 +220,8 @@ IGCVersion_247040/GetClientVersion/v1
 IGCVersion_247040/GetServerVersion/v1
 IGCVersion_3488080/GetClientVersion/v1
 IGCVersion_3488080/GetServerVersion/v1
+IGCVersion_3781850/GetClientVersion/v1
+IGCVersion_3781850/GetServerVersion/v1
 IInventoryService/ConsumeItem/v1
 IInventoryService/GetItemDefMeta/v1
 IMobileAuthService/GetWGToken/v1
