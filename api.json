@@ -19326,6 +19326,43 @@
                 }
             ]
         },
+        "GetOptInHistoryInternal": {
+            "_type": "undocumented",
+            "version": 1,
+            "httpmethod": "POST",
+            "parameters": [
+                {
+                    "name": "key",
+                    "type": "string",
+                    "optional": false,
+                    "description": "Access key"
+                },
+                {
+                    "name": "opt_in_name",
+                    "type": "string",
+                    "optional": true,
+                    "description": ""
+                },
+                {
+                    "name": "start",
+                    "type": "uint32",
+                    "optional": true,
+                    "description": ""
+                },
+                {
+                    "name": "count",
+                    "type": "uint32",
+                    "optional": true,
+                    "description": ""
+                },
+                {
+                    "name": "include_json",
+                    "type": "bool",
+                    "optional": true,
+                    "description": ""
+                }
+            ]
+        },
         "GetPartnerAppOptInEmailDefAndStats": {
             "_type": "undocumented",
             "version": 1,
@@ -24427,6 +24464,12 @@
                                                     "type": "int32",
                                                     "optional": true,
                                                     "description": ""
+                                                },
+                                                {
+                                                    "name": "sequence_length",
+                                                    "type": "uint32",
+                                                    "optional": true,
+                                                    "description": ""
                                                 }
                                             ]
                                         },
@@ -26145,6 +26188,12 @@
                                                 {
                                                     "name": "bert_model",
                                                     "type": "int32",
+                                                    "optional": true,
+                                                    "description": ""
+                                                },
+                                                {
+                                                    "name": "sequence_length",
+                                                    "type": "uint32",
                                                     "optional": true,
                                                     "description": ""
                                                 }
@@ -27892,6 +27941,12 @@
                                         {
                                             "name": "bert_model",
                                             "type": "int32",
+                                            "optional": true,
+                                            "description": ""
+                                        },
+                                        {
+                                            "name": "sequence_length",
+                                            "type": "uint32",
                                             "optional": true,
                                             "description": ""
                                         }
@@ -31024,6 +31079,12 @@
                                         {
                                             "name": "bert_model",
                                             "type": "int32",
+                                            "optional": true,
+                                            "description": ""
+                                        },
+                                        {
+                                            "name": "sequence_length",
+                                            "type": "uint32",
                                             "optional": true,
                                             "description": ""
                                         }
