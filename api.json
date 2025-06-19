@@ -23012,8 +23012,20 @@
                                     "type": "float",
                                     "optional": true,
                                     "description": ""
+                                },
+                                {
+                                    "name": "repeat_multiplier",
+                                    "type": "float",
+                                    "optional": true,
+                                    "description": ""
                                 }
                             ]
+                        },
+                        {
+                            "name": "debug_spew",
+                            "type": "uint32",
+                            "optional": true,
+                            "description": ""
                         }
                     ]
                 }
@@ -29159,6 +29171,12 @@
                         },
                         {
                             "name": "item_sequence_end_threshold",
+                            "type": "float",
+                            "optional": true,
+                            "description": ""
+                        },
+                        {
+                            "name": "repeat_multiplier",
                             "type": "float",
                             "optional": true,
                             "description": ""
