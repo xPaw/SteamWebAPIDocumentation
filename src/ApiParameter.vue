@@ -2,7 +2,7 @@
 	<tr :class="`attribute level-${level}`">
 		<td class="font-monospace">
 			<template v-if="level > 0">↳ </template>
-			<label class="form-control-label" :for="labelId">{{ parameter.name }}</label>
+			<label class="form-control-label" :for="_labelId">{{ parameter.name }}</label>
 			<button type="button" class="btn btn-secondary add-param-array" v-if="parameter.name.endsWith( '[0]' ) && level === 0" @click="addParamArray(method, parameter)">+</button>
 		</td>
 		<td class="font-monospace p-0">
@@ -61,7 +61,7 @@
 import { useId } from 'vue';
 import type { ApiMethod, ApiMethodParameter } from './interfaces';
 
-const labelId = useId();
+const _labelId = useId();
 
 defineProps<{
 	level: number;

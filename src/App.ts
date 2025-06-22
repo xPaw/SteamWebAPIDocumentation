@@ -494,12 +494,9 @@ export default defineComponent({
 					return;
 				}
 
-				const url = [
-					form.action,
-					this.uriDelimeterBeforeKey,
-					this.renderApiKey(),
-					this.renderParameters(method),
-				].join('');
+				const url = [form.action, this.uriDelimeterBeforeKey, this.renderApiKey(), this.renderParameters(method)].join(
+					'',
+				);
 
 				try {
 					window.open(url, '_blank');

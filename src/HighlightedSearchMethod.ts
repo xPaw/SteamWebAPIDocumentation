@@ -1,4 +1,4 @@
-import { defineComponent, h, ref, type VNode } from 'vue';
+import { defineComponent, h, type VNode } from 'vue';
 
 export default defineComponent({
 	props: {

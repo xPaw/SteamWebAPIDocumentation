@@ -340,7 +340,7 @@ export class ApiSearcher {
 	}
 
 	private getSubsequenceScore(text: string, query: string, weight: number): ScoreResult {
-		let matchIndices: number[] = [];
+		const matchIndices: number[] = [];
 		let i = 0;
 		let j = 0;
 

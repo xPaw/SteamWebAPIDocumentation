@@ -1,8 +1,8 @@
+import { exec } from 'node:child_process';
+import fs from 'node:fs/promises';
 import htmlPlugin from '@chialab/esbuild-plugin-html';
-import { exec } from 'child_process';
 import * as esbuild from 'esbuild';
 import * as vuePlugin from 'esbuild-plugin-vue3';
-import fs from 'fs/promises';
 
 const isDev = process.argv.includes('--dev');
 
@@ -53,7 +53,7 @@ if (isDev) {
 	await context.dispose();
 
 	console.log('Running SSR...');
-	exec('node public/ssr.js', async (error, stdout, stderr) => {
+	exec('node public/ssr.js', async (error, stdout) => {
 		if (error) {
 			console.error(`SSR Error: ${error}`);
 			return;
