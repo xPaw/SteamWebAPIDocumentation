@@ -7669,6 +7669,12 @@
                     "type": "int32",
                     "optional": true,
                     "description": ""
+                },
+                {
+                    "name": "get_asset_properties",
+                    "type": "bool",
+                    "optional": true,
+                    "description": ""
                 }
             ]
         },
