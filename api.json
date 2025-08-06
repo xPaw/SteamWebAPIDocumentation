@@ -5043,6 +5043,560 @@
             ]
         }
     },
+    "IContentModerationService": {
+        "CancelContentReport": {
+            "_type": "undocumented",
+            "version": 1,
+            "httpmethod": "POST",
+            "parameters": [
+                {
+                    "name": "key",
+                    "type": "string",
+                    "optional": false,
+                    "description": "Access key"
+                },
+                {
+                    "name": "report_id",
+                    "type": "uint64",
+                    "optional": true,
+                    "description": ""
+                }
+            ]
+        },
+        "ClaimBatchForModeration": {
+            "_type": "undocumented",
+            "version": 1,
+            "httpmethod": "POST",
+            "parameters": [
+                {
+                    "name": "key",
+                    "type": "string",
+                    "optional": false,
+                    "description": "Access key"
+                },
+                {
+                    "name": "accepted_subject_types[0]",
+                    "type": "int32[]",
+                    "optional": true,
+                    "description": ""
+                },
+                {
+                    "name": "support_company",
+                    "type": "uint32",
+                    "optional": true,
+                    "description": ""
+                },
+                {
+                    "name": "accepted_languages[0]",
+                    "type": "int32[]",
+                    "optional": true,
+                    "description": ""
+                },
+                {
+                    "name": "moderator_level",
+                    "type": "int32",
+                    "optional": true,
+                    "description": ""
+                },
+                {
+                    "name": "disputed",
+                    "type": "bool",
+                    "optional": true,
+                    "description": ""
+                }
+            ]
+        },
+        "CreateContentReport": {
+            "_type": "undocumented",
+            "version": 1,
+            "httpmethod": "POST",
+            "parameters": [
+                {
+                    "name": "key",
+                    "type": "string",
+                    "optional": false,
+                    "description": "Access key"
+                },
+                {
+                    "name": "report_reason",
+                    "type": "int32",
+                    "optional": true,
+                    "description": ""
+                },
+                {
+                    "name": "report_text",
+                    "type": "string",
+                    "optional": true,
+                    "description": ""
+                },
+                {
+                    "name": "owner_steamid",
+                    "type": "uint64",
+                    "optional": true,
+                    "description": ""
+                },
+                {
+                    "name": "language",
+                    "type": "int32",
+                    "optional": true,
+                    "description": ""
+                },
+                {
+                    "name": "subject_type",
+                    "type": "int32",
+                    "optional": true,
+                    "description": ""
+                },
+                {
+                    "name": "subject_group_id",
+                    "type": "uint64",
+                    "optional": true,
+                    "description": ""
+                },
+                {
+                    "name": "subject_id",
+                    "type": "uint64",
+                    "optional": true,
+                    "description": ""
+                },
+                {
+                    "name": "additional_subject_data",
+                    "type": "AdditionalSubjectData",
+                    "optional": true,
+                    "description": "",
+                    "extra": [
+                        {
+                            "name": "data[0]",
+                            "type": "AdditionalSubjectData_DataEntry[]",
+                            "optional": true,
+                            "description": "",
+                            "extra": [
+                                {
+                                    "name": "key",
+                                    "type": "string",
+                                    "optional": true,
+                                    "description": ""
+                                },
+                                {
+                                    "name": "value",
+                                    "type": "string",
+                                    "optional": true,
+                                    "description": ""
+                                }
+                            ]
+                        }
+                    ]
+                }
+            ]
+        },
+        "DisputeModerationForReport": {
+            "_type": "undocumented",
+            "version": 1,
+            "httpmethod": "POST",
+            "parameters": [
+                {
+                    "name": "key",
+                    "type": "string",
+                    "optional": false,
+                    "description": "Access key"
+                },
+                {
+                    "name": "report_id",
+                    "type": "uint64",
+                    "optional": true,
+                    "description": ""
+                },
+                {
+                    "name": "details",
+                    "type": "string",
+                    "optional": true,
+                    "description": ""
+                }
+            ]
+        },
+        "DisputeModerationForSubject": {
+            "_type": "undocumented",
+            "version": 1,
+            "httpmethod": "POST",
+            "parameters": [
+                {
+                    "name": "key",
+                    "type": "string",
+                    "optional": false,
+                    "description": "Access key"
+                },
+                {
+                    "name": "subject_type",
+                    "type": "int32",
+                    "optional": true,
+                    "description": ""
+                },
+                {
+                    "name": "subject_group_id",
+                    "type": "uint64",
+                    "optional": true,
+                    "description": ""
+                },
+                {
+                    "name": "subject_id",
+                    "type": "uint64",
+                    "optional": true,
+                    "description": ""
+                },
+                {
+                    "name": "details",
+                    "type": "string",
+                    "optional": true,
+                    "description": ""
+                }
+            ]
+        },
+        "EscalateSubject": {
+            "_type": "undocumented",
+            "version": 1,
+            "httpmethod": "POST",
+            "parameters": [
+                {
+                    "name": "key",
+                    "type": "string",
+                    "optional": false,
+                    "description": "Access key"
+                },
+                {
+                    "name": "subject_type",
+                    "type": "int32",
+                    "optional": true,
+                    "description": ""
+                },
+                {
+                    "name": "subject_group_id",
+                    "type": "uint64",
+                    "optional": true,
+                    "description": ""
+                },
+                {
+                    "name": "subject_id",
+                    "type": "uint64",
+                    "optional": true,
+                    "description": ""
+                },
+                {
+                    "name": "required_level",
+                    "type": "int32",
+                    "optional": true,
+                    "description": ""
+                }
+            ]
+        },
+        "GetClaimed": {
+            "_type": "undocumented",
+            "version": 1,
+            "parameters": [
+                {
+                    "name": "key",
+                    "type": "string",
+                    "optional": false,
+                    "description": "Access key"
+                },
+                {
+                    "name": "steamid",
+                    "type": "uint64",
+                    "optional": true,
+                    "description": ""
+                }
+            ]
+        },
+        "GetContentReportSubject": {
+            "_type": "undocumented",
+            "version": 1,
+            "httpmethod": "POST",
+            "parameters": [
+                {
+                    "name": "key",
+                    "type": "string",
+                    "optional": false,
+                    "description": "Access key"
+                },
+                {
+                    "name": "subject_type",
+                    "type": "int32",
+                    "optional": true,
+                    "description": ""
+                },
+                {
+                    "name": "subject_group_id",
+                    "type": "uint64",
+                    "optional": true,
+                    "description": ""
+                },
+                {
+                    "name": "subject_id",
+                    "type": "uint64",
+                    "optional": true,
+                    "description": ""
+                }
+            ]
+        },
+        "GetContentReportSubjectGroup": {
+            "_type": "undocumented",
+            "version": 1,
+            "httpmethod": "POST",
+            "parameters": [
+                {
+                    "name": "key",
+                    "type": "string",
+                    "optional": false,
+                    "description": "Access key"
+                },
+                {
+                    "name": "subject_type",
+                    "type": "int32",
+                    "optional": true,
+                    "description": ""
+                },
+                {
+                    "name": "subject_group_id",
+                    "type": "uint64",
+                    "optional": true,
+                    "description": ""
+                }
+            ]
+        },
+        "GetReportedSubjectsByOwner": {
+            "_type": "undocumented",
+            "version": 1,
+            "parameters": [
+                {
+                    "name": "key",
+                    "type": "string",
+                    "optional": false,
+                    "description": "Access key"
+                },
+                {
+                    "name": "steamid",
+                    "type": "uint64",
+                    "optional": true,
+                    "description": ""
+                }
+            ]
+        },
+        "GetReportsSubmittedByUser": {
+            "_type": "undocumented",
+            "version": 1,
+            "parameters": [
+                {
+                    "name": "key",
+                    "type": "string",
+                    "optional": false,
+                    "description": "Access key"
+                },
+                {
+                    "name": "steamid",
+                    "type": "uint64",
+                    "optional": true,
+                    "description": ""
+                }
+            ]
+        },
+        "GetSubjectOverview": {
+            "_type": "undocumented",
+            "version": 1,
+            "httpmethod": "POST",
+            "parameters": [
+                {
+                    "name": "key",
+                    "type": "string",
+                    "optional": false,
+                    "description": "Access key"
+                }
+            ]
+        },
+        "ReleaseClaimed": {
+            "_type": "undocumented",
+            "version": 1,
+            "httpmethod": "POST",
+            "parameters": [
+                {
+                    "name": "key",
+                    "type": "string",
+                    "optional": false,
+                    "description": "Access key"
+                },
+                {
+                    "name": "steamid",
+                    "type": "uint64",
+                    "optional": true,
+                    "description": ""
+                }
+            ]
+        },
+        "ResolveDisputedSubject": {
+            "_type": "undocumented",
+            "version": 1,
+            "httpmethod": "POST",
+            "parameters": [
+                {
+                    "name": "key",
+                    "type": "string",
+                    "optional": false,
+                    "description": "Access key"
+                },
+                {
+                    "name": "subject_type",
+                    "type": "int32",
+                    "optional": true,
+                    "description": ""
+                },
+                {
+                    "name": "subject_group_id",
+                    "type": "uint64",
+                    "optional": true,
+                    "description": ""
+                },
+                {
+                    "name": "subject_id",
+                    "type": "uint64",
+                    "optional": true,
+                    "description": ""
+                },
+                {
+                    "name": "updated_resolution",
+                    "type": "int32",
+                    "optional": true,
+                    "description": ""
+                },
+                {
+                    "name": "updated_reason",
+                    "type": "int32",
+                    "optional": true,
+                    "description": ""
+                }
+            ]
+        },
+        "ResolveSubject": {
+            "_type": "undocumented",
+            "version": 1,
+            "httpmethod": "POST",
+            "parameters": [
+                {
+                    "name": "key",
+                    "type": "string",
+                    "optional": false,
+                    "description": "Access key"
+                },
+                {
+                    "name": "subject_type",
+                    "type": "int32",
+                    "optional": true,
+                    "description": ""
+                },
+                {
+                    "name": "subject_group_id",
+                    "type": "uint64",
+                    "optional": true,
+                    "description": ""
+                },
+                {
+                    "name": "subject_id",
+                    "type": "uint64",
+                    "optional": true,
+                    "description": ""
+                },
+                {
+                    "name": "resolution",
+                    "type": "int32",
+                    "optional": true,
+                    "description": ""
+                },
+                {
+                    "name": "reason",
+                    "type": "int32",
+                    "optional": true,
+                    "description": ""
+                }
+            ]
+        },
+        "ResolveSubjectGroup": {
+            "_type": "undocumented",
+            "version": 1,
+            "httpmethod": "POST",
+            "parameters": [
+                {
+                    "name": "key",
+                    "type": "string",
+                    "optional": false,
+                    "description": "Access key"
+                },
+                {
+                    "name": "subject_type",
+                    "type": "int32",
+                    "optional": true,
+                    "description": ""
+                },
+                {
+                    "name": "subject_group_id",
+                    "type": "uint64",
+                    "optional": true,
+                    "description": ""
+                },
+                {
+                    "name": "resolution",
+                    "type": "int32",
+                    "optional": true,
+                    "description": ""
+                },
+                {
+                    "name": "reason",
+                    "type": "int32",
+                    "optional": true,
+                    "description": ""
+                }
+            ]
+        },
+        "UpdateSubject": {
+            "_type": "undocumented",
+            "version": 1,
+            "httpmethod": "POST",
+            "parameters": [
+                {
+                    "name": "key",
+                    "type": "string",
+                    "optional": false,
+                    "description": "Access key"
+                },
+                {
+                    "name": "subject_type",
+                    "type": "int32",
+                    "optional": true,
+                    "description": ""
+                },
+                {
+                    "name": "subject_group_id",
+                    "type": "uint64",
+                    "optional": true,
+                    "description": ""
+                },
+                {
+                    "name": "subject_id",
+                    "type": "uint64",
+                    "optional": true,
+                    "description": ""
+                },
+                {
+                    "name": "csam_status",
+                    "type": "int32",
+                    "optional": true,
+                    "description": ""
+                },
+                {
+                    "name": "terrorism_status",
+                    "type": "int32",
+                    "optional": true,
+                    "description": ""
+                }
+            ]
+        }
+    },
     "IContentServerConfigService": {
         "GetSteamCacheNodeParams": {
             "version": 1,
@@ -8578,6 +9132,31 @@
                     "type": "uint64",
                     "optional": true,
                     "description": "Unique purchase request ID"
+                }
+            ]
+        },
+        "RollbackFamilyGroup": {
+            "_type": "undocumented",
+            "version": 1,
+            "httpmethod": "POST",
+            "parameters": [
+                {
+                    "name": "key",
+                    "type": "string",
+                    "optional": false,
+                    "description": "Access key"
+                },
+                {
+                    "name": "family_groupid",
+                    "type": "uint64",
+                    "optional": true,
+                    "description": ""
+                },
+                {
+                    "name": "rtime32_target",
+                    "type": "uint32",
+                    "optional": true,
+                    "description": ""
                 }
             ]
         },
