@@ -5513,6 +5513,12 @@
                     "type": "int32",
                     "optional": true,
                     "description": ""
+                },
+                {
+                    "name": "note",
+                    "type": "string",
+                    "optional": true,
+                    "description": ""
                 }
             ]
         },
@@ -5548,6 +5554,12 @@
                 {
                     "name": "reason",
                     "type": "int32",
+                    "optional": true,
+                    "description": ""
+                },
+                {
+                    "name": "note",
+                    "type": "string",
                     "optional": true,
                     "description": ""
                 }
