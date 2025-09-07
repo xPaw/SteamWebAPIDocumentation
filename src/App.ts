@@ -16,7 +16,7 @@ export default defineComponent({
 		HighlightedSearchMethod,
 	},
 	data() {
-		// @ts-ignore
+		// @ts-expect-error
 		const interfaces = interfacesJson as ApiServices;
 
 		const groupsMap = new Map<string, number>();
