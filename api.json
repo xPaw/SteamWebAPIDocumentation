@@ -3372,6 +3372,31 @@
                 }
             ]
         },
+        "FetchLocalizationFromCrowdIn": {
+            "_type": "undocumented",
+            "version": 1,
+            "httpmethod": "POST",
+            "parameters": [
+                {
+                    "name": "key",
+                    "type": "string",
+                    "optional": false,
+                    "description": "Access key"
+                },
+                {
+                    "name": "faq_id",
+                    "type": "uint64",
+                    "optional": true,
+                    "description": ""
+                },
+                {
+                    "name": "language",
+                    "type": "uint32",
+                    "optional": true,
+                    "description": ""
+                }
+            ]
+        },
         "GetAllDrafts": {
             "_type": "undocumented",
             "version": 1,
@@ -3438,6 +3463,25 @@
                     "type": "uint64",
                     "optional": true,
                     "description": "The unique FAQ identifier."
+                }
+            ]
+        },
+        "GetCrowdInMetadata": {
+            "_type": "undocumented",
+            "version": 1,
+            "httpmethod": "POST",
+            "parameters": [
+                {
+                    "name": "key",
+                    "type": "string",
+                    "optional": false,
+                    "description": "Access key"
+                },
+                {
+                    "name": "faq_id",
+                    "type": "uint64",
+                    "optional": true,
+                    "description": ""
                 }
             ]
         },
