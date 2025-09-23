@@ -4149,6 +4149,12 @@
                     "type": "CClientMetrics_ReportClientError_Notification.Error[]",
                     "optional": true,
                     "description": ""
+                },
+                {
+                    "name": "tags[0]",
+                    "type": "string[]",
+                    "optional": true,
+                    "description": ""
                 }
             ]
         },
