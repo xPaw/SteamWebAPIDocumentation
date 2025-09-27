@@ -36286,6 +36286,12 @@
                             "description": ""
                         }
                     ]
+                },
+                {
+                    "name": "excluded_content_descriptorids[0]",
+                    "type": "int32[]",
+                    "optional": true,
+                    "description": ""
                 }
             ]
         },
