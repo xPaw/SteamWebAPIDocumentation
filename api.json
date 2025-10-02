@@ -2038,7 +2038,14 @@
         "GetLeaderboardEntries": {
             "_type": "undocumented",
             "version": 1,
-            "parameters": []
+            "parameters": [
+                {
+                    "name": "lbname",
+                    "type": "string",
+                    "optional": false,
+                    "description": "Name of the leaderboard, must start with official_leaderboard_premier_<season>, optionally followed by _<country>, e.g. official_leaderboard_premier_season3 or official_leaderboard_premier_season2_europe"
+                }
+            ]
         },
         "GetMonthlyPlayerCount": {
             "_type": "undocumented",
