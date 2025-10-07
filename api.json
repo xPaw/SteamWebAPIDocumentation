@@ -5243,6 +5243,12 @@
                             ]
                         }
                     ]
+                },
+                {
+                    "name": "detected_by_automation",
+                    "type": "bool",
+                    "optional": true,
+                    "description": ""
                 }
             ]
         },
@@ -5340,6 +5346,37 @@
                 {
                     "name": "required_level",
                     "type": "int32",
+                    "optional": true,
+                    "description": ""
+                }
+            ]
+        },
+        "GetAuditLog": {
+            "_type": "undocumented",
+            "version": 1,
+            "httpmethod": "POST",
+            "parameters": [
+                {
+                    "name": "key",
+                    "type": "string",
+                    "optional": false,
+                    "description": "Access key"
+                },
+                {
+                    "name": "subject_type",
+                    "type": "int32",
+                    "optional": true,
+                    "description": ""
+                },
+                {
+                    "name": "subject_group_id",
+                    "type": "uint64",
+                    "optional": true,
+                    "description": ""
+                },
+                {
+                    "name": "subject_id",
+                    "type": "uint64",
                     "optional": true,
                     "description": ""
                 }
@@ -5576,6 +5613,12 @@
                     "type": "string",
                     "optional": true,
                     "description": ""
+                },
+                {
+                    "name": "resolved_by_automation",
+                    "type": "int32",
+                    "optional": true,
+                    "description": ""
                 }
             ]
         },
@@ -5617,6 +5660,12 @@
                 {
                     "name": "note",
                     "type": "string",
+                    "optional": true,
+                    "description": ""
+                },
+                {
+                    "name": "resolved_by_automation",
+                    "type": "int32",
                     "optional": true,
                     "description": ""
                 }
@@ -8239,6 +8288,42 @@
                     "type": "uint64",
                     "optional": false,
                     "description": "Context to clear cache for."
+                }
+            ]
+        },
+        "GetAssetClassInfo": {
+            "_type": "undocumented",
+            "version": 1,
+            "parameters": [
+                {
+                    "name": "key",
+                    "type": "string",
+                    "optional": false,
+                    "description": "Access key"
+                },
+                {
+                    "name": "language",
+                    "type": "string",
+                    "optional": true,
+                    "description": ""
+                },
+                {
+                    "name": "appid",
+                    "type": "uint32",
+                    "optional": true,
+                    "description": ""
+                },
+                {
+                    "name": "classes[0]",
+                    "type": "CEcon_GetAssetClassInfo_Request.Class[]",
+                    "optional": true,
+                    "description": ""
+                },
+                {
+                    "name": "high_pri",
+                    "type": "bool",
+                    "optional": true,
+                    "description": ""
                 }
             ]
         },
@@ -18360,6 +18445,44 @@
                     "type": "fixed64",
                     "optional": true,
                     "description": ""
+                }
+            ]
+        },
+        "GetPlanByAssociationID": {
+            "_type": "undocumented",
+            "version": 1,
+            "parameters": [
+                {
+                    "name": "key",
+                    "type": "string",
+                    "optional": false,
+                    "description": "Access key"
+                },
+                {
+                    "name": "requested[0]",
+                    "type": "CPromoAssociation[]",
+                    "optional": true,
+                    "description": "",
+                    "extra": [
+                        {
+                            "name": "type",
+                            "type": "int32",
+                            "optional": true,
+                            "description": ""
+                        },
+                        {
+                            "name": "gid",
+                            "type": "fixed64",
+                            "optional": true,
+                            "description": ""
+                        },
+                        {
+                            "name": "promotion_planid",
+                            "type": "fixed64",
+                            "optional": true,
+                            "description": ""
+                        }
+                    ]
                 }
             ]
         },
