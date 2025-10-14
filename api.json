@@ -8317,7 +8317,21 @@
                     "name": "classes[0]",
                     "type": "CEcon_GetAssetClassInfo_Request.Class[]",
                     "optional": true,
-                    "description": ""
+                    "description": "",
+                    "extra": [
+                        {
+                            "name": "classid",
+                            "type": "uint64",
+                            "optional": true,
+                            "description": ""
+                        },
+                        {
+                            "name": "instanceid",
+                            "type": "uint64",
+                            "optional": true,
+                            "description": ""
+                        }
+                    ]
                 },
                 {
                     "name": "high_pri",
