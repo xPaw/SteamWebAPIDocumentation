@@ -22564,6 +22564,11 @@
         }
     },
     "ISteamBroadcast": {
+        "PlayerStats": {
+            "version": 1,
+            "httpmethod": "POST",
+            "parameters": []
+        },
         "ViewerHeartbeat": {
             "version": 1,
             "httpmethod": "GET",
@@ -37563,6 +37568,12 @@
                                     "type": "uint32",
                                     "optional": true,
                                     "description": ""
+                                },
+                                {
+                                    "name": "creator_clan_account_id",
+                                    "type": "uint32",
+                                    "optional": true,
+                                    "description": ""
                                 }
                             ]
                         },
@@ -37716,6 +37727,12 @@
                             "extra": [
                                 {
                                     "name": "sale_tagid",
+                                    "type": "uint32",
+                                    "optional": true,
+                                    "description": ""
+                                },
+                                {
+                                    "name": "creator_clan_account_id",
                                     "type": "uint32",
                                     "optional": true,
                                     "description": ""
@@ -38329,6 +38346,12 @@
                                             "type": "uint32",
                                             "optional": true,
                                             "description": ""
+                                        },
+                                        {
+                                            "name": "creator_clan_account_id",
+                                            "type": "uint32",
+                                            "optional": true,
+                                            "description": ""
                                         }
                                     ]
                                 },
@@ -38708,6 +38731,12 @@
                                             "extra": [
                                                 {
                                                     "name": "sale_tagid",
+                                                    "type": "uint32",
+                                                    "optional": true,
+                                                    "description": ""
+                                                },
+                                                {
+                                                    "name": "creator_clan_account_id",
                                                     "type": "uint32",
                                                     "optional": true,
                                                     "description": ""
@@ -39246,6 +39275,12 @@
                                     "extra": [
                                         {
                                             "name": "sale_tagid",
+                                            "type": "uint32",
+                                            "optional": true,
+                                            "description": ""
+                                        },
+                                        {
+                                            "name": "creator_clan_account_id",
                                             "type": "uint32",
                                             "optional": true,
                                             "description": ""
