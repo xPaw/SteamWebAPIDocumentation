@@ -5163,6 +5163,37 @@
                 }
             ]
         },
+        "ClaimSubject": {
+            "_type": "undocumented",
+            "version": 1,
+            "httpmethod": "POST",
+            "parameters": [
+                {
+                    "name": "key",
+                    "type": "string",
+                    "optional": false,
+                    "description": "Access key"
+                },
+                {
+                    "name": "subject_type",
+                    "type": "int32",
+                    "optional": true,
+                    "description": ""
+                },
+                {
+                    "name": "subject_group_id",
+                    "type": "uint64",
+                    "optional": true,
+                    "description": ""
+                },
+                {
+                    "name": "subject_id",
+                    "type": "uint64",
+                    "optional": true,
+                    "description": ""
+                }
+            ]
+        },
         "CreateContentReport": {
             "_type": "undocumented",
             "version": 1,
@@ -9489,6 +9520,12 @@
                     "type": "int32",
                     "optional": true,
                     "description": ""
+                },
+                {
+                    "name": "resolution",
+                    "type": "int32",
+                    "optional": true,
+                    "description": ""
                 }
             ]
         },
@@ -9529,6 +9566,12 @@
                 },
                 {
                     "name": "reason",
+                    "type": "int32",
+                    "optional": true,
+                    "description": ""
+                },
+                {
+                    "name": "resolution",
                     "type": "int32",
                     "optional": true,
                     "description": ""
@@ -25889,6 +25932,26 @@
                                                     "description": ""
                                                 }
                                             ]
+                                        },
+                                        {
+                                            "name": "threshold",
+                                            "type": "CMsgSteamLearnModelNodeThreshold",
+                                            "optional": true,
+                                            "description": "",
+                                            "extra": [
+                                                {
+                                                    "name": "threshold_value",
+                                                    "type": "float",
+                                                    "optional": true,
+                                                    "description": ""
+                                                },
+                                                {
+                                                    "name": "comparison",
+                                                    "type": "int32",
+                                                    "optional": true,
+                                                    "description": ""
+                                                }
+                                            ]
                                         }
                                     ]
                                 },
@@ -27611,6 +27674,26 @@
                                                 {
                                                     "name": "unfrozen_layers",
                                                     "type": "uint32",
+                                                    "optional": true,
+                                                    "description": ""
+                                                }
+                                            ]
+                                        },
+                                        {
+                                            "name": "threshold",
+                                            "type": "CMsgSteamLearnModelNodeThreshold",
+                                            "optional": true,
+                                            "description": "",
+                                            "extra": [
+                                                {
+                                                    "name": "threshold_value",
+                                                    "type": "float",
+                                                    "optional": true,
+                                                    "description": ""
+                                                },
+                                                {
+                                                    "name": "comparison",
+                                                    "type": "int32",
                                                     "optional": true,
                                                     "description": ""
                                                 }
@@ -29364,6 +29447,26 @@
                                         {
                                             "name": "unfrozen_layers",
                                             "type": "uint32",
+                                            "optional": true,
+                                            "description": ""
+                                        }
+                                    ]
+                                },
+                                {
+                                    "name": "threshold",
+                                    "type": "CMsgSteamLearnModelNodeThreshold",
+                                    "optional": true,
+                                    "description": "",
+                                    "extra": [
+                                        {
+                                            "name": "threshold_value",
+                                            "type": "float",
+                                            "optional": true,
+                                            "description": ""
+                                        },
+                                        {
+                                            "name": "comparison",
+                                            "type": "int32",
                                             "optional": true,
                                             "description": ""
                                         }
@@ -32508,6 +32611,26 @@
                                         {
                                             "name": "unfrozen_layers",
                                             "type": "uint32",
+                                            "optional": true,
+                                            "description": ""
+                                        }
+                                    ]
+                                },
+                                {
+                                    "name": "threshold",
+                                    "type": "CMsgSteamLearnModelNodeThreshold",
+                                    "optional": true,
+                                    "description": "",
+                                    "extra": [
+                                        {
+                                            "name": "threshold_value",
+                                            "type": "float",
+                                            "optional": true,
+                                            "description": ""
+                                        },
+                                        {
+                                            "name": "comparison",
+                                            "type": "int32",
                                             "optional": true,
                                             "description": ""
                                         }
@@ -37129,6 +37252,92 @@
                 {
                     "name": "partner_id",
                     "type": "uint32",
+                    "optional": true,
+                    "description": ""
+                }
+            ]
+        }
+    },
+    "IStoreCurationService": {
+        "GetListDetails": {
+            "_type": "undocumented",
+            "version": 1,
+            "parameters": [
+                {
+                    "name": "key",
+                    "type": "string",
+                    "optional": false,
+                    "description": "Access key"
+                },
+                {
+                    "name": "steamid",
+                    "type": "fixed64",
+                    "optional": true,
+                    "description": ""
+                },
+                {
+                    "name": "listid",
+                    "type": "uint64",
+                    "optional": true,
+                    "description": ""
+                }
+            ]
+        },
+        "GetLists": {
+            "_type": "undocumented",
+            "version": 1,
+            "parameters": [
+                {
+                    "name": "key",
+                    "type": "string",
+                    "optional": false,
+                    "description": "Access key"
+                },
+                {
+                    "name": "steamid",
+                    "type": "fixed64",
+                    "optional": true,
+                    "description": ""
+                },
+                {
+                    "name": "list_state",
+                    "type": "int32",
+                    "optional": true,
+                    "description": ""
+                },
+                {
+                    "name": "start",
+                    "type": "uint32",
+                    "optional": true,
+                    "description": ""
+                },
+                {
+                    "name": "count",
+                    "type": "uint32",
+                    "optional": true,
+                    "description": ""
+                },
+                {
+                    "name": "return_total_only",
+                    "type": "bool",
+                    "optional": true,
+                    "description": ""
+                },
+                {
+                    "name": "return_metadata_only",
+                    "type": "bool",
+                    "optional": true,
+                    "description": ""
+                },
+                {
+                    "name": "max_apps",
+                    "type": "int32",
+                    "optional": true,
+                    "description": ""
+                },
+                {
+                    "name": "sale_clan_event_gid",
+                    "type": "fixed64",
                     "optional": true,
                     "description": ""
                 }
