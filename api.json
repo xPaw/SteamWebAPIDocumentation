@@ -5781,6 +5781,61 @@
                     "description": ""
                 }
             ]
+        },
+        "WriteToAuditLog": {
+            "_type": "undocumented",
+            "version": 1,
+            "httpmethod": "POST",
+            "parameters": [
+                {
+                    "name": "key",
+                    "type": "string",
+                    "optional": false,
+                    "description": "Access key"
+                },
+                {
+                    "name": "subject_type",
+                    "type": "int32",
+                    "optional": true,
+                    "description": ""
+                },
+                {
+                    "name": "subject_group_id",
+                    "type": "uint64",
+                    "optional": true,
+                    "description": ""
+                },
+                {
+                    "name": "subject_id",
+                    "type": "uint64",
+                    "optional": true,
+                    "description": ""
+                },
+                {
+                    "name": "action",
+                    "type": "int32",
+                    "optional": true,
+                    "description": ""
+                },
+                {
+                    "name": "automated_action",
+                    "type": "bool",
+                    "optional": true,
+                    "description": ""
+                },
+                {
+                    "name": "additional_json_data",
+                    "type": "string",
+                    "optional": true,
+                    "description": ""
+                },
+                {
+                    "name": "actor_steamid",
+                    "type": "fixed64",
+                    "optional": true,
+                    "description": ""
+                }
+            ]
         }
     },
     "IContentServerConfigService": {
@@ -25952,6 +26007,20 @@
                                                     "description": ""
                                                 }
                                             ]
+                                        },
+                                        {
+                                            "name": "logic",
+                                            "type": "CMsgSteamLearnModelNodeLogic",
+                                            "optional": true,
+                                            "description": "",
+                                            "extra": [
+                                                {
+                                                    "name": "logic_operator",
+                                                    "type": "int32",
+                                                    "optional": true,
+                                                    "description": ""
+                                                }
+                                            ]
                                         }
                                     ]
                                 },
@@ -27693,6 +27762,20 @@
                                                 },
                                                 {
                                                     "name": "comparison",
+                                                    "type": "int32",
+                                                    "optional": true,
+                                                    "description": ""
+                                                }
+                                            ]
+                                        },
+                                        {
+                                            "name": "logic",
+                                            "type": "CMsgSteamLearnModelNodeLogic",
+                                            "optional": true,
+                                            "description": "",
+                                            "extra": [
+                                                {
+                                                    "name": "logic_operator",
                                                     "type": "int32",
                                                     "optional": true,
                                                     "description": ""
@@ -29466,6 +29549,20 @@
                                         },
                                         {
                                             "name": "comparison",
+                                            "type": "int32",
+                                            "optional": true,
+                                            "description": ""
+                                        }
+                                    ]
+                                },
+                                {
+                                    "name": "logic",
+                                    "type": "CMsgSteamLearnModelNodeLogic",
+                                    "optional": true,
+                                    "description": "",
+                                    "extra": [
+                                        {
+                                            "name": "logic_operator",
                                             "type": "int32",
                                             "optional": true,
                                             "description": ""
@@ -32630,6 +32727,20 @@
                                         },
                                         {
                                             "name": "comparison",
+                                            "type": "int32",
+                                            "optional": true,
+                                            "description": ""
+                                        }
+                                    ]
+                                },
+                                {
+                                    "name": "logic",
+                                    "type": "CMsgSteamLearnModelNodeLogic",
+                                    "optional": true,
+                                    "description": "",
+                                    "extra": [
+                                        {
+                                            "name": "logic_operator",
                                             "type": "int32",
                                             "optional": true,
                                             "description": ""
