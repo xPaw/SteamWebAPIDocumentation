@@ -5379,6 +5379,12 @@
                     "type": "int32",
                     "optional": true,
                     "description": ""
+                },
+                {
+                    "name": "reason",
+                    "type": "int32",
+                    "optional": true,
+                    "description": ""
                 }
             ]
         },
