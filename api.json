@@ -3452,6 +3452,12 @@
                     "type": "uint32",
                     "optional": true,
                     "description": ""
+                },
+                {
+                    "name": "steamid",
+                    "type": "fixed64",
+                    "optional": true,
+                    "description": ""
                 }
             ]
         },
@@ -3538,6 +3544,12 @@
                 {
                     "name": "faq_id",
                     "type": "uint64",
+                    "optional": true,
+                    "description": ""
+                },
+                {
+                    "name": "steamid",
+                    "type": "fixed64",
                     "optional": true,
                     "description": ""
                 }
