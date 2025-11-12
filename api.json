@@ -1461,6 +1461,20 @@
             ]
         }
     },
+    "IBillingService": {
+        "GetRecurringSubscriptionsCount": {
+            "_type": "undocumented",
+            "version": 1,
+            "parameters": [
+                {
+                    "name": "key",
+                    "type": "string",
+                    "optional": false,
+                    "description": "Access key"
+                }
+            ]
+        }
+    },
     "IBroadcastService": {
         "GetBroadcastUploadStats": {
             "_type": "undocumented",
@@ -5083,6 +5097,73 @@
                     "description": ""
                 }
             ]
+        },
+        "PostCommentToThread": {
+            "_type": "undocumented",
+            "version": 1,
+            "httpmethod": "POST",
+            "parameters": [
+                {
+                    "name": "key",
+                    "type": "string",
+                    "optional": false,
+                    "description": "Access key"
+                },
+                {
+                    "name": "steamid",
+                    "type": "fixed64",
+                    "optional": true,
+                    "description": ""
+                },
+                {
+                    "name": "comment_thread_type",
+                    "type": "ECommentThreadType",
+                    "optional": true,
+                    "description": ""
+                },
+                {
+                    "name": "gidfeature",
+                    "type": "fixed64",
+                    "optional": true,
+                    "description": ""
+                },
+                {
+                    "name": "gidfeature2",
+                    "type": "fixed64",
+                    "optional": true,
+                    "description": ""
+                },
+                {
+                    "name": "text",
+                    "type": "string",
+                    "optional": true,
+                    "description": ""
+                },
+                {
+                    "name": "gidparentcomment",
+                    "type": "fixed64",
+                    "optional": true,
+                    "description": ""
+                },
+                {
+                    "name": "suppress_notifications",
+                    "type": "bool",
+                    "optional": true,
+                    "description": ""
+                },
+                {
+                    "name": "is_report",
+                    "type": "bool",
+                    "optional": true,
+                    "description": ""
+                },
+                {
+                    "name": "start_hidden",
+                    "type": "bool",
+                    "optional": true,
+                    "description": ""
+                }
+            ]
         }
     },
     "IContentFilteringService": {
@@ -8502,6 +8583,30 @@
                 {
                     "name": "high_pri",
                     "type": "bool",
+                    "optional": true,
+                    "description": ""
+                }
+            ]
+        },
+        "GetAssetPropertySchema": {
+            "_type": "undocumented",
+            "version": 1,
+            "parameters": [
+                {
+                    "name": "key",
+                    "type": "string",
+                    "optional": false,
+                    "description": "Access key"
+                },
+                {
+                    "name": "appid",
+                    "type": "uint32",
+                    "optional": true,
+                    "description": ""
+                },
+                {
+                    "name": "language",
+                    "type": "string",
                     "optional": true,
                     "description": ""
                 }
@@ -40531,6 +40636,30 @@
                             "description": ""
                         }
                     ]
+                }
+            ]
+        },
+        "GetGamesFollowed": {
+            "version": 1,
+            "httpmethod": "GET",
+            "description": "Get the list of games a user is following",
+            "parameters": [
+                {
+                    "name": "steamid",
+                    "type": "uint64",
+                    "optional": false
+                }
+            ]
+        },
+        "GetGamesFollowedCount": {
+            "version": 1,
+            "httpmethod": "GET",
+            "description": "Get the number of games a user is following",
+            "parameters": [
+                {
+                    "name": "steamid",
+                    "type": "uint64",
+                    "optional": false
                 }
             ]
         },
