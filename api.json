@@ -22540,6 +22540,7 @@
             ]
         },
         "GetAppList": {
+            "_type": "undocumented",
             "version": 2,
             "httpmethod": "GET",
             "parameters": []
