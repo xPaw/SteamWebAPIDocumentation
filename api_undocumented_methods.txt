@@ -12,13 +12,11 @@ IBroadcastService/UpdateChatMessageFlair/v1
 ICitadelAdmin_3488080/GetReplayURL/v1/
 ICitadelAdmin_3781850/GetReplayURL/v1/
 IClanService/GetAdjacentPartnerEvents/v1
-IClanService/GetSinglePartnerEvent/v1
 ICloudService/BeginHTTPUpload/v1
 ICloudService/CommitHTTPUpload/v1
 ICloudService/Delete/v1
 ICloudService/EnumerateUserFiles/v1
 ICloudService/GetFileDetails/v1
-ICloudService/GetUploadServerInfo/v1
 ICommunityService/GetApps/v1
 ICommunityService/GetBestEventsForUser/v1
 ICommunityService/GetClanAnnouncements/v1
@@ -228,7 +226,6 @@ IInventoryService/ConsumeItem/v1
 IInventoryService/GetItemDefMeta/v1
 IMobileAuthService/GetWGToken/v1
 IMobileNotificationService/GetUserNotificationCounts/v1
-IMobileNotificationService/SwitchSessionToPush/v1
 IPlayerService/AddFriend/v1
 IPlayerService/GetAnimatedAvatar/v1
 IPlayerService/GetAvatarFrame/v1

@@ -3948,11 +3948,6 @@
                     ]
                 }
             ]
-        },
-        "GetSinglePartnerEvent": {
-            "_type": "undocumented",
-            "version": 1,
-            "parameters": []
         }
     },
     "IClientCommService": {
@@ -4692,25 +4687,6 @@
                     "type": "uint32",
                     "optional": true,
                     "description": "App ID the file belongs to."
-                }
-            ]
-        },
-        "GetUploadServerInfo": {
-            "_type": "undocumented",
-            "version": 1,
-            "description": "Returns the URL of the proper cloud server for a user.",
-            "parameters": [
-                {
-                    "name": "key",
-                    "type": "string",
-                    "optional": false,
-                    "description": "Access key"
-                },
-                {
-                    "name": "appid",
-                    "type": "uint32",
-                    "optional": true,
-                    "description": "App ID to which a file will be uploaded to."
                 }
             ]
         }
@@ -14250,11 +14226,6 @@
             "_type": "undocumented",
             "version": 1,
             "parameters": []
-        },
-        "SwitchSessionToPush": {
-            "_type": "undocumented",
-            "version": 1,
-            "parameters": []
         }
     },
     "INewsService": {
@@ -18715,30 +18686,6 @@
                 }
             ]
         },
-        "GetAvailableWeekSlots": {
-            "_type": "undocumented",
-            "version": 1,
-            "parameters": [
-                {
-                    "name": "key",
-                    "type": "string",
-                    "optional": false,
-                    "description": "Access key"
-                },
-                {
-                    "name": "publisherid",
-                    "type": "uint32",
-                    "optional": true,
-                    "description": ""
-                },
-                {
-                    "name": "rtime_start",
-                    "type": "uint32",
-                    "optional": true,
-                    "description": ""
-                }
-            ]
-        },
         "GetPlan": {
             "_type": "undocumented",
             "version": 1,
@@ -22538,12 +22485,6 @@
                     "description": "AppID of depot"
                 }
             ]
-        },
-        "GetAppList": {
-            "_type": "undocumented",
-            "version": 2,
-            "httpmethod": "GET",
-            "parameters": []
         },
         "GetCheatingReports": {
             "_type": "publisher_only",
@@ -36488,26 +36429,6 @@
             ]
         }
     },
-    "IStorageDeviceManagerService": {
-        "Unmount": {
-            "_type": "undocumented",
-            "version": 1,
-            "parameters": [
-                {
-                    "name": "key",
-                    "type": "string",
-                    "optional": false,
-                    "description": "Access key"
-                },
-                {
-                    "name": "block_device_id",
-                    "type": "uint32",
-                    "optional": true,
-                    "description": ""
-                }
-            ]
-        }
-    },
     "IStoreAppSimilarityService": {
         "IdentifyClustersFromPlaytime": {
             "_type": "undocumented",
@@ -41930,43 +41851,6 @@
         }
     },
     "IUserGameNotesService": {
-        "DeleteNote": {
-            "_type": "undocumented",
-            "version": 1,
-            "httpmethod": "POST",
-            "parameters": [
-                {
-                    "name": "key",
-                    "type": "string",
-                    "optional": false,
-                    "description": "Access key"
-                },
-                {
-                    "name": "appid",
-                    "type": "uint32",
-                    "optional": true,
-                    "description": ""
-                },
-                {
-                    "name": "shortcut_name",
-                    "type": "string",
-                    "optional": true,
-                    "description": ""
-                },
-                {
-                    "name": "shortcutid",
-                    "type": "uint32",
-                    "optional": true,
-                    "description": ""
-                },
-                {
-                    "name": "note_id",
-                    "type": "string",
-                    "optional": true,
-                    "description": ""
-                }
-            ]
-        },
         "GetGamesWithNotes": {
             "_type": "undocumented",
             "version": 1,
@@ -42014,61 +41898,6 @@
                     "type": "bool",
                     "optional": true,
                     "description": "Include the text content.  If not passed, content will be empty in the response objects but title will be available."
-                }
-            ]
-        },
-        "SaveNote": {
-            "_type": "undocumented",
-            "version": 1,
-            "httpmethod": "POST",
-            "parameters": [
-                {
-                    "name": "key",
-                    "type": "string",
-                    "optional": false,
-                    "description": "Access key"
-                },
-                {
-                    "name": "appid",
-                    "type": "uint32",
-                    "optional": true,
-                    "description": ""
-                },
-                {
-                    "name": "shortcut_name",
-                    "type": "string",
-                    "optional": true,
-                    "description": ""
-                },
-                {
-                    "name": "shortcutid",
-                    "type": "uint32",
-                    "optional": true,
-                    "description": ""
-                },
-                {
-                    "name": "note_id",
-                    "type": "string",
-                    "optional": true,
-                    "description": ""
-                },
-                {
-                    "name": "create_new",
-                    "type": "bool",
-                    "optional": true,
-                    "description": ""
-                },
-                {
-                    "name": "title",
-                    "type": "string",
-                    "optional": true,
-                    "description": ""
-                },
-                {
-                    "name": "content",
-                    "type": "string",
-                    "optional": true,
-                    "description": ""
                 }
             ]
         }
@@ -42464,32 +42293,6 @@
                             "description": ""
                         }
                     ]
-                }
-            ]
-        }
-    },
-    "IVoiceChatService": {
-        "UploadClientVoiceChatLogs": {
-            "_type": "undocumented",
-            "version": 1,
-            "parameters": [
-                {
-                    "name": "key",
-                    "type": "string",
-                    "optional": false,
-                    "description": "Access key"
-                },
-                {
-                    "name": "voice_chatid",
-                    "type": "fixed64",
-                    "optional": true,
-                    "description": ""
-                },
-                {
-                    "name": "client_voice_logs_new_lines",
-                    "type": "string",
-                    "optional": true,
-                    "description": ""
                 }
             ]
         }
