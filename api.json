@@ -5152,6 +5152,30 @@
                     "description": ""
                 }
             ]
+        },
+        "VerifyClanMembership": {
+            "_type": "undocumented",
+            "version": 1,
+            "parameters": [
+                {
+                    "name": "key",
+                    "type": "string",
+                    "optional": false,
+                    "description": "Access key"
+                },
+                {
+                    "name": "steamid",
+                    "type": "uint64",
+                    "optional": true,
+                    "description": ""
+                },
+                {
+                    "name": "steamids_verifymembership[0]",
+                    "type": "uint64[]",
+                    "optional": true,
+                    "description": ""
+                }
+            ]
         }
     },
     "IContentFilteringService": {
