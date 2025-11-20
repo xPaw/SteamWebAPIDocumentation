@@ -2541,6 +2541,30 @@
                     "optional": false
                 }
             ]
+        },
+        "SetAppChatRoomGroupStopForceActive": {
+            "_type": "undocumented",
+            "version": 1,
+            "parameters": [
+                {
+                    "name": "key",
+                    "type": "string",
+                    "optional": false,
+                    "description": "Access key"
+                },
+                {
+                    "name": "chat_group_id",
+                    "type": "uint64",
+                    "optional": true,
+                    "description": ""
+                },
+                {
+                    "name": "requesting_app_id",
+                    "type": "uint32",
+                    "optional": true,
+                    "description": ""
+                }
+            ]
         }
     },
     "ICheatReportingService": {
