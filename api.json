@@ -5647,6 +5647,24 @@
                 }
             ]
         },
+        "GetModeratorPreferences": {
+            "_type": "undocumented",
+            "version": 1,
+            "parameters": [
+                {
+                    "name": "key",
+                    "type": "string",
+                    "optional": false,
+                    "description": "Access key"
+                },
+                {
+                    "name": "steamid",
+                    "type": "fixed64",
+                    "optional": true,
+                    "description": ""
+                }
+            ]
+        },
         "GetReportedSubjectsByOwner": {
             "_type": "undocumented",
             "version": 1,
@@ -5847,6 +5865,12 @@
                     "type": "int32",
                     "optional": true,
                     "description": ""
+                },
+                {
+                    "name": "skip_lock",
+                    "type": "bool",
+                    "optional": true,
+                    "description": ""
                 }
             ]
         },
@@ -5896,6 +5920,39 @@
                     "type": "int32",
                     "optional": true,
                     "description": ""
+                }
+            ]
+        },
+        "SetModeratorPreferences": {
+            "_type": "undocumented",
+            "version": 1,
+            "httpmethod": "POST",
+            "parameters": [
+                {
+                    "name": "key",
+                    "type": "string",
+                    "optional": false,
+                    "description": "Access key"
+                },
+                {
+                    "name": "preferred_level",
+                    "type": "int32",
+                    "optional": true,
+                    "description": ""
+                },
+                {
+                    "name": "enabled_subject_types",
+                    "type": "CContentModeration_SetModeratorPreferences_Request_SubjectTypeList",
+                    "optional": true,
+                    "description": "",
+                    "extra": [
+                        {
+                            "name": "subject_types[0]",
+                            "type": "int32[]",
+                            "optional": true,
+                            "description": ""
+                        }
+                    ]
                 }
             ]
         },
@@ -10298,6 +10355,12 @@
                     "type": "int32",
                     "optional": true,
                     "description": ""
+                },
+                {
+                    "name": "skip_lock",
+                    "type": "bool",
+                    "optional": true,
+                    "description": ""
                 }
             ]
         }
@@ -14113,6 +14176,12 @@
                     "type": "fixed64",
                     "optional": true,
                     "description": "GID of the mobile app's authenticator for this user"
+                },
+                {
+                    "name": "device_identifier",
+                    "type": "string",
+                    "optional": true,
+                    "description": ""
                 }
             ]
         }
@@ -21156,6 +21225,12 @@
                 },
                 {
                     "name": "partnerid",
+                    "type": "uint32",
+                    "optional": true,
+                    "description": ""
+                },
+                {
+                    "name": "language_override",
                     "type": "uint32",
                     "optional": true,
                     "description": ""
