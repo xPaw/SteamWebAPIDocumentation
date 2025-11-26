@@ -1,5 +1,11 @@
 @import "bootstrap/dist/css/bootstrap.css";
 
+@property --level {
+	syntax: "<number>";
+	inherits: true;
+	initial-value: 0;
+}
+
 a {
 	color: #1f8bff;
 	text-decoration: none;
@@ -206,24 +212,8 @@ body {
 	box-shadow: none;
 }
 
-.card .table .level-1 td:first-child {
-	border-left: 10px solid #22252b;
-}
-
-.card .table .level-2 td:first-child {
-	border-left: 20px solid #22252b;
-}
-
-.card .table .level-3 td:first-child {
-	border-left: 30px solid #22252b;
-}
-
-.card .table .level-4 td:first-child {
-	border-left: 40px solid #22252b;
-}
-
-.card .table .level-5 td:first-child {
-	border-left: 50px solid #22252b;
+.card .table .attribute td:first-child {
+	padding-left: calc(0.75rem + (var(--level) * 16px));
 }
 
 .prefilled-key {

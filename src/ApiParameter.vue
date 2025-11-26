@@ -1,5 +1,5 @@
 <template>
-	<tr :class="`attribute level-${level}`">
+	<tr class="attribute" :style="`--level: ${level}`">
 		<td class="font-monospace">
 			<template v-if="level > 0">↳ </template>
 			<label class="form-control-label" :for="_labelId">{{ parameter.name }}</label>
