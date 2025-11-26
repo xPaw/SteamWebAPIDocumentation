@@ -520,10 +520,19 @@ foreach( $response[ 'apilist' ][ 'interfaces' ] as $service )
 	}
 }
 
+if( empty( $knownServices ) )
+{
+	echo 'Failed to get known services' . PHP_EOL;
+	exit( 1 );
+}
+
 $notFound                  = "<html>\n<head>\n<title>404 Not Found</title>\n</head>\n<body>\n<h1>Not Found</h1>\n</body>\n</html>";
 $notFoundNoInterface       = "<html><head><title>Not Found</title></head><body><h1>Not Found</h1>Interface '%s' not found</body></html>";
 $notFoundMethodInInterface = "<html><head><title>Not Found</title></head><body><h1>Not Found</h1>Method '%s' not found in interface '%s'</body></html>";
 $mustBePost                = "<html><head><title>Method Not Allowed</title></head><body><h1>Method Not Allowed</h1>This API must be called with a HTTP POST request</body></html>";
+$invalidKey                = "<html><head><title>Unauthorized</title></head><body><h1>Unauthorized</h1>Access is denied. Retrying will not help. Please verify your <pre>key=</pre> parameter.</body></html>";
+$invalidKey2               = "<html><head><title>Forbidden</title></head><body><h1>Forbidden</h1>Access is denied. Retrying will not help. Please verify your <pre>key=</pre> parameter.</body></html>";
+$badRouting                = "<html><head><title>Bad Request</title></head><body><h1>Bad Request</h1>Missing required routing parameter</body></html>";
 
 $foundServices = [];
 
@@ -544,30 +553,81 @@ foreach( $generatedServices as $serviceName => $methods )
 			continue;
 		}
 
-		echo 'Checking ' . $path . '...';
+		printf( "Checking %-64s...", $path );
 
 		curl_setopt( $c, CURLOPT_URL, "https://api.steampowered.com/{$path}/v1/" );
 		$response = curl_exec( $c );
+		$code = curl_getinfo( $c, CURLINFO_HTTP_CODE );
 
-		if( $response === $notFound )
+		if( $code === 429 || $code < 200 || $code >= 500 )
 		{
-			echo " \033[1;31mnothing\033[0m" . PHP_EOL;
-			continue;
+			echo " HTTP {$code}, retrying...";
+
+			sleep( 5 );
+
+			$response = curl_exec( $c );
+			$code = curl_getinfo( $c, CURLINFO_HTTP_CODE );
+
+			if( $code === 429 || $code < 200 || $code >= 500 )
+			{
+				echo 'Request failed, exiting to prevent corruption' . PHP_EOL;
+				exit( 1 );
+			}
 		}
 
-		if( $response === sprintf( $notFoundNoInterface, $serviceName ) )
+		usleep( 100000 );
+
+		if( $code === 404 )
 		{
-			echo " \033[1;33minterface not found\033[0m" . PHP_EOL;
-			continue;
+			if( $response === $notFound )
+			{
+				echo " \033[1;31m404\033[0m" . PHP_EOL;
+				continue;
+			}
+
+			if( $response === sprintf( $notFoundNoInterface, $serviceName ) )
+			{
+				echo " \033[1;33minterface not found\033[0m" . PHP_EOL;
+				continue;
+			}
+
+			if( $response === sprintf( $notFoundMethodInInterface, $methodName, $serviceName ) )
+			{
+				echo " \033[1;31mmethod not found\033[0m" . PHP_EOL;
+				continue;
+			}
 		}
 
-		if( $response === sprintf( $notFoundMethodInInterface, $methodName, $serviceName ) )
+		if( $code === 200 )
 		{
-			echo " \033[1;31mmethod not found\033[0m" . PHP_EOL;
-			continue;
+			echo " \033[0;32mFOUND (200)\033[0m" . PHP_EOL;
 		}
+		else if( $response === $mustBePost ) // $code === 405
+		{
+			echo " \033[0;32mFOUND (POST)\033[0m" . PHP_EOL;
+		}
+		else if( $response === $invalidKey ) // $code === 401
+		{
+			echo " \033[0;32mFOUND (KEY1)\033[0m" . PHP_EOL;
+		}
+		else if( $response === $invalidKey2 ) // $code === 401
+		{
+			echo " \033[0;32mFOUND (KEY2)\033[0m" . PHP_EOL;
+		}
+		else if( $response === $badRouting ) // $code === 400
+		{
+			echo " \033[0;32mFOUND (ROUTE)\033[0m" . PHP_EOL;
+		}
+		else
+		{
+			echo " \033[0;32mFOUND WITH CODE {$code}\033[0m" . PHP_EOL;
 
-		echo " \033[0;32mFOUND!\033[0m" . PHP_EOL;
+			$printResponse = addcslashes( substr( $response, 0, 256 ), "\r\n\t\v\f" );
+			echo " \033[1;30m\"{$printResponse}\"\033[0m" . PHP_EOL;
+
+			echo 'Unknown response, exiting to prevent corruption' . PHP_EOL;
+			exit( 1 );
+		}
 
 		$method =
 		[
