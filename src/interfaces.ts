@@ -34,4 +34,5 @@ export interface ApiMethodParameter {
 	description?: string;
 	optional: boolean;
 	extra?: ApiMethodParameter[];
+	enum_values?: Record<number, string>;
 }

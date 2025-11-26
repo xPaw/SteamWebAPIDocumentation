@@ -2,6 +2,8 @@
 
 set_time_limit( 600 );
 
+require __DIR__ . '/vendor/autoload.php';
+
 $PublisherApiKey = getenv( 'STEAM_PUBLISHER_API_KEY' );
 
 if( empty( $PublisherApiKey ) )
@@ -13,7 +15,14 @@ $Folder = getenv( 'STEAM_PROTOBUFS_REPO_PATH' );
 
 if( empty( $Folder ) )
 {
-	$Folder = __DIR__ . DIRECTORY_SEPARATOR . 'protobufs_repo';
+	if( getenv( 'CI' ) !== false )
+	{
+		$Folder = sys_get_temp_dir() . DIRECTORY_SEPARATOR . 'protobufs_repo_' . bin2hex( random_bytes( 5 ) );
+	}
+	else
+	{
+		$Folder = __DIR__ . DIRECTORY_SEPARATOR . 'protobufs_repo';
+	}
 
 	if( !file_exists( $Folder ) )
 	{
@@ -28,146 +37,409 @@ if( file_exists( $Folder ) )
 
 $generatedServices = [];
 
-/** @var SplFileInfo[] $allProtos */
-$allProtos = new RecursiveIteratorIterator(
-	new RecursiveDirectoryIterator(
-		$Folder,
-		FilesystemIterator::CURRENT_AS_FILEINFO | FilesystemIterator::SKIP_DOTS
-	)
-);
+$allProtos = new AppendIterator();
+
+foreach( [ 'steam', 'deadlock', 'csgo', 'dota2', 'webui' ] as $subFolder )
+{
+	$path = $Folder . DIRECTORY_SEPARATOR . $subFolder;
+	if( file_exists( $path ) )
+	{
+		$iterator = new RecursiveIteratorIterator(
+			new RecursiveDirectoryIterator(
+				$path,
+				FilesystemIterator::CURRENT_AS_FILEINFO | FilesystemIterator::SKIP_DOTS
+			)
+		);
+
+		// For game folders, only include files starting with "steam"
+		if( !in_array( $subFolder, [ 'webui', 'steam' ], true ) )
+		{
+			$iterator = new CallbackFilterIterator( $iterator, function( $file )
+			{
+				return $file->isFile() && str_starts_with( $file->getFilename(), 'steam' );
+			} );
+		}
+
+		$allProtos->append( $iterator );
+	}
+}
 
 $methodDescriptions = [];
 $methodParameters = [];
+$allMessages = [];
+$allEnums = [];
+$fieldDescriptions = []; // Store field descriptions separately since AST is readonly
+$parsedFiles = [];
+$parser = Butschster\ProtoParser\ProtoParserFactory::create();
 
-function ProcessFile( SplFileInfo $fileInfo ) : string
+function ParseProtoFile( SplFileInfo $fileInfo, $parser ) : ?Butschster\ProtoParser\Ast\ProtoNode
 {
-	if( !$fileInfo->isFile() )
+	global $parsedFiles;
+
+	$path = $fileInfo->getPathname();
+	if( isset( $parsedFiles[ $path ] ) )
 	{
-		echo $fileInfo . ' does not exist' . PHP_EOL;
-		return '';
+		return $parsedFiles[ $path ];
 	}
 
-	$proto = file_get_contents( $fileInfo );
-
-	if( $proto === false )
+	try
 	{
-		throw new Exception( "Failed to read $fileInfo" );
+		$protoContent = file_get_contents( $path );
+
+		// https://github.com/butschster/proto-parser/issues/8
+		if( !preg_match( '/^\s*syntax\s*=/', $protoContent ) )
+		{
+			$protoContent = "syntax = \"proto2\";\n" . $protoContent;
+		}
+
+		// https://github.com/butschster/proto-parser/issues/9
+		$protoContent = str_replace( "(.description)", '(description)', $protoContent );
+		$protoContent = str_replace( "optional uint64 bytes ", 'optional uint64 _bytes ', $protoContent );
+		$protoContent = str_replace( "optional bool bool ", 'optional bool _bool ', $protoContent );
+		$protoContent = str_replace( "optional float float ", 'optional float _float ', $protoContent );
+		$protoContent = str_replace( "optional string string ", 'optional string _string ', $protoContent );
+
+		// https://github.com/butschster/proto-parser/issues/10
+		$protoContent = preg_replace( '/extend\s+[^{]+\{[^}]*\}/s', '', $protoContent );
+
+		$protoFile = $parser->parse( $protoContent );
+		$parsedFiles[ $path ] = $protoFile;
+
+		return $protoFile;
 	}
-
-	return preg_replace_callback( '/^import "(?<file>.+\.proto)";/m', function( array $matches ) use ( $fileInfo ) : string
+	catch( Exception $e )
 	{
-		$path = $fileInfo->getPath() . '/';
-
-		if( str_starts_with( $matches[ 'file' ], 'google/' ) )
-		{
-			$path .= '../' . $matches[ 'file' ];
-		}
-		else if( str_starts_with( $matches[ 'file' ], 'steammessages' ) && str_contains( $path, 'webui' ) )
-		{
-			$path .= '../steam/' . $matches[ 'file' ];
-		}
-		else
-		{
-			$path .= $matches[ 'file' ];
-		}
-
-		return ProcessFile( new SplFileInfo( $path ) );
-	}, $proto ) ?? '';
+		echo 'Failed to parse ' . $fileInfo . ': ' . $e->getMessage() . PHP_EOL;
+		return null;
+	}
 }
 
-function ParseTypeToRequestParameters( string $request, string $proto, int $level = 0 )
+function StoreFieldDescriptions( string $messageName, Butschster\ProtoParser\Ast\MessageDefNode $message, array &$fieldDescriptions ) : void
 {
-	if( !preg_match( "/message " . $request . " {(.+?)^}/ms", $proto, $message ) )
+	// Store field descriptions in a separate array since AST nodes are readonly
+	foreach( $message->fields as $field )
 	{
-		echo $request . ' not found' . PHP_EOL;
+		// For oneof, process all fields inside it
+		if( $field instanceof Butschster\ProtoParser\Ast\OneofDeclNode )
+		{
+			foreach( $field->fields as $oneofField )
+			{
+				StoreFieldDescription( $messageName, $oneofField, $fieldDescriptions );
+			}
+			continue;
+		}
+
+		if( $field instanceof Butschster\ProtoParser\Ast\FieldDeclNode )
+		{
+			StoreFieldDescription( $messageName, $field, $fieldDescriptions );
+		}
+	}
+}
+
+function StoreFieldDescription( string $messageName, Butschster\ProtoParser\Ast\FieldDeclNode|Butschster\ProtoParser\Ast\OneofFieldNode $field, array &$fieldDescriptions ) : void
+{
+	$fieldKey = $messageName . '.' . $field->name;
+
+	// Store if we don't have a description yet
+	if( isset( $fieldDescriptions[ $fieldKey ] ) && !empty( $fieldDescriptions[ $fieldKey ] ) )
+	{
+		return;
+	}
+
+	foreach( $field->options as $opt )
+	{
+		if( $opt->name === 'description' && !empty( $opt->value ) )
+		{
+			$fieldDescriptions[ $fieldKey ] = $opt->value;
+			return;
+		}
+	}
+}
+
+function CollectNestedMessagesAndEnums( Butschster\ProtoParser\Ast\MessageDefNode $message, string $parentName, string $packagePrefix, array &$allMessages, array &$allEnums, array &$fieldDescriptions ) : void
+{
+	// Collect nested messages
+	foreach( $message->messages as $nestedMessage )
+	{
+		$nestedFullName = $parentName . '.' . $nestedMessage->name;
+		if( !isset( $allMessages[ $nestedFullName ] ) )
+		{
+			$allMessages[ $nestedFullName ] = $nestedMessage;
+		}
+
+		StoreFieldDescriptions( $nestedFullName, $nestedMessage, $fieldDescriptions );
+
+		if( $packagePrefix )
+		{
+			$fullName = $packagePrefix . $nestedFullName;
+			if( !isset( $allMessages[ $fullName ] ) )
+			{
+				$allMessages[ $fullName ] = $nestedMessage;
+			}
+
+			StoreFieldDescriptions( $fullName, $nestedMessage, $fieldDescriptions );
+		}
+
+		// Recursively collect deeper nested messages
+		CollectNestedMessagesAndEnums( $nestedMessage, $nestedFullName, $packagePrefix, $allMessages, $allEnums, $fieldDescriptions );
+	}
+
+	// Collect nested enums
+	foreach( $message->enums as $nestedEnum )
+	{
+		$nestedFullName = $parentName . '.' . $nestedEnum->name;
+		if( !isset( $allEnums[ $nestedFullName ] ) )
+		{
+			$allEnums[ $nestedFullName ] = $nestedEnum;
+		}
+
+		if( $packagePrefix )
+		{
+			$fullName = $packagePrefix . $nestedFullName;
+			if( !isset( $allEnums[ $fullName ] ) )
+			{
+				$allEnums[ $fullName ] = $nestedEnum;
+			}
+		}
+	}
+}
+
+function CollectMessagesFromFile( Butschster\ProtoParser\Ast\ProtoNode $protoFile, SplFileInfo $fileInfo, $parser, array &$allMessages, array &$allEnums, array &$fieldDescriptions ) : void
+{
+	$packagePrefix = '';
+	if( $protoFile->package !== null )
+	{
+		$packagePrefix = $protoFile->package->name . '.';
+	}
+
+	// Process imports first to get messages from imported files
+	foreach( $protoFile->imports as $import )
+	{
+		$importPath = $fileInfo->getPath() . DIRECTORY_SEPARATOR . $import->path;
+
+		// Handle relative paths for common imports
+		if( str_starts_with( $import->path, 'steammessages' ) && str_contains( $fileInfo->getPath(), 'webui' ) )
+		{
+			$importPath = $fileInfo->getPath() . DIRECTORY_SEPARATOR . '..' . DIRECTORY_SEPARATOR . 'steam' . DIRECTORY_SEPARATOR . $import->path;
+		}
+
+		if( file_exists( $importPath ) )
+		{
+			$importedFile = ParseProtoFile( new SplFileInfo( $importPath ), $parser );
+			if( $importedFile !== null )
+			{
+				CollectMessagesFromFile( $importedFile, new SplFileInfo( $importPath ), $parser, $allMessages, $allEnums, $fieldDescriptions );
+			}
+		}
+	}
+
+	// Collect messages and enums from this file
+	foreach( $protoFile->topLevelDefs as $def )
+	{
+		// Collect enums
+		if( $def instanceof Butschster\ProtoParser\Ast\EnumDefNode )
+		{
+			if( !isset( $allEnums[ $def->name ] ) )
+			{
+				$allEnums[ $def->name ] = $def;
+			}
+
+			if( $packagePrefix )
+			{
+				$fullName = $packagePrefix . $def->name;
+				if( !isset( $allEnums[ $fullName ] ) )
+				{
+					$allEnums[ $fullName ] = $def;
+				}
+			}
+			continue;
+		}
+
+		if( !( $def instanceof Butschster\ProtoParser\Ast\MessageDefNode ) )
+		{
+			continue;
+		}
+
+		if( !isset( $allMessages[ $def->name ] ) )
+		{
+			$allMessages[ $def->name ] = $def;
+		}
+
+		// Always try to store field descriptions from the current file
+		// This allows later folders (game folders) to add descriptions to messages from steam
+		StoreFieldDescriptions( $def->name, $def, $fieldDescriptions );
+
+		if( $packagePrefix )
+		{
+			$fullName = $packagePrefix . $def->name;
+			if( !isset( $allMessages[ $fullName ] ) )
+			{
+				$allMessages[ $fullName ] = $def;
+			}
+
+			StoreFieldDescriptions( $fullName, $def, $fieldDescriptions );
+		}
+
+		// Recursively collect all nested messages and enums at any depth
+		CollectNestedMessagesAndEnums( $def, $def->name, $packagePrefix, $allMessages, $allEnums, $fieldDescriptions );
+	}
+}
+
+function ParseMessageParameters( $message, array &$allMessages, array &$allEnums, array &$fieldDescriptions, string $messageName = '', array $processingStack = [] )
+{
+	if( $message === null )
+	{
 		return [];
+	}
+
+	// Add current message to processing stack to prevent circular references
+	if( !empty( $messageName ) )
+	{
+		$processingStack[ $messageName ] = true;
 	}
 
 	$parameters = [];
 
-	if( preg_match_all(
-		"/^\t(?<rule>optional|repeated|required) (?<type>[\w\.]+) (?<name>\w+).+?(?:\(description\) = \"(?<description>.+?)\".+?)?;$/m",
-		$message[ 1 ] ?? '',
-		$fields
-	) > 0 )
+	foreach( $message->fields as $field )
 	{
-		for( $y = 0; $y < count( $fields[ 0 ] ); $y++ )
+		// Handle oneof declarations by taking the first field
+		if( $field instanceof Butschster\ProtoParser\Ast\OneofDeclNode )
 		{
-			$name = $fields[ 'name' ][ $y ];
-			$extra = null;
-
-			if( strpos( $fields[ 'type' ][ $y ], '.' ) !== false )
+			if( !empty( $field->fields ) )
 			{
-				$type = substr( $fields[ 'type' ][ $y ], 1 );
-				// TODO: Support inner types with dots in middle
-
-				if( $type !== $request && $level < 5 )
-				{
-					$extra = ParseTypeToRequestParameters( $type, $proto, $level + 1 );
-				}
+				$field = $field->fields[0];
 			}
 			else
 			{
-				$type = $fields[ 'type' ][ $y ];
-			}
-
-			if( $fields[ 'rule' ][ $y ] === 'repeated' )
-			{
-				$name .= '[0]';
-				$type .= '[]';
-			}
-
-			if( !empty( $parameters[ $name ] ) )
-			{
-				if( empty( $parameters[ $name ][ 'description' ] ) )
-				{
-					$parameters[ $name ][ 'description' ] = trim( $fields[ 'description' ][ $y ] );
-				}
-
 				continue;
 			}
+		}
 
-			$parameters[ $name ] =
-			[
-				'name' => $name,
-				'type' => $type,
-				'optional' => true,
-				'description' => trim( $fields[ 'description' ][ $y ] ),
-			];
+		$name = $field->name;
+		$type = ltrim( $field->type->type, '.' );
+		$extra = null;
+		$enumValues = null;
 
-			if( !empty( $extra ) )
+		// Handle nested message types (check for circular references)
+		if( isset( $allMessages[ $type ] ) && !isset( $processingStack[ $type ] ) )
+		{
+			$extra = ParseMessageParameters( $allMessages[ $type ], $allMessages, $allEnums, $fieldDescriptions, $type, $processingStack );
+		}
+
+		// Handle enum types
+		if( isset( $allEnums[ $type ] ) )
+		{
+			$enumValues = [];
+			$names = array_map( fn($f) => $f->name, $allEnums[ $type ]->fields );
+
+			// Find common prefix across all enum values (including trailing underscore)
+			$prefix = count( $names ) > 1 ? $names[0] : '';
+			foreach( $names as $enumName )
 			{
-				$parameters[ $name ][ 'extra' ] = array_values( $extra );
+				for( $i = 0; $i < strlen( $prefix ) && $i < strlen( $enumName ) && $prefix[$i] === $enumName[$i]; $i++ );
+				$prefix = substr( $prefix, 0, $i );
 			}
+
+			// Strip common prefix from all values
+			foreach( $allEnums[ $type ]->fields as $enumField )
+			{
+				$enumValues[ $enumField->number ] = substr( $enumField->name, strlen( $prefix ) );
+			}
+		}
+
+		// OneofFieldNode doesn't have a modifier property, treat as optional
+		$isRepeated = false;
+		$isOptional = true;
+
+		if( $field instanceof Butschster\ProtoParser\Ast\FieldDeclNode )
+		{
+			$isRepeated = $field->modifier === Butschster\ProtoParser\Ast\FieldModifier::Repeated;
+			// Repeated fields are optional (can be empty), and so are fields with Optional modifier
+			$isOptional = $isRepeated || $field->modifier === Butschster\ProtoParser\Ast\FieldModifier::Optional;
+		}
+
+		if( $isRepeated )
+		{
+			$name .= '[0]';
+			$type .= '[]';
+		}
+
+		// Check stored descriptions first, then fall back to field options
+		$description = '';
+		if( !empty( $messageName ) )
+		{
+			$fieldKey = $messageName . '.' . $field->name;
+			if( isset( $fieldDescriptions[ $fieldKey ] ) )
+			{
+				$description = $fieldDescriptions[ $fieldKey ];
+			}
+		}
+
+		if( empty( $description ) )
+		{
+			foreach( $field->options as $option )
+			{
+				if( $option->name === 'description' )
+				{
+					$description = $option->value;
+					break;
+				}
+			}
+		}
+
+		$parameters[ $name ] =
+		[
+			'name' => $name,
+			'type' => $type,
+			'optional' => $isOptional,
+			'description' => $description,
+		];
+
+		if( !empty( $extra ) )
+		{
+			$parameters[ $name ][ 'extra' ] = array_values( $extra );
+		}
+
+		if( !empty( $enumValues ) )
+		{
+			$parameters[ $name ][ 'enum_values' ] = $enumValues;
 		}
 	}
 
 	return $parameters;
 }
 
+// First pass: collect all messages and field descriptions
 foreach( $allProtos as $fileInfo )
 {
-	if( strpos( $fileInfo, '.git' ) !== false  || $fileInfo->getExtension() !== 'proto' )
+	if( str_contains( $fileInfo, '.git' ) || $fileInfo->getExtension() !== 'proto' )
 	{
 		continue;
 	}
 
-	$proto = ProcessFile( $fileInfo );
+	echo 'Parsing ' . $fileInfo->getPathname() . '...' . PHP_EOL;
 
-	preg_match_all( "/service (.+?)\s{/", $proto, $matches, PREG_SET_ORDER | PREG_OFFSET_CAPTURE );
-
-	$matches[] =
-	[
-		[],
-		[
-			'',
-			strlen( $proto )
-		]
-	];
-
-	for( $i = count( $matches ) - 1; $i > 0; $i-- )
+	$protoFile = ParseProtoFile( $fileInfo, $parser );
+	if( $protoFile === null )
 	{
-		$serviceName = $matches[ $i - 1 ][ 1 ][ 0 ];
+		continue;
+	}
+
+	// Collect all messages and enums from this file and its imports
+	CollectMessagesFromFile( $protoFile, $fileInfo, $parser, $allMessages, $allEnums, $fieldDescriptions );
+}
+
+// Second pass: process services now that all descriptions are collected
+foreach( $parsedFiles as $path => $protoFile )
+{
+	foreach( $protoFile->topLevelDefs as $def )
+	{
+		if( !( $def instanceof Butschster\ProtoParser\Ast\ServiceDefNode ) )
+		{
+			continue;
+		}
+
+		$serviceName = $def->name;
 
 		if( $serviceName === 'RemoteClientSteamClient' )
 		{
@@ -176,22 +448,23 @@ foreach( $allProtos as $fileInfo )
 
 		$serviceName = 'I' . $serviceName . 'Service';
 
-		$service = substr( $proto, $matches[ $i - 1 ][ 1 ][ 1 ], $matches[ $i ][ 1 ][ 1 ] - $matches[ $i - 1 ][ 1 ][ 1 ] );
-
-		preg_match_all( "/rpc (.+?) \(\.?(.+?)\) returns \(\.?(?:.+?)\)\s*(?:;|{}|\{\s*option \(method_description\) = \"(.+?)\";)$/m", $service, $rpcs );
-
-		$generatedMethods = [];
-
-		for( $x = 0; $x < count( $rpcs[ 0 ] ); $x++ )
+		foreach( $def->methods as $method )
 		{
-			$methodName = $rpcs[ 1 ][ $x ];
-			$request = $rpcs[ 2 ][ $x ];
-
+			$methodName = $method->name;
 			$methodPath = $serviceName . '/' . $methodName;
 
-			if( empty( $methodDescriptions[ $methodPath ] ) )
+			// Extract method description from options
+			foreach( $method->options as $optionDecl )
 			{
-				$methodDescriptions[ $methodPath ] = trim( $rpcs[ 3 ][ $x ] );
+				if( $optionDecl->name === 'method_description' && empty( $methodDescriptions[ $methodPath ] ) )
+				{
+					// OptionDeclNode contains OptionNode[] in its options property
+					if( !empty( $optionDecl->options ) )
+					{
+						$methodDescriptions[ $methodPath ] = $optionDecl->options[0]->value;
+					}
+					break;
+				}
 			}
 
 			if( empty( $methodParameters[ $methodPath ] ) )
@@ -208,17 +481,19 @@ foreach( $allProtos as $fileInfo )
 				];
 			}
 
-			$methodParameters[ $methodPath ] += ParseTypeToRequestParameters( $request, $proto );
+			$requestType = $method->inputType->name;
+			if( !empty( $requestType ) && isset( $allMessages[ $requestType ] ) )
+			{
+				$methodParameters[ $methodPath ] += ParseMessageParameters( $allMessages[ $requestType ], $allMessages, $allEnums, $fieldDescriptions, $requestType, [] );
+			}
 
-			$generatedMethods[ $methodName ] = true;
+			if( empty( $generatedServices[ $serviceName ] ) )
+			{
+				$generatedServices[ $serviceName ] = [];
+			}
+
+			$generatedServices[ $serviceName ][ $methodName ] = true;
 		}
-
-		if( empty( $generatedServices[ $serviceName ] ) )
-		{
-			$generatedServices[ $serviceName ] = [];
-		}
-
-		$generatedServices[ $serviceName ] += $generatedMethods;
 	}
 }
 
@@ -329,8 +604,6 @@ foreach( $generatedServices as $serviceName => $methods )
 		'methods' => $foundMethods,
 	];
 }
-
-curl_close( $c );
 
 file_put_contents(
 	__DIR__ . DIRECTORY_SEPARATOR . 'api_from_protos.json',

@@ -1,0 +1,5 @@
+{
+    "require": {
+        "butschster/proto-parser": "^1.1"
+    }
+}

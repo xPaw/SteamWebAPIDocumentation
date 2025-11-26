@@ -2,9 +2,7 @@
 
 cd "$(dirname "$0")"
 
-#disabled because it needs better check for valid apis (due to server errors?)
-#php generate_api_from_protos.php
-
+php generate_api_from_protos.php
 php generate_api.php
 
 git add -A
