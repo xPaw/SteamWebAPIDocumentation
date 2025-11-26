@@ -31,7 +31,7 @@
 				v-else
 				class="form-control border-0 rounded-0"
 				placeholder="…"
-				:type="parameter.enum_values ? 'number' : 'text'"
+				:type="isNumberType ? 'number' : 'text'"
 				:name="level === 0 ? parameter.name : ''"
 				:id="labelId"
 				v-model="parameter._value"
@@ -76,12 +76,12 @@
 </template>
 
 <script setup lang="ts">
-import { useId } from 'vue';
+import { computed, useId } from 'vue';
 import type { ApiMethod, ApiMethodParameter } from './interfaces';
 
 const _labelId = useId();
 
-defineProps<{
+const props = defineProps<{
 	level: number;
 	method: ApiMethod;
 	parameter: ApiMethodParameter;
@@ -90,4 +90,30 @@ defineProps<{
 	focusApiKey?: (payload: MouseEvent) => void;
 	apiKeyFilled?: boolean;
 }>();
+
+// biome-ignore lint/correctness/noUnusedVariables: Used in template
+const isNumberType = computed(() => {
+	if (props.parameter.enum_values) {
+		return true;
+	}
+
+	const numericTypes = [
+		'{enum}',
+		'double',
+		'fixed32',
+		'fixed64',
+		'float',
+		'int32',
+		'int64',
+		'sfixed32',
+		'sfixed64',
+		'sint32',
+		'sint64',
+		'uint32',
+		'uint64',
+	];
+
+	const type = props.parameter.type.replace('[]', '');
+	return numericTypes.includes(type);
+});
 </script>
