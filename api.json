@@ -6326,6 +6326,12 @@
                     "type": "int32",
                     "optional": true,
                     "description": "enum"
+                },
+                {
+                    "name": "credible_threat_of_violence_status",
+                    "type": "int32",
+                    "optional": true,
+                    "description": "enum"
                 }
             ]
         },
@@ -24173,6 +24179,30 @@
                     "description": "Access key"
                 }
             ]
+        },
+        "GetYearTopAppReleases": {
+            "_type": "undocumented",
+            "version": 1,
+            "parameters": [
+                {
+                    "name": "key",
+                    "type": "string",
+                    "optional": false,
+                    "description": "Access key"
+                },
+                {
+                    "name": "rtime_year",
+                    "type": "uint32",
+                    "optional": true,
+                    "description": ""
+                },
+                {
+                    "name": "include_dlc",
+                    "type": "bool",
+                    "optional": true,
+                    "description": ""
+                }
+            ]
         }
     },
     "ISteamCloudGaming": {
@@ -25681,6 +25711,12 @@
                                             "type": "uint32",
                                             "optional": true,
                                             "description": ""
+                                        },
+                                        {
+                                            "name": "dropout_pct",
+                                            "type": "uint32",
+                                            "optional": true,
+                                            "description": ""
                                         }
                                     ]
                                 },
@@ -27227,6 +27263,12 @@
                                         {
                                             "name": "auto_activate_accuracy_threshold",
                                             "type": "float",
+                                            "optional": true,
+                                            "description": ""
+                                        },
+                                        {
+                                            "name": "failed_auto_activate_emails",
+                                            "type": "string",
                                             "optional": true,
                                             "description": ""
                                         }
@@ -27441,6 +27483,12 @@
                                             "type": "uint32",
                                             "optional": true,
                                             "description": ""
+                                        },
+                                        {
+                                            "name": "dropout_pct",
+                                            "type": "uint32",
+                                            "optional": true,
+                                            "description": ""
                                         }
                                     ]
                                 },
@@ -28987,6 +29035,12 @@
                                         {
                                             "name": "auto_activate_accuracy_threshold",
                                             "type": "float",
+                                            "optional": true,
+                                            "description": ""
+                                        },
+                                        {
+                                            "name": "failed_auto_activate_emails",
+                                            "type": "string",
                                             "optional": true,
                                             "description": ""
                                         }
@@ -29225,6 +29279,12 @@
                                 },
                                 {
                                     "name": "other_fetch_id",
+                                    "type": "uint32",
+                                    "optional": true,
+                                    "description": ""
+                                },
+                                {
+                                    "name": "dropout_pct",
                                     "type": "uint32",
                                     "optional": true,
                                     "description": ""
@@ -30774,6 +30834,12 @@
                                 {
                                     "name": "auto_activate_accuracy_threshold",
                                     "type": "float",
+                                    "optional": true,
+                                    "description": ""
+                                },
+                                {
+                                    "name": "failed_auto_activate_emails",
+                                    "type": "string",
                                     "optional": true,
                                     "description": ""
                                 }
@@ -32340,6 +32406,12 @@
                                     "type": "uint32",
                                     "optional": true,
                                     "description": ""
+                                },
+                                {
+                                    "name": "dropout_pct",
+                                    "type": "uint32",
+                                    "optional": true,
+                                    "description": ""
                                 }
                             ]
                         },
@@ -33886,6 +33958,12 @@
                                 {
                                     "name": "auto_activate_accuracy_threshold",
                                     "type": "float",
+                                    "optional": true,
+                                    "description": ""
+                                },
+                                {
+                                    "name": "failed_auto_activate_emails",
+                                    "type": "string",
                                     "optional": true,
                                     "description": ""
                                 }
