@@ -2651,30 +2651,6 @@
                     "optional": false
                 }
             ]
-        },
-        "SetAppChatRoomGroupStopForceActive": {
-            "_type": "undocumented",
-            "version": 1,
-            "parameters": [
-                {
-                    "name": "key",
-                    "type": "string",
-                    "optional": false,
-                    "description": "Access key"
-                },
-                {
-                    "name": "chat_group_id",
-                    "type": "uint64",
-                    "optional": true,
-                    "description": ""
-                },
-                {
-                    "name": "requesting_app_id",
-                    "type": "uint32",
-                    "optional": true,
-                    "description": ""
-                }
-            ]
         }
     },
     "ICheatReportingService": {
@@ -3472,13 +3448,6 @@
                     "description": "The ID of the match to load"
                 }
             ]
-        }
-    },
-    "ICitadelAdmin_3488080": {
-        "GetReplayURL": {
-            "_type": "undocumented",
-            "version": 1,
-            "parameters": []
         }
     },
     "ICitadelAdmin_3781850": {
@@ -7264,13 +7233,6 @@
             "parameters": []
         }
     },
-    "IDOTA2MatchStats_2305270": {
-        "GetRealtimeStats": {
-            "_type": "undocumented",
-            "version": 1,
-            "parameters": []
-        }
-    },
     "IDOTA2Match_570": {
         "GetLiveLeagueGames": {
             "version": 1,
@@ -7536,53 +7498,6 @@
             "parameters": []
         }
     },
-    "IDOTA2Match_2305270": {
-        "GetLiveLeagueGames": {
-            "_type": "undocumented",
-            "version": 1,
-            "parameters": []
-        },
-        "GetMatchDetails": {
-            "_type": "undocumented",
-            "version": 1,
-            "parameters": []
-        },
-        "GetMatchHistory": {
-            "_type": "undocumented",
-            "version": 1,
-            "parameters": []
-        },
-        "GetMatchHistoryBySequenceNum": {
-            "_type": "undocumented",
-            "version": 1,
-            "parameters": []
-        },
-        "GetTeamInfoByTeamID": {
-            "_type": "undocumented",
-            "version": 1,
-            "parameters": []
-        },
-        "GetTopLiveEventGame": {
-            "_type": "undocumented",
-            "version": 1,
-            "parameters": []
-        },
-        "GetTopLiveGame": {
-            "_type": "undocumented",
-            "version": 1,
-            "parameters": []
-        },
-        "GetTopWeekendTourneyGames": {
-            "_type": "undocumented",
-            "version": 1,
-            "parameters": []
-        },
-        "GetTournamentPlayerStats": {
-            "_type": "undocumented",
-            "version": 1,
-            "parameters": []
-        }
-    },
     "IDOTA2Operations_570": {
         "GetBannedWordList": {
             "_type": "undocumented",
@@ -7681,18 +7596,6 @@
         }
     },
     "IDOTA2StreamSystem_247040": {
-        "GetBroadcasterInfo": {
-            "_type": "undocumented",
-            "version": 1,
-            "parameters": []
-        },
-        "ListOfUsersSpectating": {
-            "_type": "undocumented",
-            "version": 1,
-            "parameters": []
-        }
-    },
-    "IDOTA2StreamSystem_2305270": {
         "GetBroadcasterInfo": {
             "_type": "undocumented",
             "version": 1,
@@ -7839,23 +7742,6 @@
         }
     },
     "IDOTA2Ticket_247040": {
-        "GetSteamIDForBadgeID": {
-            "_type": "undocumented",
-            "version": 1,
-            "parameters": []
-        },
-        "SetSteamAccountPurchased": {
-            "_type": "undocumented",
-            "version": 1,
-            "parameters": []
-        },
-        "SteamAccountValidForBadgeType": {
-            "_type": "undocumented",
-            "version": 1,
-            "parameters": []
-        }
-    },
-    "IDOTA2Ticket_2305270": {
         "GetSteamIDForBadgeID": {
             "_type": "undocumented",
             "version": 1,
@@ -8476,38 +8362,6 @@
             "parameters": []
         }
     },
-    "IEconDOTA2_2305270": {
-        "GetEventStatsForAccount": {
-            "_type": "undocumented",
-            "version": 1,
-            "parameters": []
-        },
-        "GetHeroes": {
-            "_type": "undocumented",
-            "version": 1,
-            "parameters": []
-        },
-        "GetItemCreators": {
-            "_type": "undocumented",
-            "version": 1,
-            "parameters": []
-        },
-        "GetItemWorkshopPublishedFileIDs": {
-            "_type": "undocumented",
-            "version": 1,
-            "parameters": []
-        },
-        "GetRarities": {
-            "_type": "undocumented",
-            "version": 1,
-            "parameters": []
-        },
-        "GetTournamentPrizePool": {
-            "_type": "undocumented",
-            "version": 1,
-            "parameters": []
-        }
-    },
     "IEconItems_440": {
         "GetPlayerItems": {
             "version": 1,
@@ -8745,18 +8599,6 @@
                     "description": "Return items equipped for this class id"
                 }
             ]
-        }
-    },
-    "IEconItems_2305270": {
-        "GetPlayerItems": {
-            "_type": "undocumented",
-            "version": 1,
-            "parameters": []
-        },
-        "GetStoreMetaData": {
-            "_type": "undocumented",
-            "version": 1,
-            "parameters": []
         }
     },
     "IEconMarketService": {
@@ -23239,12 +23081,6 @@
                 }
             ]
         },
-        "GetAppList": {
-            "_type": "undocumented",
-            "version": 2,
-            "httpmethod": "GET",
-            "parameters": []
-        },
         "GetCheatingReports": {
             "_type": "publisher_only",
             "version": 1,
@@ -36933,31 +36769,6 @@
         }
     },
     "ISteamUserAuth": {
-        "AuthenticateUser": {
-            "_type": "undocumented",
-            "version": 1,
-            "httpmethod": "POST",
-            "parameters": [
-                {
-                    "name": "steamid",
-                    "type": "uint64",
-                    "optional": false,
-                    "description": "Should be the users steamid, unencrypted."
-                },
-                {
-                    "name": "sessionkey",
-                    "type": "rawbinary",
-                    "optional": false,
-                    "description": "Should be a 32 byte random blob of data, which is then encrypted with RSA using the\n                Steam system's public key. Randomness is important here for security."
-                },
-                {
-                    "name": "encrypted_loginkey",
-                    "type": "rawbinary",
-                    "optional": false,
-                    "description": "Should be the users hashed loginkey, AES encrypted with the sessionkey."
-                }
-            ]
-        },
         "AuthenticateUserTicket": {
             "version": 1,
             "httpmethod": "GET",
