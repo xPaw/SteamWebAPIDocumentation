@@ -2536,6 +2536,7 @@
                         "CountryRestrictionsChanged",
                         "RemoveAndWarn",
                         "RemoveAndBan",
+                        "RemoveAndKick",
                         "MAX"
                     ]
                 },
@@ -2608,8 +2609,37 @@
                         "FakedNonConsensualMaterial",
                         "NegativeEffectonDiscourseOrElections",
                         "QuotesModeratedContent",
+                        "CredibleThreatOfViolence",
                         "MAX"
                     ]
+                },
+                {
+                    "name": "subject_type",
+                    "type": "EContentReportSubjectType",
+                    "optional": true,
+                    "description": "enum",
+                    "enum_values": [
+                        "Invalid",
+                        "ForumPost",
+                        "Unused",
+                        "UGCFile",
+                        "FriendChatMsg",
+                        "ChatRoomMsg",
+                        "ChatGroup",
+                        "MAX"
+                    ]
+                },
+                {
+                    "name": "chat_group_id",
+                    "type": "uint64",
+                    "optional": true,
+                    "description": ""
+                },
+                {
+                    "name": "kick_expiration_time",
+                    "type": "uint32",
+                    "optional": true,
+                    "description": ""
                 }
             ]
         },
@@ -5381,6 +5411,7 @@
                         "FakedNonConsensualMaterial",
                         "NegativeEffectonDiscourseOrElections",
                         "QuotesModeratedContent",
+                        "CredibleThreatOfViolence",
                         "MAX"
                     ]
                 },
@@ -10613,6 +10644,7 @@
                         "CountryRestrictionsChanged",
                         "RemoveAndWarn",
                         "RemoveAndBan",
+                        "RemoveAndKick",
                         "MAX"
                     ]
                 },
@@ -10685,6 +10717,7 @@
                         "FakedNonConsensualMaterial",
                         "NegativeEffectonDiscourseOrElections",
                         "QuotesModeratedContent",
+                        "CredibleThreatOfViolence",
                         "MAX"
                     ]
                 },
