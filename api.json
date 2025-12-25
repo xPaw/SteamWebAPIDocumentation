@@ -2640,6 +2640,12 @@
                     "type": "uint32",
                     "optional": true,
                     "description": ""
+                },
+                {
+                    "name": "skip_lock",
+                    "type": "bool",
+                    "optional": true,
+                    "description": ""
                 }
             ]
         },
