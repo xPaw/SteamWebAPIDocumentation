@@ -6178,6 +6178,26 @@
                     "type": "int32",
                     "optional": true,
                     "description": "enum"
+                },
+                {
+                    "name": "updated_sanctions[0]",
+                    "type": "ContentReportSubjectSanction[]",
+                    "optional": true,
+                    "description": "",
+                    "extra": [
+                        {
+                            "name": "sanction",
+                            "type": "int32",
+                            "optional": true,
+                            "description": "enum"
+                        },
+                        {
+                            "name": "days",
+                            "type": "int32",
+                            "optional": true,
+                            "description": ""
+                        }
+                    ]
                 }
             ]
         },
@@ -6239,6 +6259,26 @@
                     "type": "bool",
                     "optional": true,
                     "description": ""
+                },
+                {
+                    "name": "sanctions_applied[0]",
+                    "type": "ContentReportSubjectSanction[]",
+                    "optional": true,
+                    "description": "",
+                    "extra": [
+                        {
+                            "name": "sanction",
+                            "type": "int32",
+                            "optional": true,
+                            "description": "enum"
+                        },
+                        {
+                            "name": "days",
+                            "type": "int32",
+                            "optional": true,
+                            "description": ""
+                        }
+                    ]
                 }
             ]
         },
@@ -6288,6 +6328,26 @@
                     "type": "int32",
                     "optional": true,
                     "description": "enum"
+                },
+                {
+                    "name": "sanctions_applied[0]",
+                    "type": "ContentReportSubjectSanction[]",
+                    "optional": true,
+                    "description": "",
+                    "extra": [
+                        {
+                            "name": "sanction",
+                            "type": "int32",
+                            "optional": true,
+                            "description": "enum"
+                        },
+                        {
+                            "name": "days",
+                            "type": "int32",
+                            "optional": true,
+                            "description": ""
+                        }
+                    ]
                 }
             ]
         },
