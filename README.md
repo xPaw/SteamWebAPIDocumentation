@@ -19,6 +19,17 @@ I provide an automatically updated and generated list, I do not personally know 
    - Descriptions and fields are also parsed
 4. [`api_undocumented_methods.txt`](api_undocumented_methods.txt) to insert undocumented and otherwise unknown APIs
 5. [`api_type_overrides.json`](api_type_overrides.json) to fix up types of known method parameters. Such as enforcing arrays
+6. Optional proxy observations collected via `collect_observed_calls.php` and merged from `api_observed_calls.json`
+
+### Observed proxy logs
+
+If you want to capture calls from a proxy like mitmproxy or Charles, export the flows as JSON lines where each line contains a request object with a URL (or host/path), HTTP method, and optional response body. Then run:
+
+```bash
+php collect_observed_calls.php path/to/proxy-log.jsonl
+```
+
+This produces `api_observed_calls.json`, which `generate_api.php` merges into the final `api.json` with the `_type` value set to `observed_proxy`.
 
 ## config.php
 
