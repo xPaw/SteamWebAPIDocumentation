@@ -5,6 +5,8 @@
 /config.php
 /api_from_protos.json
 /api_from_docs.json
+/api_web_bundle_calls.json
+/cache/web_bundles/
 /public/api.json
 /public/*.js
 /public/*.css
