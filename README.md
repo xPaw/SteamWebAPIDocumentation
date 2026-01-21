@@ -18,8 +18,9 @@ I provide an automatically updated and generated list, I do not personally know 
 3. [Parsed protobufs](https://github.com/SteamDatabase/Protobufs) to find service methods and tested against the API
    - Descriptions and fields are also parsed
 4. [`api_undocumented_methods.txt`](api_undocumented_methods.txt) to insert undocumented and otherwise unknown APIs
-5. [`api_type_overrides.json`](api_type_overrides.json) to fix up types of known method parameters. Such as enforcing arrays
-6. Optional proxy observations collected via `collect_observed_calls.php` and merged from `api_observed_calls.json`
+5. Web bundle scans collected via `extract_web_bundle_calls.php` and merged from `api_web_bundle_calls.json`
+6. [`api_type_overrides.json`](api_type_overrides.json) to fix up types of known method parameters. Such as enforcing arrays
+7. Optional proxy observations collected via `collect_observed_calls.php` and merged from `api_observed_calls.json`
 
 ### Observed proxy logs
 
@@ -40,6 +41,16 @@ To run generation scripts, a `config.php` file needs to be created with API keys
 $PublicApiKey    = '';
 $PublisherApiKey = '';
 ```
+
+## Web bundle scanning
+
+To scan the Steam community/store bundles for additional API usage references, run:
+
+```bash
+php extract_web_bundle_calls.php
+```
+
+This writes `api_web_bundle_calls.json` and uses a local cache at `cache/web_bundles/` to avoid refetching bundles. Cached entries are refreshed once per 24 hours by default (or you can pass `--force` to refresh immediately).
 
 ## Developing locally
 

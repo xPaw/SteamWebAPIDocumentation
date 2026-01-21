@@ -88,6 +88,15 @@ else
 	$ObservedProxyCalls = [];
 }
 
+if( file_exists( __DIR__ . '/api_web_bundle_calls.json' ) )
+{
+	$WebBundleCalls = json_decode( file_get_contents( __DIR__ . '/api_web_bundle_calls.json' ), true, 512, JSON_THROW_ON_ERROR );
+}
+else
+{
+	$WebBundleCalls = [];
+}
+
 $FinalList = file_exists( __DIR__ . '/api.json' ) ? json_decode( file_get_contents( __DIR__ . '/api.json' ), true, 512, JSON_THROW_ON_ERROR ) : [];
 
 MarkAsRemoved( $FinalList );
@@ -96,6 +105,7 @@ MergeLists( $FinalList, $YesPublisher, 'publisher_only' );
 MergeLists( $FinalList, $Undocumented, 'undocumented' );
 MergeLists( $FinalList, $UndocumentedFromPartnerDocs, 'undocumented' );
 MergeLists( $FinalList, $UndocumentedFromServices, 'undocumented' );
+MergeLists( $FinalList, $WebBundleCalls, 'undocumented' );
 MergeLists( $FinalList, $ObservedProxyCalls, 'observed_proxy' );
 
 $MethodKeysOrder =
