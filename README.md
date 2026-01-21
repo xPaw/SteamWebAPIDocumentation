@@ -22,6 +22,29 @@ I provide an automatically updated and generated list, I do not personally know 
 6. [`api_type_overrides.json`](api_type_overrides.json) to fix up types of known method parameters. Such as enforcing arrays
 7. Optional proxy observations collected via `collect_observed_calls.php` and merged from `api_observed_calls.json`
 
+## Discovery workflow
+
+Use this pipeline to reproduce the discovery process end-to-end:
+
+1. Run `GetSupportedAPIList` with both public and partner keys (configured in `config.php`) by running the generator scripts.
+2. Parse protobuf updates from [SteamDatabase/Protobufs](https://github.com/SteamDatabase/Protobufs) to discover service methods.
+3. Ingest observed calls from proxy logs using `collect_observed_calls.php`.
+4. Extract web bundle references with `extract_web_bundle_calls.php`.
+
+**Minimal checklist**
+
+- [ ] Configure `config.php` with public + partner keys.
+- [ ] Run `php generate_api.php` (pulls `GetSupportedAPIList`).
+- [ ] Run `php generate_api_from_protos.php` (parses SteamDatabase/Protobufs).
+- [ ] Run `php collect_observed_calls.php path/to/proxy-log.jsonl`.
+- [ ] Run `php extract_web_bundle_calls.php`.
+
+**Expected output files**
+
+- `api.json`
+- `api_observed_calls.json`
+- `api_web_bundle_calls.json`
+
 ### Observed proxy logs
 
 If you want to capture calls from a proxy like mitmproxy or Charles, export the flows as JSON lines where each line contains a request object with a URL (or host/path), HTTP method, and optional response body. Then run:
