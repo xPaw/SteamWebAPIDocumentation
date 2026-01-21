@@ -2025,7 +2025,14 @@
         "GetPlayerProfile": {
             "_type": "undocumented",
             "version": 1,
-            "parameters": []
+            "parameters": [
+                {
+                    "name": "steamid",
+                    "type": "uint64",
+                    "optional": false,
+                    "description": "steamID of the player"
+                }
+            ]
         },
         "GetPlayerProfileCoin": {
             "_type": "publisher_only",
@@ -2099,19 +2106,48 @@
         "GetMatchScoreboard": {
             "_type": "undocumented",
             "version": 1,
-            "parameters": []
+            "parameters": [
+                {
+                    "name": "caster",
+                    "type": "unknown",
+                    "optional": false,
+                    "description": "Unknown"
+                }
+            ]
         },
         "ListOfUsersSpectating": {
             "_type": "undocumented",
             "version": 1,
-            "parameters": []
+            "httpmethod": "POST",
+            "parameters": [
+                {
+                    "name": "caster",
+                    "type": "unknown",
+                    "optional": false,
+                    "description": "Unknown"
+                },
+                {
+                    "name": "viewers",
+                    "type": "unknown",
+                    "optional": false,
+                    "description": "Unknown"
+                }
+            ]
         }
     },
     "ICSGOTournaments_730": {
         "ClaimBadgeReward": {
             "_type": "undocumented",
             "version": 1,
-            "parameters": []
+            "httpmethod": "POST",
+            "parameters": [
+                {
+                    "name": "BadgeID",
+                    "type": "unknown",
+                    "optional": false,
+                    "description": "unknown"
+                }
+            ]
         },
         "GetTournamentFantasyLineup": {
             "version": 1,
@@ -6824,12 +6860,27 @@
         "GetPlayerHistory": {
             "_type": "undocumented",
             "version": 1,
-            "parameters": []
+            "parameters": [
+                {
+                    "name": "account_id",
+                    "type": "unknown",
+                    "optional": false,
+                    "description": "Unknown"
+                }
+            ]
         },
         "GetTournamentDetails": {
             "_type": "undocumented",
             "version": 1,
-            "parameters": []
+            "parameters": [
+                {
+                    "name": "tournament_id",
+                    "type": "unknown",
+                    "optional": false,
+                    "description": "Unknown"
+                }
+                
+            ]
         }
     },
     "IDOTA2AutomatedTourney_247040": {
@@ -6870,7 +6921,14 @@
         "GetGamePlayerCounts": {
             "_type": "undocumented",
             "version": 1,
-            "parameters": []
+            "parameters": [
+                {
+                    "name": "custom_game_id",
+                    "type": "unknown",
+                    "optional": false,
+                    "description": "Unknown"
+                }
+            ]
         },
         "GetPopularGames": {
             "_type": "undocumented",
@@ -6951,7 +7009,14 @@
         "GetArcanaVotes": {
             "_type": "undocumented",
             "version": 1,
-            "parameters": []
+            "parameters": [
+                {
+                    "name": "event_id",
+                    "type": "unknown",
+                    "optional": false,
+                    "description": "Unknown"
+                }
+            ]
         },
         "GetCurrentTriviaQuestions": {
             "_type": "undocumented",
@@ -6961,22 +7026,49 @@
         "GetDraftTriviaMatchInfo": {
             "_type": "undocumented",
             "version": 1,
-            "parameters": []
+            "parameters": [
+                {
+                    "name": "event_id",
+                    "type": "unknown",
+                    "optional": false,
+                    "description": "Unknown"
+                }]
         },
         "GetDraftTriviaVoteCount": {
             "_type": "undocumented",
             "version": 1,
-            "parameters": []
+            "parameters": [
+                {
+                    "name": "end_time",
+                    "type": "unknown",
+                    "optional": false,
+                    "description": "Unknown"
+                }
+            ]
         },
         "GetMutations": {
             "_type": "undocumented",
             "version": 1,
-            "parameters": []
+            "parameters": [
+                {
+                    "name": "l",
+                    "type": "unknown",
+                    "optional": false,
+                    "description": "Unknown"
+                }
+            ]
         },
         "GetTriviaQuestionAnswersSummary": {
             "_type": "undocumented",
             "version": 1,
-            "parameters": []
+            "parameters": [
+                {
+                    "name": "question_id",
+                    "type": "unknown",
+                    "optional": false,
+                    "description": "Unknown"
+                }
+            ]
         }
     },
     "IDOTA2Events_247040": {
@@ -7047,17 +7139,57 @@
         "GetFantasyPlayerRawStats": {
             "_type": "undocumented",
             "version": 1,
-            "parameters": []
+            "parameters": [
+                {
+                    "name": "accountid",
+                    "type": "unknown",
+                    "optional": false,
+                    "description": "Unknown"
+                },
+                {
+                    "name": "leagueid",
+                    "type": "unknown",
+                    "optional": false,
+                    "description": "Unknown"
+                },
+                {
+                    "name": "StartTime",
+                    "type": "unknown",
+                    "optional": false,
+                    "description": "Unknown"
+                },
+                {
+                    "name": "EndTime",
+                    "type": "unknown",
+                    "optional": false,
+                    "description": "Unknown"
+                }
+
+            ]
         },
         "GetPlayerInfo": {
             "_type": "undocumented",
             "version": 1,
-            "parameters": []
+            "parameters": [
+                {
+                    "name": "account_id",
+                    "type": "unknown",
+                    "optional": false,
+                    "description": "Unknown"
+                }
+            ]
         },
         "GetPlayerInfos": {
             "_type": "undocumented",
             "version": 1,
-            "parameters": []
+            "parameters": [
+                {
+                    "name": "account_ids",
+                    "type": "unknown",
+                    "optional": false,
+                    "description": "Unknown"
+                }
+            ]
         },
         "GetProPlayerInfo": {
             "_type": "undocumented",
@@ -7113,22 +7245,56 @@
         "FindGuildByTag": {
             "_type": "undocumented",
             "version": 1,
-            "parameters": []
+            "parameters": [
+                {
+                    "name": "tag",
+                    "type": "unknown",
+                    "optional": false,
+                    "description": "unknown"
+                }
+            ]
         },
         "GetGuildPersonaInfo": {
             "_type": "undocumented",
             "version": 1,
-            "parameters": []
+            "parameters": [
+                {
+                    "name": "account_id",
+                    "type": "unknown",
+                    "optional": false,
+                    "description": "Unknown"
+                }
+            ]
         },
         "GetGuildSummary": {
             "_type": "undocumented",
             "version": 1,
-            "parameters": []
+            "parameters": [
+                {
+                    "name": "guild_id",
+                    "type": "unknown",
+                    "optional": false,
+                    "description": "unknown"
+                }
+            ]
         },
         "SearchForOpenGuilds": {
             "_type": "undocumented",
             "version": 1,
-            "parameters": []
+            "parameters": [
+                {
+                    "name": "language",
+                    "type": "unknown",
+                    "optional": false,
+                    "description": "Language of the guild you are searching for"
+                },
+                {
+                    "name": "region",
+                    "type": "unknown",
+                    "optional": false,
+                    "description": "Region of the guild you are searching for"
+                }
+            ]
         }
     },
     "IDOTA2Guild_247040": {
@@ -7179,7 +7345,14 @@
         "GetLeagueData": {
             "_type": "undocumented",
             "version": 1,
-            "parameters": []
+            "parameters": [
+                {
+                    "name": "league_id",
+                    "type": "unknown",
+                    "optional": false,
+                    "description": "Unknown"
+                }
+            ]
         },
         "GetLeagueInfoList": {
             "_type": "undocumented",
@@ -7189,12 +7362,32 @@
         "GetLeagueNodeResults": {
             "_type": "undocumented",
             "version": 1,
-            "parameters": []
+            "parameters": [
+                {
+                    "name": "league_id",
+                    "type": "unknown",
+                    "optional": false,
+                    "description": "Unknown"
+                },
+                {
+                    "name": "node_group_id",
+                    "type": "unknown",
+                    "optional": false,
+                    "description": "Unknown"
+                }
+            ]
         },
         "GetLeaguesData": {
             "_type": "undocumented",
             "version": 1,
-            "parameters": []
+            "parameters": [
+                {
+                    "name": "league_ids",
+                    "type": "unknown",
+                    "optional": false,
+                    "description": "Unknown"
+                }
+            ]
         },
         "GetLiveGames": {
             "_type": "undocumented",
@@ -7204,22 +7397,56 @@
         "GetMessages": {
             "_type": "undocumented",
             "version": 1,
-            "parameters": []
+            "parameters": [
+                {
+                    "name": "admin_account_id",
+                    "type": "unknown",
+                    "optional": false,
+                    "description": "Unknown"
+                },
+                {
+                    "name": "league_id",
+                    "type": "unknown",
+                    "optional": false,
+                    "description": "Unknown"
+                }
+            ]
         },
         "GetPredictionResults": {
             "_type": "undocumented",
             "version": 1,
-            "parameters": []
+            "parameters": [
+                {
+                    "name": "league_id",
+                    "type": "unknown",
+                    "optional": false,
+                    "description": "Unknown"
+                }
+            ]
         },
         "GetPredictions": {
             "_type": "undocumented",
             "version": 1,
-            "parameters": []
+            "parameters": [
+                {
+                    "name": "league_id",
+                    "type": "unknown",
+                    "optional": false,
+                    "description": "Unknown"
+                }
+            ]
         },
         "GetPrizePool": {
             "_type": "undocumented",
             "version": 1,
-            "parameters": []
+            "parameters": [
+                {
+                    "name": "league_id",
+                    "type": "unknown",
+                    "optional": false,
+                    "description": "Unknown"
+                }
+            ]
         }
     },
     "IDOTA2League_247040": {
@@ -7632,7 +7859,14 @@
         "GetPlusHeroTimedStats": {
             "_type": "undocumented",
             "version": 1,
-            "parameters": []
+            "parameters": [
+                {
+                    "name": "hero_id",
+                    "type": "unknown",
+                    "optional": false,
+                    "description": "Unknown"
+                }
+            ]
         },
         "GetPlusStatsData": {
             "_type": "undocumented",
@@ -7696,7 +7930,21 @@
         "ListOfUsersSpectating": {
             "_type": "undocumented",
             "version": 1,
-            "parameters": []
+            "httpmethod": "POST",
+            "parameters": [
+                {
+                    "name": "caster",
+                    "type": "unknown",
+                    "optional": false,
+                    "description": "Unknown"
+                },
+                {
+                    "name": "viewers",
+                    "type": "unknown",
+                    "optional": false,
+                    "description": "Unknown"
+                }
+            ]
         }
     },
     "IDOTA2StreamSystem_247040": {
@@ -7715,22 +7963,56 @@
         "GetFanContentStatus": {
             "_type": "undocumented",
             "version": 1,
-            "parameters": []
+            "parameters": [
+                {
+                    "name": "season",
+                    "type": "unknown",
+                    "optional": false,
+                    "description": "Unknown"
+                }
+            ]
         },
         "GetPlayerInfo": {
             "_type": "undocumented",
             "version": 1,
-            "parameters": []
+            "parameters": [
+                {
+                    "name": "registration_period",
+                    "type": "unknown",
+                    "optional": false,
+                    "description": "Unknown"
+                },
+                {
+                    "name": "account_id",
+                    "type": "unknown",
+                    "optional": false,
+                    "description": "Unknown"
+                }
+            ]
         },
         "GetSingleTeamInfo": {
             "_type": "undocumented",
             "version": 1,
-            "parameters": []
+            "parameters": [
+                {
+                    "name": "team_id",
+                    "type": "unknown",
+                    "optional": false,
+                    "description": "Unknown"
+                }
+            ]
         },
         "GetTeamInfos": {
             "_type": "undocumented",
             "version": 1,
-            "parameters": []
+            "parameters": [
+                {
+                    "name": "team_ids",
+                    "type": "unknown",
+                    "optional": false,
+                    "description": "Unknown"
+                }
+            ]
         }
     },
     "IDOTA2Teams_247040": {
@@ -7866,7 +8148,20 @@
         "GetChannelMembers": {
             "_type": "undocumented",
             "version": 1,
-            "parameters": []
+            "parameters": [
+                {
+                    "name": "channel_type",
+                    "type": "unknown",
+                    "optional": false,
+                    "description": "Unknown"
+                },
+                {
+                    "name": "channel_name",
+                    "type": "unknown",
+                    "optional": false,
+                    "description": "Unknown"
+                }
+            ]
         }
     },
     "IDOTAChat_247040": {
@@ -15574,6 +15869,7 @@
                     "optional": true,
                     "description": ""
                 }
+                
             ]
         },
         "GetRequests": {
