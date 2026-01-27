@@ -2537,6 +2537,8 @@
                         "RemoveAndWarn",
                         "RemoveAndBan",
                         "RemoveAndKick",
+                        "Sanctioned",
+                        "Sustained",
                         "MAX"
                     ]
                 },
@@ -10711,6 +10713,8 @@
                         "RemoveAndWarn",
                         "RemoveAndBan",
                         "RemoveAndKick",
+                        "Sanctioned",
+                        "Sustained",
                         "MAX"
                     ]
                 },
