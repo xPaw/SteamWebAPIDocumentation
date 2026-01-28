@@ -11490,6 +11490,26 @@
             ]
         }
     },
+    "IGamePerformanceStatsService": {
+        "GetGameFrameRateStats": {
+            "_type": "undocumented",
+            "version": 1,
+            "parameters": [
+                {
+                    "name": "key",
+                    "type": "string",
+                    "optional": false,
+                    "description": "Access key"
+                },
+                {
+                    "name": "appid",
+                    "type": "uint32",
+                    "optional": true,
+                    "description": ""
+                }
+            ]
+        }
+    },
     "IGameRecordingClipService": {
         "GetSingleSharedClip": {
             "_type": "undocumented",
