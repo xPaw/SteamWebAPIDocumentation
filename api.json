@@ -26766,6 +26766,12 @@
                                                     "type": "bool",
                                                     "optional": true,
                                                     "description": ""
+                                                },
+                                                {
+                                                    "name": "is_set",
+                                                    "type": "bool",
+                                                    "optional": true,
+                                                    "description": ""
                                                 }
                                             ]
                                         },
@@ -28535,6 +28541,12 @@
                                                 },
                                                 {
                                                     "name": "is_causal",
+                                                    "type": "bool",
+                                                    "optional": true,
+                                                    "description": ""
+                                                },
+                                                {
+                                                    "name": "is_set",
                                                     "type": "bool",
                                                     "optional": true,
                                                     "description": ""
@@ -30334,6 +30346,12 @@
                                         },
                                         {
                                             "name": "is_causal",
+                                            "type": "bool",
+                                            "optional": true,
+                                            "description": ""
+                                        },
+                                        {
+                                            "name": "is_set",
                                             "type": "bool",
                                             "optional": true,
                                             "description": ""
@@ -33458,6 +33476,12 @@
                                         },
                                         {
                                             "name": "is_causal",
+                                            "type": "bool",
+                                            "optional": true,
+                                            "description": ""
+                                        },
+                                        {
+                                            "name": "is_set",
                                             "type": "bool",
                                             "optional": true,
                                             "description": ""
