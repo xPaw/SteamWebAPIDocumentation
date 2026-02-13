@@ -3287,12 +3287,6 @@
                             "type": "string",
                             "optional": true,
                             "description": ""
-                        },
-                        {
-                            "name": "steam_realm",
-                            "type": "int32",
-                            "optional": true,
-                            "description": ""
                         }
                     ]
                 },
@@ -13581,12 +13575,6 @@
                             "type": "string",
                             "optional": true,
                             "description": ""
-                        },
-                        {
-                            "name": "steam_realm",
-                            "type": "int32",
-                            "optional": true,
-                            "description": ""
                         }
                     ]
                 },
@@ -13742,12 +13730,6 @@
                             "type": "string",
                             "optional": true,
                             "description": ""
-                        },
-                        {
-                            "name": "steam_realm",
-                            "type": "int32",
-                            "optional": true,
-                            "description": ""
                         }
                     ]
                 },
@@ -13901,12 +13883,6 @@
                         {
                             "name": "country_code",
                             "type": "string",
-                            "optional": true,
-                            "description": ""
-                        },
-                        {
-                            "name": "steam_realm",
-                            "type": "int32",
                             "optional": true,
                             "description": ""
                         }
@@ -14182,12 +14158,6 @@
                         {
                             "name": "country_code",
                             "type": "string",
-                            "optional": true,
-                            "description": ""
-                        },
-                        {
-                            "name": "steam_realm",
-                            "type": "int32",
                             "optional": true,
                             "description": ""
                         }
@@ -17231,12 +17201,6 @@
                                 {
                                     "name": "country_code",
                                     "type": "string",
-                                    "optional": true,
-                                    "description": ""
-                                },
-                                {
-                                    "name": "steam_realm",
-                                    "type": "int32",
                                     "optional": true,
                                     "description": ""
                                 }
@@ -23772,12 +23736,6 @@
                             "type": "string",
                             "optional": true,
                             "description": ""
-                        },
-                        {
-                            "name": "steam_realm",
-                            "type": "int32",
-                            "optional": true,
-                            "description": ""
                         }
                     ]
                 },
@@ -23956,12 +23914,6 @@
                             "type": "string",
                             "optional": true,
                             "description": ""
-                        },
-                        {
-                            "name": "steam_realm",
-                            "type": "int32",
-                            "optional": true,
-                            "description": ""
                         }
                     ]
                 },
@@ -24108,12 +24060,6 @@
                         {
                             "name": "country_code",
                             "type": "string",
-                            "optional": true,
-                            "description": ""
-                        },
-                        {
-                            "name": "steam_realm",
-                            "type": "int32",
                             "optional": true,
                             "description": ""
                         }
@@ -37409,12 +37355,6 @@
                             "type": "string",
                             "optional": true,
                             "description": ""
-                        },
-                        {
-                            "name": "steam_realm",
-                            "type": "int32",
-                            "optional": true,
-                            "description": ""
                         }
                     ]
                 },
@@ -37701,12 +37641,6 @@
                             "type": "string",
                             "optional": true,
                             "description": ""
-                        },
-                        {
-                            "name": "steam_realm",
-                            "type": "int32",
-                            "optional": true,
-                            "description": ""
                         }
                     ]
                 },
@@ -37758,12 +37692,6 @@
                         {
                             "name": "country_code",
                             "type": "string",
-                            "optional": true,
-                            "description": ""
-                        },
-                        {
-                            "name": "steam_realm",
-                            "type": "int32",
                             "optional": true,
                             "description": ""
                         }
@@ -37972,12 +37900,6 @@
                             "type": "string",
                             "optional": true,
                             "description": ""
-                        },
-                        {
-                            "name": "steam_realm",
-                            "type": "int32",
-                            "optional": true,
-                            "description": ""
                         }
                     ]
                 },
@@ -38158,12 +38080,6 @@
                             "type": "string",
                             "optional": true,
                             "description": ""
-                        },
-                        {
-                            "name": "steam_realm",
-                            "type": "int32",
-                            "optional": true,
-                            "description": ""
                         }
                     ]
                 }
@@ -38245,12 +38161,6 @@
                         {
                             "name": "country_code",
                             "type": "string",
-                            "optional": true,
-                            "description": ""
-                        },
-                        {
-                            "name": "steam_realm",
-                            "type": "int32",
                             "optional": true,
                             "description": ""
                         }
@@ -38682,12 +38592,6 @@
                             "type": "string",
                             "optional": true,
                             "description": ""
-                        },
-                        {
-                            "name": "steam_realm",
-                            "type": "int32",
-                            "optional": true,
-                            "description": ""
                         }
                     ]
                 },
@@ -38834,12 +38738,6 @@
                         {
                             "name": "country_code",
                             "type": "string",
-                            "optional": true,
-                            "description": ""
-                        },
-                        {
-                            "name": "steam_realm",
-                            "type": "int32",
                             "optional": true,
                             "description": ""
                         }
@@ -39241,12 +39139,6 @@
                             "type": "string",
                             "optional": true,
                             "description": ""
-                        },
-                        {
-                            "name": "steam_realm",
-                            "type": "int32",
-                            "optional": true,
-                            "description": ""
                         }
                     ]
                 }
@@ -39420,12 +39312,6 @@
                             "type": "string",
                             "optional": true,
                             "description": ""
-                        },
-                        {
-                            "name": "steam_realm",
-                            "type": "int32",
-                            "optional": true,
-                            "description": ""
                         }
                     ]
                 },
@@ -39506,12 +39392,6 @@
                         {
                             "name": "country_code",
                             "type": "string",
-                            "optional": true,
-                            "description": ""
-                        },
-                        {
-                            "name": "steam_realm",
-                            "type": "int32",
                             "optional": true,
                             "description": ""
                         }
@@ -40432,12 +40312,6 @@
                             "type": "string",
                             "optional": true,
                             "description": ""
-                        },
-                        {
-                            "name": "steam_realm",
-                            "type": "int32",
-                            "optional": true,
-                            "description": ""
                         }
                     ]
                 },
@@ -40596,12 +40470,6 @@
                         {
                             "name": "country_code",
                             "type": "string",
-                            "optional": true,
-                            "description": ""
-                        },
-                        {
-                            "name": "steam_realm",
-                            "type": "int32",
                             "optional": true,
                             "description": ""
                         }
@@ -41599,12 +41467,6 @@
                         {
                             "name": "country_code",
                             "type": "string",
-                            "optional": true,
-                            "description": ""
-                        },
-                        {
-                            "name": "steam_realm",
-                            "type": "int32",
                             "optional": true,
                             "description": ""
                         }
@@ -42632,12 +42494,6 @@
                             "type": "string",
                             "optional": true,
                             "description": ""
-                        },
-                        {
-                            "name": "steam_realm",
-                            "type": "int32",
-                            "optional": true,
-                            "description": ""
                         }
                     ]
                 },
@@ -43582,12 +43438,6 @@
                             "type": "string",
                             "optional": true,
                             "description": ""
-                        },
-                        {
-                            "name": "steam_realm",
-                            "type": "int32",
-                            "optional": true,
-                            "description": ""
                         }
                     ]
                 },
@@ -44048,12 +43898,6 @@
                         {
                             "name": "country_code",
                             "type": "string",
-                            "optional": true,
-                            "description": ""
-                        },
-                        {
-                            "name": "steam_realm",
-                            "type": "int32",
                             "optional": true,
                             "description": ""
                         }
