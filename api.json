@@ -6492,6 +6492,34 @@
                     "type": "int32",
                     "optional": true,
                     "description": "enum"
+                },
+                {
+                    "name": "additional_subject_data",
+                    "type": "AdditionalSubjectData",
+                    "optional": true,
+                    "description": "",
+                    "extra": [
+                        {
+                            "name": "data[0]",
+                            "type": "AdditionalSubjectData_DataEntry[]",
+                            "optional": true,
+                            "description": "",
+                            "extra": [
+                                {
+                                    "name": "key",
+                                    "type": "string",
+                                    "optional": true,
+                                    "description": ""
+                                },
+                                {
+                                    "name": "value",
+                                    "type": "string",
+                                    "optional": true,
+                                    "description": ""
+                                }
+                            ]
+                        }
+                    ]
                 }
             ]
         },
