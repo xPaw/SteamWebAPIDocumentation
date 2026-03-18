@@ -37,3 +37,5 @@ This requires [Node.js](https://nodejs.org). Run `npm install` to install the de
 Use `npm run dev` command to start a local server with hot reloading.
 
 Run `npm test` to check typescript.
+
+Run `npm run build` and then `npx wrangler pages dev build/` to test built project locally.

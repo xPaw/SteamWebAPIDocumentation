@@ -16,7 +16,7 @@
 						>
 					</div>
 					<div class="col-lg-9">
-						<h1><a href="#" @click.prevent="focusApiKey">Steam Web API Documentation</a></h1>
+						<h1><AppLink href="/" @click="focusApiKey">Steam Web API Documentation</AppLink></h1>
 						<span class="separator" v-if="currentInterface !== ''"> / </span>
 						<h2 v-if="currentInterface !== ''">{{ currentInterface }}</h2>
 						<span v-else> with &hearts; by <a href="https://xpaw.me">xPaw</a></span>
@@ -36,10 +36,9 @@
 								v-for="favoriteMethod of userData.favorites"
 								:key="favoriteMethod"
 							>
-								<a
-									:href="'#' + favoriteMethod"
-									@click.prevent="setInterface(favoriteMethod)"
-								>{{ favoriteMethod }}</a>
+								<AppLink
+									:href="`/${favoriteMethod.replace('/', '#')}`"
+								>{{ favoriteMethod }}</AppLink>
 							</li>
 						</ul>
 					</details>
@@ -61,25 +60,23 @@
 								v-for="(interfaceMethods, interfaceName) in interfaceGroup.methods"
 								:key="interfaceName"
 							>
-								<a
-									:href="'#' + interfaceName"
-									@click.prevent="setInterface(interfaceName as string)"
+								<AppLink
+									:href="'/' + interfaceName"
 									:class="interfaceName === currentInterface ? 'fw-bold text-white' : ''"
-								>{{ interfaceName }}</a>
+								>{{ interfaceName }}</AppLink>
 
 								<ul class="method-list rounded mb-2 p-2" v-if="currentFilter || interfaceName === currentInterface">
 									<li
 										v-for="(method, methodName) in interfaceMethods"
 										:key="methodName"
 									>
-										<a
-											:href="'#' + interfaceName + '/' + methodName"
+										<AppLink
+											:href="'/' + interfaceName + '#' + methodName"
 											:class="method.isFavorite ? 'text-warning' : ''"
-											@click.prevent="setInterface(interfaceName + '/' + methodName)"
 										>
 											<HighlightedSearchMethod :method="methodName" :indices="method.highlight" v-if="method.highlight && method.highlight.length > 0" />
 											<template v-else>{{ methodName }}</template>
-										</a>
+										</AppLink>
 									</li>
 								</ul>
 							</li>
@@ -110,7 +107,7 @@
 										@blur="keyInputType = 'password'">
 								</div>
 								<div class="mb-3 col-md-6">
-									<a href="#" class="float-end" @click="accessTokenVisible = !accessTokenVisible">How to get it</a>
+									<a href="#" class="float-end" @click.prevent="accessTokenVisible = !accessTokenVisible">How to get it</a>
 									<label class="form-label" for="form-access-token">
 										Access token
 										<span v-if="accessTokenExpiration > 0">expires on {{formatAccessTokenExpirationDate}}</span>
@@ -170,7 +167,7 @@
 						<div class="card mt-3">
 							<div class="card-header">What is this?</div>
 							<div class="card-body">
-								<p>This is a static page that is automatically generated from <a href="#ISteamWebAPIUtil/GetSupportedAPIList">GetSupportedAPIList</a> using public and publisher keys. Additionally service methods are parsed from Steam client's protobuf files.</p>
+								<p>This is a static page that is automatically generated from <AppLink href="/ISteamWebAPIUtil#GetSupportedAPIList">GetSupportedAPIList</AppLink> using public and publisher keys. Additionally service methods are parsed from Steam client's protobuf files.</p>
 								<p>If you specify the web api key above, it will be stored in your browser, and will only be sent to Valve's API servers if you chose to do so.</p>
 								<p>Type a value in the value field and click the execute button to perform an API request in your browser.</p>
 								<hr>
@@ -231,25 +228,6 @@
 								</p>
 							</div>
 						</div>
-
-						<div class="card border-primary mt-3">
-							<div class="card-header bg-primary text-white">Sitemap</div>
-							<div class="card-body">
-								<div class="list-group mb-3" v-for="(interfaceMethods, interfaceName) in interfaces" :key="interfaceName">
-									<a
-										class="list-group-item list-group-item-action"
-										v-for="(method, methodName) in interfaceMethods"
-										:key="methodName"
-										:href="'#' + interfaceName + '/' + methodName"
-										@click.prevent="setInterface(interfaceName + '/' + methodName)"
-									>
-										<b>{{ interfaceName }}/{{methodName}}</b>
-										<div class="text-info mt-1" v-if="method.description">{{ method.description }}</div>
-										<div class="text-muted mt-1" v-if="method.parameters.length > 0">Parameters: {{ method.parameters.map( m => m.description ? `${m.name} (${m.description})` : m.name ).join( ', ' ) }}</div>
-									</a>
-								</div>
-							</div>
-						</div>
 					</div>
 					<div class="interface" v-else>
 						<div class="alert no-email">
@@ -262,7 +240,7 @@
 						<template v-for="(method, methodName) in currentInterfaceMethods" :key="methodName">
 							<form
 								target="_blank"
-								:id="`${currentInterface}/${methodName}`"
+								:id="methodName as string"
 								:method="method.httpmethod || 'GET'"
 								:action="renderUri(methodName as string, method)"
 								class="card mb-4"
@@ -277,7 +255,7 @@
 										<a class="badge bg-warning text-dark no-select" v-if="method._type === 'publisher_only'" :href="`https://partner.steamgames.com/doc/webapi/${currentInterface}#${methodName}`" target="_blank">PUBLISHER</a>
 										<span class="badge bg-warning text-dark no-select" v-if="method._type === 'undocumented'">UNDOCUMENTED</span>
 										<span :class="method.httpmethod === 'GET' ? 'badge bg-success' : 'badge bg-danger'">{{ method.httpmethod }}</span>
-										<a class="card-method-name" :href="'#' + currentInterface + '/' + methodName">{{ methodName }}</a>
+										<a class="card-method-name" :href="'#' + methodName">{{ methodName }}</a>
 										<span class="badge bg-primary badge-version" v-if="method.version > 1">v{{ method.version }}</span>
 									</div>
 

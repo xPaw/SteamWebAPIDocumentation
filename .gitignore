@@ -1,12 +1,8 @@
 /node_modules/
 /vendor/
 /dist/
+/build/
 /protobufs_repo/
 /config.php
 /api_from_protos.json
 /api_from_docs.json
-/public/api.json
-/public/*.js
-/public/*.css
-/public/*.map
-/public/index.html

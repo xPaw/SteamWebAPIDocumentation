@@ -2,7 +2,8 @@
 	"name": "steamapi",
 	"compatibility_date": "2025-04-01",
 	"assets": {
-		"directory": "./public/",
+		"directory": "./build/",
+		"html_handling": "drop-trailing-slash",
 		"not_found_handling": "404-page"
 	}
 }

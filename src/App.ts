@@ -1,9 +1,16 @@
 import { defineComponent, markRaw, ref } from 'vue';
 import interfacesJson from '../api.json';
 import ApiParameter from './ApiParameter.vue';
+import AppLink from './AppLink.vue';
 import HighlightedSearchMethod from './HighlightedSearchMethod';
 import type { ApiInterface, ApiMethod, ApiMethodParameter, ApiServices, SidebarGroupData } from './interfaces';
 import { ApiSearcher } from './search';
+
+export function parseInterfaceFromUrl(url: { pathname: string; hash: string } = location): [string, string | null] {
+	const iface = url.pathname.substring(1);
+	const method = url.hash.length > 1 ? url.hash.substring(1) : null;
+	return [iface, method];
+}
 
 const sidebar = ref<HTMLElement | null>(null);
 const inputSearch = ref<HTMLInputElement | null>(null);
@@ -13,7 +20,19 @@ const inputAccessToken = ref<HTMLInputElement | null>(null);
 export default defineComponent({
 	components: {
 		ApiParameter,
+		AppLink,
 		HighlightedSearchMethod,
+	},
+	props: {
+		initialInterface: {
+			type: String,
+			default: '',
+		},
+	},
+	provide() {
+		return {
+			setInterface: this.setInterface,
+		};
 	},
 	data() {
 		// @ts-expect-error
@@ -83,6 +102,8 @@ export default defineComponent({
 			}
 		}
 
+		const initialInterface = this.initialInterface;
+
 		return {
 			userData: {
 				webapi_key: '',
@@ -91,7 +112,6 @@ export default defineComponent({
 				format: 'json',
 				favorites: new Set<string>(),
 			},
-			skipNextHashChange: false,
 			keyInputType: 'password',
 			hasValidWebApiKey: false,
 			hasValidAccessToken: false,
@@ -100,7 +120,7 @@ export default defineComponent({
 			accessTokenAudience: [],
 			accessTokenVisible: false,
 			currentFilter: '',
-			currentInterface: '',
+			currentInterface: initialInterface && Object.hasOwn(interfaces, initialInterface) ? initialInterface : '',
 			search: markRaw(new ApiSearcher(interfaces)),
 			interfaces,
 			groupsMap,
@@ -213,22 +233,31 @@ export default defineComponent({
 			console.error(e);
 		}
 
-		if (location.hash.startsWith('#')) {
-			this.setInterface(location.hash.substring(1), true);
+		// Backwards compat: redirect old hash-based URLs
+		if (location.hash.length > 1 && location.pathname === '/') {
+			const hashValue = location.hash.substring(1);
+			const split = hashValue.split('/', 2);
+			const iface = split[0];
+
+			if (Object.hasOwn(this.interfaces, iface)) {
+				const method = split.length > 1 ? split[1] : null;
+				history.replaceState({}, '', `/${iface}${method ? `#${method}` : ''}`);
+				this.setInterface(iface, method, true);
+			}
+		} else {
+			const [iface, method] = parseInterfaceFromUrl();
+
+			if (iface) {
+				this.setInterface(iface, method, true);
+			}
 		}
 
-		window.addEventListener(
-			'hashchange',
-			() => {
-				if (this.skipNextHashChange) {
-					this.skipNextHashChange = false;
-					return;
-				}
+		this.$nextTick(this.scrollInterfaceIntoView);
 
-				this.setInterface(location.hash.substring(1));
-			},
-			false,
-		);
+		window.addEventListener('popstate', () => {
+			const [iface, method] = parseInterfaceFromUrl();
+			this.setInterface(iface, method, true);
+		});
 
 		this.bindGlobalKeybind();
 	},
@@ -289,46 +318,45 @@ export default defineComponent({
 		},
 	},
 	methods: {
-		setInterface(interfaceAndMethod: string, setFromUrl = false): void {
-			const split = interfaceAndMethod.split('/', 2);
-			let currentInterface: string | null = split[0];
-			let currentMethod: string | null = split.length > 1 ? split[1] : null;
+		setInterface(iface: string, method: string | null = null, setFromUrl = false): void {
+			let currentInterface = iface;
+			let currentMethod = method;
 
 			if (!Object.hasOwn(this.interfaces, currentInterface)) {
-				currentInterface = null;
+				currentInterface = '';
 				currentMethod = null;
 			} else if (currentMethod !== null && !Object.hasOwn(this.interfaces[currentInterface], currentMethod)) {
 				currentMethod = null;
 			}
 
-			this.currentInterface = currentInterface || '';
+			this.currentInterface = currentInterface;
 
 			if (currentInterface) {
 				document.title = `${currentInterface} – Steam Web API Documentation`;
 			} else {
-				document.title = `Steam Web API Documentation`;
+				document.title = 'Steam Web API Documentation';
 			}
 
-			// Since we won't scroll to a method, scroll to top (as there is no element with just interface id)
-			if (document.scrollingElement && !currentMethod) {
+			if (!setFromUrl && !currentMethod && document.scrollingElement) {
 				document.scrollingElement.scrollTop = 0;
 			}
 
-			if (setFromUrl) {
-				return;
+			if (!setFromUrl) {
+				const newPath = currentInterface ? `/${currentInterface}` : '/';
+				const newUrl = currentMethod ? `${newPath}#${currentMethod}` : newPath;
+
+				if (location.pathname !== newPath) {
+					history.pushState({}, '', newUrl);
+				} else if (currentMethod) {
+					history.replaceState({}, '', newUrl);
+				}
 			}
 
-			this.$nextTick(() => {
-				this.skipNextHashChange = true;
-
-				if (currentMethod) {
-					location.hash = `#${currentInterface}/${currentMethod}`;
-				} else if (currentInterface) {
-					location.hash = `#${currentInterface}`;
-				} else {
-					location.hash = '';
-				}
-			});
+			if (currentMethod) {
+				this.$nextTick(() => {
+					document.getElementById(currentMethod!)?.scrollIntoView();
+				});
+			}
 		},
 		fillSteamidParameter(): void {
 			if (!this.userData.steamid) {
@@ -561,11 +589,20 @@ export default defineComponent({
 			method.parameters.splice(parameterIndex + parameter._counter, 0, newParameter);
 		},
 		scrollInterfaceIntoView(): void {
-			const element = document.querySelector(`.interface-list a[href="#${this.currentInterface}"]`);
+			const appid = this.groupsMap.get(this.currentInterface) ?? 0;
+			const group = this.groupsData.get(appid);
 
-			if (element instanceof HTMLElement) {
-				element.scrollIntoView();
+			if (group && !group.open) {
+				group.open = true;
 			}
+
+			this.$nextTick(() => {
+				const element = document.querySelector(`.interface-list a[href="/${this.currentInterface}"]`);
+
+				if (element instanceof HTMLElement) {
+					element.scrollIntoView();
+				}
+			});
 		},
 		copyUrl(event: MouseEvent): void {
 			const button = event.target as Element;
@@ -599,13 +636,11 @@ export default defineComponent({
 			const entries = Object.entries(this.filteredInterfaces);
 			const index = entries.findIndex((x) => x[0] === this.currentInterface) + direction;
 			const size = entries.length;
-			const [interfaceName, methods] = entries[((index % size) + size) % size];
-			const firstMethodName = Object.keys(methods)[0];
+			const [interfaceName] = entries[((index % size) + size) % size];
 
-			this.setInterface(`${interfaceName}/${firstMethodName}`);
+			this.setInterface(interfaceName);
 			this.scrollInterfaceIntoView();
 
-			// This is trash, but the focus gets lost because of location.hash change
 			this.$nextTick(() => {
 				this.inputSearch?.focus();
 			});

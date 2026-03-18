@@ -1,20 +1,25 @@
-import { exec } from 'node:child_process';
+import { spawn } from 'node:child_process';
 import fs from 'node:fs/promises';
 import htmlPlugin from '@chialab/esbuild-plugin-html';
 import * as esbuild from 'esbuild';
 import * as vuePlugin from 'esbuild-plugin-vue3';
 
 const isDev = process.argv.includes('--dev');
+const outdir = 'build/';
+
+// Copy static assets from public/ to build/
+await fs.rm(outdir, { recursive: true, force: true });
+await fs.cp('public/', outdir, { recursive: true });
 
 // Esbuild
 /** @type {esbuild.BuildOptions} */
 const esbuildOptions = {
-	entryPoints: ['src/index.html', 'src/ssr.ts'],
+	entryPoints: isDev ? ['src/index.html'] : ['src/index.html', 'src/ssr.ts'],
 	minify: true,
 	bundle: true,
 	sourcemap: false,
 	chunkNames: '[name]-[hash]',
-	outdir: 'public/',
+	outdir,
 	logLevel: 'info',
 	plugins: [
 		htmlPlugin({
@@ -24,6 +29,7 @@ const esbuildOptions = {
 		}),
 		vuePlugin.default(),
 	],
+	external: ['node:fs/promises'],
 	define: {
 		'process.env.NODE_ENV': JSON.stringify('production'),
 	},
@@ -44,7 +50,8 @@ if (isDev) {
 	await context.watch();
 	await context.serve({
 		host: 'localhost',
-		servedir: 'public/',
+		servedir: outdir,
+		fallback: `${outdir}index.html`,
 	});
 } else {
 	console.log('Building');
@@ -53,22 +60,14 @@ if (isDev) {
 	await context.dispose();
 
 	console.log('Running SSR...');
-	exec('node public/ssr.js', async (error, stdout) => {
-		if (error) {
-			console.error(`SSR Error: ${error}`);
+	const ssr = spawn('node', [`${outdir}ssr.js`], { stdio: 'inherit' });
+
+	ssr.on('close', async (code) => {
+		if (code !== 0) {
+			console.error(`SSR exited with code ${code}`);
 			return;
 		}
 
-		const ssrHtml = stdout.trim();
-
-		const indexPath = 'public/index.html';
-
-		let indexHtml = await fs.readFile(indexPath, 'utf8');
-		indexHtml = indexHtml.replace('<div id="app"></div>', `<div id="app">${ssrHtml}</div>`);
-
-		await fs.writeFile(indexPath, indexHtml);
-		await fs.unlink('public/ssr.js');
-
-		console.log('SSR HTML injected successfully');
+		await fs.unlink(`${outdir}ssr.js`);
 	});
 }
