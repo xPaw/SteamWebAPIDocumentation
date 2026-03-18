@@ -122,6 +122,7 @@ export default defineComponent({
 			currentFilter: '',
 			currentInterface: initialInterface && Object.hasOwn(interfaces, initialInterface) ? initialInterface : '',
 			search: markRaw(new ApiSearcher(interfaces)),
+			highlightedMethods: markRaw([] as ApiMethod[]),
 			interfaces,
 			groupsMap,
 			groupsData,
@@ -282,6 +283,12 @@ export default defineComponent({
 			return this.groupsData;
 		},
 		filteredInterfaces(): ApiServices {
+			for (const method of this.highlightedMethods) {
+				delete method.highlight;
+			}
+
+			this.highlightedMethods.length = 0;
+
 			if (!this.currentFilter) {
 				return this.interfaces;
 			}
@@ -296,6 +303,7 @@ export default defineComponent({
 
 				const method = this.interfaces[match.interface][match.method];
 				method.highlight = match.indices;
+				this.highlightedMethods.push(method);
 				matchedInterfaces[match.interface][match.method] = method;
 			}
 

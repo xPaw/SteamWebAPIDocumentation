@@ -27,7 +27,7 @@ export default defineComponent({
 			const url = new URL(this.href, location.origin);
 			const [iface, method] = parseInterfaceFromUrl(url);
 
-			if (url.pathname !== location.pathname) {
+			if (url.pathname !== location.pathname || !method) {
 				e.preventDefault();
 			}
 
