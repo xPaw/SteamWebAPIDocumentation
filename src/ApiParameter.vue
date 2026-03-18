@@ -31,7 +31,8 @@
 				v-else
 				class="form-control border-0 rounded-0"
 				placeholder="…"
-				:type="isNumberType ? 'number' : 'text'"
+				type="text"
+				:inputmode="isNumberType ? 'numeric' : 'text'"
 				:name="level === 0 ? parameter.name : ''"
 				:id="labelId"
 				v-model="parameter._value"
