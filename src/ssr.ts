@@ -83,6 +83,15 @@ async function renderAll() {
 		);
 	}
 
+	// Generate sitemap.xml
+	const interfaceNames = Object.keys(interfaces);
+	const sitemapUrls = [defaultCanonical, ...interfaceNames.map((name) => `${defaultCanonical}${name}`)];
+	const sitemap = `<?xml version="1.0" encoding="UTF-8"?>
+<urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">
+${sitemapUrls.map((url) => `<url><loc>${url}</loc></url>`).join('\n')}
+</urlset>`;
+	writes.push(fs.writeFile(`${outdir}sitemap.xml`, sitemap));
+
 	await Promise.all(writes);
 	console.log(`SSR: generated ${writes.length} pages`);
 }
