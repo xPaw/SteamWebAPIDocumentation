@@ -25,7 +25,7 @@
 				<p>The API key can be provided either as a <code>key</code> query parameter, or by setting the <code>x-webapi-key</code> HTTP request header.</p>
 				<p>Access tokens are used by Steam's own web pages (Store and Community) for authenticated users instead of Web API keys. Not all APIs support access tokens. Some only work with API keys, and some only work with access tokens. When provided, the access token is sent as the <code>access_token</code> parameter.</p>
 				<p>Steam also acts as an <a href="https://steamcommunity.com/dev" target="_blank">OpenID provider</a>, allowing third-party sites to authenticate users via their Steam account without handling credentials directly.</p>
-				<p>Many API methods have undocumented rate limits that differ from method to method. When rate limited, the API will usually return HTTP status 429, or an <code>x-eresult</code> of 84 (RateLimitExceeded).</p>
+				<p>Many API methods have undocumented rate limits that differ from method to method. When rate limited, the API will usually return HTTP status 429, or an <code>x-eresult</code> of 25 (LimitExceeded) or 84 (RateLimitExceeded).</p>
 				<p>Publisher Web API keys must be stored securely on your server and must not be distributed with game clients. All API requests containing keys should be made over HTTPS.</p>
 				<p>See <a href="https://partner.steamgames.com/doc/webapi_overview/auth" target="_blank">Steamworks Authentication documentation</a> for details on publisher key permissions and IP allow lists.</p>
 			</div>
