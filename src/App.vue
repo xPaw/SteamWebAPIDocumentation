@@ -164,70 +164,7 @@
 							</div>
 						</div>
 
-						<div class="card mt-3">
-							<div class="card-header">What is this?</div>
-							<div class="card-body">
-								<p>This is a static page that is automatically generated from <AppLink href="/ISteamWebAPIUtil#GetSupportedAPIList">GetSupportedAPIList</AppLink> using public and publisher keys. Additionally service methods are parsed from Steam client's protobuf files.</p>
-								<p>If you specify the web api key above, it will be stored in your browser, and will only be sent to Valve's API servers if you chose to do so.</p>
-								<p>Type a value in the value field and click the execute button to perform an API request in your browser.</p>
-								<hr>
-								<p>This website is created and maintained by <a href="https://xpaw.me/">xPaw</a>. Use any APIs listed here at your own risk.<br>I do not know how all of them work, this page is simply a reference.</p>
-								<p>If you know of an API that is not listed here, <a href="https://github.com/xPaw/SteamWebAPIDocumentation/blob/master/api_undocumented_methods.txt">make a pull request to the file of undocumented APIs</a>.</p>
-								<p>Source code for this page <a href="https://github.com/xPaw/SteamWebAPIDocumentation">is also available on GitHub</a>.</p>
-							</div>
-						</div>
-
-						<div class="card mt-3">
-							<div class="card-header">Using the API</div>
-							<div class="card-body">
-								<p>The public Steamworks Web API is hosted on <code>https://api.steampowered.com</code> or <code>https://community.steam-api.com</code>.</p>
-								<p>
-									The public Web API host is accessible via HTTP (port 80) and HTTPS (port 443). Note that any requests using your publisher Web API key should be made over HTTPS.<br>
-									This service is behind Akamai's edge cache, so the actual IP addresses you will see for the name will vary based on your location and on ongoing service changes.<br>
-									The IPs can change rapidly and fluidly, so if your Web API calls are made through a firewall on outbound requests, read on.
-								</p>
-								<p>
-									Steam also provides a partner-only Web API server hosted on <code>https://partner.steam-api.com</code>. The intent of this service is to have higher availability than
-									the public host; you should use this service for all requests made from your secure servers. This host has some different properties than the public host:
-								</p>
-								<ul>
-									<li>This host is only accessible via HTTPS.</li>
-									<li>This host is not behind Akamai's edge cache.</li>
-									<li>Every request to this host must be made with your publisher Web API key, even requests which would ordinarily not need a key.<br>
-										Requests made without a valid publisher key will return a 403 error code.</li>
-									<li>Requests generating 403 status codes will incur strict rate limits for the connecting IP. This is in an effort to ensure
-										high availability. If you generate a sufficient number of requests within a certain time interval that return 403 status codes —
-										either during testing, or by using a regular Web API key instead of your publisher key — the host will put your IP on a deny
-										list for a while.</li>
-								</ul>
-								<p>You should not connect to the Web API servers by IP; use the DNS name.</p>
-							</div>
-						</div>
-
-						<div class="card mt-3">
-							<div class="card-header">Requests and responses</div>
-							<div class="card-body">
-								<p>Similiar to the Steamworks C++ API, the Web API has been divided into multiple interfaces that contain related methods. The URI format of each API request is: <code>https://api.steampowered.com/&lt;interface&gt;/&lt;method&gt;/&lt;method_version&gt;/</code></p>
-
-								<p>Steam supports returning Web API responses in multiple formats. By default, all responses are returned JSON encoded. However, each request can optionally contain a <code>format</code> parameter to specify the desired response format. The following values can be passed for this parameter: <code>xml</code>, <code>json</code>, and <code>vdf</code>.</p>
-								<p>A flexible solution should be used to parse Web API results as each method may return results in an arbitrary order.</p>
-							</div>
-						</div>
-
-						<div class="card border-danger mt-3">
-							<div class="card-header bg-danger text-white">License</div>
-							<div class="card-body">
-								<p>
-									THE SOFTWARE IS PROVIDED "AS IS", WITHOUT WARRANTY OF ANY KIND, EXPRESS OR
-									IMPLIED, INCLUDING BUT NOT LIMITED TO THE WARRANTIES OF MERCHANTABILITY,
-									FITNESS FOR A PARTICULAR PURPOSE AND NONINFRINGEMENT. IN NO EVENT SHALL THE
-									AUTHORS OR COPYRIGHT HOLDERS BE LIABLE FOR ANY CLAIM, DAMAGES OR OTHER
-									LIABILITY, WHETHER IN AN ACTION OF CONTRACT, TORT OR OTHERWISE, ARISING FROM,
-									OUT OF OR IN CONNECTION WITH THE SOFTWARE OR THE USE OR OTHER DEALINGS IN THE
-									SOFTWARE.
-								</p>
-							</div>
-						</div>
+						<HomePage />
 					</div>
 					<div class="interface" v-else>
 						<div class="alert no-email">

@@ -3,6 +3,7 @@ import interfacesJson from '../api.json';
 import ApiParameter from './ApiParameter.vue';
 import AppLink from './AppLink.vue';
 import HighlightedSearchMethod from './HighlightedSearchMethod';
+import HomePage from './HomePage.vue';
 import type { ApiInterface, ApiMethod, ApiMethodParameter, ApiServices, SidebarGroupData } from './interfaces';
 import { ApiSearcher } from './search';
 
@@ -22,6 +23,7 @@ export default defineComponent({
 		ApiParameter,
 		AppLink,
 		HighlightedSearchMethod,
+		HomePage,
 	},
 	props: {
 		initialInterface: {
