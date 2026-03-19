@@ -2,7 +2,7 @@
 	<div class="card mt-3">
 		<div class="card-header">What is this?</div>
 		<div class="card-body">
-			<p>This is a static page that is automatically generated from <AppLink href="/ISteamWebAPIUtil#GetSupportedAPIList">GetSupportedAPIList</AppLink> using public and publisher keys. Additionally service methods are parsed from Steam client's protobuf files.</p>
+			<p>This is a static page that is automatically generated from <code>GetSupportedAPIList</code> using public and publisher keys. Additionally service methods are parsed from Steam client's protobuf files.</p>
 			<p>If you specify the web api key above, it will be stored in your browser, and will only be sent to Valve's API servers if you choose to do so.</p>
 			<p>Type a value in the value field and click the execute button to perform an API request in your browser.</p>
 			<hr>
@@ -126,11 +126,6 @@
 
 <script lang="ts">
 import { defineComponent } from 'vue';
-import AppLink from './AppLink.vue';
 
-export default defineComponent({
-	components: {
-		AppLink,
-	},
-});
+export default defineComponent({});
 </script>
