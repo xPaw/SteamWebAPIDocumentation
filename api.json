@@ -16498,6 +16498,31 @@
         }
     },
     "IPartnerFinancialsService": {
+        "GetAppWishlistReporting": {
+            "_type": "undocumented",
+            "version": 1,
+            "httpmethod": "GET",
+            "parameters": [
+                {
+                    "name": "key",
+                    "type": "string",
+                    "optional": false,
+                    "description": "Steamworks Web API\n                publisher key\n                with Financial permissions."
+                },
+                {
+                    "name": "appid",
+                    "type": "uint32",
+                    "optional": false,
+                    "description": "The app being queried for"
+                },
+                {
+                    "name": "date",
+                    "type": "string",
+                    "optional": false,
+                    "description": "The date being queried for (GMT bounded). The date should be formatted as\n                YYYY-MM-DD, YYYY/MM/DD, or YYYYMMDD."
+                }
+            ]
+        },
         "GetChangedDatesForPartner": {
             "_type": "undocumented",
             "version": 1,
