@@ -35421,7 +35421,8 @@
                                 "MobileConfirmation",
                                 "PartnerEvent",
                                 "PlaytestInvite",
-                                "TradeReversal"
+                                "TradeReversal",
+                                "ReportedContentAction"
                             ]
                         },
                         {
