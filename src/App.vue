@@ -15,7 +15,7 @@
 					>
 				</div>
 				<div class="header-title">
-					<h1><AppLink href="/" @click="focusApiKey">Steam Web API Documentation</AppLink></h1>
+					<h1><AppLink href="/">Steam Web API Documentation</AppLink></h1>
 					<span class="separator" v-if="currentInterface !== ''"> / </span>
 					<h2 v-if="currentInterface !== ''">{{ currentInterface }}</h2>
 					<span v-else> with &hearts; by <a href="https://xpaw.me">xPaw</a></span>
