@@ -616,13 +616,13 @@ export default defineComponent({
 		},
 		copyUrl(event: MouseEvent): void {
 			const button = event.target as Element;
-			const element = button.closest('.input-group')!.querySelector('.form-control')!;
+			const element = button.closest('.url-display')!.querySelector('.url-text')!;
 
 			navigator.clipboard.writeText(element.textContent || '').then(
 				() => {
-					button.classList.add('bg-success');
+					button.classList.add('is-copied');
 
-					setTimeout(() => button.classList.remove('bg-success'), 500);
+					setTimeout(() => button.classList.remove('is-copied'), 500);
 				},
 				() => {
 					// write fail

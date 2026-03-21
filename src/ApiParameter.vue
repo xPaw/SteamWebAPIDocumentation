@@ -1,16 +1,16 @@
 <template>
-	<tr class="attribute" :style="`--level: ${level}`">
-		<td class="font-monospace">
+	<tr class="param-row" :style="`--level: ${level}`">
+		<td class="param-name">
 			<template v-if="level > 0">↳ </template>
-			<label class="form-control-label" :for="_labelId">{{ parameter.name }}</label>
-			<button type="button" class="btn btn-secondary add-param-array" v-if="parameter.name.endsWith( '[0]' ) && level === 0" @click="addParamArray(method, parameter)">+</button>
+			<label :for="_labelId">{{ parameter.name }}</label>
+			<button type="button" class="add-array-btn" aria-label="Add array item" v-if="parameter.name.endsWith( '[0]' ) && level === 0" @click="addParamArray(method, parameter)">+</button>
 		</td>
-		<td class="font-monospace p-0">
-			<a v-if="level === 0 && parameter.name === 'key'" class="prefilled-key form-control border-0 rounded-0" href="#" @click.prevent="focusApiKey">
-				<span v-if="apiKeyFilled" class="text-success">click to change</span>
-				<span v-else class="text-warning">click to set</span>
+		<td class="param-value">
+			<a v-if="level === 0 && parameter.name === 'key'" class="prefilled-key" href="#" @click.prevent="focusApiKey">
+				<span v-if="apiKeyFilled" class="status-set">click to change</span>
+				<span v-else class="status-unset">click to set</span>
 			</a>
-			<div class="form-check form-switch m-2" v-else-if="parameter.type === 'bool'">
+			<div class="toggle-switch" v-else-if="parameter.type === 'bool'">
 				<input
 					type="hidden"
 					:name="level === 0 ? parameter.name : ''"
@@ -19,22 +19,22 @@
 				>
 				<input
 					type="checkbox"
-					class="form-check-input"
-					:id="labelId"
+					class="toggle-input"
+					:id="_labelId"
 					v-model="parameter._value"
 					:aria-label="parameter.name"
 					@change="parameter.manuallyToggled = true"
 				>
-				<button class="btn btn-sm btn-danger py-0" type="button" v-if="parameter.manuallyToggled" @click="parameter.manuallyToggled = false; parameter._value = '';">&times;</button>
+				<button class="reset-btn" type="button" aria-label="Reset value" v-if="parameter.manuallyToggled" @click="parameter.manuallyToggled = false; parameter._value = '';">&times;</button>
 			</div>
 			<input
 				v-else
-				class="form-control border-0 rounded-0"
+				class="param-input"
 				placeholder="…"
 				type="text"
 				:inputmode="isNumberType ? 'numeric' : 'text'"
 				:name="level === 0 ? parameter.name : ''"
-				:id="labelId"
+				:id="_labelId"
 				v-model="parameter._value"
 			>
 		</td>
@@ -42,7 +42,7 @@
 			{{ parameter.type }}
 			<select
 				v-if="parameter.enum_values"
-				class="form-select form-select-sm mt-1"
+				class="enum-select"
 				v-model.number="parameter._value"
 				:aria-label="'Select ' + parameter.name"
 			>
