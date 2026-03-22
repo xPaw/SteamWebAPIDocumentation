@@ -3,13 +3,9 @@ import fs from 'node:fs/promises';
 import { createHead, transformHtmlTemplate } from '@unhead/vue/server';
 import { createSSRApp } from 'vue';
 import { renderToString } from 'vue/server-renderer';
-import interfacesJson from '../api.json';
 import App from './App.vue';
-import type { ApiServices } from './interfaces';
-
-// @ts-expect-error
-const interfaces = interfacesJson as ApiServices;
-const defaultCanonical = 'https://steamapi.xpaw.me/';
+import { defaultCanonical } from './head';
+import { interfaces } from './interfaces';
 
 async function renderPage(templateHtml: string, initialInterface: string) {
 	const app = createSSRApp(App, initialInterface ? { initialInterface } : {});

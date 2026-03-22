@@ -1,15 +1,11 @@
 import { useHead, useSeoMeta } from '@unhead/vue';
 import { computed, type Ref } from 'vue';
-import interfacesJson from '../api.json';
-import type { ApiServices } from './interfaces';
-
-// @ts-expect-error
-const interfaces = interfacesJson as ApiServices;
+import { interfaces } from './interfaces';
 
 const defaultTitle = 'Steam Web API Documentation';
 const defaultDescription =
 	'An automatically generated list of Steam Web API interfaces, methods and parameters. Allows you to craft requests in the browser.';
-const defaultCanonical = 'https://steamapi.xpaw.me/';
+export const defaultCanonical = 'https://steamapi.xpaw.me/';
 
 function getDescription(interfaceName: string): string {
 	const methods = interfaces[interfaceName];

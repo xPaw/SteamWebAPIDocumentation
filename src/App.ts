@@ -1,11 +1,17 @@
 import { defineComponent, markRaw, ref } from 'vue';
-import interfacesJson from '../api.json';
 import ApiParameter from './ApiParameter.vue';
 import AppLink from './AppLink.vue';
 import HighlightedSearchMethod from './HighlightedSearchMethod';
 import HomePage from './HomePage.vue';
 import { usePageHead } from './head';
-import type { ApiInterface, ApiMethod, ApiMethodParameter, ApiServices, SidebarGroupData } from './interfaces';
+import {
+	type ApiInterface,
+	type ApiMethod,
+	type ApiMethodParameter,
+	type ApiServices,
+	interfaces,
+	type SidebarGroupData,
+} from './interfaces';
 import { ApiSearcher } from './search';
 import { parseInterfaceFromUrl } from './url';
 
@@ -33,9 +39,6 @@ export default defineComponent({
 		};
 	},
 	data() {
-		// @ts-expect-error
-		const interfaces = interfacesJson as ApiServices;
-
 		const groupsMap = new Map<string, number>();
 		const groupsData = new Map<number, SidebarGroupData>(
 			// biome-ignore format: too verbose
@@ -124,8 +127,6 @@ export default defineComponent({
 		};
 	},
 	setup(props) {
-		// @ts-expect-error
-		const interfaces = interfacesJson as ApiServices;
 		const currentInterface = ref(
 			props.initialInterface && Object.hasOwn(interfaces, props.initialInterface) ? props.initialInterface : '',
 		);
