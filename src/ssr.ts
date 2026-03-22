@@ -1,4 +1,6 @@
 // @ts-expect-error Node module, not available in browser types
+import { execSync } from 'node:child_process';
+// @ts-expect-error Node module, not available in browser types
 import fs from 'node:fs/promises';
 import { createHead, transformHtmlTemplate } from '@unhead/vue/server';
 import { createSSRApp } from 'vue';
@@ -15,6 +17,41 @@ async function renderPage(templateHtml: string, initialInterface: string) {
 	const ssrHtml = await renderToString(app);
 
 	return transformHtmlTemplate(head, templateHtml.replace('<div id="app"></div>', `<div id="app">${ssrHtml}</div>`));
+}
+
+function formatDate(timestamp: number): string {
+	return new Date(timestamp * 1000).toISOString().replace('.000Z', 'Z');
+}
+
+function getLastModifiedDates(): Record<string, number> {
+	const dates: Record<string, number> = {};
+	const blame = execSync('git blame --porcelain -- api.json', {
+		encoding: 'utf8',
+		maxBuffer: 50 * 1024 * 1024,
+	}) as string;
+
+	let currentKey = '';
+	let timestamp = 0;
+
+	for (const line of blame.split('\n')) {
+		if (line.startsWith('committer-time ')) {
+			timestamp = Number.parseInt(line.slice(15), 10);
+		} else if (line.startsWith('\t')) {
+			const content = line.slice(1);
+
+			// Detect top-level key: exactly 4 spaces indent, then "KeyName": {
+			const keyMatch = content.match(/^ {4}"([^"]+)": \{$/);
+			if (keyMatch) {
+				currentKey = keyMatch[1];
+			}
+
+			if (currentKey && (!dates[currentKey] || timestamp > dates[currentKey])) {
+				dates[currentKey] = timestamp;
+			}
+		}
+	}
+
+	return dates;
 }
 
 async function renderAll() {
@@ -34,11 +71,13 @@ async function renderAll() {
 		);
 	}
 
-	// Generate sitemap.xml
-	const sitemapUrls = [defaultCanonical, ...interfaceNames.map((name) => `${defaultCanonical}${name}`)];
+	// Generate sitemap.xml with lastmod dates from git blame
+	const lastModDates = getLastModifiedDates();
+	const homeLastMod = Math.max(...Object.values(lastModDates));
 	const sitemap = `<?xml version="1.0" encoding="UTF-8"?>
 <urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">
-${sitemapUrls.map((url) => `<url><loc>${url}</loc></url>`).join('\n')}
+<url><loc>${defaultCanonical}</loc><lastmod>${formatDate(homeLastMod)}</lastmod></url>
+${interfaceNames.map((name) => `<url><loc>${defaultCanonical}${name}</loc><lastmod>${formatDate(lastModDates[name] ?? homeLastMod)}</lastmod></url>`).join('\n')}
 </urlset>`;
 	writes.push(fs.writeFile(`${outdir}sitemap.xml`, sitemap));
 
