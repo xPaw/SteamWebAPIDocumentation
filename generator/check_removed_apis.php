@@ -1,8 +1,10 @@
 <?php
 
-$FinalList = json_decode( file_get_contents( __DIR__ . '/api.json' ), true, 512, JSON_THROW_ON_ERROR );
+$RootDir = dirname( __DIR__ );
 
-$UndocumentedMethods = file( __DIR__ . '/api_undocumented_methods.txt', FILE_IGNORE_NEW_LINES | FILE_SKIP_EMPTY_LINES );
+$FinalList = json_decode( file_get_contents( $RootDir . '/api.json' ), true, 512, JSON_THROW_ON_ERROR );
+
+$UndocumentedMethods = file( $RootDir . '/api_undocumented_methods.txt', FILE_IGNORE_NEW_LINES | FILE_SKIP_EMPTY_LINES );
 $RemovedMethods = [];
 
 $c = curl_init( );
@@ -59,7 +61,7 @@ foreach( $copy as $serviceName => $Interface )
 }
 
 file_put_contents(
-	__DIR__ . DIRECTORY_SEPARATOR . 'api.json',
+	$RootDir . DIRECTORY_SEPARATOR . 'api.json',
 	json_encode( $FinalList, JSON_PRETTY_PRINT | JSON_UNESCAPED_SLASHES ) . PHP_EOL
 );
 
@@ -71,7 +73,7 @@ if( !empty( $RemovedMethods ) )
 	} );
 
 	file_put_contents(
-		__DIR__ . DIRECTORY_SEPARATOR . 'api_undocumented_methods.txt',
+		$RootDir . DIRECTORY_SEPARATOR . 'api_undocumented_methods.txt',
 		implode( PHP_EOL, $UndocumentedMethods ) . PHP_EOL
 	);
 }

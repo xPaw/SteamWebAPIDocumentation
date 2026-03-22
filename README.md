@@ -20,9 +20,9 @@ I provide an automatically updated and generated list, I do not personally know 
 4. [`api_undocumented_methods.txt`](api_undocumented_methods.txt) to insert undocumented and otherwise unknown APIs
 5. [`api_type_overrides.json`](api_type_overrides.json) to fix up types of known method parameters. Such as enforcing arrays
 
-## config.php
+## generator/config.php
 
-To run generation scripts, a `config.php` file needs to be created with API keys:
+To run generation scripts, a `generator/config.php` file needs to be created with API keys:
 
 ```php
 <?php

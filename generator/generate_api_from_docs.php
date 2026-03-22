@@ -1,7 +1,9 @@
 <?php
 
+$RootDir = dirname( __DIR__ );
+
 // Path to https://github.com/SteamDatabase/SteamworksDocumentation
-$Folder = __DIR__ . '/../SteamworksDocumentation';
+$Folder = $RootDir . '/../SteamworksDocumentation';
 
 /** @var SplFileInfo[] $AllDocs */
 $AllDocs = new RecursiveIteratorIterator(
@@ -113,6 +115,6 @@ foreach( $Methods as $ServiceName => $FoundMethods )
 }
 
 file_put_contents(
-	__DIR__ . DIRECTORY_SEPARATOR . 'api_from_docs.json',
+	$RootDir . DIRECTORY_SEPARATOR . 'api_from_docs.json',
 	json_encode( $FoundServices, JSON_PRETTY_PRINT | JSON_UNESCAPED_SLASHES ) . PHP_EOL
 );

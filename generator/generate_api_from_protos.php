@@ -4,6 +4,8 @@ set_time_limit( 600 );
 
 require __DIR__ . '/vendor/autoload.php';
 
+$RootDir = dirname( __DIR__ );
+
 $PublisherApiKey = getenv( 'STEAM_PUBLISHER_API_KEY' );
 
 if( empty( $PublisherApiKey ) )
@@ -666,6 +668,6 @@ foreach( $generatedServices as $serviceName => $methods )
 }
 
 file_put_contents(
-	__DIR__ . DIRECTORY_SEPARATOR . 'api_from_protos.json',
+	$RootDir . DIRECTORY_SEPARATOR . 'api_from_protos.json',
 	json_encode( $foundServices, JSON_PRETTY_PRINT | JSON_UNESCAPED_SLASHES ) . PHP_EOL
 );

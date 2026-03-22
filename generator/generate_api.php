@@ -1,5 +1,7 @@
 <?php
 
+$RootDir = dirname( __DIR__ );
+
 $PublicApiKey    = getenv( 'STEAM_PUBLIC_API_KEY' );
 $PublisherApiKey = getenv( 'STEAM_PUBLISHER_API_KEY' );
 
@@ -30,9 +32,9 @@ $YesPublisher = curl_exec( $c );
 
 $Undocumented = [];
 
-if( file_exists( __DIR__ . '/api_undocumented_methods.txt' ) )
+if( file_exists( $RootDir . '/api_undocumented_methods.txt' ) )
 {
-	foreach( file( __DIR__ . '/api_undocumented_methods.txt', FILE_IGNORE_NEW_LINES | FILE_SKIP_EMPTY_LINES ) as $Method )
+	foreach( file( $RootDir . '/api_undocumented_methods.txt', FILE_IGNORE_NEW_LINES | FILE_SKIP_EMPTY_LINES ) as $Method )
 	{
 		[ $UndocumentedInterface, $UndocumentedMethod, $UndocumentedVersion ] = explode( '/', $Method, 3 );
 
@@ -61,25 +63,25 @@ $YesPublisher = $YesPublisher[ 'apilist' ][ 'interfaces' ] ?? [];
 $NonPublisher = json_decode( $NonPublisher, true, 512, JSON_THROW_ON_ERROR );
 $NonPublisher = $NonPublisher[ 'apilist' ][ 'interfaces' ] ?? [];
 
-if( file_exists( __DIR__ . '/api_from_protos.json' ) )
+if( file_exists( $RootDir . '/api_from_protos.json' ) )
 {
-	$UndocumentedFromServices = json_decode( file_get_contents( __DIR__ . '/api_from_protos.json' ), true, 512, JSON_THROW_ON_ERROR );
+	$UndocumentedFromServices = json_decode( file_get_contents( $RootDir . '/api_from_protos.json' ), true, 512, JSON_THROW_ON_ERROR );
 }
 else
 {
 	$UndocumentedFromServices = [];
 }
 
-if( file_exists( __DIR__ . '/api_from_docs.json' ) )
+if( file_exists( $RootDir . '/api_from_docs.json' ) )
 {
-	$UndocumentedFromPartnerDocs = json_decode( file_get_contents( __DIR__ . '/api_from_docs.json' ), true, 512, JSON_THROW_ON_ERROR );
+	$UndocumentedFromPartnerDocs = json_decode( file_get_contents( $RootDir . '/api_from_docs.json' ), true, 512, JSON_THROW_ON_ERROR );
 }
 else
 {
 	$UndocumentedFromPartnerDocs = [];
 }
 
-$FinalList = file_exists( __DIR__ . '/api.json' ) ? json_decode( file_get_contents( __DIR__ . '/api.json' ), true, 512, JSON_THROW_ON_ERROR ) : [];
+$FinalList = file_exists( $RootDir . '/api.json' ) ? json_decode( file_get_contents( $RootDir . '/api.json' ), true, 512, JSON_THROW_ON_ERROR ) : [];
 
 MarkAsRemoved( $FinalList );
 MergeLists( $FinalList, $NonPublisher );
@@ -113,9 +115,9 @@ foreach( $FinalList as $InterfaceName => $Interface )
 	}
 }
 
-if( file_exists( __DIR__ . '/api_type_overrides.json' ) )
+if( file_exists( $RootDir . '/api_type_overrides.json' ) )
 {
-	$ParameterTypeOverrides = json_decode( file_get_contents( __DIR__ . '/api_type_overrides.json' ), true, 512, JSON_THROW_ON_ERROR );
+	$ParameterTypeOverrides = json_decode( file_get_contents( $RootDir . '/api_type_overrides.json' ), true, 512, JSON_THROW_ON_ERROR );
 
 	foreach( $FinalList as $InterfaceName => &$Interface )
 	{
@@ -169,7 +171,7 @@ foreach( $FinalList as &$Interface )
 unset( $Interface );
 
 file_put_contents(
-	__DIR__ . DIRECTORY_SEPARATOR . 'api.json',
+	$RootDir . DIRECTORY_SEPARATOR . 'api.json',
 	json_encode( $FinalList, JSON_PRETTY_PRINT | JSON_UNESCAPED_SLASHES ) . PHP_EOL
 );
 
