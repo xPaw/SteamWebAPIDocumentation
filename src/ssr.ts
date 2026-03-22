@@ -25,6 +25,14 @@ function formatDate(timestamp: number): string {
 
 function getLastModifiedDates(): Record<string, number> {
 	const dates: Record<string, number> = {};
+
+	// CI environments typically do shallow clones, which makes git blame
+	// attribute all lines to a single commit. Unshallow if needed.
+	try {
+		execSync('git rev-parse --is-shallow-repository', { encoding: 'utf8' }).trim() === 'true'
+			&& execSync('git fetch --unshallow --filter=blob:none', { encoding: 'utf8' });
+	} catch {}
+
 	const blame = execSync('git blame --porcelain -- api.json', {
 		encoding: 'utf8',
 		maxBuffer: 50 * 1024 * 1024,
