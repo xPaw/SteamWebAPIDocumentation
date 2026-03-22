@@ -1,4 +1,5 @@
 <?php
+declare(strict_types=1);
 
 $RootDir = dirname( __DIR__ );
 
@@ -18,23 +19,30 @@ curl_setopt_array( $c,
 [
 	CURLOPT_TIMEOUT        => 10,
 	CURLOPT_RETURNTRANSFER => true,
-	CURLOPT_USERAGENT      => '',
+	CURLOPT_USERAGENT      => 'SteamWebAPIDocumentation (https://github.com/xPaw/SteamWebAPIDocumentation)',
 	CURLOPT_URL            => 'https://community.steam-api.com/ISteamWebAPIUtil/GetSupportedAPIList/v1/?format=json&key=' . $PublicApiKey
 ] );
 unset( $PublicApiKey );
-$NonPublisher = curl_exec( $c );
+$NonPublisher = (string)curl_exec( $c );
 
 echo 'Downloading partner list...' . PHP_EOL;
 
 curl_setopt( $c, CURLOPT_URL, 'https://partner.steam-api.com/ISteamWebAPIUtil/GetSupportedAPIList/v1/?format=json&key=' . $PublisherApiKey );
 unset( $PublisherApiKey );
-$YesPublisher = curl_exec( $c );
+$YesPublisher = (string)curl_exec( $c );
 
 $Undocumented = [];
 
 if( file_exists( $RootDir . '/api_undocumented_methods.txt' ) )
 {
-	foreach( file( $RootDir . '/api_undocumented_methods.txt', FILE_IGNORE_NEW_LINES | FILE_SKIP_EMPTY_LINES ) as $Method )
+	$undocumentedMethodsList = file( $RootDir . '/api_undocumented_methods.txt', FILE_IGNORE_NEW_LINES | FILE_SKIP_EMPTY_LINES );
+
+	if( $undocumentedMethodsList === false )
+	{
+		throw new RuntimeException( 'Failed to read api_undocumented_methods.txt' );
+	}
+
+	foreach( $undocumentedMethodsList as $Method )
 	{
 		[ $UndocumentedInterface, $UndocumentedMethod, $UndocumentedVersion ] = explode( '/', $Method, 3 );
 
@@ -65,7 +73,7 @@ $NonPublisher = $NonPublisher[ 'apilist' ][ 'interfaces' ] ?? [];
 
 if( file_exists( $RootDir . '/api_from_protos.json' ) )
 {
-	$UndocumentedFromServices = json_decode( file_get_contents( $RootDir . '/api_from_protos.json' ), true, 512, JSON_THROW_ON_ERROR );
+	$UndocumentedFromServices = json_decode( (string)file_get_contents( $RootDir . '/api_from_protos.json' ), true, 512, JSON_THROW_ON_ERROR );
 }
 else
 {
@@ -74,14 +82,14 @@ else
 
 if( file_exists( $RootDir . '/api_from_docs.json' ) )
 {
-	$UndocumentedFromPartnerDocs = json_decode( file_get_contents( $RootDir . '/api_from_docs.json' ), true, 512, JSON_THROW_ON_ERROR );
+	$UndocumentedFromPartnerDocs = json_decode( (string)file_get_contents( $RootDir . '/api_from_docs.json' ), true, 512, JSON_THROW_ON_ERROR );
 }
 else
 {
 	$UndocumentedFromPartnerDocs = [];
 }
 
-$FinalList = file_exists( $RootDir . '/api.json' ) ? json_decode( file_get_contents( $RootDir . '/api.json' ), true, 512, JSON_THROW_ON_ERROR ) : [];
+$FinalList = file_exists( $RootDir . '/api.json' ) ? json_decode( (string)file_get_contents( $RootDir . '/api.json' ), true, 512, JSON_THROW_ON_ERROR ) : [];
 
 MarkAsRemoved( $FinalList );
 MergeLists( $FinalList, $NonPublisher );
@@ -117,7 +125,7 @@ foreach( $FinalList as $InterfaceName => $Interface )
 
 if( file_exists( $RootDir . '/api_type_overrides.json' ) )
 {
-	$ParameterTypeOverrides = json_decode( file_get_contents( $RootDir . '/api_type_overrides.json' ), true, 512, JSON_THROW_ON_ERROR );
+	$ParameterTypeOverrides = json_decode( (string)file_get_contents( $RootDir . '/api_type_overrides.json' ), true, 512, JSON_THROW_ON_ERROR );
 
 	foreach( $FinalList as $InterfaceName => &$Interface )
 	{
@@ -177,6 +185,10 @@ file_put_contents(
 
 echo 'Done' . PHP_EOL;
 
+/**
+ * @param array<mixed> $FinalList
+ * @param array<array<string, mixed>> $Interfaces
+ */
 function MergeLists( array &$FinalList, array $Interfaces, ?string $Type = null ) : void
 {
 	foreach( $Interfaces as $Interface )
@@ -264,6 +276,7 @@ function MergeLists( array &$FinalList, array $Interfaces, ?string $Type = null 
 	}
 }
 
+/** @param array<mixed> $FinalList */
 function MarkAsRemoved( array &$FinalList ) : void
 {
 	foreach( $FinalList as &$Interface )

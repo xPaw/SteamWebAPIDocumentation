@@ -1,11 +1,11 @@
 <?php
+declare(strict_types=1);
 
 $RootDir = dirname( __DIR__ );
 
 // Path to https://github.com/SteamDatabase/SteamworksDocumentation
 $Folder = $RootDir . '/../SteamworksDocumentation';
 
-/** @var SplFileInfo[] $AllDocs */
 $AllDocs = new RecursiveIteratorIterator(
 	new RecursiveDirectoryIterator(
 		$Folder,
@@ -17,16 +17,16 @@ $Methods = [];
 
 foreach( $AllDocs as $fileInfo )
 {
-	if( $fileInfo->getExtension() !== 'html' )
+	if( !( $fileInfo instanceof SplFileInfo ) || $fileInfo->getExtension() !== 'html' )
 	{
 		continue;
 	}
 
-	$Doc = file_get_contents( $fileInfo );
+	$Doc = file_get_contents( $fileInfo->getPathname() );
 
 	if( $Doc === false )
 	{
-		throw new Exception( "Failed to read $fileInfo" );
+		throw new Exception( "Failed to read {$fileInfo->getPathname()}" );
 	}
 
 	$Doc = explode( '<h2 class="bb_section">', $Doc );
@@ -39,7 +39,7 @@ foreach( $AllDocs as $fileInfo )
 		}
 
 		$Url = htmlspecialchars_decode( $UrlMatches[ 1 ] );
-		$Url = explode( ' ', trim( preg_replace( '/[\n\r ]+/', ' ', $Url ) ) );
+		$Url = explode( ' ', trim( (string)preg_replace( '/[\n\r ]+/', ' ', $Url ) ) );
 
 		if( count( $Url ) < 2 )
 		{

@@ -1,16 +1,22 @@
 <?php
+declare(strict_types=1);
 
 $RootDir = dirname( __DIR__ );
 
-$FinalList = json_decode( file_get_contents( $RootDir . '/api.json' ), true, 512, JSON_THROW_ON_ERROR );
+$FinalList = json_decode( (string)file_get_contents( $RootDir . '/api.json' ), true, 512, JSON_THROW_ON_ERROR );
 
 $UndocumentedMethods = file( $RootDir . '/api_undocumented_methods.txt', FILE_IGNORE_NEW_LINES | FILE_SKIP_EMPTY_LINES );
+
+if( $UndocumentedMethods === false )
+{
+	throw new RuntimeException( 'Failed to read api_undocumented_methods.txt' );
+}
 $RemovedMethods = [];
 
 $c = curl_init( );
 
 curl_setopt_array( $c, [
-	CURLOPT_USERAGENT      => '',
+	CURLOPT_USERAGENT      => 'SteamWebAPIDocumentation (https://github.com/xPaw/SteamWebAPIDocumentation)',
 	CURLOPT_RETURNTRANSFER => true,
 	CURLOPT_TIMEOUT        => 5,
 	CURLOPT_CONNECTTIMEOUT => 5,
@@ -28,7 +34,7 @@ foreach( $copy as $serviceName => $Interface )
 		printf( 'Checking %-70s', $path . '...' );
 
 		curl_setopt( $c, CURLOPT_URL, "https://api.steampowered.com/{$path}/" );
-		$response = curl_exec( $c );
+		$response = (string)curl_exec( $c );
 
 		$code = curl_getinfo( $c, CURLINFO_HTTP_CODE );
 

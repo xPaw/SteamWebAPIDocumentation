@@ -1,5 +1,11 @@
 {
     "require": {
         "butschster/proto-parser": "^1.1"
+    },
+    "require-dev": {
+        "phpstan/phpstan": "^2.1"
+    },
+    "scripts": {
+        "test": "phpstan analyse"
     }
 }

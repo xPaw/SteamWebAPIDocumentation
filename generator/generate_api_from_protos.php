@@ -1,4 +1,5 @@
 <?php
+declare(strict_types=1);
 
 set_time_limit( 600 );
 
@@ -37,6 +38,7 @@ if( file_exists( $Folder ) )
 	passthru( 'cd ' . escapeshellarg( $Folder ) . ' && git pull' );
 }
 
+/** @var array<string, array<string, true>> $generatedServices */
 $generatedServices = [];
 
 $allProtos = new AppendIterator();
@@ -66,15 +68,21 @@ foreach( [ 'steam', 'deadlock', 'csgo', 'dota2', 'webui' ] as $subFolder )
 	}
 }
 
+/** @var array<string, string> $methodDescriptions */
 $methodDescriptions = [];
+/** @var array<string, array<string, mixed>> $methodParameters */
 $methodParameters = [];
+/** @var array<string, Butschster\ProtoParser\Ast\MessageDefNode> $allMessages */
 $allMessages = [];
+/** @var array<Butschster\ProtoParser\Ast\EnumDefNode> $allEnums */
 $allEnums = [];
+/** @var array<string, string> $fieldDescriptions */
 $fieldDescriptions = []; // Store field descriptions separately since AST is readonly
+/** @var array<string, Butschster\ProtoParser\Ast\ProtoNode> $parsedFiles */
 $parsedFiles = [];
 $parser = Butschster\ProtoParser\ProtoParserFactory::create();
 
-function ParseProtoFile( SplFileInfo $fileInfo, $parser ) : ?Butschster\ProtoParser\Ast\ProtoNode
+function ParseProtoFile( SplFileInfo $fileInfo, Butschster\ProtoParser\ProtoParser $parser ) : ?Butschster\ProtoParser\Ast\ProtoNode
 {
 	global $parsedFiles;
 
@@ -86,7 +94,7 @@ function ParseProtoFile( SplFileInfo $fileInfo, $parser ) : ?Butschster\ProtoPar
 
 	try
 	{
-		$protoContent = file_get_contents( $path );
+		$protoContent = (string)file_get_contents( $path );
 
 		// https://github.com/butschster/proto-parser/issues/8
 		if( !preg_match( '/^\s*syntax\s*=/', $protoContent ) )
@@ -102,7 +110,7 @@ function ParseProtoFile( SplFileInfo $fileInfo, $parser ) : ?Butschster\ProtoPar
 		$protoContent = str_replace( "optional string string ", 'optional string _string ', $protoContent );
 
 		// https://github.com/butschster/proto-parser/issues/10
-		$protoContent = preg_replace( '/extend\s+[^{]+\{[^}]*\}/s', '', $protoContent );
+		$protoContent = (string)preg_replace( '/extend\s+[^{]+\{[^}]*\}/s', '', $protoContent );
 
 		$protoFile = $parser->parse( $protoContent );
 		$parsedFiles[ $path ] = $protoFile;
@@ -111,11 +119,12 @@ function ParseProtoFile( SplFileInfo $fileInfo, $parser ) : ?Butschster\ProtoPar
 	}
 	catch( Exception $e )
 	{
-		echo 'Failed to parse ' . $fileInfo . ': ' . $e->getMessage() . PHP_EOL;
+		echo 'Failed to parse ' . $fileInfo->getPathname() . ': ' . $e->getMessage() . PHP_EOL;
 		return null;
 	}
 }
 
+/** @param array<string, string> $fieldDescriptions */
 function StoreFieldDescriptions( string $messageName, Butschster\ProtoParser\Ast\MessageDefNode $message, array &$fieldDescriptions ) : void
 {
 	// Store field descriptions in a separate array since AST nodes are readonly
@@ -138,19 +147,20 @@ function StoreFieldDescriptions( string $messageName, Butschster\ProtoParser\Ast
 	}
 }
 
+/** @param array<string, string> $fieldDescriptions */
 function StoreFieldDescription( string $messageName, Butschster\ProtoParser\Ast\FieldDeclNode|Butschster\ProtoParser\Ast\OneofFieldNode $field, array &$fieldDescriptions ) : void
 {
 	$fieldKey = $messageName . '.' . $field->name;
 
 	// Store if we don't have a description yet
-	if( isset( $fieldDescriptions[ $fieldKey ] ) && !empty( $fieldDescriptions[ $fieldKey ] ) )
+	if( !empty( $fieldDescriptions[ $fieldKey ] ) )
 	{
 		return;
 	}
 
 	foreach( $field->options as $opt )
 	{
-		if( $opt->name === 'description' && !empty( $opt->value ) )
+		if( $opt instanceof Butschster\ProtoParser\Ast\OptionNode && $opt->name === 'description' && is_string( $opt->value ) && !empty( $opt->value ) )
 		{
 			$fieldDescriptions[ $fieldKey ] = $opt->value;
 			return;
@@ -158,11 +168,21 @@ function StoreFieldDescription( string $messageName, Butschster\ProtoParser\Ast\
 	}
 }
 
+/**
+ * @param array<string, Butschster\ProtoParser\Ast\MessageDefNode> $allMessages
+ * @param array<Butschster\ProtoParser\Ast\EnumDefNode> $allEnums
+ * @param array<string, string> $fieldDescriptions
+ */
 function CollectNestedMessagesAndEnums( Butschster\ProtoParser\Ast\MessageDefNode $message, string $parentName, string $packagePrefix, array &$allMessages, array &$allEnums, array &$fieldDescriptions ) : void
 {
 	// Collect nested messages
 	foreach( $message->messages as $nestedMessage )
 	{
+		if( !( $nestedMessage instanceof Butschster\ProtoParser\Ast\MessageDefNode ) )
+		{
+			continue;
+		}
+
 		$nestedFullName = $parentName . '.' . $nestedMessage->name;
 		if( !isset( $allMessages[ $nestedFullName ] ) )
 		{
@@ -189,6 +209,11 @@ function CollectNestedMessagesAndEnums( Butschster\ProtoParser\Ast\MessageDefNod
 	// Collect nested enums
 	foreach( $message->enums as $nestedEnum )
 	{
+		if( !( $nestedEnum instanceof Butschster\ProtoParser\Ast\EnumDefNode ) )
+		{
+			continue;
+		}
+
 		$nestedFullName = $parentName . '.' . $nestedEnum->name;
 		if( !isset( $allEnums[ $nestedFullName ] ) )
 		{
@@ -206,7 +231,12 @@ function CollectNestedMessagesAndEnums( Butschster\ProtoParser\Ast\MessageDefNod
 	}
 }
 
-function CollectMessagesFromFile( Butschster\ProtoParser\Ast\ProtoNode $protoFile, SplFileInfo $fileInfo, $parser, array &$allMessages, array &$allEnums, array &$fieldDescriptions ) : void
+/**
+ * @param array<string, Butschster\ProtoParser\Ast\MessageDefNode> $allMessages
+ * @param array<Butschster\ProtoParser\Ast\EnumDefNode> $allEnums
+ * @param array<string, string> $fieldDescriptions
+ */
+function CollectMessagesFromFile( Butschster\ProtoParser\Ast\ProtoNode $protoFile, SplFileInfo $fileInfo, Butschster\ProtoParser\ProtoParser $parser, array &$allMessages, array &$allEnums, array &$fieldDescriptions ) : void
 {
 	$packagePrefix = '';
 	if( $protoFile->package !== null )
@@ -287,7 +317,14 @@ function CollectMessagesFromFile( Butschster\ProtoParser\Ast\ProtoNode $protoFil
 	}
 }
 
-function ParseMessageParameters( $message, array &$allMessages, array &$allEnums, array &$fieldDescriptions, string $messageName = '', array $processingStack = [] )
+/**
+ * @param array<string, Butschster\ProtoParser\Ast\MessageDefNode> $allMessages
+ * @param array<Butschster\ProtoParser\Ast\EnumDefNode> $allEnums
+ * @param array<string, string> $fieldDescriptions
+ * @param array<string, true> $processingStack
+ * @return array<string, array<string, mixed>>
+ */
+function ParseMessageParameters( ?Butschster\ProtoParser\Ast\MessageDefNode $message, array &$allMessages, array &$allEnums, array &$fieldDescriptions, string $messageName = '', array $processingStack = [] ) : array
 {
 	if( $message === null )
 	{
@@ -315,6 +352,10 @@ function ParseMessageParameters( $message, array &$allMessages, array &$allEnums
 			{
 				continue;
 			}
+		}
+		else if( !( $field instanceof Butschster\ProtoParser\Ast\FieldDeclNode ) )
+		{
+			continue;
 		}
 
 		$name = $field->name;
@@ -381,7 +422,7 @@ function ParseMessageParameters( $message, array &$allMessages, array &$allEnums
 		{
 			foreach( $field->options as $option )
 			{
-				if( $option->name === 'description' )
+				if( $option instanceof Butschster\ProtoParser\Ast\OptionNode && $option->name === 'description' && is_string( $option->value ) )
 				{
 					$description = $option->value;
 					break;
@@ -414,7 +455,7 @@ function ParseMessageParameters( $message, array &$allMessages, array &$allEnums
 // First pass: collect all messages and field descriptions
 foreach( $allProtos as $fileInfo )
 {
-	if( str_contains( $fileInfo, '.git' ) || $fileInfo->getExtension() !== 'proto' )
+	if( !( $fileInfo instanceof SplFileInfo ) || str_contains( $fileInfo->getPathname(), '.git' ) || $fileInfo->getExtension() !== 'proto' )
 	{
 		continue;
 	}
@@ -502,7 +543,7 @@ foreach( $parsedFiles as $path => $protoFile )
 $c = curl_init( );
 
 curl_setopt_array( $c, [
-	CURLOPT_USERAGENT      => '',
+	CURLOPT_USERAGENT      => 'SteamWebAPIDocumentation (https://github.com/xPaw/SteamWebAPIDocumentation)',
 	CURLOPT_RETURNTRANSFER => true,
 	CURLOPT_TIMEOUT        => 5,
 	CURLOPT_CONNECTTIMEOUT => 5,
@@ -511,7 +552,7 @@ curl_setopt_array( $c, [
 
 $knownServices = [];
 
-$response = curl_exec( $c );
+$response = (string)curl_exec( $c );
 $response = json_decode( $response, true, 512, JSON_THROW_ON_ERROR );
 
 foreach( $response[ 'apilist' ][ 'interfaces' ] as $service )
@@ -558,7 +599,7 @@ foreach( $generatedServices as $serviceName => $methods )
 		printf( "Checking %-64s...", $path );
 
 		curl_setopt( $c, CURLOPT_URL, "https://api.steampowered.com/{$path}/v1/" );
-		$response = curl_exec( $c );
+		$response = (string)curl_exec( $c );
 		$code = curl_getinfo( $c, CURLINFO_HTTP_CODE );
 
 		if( $code === 429 || $code < 200 || $code >= 500 )
@@ -567,7 +608,7 @@ foreach( $generatedServices as $serviceName => $methods )
 
 			sleep( 5 );
 
-			$response = curl_exec( $c );
+			$response = (string)curl_exec( $c );
 			$code = curl_getinfo( $c, CURLINFO_HTTP_CODE );
 
 			if( $code === 429 || $code < 200 || $code >= 500 )
