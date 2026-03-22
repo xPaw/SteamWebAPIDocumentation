@@ -173,11 +173,11 @@
 						<template v-for="(method, methodName) in currentInterfaceMethods" :key="methodName">
 							<form
 								target="_blank"
-								:id="methodName as string"
+								:id="String(methodName)"
 								:method="method.httpmethod || 'GET'"
-								:action="renderUri(methodName as string, method)"
+								:action="renderUri(String(methodName), method)"
 								class="card"
-								@submit="useThisMethod($event as SubmitEvent, method)"
+								@submit="useThisMethod($event, method)"
 							>
 								<input type="hidden" name="access_token" v-model="userData.access_token" v-if="hasValidAccessToken">
 								<input type="hidden" name="key" v-model="userData.webapi_key" v-if="!hasValidAccessToken && hasValidWebApiKey">
@@ -193,7 +193,7 @@
 									</div>
 
 									<div class="method-actions">
-										<button type="button" class="favorite-btn" aria-label="Toggle favorite" @click="favoriteMethod(method, methodName as string)">
+										<button type="button" class="favorite-btn" aria-label="Toggle favorite" @click="favoriteMethod(method, String(methodName))">
 											<svg aria-hidden="true" viewBox="0 0 16 16" width="24" height="24" v-if="method.isFavorite"><path fill="currentColor" d="M8 .25a.75.75 0 0 1 .673.418l1.882 3.815 4.21.612a.75.75 0 0 1 .416 1.279l-3.046 2.97.719 4.192a.751.751 0 0 1-1.088.791L8 12.347l-3.766 1.98a.75.75 0 0 1-1.088-.79l.72-4.194L.818 6.374a.75.75 0 0 1 .416-1.28l4.21-.611L7.327.668A.75.75 0 0 1 8 .25Z"></path></svg>
 											<svg aria-hidden="true" viewBox="0 0 16 16" width="24" height="24" v-if="!method.isFavorite"><path fill="currentColor" d="M8 .25a.75.75 0 0 1 .673.418l1.882 3.815 4.21.612a.75.75 0 0 1 .416 1.279l-3.046 2.97.719 4.192a.751.751 0 0 1-1.088.791L8 12.347l-3.766 1.98a.75.75 0 0 1-1.088-.79l.72-4.194L.818 6.374a.75.75 0 0 1 .416-1.28l4.21-.611L7.327.668A.75.75 0 0 1 8 .25Zm0 2.445L6.615 5.5a.75.75 0 0 1-.564.41l-3.097.45 2.24 2.184a.75.75 0 0 1 .216.664l-.528 3.084 2.769-1.456a.75.75 0 0 1 .698 0l2.77 1.456-.53-3.084a.75.75 0 0 1 .216-.664l2.24-2.183-3.096-.45a.75.75 0 0 1-.564-.41L8 2.694Z"></path></svg>
 										</button>
@@ -208,7 +208,7 @@
 									<p v-if="method.description">{{ method.description }}</p>
 
 									<div class="url-display">
-										<div class="url-text">{{ renderUri(methodName as string, method) }}{{ uriDelimeterBeforeKey }}<span :class="hasValidAccessToken ? 'hidden-token' : 'hidden-key'">{{ renderApiKey() }}</span>{{ renderParameters( method ) }}</div>
+										<div class="url-text">{{ renderUri(String(methodName), method) }}{{ uriDelimeterBeforeKey }}<span :class="hasValidAccessToken ? 'hidden-token' : 'hidden-key'">{{ renderApiKey() }}</span>{{ renderParameters( method ) }}</div>
 										<button class="copy-btn" type="button" aria-label="Copy URL" @click.prevent="copyUrl($event)">
 											<svg aria-hidden="true" viewBox="0 0 14 16" version="1.1" width="14" height="16"><path fill-rule="evenodd" d="M2 13h4v1H2v-1zm5-6H2v1h5V7zm2 3V8l-3 3 3 3v-2h5v-2H9zM4.5 9H2v1h2.5V9zM2 12h2.5v-1H2v1zm9 1h1v2c-.02.28-.11.52-.3.7-.19.18-.42.28-.7.3H1c-.55 0-1-.45-1-1V4c0-.55.45-1 1-1h3c0-1.11.89-2 2-2 1.11 0 2 .89 2 2h3c.55 0 1 .45 1 1v5h-1V6H1v9h10v-2zM2 5h8c0-.55-.45-1-1-1H8c-.55 0-1-.45-1-1s-.45-1-1-1-1 .45-1 1-.45 1-1 1H3c-.55 0-1 .45-1 1z"></path></svg>
 										</button>

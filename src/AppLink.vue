@@ -4,7 +4,7 @@
 
 <script lang="ts">
 import { defineComponent, inject } from 'vue';
-import { parseInterfaceFromUrl } from './App';
+import { parseInterfaceFromUrl } from './url';
 
 export default defineComponent({
 	props: {

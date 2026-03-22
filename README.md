@@ -38,4 +38,4 @@ Use `npm run dev` command to start a local server with hot reloading.
 
 Run `npm test` to check typescript.
 
-Run `npm run build` and then `npx wrangler pages dev build/` to test built project locally.
+Run `npm run build` and then `npm run preview` to test built project locally.

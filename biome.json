@@ -6,7 +6,7 @@
 		"useIgnoreFile": false
 	},
 	"files": {
-		"includes": ["src/*", "public/serviceworker.js", "public/manifest.json", "build.mjs"]
+		"includes": ["src/*", "public/*", "*.ts"]
 	},
 	"formatter": {
 		"enabled": true,

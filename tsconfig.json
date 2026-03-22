@@ -3,7 +3,7 @@
 	"compilerOptions": {
 		"outDir": "dist",
 		"target": "esnext",
-		"moduleResolution": "node",
+		"moduleResolution": "bundler",
 		"forceConsistentCasingInFileNames": true,
 		"strict": true,
 		"noUncheckedIndexedAccess": false,

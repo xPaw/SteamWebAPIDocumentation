@@ -4,14 +4,10 @@ import ApiParameter from './ApiParameter.vue';
 import AppLink from './AppLink.vue';
 import HighlightedSearchMethod from './HighlightedSearchMethod';
 import HomePage from './HomePage.vue';
+import { usePageHead } from './head';
 import type { ApiInterface, ApiMethod, ApiMethodParameter, ApiServices, SidebarGroupData } from './interfaces';
 import { ApiSearcher } from './search';
-
-export function parseInterfaceFromUrl(url: { pathname: string; hash: string } = location): [string, string | null] {
-	const iface = url.pathname.substring(1);
-	const method = url.hash.length > 1 ? url.hash.substring(1) : null;
-	return [iface, method];
-}
+import { parseInterfaceFromUrl } from './url';
 
 const sidebar = ref<HTMLElement | null>(null);
 const inputSearch = ref<HTMLInputElement | null>(null);
@@ -104,8 +100,6 @@ export default defineComponent({
 			}
 		}
 
-		const initialInterface = this.initialInterface;
-
 		return {
 			userData: {
 				webapi_key: '',
@@ -122,7 +116,6 @@ export default defineComponent({
 			accessTokenAudience: [],
 			accessTokenVisible: false,
 			currentFilter: '',
-			currentInterface: initialInterface && Object.hasOwn(interfaces, initialInterface) ? initialInterface : '',
 			search: markRaw(new ApiSearcher(interfaces)),
 			highlightedMethods: markRaw([] as ApiMethod[]),
 			interfaces,
@@ -130,8 +123,16 @@ export default defineComponent({
 			groupsData,
 		};
 	},
-	setup() {
+	setup(props) {
+		// @ts-expect-error
+		const interfaces = interfacesJson as ApiServices;
+		const currentInterface = ref(
+			props.initialInterface && Object.hasOwn(interfaces, props.initialInterface) ? props.initialInterface : '',
+		);
+		usePageHead(currentInterface);
+
 		return {
+			currentInterface,
 			sidebar,
 			inputSearch,
 			inputApiKey,
@@ -340,12 +341,6 @@ export default defineComponent({
 			}
 
 			this.currentInterface = currentInterface;
-
-			if (currentInterface) {
-				document.title = `${currentInterface} – Steam Web API Documentation`;
-			} else {
-				document.title = 'Steam Web API Documentation';
-			}
 
 			if (!setFromUrl && !currentMethod && document.scrollingElement) {
 				document.scrollingElement.scrollTop = 0;

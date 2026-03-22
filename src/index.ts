@@ -1,10 +1,14 @@
+import { createHead } from '@unhead/vue/client';
 import { createSSRApp } from 'vue';
-import { parseInterfaceFromUrl } from './App';
 import App from './App.vue';
+import './style.css';
+import { parseInterfaceFromUrl } from './url';
 
-if ('serviceWorker' in navigator && !('DEV_MODE' in window)) {
+if ('serviceWorker' in navigator && !import.meta.env.DEV) {
 	navigator.serviceWorker.register('serviceworker.js', { scope: './' });
 }
 
 const [initialInterface] = parseInterfaceFromUrl();
-createSSRApp(App, { initialInterface }).mount('#app');
+const app = createSSRApp(App, { initialInterface });
+app.use(createHead());
+app.mount('#app');
