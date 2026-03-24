@@ -2539,6 +2539,7 @@
                         "RemoveAndKick",
                         "Sanctioned",
                         "Sustained",
+                        "Broken",
                         "MAX"
                     ]
                 },
@@ -10809,6 +10810,7 @@
                         "RemoveAndKick",
                         "Sanctioned",
                         "Sustained",
+                        "Broken",
                         "MAX"
                     ]
                 },
