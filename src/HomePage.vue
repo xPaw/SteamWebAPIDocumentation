@@ -1,7 +1,9 @@
 <template>
-	<div class="home-content">
-		<div class="card">
-			<div class="card-header">What is this?</div>
+	<div class="home-content" itemscope itemtype="https://schema.org/WebSite">
+		<meta itemprop="name" content="Steam Web API Documentation">
+		<meta itemprop="url" content="https://steamapi.xpaw.me/">
+		<section class="card">
+			<h2 class="card-header">About the Steam Web API Documentation</h2>
 			<div class="card-body">
 				<p>This is a static page that is automatically generated from <code>GetSupportedAPIList</code> using public and publisher keys. Additionally service methods are parsed from Steam client's protobuf files.</p>
 				<p>If you specify the web api key above, it will be stored in your browser, and will only be sent to Valve's API servers if you choose to do so.</p>
@@ -11,10 +13,10 @@
 				<p>If you know of an API that is not listed here, <a href="https://github.com/xPaw/SteamWebAPIDocumentation/blob/master/api_undocumented_methods.txt">make a pull request to the file of undocumented APIs</a>.</p>
 				<p>Source code for this page <a href="https://github.com/xPaw/SteamWebAPIDocumentation">is also available on GitHub</a>.</p>
 			</div>
-		</div>
+		</section>
 
-		<div class="card">
-			<div class="card-header">Authentication</div>
+		<section class="card">
+			<h2 class="card-header">Steam Web API Authentication &amp; API Keys</h2>
 			<div class="card-body">
 				<p>The Web API has three levels of access:</p>
 				<ol>
@@ -29,10 +31,10 @@
 				<p>Publisher Web API keys must be stored securely on your server and must not be distributed with game clients. All API requests containing keys should be made over HTTPS.</p>
 				<p>See <a href="https://partner.steamgames.com/doc/webapi_overview/auth" target="_blank">Steamworks Authentication documentation</a> for details on publisher key permissions and IP allow lists.</p>
 			</div>
-		</div>
+		</section>
 
-		<div class="card">
-			<div class="card-header">API endpoints</div>
+		<section class="card">
+			<h2 class="card-header">Steam Web API Endpoints &amp; Base URLs</h2>
 			<div class="card-body">
 				<p>The public Steamworks Web API is hosted on <code>https://api.steampowered.com</code> or <code>https://community.steam-api.com</code>.</p>
 				<p>
@@ -56,10 +58,10 @@
 				</ul>
 				<p>You should not connect to the Web API servers by IP; use the DNS name. If you need to configure firewall rules for outbound API requests, see the <a href="https://partner.steamgames.com/doc/webapi_overview" target="_blank">Steamworks Web API Overview</a> for the current CIDR blocks.</p>
 			</div>
-		</div>
+		</section>
 
-		<div class="card">
-			<div class="card-header">Requests</div>
+		<section class="card">
+			<h2 class="card-header">How to Make Steam Web API Requests</h2>
 			<div class="card-body">
 				<p>Similar to the Steamworks C++ API, the Web API has been divided into multiple interfaces that contain related methods. The URI format of each API request is: <code>https://api.steampowered.com/&lt;interface&gt;/&lt;method&gt;/&lt;method_version&gt;/</code></p>
 				<p>Parameters are passed as query string parameters for GET requests, or in the request body as <code>application/x-www-form-urlencoded</code> for POST requests. All requests must use UTF-8 encoding.</p>
@@ -68,10 +70,10 @@
 				<div class="code-block">?key=XXXX&amp;input_json={"steamid":76561197960287930}</div>
 				<p>See <a href="https://partner.steamgames.com/doc/webapi_overview" target="_blank">Steamworks Web API Overview</a> for full request format details.</p>
 			</div>
-		</div>
+		</section>
 
-		<div class="card">
-			<div class="card-header">Responses</div>
+		<section class="card">
+			<h2 class="card-header">Steam Web API Response Formats</h2>
 			<div class="card-body">
 				<p>Steam supports returning Web API responses in multiple formats. By default, all responses are returned JSON encoded. However, each request can optionally contain a <code>format</code> parameter to specify the desired response format. The following values can be passed for this parameter: <code>json</code>, <code>xml</code>, <code>vdf</code>, and <code>protobuf_raw</code>.</p>
 				<ul>
@@ -107,7 +109,7 @@
 				</div>
 				<p>See <a href="https://partner.steamgames.com/doc/webapi_overview/responses" target="_blank">Steamworks Web API Responses</a> for additional details.</p>
 			</div>
-		</div>
+		</section>
 
 		<div class="card card-danger">
 			<div class="card-header card-header-danger">License</div>

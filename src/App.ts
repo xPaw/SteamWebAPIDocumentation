@@ -124,6 +124,7 @@ export default defineComponent({
 			interfaces,
 			groupsMap,
 			groupsData,
+			sidebarOpen: false,
 		};
 	},
 	setup(props) {
@@ -265,6 +266,12 @@ export default defineComponent({
 		});
 
 		this.bindGlobalKeybind();
+
+		window.matchMedia('(max-width: 991px)').addEventListener('change', (e) => {
+			if (!e.matches && this.sidebarOpen) {
+				this.closeSidebar();
+			}
+		});
 	},
 	computed: {
 		sidebarInterfaces(): Map<number, SidebarGroupData> {
@@ -342,6 +349,10 @@ export default defineComponent({
 			}
 
 			this.currentInterface = currentInterface;
+
+			if (this.sidebarOpen && currentInterface) {
+				this.closeSidebar();
+			}
 
 			if (!setFromUrl && !currentMethod && document.scrollingElement) {
 				document.scrollingElement.scrollTop = 0;
@@ -648,7 +659,10 @@ export default defineComponent({
 			this.scrollInterfaceIntoView();
 
 			this.$nextTick(() => {
-				this.inputSearch?.focus();
+				const input = this.sidebarOpen
+					? this.sidebar?.querySelector<HTMLInputElement>('.search-input')
+					: this.inputSearch;
+				input?.focus();
 			});
 		},
 		focusApiKey(): void {
@@ -674,6 +688,12 @@ export default defineComponent({
 					return;
 				}
 
+				if (e.key === 'Escape' && this.sidebarOpen) {
+					e.preventDefault();
+					this.closeSidebar();
+					return;
+				}
+
 				const target = e.target as HTMLElement;
 
 				if (['INPUT', 'TEXTAREA', 'SELECT', 'BUTTON'].includes(target.tagName)) {
@@ -685,6 +705,19 @@ export default defineComponent({
 					this.inputSearch?.focus();
 				}
 			});
+		},
+		toggleSidebar(): void {
+			if (this.sidebarOpen) {
+				this.closeSidebar();
+			} else {
+				this.sidebarOpen = true;
+				document.body.classList.add('sidebar-overlay-open');
+				this.$nextTick(this.scrollInterfaceIntoView);
+			}
+		},
+		closeSidebar(): void {
+			this.sidebarOpen = false;
+			document.body.classList.remove('sidebar-overlay-open');
 		},
 	},
 });

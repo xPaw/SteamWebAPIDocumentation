@@ -1,7 +1,17 @@
 <template>
-		<div class="site-header" role="banner">
+		<header class="site-header">
 			<div class="site-container header-inner">
-				<div class="header-search" role="search">
+				<button
+					type="button"
+					class="sidebar-toggle"
+					:aria-expanded="sidebarOpen"
+					aria-controls="sidebar-nav"
+					aria-label="Toggle navigation menu"
+					@click="toggleSidebar"
+				>
+					<svg viewBox="0 0 24 24" width="22" height="22" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M21 5H3"/><path d="M10 12H3"/><path d="M10 19H3"/><circle cx="17" cy="15" r="3"/><path d="m21 19-1.9-1.9"/></svg>
+				</button>
+				<search class="header-search">
 					<input
 						ref="inputSearch"
 						type="search"
@@ -13,19 +23,51 @@
 						@keydown.up.prevent="navigateSidebar(-1)"
 						@keydown.down.prevent="navigateSidebar(1)"
 					>
+				</search>
+				<div class="header-title" v-if="currentInterface !== ''" itemscope itemtype="https://schema.org/BreadcrumbList">
+					<span itemprop="itemListElement" itemscope itemtype="https://schema.org/ListItem">
+						<h2><AppLink :href="'/' + currentInterface" itemprop="item"><span itemprop="name">{{ currentInterface }}</span></AppLink></h2>
+						<meta itemprop="position" content="2">
+					</span>
+					<span class="separator"> / </span>
+					<span itemprop="itemListElement" itemscope itemtype="https://schema.org/ListItem">
+						<h1><AppLink href="/" itemprop="item"><span itemprop="name">Steam Web API Documentation</span></AppLink></h1>
+						<meta itemprop="position" content="1">
+					</span>
+					<span class="credit"> by <a href="https://xpaw.me">xPaw</a></span>
 				</div>
-				<div class="header-title">
+				<div class="header-title" v-else>
 					<h1><AppLink href="/">Steam Web API Documentation</AppLink></h1>
-					<span class="separator" v-if="currentInterface !== ''"> / </span>
-					<h2 v-if="currentInterface !== ''">{{ currentInterface }}</h2>
-					<span v-else> with &hearts; by <a href="https://xpaw.me">xPaw</a></span>
+					<span class="credit"> with &hearts; by <a href="https://xpaw.me">xPaw</a></span>
 				</div>
 			</div>
-		</div>
+		</header>
 
 		<div class="site-container">
 			<div class="site-layout">
-				<div class="sidebar" role="navigation" ref="sidebar">
+				<nav class="sidebar" :class="{ 'is-open': sidebarOpen }" aria-label="API interfaces" ref="sidebar" id="sidebar-nav">
+					<div class="sidebar-header">
+						<button
+							type="button"
+							class="sidebar-close"
+							aria-label="Close navigation menu"
+							@click="closeSidebar"
+						>
+							<svg viewBox="0 0 24 24" width="22" height="22" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M18 6 6 18"/><path d="m6 6 12 12"/></svg>
+						</button>
+						<search class="sidebar-search">
+							<input
+								type="search"
+								class="search-input"
+								placeholder="Search methods…"
+								aria-label="Search interfaces and methods"
+								@input="onSearchInput"
+								@keydown.escape.prevent="closeSidebar"
+								@keydown.up.prevent="navigateSidebar(-1)"
+								@keydown.down.prevent="navigateSidebar(1)"
+							>
+						</search>
+					</div>
 					<details class="interface-list-container" open v-if="userData.favorites.size > 0 && !currentFilter">
 						<summary class="interface-group-name">Your favorites</summary>
 
@@ -80,9 +122,9 @@
 							</li>
 						</ul>
 					</details>
-				</div>
+				</nav>
 
-				<div class="content" role="main">
+				<main class="content">
 					<div class="interface" v-if="currentInterface === '' && !currentFilter">
 						<div class="card">
 							<div class="card-header">Settings</div>
@@ -163,9 +205,9 @@
 						<HomePage />
 					</div>
 					<div class="interface" v-else>
-						<div class="notice-banner">
+						<aside class="notice-banner">
 							This page is just a reference of all the known Steam APIs, I do not know how they work. Please do not email me with questions.
-						</div>
+						</aside>
 						<div class="filter-banner" v-if="currentFilter">
 							<a href="#" @click.prevent="currentFilter = ''">Click here to reset filtered results.</a>
 							Use arrows keys in search field to navigate.
@@ -188,7 +230,7 @@
 										<a class="badge badge-publisher" v-if="method._type === 'publisher_only'" :href="`https://partner.steamgames.com/doc/webapi/${currentInterface}#${methodName}`" target="_blank">PUBLISHER</a>
 										<span class="badge badge-undocumented" v-if="method._type === 'undocumented'">UNDOCUMENTED</span>
 										<span :class="method.httpmethod === 'GET' ? 'badge badge-get' : 'badge badge-post'" v-if="method.httpmethod">{{ method.httpmethod }}</span>
-										<a class="method-name" :href="'#' + methodName">{{ methodName }}</a>
+										<h3 class="method-name"><a :href="'#' + methodName">{{ methodName }}</a></h3>
 										<span class="badge badge-version" v-if="method.version > 1">v{{ method.version }}</span>
 									</div>
 
@@ -248,7 +290,7 @@
 							</form>
 						</template>
 					</div>
-				</div>
+				</main>
 			</div>
 		</div>
 </template>

@@ -4,7 +4,7 @@ import { interfaces } from './interfaces';
 
 const defaultTitle = 'Steam Web API Documentation';
 const defaultDescription =
-	'An automatically generated list of Steam Web API interfaces, methods and parameters. Allows you to craft requests in the browser.';
+	'The most complete Steam Web API reference with 200+ interfaces, including undocumented APIs. Execute requests directly in your browser.';
 export const defaultCanonical = 'https://steamapi.xpaw.me/';
 
 function getDescription(interfaceName: string): string {
