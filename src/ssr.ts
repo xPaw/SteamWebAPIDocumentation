@@ -29,8 +29,8 @@ function getLastModifiedDates(): Record<string, number> {
 	// CI environments typically do shallow clones, which makes git blame
 	// attribute all lines to a single commit. Unshallow if needed.
 	try {
-		execSync('git rev-parse --is-shallow-repository', { encoding: 'utf8' }).trim() === 'true'
-			&& execSync('git -c gc.auto=0 fetch --unshallow', { encoding: 'utf8' });
+		execSync('git rev-parse --is-shallow-repository', { encoding: 'utf8' }).trim() === 'true' &&
+			execSync('git -c gc.auto=0 fetch --unshallow', { encoding: 'utf8' });
 	} catch {}
 
 	const blame = execSync('git blame --porcelain -- api.json', {
