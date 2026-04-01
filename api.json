@@ -10531,6 +10531,75 @@
                 }
             ]
         },
+        "SanctionReportedPost": {
+            "_type": "undocumented",
+            "version": 1,
+            "httpmethod": "POST",
+            "parameters": [
+                {
+                    "name": "key",
+                    "type": "string",
+                    "optional": false,
+                    "description": "Access key"
+                },
+                {
+                    "name": "steamid",
+                    "type": "uint64",
+                    "optional": true,
+                    "description": ""
+                },
+                {
+                    "name": "gidforum",
+                    "type": "uint64",
+                    "optional": true,
+                    "description": ""
+                },
+                {
+                    "name": "gidtopic",
+                    "type": "uint64",
+                    "optional": true,
+                    "description": ""
+                },
+                {
+                    "name": "gidpost",
+                    "type": "uint64",
+                    "optional": true,
+                    "description": ""
+                },
+                {
+                    "name": "reason",
+                    "type": "int32",
+                    "optional": true,
+                    "description": "enum"
+                },
+                {
+                    "name": "sanctions[0]",
+                    "type": "CForums_SanctionReportedPost_Request_Sanction[]",
+                    "optional": true,
+                    "description": "",
+                    "extra": [
+                        {
+                            "name": "sanction",
+                            "type": "int32",
+                            "optional": true,
+                            "description": "enum"
+                        },
+                        {
+                            "name": "days",
+                            "type": "int32",
+                            "optional": true,
+                            "description": ""
+                        }
+                    ]
+                },
+                {
+                    "name": "note",
+                    "type": "string",
+                    "optional": true,
+                    "description": ""
+                }
+            ]
+        },
         "SetTopicLocked": {
             "_type": "undocumented",
             "version": 1,
@@ -21149,6 +21218,12 @@
                     "type": "bool",
                     "optional": false,
                     "description": "Admin tool is doing a query, return hidden items"
+                },
+                {
+                    "name": "special_filter",
+                    "type": "{enum}",
+                    "optional": false,
+                    "description": "Additional special filtering"
                 },
                 {
                     "name": "totalonly",
