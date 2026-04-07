@@ -6856,12 +6856,94 @@
         "FinishCrashUpload": {
             "_type": "undocumented",
             "version": 1,
-            "parameters": []
+            "httpmethod": "POST",
+            "parameters": [
+                {
+                    "name": "key",
+                    "type": "string",
+                    "optional": false,
+                    "description": "Access key"
+                },
+                {
+                    "name": "gid",
+                    "type": "fixed64",
+                    "optional": true,
+                    "description": ""
+                }
+            ]
         },
         "StartCrashUpload": {
             "_type": "undocumented",
             "version": 1,
-            "parameters": []
+            "httpmethod": "POST",
+            "parameters": [
+                {
+                    "name": "key",
+                    "type": "string",
+                    "optional": false,
+                    "description": "Access key"
+                },
+                {
+                    "name": "steamid",
+                    "type": "fixed64",
+                    "optional": true,
+                    "description": ""
+                },
+                {
+                    "name": "have_dump_file",
+                    "type": "bool",
+                    "optional": true,
+                    "description": ""
+                },
+                {
+                    "name": "dump_file_size",
+                    "type": "uint32",
+                    "optional": true,
+                    "description": ""
+                },
+                {
+                    "name": "product",
+                    "type": "string",
+                    "optional": true,
+                    "description": ""
+                },
+                {
+                    "name": "build",
+                    "type": "string",
+                    "optional": true,
+                    "description": ""
+                },
+                {
+                    "name": "version",
+                    "type": "string",
+                    "optional": true,
+                    "description": ""
+                },
+                {
+                    "name": "platform",
+                    "type": "string",
+                    "optional": true,
+                    "description": ""
+                },
+                {
+                    "name": "crash_time",
+                    "type": "uint32",
+                    "optional": true,
+                    "description": ""
+                },
+                {
+                    "name": "stack",
+                    "type": "string",
+                    "optional": true,
+                    "description": ""
+                },
+                {
+                    "name": "note",
+                    "type": "string",
+                    "optional": true,
+                    "description": ""
+                }
+            ]
         }
     },
     "ICredentialsService": {
@@ -10820,7 +10902,21 @@
         "MarkOfflineMessagesRead": {
             "_type": "undocumented",
             "version": 1,
-            "parameters": []
+            "httpmethod": "POST",
+            "parameters": [
+                {
+                    "name": "key",
+                    "type": "string",
+                    "optional": false,
+                    "description": "Access key"
+                },
+                {
+                    "name": "steamid_friend",
+                    "type": "fixed64",
+                    "optional": true,
+                    "description": ""
+                }
+            ]
         },
         "ResolveReport": {
             "_type": "undocumented",
@@ -11970,6 +12066,38 @@
                     "type": "string",
                     "optional": false,
                     "description": "The memo to set on the new account"
+                }
+            ]
+        }
+    },
+    "IHardwareTeamService": {
+        "GetRMAUpdates": {
+            "_type": "undocumented",
+            "version": 1,
+            "parameters": [
+                {
+                    "name": "key",
+                    "type": "string",
+                    "optional": false,
+                    "description": "Access key"
+                },
+                {
+                    "name": "product_names[0]",
+                    "type": "string[]",
+                    "optional": true,
+                    "description": ""
+                },
+                {
+                    "name": "last_change_number",
+                    "type": "fixed64",
+                    "optional": true,
+                    "description": ""
+                },
+                {
+                    "name": "max_results",
+                    "type": "uint32",
+                    "optional": true,
+                    "description": ""
                 }
             ]
         }
@@ -24817,6 +24945,793 @@
             "parameters": []
         }
     },
+    "ISteamGPTRenderFarmService": {
+        "CreateExample": {
+            "_type": "undocumented",
+            "version": 1,
+            "httpmethod": "POST",
+            "parameters": [
+                {
+                    "name": "key",
+                    "type": "string",
+                    "optional": false,
+                    "description": "Access key"
+                },
+                {
+                    "name": "problem",
+                    "type": "string",
+                    "optional": true,
+                    "description": ""
+                },
+                {
+                    "name": "label",
+                    "type": "string",
+                    "optional": true,
+                    "description": ""
+                },
+                {
+                    "name": "appid",
+                    "type": "uint32",
+                    "optional": true,
+                    "description": ""
+                },
+                {
+                    "name": "steamid",
+                    "type": "fixed64",
+                    "optional": true,
+                    "description": ""
+                },
+                {
+                    "name": "exact_example",
+                    "type": "string",
+                    "optional": true,
+                    "description": ""
+                },
+                {
+                    "name": "log_addresses[0]",
+                    "type": "CSteamGPT_CreateExample_Request_SteamGPTLogAddress[]",
+                    "optional": true,
+                    "description": "",
+                    "extra": [
+                        {
+                            "name": "appid",
+                            "type": "uint32",
+                            "optional": true,
+                            "description": ""
+                        },
+                        {
+                            "name": "channel",
+                            "type": "string",
+                            "optional": true,
+                            "description": ""
+                        },
+                        {
+                            "name": "subchannel",
+                            "type": "string",
+                            "optional": true,
+                            "description": ""
+                        }
+                    ]
+                },
+                {
+                    "name": "metadata",
+                    "type": "string",
+                    "optional": true,
+                    "description": ""
+                },
+                {
+                    "name": "max_timestamp",
+                    "type": "int32",
+                    "optional": true,
+                    "description": ""
+                },
+                {
+                    "name": "data_version",
+                    "type": "uint32",
+                    "optional": true,
+                    "description": ""
+                },
+                {
+                    "name": "reevidence_data",
+                    "type": "string",
+                    "optional": true,
+                    "description": ""
+                },
+                {
+                    "name": "parent_row_id",
+                    "type": "fixed64",
+                    "optional": true,
+                    "description": ""
+                },
+                {
+                    "name": "match_id",
+                    "type": "uint64",
+                    "optional": true,
+                    "description": ""
+                },
+                {
+                    "name": "labeling_task_id",
+                    "type": "uint64",
+                    "optional": true,
+                    "description": ""
+                },
+                {
+                    "name": "is_test_set",
+                    "type": "bool",
+                    "optional": true,
+                    "description": ""
+                }
+            ]
+        },
+        "CreateLabelingTask": {
+            "_type": "undocumented",
+            "version": 1,
+            "httpmethod": "POST",
+            "parameters": [
+                {
+                    "name": "key",
+                    "type": "string",
+                    "optional": false,
+                    "description": "Access key"
+                },
+                {
+                    "name": "appid",
+                    "type": "uint32",
+                    "optional": true,
+                    "description": ""
+                },
+                {
+                    "name": "movie_url",
+                    "type": "string",
+                    "optional": true,
+                    "description": ""
+                },
+                {
+                    "name": "problem",
+                    "type": "string",
+                    "optional": true,
+                    "description": ""
+                },
+                {
+                    "name": "subproblem",
+                    "type": "string",
+                    "optional": true,
+                    "description": ""
+                },
+                {
+                    "name": "source_type",
+                    "type": "string",
+                    "optional": true,
+                    "description": ""
+                },
+                {
+                    "name": "source_details",
+                    "type": "string",
+                    "optional": true,
+                    "description": ""
+                },
+                {
+                    "name": "movie_start_time_seconds",
+                    "type": "float",
+                    "optional": true,
+                    "description": ""
+                },
+                {
+                    "name": "movie_duration_seconds",
+                    "type": "float",
+                    "optional": true,
+                    "description": ""
+                },
+                {
+                    "name": "movie_target_event_time_seconds",
+                    "type": "float",
+                    "optional": true,
+                    "description": ""
+                },
+                {
+                    "name": "game_target_event_tick",
+                    "type": "uint32",
+                    "optional": true,
+                    "description": ""
+                },
+                {
+                    "name": "evidence",
+                    "type": "string",
+                    "optional": true,
+                    "description": ""
+                },
+                {
+                    "name": "evidence_version",
+                    "type": "uint32",
+                    "optional": true,
+                    "description": ""
+                },
+                {
+                    "name": "matchid",
+                    "type": "fixed64",
+                    "optional": true,
+                    "description": ""
+                },
+                {
+                    "name": "steamid",
+                    "type": "uint64",
+                    "optional": true,
+                    "description": ""
+                },
+                {
+                    "name": "reevidence_data",
+                    "type": "string",
+                    "optional": true,
+                    "description": ""
+                }
+            ]
+        },
+        "GenerateMetaModelLog": {
+            "_type": "undocumented",
+            "version": 1,
+            "httpmethod": "POST",
+            "parameters": [
+                {
+                    "name": "key",
+                    "type": "string",
+                    "optional": false,
+                    "description": "Access key"
+                },
+                {
+                    "name": "appid",
+                    "type": "uint32",
+                    "optional": true,
+                    "description": ""
+                },
+                {
+                    "name": "log_header",
+                    "type": "string",
+                    "optional": true,
+                    "description": ""
+                },
+                {
+                    "name": "interval_headers[0]",
+                    "type": "string[]",
+                    "optional": true,
+                    "description": ""
+                },
+                {
+                    "name": "interval_logs_count[0]",
+                    "type": "uint32[]",
+                    "optional": true,
+                    "description": ""
+                },
+                {
+                    "name": "logs_to_inference[0]",
+                    "type": "string[]",
+                    "optional": true,
+                    "description": ""
+                },
+                {
+                    "name": "upstream_modelid",
+                    "type": "uint64",
+                    "optional": true,
+                    "description": ""
+                }
+            ]
+        },
+        "GetAvailableTask": {
+            "_type": "undocumented",
+            "version": 1,
+            "httpmethod": "POST",
+            "parameters": [
+                {
+                    "name": "key",
+                    "type": "string",
+                    "optional": false,
+                    "description": "Access key"
+                },
+                {
+                    "name": "problem",
+                    "type": "string",
+                    "optional": true,
+                    "description": ""
+                },
+                {
+                    "name": "appid",
+                    "type": "uint32",
+                    "optional": true,
+                    "description": ""
+                },
+                {
+                    "name": "data_version",
+                    "type": "uint32",
+                    "optional": true,
+                    "description": ""
+                },
+                {
+                    "name": "task_status",
+                    "type": "uint32",
+                    "optional": true,
+                    "description": ""
+                }
+            ]
+        },
+        "GetTask": {
+            "_type": "undocumented",
+            "version": 1,
+            "httpmethod": "POST",
+            "parameters": [
+                {
+                    "name": "key",
+                    "type": "string",
+                    "optional": false,
+                    "description": "Access key"
+                },
+                {
+                    "name": "taskid",
+                    "type": "int64",
+                    "optional": true,
+                    "description": ""
+                },
+                {
+                    "name": "appid",
+                    "type": "uint32",
+                    "optional": true,
+                    "description": ""
+                }
+            ]
+        },
+        "OnTaskUpdate": {
+            "_type": "undocumented",
+            "version": 1,
+            "httpmethod": "POST",
+            "parameters": [
+                {
+                    "name": "key",
+                    "type": "string",
+                    "optional": false,
+                    "description": "Access key"
+                },
+                {
+                    "name": "appid",
+                    "type": "uint32",
+                    "optional": true,
+                    "description": ""
+                },
+                {
+                    "name": "matchid",
+                    "type": "fixed64",
+                    "optional": true,
+                    "description": ""
+                },
+                {
+                    "name": "subtask_taskids[0]",
+                    "type": "int64[]",
+                    "optional": true,
+                    "description": ""
+                },
+                {
+                    "name": "task_status",
+                    "type": "uint32",
+                    "optional": true,
+                    "description": ""
+                },
+                {
+                    "name": "process_return_code",
+                    "type": "int32",
+                    "optional": true,
+                    "description": ""
+                }
+            ]
+        }
+    },
+    "ISteamGPTService": {
+        "CreateExample": {
+            "_type": "undocumented",
+            "version": 1,
+            "httpmethod": "POST",
+            "parameters": [
+                {
+                    "name": "key",
+                    "type": "string",
+                    "optional": false,
+                    "description": "Access key"
+                },
+                {
+                    "name": "problem",
+                    "type": "string",
+                    "optional": true,
+                    "description": ""
+                },
+                {
+                    "name": "label",
+                    "type": "string",
+                    "optional": true,
+                    "description": ""
+                },
+                {
+                    "name": "appid",
+                    "type": "uint32",
+                    "optional": true,
+                    "description": ""
+                },
+                {
+                    "name": "steamid",
+                    "type": "fixed64",
+                    "optional": true,
+                    "description": ""
+                },
+                {
+                    "name": "exact_example",
+                    "type": "string",
+                    "optional": true,
+                    "description": ""
+                },
+                {
+                    "name": "log_addresses[0]",
+                    "type": "CSteamGPT_CreateExample_Request_SteamGPTLogAddress[]",
+                    "optional": true,
+                    "description": "",
+                    "extra": [
+                        {
+                            "name": "appid",
+                            "type": "uint32",
+                            "optional": true,
+                            "description": ""
+                        },
+                        {
+                            "name": "channel",
+                            "type": "string",
+                            "optional": true,
+                            "description": ""
+                        },
+                        {
+                            "name": "subchannel",
+                            "type": "string",
+                            "optional": true,
+                            "description": ""
+                        }
+                    ]
+                },
+                {
+                    "name": "metadata",
+                    "type": "string",
+                    "optional": true,
+                    "description": ""
+                },
+                {
+                    "name": "max_timestamp",
+                    "type": "int32",
+                    "optional": true,
+                    "description": ""
+                },
+                {
+                    "name": "data_version",
+                    "type": "uint32",
+                    "optional": true,
+                    "description": ""
+                },
+                {
+                    "name": "reevidence_data",
+                    "type": "string",
+                    "optional": true,
+                    "description": ""
+                },
+                {
+                    "name": "parent_row_id",
+                    "type": "fixed64",
+                    "optional": true,
+                    "description": ""
+                },
+                {
+                    "name": "match_id",
+                    "type": "uint64",
+                    "optional": true,
+                    "description": ""
+                },
+                {
+                    "name": "labeling_task_id",
+                    "type": "uint64",
+                    "optional": true,
+                    "description": ""
+                },
+                {
+                    "name": "is_test_set",
+                    "type": "bool",
+                    "optional": true,
+                    "description": ""
+                }
+            ]
+        },
+        "CreateTask": {
+            "_type": "undocumented",
+            "version": 1,
+            "httpmethod": "POST",
+            "parameters": [
+                {
+                    "name": "key",
+                    "type": "string",
+                    "optional": false,
+                    "description": "Access key"
+                },
+                {
+                    "name": "problem",
+                    "type": "string",
+                    "optional": true,
+                    "description": ""
+                },
+                {
+                    "name": "appid",
+                    "type": "uint32",
+                    "optional": true,
+                    "description": ""
+                },
+                {
+                    "name": "steamid",
+                    "type": "fixed64",
+                    "optional": true,
+                    "description": ""
+                },
+                {
+                    "name": "matchid",
+                    "type": "fixed64",
+                    "optional": true,
+                    "description": ""
+                },
+                {
+                    "name": "delay_seconds",
+                    "type": "int32",
+                    "optional": true,
+                    "description": ""
+                },
+                {
+                    "name": "task_type",
+                    "type": "uint32",
+                    "optional": true,
+                    "description": ""
+                },
+                {
+                    "name": "evaluation_evidence_log",
+                    "type": "string",
+                    "optional": true,
+                    "description": ""
+                },
+                {
+                    "name": "task_details",
+                    "type": "CSteamGPT_TaskDetails",
+                    "optional": true,
+                    "description": "",
+                    "extra": [
+                        {
+                            "name": "user_action",
+                            "type": "CSteamGPT_TaskDetails_UserAction",
+                            "optional": true,
+                            "description": "",
+                            "extra": [
+                                {
+                                    "name": "eventid",
+                                    "type": "fixed64",
+                                    "optional": true,
+                                    "description": ""
+                                }
+                            ]
+                        },
+                        {
+                            "name": "model_evaluation",
+                            "type": "CSteamGPT_TaskDetails_ModelEvaluation",
+                            "optional": true,
+                            "description": "",
+                            "extra": [
+                                {
+                                    "name": "eventid",
+                                    "type": "fixed64",
+                                    "optional": true,
+                                    "description": ""
+                                },
+                                {
+                                    "name": "modelid",
+                                    "type": "uint64",
+                                    "optional": true,
+                                    "description": ""
+                                },
+                                {
+                                    "name": "inference_score",
+                                    "type": "float",
+                                    "optional": true,
+                                    "description": ""
+                                }
+                            ]
+                        },
+                        {
+                            "name": "metamodel_evaluation",
+                            "type": "CSteamGPT_TaskDetails_MetaModelEvaluation",
+                            "optional": true,
+                            "description": "",
+                            "extra": [
+                                {
+                                    "name": "modelid",
+                                    "type": "uint64",
+                                    "optional": true,
+                                    "description": ""
+                                },
+                                {
+                                    "name": "inference_score",
+                                    "type": "float",
+                                    "optional": true,
+                                    "description": ""
+                                },
+                                {
+                                    "name": "upstream_modelid",
+                                    "type": "uint64",
+                                    "optional": true,
+                                    "description": ""
+                                }
+                            ]
+                        },
+                        {
+                            "name": "reevidence",
+                            "type": "CSteamGPT_TaskDetails_Reevidence",
+                            "optional": true,
+                            "description": "",
+                            "extra": [
+                                {
+                                    "name": "original_example_rowid",
+                                    "type": "fixed64",
+                                    "optional": true,
+                                    "description": ""
+                                },
+                                {
+                                    "name": "reevidence_data",
+                                    "type": "string",
+                                    "optional": true,
+                                    "description": ""
+                                },
+                                {
+                                    "name": "data_version",
+                                    "type": "uint32",
+                                    "optional": true,
+                                    "description": ""
+                                },
+                                {
+                                    "name": "upstream_modelid",
+                                    "type": "uint64",
+                                    "optional": true,
+                                    "description": ""
+                                }
+                            ]
+                        },
+                        {
+                            "name": "csbot",
+                            "type": "CSteamGPT_TaskDetails_CSBot",
+                            "optional": true,
+                            "description": "",
+                            "extra": [
+                                {
+                                    "name": "game_mode",
+                                    "type": "string",
+                                    "optional": true,
+                                    "description": ""
+                                }
+                            ]
+                        },
+                        {
+                            "name": "player_evaluation",
+                            "type": "CSteamGPT_TaskDetails_PlayerEvaluation",
+                            "optional": true,
+                            "description": "",
+                            "extra": [
+                                {
+                                    "name": "submitter",
+                                    "type": "string",
+                                    "optional": true,
+                                    "description": ""
+                                }
+                            ]
+                        }
+                    ]
+                }
+            ]
+        },
+        "GetExamplesForFineTuning": {
+            "_type": "undocumented",
+            "version": 1,
+            "parameters": [
+                {
+                    "name": "key",
+                    "type": "string",
+                    "optional": false,
+                    "description": "Access key"
+                },
+                {
+                    "name": "problem",
+                    "type": "string",
+                    "optional": true,
+                    "description": ""
+                },
+                {
+                    "name": "label",
+                    "type": "string",
+                    "optional": true,
+                    "description": ""
+                },
+                {
+                    "name": "appid",
+                    "type": "uint32",
+                    "optional": true,
+                    "description": ""
+                },
+                {
+                    "name": "page_size",
+                    "type": "int32",
+                    "optional": true,
+                    "description": ""
+                },
+                {
+                    "name": "page_num",
+                    "type": "int32",
+                    "optional": true,
+                    "description": ""
+                },
+                {
+                    "name": "example_size_softmax",
+                    "type": "int32",
+                    "optional": true,
+                    "description": ""
+                },
+                {
+                    "name": "versionid",
+                    "type": "int32",
+                    "optional": true,
+                    "description": ""
+                },
+                {
+                    "name": "start_time",
+                    "type": "uint32",
+                    "optional": true,
+                    "description": ""
+                },
+                {
+                    "name": "seed",
+                    "type": "int32",
+                    "optional": true,
+                    "description": ""
+                },
+                {
+                    "name": "upstream_modelid",
+                    "type": "uint64",
+                    "optional": true,
+                    "description": ""
+                }
+            ]
+        },
+        "GetExamplesFromTestSet": {
+            "_type": "undocumented",
+            "version": 1,
+            "httpmethod": "POST",
+            "parameters": [
+                {
+                    "name": "key",
+                    "type": "string",
+                    "optional": false,
+                    "description": "Access key"
+                },
+                {
+                    "name": "appid",
+                    "type": "uint32",
+                    "optional": true,
+                    "description": ""
+                },
+                {
+                    "name": "start_index",
+                    "type": "uint64",
+                    "optional": true,
+                    "description": ""
+                },
+                {
+                    "name": "max_results",
+                    "type": "uint32",
+                    "optional": true,
+                    "description": ""
+                }
+            ]
+        }
+    },
     "ISteamGameServerStats": {
         "GetGameServerPlayerStatsForGame": {
             "_type": "publisher_only",
@@ -34445,6 +35360,161 @@
             ]
         }
     },
+    "ISteamMLService": {
+        "FullAccountUpdate": {
+            "_type": "undocumented",
+            "version": 1,
+            "httpmethod": "POST",
+            "parameters": [
+                {
+                    "name": "key",
+                    "type": "string",
+                    "optional": false,
+                    "description": "Access key"
+                },
+                {
+                    "name": "steamids[0]",
+                    "type": "fixed64[]",
+                    "optional": true,
+                    "description": ""
+                },
+                {
+                    "name": "appids[0]",
+                    "type": "uint32[]",
+                    "optional": true,
+                    "description": ""
+                },
+                {
+                    "name": "problem",
+                    "type": "int32",
+                    "optional": true,
+                    "description": "enum"
+                }
+            ]
+        },
+        "GetLogContentsForTraining": {
+            "_type": "undocumented",
+            "version": 1,
+            "httpmethod": "POST",
+            "parameters": [
+                {
+                    "name": "key",
+                    "type": "string",
+                    "optional": false,
+                    "description": "Access key"
+                },
+                {
+                    "name": "name",
+                    "type": "string",
+                    "optional": true,
+                    "description": ""
+                },
+                {
+                    "name": "lane",
+                    "type": "int32",
+                    "optional": true,
+                    "description": ""
+                },
+                {
+                    "name": "stride",
+                    "type": "int32",
+                    "optional": true,
+                    "description": ""
+                },
+                {
+                    "name": "salt",
+                    "type": "int32",
+                    "optional": true,
+                    "description": ""
+                },
+                {
+                    "name": "goal_examples",
+                    "type": "int32",
+                    "optional": true,
+                    "description": ""
+                },
+                {
+                    "name": "train_pcg",
+                    "type": "float",
+                    "optional": true,
+                    "description": ""
+                },
+                {
+                    "name": "train_accept",
+                    "type": "bool",
+                    "optional": true,
+                    "description": ""
+                },
+                {
+                    "name": "appid",
+                    "type": "uint32",
+                    "optional": true,
+                    "description": ""
+                },
+                {
+                    "name": "channel",
+                    "type": "string",
+                    "optional": true,
+                    "description": ""
+                },
+                {
+                    "name": "restart",
+                    "type": "bool",
+                    "optional": true,
+                    "description": ""
+                },
+                {
+                    "name": "count_lines_as_examples",
+                    "type": "bool",
+                    "optional": true,
+                    "description": ""
+                },
+                {
+                    "name": "retry",
+                    "type": "bool",
+                    "optional": true,
+                    "description": ""
+                },
+                {
+                    "name": "version",
+                    "type": "int32",
+                    "optional": true,
+                    "description": ""
+                }
+            ]
+        },
+        "PartialAccountUpdate": {
+            "_type": "undocumented",
+            "version": 1,
+            "httpmethod": "POST",
+            "parameters": [
+                {
+                    "name": "key",
+                    "type": "string",
+                    "optional": false,
+                    "description": "Access key"
+                },
+                {
+                    "name": "steamids[0]",
+                    "type": "fixed64[]",
+                    "optional": true,
+                    "description": ""
+                },
+                {
+                    "name": "appids[0]",
+                    "type": "uint32[]",
+                    "optional": true,
+                    "description": ""
+                },
+                {
+                    "name": "schema_updates[0]",
+                    "type": "int32[]",
+                    "optional": true,
+                    "description": "enum"
+                }
+            ]
+        }
+    },
     "ISteamMicroTxn": {
         "AddToCart": {
             "_type": "undocumented",
@@ -42923,6 +43993,81 @@
                     "type": "int32",
                     "optional": true,
                     "description": "# of top sellers to return per page."
+                }
+            ]
+        }
+    },
+    "ISupportService": {
+        "GetAccountName": {
+            "_type": "undocumented",
+            "version": 1,
+            "httpmethod": "POST",
+            "parameters": [
+                {
+                    "name": "key",
+                    "type": "string",
+                    "optional": false,
+                    "description": "Access key"
+                },
+                {
+                    "name": "steamid",
+                    "type": "fixed64",
+                    "optional": true,
+                    "description": ""
+                }
+            ]
+        },
+        "GetSteamID": {
+            "_type": "undocumented",
+            "version": 1,
+            "parameters": [
+                {
+                    "name": "key",
+                    "type": "string",
+                    "optional": false,
+                    "description": "Access key"
+                },
+                {
+                    "name": "account_name",
+                    "type": "string",
+                    "optional": true,
+                    "description": ""
+                }
+            ]
+        },
+        "GetSupportMessages": {
+            "_type": "undocumented",
+            "version": 1,
+            "parameters": [
+                {
+                    "name": "key",
+                    "type": "string",
+                    "optional": false,
+                    "description": "Access key"
+                },
+                {
+                    "name": "steamid",
+                    "type": "fixed64",
+                    "optional": true,
+                    "description": ""
+                },
+                {
+                    "name": "offset",
+                    "type": "uint32",
+                    "optional": true,
+                    "description": ""
+                },
+                {
+                    "name": "limit",
+                    "type": "uint32",
+                    "optional": true,
+                    "description": ""
+                },
+                {
+                    "name": "include_inactive",
+                    "type": "bool",
+                    "optional": true,
+                    "description": ""
                 }
             ]
         }
