@@ -11,7 +11,7 @@
 				>
 					<svg viewBox="0 0 24 24" width="22" height="22" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M21 5H3"/><path d="M10 12H3"/><path d="M10 19H3"/><circle cx="17" cy="15" r="3"/><path d="m21 19-1.9-1.9"/></svg>
 				</button>
-				<search class="header-search">
+				<div class="header-search" role="search">
 					<input
 						ref="inputSearch"
 						type="search"
@@ -23,7 +23,7 @@
 						@keydown.up.prevent="navigateSidebar(-1)"
 						@keydown.down.prevent="navigateSidebar(1)"
 					>
-				</search>
+				</div>
 				<div class="header-title" v-if="currentInterface !== ''" itemscope itemtype="https://schema.org/BreadcrumbList">
 					<span itemprop="itemListElement" itemscope itemtype="https://schema.org/ListItem">
 						<h2><AppLink :href="'/' + currentInterface" itemprop="item"><span itemprop="name">{{ currentInterface }}</span></AppLink></h2>
@@ -55,7 +55,7 @@
 						>
 							<svg viewBox="0 0 24 24" width="22" height="22" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M18 6 6 18"/><path d="m6 6 12 12"/></svg>
 						</button>
-						<search class="sidebar-search">
+						<div class="sidebar-search" role="search">
 							<input
 								type="search"
 								class="search-input"
@@ -66,7 +66,7 @@
 								@keydown.up.prevent="navigateSidebar(-1)"
 								@keydown.down.prevent="navigateSidebar(1)"
 							>
-						</search>
+						</div>
 					</div>
 					<details class="interface-list-container" open v-if="userData.favorites.size > 0 && !currentFilter">
 						<summary class="interface-group-name">Your favorites</summary>
