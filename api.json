@@ -25730,6 +25730,37 @@
                     "description": ""
                 }
             ]
+        },
+        "GetTestSetInferenceResults": {
+            "_type": "undocumented",
+            "version": 1,
+            "httpmethod": "POST",
+            "parameters": [
+                {
+                    "name": "key",
+                    "type": "string",
+                    "optional": false,
+                    "description": "Access key"
+                },
+                {
+                    "name": "appid",
+                    "type": "uint32",
+                    "optional": true,
+                    "description": ""
+                },
+                {
+                    "name": "problems[0]",
+                    "type": "string[]",
+                    "optional": true,
+                    "description": ""
+                },
+                {
+                    "name": "labels[0]",
+                    "type": "string[]",
+                    "optional": true,
+                    "description": ""
+                }
+            ]
         }
     },
     "ISteamGameServerStats": {
@@ -26852,6 +26883,24 @@
                                         },
                                         {
                                             "name": "dropout_pct",
+                                            "type": "uint32",
+                                            "optional": true,
+                                            "description": ""
+                                        },
+                                        {
+                                            "name": "quantize_size",
+                                            "type": "uint32",
+                                            "optional": true,
+                                            "description": ""
+                                        },
+                                        {
+                                            "name": "quantize_min",
+                                            "type": "uint32",
+                                            "optional": true,
+                                            "description": ""
+                                        },
+                                        {
+                                            "name": "quantize_max",
                                             "type": "uint32",
                                             "optional": true,
                                             "description": ""
@@ -28630,6 +28679,24 @@
                                         },
                                         {
                                             "name": "dropout_pct",
+                                            "type": "uint32",
+                                            "optional": true,
+                                            "description": ""
+                                        },
+                                        {
+                                            "name": "quantize_size",
+                                            "type": "uint32",
+                                            "optional": true,
+                                            "description": ""
+                                        },
+                                        {
+                                            "name": "quantize_min",
+                                            "type": "uint32",
+                                            "optional": true,
+                                            "description": ""
+                                        },
+                                        {
+                                            "name": "quantize_max",
                                             "type": "uint32",
                                             "optional": true,
                                             "description": ""
@@ -30435,6 +30502,24 @@
                                 },
                                 {
                                     "name": "dropout_pct",
+                                    "type": "uint32",
+                                    "optional": true,
+                                    "description": ""
+                                },
+                                {
+                                    "name": "quantize_size",
+                                    "type": "uint32",
+                                    "optional": true,
+                                    "description": ""
+                                },
+                                {
+                                    "name": "quantize_min",
+                                    "type": "uint32",
+                                    "optional": true,
+                                    "description": ""
+                                },
+                                {
+                                    "name": "quantize_max",
                                     "type": "uint32",
                                     "optional": true,
                                     "description": ""
@@ -33685,6 +33770,24 @@
                                 },
                                 {
                                     "name": "dropout_pct",
+                                    "type": "uint32",
+                                    "optional": true,
+                                    "description": ""
+                                },
+                                {
+                                    "name": "quantize_size",
+                                    "type": "uint32",
+                                    "optional": true,
+                                    "description": ""
+                                },
+                                {
+                                    "name": "quantize_min",
+                                    "type": "uint32",
+                                    "optional": true,
+                                    "description": ""
+                                },
+                                {
+                                    "name": "quantize_max",
                                     "type": "uint32",
                                     "optional": true,
                                     "description": ""
@@ -45635,6 +45738,39 @@
                     "type": "uint64",
                     "optional": true,
                     "description": ""
+                }
+            ]
+        },
+        "SetWishlistCategoryNotifications": {
+            "_type": "undocumented",
+            "version": 1,
+            "httpmethod": "POST",
+            "parameters": [
+                {
+                    "name": "key",
+                    "type": "string",
+                    "optional": false,
+                    "description": "Access key"
+                },
+                {
+                    "name": "categories[0]",
+                    "type": "CWishlist_SetWishlistCategoryNotifications_Request_CategorySettings[]",
+                    "optional": true,
+                    "description": "",
+                    "extra": [
+                        {
+                            "name": "categoryid",
+                            "type": "uint64",
+                            "optional": true,
+                            "description": ""
+                        },
+                        {
+                            "name": "notification_opt_in",
+                            "type": "bool",
+                            "optional": true,
+                            "description": ""
+                        }
+                    ]
                 }
             ]
         }
