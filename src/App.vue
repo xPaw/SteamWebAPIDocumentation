@@ -69,16 +69,17 @@
 						</div>
 					</div>
 					<details class="interface-list-container" open v-if="userData.favorites.size > 0 && !currentFilter">
-						<summary class="interface-group-name">Your favorites</summary>
+						<summary class="interface-group-name"><svg aria-hidden="true" viewBox="0 0 16 16" width="20" height="20"><path fill="currentColor" d="M8 .25a.75.75 0 0 1 .673.418l1.882 3.815 4.21.612a.75.75 0 0 1 .416 1.279l-3.046 2.97.719 4.192a.751.751 0 0 1-1.088.791L8 12.347l-3.766 1.98a.75.75 0 0 1-1.088-.79l.72-4.194L.818 6.374a.75.75 0 0 1 .416-1.28l4.21-.611L7.327.668A.75.75 0 0 1 8 .25Z"></path></svg> Your favorites</summary>
 
 						<ul class="interface-list">
 							<li
-								v-for="favoriteMethod of userData.favorites"
+								v-for="favoriteMethod of sortedFavorites"
 								:key="favoriteMethod"
 							>
 								<AppLink
 									:href="`/${favoriteMethod.replace('/', '#')}`"
-								>{{ favoriteMethod }}</AppLink>
+									class="favorite-link"
+								><span class="favorite-method">{{ favoriteMethod.split('/')[1] }}</span><span class="favorite-interface">{{ favoriteMethod.split('/')[0] }}</span></AppLink>
 							</li>
 						</ul>
 					</details>

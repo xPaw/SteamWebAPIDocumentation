@@ -258,6 +258,11 @@ summary {
 		text-overflow: ellipsis;
 		overflow: hidden;
 		white-space: nowrap;
+
+		&:has(.favorite-link) {
+			white-space: normal;
+			overflow: visible;
+		}
 	}
 
 	& a {
@@ -296,6 +301,43 @@ summary {
 	& img {
 		border-radius: 3px;
 		vertical-align: -5px;
+	}
+
+	& svg {
+		vertical-align: -4px;
+		color: var(--warning);
+	}
+}
+
+.favorite-link {
+	display: block;
+	line-height: 1.3;
+	padding: 3px 0;
+	text-decoration: none;
+
+	&:hover {
+		text-decoration: none;
+	}
+
+	& > span {
+		display: block;
+		overflow: hidden;
+		text-overflow: ellipsis;
+		white-space: nowrap;
+	}
+
+	& .favorite-method {
+		color: var(--warning);
+	}
+
+	&:hover .favorite-method {
+		color: #fff;
+		text-decoration: underline;
+	}
+
+	& .favorite-interface {
+		font-size: 0.75em;
+		color: var(--text-muted);
 	}
 }
 

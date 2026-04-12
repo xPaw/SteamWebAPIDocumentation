@@ -274,6 +274,9 @@ export default defineComponent({
 		});
 	},
 	computed: {
+		sortedFavorites(): string[] {
+			return [...this.userData.favorites].sort((a, b) => a.localeCompare(b));
+		},
 		sidebarInterfaces(): Map<number, SidebarGroupData> {
 			const interfaces = this.filteredInterfaces;
 
