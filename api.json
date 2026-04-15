@@ -20738,6 +20738,18 @@
                     "description": "At least one of the tags must be present on a published file to satisfy the query."
                 },
                 {
+                    "name": "date_range_created",
+                    "type": "{message}",
+                    "optional": true,
+                    "description": "Filter to items created within this range."
+                },
+                {
+                    "name": "date_range_updated",
+                    "type": "{message}",
+                    "optional": true,
+                    "description": "Filter to items updated within this range."
+                },
+                {
                     "name": "excluded_content_descriptors",
                     "type": "{enum}",
                     "optional": true,
@@ -20959,6 +20971,18 @@
                     "type": "{message}",
                     "optional": true,
                     "description": "At least one of the tags must be present on a published file to satisfy the query."
+                },
+                {
+                    "name": "date_range_created",
+                    "type": "{message}",
+                    "optional": true,
+                    "description": "Filter to items created within this range."
+                },
+                {
+                    "name": "date_range_updated",
+                    "type": "{message}",
+                    "optional": true,
+                    "description": "Filter to items updated within this range."
                 },
                 {
                     "name": "excluded_content_descriptors",
@@ -21352,6 +21376,24 @@
                     "type": "{enum}",
                     "optional": false,
                     "description": "Additional special filtering"
+                },
+                {
+                    "name": "appids_required_for_use",
+                    "type": "uint32",
+                    "optional": false,
+                    "description": "DLC required to use the item"
+                },
+                {
+                    "name": "excluded_appids_required_for_use",
+                    "type": "uint32",
+                    "optional": false,
+                    "description": "Exclude this DLC required to use the item"
+                },
+                {
+                    "name": "search_text_target",
+                    "type": "{enum}",
+                    "optional": false,
+                    "description": "Can be used to search only title or description, instead of both (by default)"
                 },
                 {
                     "name": "totalonly",
