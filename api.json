@@ -44142,6 +44142,38 @@
             ]
         }
     },
+    "ISupportAgentsService": {
+        "GetQuickText": {
+            "_type": "undocumented",
+            "version": 1,
+            "parameters": [
+                {
+                    "name": "key",
+                    "type": "string",
+                    "optional": false,
+                    "description": "Access key"
+                },
+                {
+                    "name": "quicktext_id",
+                    "type": "uint32",
+                    "optional": true,
+                    "description": ""
+                },
+                {
+                    "name": "language",
+                    "type": "string",
+                    "optional": true,
+                    "description": ""
+                },
+                {
+                    "name": "from_sql",
+                    "type": "bool",
+                    "optional": true,
+                    "description": ""
+                }
+            ]
+        }
+    },
     "ISupportService": {
         "GetAccountName": {
             "_type": "undocumented",
