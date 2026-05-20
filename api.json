@@ -5903,6 +5903,12 @@
                     "type": "int32",
                     "optional": true,
                     "description": "enum"
+                },
+                {
+                    "name": "note",
+                    "type": "string",
+                    "optional": true,
+                    "description": ""
                 }
             ]
         },
@@ -6604,6 +6610,12 @@
                 {
                     "name": "owner_dispute_details",
                     "type": "string",
+                    "optional": true,
+                    "description": ""
+                },
+                {
+                    "name": "new_subject_id",
+                    "type": "uint64",
                     "optional": true,
                     "description": ""
                 }
