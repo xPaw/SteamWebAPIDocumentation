@@ -6186,6 +6186,24 @@
                 }
             ]
         },
+        "GetReporterStats": {
+            "_type": "undocumented",
+            "version": 1,
+            "parameters": [
+                {
+                    "name": "key",
+                    "type": "string",
+                    "optional": false,
+                    "description": "Access key"
+                },
+                {
+                    "name": "steamid",
+                    "type": "uint64",
+                    "optional": true,
+                    "description": ""
+                }
+            ]
+        },
         "GetReportsSubmittedByUser": {
             "_type": "undocumented",
             "version": 1,
