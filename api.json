@@ -2613,6 +2613,7 @@
                         "NegativeEffectonDiscourseOrElections",
                         "QuotesModeratedContent",
                         "CredibleThreatOfViolence",
+                        "AutoCreatedOnModeration",
                         "MAX"
                     ]
                 },
@@ -4381,6 +4382,12 @@
                             "type": "string",
                             "optional": true,
                             "description": ""
+                        },
+                        {
+                            "name": "url",
+                            "type": "string",
+                            "optional": true,
+                            "description": ""
                         }
                     ]
                 },
@@ -5433,6 +5440,7 @@
                         "NegativeEffectonDiscourseOrElections",
                         "QuotesModeratedContent",
                         "CredibleThreatOfViolence",
+                        "AutoCreatedOnModeration",
                         "MAX"
                     ]
                 },
@@ -11530,6 +11538,7 @@
                         "NegativeEffectonDiscourseOrElections",
                         "QuotesModeratedContent",
                         "CredibleThreatOfViolence",
+                        "AutoCreatedOnModeration",
                         "MAX"
                     ]
                 },
