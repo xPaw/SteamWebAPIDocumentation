@@ -5640,6 +5640,31 @@
                 }
             ]
         },
+        "ClaimBatch": {
+            "_type": "undocumented",
+            "version": 1,
+            "httpmethod": "POST",
+            "parameters": [
+                {
+                    "name": "key",
+                    "type": "string",
+                    "optional": false,
+                    "description": "Access key"
+                },
+                {
+                    "name": "subject_type",
+                    "type": "int32",
+                    "optional": true,
+                    "description": "enum"
+                },
+                {
+                    "name": "moderator_level",
+                    "type": "int32",
+                    "optional": true,
+                    "description": "enum"
+                }
+            ]
+        },
         "ClaimBatchForModeration": {
             "_type": "undocumented",
             "version": 1,
@@ -5952,6 +5977,24 @@
             ]
         },
         "GetClaimed": {
+            "_type": "undocumented",
+            "version": 1,
+            "parameters": [
+                {
+                    "name": "key",
+                    "type": "string",
+                    "optional": false,
+                    "description": "Access key"
+                },
+                {
+                    "name": "steamid",
+                    "type": "uint64",
+                    "optional": true,
+                    "description": ""
+                }
+            ]
+        },
+        "GetClaimedSubjects": {
             "_type": "undocumented",
             "version": 1,
             "parameters": [
@@ -6308,6 +6351,45 @@
                     "type": "uint64",
                     "optional": true,
                     "description": ""
+                }
+            ]
+        },
+        "ReleaseSubjects": {
+            "_type": "undocumented",
+            "version": 1,
+            "httpmethod": "POST",
+            "parameters": [
+                {
+                    "name": "key",
+                    "type": "string",
+                    "optional": false,
+                    "description": "Access key"
+                },
+                {
+                    "name": "subjects_to_release[0]",
+                    "type": "ContentReportSubjectKey[]",
+                    "optional": true,
+                    "description": "",
+                    "extra": [
+                        {
+                            "name": "subject_type",
+                            "type": "int32",
+                            "optional": true,
+                            "description": "enum"
+                        },
+                        {
+                            "name": "subject_group_id",
+                            "type": "uint64",
+                            "optional": true,
+                            "description": ""
+                        },
+                        {
+                            "name": "subject_id",
+                            "type": "uint64",
+                            "optional": true,
+                            "description": ""
+                        }
+                    ]
                 }
             ]
         },
@@ -40824,6 +40906,32 @@
                             ]
                         },
                         {
+                            "name": "release_date_filter",
+                            "type": "CStoreQueryFilters_ReleaseDateFilter",
+                            "optional": true,
+                            "description": "",
+                            "extra": [
+                                {
+                                    "name": "release_date_type",
+                                    "type": "int32",
+                                    "optional": true,
+                                    "description": "enum"
+                                },
+                                {
+                                    "name": "start_date",
+                                    "type": "int32",
+                                    "optional": true,
+                                    "description": ""
+                                },
+                                {
+                                    "name": "end_date",
+                                    "type": "int32",
+                                    "optional": true,
+                                    "description": ""
+                                }
+                            ]
+                        },
+                        {
                             "name": "content_descriptors_must_match[0]",
                             "type": "int32[]",
                             "optional": true,
@@ -41210,6 +41318,32 @@
                                         },
                                         {
                                             "name": "min_discount_percent",
+                                            "type": "int32",
+                                            "optional": true,
+                                            "description": ""
+                                        }
+                                    ]
+                                },
+                                {
+                                    "name": "release_date_filter",
+                                    "type": "CStoreQueryFilters_ReleaseDateFilter",
+                                    "optional": true,
+                                    "description": "",
+                                    "extra": [
+                                        {
+                                            "name": "release_date_type",
+                                            "type": "int32",
+                                            "optional": true,
+                                            "description": "enum"
+                                        },
+                                        {
+                                            "name": "start_date",
+                                            "type": "int32",
+                                            "optional": true,
+                                            "description": ""
+                                        },
+                                        {
+                                            "name": "end_date",
                                             "type": "int32",
                                             "optional": true,
                                             "description": ""
@@ -41747,6 +41881,32 @@
                                 },
                                 {
                                     "name": "min_discount_percent",
+                                    "type": "int32",
+                                    "optional": true,
+                                    "description": ""
+                                }
+                            ]
+                        },
+                        {
+                            "name": "release_date_filter",
+                            "type": "CStoreQueryFilters_ReleaseDateFilter",
+                            "optional": true,
+                            "description": "",
+                            "extra": [
+                                {
+                                    "name": "release_date_type",
+                                    "type": "int32",
+                                    "optional": true,
+                                    "description": "enum"
+                                },
+                                {
+                                    "name": "start_date",
+                                    "type": "int32",
+                                    "optional": true,
+                                    "description": ""
+                                },
+                                {
+                                    "name": "end_date",
                                     "type": "int32",
                                     "optional": true,
                                     "description": ""
