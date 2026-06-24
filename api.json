@@ -2028,7 +2028,7 @@
             "parameters": []
         },
         "GetPlayerProfileCoin": {
-            "_type": "publisher_only",
+            "_type": "undocumented",
             "version": 1,
             "httpmethod": "GET",
             "parameters": [
@@ -3471,7 +3471,7 @@
     },
     "ICitadelAdmin_1422450": {
         "GetReplayURL": {
-            "_type": "publisher_only",
+            "_type": "undocumented",
             "version": 1,
             "httpmethod": "GET",
             "parameters": [
@@ -5848,6 +5848,24 @@
                 {
                     "name": "details",
                     "type": "string",
+                    "optional": true,
+                    "description": ""
+                },
+                {
+                    "name": "subject_type",
+                    "type": "int32",
+                    "optional": true,
+                    "description": "enum"
+                },
+                {
+                    "name": "subject_group_id",
+                    "type": "uint64",
+                    "optional": true,
+                    "description": ""
+                },
+                {
+                    "name": "subject_id",
+                    "type": "uint64",
                     "optional": true,
                     "description": ""
                 }
