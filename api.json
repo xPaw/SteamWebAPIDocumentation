@@ -4863,6 +4863,151 @@
             ]
         }
     },
+    "ICommentModerationService": {
+        "UpdateCommentReportState": {
+            "_type": "undocumented",
+            "version": 1,
+            "httpmethod": "POST",
+            "parameters": [
+                {
+                    "name": "key",
+                    "type": "string",
+                    "optional": false,
+                    "description": "Access key"
+                },
+                {
+                    "name": "resolve",
+                    "type": "bool",
+                    "optional": true,
+                    "description": ""
+                },
+                {
+                    "name": "reportid",
+                    "type": "uint64",
+                    "optional": true,
+                    "description": ""
+                },
+                {
+                    "name": "report_action",
+                    "type": "int32",
+                    "optional": true,
+                    "description": "enum"
+                },
+                {
+                    "name": "gidcomment",
+                    "type": "fixed64",
+                    "optional": true,
+                    "description": ""
+                },
+                {
+                    "name": "commentthreadtype",
+                    "type": "string",
+                    "optional": true,
+                    "description": ""
+                },
+                {
+                    "name": "steamid",
+                    "type": "fixed64",
+                    "optional": true,
+                    "description": ""
+                },
+                {
+                    "name": "gidfeature",
+                    "type": "uint64",
+                    "optional": true,
+                    "description": ""
+                },
+                {
+                    "name": "gidfeature2",
+                    "type": "uint64",
+                    "optional": true,
+                    "description": ""
+                },
+                {
+                    "name": "classification",
+                    "type": "CommentClassification",
+                    "optional": true,
+                    "description": "",
+                    "extra": [
+                        {
+                            "name": "explicit",
+                            "type": "bool",
+                            "optional": true,
+                            "description": ""
+                        },
+                        {
+                            "name": "adult",
+                            "type": "bool",
+                            "optional": true,
+                            "description": ""
+                        },
+                        {
+                            "name": "toxic",
+                            "type": "bool",
+                            "optional": true,
+                            "description": ""
+                        },
+                        {
+                            "name": "spam",
+                            "type": "bool",
+                            "optional": true,
+                            "description": ""
+                        },
+                        {
+                            "name": "malicious",
+                            "type": "bool",
+                            "optional": true,
+                            "description": ""
+                        },
+                        {
+                            "name": "commercial",
+                            "type": "bool",
+                            "optional": true,
+                            "description": ""
+                        }
+                    ]
+                },
+                {
+                    "name": "reason",
+                    "type": "uint32",
+                    "optional": true,
+                    "description": ""
+                },
+                {
+                    "name": "comment_thread_id",
+                    "type": "uint64",
+                    "optional": true,
+                    "description": ""
+                },
+                {
+                    "name": "sanctions[0]",
+                    "type": "CCommentModeration_UpdateCommentReportState_Request_Sanction[]",
+                    "optional": true,
+                    "description": "",
+                    "extra": [
+                        {
+                            "name": "sanction",
+                            "type": "int32",
+                            "optional": true,
+                            "description": "enum"
+                        },
+                        {
+                            "name": "days",
+                            "type": "int32",
+                            "optional": true,
+                            "description": ""
+                        }
+                    ]
+                },
+                {
+                    "name": "note",
+                    "type": "string",
+                    "optional": true,
+                    "description": ""
+                }
+            ]
+        }
+    },
     "ICommunityService": {
         "FetchTranslationFromCrowdIn": {
             "_type": "undocumented",
@@ -5033,6 +5178,54 @@
                 },
                 {
                     "name": "steamid",
+                    "type": "fixed64",
+                    "optional": true,
+                    "description": ""
+                }
+            ]
+        },
+        "GetComment": {
+            "_type": "undocumented",
+            "version": 1,
+            "parameters": [
+                {
+                    "name": "key",
+                    "type": "string",
+                    "optional": false,
+                    "description": "Access key"
+                },
+                {
+                    "name": "steamid",
+                    "type": "fixed64",
+                    "optional": true,
+                    "description": ""
+                },
+                {
+                    "name": "comment_thread_type",
+                    "type": "int32",
+                    "optional": true,
+                    "description": "enum"
+                },
+                {
+                    "name": "gidfeature",
+                    "type": "fixed64",
+                    "optional": true,
+                    "description": ""
+                },
+                {
+                    "name": "gidfeature2",
+                    "type": "fixed64",
+                    "optional": true,
+                    "description": ""
+                },
+                {
+                    "name": "gidcomment",
+                    "type": "fixed64",
+                    "optional": true,
+                    "description": ""
+                },
+                {
+                    "name": "comment_thread_id",
                     "type": "fixed64",
                     "optional": true,
                     "description": ""
@@ -5494,6 +5687,69 @@
                     "type": "bool",
                     "optional": true,
                     "description": ""
+                }
+            ]
+        },
+        "SanctionComment": {
+            "_type": "undocumented",
+            "version": 1,
+            "httpmethod": "POST",
+            "parameters": [
+                {
+                    "name": "key",
+                    "type": "string",
+                    "optional": false,
+                    "description": "Access key"
+                },
+                {
+                    "name": "steamid",
+                    "type": "fixed64",
+                    "optional": true,
+                    "description": ""
+                },
+                {
+                    "name": "comment_thread_id",
+                    "type": "fixed64",
+                    "optional": true,
+                    "description": ""
+                },
+                {
+                    "name": "gidcomment",
+                    "type": "fixed64",
+                    "optional": true,
+                    "description": ""
+                },
+                {
+                    "name": "reason",
+                    "type": "int32",
+                    "optional": true,
+                    "description": "enum"
+                },
+                {
+                    "name": "note",
+                    "type": "string",
+                    "optional": true,
+                    "description": ""
+                },
+                {
+                    "name": "sanctions[0]",
+                    "type": "CCommunity_SanctionComment_Request_Sanction[]",
+                    "optional": true,
+                    "description": "",
+                    "extra": [
+                        {
+                            "name": "sanction",
+                            "type": "int32",
+                            "optional": true,
+                            "description": "enum"
+                        },
+                        {
+                            "name": "days",
+                            "type": "int32",
+                            "optional": true,
+                            "description": ""
+                        }
+                    ]
                 }
             ]
         },
@@ -6608,6 +6864,36 @@
                             "description": "enum"
                         }
                     ]
+                }
+            ]
+        },
+        "SustainModeration": {
+            "_type": "undocumented",
+            "version": 1,
+            "parameters": [
+                {
+                    "name": "key",
+                    "type": "string",
+                    "optional": false,
+                    "description": "Access key"
+                },
+                {
+                    "name": "subject_type",
+                    "type": "int32",
+                    "optional": true,
+                    "description": "enum"
+                },
+                {
+                    "name": "subject_group_id",
+                    "type": "uint64",
+                    "optional": true,
+                    "description": ""
+                },
+                {
+                    "name": "subject_id",
+                    "type": "uint64",
+                    "optional": true,
+                    "description": ""
                 }
             ]
         },
@@ -12383,6 +12669,34 @@
                     "type": "uint64",
                     "optional": false,
                     "description": "The SteamID of the game server account to delete"
+                }
+            ]
+        },
+        "FriendsQuery": {
+            "version": 1,
+            "httpmethod": "GET",
+            "description": "Perform a query on a specific server by FakeIP",
+            "parameters": [
+                {
+                    "name": "key",
+                    "type": "string",
+                    "optional": false,
+                    "description": "Access key"
+                },
+                {
+                    "name": "servers",
+                    "type": "{message}",
+                    "optional": false
+                },
+                {
+                    "name": "friends",
+                    "type": "uint64",
+                    "optional": false
+                },
+                {
+                    "name": "app_id",
+                    "type": "uint32",
+                    "optional": false
                 }
             ]
         },
