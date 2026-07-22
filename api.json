@@ -4996,6 +4996,12 @@
                             "type": "int32",
                             "optional": true,
                             "description": ""
+                        },
+                        {
+                            "name": "escalate_to",
+                            "type": "int32",
+                            "optional": true,
+                            "description": "enum"
                         }
                     ]
                 },
@@ -5748,6 +5754,12 @@
                             "type": "int32",
                             "optional": true,
                             "description": ""
+                        },
+                        {
+                            "name": "escalate_to",
+                            "type": "int32",
+                            "optional": true,
+                            "description": "enum"
                         }
                     ]
                 }
@@ -6679,6 +6691,12 @@
                             "type": "int32",
                             "optional": true,
                             "description": ""
+                        },
+                        {
+                            "name": "escalate_to",
+                            "type": "int32",
+                            "optional": true,
+                            "description": "enum"
                         }
                     ]
                 }
@@ -6760,6 +6778,12 @@
                             "type": "int32",
                             "optional": true,
                             "description": ""
+                        },
+                        {
+                            "name": "escalate_to",
+                            "type": "int32",
+                            "optional": true,
+                            "description": "enum"
                         }
                     ]
                 }
@@ -6829,6 +6853,12 @@
                             "type": "int32",
                             "optional": true,
                             "description": ""
+                        },
+                        {
+                            "name": "escalate_to",
+                            "type": "int32",
+                            "optional": true,
+                            "description": "enum"
                         }
                     ]
                 }
@@ -11500,6 +11530,12 @@
                             "type": "int32",
                             "optional": true,
                             "description": ""
+                        },
+                        {
+                            "name": "escalate_to",
+                            "type": "int32",
+                            "optional": true,
+                            "description": "enum"
                         }
                     ]
                 },
@@ -24224,6 +24260,12 @@
                     "type": "bool",
                     "optional": true,
                     "description": ""
+                },
+                {
+                    "name": "gift_info",
+                    "type": "CartGiftInfo",
+                    "optional": true,
+                    "description": ""
                 }
             ]
         },
@@ -24311,6 +24353,12 @@
                             "type": "uint32",
                             "optional": true,
                             "description": ""
+                        },
+                        {
+                            "name": "gift_info",
+                            "type": "CartGiftInfo",
+                            "optional": true,
+                            "description": ""
                         }
                     ]
                 }
@@ -24354,6 +24402,37 @@
                 {
                     "name": "gidshoppingcart",
                     "type": "uint64",
+                    "optional": true,
+                    "description": ""
+                }
+            ]
+        },
+        "ModifyLineItem": {
+            "_type": "undocumented",
+            "version": 1,
+            "httpmethod": "POST",
+            "parameters": [
+                {
+                    "name": "key",
+                    "type": "string",
+                    "optional": false,
+                    "description": "Access key"
+                },
+                {
+                    "name": "gidshoppingcart",
+                    "type": "uint64",
+                    "optional": true,
+                    "description": ""
+                },
+                {
+                    "name": "gidlineitem",
+                    "type": "uint64",
+                    "optional": true,
+                    "description": ""
+                },
+                {
+                    "name": "gift_info",
+                    "type": "CartGiftInfo",
                     "optional": true,
                     "description": ""
                 }
