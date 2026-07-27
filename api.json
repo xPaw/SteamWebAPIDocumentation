@@ -2568,6 +2568,10 @@
                         "QuotesModeratedContent",
                         "CredibleThreatOfViolence",
                         "AutoCreatedOnModeration",
+                        "Piracy",
+                        "ToSViolation",
+                        "Miscategorized",
+                        "BypassingProfanityFilter",
                         "MAX"
                     ]
                 },
@@ -4891,7 +4895,15 @@
                     "name": "report_action",
                     "type": "int32",
                     "optional": true,
-                    "description": "enum"
+                    "description": "enum",
+                    "enum_values": [
+                        "Invalid",
+                        "NoAction",
+                        "Deleted",
+                        "Hidden",
+                        "ExternalDelete",
+                        "ThreadDeleted"
+                    ]
                 },
                 {
                     "name": "gidcomment",
@@ -4987,9 +4999,25 @@
                     "extra": [
                         {
                             "name": "sanction",
-                            "type": "int32",
+                            "type": "EContentModerationSanction",
                             "optional": true,
-                            "description": "enum"
+                            "description": "",
+                            "enum_values": [
+                                "Invalid",
+                                "Deleted",
+                                "CommunityBanned",
+                                "HubBanned",
+                                "TradeBanned",
+                                "CommentHistoryDeleted",
+                                "Relabelled",
+                                "MarkAsSuspicious",
+                                "Warned",
+                                "KickedFromGroup",
+                                "HarassmentBanned",
+                                "HarassmentStrike",
+                                "Escalate",
+                                "MAX"
+                            ]
                         },
                         {
                             "name": "days",
@@ -4999,9 +5027,15 @@
                         },
                         {
                             "name": "escalate_to",
-                            "type": "int32",
+                            "type": "EContentModeratorLevel",
                             "optional": true,
-                            "description": "enum"
+                            "description": "",
+                            "enum_values": {
+                                "0": "Any",
+                                "1": "Supervisor",
+                                "10": "Valve",
+                                "11": "MAX"
+                            }
                         }
                     ]
                 },
@@ -5210,7 +5244,31 @@
                     "name": "comment_thread_type",
                     "type": "int32",
                     "optional": true,
-                    "description": "enum"
+                    "description": "enum",
+                    "enum_values": [
+                        "Invalid",
+                        "Screenshot_Deprecated",
+                        "WorkshopAccount_Developer",
+                        "WorkshopAccount_Public",
+                        "PublishedFile_Developer",
+                        "PublishedFile_Public",
+                        "Test",
+                        "ForumTopic",
+                        "Recommendation",
+                        "Video_Deprecated",
+                        "Profile",
+                        "NewsPost",
+                        "Clan",
+                        "ClanAnnouncement",
+                        "ClanEvent",
+                        "UserStatusPublished",
+                        "UserReceivedNewGame",
+                        "PublishedFile_Announcement",
+                        "ModeratorMessage",
+                        "ClanCuratedApp",
+                        "QAndASession",
+                        "Max"
+                    ]
                 },
                 {
                     "name": "gidfeature",
@@ -5594,6 +5652,10 @@
                         "QuotesModeratedContent",
                         "CredibleThreatOfViolence",
                         "AutoCreatedOnModeration",
+                        "Piracy",
+                        "ToSViolation",
+                        "Miscategorized",
+                        "BypassingProfanityFilter",
                         "MAX"
                     ]
                 },
@@ -5729,7 +5791,79 @@
                     "name": "reason",
                     "type": "int32",
                     "optional": true,
-                    "description": "enum"
+                    "description": "enum",
+                    "enum_values": [
+                        "Invalid",
+                        "None",
+                        "Unknown",
+                        "Harassment",
+                        "BullyingAndIntimidation",
+                        "Stalking",
+                        "Doxxing",
+                        "OtherHarassment",
+                        "EncouragingViolence",
+                        "EncouragingSelfHarm",
+                        "EncouragingSuicide",
+                        "OtherViolenceOrSelfHarm",
+                        "PhishingOrAccountTheft",
+                        "AttemptedScamming",
+                        "LinkingToMaliciousContent",
+                        "Impersonation",
+                        "OtherScamsAndTheft",
+                        "EncouragingTerrorism",
+                        "OrganizingTerrorism",
+                        "OtherTerrorism",
+                        "TargetedAbuse",
+                        "NamingAndShaming",
+                        "Discrimination",
+                        "OtherAbuse",
+                        "Trolling",
+                        "Baiting",
+                        "Derailing",
+                        "OtherDisruptive",
+                        "Spam",
+                        "Begging",
+                        "Reposting",
+                        "OtherOffTopic",
+                        "CSAMSexualContent",
+                        "CSAMGroomingOrEnticement",
+                        "CSAMOther",
+                        "NudityOrSexualContent",
+                        "NonConsensualMaterial",
+                        "Advertising",
+                        "ReferralLinks",
+                        "Gambling",
+                        "Raffles",
+                        "OtherCommercialActivity",
+                        "InauthenticReview",
+                        "HiddenAdvertisementOrCommercialCommunication",
+                        "MisleadingInformationAboutGoodsOrServices",
+                        "MisleadingInformationAboutConsumerRights",
+                        "NoncomplianceWithPricingRegulations",
+                        "RightToBeForgottenViolation",
+                        "MissingProcessingGroundForData",
+                        "OtherDataProtectionAndPrivacyViolation",
+                        "GenderedHarassment",
+                        "GenderedBullyingAndIntimidation",
+                        "GenderedStalking",
+                        "GenderedDoxxing",
+                        "GenderedOtherHarassment",
+                        "GenderedEncouragingViolence",
+                        "GenderedTargetedAbuse",
+                        "CSAMFakedSexualContent",
+                        "GenderedNonConsensualMaterial",
+                        "FakedGenderedNonConsensualMaterial",
+                        "FakedNonConsensualMaterial",
+                        "NegativeEffectonDiscourseOrElections",
+                        "QuotesModeratedContent",
+                        "CredibleThreatOfViolence",
+                        "AutoCreatedOnModeration",
+                        "Piracy",
+                        "ToSViolation",
+                        "Miscategorized",
+                        "BypassingProfanityFilter",
+                        "MAX"
+                    ]
                 },
                 {
                     "name": "note",
@@ -5745,9 +5879,25 @@
                     "extra": [
                         {
                             "name": "sanction",
-                            "type": "int32",
+                            "type": "EContentModerationSanction",
                             "optional": true,
-                            "description": "enum"
+                            "description": "",
+                            "enum_values": [
+                                "Invalid",
+                                "Deleted",
+                                "CommunityBanned",
+                                "HubBanned",
+                                "TradeBanned",
+                                "CommentHistoryDeleted",
+                                "Relabelled",
+                                "MarkAsSuspicious",
+                                "Warned",
+                                "KickedFromGroup",
+                                "HarassmentBanned",
+                                "HarassmentStrike",
+                                "Escalate",
+                                "MAX"
+                            ]
                         },
                         {
                             "name": "days",
@@ -5757,9 +5907,15 @@
                         },
                         {
                             "name": "escalate_to",
-                            "type": "int32",
+                            "type": "EContentModeratorLevel",
                             "optional": true,
-                            "description": "enum"
+                            "description": "",
+                            "enum_values": {
+                                "0": "Any",
+                                "1": "Supervisor",
+                                "10": "Valve",
+                                "11": "MAX"
+                            }
                         }
                     ]
                 }
@@ -11915,6 +12071,10 @@
                         "QuotesModeratedContent",
                         "CredibleThreatOfViolence",
                         "AutoCreatedOnModeration",
+                        "Piracy",
+                        "ToSViolation",
+                        "Miscategorized",
+                        "BypassingProfanityFilter",
                         "MAX"
                     ]
                 },
