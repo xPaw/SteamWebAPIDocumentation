@@ -41726,6 +41726,32 @@
                             "description": "enum"
                         },
                         {
+                            "name": "discounted_dates_filter",
+                            "type": "CStoreQueryFilters_DiscountedDatesFilter",
+                            "optional": true,
+                            "description": "",
+                            "extra": [
+                                {
+                                    "name": "start_date",
+                                    "type": "uint32",
+                                    "optional": true,
+                                    "description": ""
+                                },
+                                {
+                                    "name": "end_date",
+                                    "type": "uint32",
+                                    "optional": true,
+                                    "description": ""
+                                },
+                                {
+                                    "name": "allow_partial_overlap",
+                                    "type": "bool",
+                                    "optional": true,
+                                    "description": ""
+                                }
+                            ]
+                        },
+                        {
                             "name": "regional_top_n_sellers",
                             "type": "int32",
                             "optional": true,
@@ -42143,6 +42169,32 @@
                                     "type": "int32[]",
                                     "optional": true,
                                     "description": "enum"
+                                },
+                                {
+                                    "name": "discounted_dates_filter",
+                                    "type": "CStoreQueryFilters_DiscountedDatesFilter",
+                                    "optional": true,
+                                    "description": "",
+                                    "extra": [
+                                        {
+                                            "name": "start_date",
+                                            "type": "uint32",
+                                            "optional": true,
+                                            "description": ""
+                                        },
+                                        {
+                                            "name": "end_date",
+                                            "type": "uint32",
+                                            "optional": true,
+                                            "description": ""
+                                        },
+                                        {
+                                            "name": "allow_partial_overlap",
+                                            "type": "bool",
+                                            "optional": true,
+                                            "description": ""
+                                        }
+                                    ]
                                 },
                                 {
                                     "name": "regional_top_n_sellers",
@@ -42706,6 +42758,32 @@
                             "type": "int32[]",
                             "optional": true,
                             "description": "enum"
+                        },
+                        {
+                            "name": "discounted_dates_filter",
+                            "type": "CStoreQueryFilters_DiscountedDatesFilter",
+                            "optional": true,
+                            "description": "",
+                            "extra": [
+                                {
+                                    "name": "start_date",
+                                    "type": "uint32",
+                                    "optional": true,
+                                    "description": ""
+                                },
+                                {
+                                    "name": "end_date",
+                                    "type": "uint32",
+                                    "optional": true,
+                                    "description": ""
+                                },
+                                {
+                                    "name": "allow_partial_overlap",
+                                    "type": "bool",
+                                    "optional": true,
+                                    "description": ""
+                                }
+                            ]
                         },
                         {
                             "name": "regional_top_n_sellers",
