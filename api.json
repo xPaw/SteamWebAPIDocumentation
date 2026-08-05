@@ -422,6 +422,32 @@
             ]
         }
     },
+    "IAppContentDescriptorService": {
+        "GetActiveSurvey": {
+            "_type": "undocumented",
+            "version": 1,
+            "parameters": [
+                {
+                    "name": "key",
+                    "type": "string",
+                    "optional": false,
+                    "description": "Access key"
+                }
+            ]
+        },
+        "GetWorkingSurvey": {
+            "_type": "undocumented",
+            "version": 1,
+            "parameters": [
+                {
+                    "name": "key",
+                    "type": "string",
+                    "optional": false,
+                    "description": "Access key"
+                }
+            ]
+        }
+    },
     "IAssetSetPublishingService": {
         "AddBranchToAssetSet": {
             "_type": "undocumented",
@@ -25965,6 +25991,7 @@
             ]
         },
         "GetAssetPrices": {
+            "_type": "publisher_only",
             "version": 1,
             "httpmethod": "GET",
             "parameters": [
