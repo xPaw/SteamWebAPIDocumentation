@@ -6114,6 +6114,98 @@
                     "type": "int32",
                     "optional": true,
                     "description": "enum"
+                },
+                {
+                    "name": "filters[0]",
+                    "type": "ReportedContentCoordinates[]",
+                    "optional": true,
+                    "description": "",
+                    "extra": [
+                        {
+                            "name": "subject_type",
+                            "type": "int32",
+                            "optional": true,
+                            "description": "enum"
+                        },
+                        {
+                            "name": "steamid",
+                            "type": "uint64",
+                            "optional": true,
+                            "description": ""
+                        },
+                        {
+                            "name": "forum",
+                            "type": "uint64",
+                            "optional": true,
+                            "description": ""
+                        },
+                        {
+                            "name": "topic",
+                            "type": "uint64",
+                            "optional": true,
+                            "description": ""
+                        },
+                        {
+                            "name": "comment",
+                            "type": "uint64",
+                            "optional": true,
+                            "description": ""
+                        },
+                        {
+                            "name": "comment_thread_id",
+                            "type": "uint64",
+                            "optional": true,
+                            "description": ""
+                        },
+                        {
+                            "name": "sender_account_id",
+                            "type": "uint32",
+                            "optional": true,
+                            "description": ""
+                        },
+                        {
+                            "name": "chat_message_rtime",
+                            "type": "uint32",
+                            "optional": true,
+                            "description": ""
+                        },
+                        {
+                            "name": "chat_message_ordinal",
+                            "type": "uint32",
+                            "optional": true,
+                            "description": ""
+                        },
+                        {
+                            "name": "chat_group_id",
+                            "type": "uint64",
+                            "optional": true,
+                            "description": ""
+                        },
+                        {
+                            "name": "chat_room_id",
+                            "type": "uint64",
+                            "optional": true,
+                            "description": ""
+                        },
+                        {
+                            "name": "receiver_account_id",
+                            "type": "uint32",
+                            "optional": true,
+                            "description": ""
+                        },
+                        {
+                            "name": "published_file_id",
+                            "type": "uint64",
+                            "optional": true,
+                            "description": ""
+                        },
+                        {
+                            "name": "ugc_content_type",
+                            "type": "uint32",
+                            "optional": true,
+                            "description": ""
+                        }
+                    ]
                 }
             ]
         },
@@ -6823,6 +6915,12 @@
                         {
                             "name": "published_file_id",
                             "type": "uint64",
+                            "optional": true,
+                            "description": ""
+                        },
+                        {
+                            "name": "ugc_content_type",
+                            "type": "uint32",
                             "optional": true,
                             "description": ""
                         }
@@ -23551,6 +23649,11 @@
                 {
                     "name": "reason",
                     "type": "string",
+                    "optional": false
+                },
+                {
+                    "name": "content_report_reason",
+                    "type": "{enum}",
                     "optional": false
                 }
             ]
