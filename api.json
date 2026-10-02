@@ -19911,6 +19911,12 @@
                     "type": "bool",
                     "optional": false,
                     "description": "true if we want even more details (capsule, sortas, and capabilities) about each game.  include_appinfo must also be true."
+                },
+                {
+                    "name": "include_family_licenses",
+                    "type": "bool",
+                    "optional": false,
+                    "description": "Also return games the player has played via a family share without owning them.  These are flagged with family_shared."
                 }
             ]
         },
