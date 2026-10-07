@@ -17100,6 +17100,12 @@
                     "type": "uint32",
                     "optional": true,
                     "description": ""
+                },
+                {
+                    "name": "clan_account_id",
+                    "type": "uint32",
+                    "optional": true,
+                    "description": ""
                 }
             ]
         },
