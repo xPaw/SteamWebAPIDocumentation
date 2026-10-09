@@ -42873,6 +42873,26 @@
                             ]
                         },
                         {
+                            "name": "compatibility_filter",
+                            "type": "CStoreQueryFilters_CompatibilityFilter",
+                            "optional": true,
+                            "description": "",
+                            "extra": [
+                                {
+                                    "name": "device",
+                                    "type": "int32",
+                                    "optional": true,
+                                    "description": "enum"
+                                },
+                                {
+                                    "name": "categories[0]",
+                                    "type": "int32[]",
+                                    "optional": true,
+                                    "description": "enum"
+                                }
+                            ]
+                        },
+                        {
                             "name": "regional_top_n_sellers",
                             "type": "int32",
                             "optional": true,
@@ -43314,6 +43334,26 @@
                                             "type": "bool",
                                             "optional": true,
                                             "description": ""
+                                        }
+                                    ]
+                                },
+                                {
+                                    "name": "compatibility_filter",
+                                    "type": "CStoreQueryFilters_CompatibilityFilter",
+                                    "optional": true,
+                                    "description": "",
+                                    "extra": [
+                                        {
+                                            "name": "device",
+                                            "type": "int32",
+                                            "optional": true,
+                                            "description": "enum"
+                                        },
+                                        {
+                                            "name": "categories[0]",
+                                            "type": "int32[]",
+                                            "optional": true,
+                                            "description": "enum"
                                         }
                                     ]
                                 },
@@ -43915,6 +43955,26 @@
                                     "type": "bool",
                                     "optional": true,
                                     "description": ""
+                                }
+                            ]
+                        },
+                        {
+                            "name": "compatibility_filter",
+                            "type": "CStoreQueryFilters_CompatibilityFilter",
+                            "optional": true,
+                            "description": "",
+                            "extra": [
+                                {
+                                    "name": "device",
+                                    "type": "int32",
+                                    "optional": true,
+                                    "description": "enum"
+                                },
+                                {
+                                    "name": "categories[0]",
+                                    "type": "int32[]",
+                                    "optional": true,
+                                    "description": "enum"
                                 }
                             ]
                         },
