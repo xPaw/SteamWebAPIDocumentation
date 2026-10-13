@@ -29799,6 +29799,36 @@
                                                     "type": "string",
                                                     "optional": true,
                                                     "description": ""
+                                                },
+                                                {
+                                                    "name": "use_input_min",
+                                                    "type": "bool",
+                                                    "optional": true,
+                                                    "description": ""
+                                                },
+                                                {
+                                                    "name": "input_min_input_number",
+                                                    "type": "uint32",
+                                                    "optional": true,
+                                                    "description": ""
+                                                },
+                                                {
+                                                    "name": "input_min_value",
+                                                    "type": "float",
+                                                    "optional": true,
+                                                    "description": ""
+                                                },
+                                                {
+                                                    "name": "use_renormalize",
+                                                    "type": "bool",
+                                                    "optional": true,
+                                                    "description": ""
+                                                },
+                                                {
+                                                    "name": "renormalize_input_number",
+                                                    "type": "uint32",
+                                                    "optional": true,
+                                                    "description": ""
                                                 }
                                             ]
                                         },
@@ -30179,6 +30209,38 @@
                                                     "type": "int32",
                                                     "optional": true,
                                                     "description": "enum"
+                                                }
+                                            ]
+                                        },
+                                        {
+                                            "name": "scaled_cosine_similarity",
+                                            "type": "CMsgSteamLearnModelNodeScaledCosineSimilarity",
+                                            "optional": true,
+                                            "description": "",
+                                            "extra": [
+                                                {
+                                                    "name": "initial_scale",
+                                                    "type": "float",
+                                                    "optional": true,
+                                                    "description": ""
+                                                },
+                                                {
+                                                    "name": "initial_bias",
+                                                    "type": "float",
+                                                    "optional": true,
+                                                    "description": ""
+                                                },
+                                                {
+                                                    "name": "freeze_scale",
+                                                    "type": "bool",
+                                                    "optional": true,
+                                                    "description": ""
+                                                },
+                                                {
+                                                    "name": "freeze_bias",
+                                                    "type": "bool",
+                                                    "optional": true,
+                                                    "description": ""
                                                 }
                                             ]
                                         }
@@ -31373,6 +31435,36 @@
                                                     "type": "string",
                                                     "optional": true,
                                                     "description": ""
+                                                },
+                                                {
+                                                    "name": "use_input_min",
+                                                    "type": "bool",
+                                                    "optional": true,
+                                                    "description": ""
+                                                },
+                                                {
+                                                    "name": "input_min_input_number",
+                                                    "type": "uint32",
+                                                    "optional": true,
+                                                    "description": ""
+                                                },
+                                                {
+                                                    "name": "input_min_value",
+                                                    "type": "float",
+                                                    "optional": true,
+                                                    "description": ""
+                                                },
+                                                {
+                                                    "name": "use_renormalize",
+                                                    "type": "bool",
+                                                    "optional": true,
+                                                    "description": ""
+                                                },
+                                                {
+                                                    "name": "renormalize_input_number",
+                                                    "type": "uint32",
+                                                    "optional": true,
+                                                    "description": ""
                                                 }
                                             ]
                                         },
@@ -31753,6 +31845,38 @@
                                                     "type": "int32",
                                                     "optional": true,
                                                     "description": "enum"
+                                                }
+                                            ]
+                                        },
+                                        {
+                                            "name": "scaled_cosine_similarity",
+                                            "type": "CMsgSteamLearnModelNodeScaledCosineSimilarity",
+                                            "optional": true,
+                                            "description": "",
+                                            "extra": [
+                                                {
+                                                    "name": "initial_scale",
+                                                    "type": "float",
+                                                    "optional": true,
+                                                    "description": ""
+                                                },
+                                                {
+                                                    "name": "initial_bias",
+                                                    "type": "float",
+                                                    "optional": true,
+                                                    "description": ""
+                                                },
+                                                {
+                                                    "name": "freeze_scale",
+                                                    "type": "bool",
+                                                    "optional": true,
+                                                    "description": ""
+                                                },
+                                                {
+                                                    "name": "freeze_bias",
+                                                    "type": "bool",
+                                                    "optional": true,
+                                                    "description": ""
                                                 }
                                             ]
                                         }
@@ -32974,6 +33098,36 @@
                                             "type": "string",
                                             "optional": true,
                                             "description": ""
+                                        },
+                                        {
+                                            "name": "use_input_min",
+                                            "type": "bool",
+                                            "optional": true,
+                                            "description": ""
+                                        },
+                                        {
+                                            "name": "input_min_input_number",
+                                            "type": "uint32",
+                                            "optional": true,
+                                            "description": ""
+                                        },
+                                        {
+                                            "name": "input_min_value",
+                                            "type": "float",
+                                            "optional": true,
+                                            "description": ""
+                                        },
+                                        {
+                                            "name": "use_renormalize",
+                                            "type": "bool",
+                                            "optional": true,
+                                            "description": ""
+                                        },
+                                        {
+                                            "name": "renormalize_input_number",
+                                            "type": "uint32",
+                                            "optional": true,
+                                            "description": ""
                                         }
                                     ]
                                 },
@@ -33354,6 +33508,38 @@
                                             "type": "int32",
                                             "optional": true,
                                             "description": "enum"
+                                        }
+                                    ]
+                                },
+                                {
+                                    "name": "scaled_cosine_similarity",
+                                    "type": "CMsgSteamLearnModelNodeScaledCosineSimilarity",
+                                    "optional": true,
+                                    "description": "",
+                                    "extra": [
+                                        {
+                                            "name": "initial_scale",
+                                            "type": "float",
+                                            "optional": true,
+                                            "description": ""
+                                        },
+                                        {
+                                            "name": "initial_bias",
+                                            "type": "float",
+                                            "optional": true,
+                                            "description": ""
+                                        },
+                                        {
+                                            "name": "freeze_scale",
+                                            "type": "bool",
+                                            "optional": true,
+                                            "description": ""
+                                        },
+                                        {
+                                            "name": "freeze_bias",
+                                            "type": "bool",
+                                            "optional": true,
+                                            "description": ""
                                         }
                                     ]
                                 }
@@ -36020,6 +36206,36 @@
                                             "type": "string",
                                             "optional": true,
                                             "description": ""
+                                        },
+                                        {
+                                            "name": "use_input_min",
+                                            "type": "bool",
+                                            "optional": true,
+                                            "description": ""
+                                        },
+                                        {
+                                            "name": "input_min_input_number",
+                                            "type": "uint32",
+                                            "optional": true,
+                                            "description": ""
+                                        },
+                                        {
+                                            "name": "input_min_value",
+                                            "type": "float",
+                                            "optional": true,
+                                            "description": ""
+                                        },
+                                        {
+                                            "name": "use_renormalize",
+                                            "type": "bool",
+                                            "optional": true,
+                                            "description": ""
+                                        },
+                                        {
+                                            "name": "renormalize_input_number",
+                                            "type": "uint32",
+                                            "optional": true,
+                                            "description": ""
                                         }
                                     ]
                                 },
@@ -36400,6 +36616,38 @@
                                             "type": "int32",
                                             "optional": true,
                                             "description": "enum"
+                                        }
+                                    ]
+                                },
+                                {
+                                    "name": "scaled_cosine_similarity",
+                                    "type": "CMsgSteamLearnModelNodeScaledCosineSimilarity",
+                                    "optional": true,
+                                    "description": "",
+                                    "extra": [
+                                        {
+                                            "name": "initial_scale",
+                                            "type": "float",
+                                            "optional": true,
+                                            "description": ""
+                                        },
+                                        {
+                                            "name": "initial_bias",
+                                            "type": "float",
+                                            "optional": true,
+                                            "description": ""
+                                        },
+                                        {
+                                            "name": "freeze_scale",
+                                            "type": "bool",
+                                            "optional": true,
+                                            "description": ""
+                                        },
+                                        {
+                                            "name": "freeze_bias",
+                                            "type": "bool",
+                                            "optional": true,
+                                            "description": ""
                                         }
                                     ]
                                 }
