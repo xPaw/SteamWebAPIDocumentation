@@ -44610,6 +44610,12 @@
                     "type": "bool",
                     "optional": true,
                     "description": "Pre-filter returned creators"
+                },
+                {
+                    "name": "use_name_match_scoring",
+                    "type": "bool",
+                    "optional": true,
+                    "description": ""
                 }
             ]
         }
