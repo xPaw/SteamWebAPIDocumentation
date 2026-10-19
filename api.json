@@ -2728,6 +2728,12 @@
                     "type": "bool",
                     "optional": true,
                     "description": ""
+                },
+                {
+                    "name": "reported_content_id",
+                    "type": "uint64",
+                    "optional": true,
+                    "description": ""
                 }
             ]
         },
@@ -3498,6 +3504,12 @@
                         },
                         {
                             "name": "include_best_purchase_option",
+                            "type": "bool",
+                            "optional": true,
+                            "description": ""
+                        },
+                        {
+                            "name": "include_optin_registration_tags",
                             "type": "bool",
                             "optional": true,
                             "description": ""
@@ -4772,6 +4784,12 @@
                     "type": "string",
                     "optional": true,
                     "description": "MIME content type of the file"
+                },
+                {
+                    "name": "is_public",
+                    "type": "bool",
+                    "optional": true,
+                    "description": ""
                 }
             ]
         },
@@ -5160,6 +5178,7 @@
                                 "HarassmentBanned",
                                 "HarassmentStrike",
                                 "Escalate",
+                                "MarkedIncompatible",
                                 "MAX"
                             ]
                         },
@@ -5186,6 +5205,12 @@
                 {
                     "name": "note",
                     "type": "string",
+                    "optional": true,
+                    "description": ""
+                },
+                {
+                    "name": "skip_lock",
+                    "type": "bool",
                     "optional": true,
                     "description": ""
                 }
@@ -6042,6 +6067,7 @@
                                 "HarassmentBanned",
                                 "HarassmentStrike",
                                 "Escalate",
+                                "MarkedIncompatible",
                                 "MAX"
                             ]
                         },
@@ -6064,6 +6090,12 @@
                             }
                         }
                     ]
+                },
+                {
+                    "name": "skip_lock",
+                    "type": "bool",
+                    "optional": true,
+                    "description": ""
                 }
             ]
         },
@@ -12781,6 +12813,12 @@
                     "type": "bool",
                     "optional": true,
                     "description": ""
+                },
+                {
+                    "name": "reported_content_id",
+                    "type": "uint64",
+                    "optional": true,
+                    "description": ""
                 }
             ]
         }
@@ -15757,6 +15795,12 @@
                             "type": "bool",
                             "optional": true,
                             "description": ""
+                        },
+                        {
+                            "name": "include_optin_registration_tags",
+                            "type": "bool",
+                            "optional": true,
+                            "description": ""
                         }
                     ]
                 }
@@ -15924,6 +15968,12 @@
                             "type": "bool",
                             "optional": true,
                             "description": ""
+                        },
+                        {
+                            "name": "include_optin_registration_tags",
+                            "type": "bool",
+                            "optional": true,
+                            "description": ""
                         }
                     ]
                 }
@@ -16088,6 +16138,12 @@
                         },
                         {
                             "name": "include_best_purchase_option",
+                            "type": "bool",
+                            "optional": true,
+                            "description": ""
+                        },
+                        {
+                            "name": "include_optin_registration_tags",
                             "type": "bool",
                             "optional": true,
                             "description": ""
@@ -16378,6 +16434,12 @@
                             "type": "bool",
                             "optional": true,
                             "description": ""
+                        },
+                        {
+                            "name": "include_optin_registration_tags",
+                            "type": "bool",
+                            "optional": true,
+                            "description": ""
                         }
                     ]
                 }
@@ -16514,6 +16576,7 @@
                         "Replay",
                         "Event",
                         "AutoRender",
+                        "SaleItems",
                         "MAX"
                     ]
                 },
@@ -16572,6 +16635,7 @@
                         "Replay",
                         "Event",
                         "AutoRender",
+                        "SaleItems",
                         "MAX"
                     ]
                 }
@@ -19483,6 +19547,12 @@
                                     "type": "bool",
                                     "optional": true,
                                     "description": ""
+                                },
+                                {
+                                    "name": "include_optin_registration_tags",
+                                    "type": "bool",
+                                    "optional": true,
+                                    "description": ""
                                 }
                             ]
                         }
@@ -19839,6 +19909,12 @@
                 {
                     "name": "appid",
                     "type": "uint32",
+                    "optional": true,
+                    "description": ""
+                },
+                {
+                    "name": "include_family_licenses",
+                    "type": "bool",
                     "optional": true,
                     "description": ""
                 }
@@ -22359,7 +22435,13 @@
                     "name": "resolved_by_automation",
                     "type": "int32",
                     "optional": true,
-                    "description": "enum"
+                    "description": "enum",
+                    "enum_values": [
+                        "Manual",
+                        "PartiallyAutomated",
+                        "FullyAutomated",
+                        "MAX"
+                    ]
                 }
             ]
         },
@@ -23506,7 +23588,80 @@
                     "name": "reason",
                     "type": "int32",
                     "optional": true,
-                    "description": "enum"
+                    "description": "enum",
+                    "enum_values": [
+                        "Invalid",
+                        "None",
+                        "Unknown",
+                        "Harassment",
+                        "BullyingAndIntimidation",
+                        "Stalking",
+                        "Doxxing",
+                        "OtherHarassment",
+                        "EncouragingViolence",
+                        "EncouragingSelfHarm",
+                        "EncouragingSuicide",
+                        "OtherViolenceOrSelfHarm",
+                        "PhishingOrAccountTheft",
+                        "AttemptedScamming",
+                        "LinkingToMaliciousContent",
+                        "Impersonation",
+                        "OtherScamsAndTheft",
+                        "EncouragingTerrorism",
+                        "OrganizingTerrorism",
+                        "OtherTerrorism",
+                        "TargetedAbuse",
+                        "NamingAndShaming",
+                        "Discrimination",
+                        "OtherAbuse",
+                        "Trolling",
+                        "Baiting",
+                        "Derailing",
+                        "OtherDisruptive",
+                        "Spam",
+                        "Begging",
+                        "Reposting",
+                        "OtherOffTopic",
+                        "CSAMSexualContent",
+                        "CSAMGroomingOrEnticement",
+                        "CSAMOther",
+                        "NudityOrSexualContent",
+                        "NonConsensualMaterial",
+                        "Advertising",
+                        "ReferralLinks",
+                        "Gambling",
+                        "Raffles",
+                        "OtherCommercialActivity",
+                        "InauthenticReview",
+                        "HiddenAdvertisementOrCommercialCommunication",
+                        "MisleadingInformationAboutGoodsOrServices",
+                        "MisleadingInformationAboutConsumerRights",
+                        "NoncomplianceWithPricingRegulations",
+                        "RightToBeForgottenViolation",
+                        "MissingProcessingGroundForData",
+                        "OtherDataProtectionAndPrivacyViolation",
+                        "GenderedHarassment",
+                        "GenderedBullyingAndIntimidation",
+                        "GenderedStalking",
+                        "GenderedDoxxing",
+                        "GenderedOtherHarassment",
+                        "GenderedEncouragingViolence",
+                        "GenderedTargetedAbuse",
+                        "CSAMFakedSexualContent",
+                        "GenderedNonConsensualMaterial",
+                        "FakedGenderedNonConsensualMaterial",
+                        "FakedNonConsensualMaterial",
+                        "NegativeEffectonDiscourseOrElections",
+                        "QuotesModeratedContent",
+                        "CredibleThreatOfViolence",
+                        "AutoCreatedOnModeration",
+                        "Piracy",
+                        "ToSViolation",
+                        "Miscategorized",
+                        "BypassingProfanityFilter",
+                        "BulkDeletion",
+                        "MAX"
+                    ]
                 },
                 {
                     "name": "note",
@@ -23518,7 +23673,13 @@
                     "name": "resolved_by_automation",
                     "type": "int32",
                     "optional": true,
-                    "description": "enum"
+                    "description": "enum",
+                    "enum_values": [
+                        "Manual",
+                        "PartiallyAutomated",
+                        "FullyAutomated",
+                        "MAX"
+                    ]
                 },
                 {
                     "name": "sanctions[0]",
@@ -23528,9 +23689,26 @@
                     "extra": [
                         {
                             "name": "sanction",
-                            "type": "int32",
+                            "type": "EContentModerationSanction",
                             "optional": true,
-                            "description": "enum"
+                            "description": "",
+                            "enum_values": [
+                                "Invalid",
+                                "Deleted",
+                                "CommunityBanned",
+                                "HubBanned",
+                                "TradeBanned",
+                                "CommentHistoryDeleted",
+                                "Relabelled",
+                                "MarkAsSuspicious",
+                                "Warned",
+                                "KickedFromGroup",
+                                "HarassmentBanned",
+                                "HarassmentStrike",
+                                "Escalate",
+                                "MarkedIncompatible",
+                                "MAX"
+                            ]
                         },
                         {
                             "name": "days",
@@ -23540,9 +23718,15 @@
                         },
                         {
                             "name": "escalate_to",
-                            "type": "int32",
+                            "type": "EContentModeratorLevel",
                             "optional": true,
-                            "description": "enum"
+                            "description": "",
+                            "enum_values": {
+                                "0": "Any",
+                                "1": "Supervisor",
+                                "10": "Valve",
+                                "11": "MAX"
+                            }
                         }
                     ]
                 }
@@ -26302,6 +26486,12 @@
                             "type": "bool",
                             "optional": true,
                             "description": ""
+                        },
+                        {
+                            "name": "include_optin_registration_tags",
+                            "type": "bool",
+                            "optional": true,
+                            "description": ""
                         }
                     ]
                 }
@@ -26492,6 +26682,12 @@
                             "type": "bool",
                             "optional": true,
                             "description": ""
+                        },
+                        {
+                            "name": "include_optin_registration_tags",
+                            "type": "bool",
+                            "optional": true,
+                            "description": ""
                         }
                     ]
                 }
@@ -26649,6 +26845,12 @@
                         },
                         {
                             "name": "include_best_purchase_option",
+                            "type": "bool",
+                            "optional": true,
+                            "description": ""
+                        },
+                        {
+                            "name": "include_optin_registration_tags",
                             "type": "bool",
                             "optional": true,
                             "description": ""
@@ -40692,6 +40894,12 @@
                             "type": "bool",
                             "optional": true,
                             "description": ""
+                        },
+                        {
+                            "name": "include_optin_registration_tags",
+                            "type": "bool",
+                            "optional": true,
+                            "description": ""
                         }
                     ]
                 }
@@ -41530,6 +41738,12 @@
                             "type": "bool",
                             "optional": true,
                             "description": ""
+                        },
+                        {
+                            "name": "include_optin_registration_tags",
+                            "type": "bool",
+                            "optional": true,
+                            "description": ""
                         }
                     ]
                 }
@@ -42001,6 +42215,12 @@
                             "type": "bool",
                             "optional": true,
                             "description": ""
+                        },
+                        {
+                            "name": "include_optin_registration_tags",
+                            "type": "bool",
+                            "optional": true,
+                            "description": ""
                         }
                     ]
                 },
@@ -42164,6 +42384,12 @@
                         },
                         {
                             "name": "include_best_purchase_option",
+                            "type": "bool",
+                            "optional": true,
+                            "description": ""
+                        },
+                        {
+                            "name": "include_optin_registration_tags",
                             "type": "bool",
                             "optional": true,
                             "description": ""
@@ -42848,6 +43074,12 @@
                         },
                         {
                             "name": "include_best_purchase_option",
+                            "type": "bool",
+                            "optional": true,
+                            "description": ""
+                        },
+                        {
+                            "name": "include_optin_registration_tags",
                             "type": "bool",
                             "optional": true,
                             "description": ""
@@ -43971,6 +44203,12 @@
                             "type": "bool",
                             "optional": true,
                             "description": ""
+                        },
+                        {
+                            "name": "include_optin_registration_tags",
+                            "type": "bool",
+                            "optional": true,
+                            "description": ""
                         }
                     ]
                 },
@@ -44581,6 +44819,12 @@
                         },
                         {
                             "name": "include_best_purchase_option",
+                            "type": "bool",
+                            "optional": true,
+                            "description": ""
+                        },
+                        {
+                            "name": "include_optin_registration_tags",
                             "type": "bool",
                             "optional": true,
                             "description": ""
@@ -45247,6 +45491,12 @@
                         },
                         {
                             "name": "include_best_purchase_option",
+                            "type": "bool",
+                            "optional": true,
+                            "description": ""
+                        },
+                        {
+                            "name": "include_optin_registration_tags",
                             "type": "bool",
                             "optional": true,
                             "description": ""
@@ -46284,6 +46534,12 @@
                         },
                         {
                             "name": "include_best_purchase_option",
+                            "type": "bool",
+                            "optional": true,
+                            "description": ""
+                        },
+                        {
+                            "name": "include_optin_registration_tags",
                             "type": "bool",
                             "optional": true,
                             "description": ""
@@ -47350,6 +47606,12 @@
                             "type": "bool",
                             "optional": true,
                             "description": ""
+                        },
+                        {
+                            "name": "include_optin_registration_tags",
+                            "type": "bool",
+                            "optional": true,
+                            "description": ""
                         }
                     ]
                 },
@@ -47906,6 +48168,12 @@
                         },
                         {
                             "name": "include_best_purchase_option",
+                            "type": "bool",
+                            "optional": true,
+                            "description": ""
+                        },
+                        {
+                            "name": "include_optin_registration_tags",
                             "type": "bool",
                             "optional": true,
                             "description": ""
