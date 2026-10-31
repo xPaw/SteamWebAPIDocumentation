@@ -19,7 +19,7 @@ jobs:
       uses: actions/checkout@v7
       with:
         repository: SteamTracking/SteamworksDocumentation
-        path: ../SteamworksDocumentation
+        path: SteamworksDocumentation
 
     - name: Git config
       run: |-
@@ -33,5 +33,6 @@ jobs:
     - name: Run script
       run: ./update.sh
       env:
+        STEAMWORKS_DOCUMENTATION_PATH: ${{ github.workspace }}/SteamworksDocumentation
         STEAM_PUBLIC_API_KEY: ${{ secrets.STEAM_PUBLIC_API_KEY }}
         STEAM_PUBLISHER_API_KEY: ${{ secrets.STEAM_PUBLISHER_API_KEY }}

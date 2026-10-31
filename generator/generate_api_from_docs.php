@@ -4,7 +4,7 @@ declare(strict_types=1);
 $RootDir = dirname( __DIR__ );
 
 // Path to https://github.com/SteamDatabase/SteamworksDocumentation
-$Folder = $RootDir . '/../SteamworksDocumentation';
+$Folder = getenv( 'STEAMWORKS_DOCUMENTATION_PATH' ) ?: $RootDir . '/../SteamworksDocumentation';
 
 $AllDocs = new RecursiveIteratorIterator(
 	new RecursiveDirectoryIterator(
