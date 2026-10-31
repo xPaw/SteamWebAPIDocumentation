@@ -108,9 +108,13 @@ function ParseProtoFile( SplFileInfo $fileInfo, Butschster\ProtoParser\ProtoPars
 		$protoContent = str_replace( "optional bool bool ", 'optional bool _bool ', $protoContent );
 		$protoContent = str_replace( "optional float float ", 'optional float _float ', $protoContent );
 		$protoContent = str_replace( "optional string string ", 'optional string _string ', $protoContent );
+		$protoContent = str_replace( "optional float max ", 'optional float _max ', $protoContent );
 
 		// https://github.com/butschster/proto-parser/issues/10
 		$protoContent = (string)preg_replace( '/extend\s+[^{]+\{[^}]*\}/s', '', $protoContent );
+
+		// The parser does not support extension ranges, which are used by descriptor.proto.
+		$protoContent = (string)preg_replace( '/^\s*extensions\s+[^;]+;\s*$/m', '', $protoContent );
 
 		$protoFile = $parser->parse( $protoContent );
 		$parsedFiles[ $path ] = $protoFile;
