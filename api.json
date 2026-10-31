@@ -1,4 +1,6 @@
 {
+    "": [],
+    ".local": [],
     "IAccountCartService": {
         "AddItemsToCart": {
             "_type": "undocumented",
@@ -25887,6 +25889,12 @@
                 }
             ]
         },
+        "GetAppList": {
+            "_type": "undocumented",
+            "version": 2,
+            "httpmethod": "GET",
+            "parameters": []
+        },
         "GetCheatingReports": {
             "_type": "publisher_only",
             "version": 1,
@@ -27193,6 +27201,12 @@
                     "type": "uint64",
                     "optional": false,
                     "description": "The context in the app to get exported items from."
+                },
+                {
+                    "name": "key",
+                    "type": "string",
+                    "optional": false,
+                    "description": "Steamworks Web API publisher authentication key."
                 }
             ]
         },
@@ -40400,6 +40414,31 @@
         }
     },
     "ISteamUserAuth": {
+        "AuthenticateUser": {
+            "_type": "undocumented",
+            "version": 1,
+            "httpmethod": "POST",
+            "parameters": [
+                {
+                    "name": "steamid",
+                    "type": "uint64",
+                    "optional": false,
+                    "description": "Should be the users steamid, unencrypted."
+                },
+                {
+                    "name": "sessionkey",
+                    "type": "rawbinary",
+                    "optional": false,
+                    "description": "Should be a 32 byte random blob of data, which is then encrypted with RSA using the\n                Steam system's public key. Randomness is important here for security."
+                },
+                {
+                    "name": "encrypted_loginkey",
+                    "type": "rawbinary",
+                    "optional": false,
+                    "description": "Should be the users hashed loginkey, AES encrypted with the sessionkey."
+                }
+            ]
+        },
         "AuthenticateUserTicket": {
             "version": 1,
             "httpmethod": "GET",
@@ -47393,6 +47432,145 @@
         }
     },
     "IUserReviewsService": {
+        "GetAppReviews": {
+            "_type": "undocumented",
+            "version": 1,
+            "httpmethod": "GET",
+            "parameters": [
+                {
+                    "name": "key",
+                    "type": "string",
+                    "optional": true,
+                    "description": "Steamworks Web API publisher authentication key. Pass a key associated\n                with the app to get the higher rate limit."
+                },
+                {
+                    "name": "appid",
+                    "type": "uint32",
+                    "optional": false,
+                    "description": "App to get reviews for."
+                },
+                {
+                    "name": "filter",
+                    "type": "int32",
+                    "optional": true,
+                    "description": "IUserReviewsService#EUserReviewsAppReviewsFilter. Sort order of the results. Defaults to k_EUserReviewsAppReviewsFilter_Helpful,\n                which widens day_range until\n                it finds results, so it will always return reviews. If paging through all the\n                reviews with cursor, use\n                Recent or Updated to eventually receive an empty list."
+                },
+                {
+                    "name": "languages",
+                    "type": "string[]",
+                    "optional": true,
+                    "description": "API language codes to return reviews in (see\n                Languages Supported on Steam). Empty\n                means english; \"all\" means every language. Example usage: languages[0]='english',\n                languages[1]='french', etc."
+                },
+                {
+                    "name": "day_range",
+                    "type": "uint32",
+                    "optional": true,
+                    "description": "Only used by the Helpful filter. Number of days back from today to look for reviews.\n                Defaults to 30, max 365; 0 means no limit."
+                },
+                {
+                    "name": "cursor",
+                    "type": "string",
+                    "optional": true,
+                    "description": "Cursor to paginate through the results. Set to '*' or omit for the first request,\n                then pass the cursor value\n                returned in the previous response. Cursor values may contain characters that need to\n                be URL-encoded."
+                },
+                {
+                    "name": "review_type",
+                    "type": "int32",
+                    "optional": true,
+                    "description": "IUserReviewsService#EUserReviewsReviewType. Defaults to k_EUserReviewsReviewType_All."
+                },
+                {
+                    "name": "purchase_type",
+                    "type": "int32",
+                    "optional": true,
+                    "description": "IUserReviewsService#EUserReviewsPurchaseType. Defaults to k_EUserReviewsPurchaseType_Steam."
+                },
+                {
+                    "name": "num_per_page",
+                    "type": "uint32",
+                    "optional": true,
+                    "description": "Number of reviews to return per page. Defaults to 20, max 100."
+                },
+                {
+                    "name": "filter_offtopic_activity",
+                    "type": "bool",
+                    "optional": true,
+                    "description": "By default, off-topic reviews (aka \"Review Bombs\") are filtered out. Pass false to\n                include them. See here."
+                },
+                {
+                    "name": "display_language",
+                    "type": "string",
+                    "optional": true,
+                    "description": "API language code for\n                review_score_desc in the\n                response. Defaults to english."
+                },
+                {
+                    "name": "use_review_quality",
+                    "type": "bool",
+                    "optional": true,
+                    "description": "Helpful filter only. Ranks reviews that Steam has judged to be low quality (ASCII\n                art, memes, off-topic, uninformative, vote farming) below the others. Defaults to\n                true. If false, the Helpful filter sorts by\n                weighted_vote_score and,\n                unless day_range is 0, only\n                returns reviews with a score of at least 0.5 and at least one helpful vote."
+                },
+                {
+                    "name": "date_range_start",
+                    "type": "uint32",
+                    "optional": true,
+                    "description": "Unix timestamp. Only return reviews created at or after this time. Ignored unless\n                date_range_end is also set."
+                },
+                {
+                    "name": "date_range_end",
+                    "type": "uint32",
+                    "optional": true,
+                    "description": "Unix timestamp. Only return reviews created at or before this time. Ignored unless\n                date_range_start is also\n                set."
+                },
+                {
+                    "name": "date_range_exclude",
+                    "type": "bool",
+                    "optional": true,
+                    "description": "If true, exclude reviews inside the date range instead of returning only them."
+                },
+                {
+                    "name": "playtime_min_hours",
+                    "type": "uint32",
+                    "optional": true,
+                    "description": "Only return reviews whose author had at least this many hours in the app when the\n                review was written."
+                },
+                {
+                    "name": "playtime_max_hours",
+                    "type": "uint32",
+                    "optional": true,
+                    "description": "Only return reviews whose author had at most this many hours in the app when the\n                review was written."
+                },
+                {
+                    "name": "primarily_steam_deck",
+                    "type": "bool",
+                    "optional": true,
+                    "description": "Only return reviews whose author had played more than half their time on Steam Deck\n                when the review was written."
+                },
+                {
+                    "name": "hardware_os",
+                    "type": "string",
+                    "optional": true,
+                    "description": "Only return reviews written on hardware with this operating system."
+                },
+                {
+                    "name": "hardware_cpu",
+                    "type": "string",
+                    "optional": true,
+                    "description": "Only return reviews written on hardware with this CPU."
+                },
+                {
+                    "name": "hardware_gpu",
+                    "type": "string",
+                    "optional": true,
+                    "description": "Only return reviews written on hardware with this GPU."
+                },
+                {
+                    "name": "hardware_device_type",
+                    "type": "string",
+                    "optional": true,
+                    "description": "Only return reviews written on this type of device."
+                }
+            ]
+        },
         "GetFriendsRecommendedApp": {
             "_type": "undocumented",
             "version": 1,
