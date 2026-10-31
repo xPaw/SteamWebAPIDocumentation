@@ -15,6 +15,15 @@ jobs:
     - name: Checkout
       uses: actions/checkout@v7
 
+    - name: Checkout Steamworks documentation
+      uses: actions/checkout@v7
+      with:
+        repository: SteamTracking/SteamworksDocumentation
+        path: SteamworksDocumentation
+
+    - name: Exclude checked out documentation
+      run: echo "SteamworksDocumentation/" >> .git/info/exclude
+
     - name: Git config
       run: |-
         git config user.name "github-actions[bot]"
@@ -27,5 +36,6 @@ jobs:
     - name: Run script
       run: ./update.sh
       env:
+        STEAMWORKS_DOCUMENTATION_PATH: ${{ github.workspace }}/SteamworksDocumentation
         STEAM_PUBLIC_API_KEY: ${{ secrets.STEAM_PUBLIC_API_KEY }}
         STEAM_PUBLISHER_API_KEY: ${{ secrets.STEAM_PUBLISHER_API_KEY }}
