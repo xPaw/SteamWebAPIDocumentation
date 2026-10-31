@@ -154,7 +154,7 @@ function StoreFieldDescriptions( string $messageName, Butschster\ProtoParser\Ast
 /** @param array<string, string> $fieldDescriptions */
 function StoreFieldDescription( string $messageName, Butschster\ProtoParser\Ast\FieldDeclNode|Butschster\ProtoParser\Ast\OneofFieldNode $field, array &$fieldDescriptions ) : void
 {
-	$fieldKey = $messageName . '.' . $field->name;
+	$fieldKey = $messageName . '.' . RestoreFieldName( $field->name );
 
 	// Store if we don't have a description yet
 	if( !empty( $fieldDescriptions[ $fieldKey ] ) )
@@ -362,7 +362,7 @@ function ParseMessageParameters( ?Butschster\ProtoParser\Ast\MessageDefNode $mes
 			continue;
 		}
 
-		$name = $field->name;
+		$name = RestoreFieldName( $field->name );
 		$type = ltrim( $field->type->type, '.' );
 		$extra = null;
 		$enumValues = null;
@@ -415,7 +415,7 @@ function ParseMessageParameters( ?Butschster\ProtoParser\Ast\MessageDefNode $mes
 		$description = '';
 		if( !empty( $messageName ) )
 		{
-			$fieldKey = $messageName . '.' . $field->name;
+			$fieldKey = $messageName . '.' . $name;
 			if( isset( $fieldDescriptions[ $fieldKey ] ) )
 			{
 				$description = $fieldDescriptions[ $fieldKey ];
@@ -454,6 +454,11 @@ function ParseMessageParameters( ?Butschster\ProtoParser\Ast\MessageDefNode $mes
 	}
 
 	return $parameters;
+}
+
+function RestoreFieldName( string $name ) : string
+{
+	return $name === '_max' ? 'max' : $name;
 }
 
 // First pass: collect all messages and field descriptions
