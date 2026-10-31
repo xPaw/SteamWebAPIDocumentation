@@ -21,6 +21,9 @@ jobs:
         repository: SteamTracking/SteamworksDocumentation
         path: SteamworksDocumentation
 
+    - name: Exclude checked out documentation
+      run: echo "SteamworksDocumentation/" >> .git/info/exclude
+
     - name: Git config
       run: |-
         git config user.name "github-actions[bot]"
