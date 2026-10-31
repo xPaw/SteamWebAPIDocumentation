@@ -2,6 +2,7 @@
 
 cd "$(dirname "$0")"
 
+php generator/generate_api_from_docs.php
 php generator/generate_api_from_protos.php
 php generator/generate_api.php
 
