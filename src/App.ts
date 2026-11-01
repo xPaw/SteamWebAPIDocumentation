@@ -340,7 +340,7 @@ export default defineComponent({
 		},
 	},
 	methods: {
-		setInterface(iface: string, method: string | null = null, setFromUrl = false): void {
+		async setInterface(iface: string, method: string | null = null, setFromUrl = false): Promise<void> {
 			let currentInterface = iface;
 			let currentMethod = method;
 
@@ -373,9 +373,8 @@ export default defineComponent({
 			}
 
 			if (currentMethod) {
-				this.$nextTick(() => {
-					document.getElementById(currentMethod!)?.scrollIntoView();
-				});
+				await this.$nextTick();
+				document.getElementById(currentMethod)?.scrollIntoView();
 			}
 		},
 		fillSteamidParameter(): void {
@@ -608,7 +607,7 @@ export default defineComponent({
 			const parameterIndex = method.parameters.findIndex((param) => param.name === parameter.name);
 			method.parameters.splice(parameterIndex + parameter._counter, 0, newParameter);
 		},
-		scrollInterfaceIntoView(): void {
+		async scrollInterfaceIntoView(): Promise<void> {
 			const appid = this.groupsMap.get(this.currentInterface) ?? 0;
 			const group = this.groupsData.get(appid);
 
@@ -616,13 +615,13 @@ export default defineComponent({
 				group.open = true;
 			}
 
-			this.$nextTick(() => {
-				const element = document.querySelector(`.interface-list a[href="/${this.currentInterface}"]`);
+			await this.$nextTick();
 
-				if (element instanceof HTMLElement) {
-					element.scrollIntoView();
-				}
-			});
+			const element = document.querySelector(`.interface-list a[href="/${this.currentInterface}"]`);
+
+			if (element instanceof HTMLElement) {
+				element.scrollIntoView();
+			}
 		},
 		copyUrl(event: MouseEvent): void {
 			const button = event.target as Element;
@@ -652,7 +651,7 @@ export default defineComponent({
 
 			localStorage.setItem('favorites', JSON.stringify([...this.userData.favorites]));
 		},
-		navigateSidebar(direction: number): void {
+		async navigateSidebar(direction: number): Promise<void> {
 			const entries = Object.entries(this.filteredInterfaces);
 			const index = entries.findIndex((x) => x[0] === this.currentInterface) + direction;
 			const size = entries.length;
@@ -661,24 +660,24 @@ export default defineComponent({
 			this.setInterface(interfaceName);
 			this.scrollInterfaceIntoView();
 
-			this.$nextTick(() => {
-				const input = this.sidebarOpen
-					? this.sidebar?.querySelector<HTMLInputElement>('.search-input')
-					: this.inputSearch;
-				input?.focus();
-			});
+			await this.$nextTick();
+
+			const input = this.sidebarOpen
+				? this.sidebar?.querySelector<HTMLInputElement>('.search-input')
+				: this.inputSearch;
+			input?.focus();
 		},
-		focusApiKey(): void {
+		async focusApiKey(): Promise<void> {
 			this.currentFilter = '';
 			this.setInterface('');
 
-			this.$nextTick(() => {
-				const element = this.hasValidAccessToken ? this.inputAccessToken : this.inputApiKey;
+			await this.$nextTick();
 
-				if (element) {
-					element.focus();
-				}
-			});
+			const element = this.hasValidAccessToken ? this.inputAccessToken : this.inputApiKey;
+
+			if (element) {
+				element.focus();
+			}
 		},
 		onSearchInput(e: Event) {
 			requestAnimationFrame(() => {

@@ -1,18 +1,19 @@
 {
+	"type": "module",
 	"scripts": {
-		"build": "vite build && vite build --ssr src/ssr.ts --outDir build --emptyOutDir false && node build/ssr.mjs && rm build/ssr.mjs",
+		"build": "vite build && vite build --ssr src/ssr.ts --outDir build --emptyOutDir false && node build/ssr.js && rm build/ssr.js",
 		"dev": "vite",
 		"preview": "vite preview",
 		"test": "tsc && biome check",
 		"fix": "biome check --write"
 	},
 	"devDependencies": {
-		"@biomejs/biome": "^2.5.3",
-		"@unhead/vue": "^3.1.8",
-		"@vitejs/plugin-vue": "^6.0.8",
+		"@biomejs/biome": "^2.6.4",
+		"@unhead/vue": "^3.4.3",
+		"@vitejs/plugin-vue": "^6.0.10",
 		"@vue/tsconfig": "^0.9.1",
 		"typescript": "^7.0.2",
-		"vite": "^8.1.4",
-		"vue": "^3.5.39"
+		"vite": "^8.3.5",
+		"vue": "^3.5.44"
 	}
 }

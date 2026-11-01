@@ -710,17 +710,17 @@ summary {
 	font-size: 14px;
 	color: var(--text);
 
-	& thead th {
-		font-weight: 600;
-		color: var(--text-light);
-	}
-
 	& th,
 	& td {
 		padding: 0.35rem 0.5rem;
 		text-align: left;
 		vertical-align: top;
 		border: 1px solid var(--bg-body);
+	}
+
+	& thead th {
+		font-weight: 600;
+		color: var(--text-light);
 	}
 
 	& tbody tr:nth-child(odd) td {
