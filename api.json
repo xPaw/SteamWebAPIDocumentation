@@ -141,7 +141,59 @@
                             "name": "gift_info",
                             "type": "CartGiftInfo",
                             "optional": true,
-                            "description": ""
+                            "description": "",
+                            "extra": [
+                                {
+                                    "name": "accountid_giftee",
+                                    "type": "int32",
+                                    "optional": true,
+                                    "description": ""
+                                },
+                                {
+                                    "name": "gift_message",
+                                    "type": "CartGiftMessage",
+                                    "optional": true,
+                                    "description": "",
+                                    "extra": [
+                                        {
+                                            "name": "gifteename",
+                                            "type": "string",
+                                            "optional": true,
+                                            "description": ""
+                                        },
+                                        {
+                                            "name": "message",
+                                            "type": "string",
+                                            "optional": true,
+                                            "description": ""
+                                        },
+                                        {
+                                            "name": "sentiment",
+                                            "type": "string",
+                                            "optional": true,
+                                            "description": ""
+                                        },
+                                        {
+                                            "name": "signature",
+                                            "type": "string",
+                                            "optional": true,
+                                            "description": ""
+                                        }
+                                    ]
+                                },
+                                {
+                                    "name": "time_scheduled_send",
+                                    "type": "int32",
+                                    "optional": true,
+                                    "description": ""
+                                },
+                                {
+                                    "name": "email_giftee",
+                                    "type": "string",
+                                    "optional": true,
+                                    "description": ""
+                                }
+                            ]
                         },
                         {
                             "name": "flags",
@@ -312,6 +364,12 @@
                         {
                             "name": "time_scheduled_send",
                             "type": "int32",
+                            "optional": true,
+                            "description": ""
+                        },
+                        {
+                            "name": "email_giftee",
+                            "type": "string",
                             "optional": true,
                             "description": ""
                         }
@@ -3565,6 +3623,12 @@
                         {
                             "name": "time_scheduled_send",
                             "type": "int32",
+                            "optional": true,
+                            "description": ""
+                        },
+                        {
+                            "name": "email_giftee",
+                            "type": "string",
                             "optional": true,
                             "description": ""
                         }
@@ -25549,7 +25613,59 @@
                     "name": "gift_info",
                     "type": "CartGiftInfo",
                     "optional": true,
-                    "description": ""
+                    "description": "",
+                    "extra": [
+                        {
+                            "name": "accountid_giftee",
+                            "type": "int32",
+                            "optional": true,
+                            "description": ""
+                        },
+                        {
+                            "name": "gift_message",
+                            "type": "CartGiftMessage",
+                            "optional": true,
+                            "description": "",
+                            "extra": [
+                                {
+                                    "name": "gifteename",
+                                    "type": "string",
+                                    "optional": true,
+                                    "description": ""
+                                },
+                                {
+                                    "name": "message",
+                                    "type": "string",
+                                    "optional": true,
+                                    "description": ""
+                                },
+                                {
+                                    "name": "sentiment",
+                                    "type": "string",
+                                    "optional": true,
+                                    "description": ""
+                                },
+                                {
+                                    "name": "signature",
+                                    "type": "string",
+                                    "optional": true,
+                                    "description": ""
+                                }
+                            ]
+                        },
+                        {
+                            "name": "time_scheduled_send",
+                            "type": "int32",
+                            "optional": true,
+                            "description": ""
+                        },
+                        {
+                            "name": "email_giftee",
+                            "type": "string",
+                            "optional": true,
+                            "description": ""
+                        }
+                    ]
                 }
             ]
         },
@@ -25642,7 +25758,59 @@
                             "name": "gift_info",
                             "type": "CartGiftInfo",
                             "optional": true,
-                            "description": ""
+                            "description": "",
+                            "extra": [
+                                {
+                                    "name": "accountid_giftee",
+                                    "type": "int32",
+                                    "optional": true,
+                                    "description": ""
+                                },
+                                {
+                                    "name": "gift_message",
+                                    "type": "CartGiftMessage",
+                                    "optional": true,
+                                    "description": "",
+                                    "extra": [
+                                        {
+                                            "name": "gifteename",
+                                            "type": "string",
+                                            "optional": true,
+                                            "description": ""
+                                        },
+                                        {
+                                            "name": "message",
+                                            "type": "string",
+                                            "optional": true,
+                                            "description": ""
+                                        },
+                                        {
+                                            "name": "sentiment",
+                                            "type": "string",
+                                            "optional": true,
+                                            "description": ""
+                                        },
+                                        {
+                                            "name": "signature",
+                                            "type": "string",
+                                            "optional": true,
+                                            "description": ""
+                                        }
+                                    ]
+                                },
+                                {
+                                    "name": "time_scheduled_send",
+                                    "type": "int32",
+                                    "optional": true,
+                                    "description": ""
+                                },
+                                {
+                                    "name": "email_giftee",
+                                    "type": "string",
+                                    "optional": true,
+                                    "description": ""
+                                }
+                            ]
                         }
                     ]
                 }
@@ -25718,7 +25886,59 @@
                     "name": "gift_info",
                     "type": "CartGiftInfo",
                     "optional": true,
-                    "description": ""
+                    "description": "",
+                    "extra": [
+                        {
+                            "name": "accountid_giftee",
+                            "type": "int32",
+                            "optional": true,
+                            "description": ""
+                        },
+                        {
+                            "name": "gift_message",
+                            "type": "CartGiftMessage",
+                            "optional": true,
+                            "description": "",
+                            "extra": [
+                                {
+                                    "name": "gifteename",
+                                    "type": "string",
+                                    "optional": true,
+                                    "description": ""
+                                },
+                                {
+                                    "name": "message",
+                                    "type": "string",
+                                    "optional": true,
+                                    "description": ""
+                                },
+                                {
+                                    "name": "sentiment",
+                                    "type": "string",
+                                    "optional": true,
+                                    "description": ""
+                                },
+                                {
+                                    "name": "signature",
+                                    "type": "string",
+                                    "optional": true,
+                                    "description": ""
+                                }
+                            ]
+                        },
+                        {
+                            "name": "time_scheduled_send",
+                            "type": "int32",
+                            "optional": true,
+                            "description": ""
+                        },
+                        {
+                            "name": "email_giftee",
+                            "type": "string",
+                            "optional": true,
+                            "description": ""
+                        }
+                    ]
                 }
             ]
         },
