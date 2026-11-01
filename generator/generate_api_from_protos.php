@@ -108,9 +108,13 @@ function ParseProtoFile( SplFileInfo $fileInfo, Butschster\ProtoParser\ProtoPars
 		$protoContent = str_replace( "optional bool bool ", 'optional bool _bool ', $protoContent );
 		$protoContent = str_replace( "optional float float ", 'optional float _float ', $protoContent );
 		$protoContent = str_replace( "optional string string ", 'optional string _string ', $protoContent );
+		$protoContent = str_replace( "optional float max ", 'optional float _max ', $protoContent );
 
 		// https://github.com/butschster/proto-parser/issues/10
 		$protoContent = (string)preg_replace( '/extend\s+[^{]+\{[^}]*\}/s', '', $protoContent );
+
+		// The parser does not support extension ranges, which are used by descriptor.proto.
+		$protoContent = (string)preg_replace( '/^\s*extensions\s+[^;]+;\s*$/m', '', $protoContent );
 
 		$protoFile = $parser->parse( $protoContent );
 		$parsedFiles[ $path ] = $protoFile;
@@ -150,7 +154,7 @@ function StoreFieldDescriptions( string $messageName, Butschster\ProtoParser\Ast
 /** @param array<string, string> $fieldDescriptions */
 function StoreFieldDescription( string $messageName, Butschster\ProtoParser\Ast\FieldDeclNode|Butschster\ProtoParser\Ast\OneofFieldNode $field, array &$fieldDescriptions ) : void
 {
-	$fieldKey = $messageName . '.' . $field->name;
+	$fieldKey = $messageName . '.' . RestoreFieldName( $field->name );
 
 	// Store if we don't have a description yet
 	if( !empty( $fieldDescriptions[ $fieldKey ] ) )
@@ -358,7 +362,7 @@ function ParseMessageParameters( ?Butschster\ProtoParser\Ast\MessageDefNode $mes
 			continue;
 		}
 
-		$name = $field->name;
+		$name = RestoreFieldName( $field->name );
 		$type = ltrim( $field->type->type, '.' );
 		$extra = null;
 		$enumValues = null;
@@ -411,7 +415,7 @@ function ParseMessageParameters( ?Butschster\ProtoParser\Ast\MessageDefNode $mes
 		$description = '';
 		if( !empty( $messageName ) )
 		{
-			$fieldKey = $messageName . '.' . $field->name;
+			$fieldKey = $messageName . '.' . $name;
 			if( isset( $fieldDescriptions[ $fieldKey ] ) )
 			{
 				$description = $fieldDescriptions[ $fieldKey ];
@@ -450,6 +454,11 @@ function ParseMessageParameters( ?Butschster\ProtoParser\Ast\MessageDefNode $mes
 	}
 
 	return $parameters;
+}
+
+function RestoreFieldName( string $name ) : string
+{
+	return $name === '_max' ? 'max' : $name;
 }
 
 // First pass: collect all messages and field descriptions
