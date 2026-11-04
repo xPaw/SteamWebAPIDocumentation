@@ -5315,6 +5315,30 @@
                 }
             ]
         },
+        "GetAppRichPresenceLocalization": {
+            "_type": "undocumented",
+            "version": 1,
+            "parameters": [
+                {
+                    "name": "key",
+                    "type": "string",
+                    "optional": false,
+                    "description": "Access key"
+                },
+                {
+                    "name": "appid",
+                    "type": "int32",
+                    "optional": true,
+                    "description": ""
+                },
+                {
+                    "name": "language",
+                    "type": "string",
+                    "optional": true,
+                    "description": ""
+                }
+            ]
+        },
         "GetApps": {
             "_type": "undocumented",
             "version": 1,
@@ -7111,6 +7135,12 @@
                 {
                     "name": "reported_content_id",
                     "type": "uint64",
+                    "optional": true,
+                    "description": ""
+                },
+                {
+                    "name": "include_reporter_account_status",
+                    "type": "bool",
                     "optional": true,
                     "description": ""
                 }
@@ -20051,6 +20081,36 @@
                     "type": "fixed64",
                     "optional": true,
                     "description": "The player we're asking about"
+                },
+                {
+                    "name": "language",
+                    "type": "string",
+                    "optional": true,
+                    "description": ""
+                }
+            ]
+        },
+        "GetMiniprofileData": {
+            "_type": "undocumented",
+            "version": 1,
+            "parameters": [
+                {
+                    "name": "key",
+                    "type": "string",
+                    "optional": false,
+                    "description": "Access key"
+                },
+                {
+                    "name": "steamid",
+                    "type": "fixed64",
+                    "optional": true,
+                    "description": ""
+                },
+                {
+                    "name": "appid",
+                    "type": "uint32",
+                    "optional": true,
+                    "description": ""
                 },
                 {
                     "name": "language",
@@ -43688,6 +43748,12 @@
                             ]
                         },
                         {
+                            "name": "discount_ends_within_hours",
+                            "type": "uint32",
+                            "optional": true,
+                            "description": ""
+                        },
+                        {
                             "name": "regional_top_n_sellers",
                             "type": "int32",
                             "optional": true,
@@ -44171,6 +44237,12 @@
                                             "description": ""
                                         }
                                     ]
+                                },
+                                {
+                                    "name": "discount_ends_within_hours",
+                                    "type": "uint32",
+                                    "optional": true,
+                                    "description": ""
                                 },
                                 {
                                     "name": "regional_top_n_sellers",
@@ -44818,6 +44890,12 @@
                                     "description": ""
                                 }
                             ]
+                        },
+                        {
+                            "name": "discount_ends_within_hours",
+                            "type": "uint32",
+                            "optional": true,
+                            "description": ""
                         },
                         {
                             "name": "regional_top_n_sellers",
