@@ -43244,6 +43244,26 @@
                             "description": ""
                         }
                     ]
+                },
+                {
+                    "name": "recommended_tags[0]",
+                    "type": "CStoreQuery_GetItemsByUserRecommendedTags_Request_RecommendedTag[]",
+                    "optional": true,
+                    "description": "",
+                    "extra": [
+                        {
+                            "name": "tagid",
+                            "type": "uint32",
+                            "optional": true,
+                            "description": ""
+                        },
+                        {
+                            "name": "name",
+                            "type": "string",
+                            "optional": true,
+                            "description": ""
+                        }
+                    ]
                 }
             ]
         },
