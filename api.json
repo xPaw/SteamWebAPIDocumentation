@@ -13728,7 +13728,7 @@
                     "optional": false
                 },
                 {
-                    "name": "app_id",
+                    "name": "appid",
                     "type": "uint32",
                     "optional": false
                 }
@@ -13855,6 +13855,37 @@
                     "type": "uint32",
                     "optional": false,
                     "description": "AppID to use.  Each AppID has its own FakeIP address."
+                },
+                {
+                    "name": "query_type",
+                    "type": "{enum}",
+                    "optional": false,
+                    "description": "What type of query?"
+                }
+            ]
+        },
+        "QueryListedServer": {
+            "version": 1,
+            "httpmethod": "GET",
+            "description": "Perform a query on a specific server returned in a server list, by SteamID",
+            "parameters": [
+                {
+                    "name": "key",
+                    "type": "string",
+                    "optional": false,
+                    "description": "Access key"
+                },
+                {
+                    "name": "appid",
+                    "type": "uint32",
+                    "optional": false,
+                    "description": "AppID the server is listed under.  (Also used for routing.)"
+                },
+                {
+                    "name": "steamid_gs",
+                    "type": "uint64",
+                    "optional": false,
+                    "description": "SteamID of GS to query."
                 },
                 {
                     "name": "query_type",
@@ -25286,6 +25317,12 @@
                     "type": "bool",
                     "optional": true,
                     "description": "If true, we do not generate the game_achievements fields"
+                },
+                {
+                    "name": "include_completed_sets",
+                    "type": "bool",
+                    "optional": true,
+                    "description": ""
                 }
             ]
         },
@@ -43925,6 +43962,44 @@
                             "type": "uint32[]",
                             "optional": true,
                             "description": ""
+                        },
+                        {
+                            "name": "creator_clan_account_ids_exclude[0]",
+                            "type": "uint32[]",
+                            "optional": true,
+                            "description": ""
+                        },
+                        {
+                            "name": "platform_filter",
+                            "type": "CStoreQueryFilters_PlatformFilter",
+                            "optional": true,
+                            "description": "",
+                            "extra": [
+                                {
+                                    "name": "include_windows",
+                                    "type": "bool",
+                                    "optional": true,
+                                    "description": ""
+                                },
+                                {
+                                    "name": "include_mac",
+                                    "type": "bool",
+                                    "optional": true,
+                                    "description": ""
+                                },
+                                {
+                                    "name": "include_linux",
+                                    "type": "bool",
+                                    "optional": true,
+                                    "description": ""
+                                }
+                            ]
+                        },
+                        {
+                            "name": "mod_for_engine_appids[0]",
+                            "type": "uint32[]",
+                            "optional": true,
+                            "description": ""
                         }
                     ]
                 },
@@ -43937,6 +44012,18 @@
                         {
                             "name": "tag_weight",
                             "type": "float",
+                            "optional": true,
+                            "description": ""
+                        },
+                        {
+                            "name": "exclude_featured_creator_homes",
+                            "type": "bool",
+                            "optional": true,
+                            "description": ""
+                        },
+                        {
+                            "name": "apply_user_preferences",
+                            "type": "bool",
                             "optional": true,
                             "description": ""
                         }
@@ -44413,6 +44500,44 @@
                                 },
                                 {
                                     "name": "parent_appids[0]",
+                                    "type": "uint32[]",
+                                    "optional": true,
+                                    "description": ""
+                                },
+                                {
+                                    "name": "creator_clan_account_ids_exclude[0]",
+                                    "type": "uint32[]",
+                                    "optional": true,
+                                    "description": ""
+                                },
+                                {
+                                    "name": "platform_filter",
+                                    "type": "CStoreQueryFilters_PlatformFilter",
+                                    "optional": true,
+                                    "description": "",
+                                    "extra": [
+                                        {
+                                            "name": "include_windows",
+                                            "type": "bool",
+                                            "optional": true,
+                                            "description": ""
+                                        },
+                                        {
+                                            "name": "include_mac",
+                                            "type": "bool",
+                                            "optional": true,
+                                            "description": ""
+                                        },
+                                        {
+                                            "name": "include_linux",
+                                            "type": "bool",
+                                            "optional": true,
+                                            "description": ""
+                                        }
+                                    ]
+                                },
+                                {
+                                    "name": "mod_for_engine_appids[0]",
                                     "type": "uint32[]",
                                     "optional": true,
                                     "description": ""
@@ -45069,6 +45194,44 @@
                             "type": "uint32[]",
                             "optional": true,
                             "description": ""
+                        },
+                        {
+                            "name": "creator_clan_account_ids_exclude[0]",
+                            "type": "uint32[]",
+                            "optional": true,
+                            "description": ""
+                        },
+                        {
+                            "name": "platform_filter",
+                            "type": "CStoreQueryFilters_PlatformFilter",
+                            "optional": true,
+                            "description": "",
+                            "extra": [
+                                {
+                                    "name": "include_windows",
+                                    "type": "bool",
+                                    "optional": true,
+                                    "description": ""
+                                },
+                                {
+                                    "name": "include_mac",
+                                    "type": "bool",
+                                    "optional": true,
+                                    "description": ""
+                                },
+                                {
+                                    "name": "include_linux",
+                                    "type": "bool",
+                                    "optional": true,
+                                    "description": ""
+                                }
+                            ]
+                        },
+                        {
+                            "name": "mod_for_engine_appids[0]",
+                            "type": "uint32[]",
+                            "optional": true,
+                            "description": ""
                         }
                     ]
                 },
@@ -45229,6 +45392,168 @@
                     "type": "bool",
                     "optional": true,
                     "description": ""
+                }
+            ]
+        }
+    },
+    "IStoreRecommendationsService": {
+        "GetLiveSales": {
+            "_type": "undocumented",
+            "version": 1,
+            "parameters": [
+                {
+                    "name": "key",
+                    "type": "string",
+                    "optional": false,
+                    "description": "Access key"
+                },
+                {
+                    "name": "start",
+                    "type": "uint32",
+                    "optional": true,
+                    "description": ""
+                },
+                {
+                    "name": "count",
+                    "type": "uint32",
+                    "optional": true,
+                    "description": ""
+                }
+            ]
+        },
+        "GetPackagePurchaseRecommendations": {
+            "_type": "undocumented",
+            "version": 1,
+            "parameters": [
+                {
+                    "name": "key",
+                    "type": "string",
+                    "optional": false,
+                    "description": "Access key"
+                },
+                {
+                    "name": "count",
+                    "type": "int32",
+                    "optional": true,
+                    "description": ""
+                },
+                {
+                    "name": "additional_source_items[0]",
+                    "type": "StoreItemID[]",
+                    "optional": true,
+                    "description": "",
+                    "extra": [
+                        {
+                            "name": "appid",
+                            "type": "uint32",
+                            "optional": true,
+                            "description": ""
+                        },
+                        {
+                            "name": "packageid",
+                            "type": "uint32",
+                            "optional": true,
+                            "description": ""
+                        },
+                        {
+                            "name": "bundleid",
+                            "type": "uint32",
+                            "optional": true,
+                            "description": ""
+                        },
+                        {
+                            "name": "tagid",
+                            "type": "uint32",
+                            "optional": true,
+                            "description": ""
+                        },
+                        {
+                            "name": "creatorid",
+                            "type": "uint32",
+                            "optional": true,
+                            "description": ""
+                        },
+                        {
+                            "name": "hubcategoryid",
+                            "type": "uint32",
+                            "optional": true,
+                            "description": ""
+                        },
+                        {
+                            "name": "salepagegid",
+                            "type": "fixed64",
+                            "optional": true,
+                            "description": ""
+                        }
+                    ]
+                }
+            ]
+        },
+        "GetPackagePurchaseRecommendationsForItems": {
+            "_type": "undocumented",
+            "version": 1,
+            "parameters": [
+                {
+                    "name": "key",
+                    "type": "string",
+                    "optional": false,
+                    "description": "Access key"
+                },
+                {
+                    "name": "count",
+                    "type": "int32",
+                    "optional": true,
+                    "description": ""
+                },
+                {
+                    "name": "item_ids[0]",
+                    "type": "StoreItemID[]",
+                    "optional": true,
+                    "description": "",
+                    "extra": [
+                        {
+                            "name": "appid",
+                            "type": "uint32",
+                            "optional": true,
+                            "description": ""
+                        },
+                        {
+                            "name": "packageid",
+                            "type": "uint32",
+                            "optional": true,
+                            "description": ""
+                        },
+                        {
+                            "name": "bundleid",
+                            "type": "uint32",
+                            "optional": true,
+                            "description": ""
+                        },
+                        {
+                            "name": "tagid",
+                            "type": "uint32",
+                            "optional": true,
+                            "description": ""
+                        },
+                        {
+                            "name": "creatorid",
+                            "type": "uint32",
+                            "optional": true,
+                            "description": ""
+                        },
+                        {
+                            "name": "hubcategoryid",
+                            "type": "uint32",
+                            "optional": true,
+                            "description": ""
+                        },
+                        {
+                            "name": "salepagegid",
+                            "type": "fixed64",
+                            "optional": true,
+                            "description": ""
+                        }
+                    ]
                 }
             ]
         }
