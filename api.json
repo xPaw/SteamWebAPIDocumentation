@@ -4192,7 +4192,104 @@
         "GetAdjacentPartnerEvents": {
             "_type": "undocumented",
             "version": 1,
-            "parameters": []
+            "parameters": [
+                {
+                    "name": "key",
+                    "type": "string",
+                    "optional": false,
+                    "description": "Access key"
+                },
+                {
+                    "name": "steamid",
+                    "type": "fixed64",
+                    "optional": true,
+                    "description": ""
+                },
+                {
+                    "name": "clan_event_gid",
+                    "type": "fixed64",
+                    "optional": true,
+                    "description": ""
+                },
+                {
+                    "name": "clan_announcement_gid",
+                    "type": "fixed64",
+                    "optional": true,
+                    "description": ""
+                },
+                {
+                    "name": "count_earlier",
+                    "type": "uint32",
+                    "optional": true,
+                    "description": ""
+                },
+                {
+                    "name": "count_later",
+                    "type": "uint32",
+                    "optional": true,
+                    "description": ""
+                },
+                {
+                    "name": "required_tags[0]",
+                    "type": "string[]",
+                    "optional": true,
+                    "description": ""
+                },
+                {
+                    "name": "require_no_tags",
+                    "type": "bool",
+                    "optional": true,
+                    "description": ""
+                },
+                {
+                    "name": "language_preference[0]",
+                    "type": "uint32[]",
+                    "optional": true,
+                    "description": ""
+                },
+                {
+                    "name": "rtime_oldest_date",
+                    "type": "uint32",
+                    "optional": true,
+                    "description": ""
+                },
+                {
+                    "name": "include_old_announcements",
+                    "type": "bool",
+                    "optional": true,
+                    "description": ""
+                },
+                {
+                    "name": "include_old_events",
+                    "type": "bool",
+                    "optional": true,
+                    "description": ""
+                },
+                {
+                    "name": "exclude_tags[0]",
+                    "type": "string[]",
+                    "optional": true,
+                    "description": ""
+                },
+                {
+                    "name": "event_type_filter[0]",
+                    "type": "int32[]",
+                    "optional": true,
+                    "description": "enum"
+                },
+                {
+                    "name": "exclude_event_types[0]",
+                    "type": "int32[]",
+                    "optional": true,
+                    "description": "enum"
+                },
+                {
+                    "name": "only_summaries",
+                    "type": "bool",
+                    "optional": true,
+                    "description": ""
+                }
+            ]
         },
         "GetDraftAndRecentPartnerEventSnippet": {
             "_type": "undocumented",
@@ -6407,6 +6504,12 @@
                             "type": "uint32",
                             "optional": true,
                             "description": ""
+                        },
+                        {
+                            "name": "appid",
+                            "type": "uint32",
+                            "optional": true,
+                            "description": ""
                         }
                     ]
                 }
@@ -7123,6 +7226,12 @@
                         },
                         {
                             "name": "ugc_content_type",
+                            "type": "uint32",
+                            "optional": true,
+                            "description": ""
+                        },
+                        {
+                            "name": "appid",
                             "type": "uint32",
                             "optional": true,
                             "description": ""
